@@ -40,6 +40,11 @@ bool _SurvivalKindman_talk( Critter& kindman, Critter& player, bool attach, uint
 	{
         return false;
 	}
+	return startGame( player );
+}
+
+bool startGame( Critter& player ) 
+{
 	Item@[] items;
 	player.GetItems( SLOT_ARMOR, items );
 	player.GetItems( SLOT_HAND1, items );
@@ -129,12 +134,11 @@ void ShowStartVars( Critter& player )
 {
     if( player.ParamBase[ QST_GAMEMODE ] == GAME_START )
     {
-        player.ShowScreen( SCREEN_DIALOGBOX, 4, "answer_StartGM_talk" );
+        player.ShowScreen( SCREEN_DIALOGBOX, 3, "answer_StartGM_talk" );
         player.SayMsg( SAY_DIALOGBOX_TEXT, TEXTMSG_TEXT, STR_MAP_START_MENU_MAIN );
-        player.SayMsg( SAY_DIALOGBOX_BUTTON( 0 ), TEXTMSG_TEXT, STR_MAP_START_MENU_INFORMATION );
-        player.SayMsg( SAY_DIALOGBOX_BUTTON( 1 ), TEXTMSG_TEXT, STR_MAP_START_MENU_BEGIN_GAME );
-		player.SayMsg( SAY_DIALOGBOX_BUTTON( 2 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_SKIN );
-		player.SayMsg( SAY_DIALOGBOX_BUTTON( 3 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_GENDER );
+        player.SayMsg( SAY_DIALOGBOX_BUTTON( 0 ), TEXTMSG_TEXT, STR_MAP_START_MENU_BEGIN_GAME );
+		player.SayMsg( SAY_DIALOGBOX_BUTTON( 1 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_SKIN );
+		player.SayMsg( SAY_DIALOGBOX_BUTTON( 2 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_GENDER );
 	}
 	else
 	{
@@ -186,17 +190,13 @@ void StartGame( Critter@ player, int, int, int, string@, int[]@ )
 
 void answer_StartGM_talk( Critter& player, uint answerI, string& answerS )
 {
-    if( answerI == 0 )
-	{
-		OpenLinkRemote(player, "http://frp.su");
-		
-	}
-	else if( answerI == 1 )
+	if( answerI == 0 )
 	{
         // ask client to open browser and confirm Discord role
-		RequestStartGameRemote(player);
+		//RequestStartGameRemote(player);
+		startGame( player );
     }
-	else if( answerI == 2 )
+	else if( answerI == 1 )
 	{
 		uint16[] Skins;
 		player.Stat[ ST_GENDER ] == GENDER_MALE ? Skins = MaleSkins : Skins = FemaleSkins;
@@ -213,7 +213,7 @@ void answer_StartGM_talk( Critter& player, uint answerI, string& answerS )
 		player.ChangeCrType( player.StatBase[ ST_BASE_CRTYPE ] );
 		ShowStartVars( player );
 	}
-	else if( answerI == 3 )
+	else if( answerI == 2 )
 	{
 		if( player.Stat[ ST_GENDER ] == GENDER_MALE )
 		{
