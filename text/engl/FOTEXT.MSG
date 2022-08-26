@@ -1013,7 +1013,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {10004}{}{|0xFFFF00 Survival mode selected.}
 {10005}{}{|0xFFFF00 Area not found.}
 {10006}{}{|0xFFFF00 Map not found.}
-{10007}{}{|0xFFFF00 This region is filled with sadness, but it seems like the next few steps forward will change your destiny...}
+{10007}{}{|0xFFFF00 You woke up in some strange place...}
 {10008}{}{|0xFFFF00 The item was consumed by the void.}
 {10009}{}{|0xFFFF00 You can't do that}
 
