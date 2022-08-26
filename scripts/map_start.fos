@@ -57,7 +57,7 @@ bool startGame( Critter& player )
 	DeleteItems( items );
 	
 	player.ParamBase[ QST_GAMEMODE ] = GAME_SURVIVAL;
-	kind_tele2( player, null, 22 );
+	kind_tele2( player, 110 );
 	return false;
 }
 
@@ -70,9 +70,7 @@ void answer_SurvivalKindman_talk( Critter& player, uint answerI, string& answerS
 	if( answerI == 0 )
     {
         player.ParamBase[ QST_GAMEMODE ] = GAME_SURVIVAL;
-        uint LocPid = 22;
-
-        kind_tele2( player, null, LocPid );
+        kind_tele2( player, 110 );
     }
 }
 
@@ -230,40 +228,46 @@ void answer_StartGM_talk( Critter& player, uint answerI, string& answerS )
 	}
 }
 
-void kind_tele2( Critter& master, Critter@ slave, int val )
+void kind_tele2( Critter& cr, int locPid )
 {
-    if( !valid( master ) )
-	{
-        return;
-	}
-	
-    Location @ loc = GetLocationByPid( val, 0 );
+    cr.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( ( Random( 0, 1 ) == 1 ) ), 200, cr.HexX, cr.HexY );
+
+    cr.SetEvent( CRITTER_EVENT_USE_ITEM, null );
+    cr.SetEvent( CRITTER_EVENT_DROP_ITEM, null );
+    cr.SetEvent( CRITTER_EVENT_ATTACK, null );
+    cr.SetEvent( CRITTER_EVENT_DEAD, null );	
+
+	spawn( cr, locPid );
+}
+
+void spawn( Critter& cr, int locPid )
+{
+	Location @ loc = GetLocationByPid( locPid, 0 );
     if( !valid( loc ) )
     {
-        master.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_AREA_INVALID );
+        cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_AREA_INVALID );
         return;
     }
 
-	Map @ map = loc.GetMapByIndex(0);
+	Map@ map = loc.GetMapByIndex(4);
     if( !valid( map ) )
     {
-        master.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_MAP_INVALID );
+        cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_MAP_INVALID );
         return;
     }
-	
-    master.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( ( Random( 0, 1 ) == 1 ) ), 200, master.HexX, master.HexY );
-
-    master.SetEvent( CRITTER_EVENT_USE_ITEM, null );
-    master.SetEvent( CRITTER_EVENT_DROP_ITEM, null );
-    master.SetEvent( CRITTER_EVENT_ATTACK, null );
-    master.SetEvent( CRITTER_EVENT_DEAD, null );	
 		
-	if( loc.GetProtoId() == 22 )
+	if( locPid == 110 )
 	{
-		master.TransitToMap( map.Id, Random( 174, 184 ), 255, 0 );
-		master.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_GREETING );
+		cr.TransitToMap( map.Id, Random( 294, 300 ), Random( 195, 212 ), 0 );
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_GREETING );
 		return;
 	}	
+}
+
+//~run map_start testSpawn 0 0 0
+void testSpawn( Critter& cr, int, int, int )
+{
+	spawn( cr, 110 );
 }
 
 void _crIn( Map& map, Critter& cr )
