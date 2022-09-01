@@ -4,8 +4,8 @@
 #include "_utils.fos"
 #include "entire_h.fos"
 
-import void OpenLinkRemote( Critter& player, string& url) from "link";
-import void RequestStartGameRemote( Critter& player) from "link";
+//import void OpenLinkRemote( Critter& player, string& url) from "link";
+//import void RequestStartGameRemote( Critter& player) from "link";
 
 import uint CountMapPlayers( Map@ map ) from "manager";
 

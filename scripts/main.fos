@@ -2653,7 +2653,7 @@ void critter_init( Critter& cr, bool firstTime )
 
     manager_critter_init( cr, firstTime );
 
-    DllCritterInit( cr, firstTime );
+    //DllCritterInit( cr, firstTime );
 	
 	//FoRP - logout on global == dead
 	Map@ map = cr.GetMap();
@@ -3409,10 +3409,10 @@ bool player_login( uint ip, string& name, uint id, uint& textMsg, uint& strNum )
         return false;
 	}
 	
-    if ( !DllPlayerLogin( ip, name, id ) )
-	{
-        return false;
-	}
+    // if ( !DllPlayerLogin( ip, name, id ) )
+	// {
+        // return false;
+	// }
 	
     if( valid( player ) )
     {
@@ -3441,7 +3441,7 @@ uint e_player_after_login( uint[] @ values )
         return 0;
     }
 
-    DllPlayerAfterLogin(cr);
+    //DllPlayerAfterLogin(cr);
 
     Map@ map = cr.GetMap();
 

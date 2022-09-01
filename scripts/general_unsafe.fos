@@ -195,7 +195,7 @@ void unsafe_log( Critter& cr, int locX, int locY, int type, string@ message, int
         f.close();
     }
 	
-	DiscordSendMessage( "gm_commandslog", "```" + message + "```" );
+	//DiscordSendMessage( "gm_commandslog", "```" + message + "```" );
 }
 
 //Log GM panel actions
@@ -208,7 +208,7 @@ void unsafe_log_2( Critter& cr, int locX, int locY, int type, string@ message, i
         f.close();
     }
 	
-	DiscordSendMessage( "gm_panel", "```" + message + "```" );
+	//DiscordSendMessage( "gm_panel", "```" + message + "```" );
 }
 
 //Digits input for ingame items

@@ -2018,7 +2018,7 @@ shared string@ FloatToSI(float, string&, uint8)
 	return null;
 }
 
-shared void DiscordSendMessage(string&, string&){}
+//shared void DiscordSendMessage(string&, string&){}
 shared uint PreviousHex(Critter&, uint16&, uint16&){ return 0; }
 shared bool check_look(Map& map, Critter& cr, Critter& opponent){ return true; }
 shared void DllReloadConfig(){}
