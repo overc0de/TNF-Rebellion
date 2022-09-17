@@ -1659,6 +1659,12 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 			if( valid( targetItem ) )
 			{
 				uint16 Pid = targetItem.GetProtoId();
+				
+				if( Pid == 23541 )
+				{
+					Cleaning( cr, 0, 23541 );
+				}
+				
 				// Boom
 				if( Pid == PID_TNT_PACK_ACTIVE )
 				{
