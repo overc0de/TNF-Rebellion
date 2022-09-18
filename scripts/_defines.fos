@@ -1,6 +1,6 @@
 #ifndef __DEFINES__
 #define __DEFINES__
-// #define RUST_NULL_API
+// #define RUST_NULL_API 
 // #define FOFMOD_NULL_API
 #include "_skins.fos" 		//critter skin defines
 
