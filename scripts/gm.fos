@@ -848,7 +848,7 @@ string[] LightStatusMaker( int storage, string[] list )
 
 void unsafe_sinf( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ param4 )
 {
-	player.RunClientScript( "client_main@_sinf", player.Param[ CR_SINF_MODE ], 0, 0, null, null );
+	player.RunClientScript( "client_main@_sinf", isGM( player ) ? player.Param[ CR_SINF_MODE ] : 0, 0, 0, null, null );
 }
 
 //MAIN GM MENU CTRL+G
