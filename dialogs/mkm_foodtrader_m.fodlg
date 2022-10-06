@@ -8,41 +8,41 @@ lang=russ
 &
 1 1000 None 1 #
 2 1010 @
-2 2000 None 0 #
+2 2000 None 1 #
 5 2010 #
 65506 2020 #
 6 2030 #
 3 2040 #
 0 2050 @
-3 3000 None 0 #
-4 3010 D _item p PID_GECKO_MEAT } 15 R _item p PID_GECKO_MEAT - 15 R _item p PID_BOTTLE_CAPS + 300 R _param p ST_EXPERIENCE + 1000 #
-4 3020 D _item p PID_CRAFT_L_HIDE } 20 R _item p PID_CRAFT_L_HIDE - 20 R _item p PID_BOTTLE_CAPS + 450 R _param p ST_EXPERIENCE + 1000 #
+3 3000 None 1 #
+4 3010 D _item p PID_GECKO_MEAT } 15 D _item n PID_BOTTLE_CAPS } 300 R _item p PID_GECKO_MEAT - 15 R _item p PID_BOTTLE_CAPS + 300 R _param p ST_EXPERIENCE + 1000 R _item n PID_PIZZA + 5 #
+4 3020 D _item p PID_CRAFT_L_HIDE } 20 D _item n PID_BOTTLE_CAPS } 450 R _item p PID_CRAFT_L_HIDE - 20 R _item p PID_BOTTLE_CAPS + 450 R _param p ST_EXPERIENCE + 1000 R _item n PID_CRAFT_L_HIDE + 20 #
 0 3030 @
-4 4000 None 0 #
+4 4000 None 1 #
 3 4010 @
-5 5000 None 0 #
+5 5000 None 1 #
 2 5010 @
-6 6000 None 0 #
-7 6010 D _param p SK_SCIENCE } 150 #
+6 6000 None 1 #
+7 6010 #
 8 6020 #
-9 6030 D _param p SK_SCIENCE } 150 D _param p SK_REPAIR } 150 #
-10 6040 D _param p SK_COOKING } 150 #
+9 6030 #
+10 6040 #
 2 6050 @
-7 7000 None 0 #
-7 7010 R _item p PID_BOTTLE_CAPS - 50 R _item p PID_CHEMICALS + 1 #
-7 7020 R _item p PID_BOTTLE_CAPS - 150 R _item p PID_CHEMICALS + 3 #
+7 7000 None 1 #
+7 7010 D _item p PID_BOTTLE_CAPS } 50 R _item p PID_BOTTLE_CAPS - 50 R _item p PID_CHEMICALS + 1 R _item n PID_BOTTLE_CAPS + 50 #
+7 7020 D _item p PID_BOTTLE_CAPS } 150 R _item p PID_BOTTLE_CAPS - 150 R _item p PID_CHEMICALS + 3 R _item n PID_BOTTLE_CAPS + 150 #
 6 7030 @
-8 8000 None 0 #
-8 8010 R _item p PID_GLASS_BOTTLE_FULL + 1 R _item p PID_BOTTLE_CAPS - 20 #
+8 8000 None 1 #
+8 8010 D _item p PID_BOTTLE_CAPS } 20 R _item p PID_GLASS_BOTTLE_FULL + 1 R _item p PID_BOTTLE_CAPS - 20 R _item n PID_BOTTLE_CAPS + 20 #
 6 8020 @
-9 9000 None 0 #
-9 9010 R _item p PID_GUNPOWDER + 1 R _item p PID_BOTTLE_CAPS - 35 #
-9 9020 R _item p PID_GUNPOWDER + 5 R _item p PID_BOTTLE_CAPS - 175 #
-9 9030 R _item p PID_GUNPOWDER + 10 R _item p PID_BOTTLE_CAPS - 350 #
+9 9000 None 1 #
+9 9010 D _item p PID_BOTTLE_CAPS } 35 R _item p PID_GUNPOWDER + 1 R _item p PID_BOTTLE_CAPS - 35 R _item n PID_BOTTLE_CAPS + 35 #
+9 9020 D _item p PID_BOTTLE_CAPS } 175 R _item p PID_GUNPOWDER + 5 R _item p PID_BOTTLE_CAPS - 175 R _item n PID_BOTTLE_CAPS + 175 #
+9 9030 D _item p PID_BOTTLE_CAPS } 350 R _item p PID_GUNPOWDER + 10 R _item p PID_BOTTLE_CAPS - 350 R _item n PID_BOTTLE_CAPS + 350 #
 6 9040 @
-10 10000 None 0 #
-10 10010 R _item p PID_BOTTLE_CAPS - 5 R _item p PID_XANDER_ROOT + 1 #
-10 10020 R _item p PID_BOTTLE_CAPS - 25 R _item p PID_XANDER_ROOT + 5 #
+10 10000 None 1 #
+10 10010 D _item p PID_BOTTLE_CAPS } 5 R _item p PID_BOTTLE_CAPS - 5 R _item p PID_XANDER_ROOT + 1 R _item n PID_BOTTLE_CAPS + 5 #
+10 10020 D _item p PID_BOTTLE_CAPS } 25 R _item p PID_BOTTLE_CAPS - 25 R _item p PID_XANDER_ROOT + 5 R _item n PID_BOTTLE_CAPS + 25 #
 6 10030 &
 
 [russ]
@@ -55,7 +55,8 @@ lang=russ
 {2030}{}{Меня интересует ненмого другой товар.}
 {2040}{}{Я пришел у тебя работу взять. Есть что на примете?}
 {2050}{}{В другой раз..}
-{3000}{}{Робота... Да, всегда есть заказ для  рабочих рук. Мне нужно чем-то кормить ребят, а еда сама ко мне не прибежит. Я куплю у тебя партию(15) мяса гекко за 300 монет. Также могу выкупить кожу (20) за 450 монет.}
+{3000}{}{Работа... Да, всегда есть заказ для  рабочих рук. Мне нужно чем-то кормить ребят, а еда сама ко мне не прибежит. Я куплю у тебя партию(15) мяса гекко за 300 монет. Также могу выкупить кожу (20) за 450 монет.
+(работа доступна если в НПС есть платежные средства)}
 {3010}{}{Вот партия. }
 {3020}{}{Вот кожа.}
 {3030}{}{Хорошо, я скоро буду.}
@@ -71,7 +72,8 @@ lang=russ
 {6050}{}{Ладно, давай о другом?}
 {7000}{}{И сколько ты хочешь купить?}
 {7010}{}{Одну баночку.}
-{7020}{}{Три баночки.}
+{7020}{}{Три баночки.
+}
 {7030}{}{Думаю хватит.}
 {8000}{}{И сколько ты хочешь купить?}
 {8010}{}{Одну бутылку}
@@ -85,3 +87,4 @@ lang=russ
 {10010}{}{Один пакетик.}
 {10020}{}{Давай пять пакетов.}
 {10030}{}{Думаю хватит.}
+

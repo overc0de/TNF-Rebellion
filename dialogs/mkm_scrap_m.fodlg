@@ -11,46 +11,59 @@ lang=russ
 2 2000 None 1 #
 8 2010 #
 3 2020 #
-4 2030 #
-5 2040 #
-6 2050 #
-7 2060 #
-0 2070 @
+9 2030 D _item n PID_IRON_BAR } 1 #
+10 2040 D _item n PID_IRON_BAR } 1 #
+4 2050 D _item p PID_METAL_ORE } 1 #
+5 2060 D _item p PID_JUNK } 1 #
+6 2070 D _item p PID_CRAFT_M_BARS } 1 #
+7 2080 D _item p PID_MSPIRAL } 1 #
+0 2090 @
 3 3000 None 1 #
 2 3010 #
 0 3020 @
 4 4000 None 1 #
-4 4010 D _item p PID_METAL_ORE } 1 R _item p PID_METAL_ORE - 1 R _item p PID_BOTTLE_CAPS + 25 R _param p ST_EXPERIENCE + 25 #
-4 4020 D _item p PID_METAL_ORE } 5 R _item p PID_METAL_ORE - 5 R _item p PID_BOTTLE_CAPS + 125 R _param p ST_EXPERIENCE + 125 #
+4 4010 D _item p PID_METAL_ORE } 1 R _item p PID_METAL_ORE - 1 R _item p PID_BOTTLE_CAPS + 25 R _param p ST_EXPERIENCE + 25 R _item n PID_IRON_BAR + 1 #
+4 4020 D _item p PID_METAL_ORE } 5 R _item p PID_METAL_ORE - 5 R _item p PID_BOTTLE_CAPS + 125 R _param p ST_EXPERIENCE + 125 R _item n PID_IRON_BAR + 5 #
 2 4030 @
 5 5000 None 1 #
-5 5010 D _item p PID_JUNK } 1 R _item p PID_JUNK - 1 R _item p PID_BOTTLE_CAPS + 10 R _param p ST_EXPERIENCE + 10 #
-5 5020 D _item p PID_JUNK } 5 R _item p PID_JUNK - 5 R _item p PID_BOTTLE_CAPS + 50 R _param p ST_EXPERIENCE + 50 #
+5 5010 D _item p PID_JUNK } 1 R _item p PID_JUNK - 1 R _item p PID_BOTTLE_CAPS + 10 R _param p ST_EXPERIENCE + 10 R _item n PID_JUNK + 1 #
+5 5020 D _item p PID_JUNK } 5 R _item p PID_JUNK - 5 R _item p PID_BOTTLE_CAPS + 50 R _param p ST_EXPERIENCE + 50 R _item n PID_JUNK + 5 #
 2 5030 @
 6 6000 None 1 #
-6 6010 D _item p PID_CRAFT_M_BARS } 1 R _item p PID_CRAFT_M_BARS - 1 R _item p PID_BOTTLE_CAPS + 10 R _param p ST_EXPERIENCE + 10 #
-6 6020 D _item p PID_CRAFT_M_BARS } 5 R _item p PID_CRAFT_M_BARS - 5 R _item p PID_BOTTLE_CAPS + 50 R _param p ST_EXPERIENCE + 50 #
+6 6010 D _item p PID_CRAFT_M_BARS } 1 R _item p PID_CRAFT_M_BARS - 1 R _item p PID_BOTTLE_CAPS + 10 R _param p ST_EXPERIENCE + 10 R _item n PID_CRAFT_M_BARS + 1 #
+6 6020 D _item p PID_CRAFT_M_BARS } 5 R _item p PID_CRAFT_M_BARS - 5 R _item p PID_BOTTLE_CAPS + 50 R _param p ST_EXPERIENCE + 50 R _item n PID_CRAFT_M_BARS + 5 #
 2 6030 @
 7 7000 None 1 #
-7 7010 D _item p PID_MSPIRAL } 1 R _item p PID_MSPIRAL - 1 R _item p PID_BOTTLE_CAPS + 25 R _param p ST_EXPERIENCE + 25 #
-7 7020 D _item p PID_MSPIRAL } 5 R _item p PID_MSPIRAL - 5 R _item p PID_BOTTLE_CAPS + 125 R _param p ST_EXPERIENCE + 125 #
+7 7010 D _item p PID_MSPIRAL } 1 R _item p PID_MSPIRAL - 1 R _item p PID_BOTTLE_CAPS + 25 R _param p ST_EXPERIENCE + 25 R _item n PID_MSPIRAL + 1 #
+7 7020 D _item p PID_MSPIRAL } 5 R _item p PID_MSPIRAL - 5 R _item p PID_BOTTLE_CAPS + 125 R _param p ST_EXPERIENCE + 125 R _item n PID_MSPIRAL + 5 #
 2 7030 @
 8 8000 None 1 #
-2 8010 &
+2 8010 @
+9 9000 None 1 #
+9 9010 D _item n PID_IRON_BAR } 1 D _item p PID_BOTTLE_CAPS } 50 R _item p PID_BOTTLE_CAPS - 50 R _item n PID_BOTTLE_CAPS + 50 R _item n PID_IRON_BAR - 1 R _item p PID_IRON_BAR + 1 #
+9 9020 D _item n PID_IRON_BAR } 5 D _item p PID_BOTTLE_CAPS } 250 R _item p PID_BOTTLE_CAPS - 250 R _item n PID_BOTTLE_CAPS + 250 R _item n PID_IRON_BAR - 5 R _item p PID_IRON_BAR + 5 #
+2 9030 @
+10 10000 None 1 #
+10 10010 D _item n PID_IRON_BAR } 1 D _item p PID_BOTTLE_CAPS } 40 R _item n PID_IRON_BAR - 1 R _item p PID_IRON_BAR + 1 R _item p PID_BOTTLE_CAPS - 40 R _item n PID_BOTTLE_CAPS + 40 #
+10 10020 D _item n PID_IRON_BAR } 5 D _item p PID_BOTTLE_CAPS } 200 R _item n PID_IRON_BAR - 5 R _item p PID_IRON_BAR + 5 R _item p PID_BOTTLE_CAPS - 200 R _item n PID_BOTTLE_CAPS + 200 #
+2 10030 &
 
 [russ]
 {100}{}{Фишерман}
 {1000}{}{Преддиалоговые установки}
 {1010}{}{-}
-{2000}{}{Я Фишерман, думаю ты обо мне знаешь. Я скупаю разный хлам. Так что подходи, поторгуем.}
+{2000}{}{Я Фишерман, думаю ты обо мне знаешь. Я скупаю разный хлам, продаю всякое... Так что подходи, поторгуем.}
 {2010}{}{А почему ты этим занимаешься?}
 {2020}{}{Какие у тебя расценки?}
-{2030}{}{Хочу продать тебе железную руду. }
-{2040}{}{Хочу продать тебе всякий мусор.}
-{2050}{}{Хочу продать тебе железки.}
-{2060}{}{Хочу продать тебе пружинки.}
-{2070}{}{Мне нечего тебе продать. Увидимся.}
-{3000}{}{Прайс лист такой - железную руду по 15, мусор по 10, железки по 10, пружины по 25...}
+{2030}{}{Хочу купить у тебя лист железа. }
+{2040}{}{Хочу купить у тебя железный слиток.}
+{2050}{}{Хочу продать тебе железную руду. }
+{2060}{}{Хочу продать тебе всякий мусор.}
+{2070}{}{Хочу продать тебе железки.}
+{2080}{}{Хочу продать тебе пружинки.}
+{2090}{}{Мне нечего тебе продать. Увидимся.}
+{3000}{}{Прайс лист такой - железную руду по 25, мусор по 10, железки по 10, пружины по 25...
+Продаю листы железа по 50, железные слитки по 40.}
 {3010}{}{Неплохо, давай тороговать.}
 {3020}{}{Хорошо. Я еще вернусь.}
 {4000}{}{И сколько же руды?}
@@ -71,3 +84,12 @@ lang=russ
 {7030}{}{Думаю хватит.}
 {8000}{}{Как видишь Барни тут главный, но за всем уследить не может. Он нанял и назначил меня следить, чтоб у города был определённый ресурсный запас. Мне плевать что там за работа, лишь бы хватало на выпивку.}
 {8010}{}{О как...}
+{9000}{}{Как много?}
+{9010}{}{Один.}
+{9020}{}{Пять.}
+{9030}{}{Пожалуй не надо.}
+{10000}{}{Сколько тебе?}
+{10010}{}{Один.}
+{10020}{}{Пять.}
+{10030}{}{Не надо.}
+
