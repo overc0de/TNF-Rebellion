@@ -387,6 +387,16 @@ void initControlPanel()
 	}
 }
 
+ControlPanel@ getControlPanel()
+{
+	if( !valid( controlpanel ) )
+	{
+		initControlPanel();
+	}
+	
+	return controlpanel;
+}
+
 
 int[] checkSelectionBarNPC() 
 {
@@ -621,7 +631,7 @@ void addNewSelection()
 			continue;
 		}
 		
-		if( !controlpanel.controlled( targets[i] ) )
+		if( !getControlPanel().controlled( targets[i] ) )
 		{
 			needRefresh = true;
 			break;
@@ -629,7 +639,7 @@ void addNewSelection()
 	}
 
 	//Проверяем что есть НПЦ которых нужно исключить из списка:
-	int[] controlled = controlpanel.current.getIDs();
+	int[] controlled = getControlPanel().current.getIDs();
 	for( int i = 0, l = controlled.length(); i < l; i++ )
 	{
 		if( targets.find( controlled[i] ) == -1 )
@@ -647,7 +657,7 @@ void addNewSelection()
 	//Если не нажат шифт - обнуляем текущее выделение (группу):
 	if( !KeyPressed[ DIK_LSHIFT ] )
 	{
-		controlpanel.selection.clear();
+		getControlPanel().selection.clear();
 	}
 	
 	for( int i = 0, l = targets.length(); i < l; i++ )
@@ -681,7 +691,7 @@ void clearShiftGroup()
 
 int[] getControlledGroups( int id )
 {
-	return controlpanel.contains( id );
+	return getControlPanel().contains( id );
 }
 
 bool isControlled( CritterCl& cr ) 
@@ -691,22 +701,22 @@ bool isControlled( CritterCl& cr )
 
 bool isControlled( int id )
 { 
-	return controlpanel.contains( id ).length() != 0;
+	return getControlPanel().contains( id ).length() != 0;
 }
 
 bool isControlled( int id, int groupN )
 {
-	return controlpanel.controlled( id );
+	return getControlPanel().controlled( id );
 }
 
 bool isSelected( int id )
 {
-	return controlpanel.current.contains( id );
+	return getControlPanel().current.contains( id );
 }
 
 void _LostCritterControl( int id, int, int, string@, int[]@ )
 {
-    controlpanel.removeFromAllGroups( id, true );
+    getControlPanel().removeFromAllGroups( id, true );
 }
 
 void SetControlCritters( int id )
@@ -717,8 +727,11 @@ void SetControlCritters( int id )
 		return;
 	}
 	
-	controlpanel.selection.check(id);
-	@controlpanel.current = controlpanel.selection;//TODO: rework?
+	getControlPanel().selection.check(id);
+	if( valid( controlpanel ) && valid( controlpanel.selection ) )
+	{
+		@controlpanel.current = controlpanel.selection;//TODO: rework?
+	}
 
     CritterCl@ target = GetCritter( id );
 	if( valid( target) )
@@ -729,7 +742,7 @@ void SetControlCritters( int id )
 
 int[] control()
 {
-    return controlpanel.current.getIDs();
+    return getControlPanel().current.getIDs();
 }
 
 int[] getControlledGroups( CritterCl& cr )
@@ -764,11 +777,11 @@ void checkCritterControl( CritterCl@ cr )
 		{
 			if( IDs[i] == -1 )
 			{
-				controlpanel.selection.addNew( cr.Id );
+				getControlPanel().selection.addNew( cr.Id );
 			}
 			else
 			{
-				controlpanel.groups[IDs[i]].addNew( cr.Id );				
+				getControlPanel().groups[IDs[i]].addNew( cr.Id );				
 			}
 		}
 	}

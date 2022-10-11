@@ -514,11 +514,8 @@ class GUIScreen : IGUIScreenOpt
         {
             qmap_iface();
 			
-			if( valid( controlpanel ) )
-			{
-				controlpanel.draw();
-			}
-
+			getControlPanel().draw();
+			
 			if( ( __sinf & SINF_HEX ) != 0 )
             {
                 uint16 hexX = 0, hexY = 0;
@@ -918,6 +915,10 @@ class GUIScreen : IGUIScreenOpt
 			}
 			
 			CritterCl@ choo = GetChosen();
+			if( !valid( choo ) )
+			{
+				return true;
+			}
 
 			int cursorCurrent = GetCurrentCursor();
 			if( click == MOUSE_CLICK_LEFT && FLAG( choo.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys )
@@ -1481,7 +1482,7 @@ class GUIScreen : IGUIScreenOpt
 		
         if( Index == CLIENT_MAIN_SCREEN_GAME || Index == CLIENT_MAIN_SCREEN_GLOBAL_MAP )
         {
-			if( controlpanel.KeyPress( key ) )
+			if( getControlPanel().KeyPress( key ) )
 			{
 				return true;
 			}
@@ -1914,6 +1915,7 @@ class GUIScreen : IGUIScreenOpt
 						}
 						case( DIK_Q ): //Cleans selection
 						{
+							getControlPanel();
 							@controlpanel.current = controlpanel.selection;
 							controlpanel.selection.clear(); 
 							break;
