@@ -10788,7 +10788,7 @@ Material=1
 
 [Proto]
 ProtoId=23541
-Type=5
+Type=11
 PicMap=art\scenery\VILLA008.FRM
 PicInv=art\inven\reserved.frm
 Flags=268440092

@@ -354,13 +354,6 @@ bool canUseCloth( Critter& player )
     if( player.CountItem( PID_SKIN_CHANGER ) < 1 )
         return false;
 
-    uint8 mode = 0;
-    if( player.GetSlotProto( SLOT_ARMOR, mode ).ProtoId != 1100 )
-    {
-        player.Say( SAY_NETMSG, "Ваша броня мешает вам сменить обличие." );
-        return false;
-    }
-
     uint cur_skin = player.Stat[ ST_BASE_CRTYPE ];
 
     //if( cur_skin != defbody && ( cur_skin >= skins_toggled.length() ||  !skins_toggled[ cur_skin ] ) )
@@ -415,13 +408,6 @@ bool _cloth_use( Item& item, Critter& player, Critter@ onCritter, Item@ onItem, 
  */
 void answer_cloth_get( Critter& player, uint answerI, string& answerS )
 {
-    uint8 mode = 0;
-    if( player.GetSlotProto( SLOT_ARMOR, mode ).ProtoId != 1100 )
-    {
-        player.Say( SAY_NETMSG, "Ваша броня мешает вам сменить обличие." );
-        return;
-    }
-
     int result = 0;
 
     if( !StrToInt( answerS, result ) )
@@ -493,7 +479,7 @@ void skin( Critter& cr, int crType )
         Item@ spec = cr.GetItem( 0, SLOT_HAND1 );
         if( valid( spec ) )
         {
-            if( spec.GetProtoId() == PID_CLAW_EXT || spec.GetProtoId() == PID_FIREBREATH )
+            if( spec.GetProtoId() == PID_FIRE_GECKO_FLAME_WEAPON )
                 DeleteItem( spec );
         }
         else
@@ -501,7 +487,7 @@ void skin( Critter& cr, int crType )
             @spec = cr.GetItem( 0, SLOT_HAND2 );
             if( valid( spec ) )
             {
-                if( spec.GetProtoId() == PID_CLAW_EXT || spec.GetProtoId() == PID_FIREBREATH )
+                if( spec.GetProtoId() == PID_FIRE_GECKO_FLAME_WEAPON )
                     DeleteItem( spec );
             }
         }
@@ -688,9 +674,7 @@ void skin( Critter& cr, int crType )
             cr.MoveItem( items[ 0 ].Id, itemscount, SLOT_INV );
             items[ 0 ].Update();
         }
-        Item@ weapon = cr.AddItem( PID_CLAW_EXT, 1 );
-        cr.MoveItem( weapon.Id, 1, SLOT_HAND1 );
-        weapon.Update();
+
         cr.StatBase[ ST_KILL_EXPERIENCE ] = 250; /*
                                                     cr.StatBase[ST_NORMAL_RESIST]+=15;
                                                     cr.StatBase[ST_LASER_RESIST]+=15;
@@ -718,9 +702,7 @@ void skin( Critter& cr, int crType )
             cr.MoveItem( items[ 0 ].Id, itemscount, SLOT_INV );
             items[ 0 ].Update();
         }
-        Item@ weapon = cr.AddItem( PID_CLAW_EXT, 1 );
-        cr.MoveItem( weapon.Id, 1, SLOT_HAND1 );
-        weapon.Update();
+
         cr.StatBase[ ST_KILL_EXPERIENCE ] = 1000; /*
                                                      cr.StatBase[ST_NORMAL_RESIST]+=25;
                                                      cr.StatBase[ST_LASER_RESIST]+=10;
@@ -752,9 +734,7 @@ void skin( Critter& cr, int crType )
             cr.MoveItem( items[ 0 ].Id, itemscount, SLOT_INV );
             items[ 0 ].Update();
         }
-        Item@ weapon = cr.AddItem( PID_CLAW_EXT, 1 );
-        cr.MoveItem( weapon.Id, 1, SLOT_HAND1 );
-        weapon.Update();
+
         cr.StatBase[ ST_KILL_EXPERIENCE ] = 1250; /*
                                                      cr.StatBase[ST_NORMAL_RESIST]+=35;
                                                      cr.StatBase[ST_LASER_RESIST]+=20;
@@ -786,9 +766,7 @@ void skin( Critter& cr, int crType )
             cr.MoveItem( items[ 0 ].Id, itemscount, SLOT_INV );
             items[ 0 ].Update();
         }
-        Item@ weapon = cr.AddItem( PID_FIREBREATH, 1 );
-        cr.MoveItem( weapon.Id, 1, SLOT_HAND1 );
-        weapon.Update();
+
         cr.StatBase[ ST_KILL_EXPERIENCE ] = 1000; /*
                                                      cr.StatBase[ST_NORMAL_RESIST]+=40;
                                                      cr.StatBase[ST_LASER_RESIST]+=60;

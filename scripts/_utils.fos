@@ -74,6 +74,10 @@
 	#ifndef ItemMutual
 		#define ItemMutual  Item
 	#endif
+
+	#ifndef 	Message
+		#define	Message	Log
+	#endif
 #endif
 
 #ifdef __CLIENT
@@ -86,6 +90,9 @@
 		#define ItemMutual  ItemCl
 	#endif
 
+	#ifndef 	Log
+		#define	Log	Message
+	#endif
 #endif
 
 /*********Permadeath damage calculations************/

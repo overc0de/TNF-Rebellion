@@ -21,13 +21,7 @@
 #include "gathering_h.fos"
 #include "trap_h.fos"
 
-import void critter_reload_weapon( Critter& cr, Item& weapon, Item@ ammo ) from "main";
-import bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetItem, Scenery@ targetScen, uint param ) from "main";
-import void ShowInputBoxScreen( Critter& cr, string funcName, uint16 textLength, uint8 flags ) from "main";
-
 import void Actions( Critter& cr, uint8 actionType, uint16 pickType ) from "context_callback";
-
-import void DragAndDrop( Critter& cr, Critter@ target ) from "gameplay";
 
 import bool e_UseAutoCloseDoor( Item& door, Critter& cr, int skill ) from "item";
 
@@ -62,6 +56,7 @@ bool Action( Critter& player, Critter@ targetCr, Item@ targetItem, Scenery@ targ
 		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TOO_FAR ); 
 		return false; 
 	}
+	
 	uint8 dir = GetDirection( moverHexX, moverHexY, aimHexX, aimHexY );
 	player.SetDir( dir );
 	player.Action( ACTION_PICK_CRITTER, 3, null );
@@ -70,7 +65,7 @@ bool Action( Critter& player, Critter@ targetCr, Item@ targetItem, Scenery@ targ
 
 void unsafe_OpenDoor( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ vals )
 {
-	if( player.IsDead() || player.IsKnockout() || player.IsBusy() || IsAnimal( player ) || IsMonster( player ) || IsInsect( player ) || player.Timeout[ TO_SK_STEAL ] > 0 )
+	if( player.IsDead() || player.IsKnockout() || player.IsBusy() || IsAnimal( player ) || IsInsect( player ) || player.Timeout[ TO_SK_STEAL ] > 0 )
 	{
 		return;
 	}
@@ -195,7 +190,7 @@ void unsafe_log( Critter& cr, int locX, int locY, int type, string@ message, int
         f.close();
     }
 	
-	//DiscordSendMessage( "gm_commandslog", "```" + message + "```" );
+	DiscordSendMessage( "gm_commandslog", "```" + message + "```" );
 }
 
 //Log GM panel actions
@@ -208,82 +203,97 @@ void unsafe_log_2( Critter& cr, int locX, int locY, int type, string@ message, i
         f.close();
     }
 	
-	//DiscordSendMessage( "gm_panel", "```" + message + "```" );
+	DiscordSendMessage( "gm_panel", "```" + message + "```" );
 }
 
 //Digits input for ingame items
 void unsafe_inputDigits( Critter& player, int itemId, int digits, int type, string@ param3, int[] @ param4 )
 {
     Item@ item = GetItem( itemId );
-	if( valid( item ) )
+	if( !valid( item ) )
 	{
-		uint16 Pid = item.GetProtoId();
-		if( vending_machines.find( Pid ) != -1 )
+		return;
+	}
+
+	player.RunClientScript( "client_screen_numberpad@HideScreen", 0, 0, 0, "", null );
+
+	uint16 Pid = item.GetProtoId();
+	if( vending_machines.find( Pid ) != -1 )
+	{
+		if( type == 0 )
 		{
-			if( type == 0 )
+			item.SELLING_PRICE = digits;
+		}
+		else
+		{
+			item.BUYING_PRICE = digits;
+		}
+		
+		StartMenuVendingMachine( player, item );
+	}
+	else if( Pid == PID_TERMINAL )
+	{
+		if( type == 0 )
+		{
+			if( item.PASSWORD == 0 )
 			{
-				item.SELLING_PRICE = digits;
+				item.PASSWORD = digits;
+				player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NEW_PASSWORD, "$digits" + digits );
+				LogCrimeMovement( player, item, "sets new password [" + item.PASSWORD + "]" ); 
+			}
+			else if( item.PASSWORD == digits )
+			{
+				item.CONSOLE_PASSWORD = 0;
+				player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CORRECT_PASSWORD );
+				LogCrimeMovement( player, item, "inputs correct password [" + item.PASSWORD + "]" ); 
 			}
 			else
 			{
-				item.BUYING_PRICE = digits;
+				player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_WRONG_PASSWORD );
+				LogCrimeMovement( player, item, "inputs wrong password [" + digits + "] instead of [" + item.PASSWORD + "]" ); 
 			}
-			
-			StartMenuVendingMachine( player, item );
 		}
-		else if( Pid == PID_TERMINAL )
+		else if( type == 1 )
 		{
-			if( type == 0 )
-			{
-				if( item.PASSWORD == 0 )
-				{
-					item.PASSWORD = digits;
-					player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NEW_PASSWORD, "$digits" + digits );
-				}
-				else if( item.PASSWORD == digits )
-				{
-					item.CONSOLE_PASSWORD = 0;
-					player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CORRECT_PASSWORD );
-				}
-				else
-				{
-					player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_WRONG_PASSWORD );
-				}
-			}
-			else if( type == 1 )
-			{
-				item.TERMINAL_FREQUENCY = digits;
-				player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TERMINAL_MENU_NEW_FREQUENCY, "$digits" + digits );
-			}
-			
-			StartMenuTerminal( player, item );
+			item.TERMINAL_FREQUENCY = digits;
+			player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TERMINAL_MENU_NEW_FREQUENCY, "$digits" + digits );
+			LogItemMovement( player, item, "sets new frequency [" + item.TERMINAL_FREQUENCY + "]" );
 		}
-		else if( Pid == PID_TNT_PACK_ACTIVE || Pid == PID_REMOTE_DETONATOR )
-		{
-			item.Val4 = digits;
-			item.SetLexems( "$frequency" + digits );
-			item.Val2 = player.Id;
-			player.Say( SAY_NETMSG, "You have set radio frequency to: |0xFFFF00 " + digits );
-		}
-		else if( Pid == PID_SLAVE_COLLAR || Pid == PID_SLAVE_COLLAR_SWITCH )
-		{
-			item.Val5 = digits;
-			item.SetLexems( "$frequency" + digits );
-			player.Say( SAY_NETMSG, "You have set radio frequency to: |0xFFFF00 " + digits );
-		}
-		else if( Pid == PID_JUKEBOX1 || Pid == PID_JUKEBOX2 || Pid == PID_JUKEBOX3 || Pid == PID_JUKEBOX4 )
-		{
-			item.Val6 = digits;
-			StartMenuJukebox( player, item );
-		}
-		player.RunClientScript( "client_screen_numberpad@HideScreen", 0, 0, 0, "", null );
+		
+		RestoreMenu( player );
 	}
-	return;
+	else if( Pid == PID_TNT_PACK_ACTIVE || Pid == PID_REMOTE_DETONATOR )
+	{
+		item.Val4 = digits;
+		item.SetLexems( "$frequency" + digits );
+		item.Val2 = player.Id;
+		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_MSG_NEW_FREQUENCY, "$digits" + digits );
+	}
+	else if( Pid == PID_SLAVE_COLLAR || Pid == PID_SLAVE_COLLAR_SWITCH )
+	{
+		item.Val5 = digits;
+		item.SetLexems( "$frequency" + digits );
+		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_MSG_NEW_FREQUENCY, "$digits" + digits );
+	}
+	else if( Pid == PID_JUKEBOX1 || Pid == PID_JUKEBOX2 || Pid == PID_JUKEBOX3 || Pid == PID_JUKEBOX4 )
+	{
+		item.Val6 = digits;
+		StartMenuJukebox( player, item );
+	}
+	else if( item.GetType() == ITEM_TYPE_DOOR || ( item.GetType() == ITEM_TYPE_CONTAINER && item.Proto.Container_Changeble ) ) 
+	{
+		SETFLAG( item.LockerCondition, LOCKER_ELECTRO );
+		string pass = digits;
+		item.Val1 = pass.length() - 1;
+		item.Val4 = digits;
+		item.LockerComplexity = player.Skill[ SK_SCIENCE ];
+		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NEW_CODE, "$digits" + digits );
+	}
 }
 
 void unsafe_openCodeDoor( Critter& player, int itemId, int code, int param2, string@ param3, int[] @ param4 )
 {
-    Item @ item = GetItem( itemId );
+    Item@ item = GetItem( itemId );
     if( !valid( item ) )
 	{
 		return;
@@ -312,15 +322,20 @@ void unsafe_openCodeDoor( Critter& player, int itemId, int code, int param2, str
 			{
                 item.LockerOpen();
                 player.RunClientScript( "client_screen_codedoor@HideScreen", 0, 0, 0, "", null );
-				
+				Map@ map = player.GetMap();
 				if( item.GetType() == ITEM_TYPE_DOOR )
 				{
-					Map@ map = player.GetMap();
+					PlayDoorSound( map, item.HexX, item.HexY, item.GetProtoId(), item.LockerCondition, 15 );
 					ToggleDoorBlocker( map, item, false );
 				}
 				
 				if( item.GetType() == ITEM_TYPE_CONTAINER )
 				{
+					if( item.Proto.Container_Changeble )
+					{
+						PlayDoorSound( map, item.HexX, item.HexY, item.GetProtoId(), item.LockerCondition, 15 );
+					}
+					
 					ShowContainer( player, item, item.Proto.GroundLevel ? TRANSFER_HEX_CONT_DOWN : TRANSFER_HEX_CONT_UP );
 				}
             }
@@ -328,6 +343,7 @@ void unsafe_openCodeDoor( Critter& player, int itemId, int code, int param2, str
 		else
 		{
 			player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_WRONG_CODE );
+			RestoreMenu( player );
 		}
     }
 	else
@@ -655,12 +671,14 @@ void unsafe_say( Critter& player, int param0, int param1, int param2, string@ pa
         player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NEED_GM_ACCESS );
         return;
     }
+	
     if( valid( controlled ) && controlled.ParamBase[ MERC_MASTER_ID ] != int( player.Id ) )
     {
         player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NEED_GM_ACCESS );
         return;
     }
-    say( player, param0, param1, 0 );
+	
+    Say( player, param0, param1, 0 );
 }
 
 void unsafe_sleep( Critter& player, int isBack, int isRemote, int param2, string@ param3, int[] @ param4 )
@@ -967,160 +985,6 @@ void GetHexProtos( Map@ map, uint16 hexX, uint16 hexY, FindData@[]& array )
 
 }
 
-void unsafe_itemhit2( Critter& player, int itemId, int x, int y, string@ param3, int[] @ param4 )
-{
-    if( player.IsDead() || player.IsKnockout() )
-	{
-		return;
-	}
-	
-	if ( player.Timeout[ TO_SK_STEAL ] > 0 )
-	{
-		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_KNOCK_TOO_MUCH );
-		return;
-	}
-	if( ABS( int(x - player.HexX) ) <= 1 && ABS( int(y - player.HexY) ) <= 1 )
-	{
-		player.SetDir( GetDirection( player.HexX, player.HexY, x, y ) );
-		Map@ map = player.GetMap();
-		if( !valid( map ) )
-		{
-			return;
-		}
-		map.SetTextMsg( x, y, COLOR_GRAY, TEXTMSG_TEXT, STR_MAPMSG_BANG );
-		
-        Item@[] items;
-		
-		uint16 hexX = player.HexX, hexY = player.HexY;
-		map.MoveHexByDir( hexX, hexY, player.Dir, 1 );
-		map.GetItems( hexX, hexY, items );
-		
-		for( uint i = 0, len = items.length(); i < len; i++ )
-		{
-			if( items[i].GetType() == ITEM_TYPE_DOOR )
-			{
-				UseSkillOnLocker( player, items[i], SKILL_PICK_ON_GROUND );
-			}
-		}
-		
-		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_KNOCKED );
-		SayLog( player, crInfo( player ) + " knocks on (" + x + ":" + y + ")." );
-		player.TimeoutBase[ TO_SK_STEAL ] = __FullSecond + REAL_SECOND( 2 );
-		return;
-	}
-	else
-	{
-		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TOO_FAR );
-	}
-	return;			
-}
-
-void unsafe_itemhit( Critter& player, int id, int itemId, int param2, string@ param3, int[] @ param4 )
-{
-    Critter @ target = GetCritter( id );
-
-    if( player.IsDead() || player.IsKnockout() )
-	{
-		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CANT_DO_THAT );
-		return;
-	}
-	
-	if( !valid( target ) )
-	{
-		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_MISS_KNOCK );
-		return;
-	}
-	
-	if( player.Timeout[ TO_SK_STEAL ] > 0 )
-	{
-		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_KNOCK_TOO_MUCH );
-		return;
-	}
-	
-	if( target.IsDead() || target.IsKnockout())
-	{	
-		DragAndDrop( player, target );
-		player.TimeoutBase[ TO_SK_STEAL ] = __FullSecond + REAL_SECOND( 3 );
-		return;
-	}		
-	
-	if( ABS( int(target.HexX - player.HexX) ) <= 1 && ABS( int(target.HexY - player.HexY) ) <= 1 )
-	{
-		Item@ weapon = _CritGetItemHand( player );
-		SayLog( player, crInfo( player ) + " bangs on: " + crInfo( target, true ) + "." );
-
-		if( !(weapon is null) )
-		{
-			uint16 weight = weapon.Proto.Weight;
-			weight = CLAMP( weight, 2000, 8000 );
-			int  ap = int( weight * 0.001 );
-			ap = CLAMP( ap, 20, 80 );
-			
-			if( ap <= player.Stat[ ST_CURRENT_AP ] )
-			{
-				player.SetDir( GetDirection( player.HexX, player.HexY, target.HexX, target.HexY ) );
-				_CritAnimateThrow( player );
-				player.Wait ( 1000 );
-				player.StatBase[ ST_CURRENT_AP ] -= ap * 100;
-				
-				if ( player.Skill[ SK_MELEE_WEAPONS ] - target.Stat[ ST_ARMOR_CLASS ] - int( weight * 0.002 ) < Random( 0, 100) )
-				{
-					player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_MISS_KNOCK );
-					return;
-				}
-				uint8 strBonus = ( player.Stat[ ST_STRENGTH ] > 6 ? player.Stat[ ST_STRENGTH ] - 6 : 1 );
-				int damage = strBonus + player.StatBase[ ST_MELEE_DAMAGE ] + Random( 0, int( weight * 0.002 ) );
-				InjureCritter( target, damage, DAMAGE_NORMAL, target.Dir, player.Id, HIT_LOCATION_NONE, false );
-				
-				player.TimeoutBase[ TO_SK_STEAL ] = __FullSecond + REAL_SECOND( 2 );
-				player.TimeoutBase[ TO_AGGRESSOR ] = __FullSecond + REAL_MINUTE( 1 );
-
-				if( target.IsNpc() && target.IsSee( player ) )
-				{
-					target.AddEnemyInStack( player.Id );
-				}
-				return;
-			}
-			player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NOT_ENOUGH_AP );
-			return;
-		}
-		else if( 40 <= player.Stat[ ST_CURRENT_AP ] )
-		{
-			player.SetDir( GetDirection( player.HexX, player.HexY, target.HexX, target.HexY ) );
-			_CritAnimateThrow( player );
-			player.Wait ( 1000 );
-			player.StatBase[ ST_CURRENT_AP ] -= 40 * 100;
-			
-			if ( player.Skill[ SK_UNARMED ] - target.Stat[ ST_ARMOR_CLASS ] < Random( 0, 100) )
-			{
-				player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_MISS_KNOCK );
-				return;
-			}
-			uint8 strBonus = ( player.Stat[ ST_STRENGTH ] > 6 ? player.Stat[ ST_STRENGTH ] - 6 : 1 );
-			int damage = Random( strBonus, strBonus + player.StatBase[ ST_MELEE_DAMAGE ] + 1 );           // every 500g 1dmg point
-			InjureCritter( target, damage, DAMAGE_NORMAL, target.Dir, player.Id, HIT_LOCATION_NONE, false );
-			
-			player.TimeoutBase[ TO_SK_STEAL ] = __FullSecond + REAL_SECOND( 2 );
-			player.TimeoutBase[ TO_AGGRESSOR ] = __FullSecond + REAL_MINUTE( 1 );
-
-			if( target.IsNpc() && target.IsSee( player ) )
-			{
-				target.AddEnemyInStack( player.Id );
-			}
-			return;
-		}
-		else
-		{
-			player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NOT_ENOUGH_AP );
-		}
-		return;			
-	}
-	else
-	{
-		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TOO_FAR );
-	}
-}
-
 void unsafe_itemthrow ( Critter& player, int hx, int hy, int param2, string@ param3, int[] @ param4 ) 
 {
 	if( player.IsBusy() || player.Stat[ ST_CURRENT_AP ] < 50 )
@@ -1132,7 +996,7 @@ void unsafe_itemthrow ( Critter& player, int hx, int hy, int param2, string@ par
 	uint distance = GetDistantion( player.HexX, player.HexY, hx, hy );
 	Map@ currentMap = player.GetMap ();
 
-	if( !valid(currentMap) || player.IsDead() || player.IsKnockout() || distance > uint( player.Stat [ST_STRENGTH] * 2 ) )
+	if( !valid( currentMap ) || player.IsDead() || player.IsKnockout() || distance > uint( player.Stat [ ST_STRENGTH ] * 2 ) )
 	{
 		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TOO_FAR_TO_THROW );
 		return;
@@ -1245,14 +1109,39 @@ void unsafe_itemthrow ( Critter& player, int hx, int hy, int param2, string@ par
 	}
 	
 	currentMap.RunFlyEffect( _WeaponEffect( GetProtoItem(PID_FRAG_GRENADE), _WeaponModeUse (0) ), player, target, player.HexX, player.HexY, tx, ty );
-	_CritAnimateThrow (player);
+	_CritAnimateThrow( player );
 	player.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_THROW );
 	player.Wait( 200 * 5 ); 
 	player.ParamBase[ ST_CURRENT_AP ] -= 50 * 100;
 }
 
+void unsafe_setAFK( Critter& player, int param0, int param1, int param2, string@ text, int[]@ param4 )
+{
+    if( !valid(text) || text == "" )
+	{
+		player.SetLexems( null );
+		
+		player.ParamBase[ CR_AFK_MODE ] = 0;
+		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CHANGE_DISABLED_AFK );
+	}
+	else
+	{
+		string@ lexem = player.GetLexems();
+		uint index = findFirstOf( lexem, "_", 0 );
+		string oldLex = substring( lexem, 0, index );
+		player.SetLexems( oldLex + "_" + text );
+		
+		player.ParamBase[ CR_AFK_MODE ] = 1;
+		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CHANGE_LEX_AFK );
+	}
+	
+	player.AddTimeEvent( "player_menu@cte_AFK_mode", 0, CTE_AFK, 0 );
+}
+
 void unsafe_selfLex( Critter& player, int param0, int param1, int param2, string@ text, int[]@ param4 )
 {
+	player.ParamBase[ CR_AFK_MODE ] = 0;
+
     if( !valid(text) || text == "" )
 	{
 		player.SetLexems( null );
@@ -1261,6 +1150,7 @@ void unsafe_selfLex( Critter& player, int param0, int param1, int param2, string
 	{
 		player.SetLexems( text );
 	}
+	
 	player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CHANGE_LEX_SELF );
 }
 
@@ -1643,4 +1533,15 @@ void unsafe_StopNamingState( Critter& player, int param0, int param1, int param2
 {
 	player.ParamBase[ CR_REMEMBERING_NAME ] = 0;
 }
+
+void unsafe_ToggleVoiceRadius( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ param4 )
+{
+	FLAG( player.Param[ PLAYER_FLAGS ], PLAYER_FLAG_VOICE_R ) ? UNSETFLAG( player.ParamBase[ PLAYER_FLAGS ], PLAYER_FLAG_VOICE_R ) : SETFLAG( player.ParamBase[ PLAYER_FLAGS ], PLAYER_FLAG_VOICE_R );
+}
+
+void unsafe_ToggleWeaponRadius( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ param4 )
+{
+	FLAG( player.Param[ PLAYER_FLAGS ], PLAYER_FLAG_WEAPON_R ) ? UNSETFLAG( player.ParamBase[ PLAYER_FLAGS ], PLAYER_FLAG_WEAPON_R ) : SETFLAG( player.ParamBase[ PLAYER_FLAGS ], PLAYER_FLAG_WEAPON_R );
+}
+
 #endif // GENERAL_UNSAFE

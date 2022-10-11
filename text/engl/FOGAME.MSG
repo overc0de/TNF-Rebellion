@@ -118,6 +118,7 @@
 {183}{}{Lead}
 {184}{}{Gold}
 {185}{}{Organic}
+{186}{}{Paper}
 
 {199}{}{Material: |0xFFFF00 VALUE|0x3CF800 .}
 ####################################################################################################################################
@@ -914,7 +915,7 @@ Welcome to The Long Journey!}
 # Client_main inventory
 {7514}{}{You have: }
 {7515}{}{ Burst: x }
-{7516}{}{. Radius: }
+{7516}{}{Blast radius: }
 {7517}{}{ solar.}
 {7518}{}{Total Volume:}
 {7519}{}{kg.}
@@ -923,6 +924,16 @@ Welcome to The Long Journey!}
 {7522}{}{Backpack Slot Empty}
 {7523}{}{Utility Slot Empty}
 {7524}{}{Blast Radius: }
+
+{7600}{}{|0x3CF800 . DT: |0xFFFF00 }
+{7601}{}{Armorbane}
+{7602}{}{Norm}
+{7603}{}{Lazer}
+{7604}{}{Fire}
+{7605}{}{Plasma}
+{7606}{}{Electr}
+{7607}{}{EMP}
+{7608}{}{Expl}
 
 ####################################################################################################################################
 #
@@ -2146,8 +2157,8 @@ Confirm?}
 {105581}{}{Psycopath}
 {105582}{}{Your attacks and finishing blows lead to critical death animations. Your death will also be critical. Everyone around sees your strange behavior. There is no penalty when shooting at good-natured people.}
 # TRAIT_JINXED
-{105591}{}{Jinxed}
-{105592}{}{For you and your enemies, 10% of the misses become critical misses.}
+{105591}{}{Nerd}
+{105592}{}{+2 Int. Melee Damage is reduced to 1, all special Unarmed attacks against you are automatic success. Base Int must be 7 or above.}
 # TRAIT_GOOD_NATURED
 {105601}{}{Good Natured}
 {105602}{}{Gives 25 skill points to Doctor, First Aid, and Trade. Removes 20 skill points from Weapon Skills. The base chance of hitting you is reduced by 30 if the enemy has no Bloody Mess.}
@@ -2162,7 +2173,7 @@ Confirm?}
 {105632}{}{+3 Charisma, you loose 50 max HP. Base Charisma has to be 4 or above.}
 # TRAIT_SKILLED
 {105641}{}{Skilled}
-{105642}{}{Gives a bonus to the starting skills, but all experience gains are reduced by %50.}
+{105642}{}{You gain extra skillpoints every level (int*level/2). Experience gains are reduced by half. Skills that are leveled by application can not be higher than 150%}
 # TRAIT_NIGHT_PERSON
 {105651}{}{Night person}
 {105652}{}{This trait gives 1 point to Intelligence and Perception at night (from 18:01 to 06:00), but decreases by one during the day (from 06:01 to 18:00).}

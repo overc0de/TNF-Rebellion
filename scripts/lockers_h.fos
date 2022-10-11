@@ -25,6 +25,7 @@
 		import uint GetKeyId( Critter& cr, uint lockerId ) from "lockers";
 		import bool LockerRemoval( Critter& cr, Item& item, Item& targetItem ) from "lockers";
 		import bool KeyBunchUse( Critter& cr, Item@ item, Item@ targetItem ) from "lockers";
+		import bool UseCodeLock( Critter& cr, Item& codeLock, Item& locker ) from "lockers";
 	#endif //LOCERS
 
 

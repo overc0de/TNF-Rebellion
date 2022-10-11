@@ -113,6 +113,29 @@ void InitializeGame()							// Export
     __LookChecks |= LOOK_CHECK_SCRIPT;      	// Allow bool check_look(...) in main.fos, all other defines ignored
     __LookChecks |= LOOK_CHECK_ITEM_SCRIPT;		// Allow bool check_trap_look(...) in main.fos, for items with ITEM_TRAP flag
 
+	bool LookDataActivation = true;
+	if( LookDataActivation )
+	{
+		__LookChecks |= LOOK_CHECK_LOOK_DATA;
+		
+		WallMaterialHearMultiplier[MATERIAL_GLASS] = 80;
+		WallMaterialHearMultiplier[MATERIAL_METAL] = 50;
+		WallMaterialHearMultiplier[MATERIAL_PLASTIC] = 100;
+		WallMaterialHearMultiplier[MATERIAL_WOOD] = 75;
+		WallMaterialHearMultiplier[MATERIAL_DIRT] = 100;
+		WallMaterialHearMultiplier[MATERIAL_STONE] = 25;
+		WallMaterialHearMultiplier[MATERIAL_CEMENT] = 25;
+		WallMaterialHearMultiplier[MATERIAL_LEATHER] = 100;
+		WallMaterialHearMultiplier[MATERIAL_ARMORED_LEATHER] = 100;
+		WallMaterialHearMultiplier[MATERIAL_POLYMER] = 100;
+		WallMaterialHearMultiplier[MATERIAL_COMPOSITE] = 100;
+		WallMaterialHearMultiplier[MATERIAL_FABRIC] = 100;
+		WallMaterialHearMultiplier[MATERIAL_COPPER] = 100;
+		WallMaterialHearMultiplier[MATERIAL_LEAD] = 100;
+		WallMaterialHearMultiplier[MATERIAL_GOLD] = 100;
+		WallMaterialHearMultiplier[MATERIAL_ORGANIC] = 100;
+		WallMaterialHearMultiplier[MATERIAL_PAPER] = 100;
+	}
     // Range of values for client engine
     __AbsoluteOffsets = true;
     __SkillBegin = 200;
@@ -243,16 +266,16 @@ void InitializeGame()							// Export
     SetParameterDialogGetBehaviour( ST_INTELLECT, "parameters@getParamDialog_Intellect" );
     for( uint i = REPUTATION_BEGIN; i <= REPUTATION_END; i++ )
         SetParameterDialogGetBehaviour( i, "parameters@getParamDialog_Reputation" );
-	SetParameterChangeBehaviour(TRAIT_FAST_METABOLISM, "parameters@changedParam_FastMetabolism");
-	SetParameterChangeBehaviour(TRAIT_BRUISER, "parameters@changedParam_Bruiser");
-	SetParameterChangeBehaviour(TRAIT_SEX_APPEAL, "parameters@changedParam_SexAppeal");
-	SetParameterChangeBehaviour(TRAIT_SMALL_FRAME, "parameters@changedParam_SmallFrame");
-	SetParameterChangeBehaviour(TRAIT_FINESSE, "parameters@changedParam_Finesse");
-	SetParameterChangeBehaviour(TRAIT_KAMIKAZE, "parameters@changedParam_Kamikaze");
-	SetParameterChangeBehaviour(TRAIT_GOOD_NATURED, "parameters@changedParam_GoodNatured");
-	SetParameterChangeBehaviour(TRAIT_HEAVY_HANDED, "parameters@changedParam_HeavyHanded");
-	
-	SetParameterChangeBehaviour(CR_TYPING_TIME, "parameters@changedParam_CR_TYPING_TIME");
+	SetParameterChangeBehaviour( TRAIT_FAST_METABOLISM, "parameters@changedParam_FastMetabolism" );
+	SetParameterChangeBehaviour( TRAIT_BRUISER, "parameters@changedParam_Bruiser" );
+	SetParameterChangeBehaviour( TRAIT_SEX_APPEAL, "parameters@changedParam_SexAppeal" );
+	SetParameterChangeBehaviour( TRAIT_SMALL_FRAME, "parameters@changedParam_SmallFrame" );
+	SetParameterChangeBehaviour( TRAIT_FINESSE, "parameters@changedParam_Finesse" );
+	SetParameterChangeBehaviour( TRAIT_KAMIKAZE, "parameters@changedParam_Kamikaze" );
+	SetParameterChangeBehaviour( TRAIT_GOOD_NATURED, "parameters@changedParam_GoodNatured" );
+	SetParameterChangeBehaviour( TRAIT_HEAVY_HANDED, "parameters@changedParam_HeavyHanded" );
+	SetParameterChangeBehaviour( TRAIT_JINXED, "parameters@changedParam_Jinxed" );
+	SetParameterChangeBehaviour( CR_TYPING_TIME, "parameters@changedParam_CR_TYPING_TIME" );
 	// SetParameterChangeBehaviour(ST_BASE_CRTYPE, "parameters@changedParam_BaseCrType");
     #  endif
     #  ifdef __CLIENT
@@ -269,6 +292,11 @@ void InitializeGame()							// Export
 	SetParameterChangeBehaviour( ST_DRUNK, "parameters@changedParam_Drunk" );
     SetParameterChangeBehaviour( ST_GLOBAL_OVERDOSE, "parameters@changedParam_Overdose");
     SetParameterChangeBehaviour( ST_WETNESS, "parameters@changedParam_Wetness" );
+
+    SetParameterChangeBehaviour( ST_PERCEPTION, "parameters@changedParam_Perception" );
+    SetParameterChangeBehaviour( ST_PERCEPTION_EXT, "parameters@changedParam_PerceptionExt" );
+    SetParameterChangeBehaviour( QST_VISION, "parameters@changedParam_Vision" );
+    SetParameterChangeBehaviour( QST_INVIS, "parameters@changedParam_Invis" );
 
     #  endif // __SERVER
              // / Registration parameters

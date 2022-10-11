@@ -1,3 +1,55 @@
+shared bool isDoorOrContainer( Item@ item )
+{
+	if( !valid( item ) )
+	{
+		return false;
+	}
+	
+	uint8 type = item.GetType();
+	return	type == ITEM_TYPE_DOOR || type == ITEM_TYPE_CONTAINER;
+}
+
+shared uint getItemPID( Item@ item )
+{
+	return valid( item ) ? item.GetProtoId() : 0;
+}
+
+shared uint getSlotItemPID( Critter@ cr, int slot )
+{
+	Item@ item = cr.GetItem( 0, slot );
+	return valid( item ) ? item.GetProtoId() : 0;
+}
+
+shared Map@ GetLocationMap( uint location_pid )
+{
+	return GetLocationMap( location_pid, 0 );
+}
+
+shared Map@ GetLocationMap( uint location_pid, uint map_index )
+{
+	Location@ loc = GetLocationByPid( location_pid, 0 );
+	if( !valid( loc ) ) 
+	{
+		Log( "There is no Location pid #" + location_pid + "." );
+		return null;
+	}
+	
+	Map@ map = loc.GetMapByIndex( map_index );
+	if( !valid( map ) )
+	{
+		Log( "There is no map # " + map_index + " at location pid #" + location_pid + "." );
+	}
+
+	return map;
+}
+
+shared Critter@[] getCritters( Map@ map, uint pid, uint find )
+{	
+	Critter@[] crs;
+	int countCr = map.GetCritters( pid, find, crs );
+	return crs;	
+}
+
 shared string getPlayerInfo( Critter@ cr ) 
 {
 	return cr.Name + " #" + cr.Id;
@@ -378,22 +430,25 @@ shared float ContainerWeightEase( Item@ item )
 		case( PID_BACKPACK ):
 		case( PID_AMMO_PACK ):
 		case( PID_PORTABLE_REFRIGERATOR ):
-		case( PID_STUFF_SUPPLIES):		
+		case( PID_STUFF_SUPPLIES):
 			return 0.5;
-		case( PID_BROWN_BAG ):
 		case( PID_TRAVEL_BAG ):
+			return 0.7;
+		case( PID_BROWN_BAG ):
 		case( PID_CHEMTEC_CASE ):
 		case( PID_METAL_CASE ):
 		case( PID_BLOODY_FIRST_AID_BAG ):
 		case( PID_FIRST_AID_BAG ):
 		case( PID_cashbag ):
 		case( PID_DOCTORS_BAG ):
-		case( PID_FIRST_AID_KIT ):		
-		case( PID_FIELD_MEDIC_KIT ):		
-		case( PID_PARAMEDICS_BAG ):		
-		case( PID_MEDICAL_SUPPLIES ):		
-		case( PID_BRIEFCASE ):		
+		case( PID_FIRST_AID_KIT ):
+		case( PID_FIELD_MEDIC_KIT ):
+		case( PID_PARAMEDICS_BAG ):
+		case( PID_MEDICAL_SUPPLIES ):
+		case( PID_BRIEFCASE ):
 			return 0.8;
+		case( PID_BAG ):
+			return 0.9;
 		case( PID_WALLET ):
 		case( PID_AMMO_BELT ):
 			return 0.1;
@@ -802,7 +857,7 @@ shared bool IsRobot( Critter& cr )
 
 shared bool IsMutant( Critter& cr )
 {
-	uint[] mutants = { BT_SUPER_MUTANT, BT_GHOUL, BT_CENTAUR, BT_FLOATER, BT_ALIEN, BT_SWAMP_LURKER, BT_CROCS, BT_BIG_BAD_BOSS };
+	uint[] mutants = { BT_SUPER_MUTANT, BT_GHOUL, BT_BIG_BAD_BOSS };
 	return mutants.find( cr.Stat[ ST_BODY_TYPE ] ) != -1;
 }
 
@@ -814,7 +869,7 @@ shared bool IsAnimal( Critter& cr )
 
 shared bool IsMonster( Critter& cr )
 {
-	uint[] animals = { BT_DEATHCLAW, BT_YAO };
+	uint[] animals = { BT_DEATHCLAW, BT_YAO, BT_CENTAUR, BT_FLOATER, BT_ALIEN, BT_SWAMP_LURKER, BT_CROCS };
 	return animals.find( cr.Stat[ ST_BODY_TYPE ] ) != -1;
 }
 
@@ -875,7 +930,7 @@ shared bool HasBlade( Critter& cr )
 	return false;
 }
 
-bool SamePic( uint PicMap, uint pid )
+shared bool SamePic( uint PicMap, uint pid )
 {
     ProtoItem@ proto = GetProtoItem( pid );
     if( !valid( proto ) )
@@ -886,7 +941,7 @@ bool SamePic( uint PicMap, uint pid )
     return proto.PicMap == PicMap;
 }
 
-bool ExoCheck( Critter& cr )
+shared bool ExoCheck( Critter& cr )
 {
 	Item@ armor = _CritGetItemArmor( cr );
 	if( valid( armor ) )
@@ -904,4 +959,11 @@ bool ExoCheck( Critter& cr )
 		}
 	}
 	return false;
+}
+
+bool HasElectronicLockpicks( Critter& cr )
+{
+	Item@ lockpick = cr.GetItem( 0, SLOT_HAND1 );
+	uint[] electronic_lockpicks = { PID_ELECTRONIC_LOCKPICKS, PID_ELEC_LOCKPICK_MKII };
+	return electronic_lockpicks.find( getItemPID( lockpick ) ) != -1;
 }

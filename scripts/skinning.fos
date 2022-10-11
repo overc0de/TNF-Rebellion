@@ -33,7 +33,16 @@ bool start_devour( Critter& cr, Critter@ target )
 		uint[] values = { cr.Id };
 		CreateTimeEvent( AFTER( REAL_MS( 700 ) ), "e_SkinningSound", values, false );
 		CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "gathering@e_TiredenessTimeout", cr.Id, true);
-		cr.Animate( 0, ANIM2_DODGE_FRONT, null, true, true );
+		
+		if( IsHuman( cr ) || IsRobot( cr ) || IsMutant( cr ) )
+		{
+			cr.SetAnims( COND_LIFE, 0, ANIM2_CROUCH );
+		}
+		else
+		{
+			cr.Animate( 0, ANIM2_DODGE_FRONT, null, true, true );
+		}
+		
 		StartProcess( cr, LTP_DEVOUR, 0, 0, target.Id, cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ] );
 	}
 	return true;
@@ -48,11 +57,16 @@ uint process_devour( Critter@ cr, int& param0, int& param1, int& param2 )
 	{
       	param0++;
 
-		cr.Animate( 0, ANIM2_DODGE_FRONT, null, true, true );
+		if( !IsHuman( cr ) && !IsRobot( cr ) && !IsMutant( cr ) )
+		{
+			cr.Animate( 0, ANIM2_DODGE_FRONT, null, true, true );
+		}
+		
 		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] )
 		{
 			Item@ tool = null;
-			Profit( cr, tool, target );
+			Profit( cr, tool, target, true );
+			SayLog( cr, crInfo( cr ) + " has devoured a critter." );
 		}
 		else
 		{
@@ -67,9 +81,16 @@ uint process_devour( Critter@ cr, int& param0, int& param1, int& param2 )
 				map.MoveHexByDir( hx, hy, Random( 0, 5 ), 1 );
 				CheckBlood( map, hx, hy );
 			}
+			
 			return cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ];
 		}
     }
+	
+	if( IsHuman( cr ) || IsRobot( cr ) || IsMutant( cr ) )
+	{
+		cr.SetAnims( COND_LIFE, 0, ANIM2_IDLE );
+	}
+	
 	return 0;
 }
 
@@ -191,13 +212,15 @@ uint process_skinning( Critter@ cr, int& param0, int& param1, int& param2 )
 
 		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] )
 		{
-			Profit( cr, tool, target );
+			Profit( cr, tool, target, false );
 			int skillNum = SK_HUNTING;
 			Accident( cr, skillNum );
+			
 			if( !hasItem( cr, PID_RUBBER_GLOVES, SLOT_HAND2 ) )
 			{
 				cr.ParamBase[ CR_DIRTINESS ] += Random( 0, 3 );
 			}
+			
 			SayLog( cr, crInfo( cr ) + " has skinned a critter." );
 		}
 		else
@@ -223,20 +246,22 @@ uint process_skinning( Critter@ cr, int& param0, int& param1, int& param2 )
 			return cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ];
 		}
     }
+	
 	cr.SetAnims( COND_LIFE, 0, ANIM2_IDLE );
 	return 0;
 }
 
 //Loot
-bool Profit(  Critter& cr, Item@ tool, Critter& target )
+bool Profit(  Critter& cr, Item@ tool, Critter& target, bool devour )
 {
-	if( cr.Stat[ ST_BODY_TYPE ] != BT_DOG )
+	if( !devour && ( IsHuman( cr ) || IsRobot( cr ) || IsMutant( cr ) ) )
 	{
 		if( !valid( tool ) )
 		{
 			return false;
 		}
 	}
+	
 	if( !valid( target ) )
 	{
 		return false;
@@ -247,18 +272,22 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target )
 	{
 		return false;
 	}
+	
 	bool allowRaiseSkill = true;
 	int deathStage = target.Param[ CR_DEATH_STAGE ];
 	uint16 lootPid = 0;
 	
-	if( deathStage > int( skinnable.loot.length() ) )
+	if( !devour )
 	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NOTHING_USEFULL );
-		allowRaiseSkill = false;
-	}
-	else
-	{
-		lootPid = skinnable.loot[ deathStage + 1 ];
+		if( deathStage > int( skinnable.loot.length() ) )
+		{
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NOTHING_USEFULL );
+			allowRaiseSkill = false;
+		}
+		else
+		{
+			lootPid = skinnable.loot[ deathStage + 1 ];
+		}
 	}
 	
 	int amount = 1;
@@ -266,7 +295,7 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target )
 	int16 stat_bonus = ( cr.Stat[ ST_STRENGTH ] * SKINNING_STR_MOD ) + ( cr.Stat[ ST_AGILITY ] * SKINNING_AGI_MOD );
 	//tool bonus
 	uint16 toolBonus = 0;
-	if( cr.Stat[ ST_BODY_TYPE ] != BT_DOG )
+	if( IsHuman( cr ) )
 	{
 		uint16 toolPid = tool.GetProtoId();
 		uint16 index = SkinningTools.find( toolPid );
@@ -290,18 +319,21 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target )
 		amount = 0;
 	}
 	
-	if( amount < 1 )
+	if( !devour )
 	{
-		if( deathStage < int( skinnable.loot.length() ) )
+		if( amount < 1 )
 		{
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DAMAGED_SKIN );
-			lootPid = skinnable.loot[ 0 ];
-			amount = 1;
-		}
-		else
-		{
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NOTHING_USEFULL );
-			allowRaiseSkill = false;
+			if( deathStage < int( skinnable.loot.length() ) )
+			{
+				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DAMAGED_SKIN );
+				lootPid = skinnable.loot[ 0 ];
+				amount = 1;
+			}
+			else
+			{
+				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NOTHING_USEFULL );
+				allowRaiseSkill = false;
+			}
 		}
 	}
 	
@@ -309,7 +341,7 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target )
 	{
 		int skillNum = SK_HUNTING;
 		raiseSkill( cr, skillNum );
-		if( cr.Stat[ ST_BODY_TYPE ] != BT_DOG )
+		if( !devour && ( IsHuman( cr ) || IsRobot( cr ) || IsMutant( cr ) ) )
 		{
 			switch( lootPid )
 			{
@@ -328,17 +360,19 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target )
 				default:
 					break;
 			}
+			
 			cr.AddItem( lootPid, amount );
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_GATHERED, "$proto@msg item " +  ( lootPid * 100 ) + "@$amount" + amount );
 			cr.StatBase[ ST_EXPERIENCE ] += 25;
 		}
 		else
 		{
-			uint huntMod = cr.Stat[ SK_HUNTING ] * 10 / 30;
+			uint huntMod = cr.Skill[ SK_HUNTING ] * 10 / 30;
 			cr.StatBase[ ST_HUNGER ] += 100 + huntMod;
 			cr.StatBase[ ST_THIRST ] += 100 + huntMod;
 		}
 	}
+	
 	if( target.Param[ CR_DEATH_STAGE ] >= int( skinnable.loot.length() - 2 ) )
 	{
 		if( target.Stat[ ST_BODY_TYPE ] != BT_PLANT )
@@ -346,12 +380,14 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target )
 			Map@ map = target.GetMap();
 			AddBlood( map, target.HexX, target.HexY, 2 );
 		}
+		
 		DeleteNpc( target );
 	}
 	else
 	{
 		target.ParamBase[ CR_DEATH_STAGE ] ++;
 	}
+	
 	return true;
 }
 
@@ -574,7 +610,12 @@ SkinnableCrCollection@ skinnableCrits = SkinnableCrCollection()
 		.loot( PID_RADSCORPION_PINCERS )
         .loot( PID_RAD_MEAT )
 		.loot( PID_RAD_MEAT )
-    .skinnable( BT_BRAHMIN, CRTYPE_BRAHMIN, 30 )
+    .skinnable( BT_BRAHMIN, CRTYPE_BRAHMIN_SMALL, 15 )
+        .loot( PID_CRAFT_L_HIDE )
+        .loot( PID_BRAHMIN_SKIN )
+        .loot( PID_MEAT )
+		.loot( PID_MEAT )
+	.skinnable( BT_BRAHMIN, CRTYPE_BRAHMIN, 30 )
         .loot( PID_CRAFT_L_HIDE )
         .loot( PID_BRAHMIN_SKIN )
         .loot( PID_MEAT )

@@ -4,8 +4,8 @@
 #include "_utils.fos"
 #include "entire_h.fos"
 
-//import void OpenLinkRemote( Critter& player, string& url) from "link";
-//import void RequestStartGameRemote( Critter& player) from "link";
+import void OpenLinkRemote( Critter& player, string& url) from "link";
+import void RequestStartGameRemote( Critter& player) from "link";
 
 import uint CountMapPlayers( Map@ map ) from "manager";
 
@@ -40,11 +40,6 @@ bool _SurvivalKindman_talk( Critter& kindman, Critter& player, bool attach, uint
 	{
         return false;
 	}
-	return startGame( player );
-}
-
-bool startGame( Critter& player ) 
-{
 	Item@[] items;
 	player.GetItems( SLOT_ARMOR, items );
 	player.GetItems( SLOT_HAND1, items );
@@ -57,7 +52,7 @@ bool startGame( Critter& player )
 	DeleteItems( items );
 	
 	player.ParamBase[ QST_GAMEMODE ] = GAME_SURVIVAL;
-	kind_tele2( player, 110 );
+	kind_tele2( player, null, 22 );
 	return false;
 }
 
@@ -70,7 +65,9 @@ void answer_SurvivalKindman_talk( Critter& player, uint answerI, string& answerS
 	if( answerI == 0 )
     {
         player.ParamBase[ QST_GAMEMODE ] = GAME_SURVIVAL;
-        kind_tele2( player, 110 );
+        uint LocPid = 22;
+
+        kind_tele2( player, null, LocPid );
     }
 }
 
@@ -132,11 +129,12 @@ void ShowStartVars( Critter& player )
 {
     if( player.ParamBase[ QST_GAMEMODE ] == GAME_START )
     {
-        player.ShowScreen( SCREEN_DIALOGBOX, 3, "answer_StartGM_talk" );
+        player.ShowScreen( SCREEN_DIALOGBOX, 4, "answer_StartGM_talk" );
         player.SayMsg( SAY_DIALOGBOX_TEXT, TEXTMSG_TEXT, STR_MAP_START_MENU_MAIN );
-        player.SayMsg( SAY_DIALOGBOX_BUTTON( 0 ), TEXTMSG_TEXT, STR_MAP_START_MENU_BEGIN_GAME );
-		player.SayMsg( SAY_DIALOGBOX_BUTTON( 1 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_SKIN );
-		player.SayMsg( SAY_DIALOGBOX_BUTTON( 2 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_GENDER );
+        player.SayMsg( SAY_DIALOGBOX_BUTTON( 0 ), TEXTMSG_TEXT, STR_MAP_START_MENU_INFORMATION );
+        player.SayMsg( SAY_DIALOGBOX_BUTTON( 1 ), TEXTMSG_TEXT, STR_MAP_START_MENU_BEGIN_GAME );
+		player.SayMsg( SAY_DIALOGBOX_BUTTON( 2 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_SKIN );
+		player.SayMsg( SAY_DIALOGBOX_BUTTON( 3 ), TEXTMSG_TEXT, STR_MAP_START_MENU_CHANGE_GENDER );
 	}
 	else
 	{
@@ -188,13 +186,17 @@ void StartGame( Critter@ player, int, int, int, string@, int[]@ )
 
 void answer_StartGM_talk( Critter& player, uint answerI, string& answerS )
 {
-	if( answerI == 0 )
+    if( answerI == 0 )
+	{
+		OpenLinkRemote(player, "http://frp.su");
+		
+	}
+	else if( answerI == 1 )
 	{
         // ask client to open browser and confirm Discord role
-		//RequestStartGameRemote(player);
-		startGame( player );
+		RequestStartGameRemote(player);
     }
-	else if( answerI == 1 )
+	else if( answerI == 2 )
 	{
 		uint16[] Skins;
 		player.Stat[ ST_GENDER ] == GENDER_MALE ? Skins = MaleSkins : Skins = FemaleSkins;
@@ -211,7 +213,7 @@ void answer_StartGM_talk( Critter& player, uint answerI, string& answerS )
 		player.ChangeCrType( player.StatBase[ ST_BASE_CRTYPE ] );
 		ShowStartVars( player );
 	}
-	else if( answerI == 2 )
+	else if( answerI == 3 )
 	{
 		if( player.Stat[ ST_GENDER ] == GENDER_MALE )
 		{
@@ -228,46 +230,40 @@ void answer_StartGM_talk( Critter& player, uint answerI, string& answerS )
 	}
 }
 
-void kind_tele2( Critter& cr, int locPid )
+void kind_tele2( Critter& master, Critter@ slave, int val )
 {
-    cr.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( ( Random( 0, 1 ) == 1 ) ), 200, cr.HexX, cr.HexY );
-
-    cr.SetEvent( CRITTER_EVENT_USE_ITEM, null );
-    cr.SetEvent( CRITTER_EVENT_DROP_ITEM, null );
-    cr.SetEvent( CRITTER_EVENT_ATTACK, null );
-    cr.SetEvent( CRITTER_EVENT_DEAD, null );	
-
-	spawn( cr, locPid );
-}
-
-void spawn( Critter& cr, int locPid )
-{
-	Location @ loc = GetLocationByPid( locPid, 0 );
+    if( !valid( master ) )
+	{
+        return;
+	}
+	
+    Location @ loc = GetLocationByPid( val, 0 );
     if( !valid( loc ) )
     {
-        cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_AREA_INVALID );
+        master.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_AREA_INVALID );
         return;
     }
 
-	Map@ map = loc.GetMapByIndex(4);
+	Map @ map = loc.GetMapByIndex(0);
     if( !valid( map ) )
     {
-        cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_MAP_INVALID );
+        master.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_MAP_INVALID );
         return;
     }
+	
+    master.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( ( Random( 0, 1 ) == 1 ) ), 200, master.HexX, master.HexY );
+
+    master.SetEvent( CRITTER_EVENT_USE_ITEM, null );
+    master.SetEvent( CRITTER_EVENT_DROP_ITEM, null );
+    master.SetEvent( CRITTER_EVENT_ATTACK, null );
+    master.SetEvent( CRITTER_EVENT_DEAD, null );	
 		
-	if( locPid == 110 )
+	if( loc.GetProtoId() == 22 )
 	{
-		cr.TransitToMap( map.Id, Random( 294, 300 ), Random( 195, 212 ), 0 );
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_GREETING );
+		master.TransitToMap( map.Id, Random( 174, 184 ), 255, 0 );
+		master.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_GREETING );
 		return;
 	}	
-}
-
-//~run map_start testSpawn 0 0 0
-void testSpawn( Critter& cr, int, int, int )
-{
-	spawn( cr, 110 );
 }
 
 void _crIn( Map& map, Critter& cr )

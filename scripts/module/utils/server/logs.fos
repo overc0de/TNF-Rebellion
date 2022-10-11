@@ -98,13 +98,13 @@ void LogItemMovement( Critter& cr, Item& item, string action, bool isCrime = fal
 	
 	if( isGM( cr ) )
 	{
-		//DiscordSendMessage( "container_log", "```" + result + "```" );
-		LogInfo( "logs\\containers.txt", result ); 
+		DiscordSendMessage( "gm_log", "```" + result + "```" );
+		LogInfo( "logs\\gmlog.txt", result ); 
 	}
 	
 	if( isCrime )
 	{
-		//DiscordSendMessage( "crime_log", "```" + result + "```" );
+		DiscordSendMessage( "crime_log", "```" + result + "```" );
 		LogInfo( "logs\\crimes.txt", result ); 	
 	}
 }
@@ -161,8 +161,18 @@ string CrimeLog( Critter& cr, string@ message )
 		}
 	}
 	
-	//DiscordSendMessage( "crime_log", " ``` " + message + " ``` " );
+	DiscordSendMessage( "crime_log", " ``` " + message + " ``` " );
 	return LogInfo( "logs\\crimes.txt", SayLog( cr, message ) );
+}
+
+string SayLogGM( Critter& cr, string@ message )
+{
+	string result = SayLog( cr, message );
+
+	DiscordSendMessage( "gm_log", "```" + result + "```" );
+	LogInfo( "logs\\gmlog.txt", result ); 
+	
+	return result;
 }
 
 string SayLog( Critter@ cr, string@ message )
@@ -172,6 +182,11 @@ string SayLog( Critter@ cr, string@ message )
 		return SayLog( cr.GetMap(), message, cr.HexX, cr.HexY );
 	}
 	return "";
+}
+
+shared string TimeStamp()
+{
+	return RealDay() + " " + RealTime() + " = " + MakeTime( __FullSecond );
 }
 
 string SayLog( Map@ map, string@ message, int x = 0, int y = 0 )
@@ -196,7 +211,7 @@ string SayLog( Map@ map, string@ message, int x = 0, int y = 0 )
 		cords = " (" + x + ":" + y + ")";
 	}
 
-	result = FixedSize( RealDay() + " " + RealTime() + " = " + MakeTime( __FullSecond ) + map_name + cords + ":", 60 ) + message;
+	result = FixedSize( TimeStamp() + map_name + cords + ":", 60 ) + message;
 
 	Location@ loc = map.GetLocation();
 	if( loc.GetProtoId() == LOCATION_TLJ_ARENA )
@@ -207,7 +222,7 @@ string SayLog( Map@ map, string@ message, int x = 0, int y = 0 )
 	return LogInfo( "logs\\saylog.txt", result );
 }
 
-void TrackItemState( Item& item )
+void TrackItemState( Item& item ) //unused
 {
 	LogInfo( "logs\\containers.txt", "Found " + itemDesc( item ) + ". " + ItemState( item ) ); 
 }

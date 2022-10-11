@@ -223,8 +223,8 @@ void heard_radio_log_ch0( Critter& cr, string@ message )
 	
 	string@ text = "`Radio 0> .." + message + "..`";
 
-	//DiscordSendMessage( "нулевой_радиоканал", text );
-	//DiscordSendMessage( "radio_0", text );
+	DiscordSendMessage( "нулевой_радиоканал", text );
+	DiscordSendMessage( "radio_0", text );
 }
 
 void char_replace( string& text, uint8 from, uint8 to )

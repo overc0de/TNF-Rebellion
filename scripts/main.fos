@@ -66,7 +66,7 @@ import void WorldmapInit() from "worldmap";
 
 import void skin( Critter& cr, int crType ) from "skins";
 
-import void kind_tele2( Critter& master, int locPid ) from "map_start";
+import void kind_tele2( Critter& master, Critter@ slave, int val ) from "map_start";
 
 import void qmap_critter_in( uint mapId, Critter& cr ) from "qmap";
 import void qmap_critter_out( uint mapId, Critter& cr ) from "qmap";
@@ -186,33 +186,31 @@ bool start()
     SetSendParameter( ST_RUN_TIME, true );
 
     SetSendParameter( SK_BARTER, true );
-    // Game Modes
-    SetSendParameter( QST_GAMEMODE, true );
-    // Language barrier - binyan
+
     SetSendParameter( ST_BODY_TYPE, true );
+	SetSendParameter( ST_FACTION, true );
+	SetSendParameter( ST_TEAM_ID, true );		
+	SetSendParameter( ST_AVATAR_HASH, true );
 	
     SetSendParameter( QST_MEDIUM, true );
+	SetSendParameter( QST_CHAR_VER, true );
+    SetSendParameter( QST_GAMEMODE, true );
+    SetSendParameter( QST_CHAR_SECRET, true );
+	SetSendParameter( QST_INVIS, true );
 	
-	SetSendParameter( CR_IS_AGGRESSIVE, true );
 	SetSendParameter( TRAIT_GOOD_NATURED, true );
 	SetSendParameter( TRAIT_BLOODY_MESS, true );
 
+	SetSendParameter( CR_IS_AGGRESSIVE, true );
 	SetSendParameter( CR_DIRTINESS, true );
 	SetSendParameter( CR_TYPING_TIME, true );
 	SetSendParameter( CR_AFK_MODE, true );
-
-	SetSendParameter( ST_FACTION, true );
-    // charsheet&visibility
-	SetSendParameter( QST_CHAR_VER, true );
-    SetSendParameter( QST_CHAR_SECRET, true );
-	SetSendParameter( QST_INVIS, true );
     SetSendParameter( CR_SINF_MODE, true );
 	SetSendParameter( CR_CONTROLLED_GROUP, true );	
-	SetSendParameter( MERC_MASTER_ID, true );		
+	SetSendParameter( CR_REMEMBERING_NAME, true );		
 	SetSendParameter( CR_TALKING_TARGET_ID, true );		
-	SetSendParameter( ST_TEAM_ID, true );		
-	
-	SetSendParameter( ST_AVATAR_HASH, true );
+
+	SetSendParameter( MERC_MASTER_ID, true );			
 
     // Send item data masks
     // Look fields in fonline.h 'struct Item::ItemData'
@@ -637,6 +635,15 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 	
 	if( !valid( targetScen ) )
 	{
+		//Planting barrels
+		if( farm_seeds.find( pid ) != -1 )
+		{
+			if( valid( targetItem ) && ( targetItem.GetProtoId() == PID_PLANTBARREL_EMPTY ) )
+			{
+				TryPlantSeed( cr, item, 0, 0, targetItem );
+				return true;
+			}
+		}
 		//Planting hydroponics
 		if( hydro_seeds.find( pid ) != -1 )
 		{
@@ -714,6 +721,12 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		{
 			return true;
 		}
+		//Container placing check
+		if( BarrelCheck( cr, item, targetItem ) )
+		{
+			return true;
+		}
+		
 		//Still check
 		if( UseItemOnStill( cr, item, targetItem ) )
 		{
@@ -730,6 +743,11 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			TryPaintArmor( cr, item, targetItem ); 
 			return true; 
 		}
+		// Code lock install
+		if( valid( item ) && valid( targetItem ) && pid == PID_CODE_LOCK && !FLAG( targetItem.LockerCondition, LOCKER_ELECTRO ) && targetItem.Val4 == 0 )
+		{
+			UseCodeLock( cr, item, targetItem );
+		}
 		//Shiv lex writing
 		if( valid( item ) && valid( targetItem ) && pid == PID_SHIV )
 		{
@@ -745,9 +763,15 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 				return true;
 			}
 			
-			if( valid( targetCr ) && targetCr.IsPlayer() && !useOnSelf )
+			if( valid( targetCr ) && targetCr.IsPlayer() )
 			{
 				CardsUse( cr, item, targetCr );
+				return true;
+			}
+			
+			if( useOnSelf )
+			{
+				CardsUse( cr, item, cr );
 				return true;
 			}
 		}
@@ -810,7 +834,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			if( valid( flashlight ) )
 			{
 				uint16 flashlight_pid = flashlight.GetProtoId();
-				if( flashlight_pid == PID_FLASHLIGHT_ON || flashlight_pid == PID_FLASHLIGHT_OFF )
+				if( flashlight_pid == PID_FLASHLIGHT_ON || flashlight_pid == PID_FLASHLIGHT_OFF || flashlight_pid == PID_10MM_PISTOL_FLASHLIGHT )
 				{
 					ChargeFlashlight( cr, item, flashlight );
 					return true;
@@ -889,7 +913,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 	if( valid( targetItem ) && targetItem.GetType() == ITEM_TYPE_DOOR )
 	{
         cr.StatBase[ ST_LAST_DOOR_ID ] = targetItem.Id;
-    }
+	}
 	//Bandage
 	if( bandage_items.find( pid ) != -1 )
 	{
@@ -1212,6 +1236,12 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		{
 			if( heal_items.find( pid ) != -1 ) 
 			{
+				if( cr.IsPlayer() && cr.Timeout[ TO_SK_FIRST_AID ] > 0 )
+				{
+					cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_SK_COOLDOWN );
+					return true;
+				}
+				
 				cr.Action( ACTION_USE_ITEM, 2, item );
 				UseHealingItem( cr, cr, item );
 				return true;
@@ -1231,6 +1261,12 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		{
 			if( heal_items.find( pid ) != -1 ) 
 			{
+				if( cr.IsPlayer() && cr.Timeout[ TO_SK_FIRST_AID ] > 0 )
+				{
+					cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_SK_COOLDOWN );
+					return true;
+				}
+				
 				cr.Action( ACTION_USE_ITEM, 2, item );
 				if( targetCr.IsLife() )
 				{
@@ -1260,14 +1296,14 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		return true;
 	}
 	//Flashlight
-    if( pid == PID_FLASHLIGHT_OFF )
+    if( pid == PID_FLASHLIGHT_OFF || pid == PID_10MM_PISTOL_FLASHLIGHT )
 	{
 		FlashlightUse( cr, item );
         return true;
     }
 		
 	// Flashlight charging
-	if( ( pid == PID_SMALL_ENERGY_CELL || pid == PID_CUENCELL_LOW ) && valid( targetItem ) && ( targetItem.GetProtoId() == PID_FLASHLIGHT_OFF || targetItem.GetProtoId() == PID_FLASHLIGHT_ON ) )
+	if( ( pid == PID_SMALL_ENERGY_CELL || pid == PID_CUENCELL_LOW ) && valid( targetItem ) && ( targetItem.GetProtoId() == PID_FLASHLIGHT_OFF || targetItem.GetProtoId() == PID_FLASHLIGHT_ON || targetItem.GetProtoId() == PID_10MM_PISTOL_FLASHLIGHT ) )
 	{
 		ChargeFlashlight( cr, item, targetItem );
 		return true;
@@ -1478,7 +1514,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 		return true;
 	}
 	// empty Plant beds
-	if( valid( targetItem ) && ( targetItem.GetProtoId() == PID_MUSHBED_EMPTY || targetItem.GetProtoId() == PID_HYDRO_NS_EMPTY || targetItem.GetProtoId() == PID_HYDRO_EW_EMPTY ) )
+	if( valid( targetItem ) && ( targetItem.GetProtoId() == PID_MUSHBED_EMPTY || targetItem.GetProtoId() == PID_HYDRO_NS_EMPTY || targetItem.GetProtoId() == PID_HYDRO_EW_EMPTY || targetItem.GetProtoId() == PID_PLANTBARREL_EMPTY ) )
 	{
 		StartMenuPlantBed( cr, targetItem );
 		return true;
@@ -1659,12 +1695,6 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 			if( valid( targetItem ) )
 			{
 				uint16 Pid = targetItem.GetProtoId();
-				
-				if( Pid == 23541 )
-				{
-					Cleaning( cr, 0, 23541 );
-				}
-				
 				// Boom
 				if( Pid == PID_TNT_PACK_ACTIVE )
 				{
@@ -2030,6 +2060,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 				StartMenuAskAction( cr, targetItem );
 				return true;
 			}
+			
 			break; 
 		}
 		
@@ -2175,6 +2206,13 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 				TakeX2Container( cr, targetItem );
 				return true;
 			}
+			// take barrel
+			if( valid( targetItem ) && Barrels.find( tiPid ) != -1 )
+			{
+				TakeBarrel( cr, targetItem );
+				return true;
+			}
+			
 			//Move of locked furniture
 			if( valid( targetItem ) && ( tiPid == PID_FIREBARREL || tiPid == PID_BRAZIER ) && targetItem.Val0 == 0 )
 			{
@@ -2364,6 +2402,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 					return true;
 				}
 			}
+			
 			break;
 		}
 		
@@ -2515,6 +2554,36 @@ void critter_init( Critter& cr, bool firstTime )
     }
     else
     {
+		if( cr.IsPlayer() )
+		{
+			Item@[] stuff;
+			Item@ flashlight = null;
+			cr.GetItems( -1, stuff );
+			for( uint i = 0, len = stuff.length(); i < len; i++ )
+			{
+				@flashlight = stuff[i];
+				if( valid( flashlight ) )
+				{
+					uint16 flashlight_pid = flashlight.GetProtoId();
+					if( ( flashlight_pid == PID_FLASHLIGHT_ON || flashlight_pid == PID_FLASHLIGHT_OFF || flashlight_pid == PID_10MM_PISTOL_FLASHLIGHT ) && flashlight.ITEM_CHARGE == 0 )
+					{
+						UNSETFLAG( flashlight.Flags, ITEM_LIGHT );
+						UNSETFLAG( flashlight.Flags, ITEM_COLORIZE );
+						UNSETFLAG( flashlight.Flags, ITEM_COLORIZE_INV );
+						flashlight.ITEM_STATE = 0;
+						if( flashlight.ITEM_EVENT > 0 )
+						{
+							EraseTimeEvent( flashlight.ITEM_EVENT );
+							flashlight.ITEM_EVENT = 0;
+						}
+						
+						flashlight.Update();
+					}
+				}
+			}
+			stuff.resize( 0 );
+		}
+		
         // Current skin validation
         Item@ armor = _CritGetItemArmor( cr );
         if( cr.Stat[ ST_BASE_CRTYPE ] == 0 )
@@ -2644,22 +2713,12 @@ void critter_init( Critter& cr, bool firstTime )
 		cr.ModeBase[ MODE_HIDE ] = 0;
 		cr.StatBase[ ST_UNSPENT_PERKS ] = 0;
 	}
-
-	if( cr.Stat[ ST_BASE_CRTYPE ] == CRTYPE_GECKO_FIRE && _CritCountItem( cr, PID_FIRE_GECKO_FLAME_WEAPON ) == 0 )
-	{
-		cr.AddItem( PID_FIRE_GECKO_FLAME_WEAPON, 1 );
-	}
-	
-	if( cr.Stat[ ST_BASE_CRTYPE ] == CRTYPE_PLANT && _CritCountItem( cr, PID_PLANT_SPIKE ) == 0 )
-	{
-		cr.AddItem( PID_PLANT_SPIKE, 15 );
-	}
 	
     ChangeCritterSpeed( cr );
 
     manager_critter_init( cr, firstTime );
 
-    //DllCritterInit( cr, firstTime );
+    DllCritterInit( cr, firstTime );
 	
 	//FoRP - logout on global == dead
 	Map@ map = cr.GetMap();
@@ -2690,12 +2749,14 @@ void critter_init( Critter& cr, bool firstTime )
 
 			if( exceptions.find( map.GetProtoId() ) == -1 )
 			{
-				kind_tele2( cr, 369 );
+				kind_tele2( cr, null, 369 );
 				cr.AddTimeEvent( "cte_message", REAL_SECOND( 10 ), 0, 0 );
 			}
 		}
 		cr.ParamBase[ LAST_LOGIN_DATE ] = __FullSecond;
 	}
+	
+	LookDataRefresh( cr );
 }
 
 uint cte_message( Critter& cr, int identifier, uint& rate )
@@ -2870,18 +2931,6 @@ void critter_respawn( Critter& cr )
         }
 		cr.ChangeCrType( body );
     }
-    else if( cr.CrType == 81 )
-    {
-        Item@ weapon = cr.AddItem( PID_FIREBREATH, 1 );
-        cr.MoveItem( weapon.Id, 1, SLOT_HAND1 );
-        weapon.Update();
-    }
-    else if( cr.CrType == 51 || cr.CrType == 60 || cr.CrType == 100 )
-    {
-        Item@ weapon = cr.AddItem( PID_CLAW_EXT, 1 );
-        cr.MoveItem( weapon.Id, 1, SLOT_HAND1 );
-        weapon.Update();
-    }
 
     if( cr.Param[ ST_PARALYSIS_LEVEL ] != 0 )
 	{
@@ -2933,6 +2982,7 @@ void map_critter_in( Map& map, Critter& cr )
         }
     }
     manager_map_critter_in( map, cr );
+	LookDataRefresh( cr );
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2945,6 +2995,8 @@ void map_critter_out( Map& map, Critter& cr )
 		cr.RunClientScript( "fofmod@__StopAll", 0, 0, 0, null, null );
     }
     manager_map_critter_out( map, cr );
+	
+	LookDataRefresh( cr );
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3020,7 +3072,7 @@ bool items_barter( Item@[]& saleItems, uint[]& saleItemsCount, Item@[]& buyItems
     {
 		uint[][] money_tiers = 
 		{	{}, // extra tier just in case
-			{ PID_DOLLAR_100, PID_DOLLAR_20, PID_DOLLAR_5, PID_BOTTLE_CAPS, PID_GOLDEN_COIN },
+			{ PID_DOLLAR_100, PID_DOLLAR_20, PID_DOLLAR_5, PID_BOTTLE_CAPS, PID_GOLDEN_COIN, PID_PREWAR_DOLLAR_100, PID_PREWAR_DOLLAR_20, PID_PREWAR_DOLLAR_5, PID_PREWAR_DOLLAR_1 },
 			{ PID_REAL_BOTTLE_CAPS, PID_MORNING_STAR_MINE, PID_KOKOWEEF_MINE_SCRIP },
 		};
 		
@@ -3415,10 +3467,10 @@ bool player_login( uint ip, string& name, uint id, uint& textMsg, uint& strNum )
         return false;
 	}
 	
-    // if ( !DllPlayerLogin( ip, name, id ) )
-	// {
-        // return false;
-	// }
+    if ( !DllPlayerLogin( ip, name, id ) )
+	{
+        return false;
+	}
 	
     if( valid( player ) )
     {
@@ -3447,7 +3499,7 @@ uint e_player_after_login( uint[] @ values )
         return 0;
     }
 
-    //DllPlayerAfterLogin(cr);
+    DllPlayerAfterLogin(cr);
 
     Map@ map = cr.GetMap();
 
@@ -3600,7 +3652,7 @@ bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container )
 	uint container_pid = container.GetProtoId();
 	uint pid = item.GetProtoId();
 	uint type = item.GetType();
-
+	uint subtype = item.Proto.Item_Subtype;
 	
 	if( container_pid == PID_AMMO_PACK )
 	{
@@ -3608,6 +3660,11 @@ bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container )
 		{
 			return false;
 		}
+	}
+	
+	if( subtype == ITEM_SUBTYPE_FURNITURE || subtype == ITEM_SUBTYPE_VENDING || subtype == ITEM_SUBTYPE_TERMINAL )
+	{
+		return false;
 	}
 	
 	uint[] proper_paper_containment_pids =
@@ -3665,7 +3722,7 @@ bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container )
 		{
 			{ //Large containers:
 				PID_BACKPACK,
-				PID_STUFF_SUPPLIES,
+				PID_TRAVEL_BAG,
 			},
 			{ //Medium containers".
 				PID_SUPER_TOOL_KIT,
@@ -3713,12 +3770,14 @@ bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container )
 			return false;
 		}
 	}
+	
 	return true;
 }
 
 bool map_init( Map& map, bool isfirst )
 {
 	map.ProccessSleep = Random( 10, 30 );
+	LookDataRefresh( map );
 	return true;
 }
 
@@ -3829,4 +3888,116 @@ bool critter_grid_transfer( Critter& cr, Scenery& scen )
 	
 	return true;
 }
+
+void unsafe_UseItem( Critter& player, int val, int param1, int param2, string@ param3, int[]@ param4 )
+{
+	uint8 slot = val == 0 ? SLOT_HAND1 : SLOT_HAND2;
+	
+	Item@ item = player.GetItem( 0, slot );
+	if( valid( item ) )
+	{
+		critter_use_item( player, item, null, null, null, 0 );
+	}
+}
+
+void LookDataRefresh( Critter& critter )
+{
+	Map@ map = critter.GetMap();
+	if( !valid( map ) )
+	{
+		return;
+	}
+	
+	LookData@ look = critter.Look;
+		
+	if( map.GetProtoId() == MAP_UTILITY_START )
+	{
+		if( critter.IsPlayer() )
+		{
+			look.HideHearMultiplier = 0;
+		}
+	}
+	else
+	{
+		int perception = critter.Stat[ST_PERCEPTION];
+		look.MaxView = 10 + perception * 5;
+		look.MaxHear = 5 + perception;
+
+		look.Vision = critter.Param[ QST_VISION ];
+		look.Invis = critter.Param[ QST_INVIS ];
+		
+		look.ViewDirMultiplier_0 = 100;
+		look.ViewDirMultiplier_1 = 85;
+		look.ViewDirMultiplier_2 = 50;
+		look.ViewDirMultiplier_3 = 5;
+
+		look.HearDirMultiplier_0 = 80;
+		look.HearDirMultiplier_1 = 100;
+		look.HearDirMultiplier_2 = 100;
+		look.HearDirMultiplier_3 = 70;
+
+		look.RunningNoiseMultiplier = 150;
+		look.RunningHearMultiplier = 50;
+
+		look.HideViewDirMultiplier_0 = 100;
+		look.HideViewDirMultiplier_1 = 100;
+		look.HideViewDirMultiplier_2 = 100;
+		look.HideViewDirMultiplier_3 = 100;
+		look.HideViewDirMultiplier_4 = 100;
+		look.HideViewDirMultiplier_5 = 100;
+
+		look.HideHearDirMultiplier_0 = 100;
+		look.HideHearDirMultiplier_1 = 100;
+		look.HideHearDirMultiplier_2 = 100;
+		look.HideHearDirMultiplier_3 = 100;
+		look.HideHearDirMultiplier_4 = 100;
+		look.HideHearDirMultiplier_5 = 100;
+
+		look.HideViewMultiplier = 100;
+		look.HideHearMultiplier = 100;
+	}
+	
+	if( critter.IsPlayer() )
+	{
+		critter.LookData_Update();
+	}
+}
+
+void LookDataRefresh( Map& map )
+{
+	LookData@ look = map.Look;
+	
+	look.MaxView = 0;
+	look.MaxHear = 0;
+	
+	look.ViewDirMultiplier_0 = 100;
+	look.ViewDirMultiplier_1 = 100;
+	look.ViewDirMultiplier_2 = 100;
+	look.ViewDirMultiplier_3 = 100;
+
+    look.HearDirMultiplier_0 = 100;
+    look.HearDirMultiplier_1 = 100;
+    look.HearDirMultiplier_2 = 100;
+    look.HearDirMultiplier_3 = 100;
+
+    look.RunningNoiseMultiplier = 100;
+    look.RunningHearMultiplier = 100;
+	
+	Critter@[] critters;
+	for( uint i = 0, iend = map.GetCritters( 0, FIND_ALL | FIND_ONLY_PLAYERS, critters); i < iend; i++ )
+	{
+		critters[i].LookData_Update();
+	}
+}
+
+void LookDataRefreshAllMaps( Critter& , int, int, int )
+{
+	Log( "LookDataRefreshAllMaps" );
+	Map@[] maps;
+	for( uint i = 0, iend = GetAllMaps( 0, maps ); i < iend; i++ )
+	{
+		LookDataRefresh( maps[i] );
+	}
+}
+
 #endif //__MAIN_MODULE__

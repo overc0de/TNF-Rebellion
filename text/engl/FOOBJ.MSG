@@ -1724,19 +1724,19 @@
 {130401}{}{Autodoc is designed to perform surgical operations, allowing them to be performed without the participation of a qualified physician.}
 {130500}{}{Light source.}
 {130501}{}{If you see this, then something went wrong.}
-{130600}{}{|0x3CF800 =================== SUBMACHINE GUNS ==================== }
+{130600}{}{|0x3CF800 ===================== SUBMACHINE GUNS =====================}
 {130601}{}{Submachine Guns}
 {130700}{}{|0x3CF800 ======================== RIFLES ===========================}
 {130701}{}{Rifles, Assault Rifles}
-{130800}{}{|0x3CF800 ======================= SHOTGUNS =========================}
+{130800}{}{|0x3CF800 ======================== SHOTGUNS =========================}
 {130801}{}{Regular and Automatic shotguns}
-{130900}{}{|0x3CF800 ================== CLOSE COMBAT WEAPONS ====================}
+{130900}{}{|0x3CF800 ================= CLOSE COMBAT WEAPONS ====================}
 {130901}{}{Melee Weapons}
-{131000}{}{|0x3CF800 =================== THROWING WEAPONS ====================}
+{131000}{}{|0x3CF800 =================== THROWING WEAPONS ======================}
 {131001}{}{Throwing Weapons}
-{131100}{}{|0x3CF800 ======================== TRAPS =========================}
+{131100}{}{|0x3CF800 ========================= TRAPS ===========================}
 {131101}{}{Creating various traps}
-{131200}{}{|0x3CF800 ======================= DETAILS =============================}
+{131200}{}{|0x3CF800 ====================== DETAILS ============================}
 {131201}{}{Creation of various parts}
 {131300}{}{Key}
 {131301}{}{A key. It is designed for a specific lock.}
@@ -1770,7 +1770,7 @@
 {132701}{}{A heavy lead ball, if you attach a pair to a steel chain, you will get a strong bond. However, no one bothers to just throw it at the target ...}
 {132800}{}{Can}
 {132801}{}{A convenient steel can for storing various liquids.}
-{132900}{}{|0x3CF800 =================== WEAPON PARTS =====================}
+{132900}{}{|0x3CF800 ==================== WEAPON PARTS ======================}
 {132901}{}{ Various Weapon Parts}
 {133000}{}{Chest}
 {133001}{}{It can hold all your secrets.}
@@ -1780,6 +1780,8 @@
 {133201}{}{Expensive overalls for working in environments with increased risk of electric shock, as well as areas of increased thermal hazard. Includes a cape and a pair of heavy-duty gloves. Provides good protection against high temperatures and electric arcs.}
 {133300}{}{Locker}
 {133301}{}{This is a small metal cabinet.}
+{133400}{}{Code Lock}
+{133401}{}{A highly advanced lock relying on electronic mechanisms said to make the lock nearly impenetrable by most locksmiths.}
 {139700}{}{Brazier}
 {139701}{}{Small brazier for field cooking.}
 {139800}{}{Motorcycle Goggles}
@@ -2149,6 +2151,9 @@
 {158601}{}{Heavy package with rustling contents. There is a note on the box: "For Sally"}
 {158700}{}{Stamped Form}
 {158701}{}{A small form on the tablet with the recipient's signature on the delivered parcel. The letterhead has the postscript "Deliver to Basil".}
+{158900}{}{Plant Barrel}
+{158901}{}{A multi-purpose metal barrel bla bla bla US bitches can make it up...}
+
 {159700}{}{Wastes}
 {159701}{}{The smell is just disgusting!}
 {159800}{}{Goo}
@@ -2179,6 +2184,8 @@
 {161201}{}{Well, this one goes for fertilizers.}
 {161500}{}{Cabbage}
 {161501}{}{A fresh cabbage. Tasty and healthy. Rumors say that girls grow breasts from it.}
+{161700}{}{Metal Barrel}
+{161701}{}{Metal Barrel.}
 {162000}{}{Corn Seeds}
 {162001}{}{If you put this in the proper soil, it will most likely grow into corn.}
 {162100}{}{Corn}
@@ -2227,10 +2234,10 @@
 {164201}{}{Growing Mutofung.}
 {164300}{}{Mushroom Bed}
 {164301}{}{Grown Mutofung.}
-{164400}{}{Fertilizer Barrel}
-{164401}{}{Based on the smell, this barrel is used to store fertilizer. The barrel is empty.}
+{164400}{}{Metal Barrel}
+{164401}{}{Metal Barrel.}
 {164500}{}{Fertilizer Barrel}
-{164501}{}{It smells like this barrel is used to store fertilizer. The barrel is full.}
+{164501}{}{It smells like this barrel is used to store fertilizer.}
 {164600}{}{Fertilizer Bath}
 {164601}{}{It smells like this tub is used to store fertilizer. The bath is empty.}
 {164700}{}{Fertilizer Bath}
@@ -5909,7 +5916,7 @@
 {392702}{}{Jacké}
 {392800}{}{Playing card}
 {392801}{}{Queen of Diamonds.}
-{392802}{}{Ladyé}
+{392802}{}{Queené}
 {392900}{}{Playing card}
 {392901}{}{King of Diamonds.}
 {392902}{}{Kingé}
@@ -6611,7 +6618,7 @@ advantage}
 {479900}{}{Sandbag}
 {479901}{}{Sandbag.}
 {483100}{}{|0x3CF800 ===================== MEDICINE ===========================}
-{483101}{}{The creation for medicine}
+{483101}{}{Creation of medicine}
 {484200}{}{Mountain path.}
 {484300}{}{Mountain trail.}
 {484400}{}{Rock.}
@@ -8674,6 +8681,10 @@ advantage}
 {691300}{}{Window in an iron wall}
 {691400}{}{Window in an iron wall}
 {691500}{}{Window in an iron wall}
+{691600}{}{|0x3CF800 ===================== HEADGEAR ===========================}
+{691601}{}{Creation of hats and helmets}
+{691700}{}{|0x3CF800 ======================= BAGS =============================}
+{691701}{}{Creation of bags and backpacks}
 {691800}{}{Brick Wall}
 {691900}{}{Brick Wall}
 {692000}{}{Brick Wall}
@@ -10465,8 +10476,8 @@ advantage}
 {1400801}{}{A weighted sharpened spear.}
 {1400900}{}{Metal Spear}
 {1400901}{}{A metal spear.}
-{1401000}{}{Sapper Shovel}
-{1401001}{}{A sapper shovel.}
+{1401000}{}{Spade}
+{1401001}{}{A compact shovel, loved by the militray.}
 {1401100}{}{Sickle}
 {1401101}{}{A great tool for harvesting grass or the gulp of people you dislike.}
 {1401200}{}{Gauss Gatling}
@@ -11526,7 +11537,7 @@ advantage}
 {1693701}{}{Drawing 12cal of the Combat Shotgun.}
 {1693800}{}{Blueprint for SHOBB Shotgun}
 {1693801}{}{Blueprint for 12cal SHOBB Shotgun.}
-{1693900}{}{Panktor Jackhammer Shotgun Blueprint}
+{1693900}{}{Pancor Jackhammer Shotgun Blueprint}
 {1693901}{}{Blueprint for 12cal Panctor Jackhammer Shotgun.}
 {1694000}{}{Blueprint for Remington870 Shotgun}
 {1694001}{}{Drawing of 12cal Remington 870 shotgun.}
@@ -11701,7 +11712,7 @@ advantage}
 {1801800}{}{Canned Meat}
 {1801801}{}{A brown-orange tin can with canned pork and beans.}
 {1801900}{}{Chocolate Bar}
-{1801901}{}{A chocolate bat.}
+{1801901}{}{A chocolate bar.}
 {1802000}{}{Pretzel}
 {1802001}{}{A pretzel.}
 {1802100}{}{"Pop Rocks" Soda}
@@ -11904,7 +11915,7 @@ advantage}
 {2005701}{}{A very effective police force to disperse rioters. Was used many times before the War.}
 {2005800}{}{Old 10mm pistol}
 {2005801}{}{Obsolete 10mm Colt 6520 self-loading pistol. Produced in 2051 judging by the markings on the case.}
-{2005900}{}{10mm pistol with flashlight}
+{2005900}{}{Colt 6520 (Flashlight)}
 {2005901}{}{Police model of the Colt 6520 self-loading pistol in 10mm caliber, equipped with a tactical under barrel flashlight. True, sometimes it does not light - you need to shake it.}
 {2006000}{}{Winchester Pistol}
 {2006001}{}{This pistol is similar to the Winchester Arms plasma rifle. Not popular due to competition from AI Gaston Glock's plasma pistols.}
@@ -12695,12 +12706,12 @@ advantage}
 {2209001}{}{Quite ordinary post-nuclear American cigarettes of the famous Newkaboro brand. The package is open.}
 {2209100}{}{Pip-Boy 2000}
 {2209101}{}{To help the Vault Dwellers store information, Vault-Tec selected RobCo's Pip-Boy 2000 Personal Devices.}
-{2209200}{}{Light Cigar}
+{2209200}{}{Lit Cigar}
 {2209201}{}{Well made cigar, exceptional taste! The cigar is lighted.}
 {2209300}{}{Luminous San Francisco Lights Cigar}
 {2209301}{}{Well made cigar, refined taste! The cigar is lighted.}
-{2209400}{}{Antlion belly}
-{2209401}{}{The abdomen of the ant is unusually large and has a luminescent effect.}
+{2209400}{}{Thorax}
+{2209401}{}{The thorax of an ant-lion is unusually large and has a luminescent effect.}
 {2209500}{}{Beverage}
 {2209501}{}{The basis for getting some alcohol. But if you feel lazy, then just drink it like this, see what happens...}
 {2209600}{}{Garbage Pile}

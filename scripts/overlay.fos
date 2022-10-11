@@ -11,19 +11,19 @@ import string@ UrlPrefixOverlay() from "link";
 void overlay_connect() {
     string@ web = UrlPrefixOverlay();
     if (web !is null) {
-        //OverlayConnect("127.0.0.1:33741", web);
+        OverlayConnect("127.0.0.1:33741", web);
     }
 }
 
 // import void overlay_finish() from "overlay";
 void overlay_disconnect() {
-    //OverlayDisconnect(true);
+    OverlayDisconnect(true);
 }
 
 // import void overlay_visibility() from "overlay";
 void overlay_visibility() {
     overlay_hide = !overlay_hide;
-    //OverlayHide(overlay_hide);
+    OverlayHide(overlay_hide);
 }
 
 // import void overlay_loop(bool show) from "overlay";
@@ -41,7 +41,7 @@ void overlay_loop( bool show )
 			}
         }
     }
-    //UpdateAvatars( critters );
+    UpdateAvatars( critters );
 }
 
 bool should_send_critter( CritterCl& cr ) 
@@ -105,5 +105,5 @@ void overlay_message(string& message, int& sayType, uint& critterId, uint& delay
             masked = !cr_is_self && !should_send_critter(cr);
         }
     }
-    //OverlayMessage(message, sayType, critterId, delay, name, masked);
+    OverlayMessage(message, sayType, critterId, delay, name, masked);
 }

@@ -1,6 +1,6 @@
 #ifndef __DEFINES__
 #define __DEFINES__
-// #define RUST_NULL_API 
+// #define RUST_NULL_API
 // #define FOFMOD_NULL_API
 #include "_skins.fos" 		//critter skin defines
 
@@ -258,7 +258,7 @@
 #define ITEM_SHOOT_THRU                          	( 0x00000008 )
 #define ITEM_LIGHT_THRU                          	( 0x00000010 )
 #define ITEM_MULTI_HEX                           	( 0x00000020 ) 	// Not used
-#define ITEM_WALL_TRANS_END                      	( 0x00000040 ) 	// Not used
+#define ITEM_VIEW_BLOCKS	                      	( 0x00000040 )
 #define ITEM_TWO_HANDS                           	( 0x00000080 )
 #define ITEM_BIG_GUN                             	( 0x00000100 )
 #define ITEM_ALWAYS_VIEW                         	( 0x00000200 )
@@ -283,7 +283,7 @@
 #define ITEM_CAN_USE                             	( 0x10000000 )
 #define ITEM_HOLODISK                            	( 0x20000000 )
 #define ITEM_RADIO                               	( 0x40000000 )
-#define ITEM_CACHED                              	( 0x80000000 ) 	// Not used
+#define ITEM_HEAR_BLOCK                           	( 0x80000000 )
 
 // food flags
 #define FOOD_KNOCKOUT                            	( 0x00000001 )
@@ -331,6 +331,8 @@
 #define PLAYER_FLAG_STA	                     		( 0x00000020 ) 	// Armor Target Assist
 #define PLAYER_FLAG_WSAD                     		( 0x00000040 ) 	// WSAD Movement marker
 #define PLAYER_FLAG_RTS                     		( 0x00000080 ) 	// RMB movement mode
+#define PLAYER_FLAG_VOICE_R	                		( 0x00000100 ) 	// Show Voice Radius
+#define PLAYER_FLAG_WEAPON_R	                	( 0x00000200 ) 	// Show weapon Radius
 
 //Flags for face, avatar and description hiding items
 #define ITM_FACE_MASK								( 0x00000001 )
@@ -1501,6 +1503,7 @@
 #define LOOK_CHECK_TRACE                         	( 0x08 )		// Tracing for wall aviablility
 #define LOOK_CHECK_SCRIPT                        	( 0x10 )		// Allow bool check_look(...) in main.fos, all other defines ignored
 #define LOOK_CHECK_ITEM_SCRIPT                   	( 0x20 )		// Allow bool check_trap_look(...) in main.fos, for items with ITEM_TRAP flag
+#define LOOK_CHECK_LOOK_DATA                        ( 0x40 )        // Use LookData for check look
 
 // Global map events
 #define GLOBAL_PROCESS_MOVE                      	( 0 )			// Called every __GlobalMapMoveTime
@@ -1628,6 +1631,8 @@
 // TRAIT_SEX_APPEAL 
 #define SEX_APPEAL_CH_BONUS						 	( 3 )
 #define SEX_APPEAL_HP_MALUS						 	( 50 )
+// TRAIT_JINXED
+#define JINXED_INT_BONUS						 	( 2 )
 
 // Critical Damage modifiers
 // CR_DAZED
@@ -1741,6 +1746,7 @@
 #define MATERIAL_LEAD	                         	( 13 )
 #define MATERIAL_GOLD	                         	( 14 )
 #define MATERIAL_ORGANIC                         	( 15 )
+#define MATERIAL_PAPER	                         	( 16 )
 
 // Directions
 #define DIR_NE                                   	( 0 )		// North-east
@@ -1972,7 +1978,24 @@
 # pragma bindfield "const uint8 ProtoItem::HeadItem_Perk         		-> 336"
 # pragma bindfield "const uint8 ProtoItem::Partial_Item         		-> 337"
 # pragma bindfield "const uint8 ProtoItem::Fuel_Efficiency         		-> 338"
-//padding 154 bytes
+
+# pragma bindfield "const uint8 ProtoItem::Look_BlockDir_0         		-> 339"
+# pragma bindfield "const uint8 ProtoItem::Look_BlockDir_1         		-> 340"
+# pragma bindfield "const uint8 ProtoItem::Look_BlockDir_2         		-> 341"
+# pragma bindfield "const uint8 ProtoItem::Look_BlockDir_3         		-> 342"
+# pragma bindfield "const uint8 ProtoItem::Look_BlockDir_4         		-> 343"
+# pragma bindfield "const uint8 ProtoItem::Look_BlockDir_5         		-> 344"
+# pragma bindfield "const uint8 ProtoItem::Look_Block           		-> 345"
+
+# pragma bindfield "const uint8 ProtoItem::Hear_BlockDir_0         		-> 346"
+# pragma bindfield "const uint8 ProtoItem::Hear_BlockDir_1         		-> 347"
+# pragma bindfield "const uint8 ProtoItem::Hear_BlockDir_2         		-> 348"
+# pragma bindfield "const uint8 ProtoItem::Hear_BlockDir_3         		-> 349"
+# pragma bindfield "const uint8 ProtoItem::Hear_BlockDir_4         		-> 350"
+# pragma bindfield "const uint8 ProtoItem::Hear_BlockDir_5         		-> 351"
+# pragma bindfield "const uint8 ProtoItem::Hear_Block           		-> 352"
+
+//padding 140 bytes
 # pragma bindfield "const uint8 ProtoItem::Item_Hitpoints      			-> 493"
 # pragma bindfield "const uint8 ProtoItem::Fire_Strength      			-> 494"
 # pragma bindfield "const uint8 ProtoItem::Blast_Radius      			-> 495"
@@ -2018,7 +2041,7 @@ shared string@ FloatToSI(float, string&, uint8)
 	return null;
 }
 
-//shared void DiscordSendMessage(string&, string&){}
+shared void DiscordSendMessage(string&, string&){}
 shared uint PreviousHex(Critter&, uint16&, uint16&){ return 0; }
 shared bool check_look(Map& map, Critter& cr, Critter& opponent){ return true; }
 shared void DllReloadConfig(){}

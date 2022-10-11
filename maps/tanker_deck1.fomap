@@ -2,15 +2,15 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             197
-WorkHexY             172
+WorkHexX             209
+WorkHexY             190
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
 Time                 -1
 DayTime              360  360  1260 1260
 DayColor0            18  18  53 
-DayColor1            128 128 128
+DayColor1            129 119 110
 DayColor2            128 128 128
 DayColor3            18  18  53 
 
@@ -11411,7 +11411,7 @@ ProtoId              3165
 MapX                 192
 MapY                 118
 
-MapObjType           2
+MapObjType           1
 ProtoId              2003
 MapX                 192
 MapY                 122
@@ -11886,7 +11886,7 @@ ProtoId              5969
 MapX                 202
 MapY                 154
 
-MapObjType           2
+MapObjType           1
 ProtoId              2302
 MapX                 202
 MapY                 156
@@ -11936,7 +11936,7 @@ ProtoId              2232
 MapX                 203
 MapY                 150
 
-MapObjType           2
+MapObjType           1
 ProtoId              2004
 MapX                 203
 MapY                 152
@@ -14012,13 +14012,13 @@ ProtoId              6911
 MapX                 195
 MapY                 293
 
-MapObjType           2
+MapObjType           1
 ProtoId              2300
 MapX                 195
 MapY                 297
 OffsetX              8
 
-MapObjType           2
+MapObjType           1
 ProtoId              2300
 MapX                 195
 MapY                 298
@@ -14296,7 +14296,7 @@ ProtoId              2100
 MapX                 199
 MapY                 286
 
-MapObjType           2
+MapObjType           1
 ProtoId              2003
 MapX                 199
 MapY                 288
@@ -18310,7 +18310,7 @@ ProtoId              2006
 MapX                 177
 MapY                 174
 
-MapObjType           2
+MapObjType           1
 ProtoId              2301
 MapX                 177
 MapY                 177
@@ -18515,7 +18515,7 @@ ProtoId              2666
 MapX                 180
 MapY                 210
 
-MapObjType           2
+MapObjType           1
 ProtoId              2004
 MapX                 180
 MapY                 212
@@ -18530,7 +18530,7 @@ ProtoId              2666
 MapX                 180
 MapY                 261
 
-MapObjType           2
+MapObjType           1
 ProtoId              2004
 MapX                 180
 MapY                 263
@@ -18845,7 +18845,7 @@ ProtoId              2667
 MapX                 209
 MapY                 204
 
-MapObjType           2
+MapObjType           1
 ProtoId              2301
 MapX                 209
 MapY                 244
@@ -18855,7 +18855,7 @@ ProtoId              2666
 MapX                 209
 MapY                 263
 
-MapObjType           2
+MapObjType           1
 ProtoId              2003
 MapX                 209
 MapY                 265
@@ -18944,7 +18944,7 @@ ProtoId              2209
 MapX                 212
 MapY                 229
 
-MapObjType           2
+MapObjType           1
 ProtoId              2302
 MapX                 212
 MapY                 244
@@ -19016,8 +19016,6 @@ MapObjType           2
 ProtoId              2596
 MapX                 203
 MapY                 172
-ScriptName           scenery
-FuncName             s_Dialog
 Scenery_ParamsCount  1
 Scenery_Param0       206
 
@@ -20052,7 +20050,7 @@ ProtoId              2666
 MapX                 197
 MapY                 209
 
-MapObjType           2
+MapObjType           1
 ProtoId              2004
 MapX                 197
 MapY                 210
@@ -20311,7 +20309,7 @@ ProtoId              2100
 MapX                 191
 MapY                 200
 
-MapObjType           2
+MapObjType           1
 ProtoId              2003
 MapX                 193
 MapY                 200
@@ -20746,7 +20744,7 @@ ProtoId              188
 MapX                 195
 MapY                 126
 
-MapObjType           2
+MapObjType           1
 ProtoId              2004
 MapX                 198
 MapY                 131
@@ -20794,7 +20792,7 @@ ProtoId              2097
 MapX                 202
 MapY                 119
 
-MapObjType           2
+MapObjType           1
 ProtoId              2003
 MapX                 201
 MapY                 121
@@ -21425,12 +21423,12 @@ ProtoId              243
 MapX                 193
 MapY                 134
 
-MapObjType           2
+MapObjType           1
 ProtoId              2004
 MapX                 192
 MapY                 141
 
-MapObjType           2
+MapObjType           1
 ProtoId              2003
 MapX                 194
 MapY                 146
@@ -21450,7 +21448,7 @@ ProtoId              2231
 MapX                 190
 MapY                 141
 
-MapObjType           2
+MapObjType           1
 ProtoId              2301
 MapX                 190
 MapY                 146
@@ -21484,7 +21482,7 @@ ProtoId              2493
 MapX                 198
 MapY                 161
 
-MapObjType           2
+MapObjType           1
 ProtoId              2004
 MapX                 189
 MapY                 159
@@ -21644,7 +21642,7 @@ ProtoId              2314
 MapX                 185
 MapY                 129
 
-MapObjType           2
+MapObjType           1
 ProtoId              2302
 MapX                 199
 MapY                 124
@@ -37191,68 +37189,6 @@ MapY                 130
 LightDistance        8
 LightIntensity       50
 
-MapObjType           0
-ProtoId              2012
-MapX                 182
-MapY                 272
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  205
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2011
-MapX                 195
-MapY                 217
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  237
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2023
-MapX                 211
-MapY                 131
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  237
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
 MapObjType           2
 ProtoId              5622
 MapX                 210
@@ -37356,110 +37292,6 @@ MapObjType           2
 ProtoId              2067
 MapX                 190
 MapY                 118
-
-MapObjType           0
-ProtoId              2101
-MapX                 192
-MapY                 249
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  202
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  69
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2100
-MapX                 194
-MapY                 251
-Dir                  1
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  202
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  69
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2101
-MapX                 191
-MapY                 150
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  202
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  69
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2100
-MapX                 198
-MapY                 146
-Dir                  1
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  202
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  69
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2101
-MapX                 187
-MapY                 284
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  0
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  202
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  69
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  5
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              1999
@@ -38481,7 +38313,7 @@ ProtoId              60
 MapX                 209
 MapY                 173
 
-MapObjType           2
+MapObjType           1
 ProtoId              2003
 MapX                 213
 MapY                 180
@@ -38575,195 +38407,6 @@ MapObjType           2
 ProtoId              5621
 MapX                 176
 MapY                 188
-
-MapObjType           0
-ProtoId              2024
-MapX                 202
-MapY                 128
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5124
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  237
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2025
-MapX                 192
-MapY                 127
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5125
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  237
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2027
-MapX                 205
-MapY                 144
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5127
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  128
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2028
-MapX                 178
-MapY                 149
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5128
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  189
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2029
-MapX                 193
-MapY                 109
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5129
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  237
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2030
-MapX                 186
-MapY                 152
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5130
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  237
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2031
-MapX                 191
-MapY                 134
-Dir                  2
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5131
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  237
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2032
-MapX                 202
-MapY                 132
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5132
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  207
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
-
-MapObjType           0
-ProtoId              2033
-MapX                 182
-MapY                 134
-Dir                  3
-Critter_Cond         1
-Critter_Anim1        0
-Critter_Anim2        0
-Critter_ParamIndex0  ST_DIALOG_ID
-Critter_ParamValue0  5133
-Critter_ParamIndex1  ST_AI_ID
-Critter_ParamValue1  153
-Critter_ParamIndex2  ST_BAG_ID
-Critter_ParamValue2  0
-Critter_ParamIndex3  ST_TEAM_ID
-Critter_ParamValue3  0
-Critter_ParamIndex4  ST_NPC_ROLE
-Critter_ParamValue4  0
-Critter_ParamIndex5  ST_REPLICATION_TIME
-Critter_ParamValue5  0
 
 MapObjType           2
 ProtoId              2531

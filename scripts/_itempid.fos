@@ -32,7 +32,9 @@
 #define PID_AUTO_DOOR_RUST_NS	              		( 2142 )						// Rust bunker door 
 #define PID_AUTO_DOOR_RUST_EW	              		( 2143 )						// Rust bunker door
 #define PID_SEWERS_HATCH	    	          		( 2144 )						// 
-#define PID_CATHEDRAL_DOOR_EW	              		( 2346 )						// 
+#define PID_CATHEDRAL_DOOR_EW	              		( 2346 )						//
+#define PID_TENT_DOOR_EW	             	 		( 2361)							//
+#define PID_TENT_DOOR_NS	              			( 2362 )						//
 #define PID_ELEVATOR_DOOR_EW	              		( 2421 )						// 
 #define PID_ELEVATOR_DOOR_OLD_EW	           		( 2470 )						//
 #define PID_SECRET_METAL_DOOR_EW	           		( 3159 )						//
@@ -74,6 +76,7 @@
 #define PID_GAS_GATE_EW		                		( 10998 )						// Ворота заправки длинные
 
 #define PID_VC_GATE_MR_LARGE_EW            	   		( 11048 )						// VC gates for MR
+#define PID_VAULTTEC_GATE_EW	                	( 11039 )						// Ворота с эмблемой VT
 #define PID_FARM_GATE_SMALL_EW             			( 22867 )						// Ворота фермы короткие
 
 #define PID_VAULT_MAIN_GATE	            			( 23624 )						// Vault Gate
@@ -153,6 +156,8 @@
 ***************************************************************/
 
 #define PID_WATER_FLASK                     		( 126 )							// Фляга 13 убежища
+#define PID_WATER_BARREL							( 1531 ) 						// Water barrel
+#define PID_WATER_BARREL_DIRTY						( 1532 ) 						// Water barrel dirty
 #define PID_FLASKB		                       		( 1709 )						// ФляжкаВ пустая -> фляжка полная
 #define PID_SHOTGLASS                          		( 1738 )						// Чекушка/стопка/стакан из металла
 #define PID_PRIMITIVE_FLASK	                  		( 1754 )						// Походная фляжка
@@ -281,6 +286,14 @@
 
 #define PID_HYDRO_EW_XDR							( 1573 )						// Hydroponic farm EW Xander
 
+#define PID_HYDRO_EW_RAD							( 1574 )						// Hydroponic farm EW Radcvet
+
+#define PID_PLANTBARREL_EMPTY						( 1589 )						// Planter Barrel Empty
+#define PID_PLANTBARREL_CORN						( 1590 )						// Planter Barrel Corn
+#define PID_PLANTBARREL_CAB							( 1591 )						// Planter Barrel Cabbage
+#define PID_PLANTBARREL_RAD							( 1592 )						// Planter Barrel Radcvet
+#define PID_PLANTBARREL_FIVELEAF					( 1593 )						// Planter Barrel FiveLeaf
+
 #define PID_SHIT_HUGE     					  		( 1597 )						// fertiliser huge
 #define PID_SHIT_BIG      					  		( 1598 )						// fertiliser med
 #define PID_SHIT_SMALL    					  		( 1599 )						// fertiliser small
@@ -309,7 +322,6 @@
 #define PID_MUSHBED_ANT								( 1632 )						// mushroom bed - ant nectar mushroom
 #define PID_MUSHBED_MUT								( 1633 )						// mushroom bed - mutated mushroom
 
-#define PID_SHIT_BAREL_EMPTY						( 1644 )						// shit barrel - empty
 #define PID_SHIT_BAREL_FULL							( 1645 )						// shit barrel - full
 #define PID_SHIT_BATH_X_EMPTY						( 1646 )						// shit bath X - empty
 #define PID_SHIT_BATH1_X_FULL						( 1647 )						// shit bath X - full
@@ -664,11 +676,11 @@
 #define PID_CE_NAILGUN                              ( 14027 )                       // Гвоздострел
 #define PID_MAUSER01                          		( 20007 )						// Маузер повышенной точности
 #define PID_MAUSER02                          		( 20009 )						// Маузер Тип II
-#define PID_10MM_PISTOL_MAGAZIN               		( 20032 )						// Пистолет 10 мм (увел. магазин)
+#define PID_10MM_PISTOL_MAGAZIN               		( 20032 )						// 10mm Pistol, extended mag
 #define PID_DEAGLE_SCOPE                      		( 20043 )						// "Дезерт игл MK2"
 #define PID_DEAGLE_GOLD                       		( 20044 )						// "Дезерт игл MK3 Золотой"
 #define PID_10MM_PISTOL_80                    		( 20058 )						// Пистолет 10 мм - НЕДОДЕЛКА
-#define PID_10MM_PISTOL_FONARIK               		( 20059 )						// Пистолет 10 мм с фонариком - НЕДОДЕЛКА
+#define PID_10MM_PISTOL_FLASHLIGHT             		( 20059 )						// 10mm Pistor with flashlight
 #define PID_10MM_GIFT                         		( 20061 )						// Наградной пистолет - НЕДОДЕЛКА
 #define PID_GAUSS_PPK5                        		( 20071 )						// Гаусс-пистолет PPK5 - НЕДОДЕЛКА
 #define PID_REGULATOR_PISTOL                   		( 20073 )						// Пистолет Регуляторов - НЕДОДЕЛКА
@@ -844,16 +856,16 @@
 #define PID_bgflame3                          		( 20197 )						// Огнемет изобретателя МК3 - НЕДОДЕЛКА
 
 //==================ITEM_SUBTYPE_WEAPON_NORMAL_MINIGUN==========================//  ( 13 )
-#define PID_MINIGUN                           		( 12 )							// Миниган
-#define PID_AVENGER_MINIGUN                   		( 389 )							// Миниган "Мститель"
-#define PID_VINDICATOR_MINIGUN                		( 395 )							// Миниган "Виндикатор"
+#define PID_MINIGUN                           		( 12 )							//
+#define PID_AVENGER_MINIGUN                   		( 389 )							//
+#define PID_VINDICATOR_MINIGUN                		( 395 )							//
 #define PID_GATLING_LOW                       		( 1401 )						// Пулемет гатлинг с ручным приводом
-#define PID_3GUN_LOW                          		( 1416 )						// 14мм автопушка
-#define PID_GAUSS_GATLING                           ( 14012 ) 						// Гаусс гатлинг
-#define PID_OLD_MINIGUN                       		( 20066 )						// Изношенный миниган
-#define PID_bgturrfl                          		( 20190 )						// Боевой миниган
-#define PID_dminigun                          		( 20191 )						// Боевой миниган МК2
-#define PID_mnghevy                           		( 20192 )						// Усиленный миниган
+#define PID_AUTOCANNON                         		( 1416 )						// 14mm autocannon
+#define PID_GAUSS_GATLING                           ( 14012 ) 						//
+#define PID_OLD_MINIGUN                       		( 20066 )						//
+#define PID_COMBAT_MINIGUN                     		( 20190 )						//
+#define PID_COMBAT_MINIGUN_MK2                 		( 20191 )						//
+#define PID_HEAVY_MINIGUN                      		( 20192 )						//
 #define PID_mngturet                          		( 20193 )						// Технологичный многоствольник мастера - НЕДОДЕЛКА
 #define PID_mngurgan                          		( 20194 )						// Технологичный многоствольник изобретателя - НЕДОДЕЛКА
 
@@ -988,7 +1000,6 @@
 #define PID_grnmltr2                          		( 20149 )						// Усиленная граната МК2- НЕДОДЕЛКА
 #define PID_metgremi                          		( 20151 )						// Усиленная граната МК3- НЕДОДЕЛКА
 #define PID_metgrnd3                          		( 20152 )						// Газовая граната- НЕДОДЕЛКА
-#define PID_metgrnd4                          		( 20153 )						// Дымовая шашка- НЕДОДЕЛКА
 #define PID_methndgr                          		( 20154 )						// Противопехотная бомба- НЕДОДЕЛКА
 
 //==================ITEM_SUBTYPE_WEAPON_GRENADE_CONCUSSION======================//	( 46 )
@@ -996,6 +1007,8 @@
 #define PID_FLASH_GRENADE                     		( 660 )							// Светошумовая граната
 
 //==================ITEM_SUBTYPE_WEAPON_GRENADE_SMOKE===========================//	( 48 )
+#define PID_SMOKE_GRENADE                          	( 20153 )						//
+
 //==================ITEM_SUBTYPE_WEAPON_GRENADE_PLASMA==========================//	( 49 )
 #define PID_PLASMA_GRENADE                    		( 26 )							// Плазменная граната
 
@@ -1086,8 +1099,6 @@
 #define PID_BOXING_GLOVES                     		( 292 )							// Боксерские перчатки
 #define PID_PLATED_BOXING_GLOVES              		( 293 )							// Перчатки с утяжелителем
 #define PID_MEGA_POWER_FIST                   		( 407 )							// Силовой суперкастет
-#define PID_RING_BOXING_GLOVES                		( 496 )							// Боксерские перчатки - не для использования
-#define PID_RING_PLATED_BOXING_GLOVES         		( 497 )							// Перчатки с утяжелителем - не для использования
 #define PID_CHAIN                             		( 1420 )						// Стальная цепь
 #define PID_PUNCH_GUN                               ( 14023 ) 						// Кулачная пушка - НЕДОДЕЛКА
 #define PID_MIKKI                             		( 20015 )						// "Шокер изобретателя" - НЕДОДЕЛКА
@@ -1147,22 +1158,17 @@
 #define PID_LEG_PIERCING                       		( 1032 )						// piercing kick
 
 //==================NPC_WEAPONS=================================================//
-#define PID_ROBO_ROCKET_LAUNCHER              		( 270 )							// Гранатомет робота
-#define PID_EYEBALL_FIST_1                    		( 290 )							// Электрооружие робглаза
-#define PID_EYEBALL_FIST_2                    		( 291 )							// Электрооружие робглаза
-#define PID_DEATHCLAW_CLAW_1                  		( 371 )							// Коготь
-#define PID_DEATHCLAW_CLAW_2                  		( 372 )							// Коготь
-#define PID_FIRE_GECKO_FLAME_WEAPON           		( 427 )							// Огненное дыхание ящера
-#define PID_SPECIAL_BOXER_WEAPON              		( 489 )							// Особое оружие боксера
-#define PID_GUN_TURRET_WEAPON                 		( 498 )							// Спаренная плазменная пушка
-#define PID_DUAL_MINIGUN                      		( 518 )							// Спаренный миниган - для автопушки
-#define PID_HEAVY_DUAL_MINIGUN                		( 520 )							// Тяжелый спаренный миниган - для автопушки
-#define PID_END_BOSS_KIFE                     		( 530 )							// Нож Главного Гада
-#define PID_END_BOSS_PLASMA_GUN               		( 531 )							// Плазменная пушка Главного Гада
-#define PID_DUAL_AUTOCANNON 			    		( 546 )							// Тяжелая спаренная автопушка
-#define PID_CLAW_EXT                          		( 595 )							// NPC claw
-#define PID_FIREBREATH                        		( 596 )							// NPC firebreath
-#define PID_VCTURRET_LASER_WEAPON					( 21009 )						// Тяжелая лазерная пушка
+#define PID_ROBO_ROCKET_LAUNCHER              		( 270 )							// Robot rocket launcher
+#define PID_EYEBALL_FIST_1                    		( 290 )							// Flying Eye electro weapon
+#define PID_EYEBALL_FIST_2                    		( 291 )							// Flying Eye electro weapon
+#define PID_FIRE_GECKO_FLAME_WEAPON           		( 427 )							// Firegecko flame
+#define PID_GUN_TURRET_WEAPON                 		( 498 )							// Turret Plasma weapon
+#define PID_DUAL_MINIGUN                      		( 518 )							// Turret Dual Minigun
+#define PID_HEAVY_DUAL_MINIGUN                		( 520 )							// Turret Heavy Minigun
+#define PID_END_BOSS_KIFE                     		( 530 )							// Horrigan Knife
+#define PID_END_BOSS_PLASMA_GUN               		( 531 )							// Horrigan Plasma Gun
+#define PID_DUAL_AUTOCANNON 			    		( 546 )							// Turret Autocannon
+#define PID_VCTURRET_LASER_WEAPON					( 21009 )						// Turret Laser Cannon
 
 //==================SPECIAL_WEAPONS=================================================//
 #define PID_JUSTICAR								( 945 )							// GM weapon
@@ -1258,6 +1264,8 @@
 #define PID_ZAPLATKA_CRAFT_ELECTRONIC_DETAILS		( 4767 )
 #define PID_ZAPLATKA_CRAFT_MEDS 					( 4831 )
 #define PID_ZAPLATKA_CRAFT_FOOD      		        ( 4908 )
+#define PID_ZAPLATKA_CRAFT_HEADWEAR					( 6916 )
+#define PID_ZAPLATKA_CRAFT_BAGS 					( 6917 )
 
 /******************************************************************************
 ***************				MEDICAL ITEMS						***************
@@ -1620,7 +1628,6 @@
 #define PID_BOOKCASE_13     		           		( 673 )							// 
 #define PID_BOOKCASE_14     		           		( 674 )							// 
 #define PID_KEY_BUNCH                         		( 888 )							// 
-#define PID_LO_CONTAINER                      		( 904 )							//  DELETE
 #define PID_AMMO_PACK								( 1535 )						// Ammo pack
 #define PID_IBOX_O									( 1650 )						// Контейнер x1					(мебель)
 #define PID_IBOX_OO									( 1651 )						// Контейнер x2
@@ -1672,8 +1679,7 @@
 #define PID_BOX_OF_CIGARS                     		( 22051 )   					// Коробка сигар
 
 // From Misc
-#define PID_SLOT_MACHINE_KEY                  		( 833 )							// DELETE THIS SHIT
-#define PID_BALL_DEAD                         		( 651 )							// 
+#define PID_BALL_DEAD                         		( 651 )							// Destroyed football
 
 // F2_container
 #define	PID_booksfo001 								( 15430 )						//
@@ -1838,9 +1844,10 @@
 #define PID_JAIL_KEY                          		( 456 )							//											
 #define PID_BLANK_KEY                         		( 1313 )
 
-#define PID_LOCKER_LOW                        		( 1317 )						// Навесной замок
-#define PID_LOCKER_MED                        		( 1318 )						// Дверной замок
-#define PID_LOCKER_HARD                       		( 1319 )						// Сейфовый замок
+#define PID_LOCK_LOW                        		( 1317 )						// Barn Lock
+#define PID_LOCK_MED                        		( 1318 )						// Door Lock
+#define PID_LOCK_HARD                       		( 1319 )						// Safe Lock
+#define PID_CODE_LOCK                       		( 1334 )						// Code Lock
 
 //Terminal security keys
 #define PID_TERMINAL_RED_KEY 						( 22185 ) 						// Красная карта доступа терминала
@@ -1925,13 +1932,18 @@
 ***************************************************************/
 
 // Money
-#define PID_BOTTLE_CAPS                       		( 41 )							// Монеты
+#define PID_BOTTLE_CAPS                       		( 41 )							// NCR dollar, 1$, coin
 #define PID_MORNING_STAR_MINE                 		( 420 )							// Купон шахты морнинг стар
 #define PID_KOKOWEEF_MINE_SCRIP               		( 494 )							// Купон коковиф
-#define PID_REAL_BOTTLE_CAPS                  		( 519 )							// Крышки от бутылок
-#define PID_DOLLAR_100							  	( 1231 )						// Доллары НКР, 100$ купюры
-#define PID_DOLLAR_20							  	( 1238 )						// Доллары НКР, 20$ купюры
-#define PID_DOLLAR_5							  	( 1239 )						// Доллары НКР, 5$ купюры
+#define PID_REAL_BOTTLE_CAPS                  		( 519 )							// Bottle Caps
+#define PID_DOLLAR_100							  	( 1231 )						// NCR dollar, 100$ Bill
+#define PID_DOLLAR_20							  	( 1238 )						// NCR dollar, 20$ Bill
+#define PID_DOLLAR_5							  	( 1239 )						// NCR dollar, 5$ Bill
+#define PID_GOLDEN_COIN						  		( 1472 )                        // Crafted coin, 10$ value
+#define PID_PREWAR_DOLLAR_100					  	( 22106 )						// Prewar money, 100$ Bill
+#define PID_PREWAR_DOLLAR_20					  	( 15010 )						// Prewar money 20$, coin
+#define PID_PREWAR_DOLLAR_5						  	( 15012 )						// Prewar money 5$, coin
+#define PID_PREWAR_DOLLAR_1						  	( 22107 )						// Prewar money 1$, coin
 
 // Basic parts
 #define PID_SCORPION_TAIL                     		( 92  )							// Оторванный хвост радскорпиона
@@ -2322,10 +2334,7 @@
 #define PID_WORKBENCH_TOKEN                   		( 3978 )						// Tech item for workbench
 #define PID_FIREPLACE_TOKEN                   		( 3979 )						// Tech item for fireplace crafts
 
-#define PID_HUNT 							  		( 1220 )						// Охотник Череп Жетон
 #define PID_H_CLAW							  		( 1221 )						// Череп когтя смерти
-
-#define PID_SUNC							  		( 1230 )						// Чертежи Солнышка
 
 #define PID_MANTIS_SHELL                      		( 1441 )						// Хитиновая пластина
 #define PID_MIRELUK_SHELL                     		( 1442 )						// Панцирь болотника
@@ -2373,7 +2382,6 @@
 ***************************************************************/
 // Smithing
 #define PID_GOLDEN_BAR						  		( 1470 )                        // Слиток золота
-#define PID_GOLDEN_COIN						  		( 1472 )                        // Дублон
 #define PID_METAL_SHEET                        		( 1473 )						// Лист железа
 #define PID_IRON_BAR                          		( 1474 )						// Железный брус
 #define PID_COPPER_BAR                        		( 15085 )   					// Медный брус
@@ -2462,7 +2470,7 @@
 #define PID_fishkaC                           		( 1706 )						// Фишки
 #define PID_fishkaD                           		( 1707 )						// Фишки
 #define PID_fishkaE                           		( 1708 )						// Фишки
-#define PID_FLocks                            		( 1712 )						// Простенькая отмычка
+#define PID_HAIRPIN                            		( 1712 )						// Простенькая отмычка
 #define PID_fotoBnd                           		( 1713 )						// Эротическое фото
 #define PID_fotogrf                           		( 1714 )						// Технологичный фотоаппарат
 #define PID_FPSHL6                            		( 1715 )						// Мыло душистое
@@ -2551,7 +2559,6 @@
 #define PID_hotplate                            	( 1824 )						// Гарелка
 #define PID_modvoice                            	( 1825 )						// Датчик движения
 #define PID_FZZZ5                             		( 1889 ) 						// Центральный процессор
-#define PID_acoin                             		( 15010 )   					// Серебряная монета
 #define PID_audiop                            		( 15011 )   					// Аудиооборудование
 #define PID_bcoin                             		( 15012 )  						// Редкая серебряная монета
 #define PID_blucat                            		( 15013 )   					// Спец выпуск кошачья лапка
@@ -2967,13 +2974,15 @@
 #define PID_CR_WOOD_TBL_WR                          ( 894 )                     	// Деревянный рабочий стол, ==66,77
 #define PID_CR_WOOD_TBL_LP                          ( 842 )                         // Деревянный стол с лампой, == 3643, 3644
 
-// Boxes&Cabinets
+// Boxes & Cabinets 
 #define PID_CR_BOX                                  ( 895 )                     	// Коробка, ==180
 #define PID_CR_WOOD_CAB_SMALL                       ( 896 )                     	// Книжный шкаф, ==60,63
 #define PID_CR_WOOD_SHELF                           ( 897 )                     	// Деревянные полки, ==247,246
 #define PID_CR_JNK_CAB                              ( 898 )                     	// Locker rust, ==188,189
 #define PID_CR_CHEST                                ( 1330 )                        // Сундук, == 245,367,369,8245,8246
 #define PID_CR_CLN_CAB								( 1333 )						// Locker == 132, 134, 615, 616
+
+#define PID_BAREL_EMPTY								( 1644 )						// Empty barrel
 
 // Cosmetic
 #define PID_CR_CARPET                               ( 838 )                         // Ковер, == 2376, 2377, 2378
@@ -2982,6 +2991,9 @@
 #define PID_CR_STAND                                ( 841 )                         // Дикарская подставка, == 4505, 4506, 4507, 4508
 #define PID_CR_STAKE                                ( 843 )                         // Кол, == 3224, 3225, 3226, 3227
 #define PID_CR_CART                                 ( 845 )                         // Тачка, == 2368
+#define PID_BARREL_GENERIC							( 1617 )						// Barrel 1
+#define PID_BARREL_2								( 1618 )						// Barrel 2
+#define PID_BARREL_3								( 1619 )						// Barrel 3
 
 // Crafting
 #define PID_CRUSHER_2000					  		( 1832 )
@@ -2989,6 +3001,9 @@
 #define PID_FURNACE_SMALL 							( 1844 )
 #define PID_PORTABLE_WORKBENCH						( 1848 )
 #define PID_ANVIL									( 1850 )
+
+// Interactive
+#define PID_BAR_FURNITURE							( 1616 )						// Liquid container
 
 /**************************************************************
 ***************				TREES				***************

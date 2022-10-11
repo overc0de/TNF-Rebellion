@@ -4,6 +4,46 @@
 #include "_utils.fos"
 #include "lockers_h.fos"
 #include "gateway_h.fos"
+#include "terminal_h.fos"
+
+bool UseCodeLock( Critter& cr, Item& codeLock, Item& locker )
+{
+	if( !valid( codeLock ) )
+	{
+		return false;
+	}
+
+	if( valid( locker ) && _LockerIsOpen( locker ) )
+	{
+		uint16 pid = locker.GetProtoId();
+		uint8 type = locker.GetType();
+	    if( pid == PID_TERMINAL )
+		{
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_LOCK_TERMINAL );
+			return false; 
+		}
+		
+		if( pid == PID_TENT_DOOR_EW || pid == PID_TENT_DOOR_NS )
+		{
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CANT_LOCK );
+			return false; 
+		}
+		
+		if( ( type == ITEM_TYPE_DOOR || ( type == ITEM_TYPE_CONTAINER && locker.Proto.Container_Changeble ) ) && locker.Val4 == 0 ) 
+        {
+            if( InteractContainer.find( pid ) == -1 )
+            {
+				 string passwordInfo = "Set new password";
+				 cr.RunClientScript( "client_screen_numberpad@ShowScreen", locker.Id, 0, 0, passwordInfo, null );
+				 _SubItem( codeLock, 1 );
+			}
+		}
+
+		return true;
+	}
+
+	return false;
+}
 
 bool UseItemOnLocker( Critter& cr, Item& locker, Item& item )
 {
@@ -331,55 +371,24 @@ bool UseSkillOnLocker( Critter& cr, Item& locker, int skill )
 			LogItemMovement( cr, locker, "can't lockpick because of tiredness" );
             return true;
         }
-
-        int base = cr.Skill[ SK_LOCKPICK ] - locker.LockerComplexity;
-        Item@lockpick = cr.GetItem( 0, SLOT_HAND1 );
-        if( locker.LOCK_TYPE == 4 && valid( lockpick ) && lockpick.GetProtoId() != PID_ELECTRONIC_LOCKPICKS )
-        {
-			LogItemMovement( cr, locker, "can't lockpick without electronic lockpick" );
-            cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NEED_E_LOCKPICK );
-            return true;
-        }
-
-        // Todo: PID_ELECTRONIC_LOCKPICKS +, PID_ELEC_LOCKPICK_MKII
-
-        if( cr.GetAccess() != ACCESS_ADMIN )
-		{
-            base = CLAMP( base, 0, 95 );
-		}
 		
-        if( locker.LockerComplexity == 500 && !isGM( cr ) )
+		if( locker.LockerComplexity == 500 && !isGM( cr ) )
 		{
             cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_SKILL_LOCKPICK_FAIL );
 			LogItemMovement( cr, locker, "can't lockpick GM lock" );
 			return true;
 		}
-        else if( locker.LockerCondition == LOCKER_ELECTRO )
+
+        if( locker.LockerCondition == LOCKER_ELECTRO )
         {
-            uint16 complex = locker.LockerComplexity;
-            uint16 exp = complex * 2;
-
-            string tempCode = locker.Val4;
-            uint8  codeLength = tempCode.length();
-            uint16 skillLock = cr.Skill[ SK_LOCKPICK ];
-            uint8  count = complex / codeLength;
-
-            bool changeCode = false;
-
-            for( uint8 i = 0; i < codeLength; i++ )
-            {
-                skillLock = ( skillLock >= count ? ( skillLock - count ) : 0 );
-                if( complex >= skillLock )
-                {
-                    tempCode[ i ] = '*';
-                    exp = ( exp >= count * 4 ? exp - ( count * 4 ) : 0 );
-
-                    changeCode = false;
-                }
-            }
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CODE_LEX, "$code" + tempCode );
-			LogItemMovement( cr, locker, "discovers code: " + tempCode );
-			PlayGenericSound( map, cr.HexX, cr.HexY, "door_vault1_lock.mp3", 6 );
+			if( !HasElectronicLockpicks( cr ) )
+			{
+				LogItemMovement( cr, locker, "can't lockpick without electronic lockpick" );
+				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NEED_E_LOCKPICK );
+				return true;
+			}
+			
+			StartMenuHacking( cr, locker );
 			return true;
         }
         else
@@ -392,6 +401,23 @@ bool UseSkillOnLocker( Critter& cr, Item& locker, int skill )
     {
         return false;
     }
+	else if( skill == SK_SCIENCE )
+	{
+		if( ( locker.GetType() == ITEM_TYPE_DOOR || ( locker.GetType() == ITEM_TYPE_CONTAINER && locker.Proto.Container_Changeble ) ) && FLAG( locker.LockerCondition, LOCKER_ELECTRO ) && _LockerIsOpen( locker ) )
+		{
+			if( cr.Skill[ SK_SCIENCE ] >= int( locker.LockerComplexity ) )
+			{
+				string passwordInfo = "Set new password";
+				cr.RunClientScript( "client_screen_numberpad@ShowScreen", locker.Id, 0, 0, passwordInfo, null );
+			}
+			else
+			{
+				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_MSG_SKILL_TOO_LOW_PASSWORD );
+			}
+			
+			return true;
+		}
+	}
 
     return false;
 }
@@ -450,7 +476,7 @@ void answer_LOCKPICK( Critter& player, uint answerI, string& answerS )
             return;
         }
 
-		if( !valid( lockpick ) || ( lockpick.GetProtoId() != PID_FLocks && lockpick.GetProtoId() != PID_EXP_LOCKPICK_SET && lockpick.GetProtoId() != PID_LOCKPICKS ) )
+		if( !valid( lockpick ) || ( lockpick.GetProtoId() != PID_HAIRPIN && lockpick.GetProtoId() != PID_EXP_LOCKPICK_SET && lockpick.GetProtoId() != PID_LOCKPICKS ) )
         {
             player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_LOCKPICKING_TOOL );
 			LogCrimeMovement( player, lockItm, "can't lockpick - no lockpicks" ); 
@@ -473,7 +499,7 @@ void answer_LOCKPICK( Critter& player, uint answerI, string& answerS )
             lockItm.ENTERED_CODE = 1111;
         }
 
-        if( valid( lockpick ) && lockpick.LOCK_TYPE != 0 && ( lockpick.GetProtoId() == PID_FLocks || lockpick.GetProtoId() == PID_EXP_LOCKPICK_SET || lockpick.GetProtoId() == PID_LOCKPICKS) )
+        if( valid( lockpick ) && lockpick.LOCK_TYPE != 0 && ( lockpick.GetProtoId() == PID_HAIRPIN || lockpick.GetProtoId() == PID_EXP_LOCKPICK_SET || lockpick.GetProtoId() == PID_LOCKPICKS) )
         {
 			lockpick.LOCK_TYPE = 0;
             _SubItem( lockpick, 1 );
@@ -1157,13 +1183,13 @@ bool LockerRemoval( Critter& cr, Item& item, Item& targetItem )
 		switch( targetItem.LOCK_TYPE )
 		{
 			case( 1 ):
-				pid_locker = PID_LOCKER_LOW;
+				pid_locker = PID_LOCK_LOW;
 				break;
 			case( 2 ):
-				pid_locker = PID_LOCKER_MED;
+				pid_locker = PID_LOCK_MED;
 				break;
 			case( 3 ):
-				pid_locker = PID_LOCKER_HARD;
+				pid_locker = PID_LOCK_HARD;
 				break;
 			default:
 				break;
@@ -1182,13 +1208,13 @@ bool LockerRemoval( Critter& cr, Item& item, Item& targetItem )
 			{
 				switch( pid_locker )
 				{
-					case( PID_LOCKER_LOW ):
+					case( PID_LOCK_LOW ):
 						pid_locker = 3;
 						break;
-					case( PID_LOCKER_MED ):
+					case( PID_LOCK_MED ):
 						pid_locker = 6;
 						break;
-					case( PID_LOCKER_HARD ):
+					case( PID_LOCK_HARD ):
 						pid_locker = 10;
 						break;
 					default:

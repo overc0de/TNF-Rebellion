@@ -446,6 +446,10 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {8975}{}{|0xFFFF00 You require a medical brace or at least a rope and a stick.}
 {8976}{}{|0xFFFF00 You have applied a medical brace on your patient.}
 
+# Teleport Menu
+{8998}{}{|0xFFFFFF Select your destination|0x00FF00 :
+|0xFFFF00 @lex name@}
+
 # Offline teleport
 {8999}{}{|0xFF0000 You have been offline for too long and have now been teleported to the starting area!}
 
@@ -477,6 +481,10 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {9021}{}{- |0xFFFF00 @lex proto@}
 {9022}{}{crafts something}
 {9023}{}{You've collected: @lex result@}
+
+#Locks
+{9440}{}{|0xFFFF00 You can't lock this door!}
+{9441}{}{}
 
 # ItemMovement
 {9445}{}{|0xFFFF00 This is too heavy for you.}
@@ -920,8 +928,8 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {9940}{}{tries to stop}
 {9941}{}{|0xFFFF00 You can't move locked or closed furniture.}
 {9942}{}{starts pushing}
-{9943}{}{|0xFFFF00 You can't make a container stack any higher.}
-{9944}{}{|0xFFFF00 A critter is preventing you from placing the container.}
+{9943}{}{|0xFFFF00 You can't make a stack any higher.}
+{9944}{}{|0xFFFF00 A critter is preventing you from placing the object.}
 
 # No access for mob control
 {9945}{}{|0xFFFF00 You require GM access.}
@@ -974,6 +982,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 
 # Change Lex self
 {9974}{}{|0xFFFF00 You have changed your own description.}
+# TODO:{9975}{}{|0xFFFF00 You have enabled AFK-mode.}
 
 # Digits input
 {9975}{}{You set a new password: |0xFFFF00 @lex digits@}
@@ -1013,7 +1022,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {10004}{}{|0xFFFF00 Survival mode selected.}
 {10005}{}{|0xFFFF00 Area not found.}
 {10006}{}{|0xFFFF00 Map not found.}
-{10007}{}{|0xFFFF00 You woke up in some strange place...}
+{10007}{}{|0xFFFF00 This region is filled with sadness, but it seems like the next few steps forward will change your destiny...}
 {10008}{}{|0xFFFF00 The item was consumed by the void.}
 {10009}{}{|0xFFFF00 You can't do that}
 
@@ -1024,6 +1033,9 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {10013}{}{|0x606060 GM-stealth mode disabled.}
 {10014}{}{|0xFFFFFF Hotkeys are on.}
 {10015}{}{|0x606060 Hotkeys are off.}
+
+{10016}{}{|0xFFFF00 You have enabled AFK-mode.} # TODO: reorder whole file to return that back into original position #9975
+{10017}{}{|0xFFFF00 You have disabled AFK-mode.} # TODO: reorder whole file to return that back into original position #9976
 
 #Grid_to_global_warning
 {15000}{}{|0xFFFF00 You are getting scared.}
@@ -1073,10 +1085,12 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {20803}{}{3 - Control level}
 {20804}{}{4 - Industrial level}
 
-{20901}{}{4 - Chimera}
-{20902}{}{3 - Administration}
-{20903}{}{2 - Living Blocks}
-{20904}{}{1 - Entrance level}
+{20901}{}{0 - Command Deck}
+{20902}{}{1 - Entrance level}
+
+{21001}{}{0 - Lobby}
+{21002}{}{1 - Level 1}
+{21003}{}{2 - Level 2}
 
 # =========================
 # Translation feature:
@@ -1201,7 +1215,7 @@ Speech volume: [ |0xFFFF00 @lex volume@ |0x3CF800 ]}
 {100015}{}{Actions}
 {100016}{}{Enter Alpha: @lex vals@}
 {100017}{}{STA: [ |0xFFFF00 @lex STA_status@ |0x3CF800 ]}
-
+{100018}{}{Toggle Speech Radius}
 
 {100020}{}{Choose Stat or type of dice to roll.
 If stat is chosen the result will be your current stat value + 2d6.}
@@ -1457,12 +1471,10 @@ Approximate time of healing the limb is from @lex minMinutes@ to @lex maxMinutes
 {100428}{}{Switch: @lex switchWaterworks@}
 {100429}{}{Collect water}
 {100430}{}{Drink}
-#skipped 31-34
 {100435}{}{the bucket}
 {100436}{}{well mechanism}
 {100437}{}{pump}
 {100438}{}{filter}
-#skipped 39-44
 {100445}{}{Water @lex chargeWell@@lex bucketWell@@lex chainWell@@lex posBucketWell@}
 {100446}{}{is clearely visible.}
 {100447}{}{is not visible.}
@@ -1540,7 +1552,6 @@ The Plant bed is|0xFFFF00 @lex notFertilisedMushroom@ fertilised|0x3CF800 .
 {100526}{}{|0xFFFF00 You have watered the plant.}
 {100527}{}{waters the plant}
 {100528}{}{|0xFFFF00 You require fertilizers.}
-
 
 #vending 100600 - 100650
 {100601}{}{@lex descriptionID@
@@ -1683,6 +1694,29 @@ Select your command:}
 {100772}{}{Music Control}
 {100773}{}{@lex descID@
 @lex frequency@}
+{100774}{}{Master Terminal}
+{100775}{}{Assign terminals}
+{100776}{}{@lex descID@
+@lex terminals@}
+{100777}{}{No terminals present on grid.}
+{100778}{}{Terminals found: [ |0xFFFF00 @lex amount@ |0x3CF800 ]}
+{100779}{}{Mainframe control}
+{100780}{}{Failed to connect with mainframe.}
+{100781}{}{Hackability}
+{100782}{}{Hack password}
+{100783}{}{You can't hack this.}
+{100784}{}{Select digit}
+{100785}{}{Refresh datamess}
+{100786}{}{Highlight @lex n@}
+{100787}{}{Hack @lex n@ digit}
+{100788}{}{@lex gminfo@
+@lex state@}
+{100789}{}{|0xFFFFFF Backup password: |0xFFFF00 @lex password@ |0xFFFFFF @lex percentage@|0x00FF00 % hints.}
+{100790}{}{|0x888888      Selecting new digit..}
+{100791}{}{|0x00FF00 Now hacking |0xFFFF00 @lex digit@ |0x00FF00 digit@lex hints@:
+@lex datamess@}
+{100792}{}{, hints on |0xFFFF00 @lex hintedN@|0x00FF00 @lex HintingCountText@}
+{100793}{}{[|0xFFFFFF @lex hintedCount@|0x00FF00 ]}
 
 #autodoc 100800 - 100900
 {100801}{}{Autodoc ¹ |0xFFFF00 @lex Id@ |0x3CF800 @lex state@.}
@@ -1830,8 +1864,8 @@ Local mod: |0xFFFF00 @lex yearMod@|0x3CF800 }
 {101083}{}{Bonus Melee Damage:}
 {101084}{}{Skill bonus: @lex value@}
 {101085}{}{Combat Skill bonus:}
-{101086}{}{Select Mob}
-{101087}{}{Select Monster}
+{101086}{}{Select NPC}
+{101087}{}{@lex name@}
 {101088}{}{Mob spawn menu. Bonuses are cumulative to critter prototype parameters. Mob selection will asign the Pid.}
 {101089}{}{Rat}
 {101090}{}{Manti}
@@ -1922,7 +1956,42 @@ Local mod: |0xFFFF00 @lex yearMod@|0x3CF800 }
 {101175}{}{@lex name@ is not registered yet, let player get activated by NPC first!}
 {101176}{}{|0xFFFF00 @lex name@ |0x00FF00 cleared.}
 {101177}{}{Group #ID}
+{101178}{}{Spawn NPC}
+{101179}{}{Select Humanoid NPC}
 
+# GM menu NPC groups
+# Mobs
+{101200}{}{Rats}
+{101201}{}{Mantis}
+{101202}{}{Ants}
+{101203}{}{Pigrats & Molerats}
+{101204}{}{Geckos}
+{101205}{}{Dogs & Wolves}
+{101206}{}{Scorpions}
+{101207}{}{Brahmins & Lavash}
+{101208}{}{Predatory Plants}
+{101209}{}{Yao-guai}
+{101210}{}{Aliens}
+{101211}{}{Deathclaws}
+{101212}{}{Crocks}
+{101213}{}{Centaurs}
+{101214}{}{Floaters}
+{101215}{}{Swamplurkers}
+{101216}{}{Other Insects}
+
+# Humanoids
+{101217}{}{Wild Ghouls}
+{101218}{}{Super Mutants}
+{101219}{}{NCR Soldiers}
+{101220}{}{Rangers}
+{101221}{}{BoS Soldiers}
+{101222}{}{Enclave Soldiers}
+{101223}{}{Vault City Soldiers}
+{101224}{}{Renegade Soldiers}
+{101225}{}{Vault Dwellers}
+{101226}{}{Town Dwellers}
+{101227}{}{Tribals}
+{101228}{}{Bandits}
 
 #handcuffs 101500 - 101550
 {101501}{}{Remote is active.
@@ -1946,7 +2015,8 @@ Awaiting command...}
 {101515}{}{Available}
 {101516}{}{Collar |0xFFFF00 @lex idCollar@ |0x3CF800 }
 {101517}{}{Input radio frequency}
-
+{101518}{}{You have set radio frequency to: |0xFFFF00 @lex digits@|0x3CF800 .}
+{101519}{}{|0xFFFF00 Your skill is too low to change the password!}
 
 #map_start 101600 - 101650
 {101601}{}{		  Welcome to the game!}

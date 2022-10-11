@@ -5,14 +5,13 @@
 
 void OpenLinkRemote( Critter& player, string& url)
 {
-    //player.RunClientScript( "link@OpenLinkRemote", 0, 0, 0, url, null );
+    player.RunClientScript( "link@OpenLinkRemote", 0, 0, 0, url, null );
 }
 
 // void PlayerAuth(Critter&)
 void unsafe_PlayerAuth( Critter& player, int, int, int, string@, int[]@ )
 {
-	player.Say( 11, "Аутентификация отключена." );
-    //PlayerAuth(player);
+    PlayerAuth(player);
 }
 
 // TODO: send auth key directly
@@ -38,9 +37,11 @@ void OpenLinkRemote (int p0, int p1, int p2, string@ p3, int[]@ p4)
 {
     if( @p3 != null)
 	{
-        //OpenLink(p3);
+        OpenLink(p3);
     }
 }
+
+// void OpenLinkAuth(string&, int, int, int)
 
 void OpenWithKey (int p0, int p1, int p2, string@ p3, int[]@ p4)
 {
@@ -54,7 +55,7 @@ void OpenWithKey (int p0, int p1, int p2, string@ p3, int[]@ p4)
         Message("Server didn't sent web server url.");
         return;
     }
-    //OpenLinkAuth(_UrlPrefixWeb+_UrlAuthRequest, p0, p1, p2);
+    OpenLinkAuth(_UrlPrefixWeb+_UrlAuthRequest, p0, p1, p2);
     @_UrlAuthRequest = null;
 }
 
@@ -69,7 +70,7 @@ void UpdateUrl (int p0, int p1, int p2, string@ p3, int[]@ p4)
         string@[] parts = split(p3, "|");
         if( parts.length() == 2 )
 		{
-            Message("Web server adress aquired:");
+            Message("Web server address aquired:");
             Message(parts[0]);
             Message(parts[1]);
             @ _UrlPrefixWeb = parts[0];
@@ -78,14 +79,14 @@ void UpdateUrl (int p0, int p1, int p2, string@ p3, int[]@ p4)
         }
 		else if( parts.length() == 1 )
 		{
-            Message("Web server adress aquired:");
+            Message("Web server address aquired:");
             Message(parts[0]);
             @ _UrlPrefixWeb = parts[0];
             @ _UrlPrefixOverlay = parts[0];
             return;
         }
     }
-    Message("Invalid web server adress aquired!");
+    Message("Invalid web server address aquired!");
 }
 
 // import string@ UrlPrefix() from "link";

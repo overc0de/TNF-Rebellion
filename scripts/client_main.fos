@@ -14,6 +14,7 @@
 #include "handcuffs_h.fos"
 #include "radio_h.fos"
 #include "client_gui_h.fos"
+#include "firestarter_h.fos"
 
 import void InitializeGame() from "config";
 
@@ -781,103 +782,106 @@ bool key_down( FOWindow@ window, uint8 key )
 	}	
 	
 	CritterCl@ chosen = GetChosen();
-	
-	//F10 wall + roof transparency
-	if( key == DIK_F10 )
+	if( chosen !is null )
 	{
-		if( __WallAlpha <= 200 )
+		//F10 wall + roof transparency
+		if( key == DIK_F10 )
 		{
-			__WallAlpha = 255;
-			__ShowWall = true;
-		}
-		else
-		{
-			__WallAlpha = chosen.Param[ WALL_ALPHA ];
-			__ShowWall = __WallAlpha > 0 ? true : false;
+			if( __WallAlpha <= 200 )
+			{
+				__WallAlpha = 255;
+				__ShowWall = true;
+			}
+			else
+			{
+				__WallAlpha = chosen.Param[ WALL_ALPHA ];
+				__ShowWall = __WallAlpha > 0 ? true : false;
+			}
+			
+			__RoofAlpha = __WallAlpha;
+			__ShowRoof = __ShowWall;
+			ChosenRefreshMap();
 		}
 		
-		__RoofAlpha = __WallAlpha;
-		__ShowRoof = __ShowWall;
-		ChosenRefreshMap();
-	}
-	
-	if( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys && !__ConsoleActive )
-	{
-		if( !__ctrlDown )
+		if( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys && !__ConsoleActive )
 		{
-			switch( key )
+			if( !__ctrlDown )
 			{
-				case( DIK_C ):
-				case( DIK_F ):
-				case( DIK_I ):
-				case( DIK_O ):
-				case( DIK_P ):
-				case( DIK_S ):
-					return true;
-			}
-		}
-	}
-
-    if( !( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys ) && !__ConsoleActive && WASDInputKeyState( key, true ) )
-	{
-        return true;
-    }
-	
-    /*if( __ctrlDown && key == DIK_O )
-	{
-        //show or hide overlay
-        overlay_visibility();
-        return true;
-    }*/
-	
-    if( __ConsoleActive )
-	{
-		if( valid( chosen ) )
-		{
-			if( key != DIK_RETURN )
-			{
-				if( chosen.Param[CR_TYPING_TIME] < int( __FullSecond + __TypingDelay ) )
+				switch( key )
 				{
-					RunServerScriptUnsafe( "rp_chat@unsafe_ShowTyping", 0, 0, 0, null, null );
-				}
-			}
-			else
-			{
-				if( chosen.Param[CR_TYPING_TIME] > int( __FullSecond + __TypingDelay ) )
-				{
-					RunServerScriptUnsafe( "rp_chat@unsafe_stopTyping", 0, 0, 0, null, null );
+					case( DIK_C ):
+					case( DIK_F ):
+					case( DIK_I ):
+					case( DIK_O ):
+					case( DIK_P ):
+					case( DIK_S ):
+						return true;
 				}
 			}
 		}
-	} 
 
-    if( __waiting )
-    {
-        if( valid( chosen ) )
-        {
-            if( __ConsoleActive ) 
+		if( !( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys ) && !__ConsoleActive && WASDInputKeyState( key, true ) )
+		{
+			return true;
+		}
+		
+		/*if( __ctrlDown && key == DIK_O )
+		{
+			//show or hide overlay
+			overlay_visibility();
+			return true;
+		}*/
+		
+		if( __ConsoleActive )
+		{
+			if( valid( chosen ) )
 			{
-				bool key_disallowed = ( key == DIK_ESCAPE );
-                return key_disallowed;
-            }
+				if( key != DIK_RETURN )
+				{
+					if( chosen.Param[CR_TYPING_TIME] < int( __FullSecond + __TypingDelay ) )
+					{
+						RunServerScriptUnsafe( "rp_chat@unsafe_ShowTyping", 0, 0, 0, null, null );
+					}
+				}
+				else
+				{
+					if( chosen.Param[CR_TYPING_TIME] > int( __FullSecond + __TypingDelay ) )
+					{
+						RunServerScriptUnsafe( "rp_chat@unsafe_stopTyping", 0, 0, 0, null, null );
+					}
+				}
+			}
+		} 
+
+		if( __waiting )
+		{
+			if( valid( chosen ) )
+			{
+				if( __ConsoleActive ) 
+				{
+					bool key_disallowed = ( key == DIK_ESCAPE );
+					return key_disallowed;
+				}
+				else
+				{
+					if( key == DIK_RETURN )
+					{
+						__ConsoleActive = true;
+						return true;
+					}
+				}
+
+				if( key == DIK_ESCAPE || key == DIK_SPACE )
+				{
+					RunServerScriptUnsafe( "ltp@unsafe_StopProcess",  0, 0, 0, null, null );
+				}
+				
+				return true;
+			}
 			else
 			{
-                if( key == DIK_RETURN )
-				{
-                    __ConsoleActive = true;
-                    return true;
-                }
-            }
-
-            if( key == DIK_ESCAPE || key == DIK_SPACE )
-            {
-                RunServerScriptUnsafe( "ltp@unsafe_StopProcess",  0, 0, 0, null, null );
-            }
-            return true;
-        }
-        else
-		{
-            __waiting = false;
+				__waiting = false;
+			}
 		}
 	}
 
@@ -989,7 +993,7 @@ void critter_in( CritterCl& cr )
     cr.NameColor = COLOR_CRITTER_NAME;
     cr.ContourColor = ( cr.IsPlayer() ? COLOR_CONTOUR_YELLOW : COLOR_CONTOUR_RED );
 
-	if( SameFaction( ch, cr ) )
+	if( valid( ch ) && SameFaction( ch, cr ) )
 	{
 		cr.ContourColor = ( cr.IsPlayer() ? COLOR_CONTOUR_GREEN : COLOR_CONTOUR_BLUE );
 	}
@@ -1272,7 +1276,8 @@ bool out_command( string& message, int& sayType )
 			if( choo.Stat[ ST_BODY_TYPE ] != BT_MEN && choo.Stat[ ST_BODY_TYPE ] != BT_WOMEN && choo.Stat[ ST_BODY_TYPE ] != BT_CHILDREN )
 			{
 				__InitDevour( 0, 0, 0, null, null );
-			}				
+			}
+			
 			return false;
 		}
 		
@@ -1299,6 +1304,22 @@ bool out_command( string& message, int& sayType )
 
 		string@[]@ parts = split( message, " " );
 
+		if( parts[0] == "~name" ) 
+		{
+			string text = "";
+			if( parts.length() > 1 && message.length() > 6 )
+			{
+				text = substring( message, 6, message.length() - 6 );
+			}
+			
+			CritterCl@ target = GetMonitorCritter( __MouseX, __MouseY );
+			if( valid( target ) )
+			{
+				RememberName( target.Id, text );
+			}
+			return false; 
+		}
+
 		if( parts[0] == "~lex" ) 
 		{
 			string text = "";
@@ -1307,6 +1328,17 @@ bool out_command( string& message, int& sayType )
 				text = substring( message, 5, message.length() - 5 );
 			}
 			RunServerScriptUnsafe( "general_unsafe@unsafe_selfLex", 0, 0, 0, text, null ); 
+			return false; 
+		}
+
+		if( parts[0] == "~afk" ) 
+		{
+			string text = "";
+			if( parts.length() > 1 && message.length() > 5 )
+			{
+				text = substring( message, 5, message.length() - 5 );
+			}
+			RunServerScriptUnsafe( "general_unsafe@unsafe_setAFK", 0, 0, 0, text, null ); 
 			return false; 
 		}
 
@@ -1483,7 +1515,7 @@ int to_hit_hex( bool anyway )
         @weapon = GetProtoItem( realWeapon.Proto.ProtoId );
 	}
 	
-	if( weapon is null )
+	if( !valid( weapon ) )
 	{
 		return 0;
 	}
@@ -2249,10 +2281,31 @@ void combat_result( uint[]& data )
 	}
 }
 
-string generic_description_slot( int slot )
+string generic_description_slot_maker( int slot )
+{
+	string result;
+	string[] lines = generic_description_slot( slot );
+	int l = lines.length();
+	for( int i = 0; i < 6; i++ )
+	{
+		if( i < l && valid( lines[i] ) )
+		{
+			result += lines[i];
+		}
+		
+		result += "\n";
+	}
+	return result;
+}
+
+string[] generic_description_slot( int slot )
 {
 	CritterCl@ chosen = GetChosen();
-	string result = "|0x3CF800 -----------------------\n";
+
+	string line;
+	string[] result;
+
+	result.insertLast( "|0x3CF800 -----------------------" );
 	
 	ItemCl@ item = null; 
 	if( slot == SLOT_HAND1 )
@@ -2269,12 +2322,12 @@ string generic_description_slot( int slot )
 		uint8 mode = 0;
 		int bonus = chosen.Stat[ ST_MELEE_DAMAGE ];
 		ProtoItem@ unarmed = chosen.GetSlotProto( slot, mode );
-		result += GetMsgStr( TEXTMSG_GAME, STR_INV_NO_ITEM ) + "\n";
-		result += GetMsgStr( TEXTMSG_GAME, STR_INV_UNARMED_DMG ) + "|0xFFFF00  ";
-		result += ( _WeaponDmgMin( unarmed, _WeaponModeUse( mode ) ) + bonus ) + "|0x3CF800  - " + "|0xFFFF00 ";
-		result += ( _WeaponDmgMax( unarmed, _WeaponModeUse( mode ) ) + bonus ) + "\n";
-		result += "\n\n\n";
-		
+		result.insertLast( GetMsgStr( TEXTMSG_GAME, STR_INV_NO_ITEM ) );
+		result.insertLast( GetMsgStr( TEXTMSG_GAME, STR_INV_UNARMED_DMG ) + "|0xFFFF00  "
+							+ ( _WeaponDmgMin( unarmed, _WeaponModeUse( mode ) ) + bonus ) + "|0x3CF800  - " + "|0xFFFF00 "
+							+ ( _WeaponDmgMax( unarmed, _WeaponModeUse( mode ) ) + bonus ) 
+						);
+
 		return result;
 	}
 	
@@ -2284,51 +2337,46 @@ string generic_description_slot( int slot )
 		use = 0;
 	}
 	
-	result += getItemTextName( itemText( item ) ) + "\n";
+	result.insertLast( getItemTextName( itemText( item ) ) );
 
 	if( item.GetType() != ITEM_TYPE_WEAPON )
 	{
 		if( item.GetType() == ITEM_TYPE_TRAP )
 		{
-			string dmg_min = GetMsgStr( TEXTMSG_GAME, STR_INV_DMG ) + "|0xFFFF00  " + item.Proto.Weapon_DmgMin_0;
-			string dmg_max = "|0x3CF800  - |0xFFFF00 " + item.Proto.Weapon_DmgMax_0;
-			string blast = item.Proto.Blast_Radius > 0 ? ( GetMsgStr( TEXTMSG_GAME, STR_BLAST_RADIUS_TRAP ) + "|0xFFFF00 " + item.Proto.Blast_Radius + "|0x3CF800  " ) : "";
-			string dmg_type = GetMsgStr( TEXTMSG_GAME, STR_INV_DAMAGE ) + GetMsgStr( TEXTMSG_GAME, STR_INV_DAMAGE_TYPE( item.Proto.Weapon_DmgType_0 ) );
+			result.insertLast( GetMsgStr( TEXTMSG_GAME, STR_INV_DMG ) + "|0xFFFF00  " + item.Proto.Weapon_DmgMin_0 
+				+  "|0x3CF800  - |0xFFFF00 " + item.Proto.Weapon_DmgMax_0 );
+			result.insertLast( "|0x3CF800 " + ( item.Proto.Blast_Radius > 0 ? 
+				( GetMsgStr( TEXTMSG_GAME, STR_BLAST_RADIUS_TRAP ) + "|0xFFFF00 " + item.Proto.Blast_Radius + "|0x3CF800  " ) : "" ) );
 			
-			result += dmg_min + dmg_max;
-			result += "\n|0x3CF800 " + blast + "\n" + dmg_type;
+			result.insertLast( GetMsgStr( TEXTMSG_GAME, STR_INV_DAMAGE ) + GetMsgStr( TEXTMSG_GAME, STR_INV_DAMAGE_TYPE( item.Proto.Weapon_DmgType_0 ) ) );
 		}
 		else if( item.Proto.Item_Subtype == ITEM_SUBTYPE_BONDAGE )
 		{
 			switch( item.BONDAGE_STATE )
 			{
 				case( BONDAGE_STATE_ON ):
-					result += GetMsgStr( TEXTMSG_TEXT, STR_INV_BOND_BONDS );
+					line = GetMsgStr( TEXTMSG_TEXT, STR_INV_BOND_BONDS );
 					break;
 				case( BONDAGE_STATE_BROKEN ):
-					result += GetMsgStr( TEXTMSG_GAME, STR_DETERIORATION_BROKEN_NORM );
+					line = GetMsgStr( TEXTMSG_GAME, STR_DETERIORATION_BROKEN_NORM );
 					break;
 				default:
-					result += GetMsgStr( TEXTMSG_TEXT, STR_INV_BOND_READY );
+					line = GetMsgStr( TEXTMSG_TEXT, STR_INV_BOND_READY );
 					break;
 			}
-			result += "\n|0x3CF800 ";
+			result.insertLast( line + "|0x3CF800 " );
 		}
 		
 		if( item.GetCount() > 1 )
 		{
-			result += "\n|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_YOU_HAVE ) + "|0xFFFF00 " + item.GetCount() + ( item.GetType() == ITEM_TYPE_TRAP ? "" : "\n\n");
+			result.insertLast( "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_YOU_HAVE ) + "|0xFFFF00 " + item.GetCount() ); 
 		}
-		else
-		{
-			result += item.GetType() == ITEM_TYPE_TRAP ? "\n" : "\n\n";
-		}
-		
-		return result + "\n";
+
+		return result;
 	}
 
 	bool isAmmoRegen = ( item.GetProtoId() == PID_SOLAR_SCORCHER ) || ( item.GetProtoId() == PID_SUN ) || ( item.GetProtoId() == PID_SUN2 ) || ( item.GetProtoId() == PID_SUN3 )
-						|| ( item.GetProtoId() == PID_FIRE_GECKO_FLAME_WEAPON ) || ( item.GetProtoId() == PID_FIREBREATH );
+						|| ( item.GetProtoId() == PID_FIRE_GECKO_FLAME_WEAPON );
 	uint DmgMult = 1;
 	uint DmgDiv = 1;
 	uint16 ammoRound = _WeaponRound( item.Proto, use );
@@ -2362,7 +2410,7 @@ string generic_description_slot( int slot )
         bonus = chosen.Stat[ ST_MELEE_DAMAGE ] / 2;
 	}
 	
-	result += GetMsgStr( TEXTMSG_GAME, STR_INV_DMG ) + " ";
+	line = GetMsgStr( TEXTMSG_GAME, STR_INV_DMG ) + " ";
 	
 	if( ( ( weapon_Subtype >= ITEM_SUBTYPE_WEAPON_MELEE_BEGIN && weapon_Subtype <= ITEM_SUBTYPE_WEAPON_MELEE_END ) 
 			|| ( weapon_Subtype >= ITEM_SUBTYPE_WEAPON_GRENADE_BEGIN && weapon_Subtype <= ITEM_SUBTYPE_WEAPON_GRENADE_END ) )
@@ -2370,20 +2418,20 @@ string generic_description_slot( int slot )
 	{
 		int deterioration = item.Deterioration * 100 / MAX_DETERIORATION;
 		int penalty = deterioration == 0 ? 1 : int( ( _WeaponDmgMin( item.Proto, use ) + bonus ) * deterioration * 0.01f ); 
-		result += "|0xFFFF00 " + int( ( _WeaponDmgMin( item.Proto, use ) + bonus ) - penalty );
+		line += "|0xFFFF00 " + int( ( _WeaponDmgMin( item.Proto, use ) + bonus ) - penalty );
 	}
 	else
 	{
-		result += "|0xFFFF00 " + ( ( _WeaponDmgMin( item.Proto, use ) + bonus ) * DmgMult / DmgDiv );
+		line += "|0xFFFF00 " + ( ( _WeaponDmgMin( item.Proto, use ) + bonus ) * DmgMult / DmgDiv );
 	}
-	result += "|0x3CF800  - ";
+	line += "|0x3CF800  - ";
 	
 	if( isBurst )
 	{ 
         string column = "|0xFFFF00 " +  ( ( _WeaponDmgMax( item.Proto, use ) + bonus ) * DmgMult / DmgDiv );
         while ( column.length() < 5 ) column += " ";
-        result += column + "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_BURST );
-		result += "|0xFFFF00 " + ammoRound + "\n";
+        line += column + "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_BURST );
+		result.insertLast( line + "|0xFFFF00 " + ammoRound );
     }
 	else if( ( ( weapon_Subtype >= ITEM_SUBTYPE_WEAPON_MELEE_BEGIN && weapon_Subtype <= ITEM_SUBTYPE_WEAPON_MELEE_END ) 
 			|| ( weapon_Subtype >= ITEM_SUBTYPE_WEAPON_GRENADE_BEGIN && weapon_Subtype <= ITEM_SUBTYPE_WEAPON_GRENADE_END ) )
@@ -2391,29 +2439,48 @@ string generic_description_slot( int slot )
 	{
 		int deterioration = item.Deterioration * 100 / MAX_DETERIORATION;
 		int penalty = deterioration == 0 ? 1 : int( ( _WeaponDmgMax( item.Proto, use ) + bonus ) * deterioration * 0.01f ); 
-		result += "|0xFFFF00 " + int( ( _WeaponDmgMax( item.Proto, use ) + bonus ) - penalty ) + "\n";
-		result += ReplaceText( GetMsgStr( TEXTMSG_GAME, STR_DETERIORATION_PROCENT ), "VALUE", item.Deterioration * 100 / MAX_DETERIORATION ) + "\n";
+		
+		string damageType = "";
+		int dt = _WeaponDmgType(item.Proto, use);
+		damageType = GetMsgStr( TEXTMSG_GAME, STR_DAMAGE_TYPE_DESCRIPTION ) + GetMsgStr( TEXTMSG_GAME, STR_DAMAGE_TYPE_NONE + dt );
+
+		result.insertLast( line + "|0xFFFF00 " + int( ( _WeaponDmgMax( item.Proto, use ) + bonus ) - penalty ) + damageType );
+		result.insertLast( ReplaceText( GetMsgStr( TEXTMSG_GAME, STR_DETERIORATION_PROCENT ), "VALUE", item.Deterioration * 100 / MAX_DETERIORATION ) );
 	}
 	else
 	{
-        result += "|0xFFFF00 " + ( ( _WeaponDmgMax( item.Proto, use ) + bonus ) * DmgMult / DmgDiv ) + "\n";
+		string damageType = "";
+		int dt = _WeaponDmgType(item.Proto, use);
+
+		if( item.Proto.Weapon_MaxAmmoCount > 0 )
+		{
+			ProtoItem@ AmmoProto = GetProtoItem( item.AmmoPid );
+			if( FireAmmo.find( item.AmmoPid ) != -1 )
+			{
+				dt = DAMAGE_FIRE;
+			}
+		}
+
+		damageType = GetMsgStr( TEXTMSG_GAME, STR_DAMAGE_TYPE_DESCRIPTION ) + GetMsgStr( TEXTMSG_GAME, STR_DAMAGE_TYPE_NONE + dt );
+		
+        result.insertLast( line + "|0xFFFF00 " + ( ( _WeaponDmgMax( item.Proto, use ) + bonus ) * DmgMult / DmgDiv ) + damageType );
     }
 		
 	if( _WeaponMaxDist( item.Proto, use ) > 1 )
 	{
-		result += "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_DIST );
+		line = "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_DIST );
 		
 		int wpnMaxDist = _WeaponMaxDist( item.Proto, use );
 		if( skill == SK_THROWING )
 		{
 			wpnMaxDist = MIN( wpnMaxDist, 3 * MIN( int(10), chosen.Stat[ ST_STRENGTH ] ) );
 		}
-		result += "|0xFFFF00  " + wpnMaxDist;
+		result.insertLast( line + "|0xFFFF00  " + wpnMaxDist );
 	}
 	
 	if( _GetWeaponBlastRadius( item.Proto ) > 0 )
 	{
-		result += "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_BLAST_RADIUS ) + "|0xFFFF00 " + item.Proto.Blast_Radius + "\n";
+		result.insertLast( "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_BLAST_RADIUS ) + "|0xFFFF00 " + item.Proto.Blast_Radius );
 	}
 
 	if( item.Proto.Weapon_MaxAmmoCount > 0 )
@@ -2423,29 +2490,29 @@ string generic_description_slot( int slot )
 			ProtoItem@ AmmoProto = GetProtoItem( item.AmmoPid  );
 			if( _GetAmmoBlastRadius( AmmoProto ) > 0 )
 			{
-				result += "|0x3CF800   " + GetMsgStr( TEXTMSG_GAME, STR_BLAST_RADIUS ) + "|0xFFFF00 " + AmmoProto.Blast_Radius;
+				result.insertLast( "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_BLAST_RADIUS ) + "|0xFFFF00 " + AmmoProto.Blast_Radius );
 			}
 		}
 		
-		result += "\n";
-		result += "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_AMMO );
-		result += "|0xFFFF00 " + item.AmmoCount;
-		result += "|0x3CF800  / "; 
-		result += "|0xFFFF00 " + item.Proto.Weapon_MaxAmmoCount;
+		result.insertLast(
+			  "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_AMMO )
+			+ "|0xFFFF00 " + item.AmmoCount
+			+ "|0x3CF800  / "
+			+ "|0xFFFF00 " + item.Proto.Weapon_MaxAmmoCount );
 		
 		if( !isAmmoRegen )
 		{
 			AmmoPid = item.AmmoPid;
-			result += "\n|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_LOADED_AMMO ) + "|0xFFFF00 " +_GetAmmoShortDisc( AmmoPid );
+			result.insertLast( "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_LOADED_AMMO ) + "|0xFFFF00 " +_GetAmmoShortDisc( AmmoPid ) );
 		}
 		else
 		{
-			result += "\n|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_LOADED_AMMO ) + "|0xFFFF00 " + GetMsgStr( TEXTMSG_GAME, STR_RECHARGABLE_AMMO );
+			result.insertLast( "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_INV_LOADED_AMMO ) + "|0xFFFF00 " + GetMsgStr( TEXTMSG_GAME, STR_RECHARGABLE_AMMO ) );
 		}
 	}
 	else if( item.GetCount() > 1 )
 	{
-		result += "\n|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_YOU_HAVE ) += "|0xFFFF00 " + item.GetCount() + "\n";
+		result.insertLast( "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_YOU_HAVE ) += "|0xFFFF00 " + item.GetCount() );
 	}
 	else if( ( weapon_Subtype >= ITEM_SUBTYPE_WEAPON_MELEE_BEGIN && weapon_Subtype <= ITEM_SUBTYPE_WEAPON_MELEE_END ) 
 			|| ( weapon_Subtype >= ITEM_SUBTYPE_WEAPON_GRENADE_BEGIN && weapon_Subtype <= ITEM_SUBTYPE_WEAPON_GRENADE_END ) )
@@ -2456,17 +2523,9 @@ string generic_description_slot( int slot )
 		//{
 		//	count += thrownAmmoCount( belt, item.Proto.ProtoId );
 		//}
-		result += "\n|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_YOU_HAVE ) + "|0xFFFF00 " + count + "\n";
+		result.insertLast( "|0x3CF800 " + GetMsgStr( TEXTMSG_GAME, STR_YOU_HAVE ) + "|0xFFFF00 " + count );
 	}
-	else 
-	{
-		result += "\n\n";
-	}
-	
-	if( weapon_Subtype < ITEM_SUBTYPE_WEAPON_GRENADE_BEGIN || weapon_Subtype > ITEM_SUBTYPE_WEAPON_MELEE_END )
-	{
-		result += "\n";
-	}
+
 	return result;
 }
 
@@ -2542,8 +2601,8 @@ string update_generic_description( int descType )
         result += GetMsgStr( TEXTMSG_GAME, STR_INV_SHORT_SPECIAL( ST_LUCK ) ) + "\n";
 		result += "\n\n\n\n\n\n\n\n"; // FoRP Inventory 2020 adjustment
 
-		result += generic_description_slot( SLOT_HAND1 );
-		result += generic_description_slot( SLOT_HAND2 );
+		result += generic_description_slot_maker( SLOT_HAND1 );
+		result += generic_description_slot_maker( SLOT_HAND2 );
 	
 		// Additional slots
         result += "\n\n|0x3CF800 "+ GetMsgStr( TEXTMSG_GAME, STR_INV_EXTRA_SLOTS ) + "\n";
@@ -3036,6 +3095,11 @@ string item_description( ItemCl& item, int lookType )
 			result += "\n" + ReplaceText( GetMsgStr( TEXTMSG_GAME, STR_INV_VOLUME ), "VALUE", item.Proto.Volume * item.GetCount() );
 			// Material
 			result += "\n" + ReplaceText( GetMsgStr( TEXTMSG_GAME, STR_INV_MATERIAL ), "VALUE", GetMsgStr( TEXTMSG_GAME, item.Proto.Material + 170 ) );
+			// Flashlight charge
+			if( item.GetProtoId() == PID_FLASHLIGHT_OFF || item.GetProtoId() == PID_FLASHLIGHT_ON || item.GetProtoId() == PID_10MM_PISTOL_FLASHLIGHT || item.GetProtoId() == PID_TAPE_RECORDER )
+			{
+				result += "\n" + ReplaceText( GetMsgStr( TEXTMSG_TEXT, STR_RECORDER_MENU_PROCESS_CHARGED ), "@lex charge@", "|0xFFFF00 " + item.Val1 * 100 / 480 + "|0x3CF800 %" );
+			}
 			// Homebrew Taste
 			uint[] taste_pids = { PID_HOMEBREW_PRT };
 			int m = taste_pids.find( item.GetProtoId() );
@@ -3165,6 +3229,7 @@ string critter_description_maker( int lookType, int target_id, int age, int gend
 				if( !(s_temp is null) )
 				{
 					cr.Name = s_temp;
+					name = s_temp;
 				}
 			}
 		}
@@ -5846,7 +5911,7 @@ void show_player_info()
         #endif //!PHYSICAL_UI
         #ifdef PHYSICAL_UI
             ItemCl@[] items;
-            uint len = GetAllItems(@items);
+            uint len = GetAllItems( @items );
             for( uint i = 0; i < len; i++ )
 			{
                 ItemCl@ item = items[i];
@@ -5860,6 +5925,8 @@ void show_player_info()
                     PhysicalDrawTextAboveHex( text, item.HexX, item.HexY, line_color, 1, item.Id, 0, is_gm, is_gm );
                 }
             }
+			
+			items.resize(0);
         #endif //PHYSICAL_UI
 	}
 	
@@ -6069,37 +6136,42 @@ void ShowF1Help()
 void ShowRadiation()
 {
 	ItemCl@[] items;
-	uint len = GetAllItems(@items);
+	uint len = GetAllItems( @items );
 	for( uint i = 0; i < len; i++ )
 	{
 		ItemCl@ radSign = items[i];
-		if( radSign.GetProtoId() == PID_RADIATION_MARKER )
+		if( valid( radSign ) )
 		{
-			int[] drawData;
-			uint radius = uint( ABS( radSign.Val2 ) );
-			if( radius > 0 )
+			if( radSign.GetProtoId() == PID_RADIATION_MARKER )
 			{
-				int zx = 0, zy = 0;
-				for( uint8 j = 0; j < 6; j++ )
+				int[] drawData;
+				uint radius = uint( ABS( radSign.Val2 ) );
+				if( radius > 0 )
 				{
-					uint8 r0 = 0xFF, g0 = 0xFF, b0 = 0x00;
-					uint16 tx = radSign.HexX, ty = radSign.HexY;
-					MoveHexByDir( tx, ty, j, radius );
-					GetHexPos( tx, ty, zx, zy );
-					drawData.insertLast( zx );
-					drawData.insertLast( zy );
-					drawData.insertLast( COLOR_RGBA( r0, g0, b0, 30 ) );
+					int zx = 0, zy = 0;
+					for( uint8 j = 0; j < 6; j++ )
+					{
+						uint8 r0 = 0xFF, g0 = 0xFF, b0 = 0x00;
+						uint16 tx = radSign.HexX, ty = radSign.HexY;
+						MoveHexByDir( tx, ty, j, radius );
+						GetHexPos( tx, ty, zx, zy );
+						drawData.insertLast( zx );
+						drawData.insertLast( zy );
+						drawData.insertLast( COLOR_RGBA( r0, g0, b0, 30 ) );
+					}
+					DrawPrimitive( DRAW_PRIMITIVE_TRIANGLEFAN, drawData );
 				}
-				DrawPrimitive( DRAW_PRIMITIVE_TRIANGLEFAN, drawData );
+				
+				int hx = 0, hy = 0;
+				GetHexPos( radSign.HexX, radSign.HexY, hx, hy );
+				DrawSprite( RadSpriteId, -1, hx - 12, hy - 14, COLOR_GOLDEN );
+				DrawText( "S: " + radSign.Val0, hx-12, hy - 24, hx, hy, COLOR_GOLDEN, FONT_FALLOUT, FT_BORDERED  );
+				DrawText( "" + radSign.Val1 + " min", hx-12, hy + 12, hx, hy, COLOR_GOLDEN, FONT_FALLOUT, FT_BORDERED  );
 			}
-			
-			int hx = 0, hy = 0;
-			GetHexPos( radSign.HexX, radSign.HexY, hx, hy );
-			DrawSprite( RadSpriteId, -1, hx - 12, hy - 14, COLOR_GOLDEN );
-			DrawText( "S: " + radSign.Val0, hx-12, hy - 24, hx, hy, COLOR_GOLDEN, FONT_FALLOUT, FT_BORDERED  );
-			DrawText( "" + radSign.Val1 + " min", hx-12, hy + 12, hx, hy, COLOR_GOLDEN, FONT_FALLOUT, FT_BORDERED  );
 		}
 	}
+	
+	items.resize(0);
 }
 
 void ShowGases()
@@ -6109,33 +6181,38 @@ void ShowGases()
 	for( uint i = 0; i < len; i++ )
 	{
 		ItemCl@ gasSign = items[i];
-		if( gasSign.GetProtoId() == PID_GAS_MARKER )
+		if( valid( gasSign ) )
 		{
-			int[] drawData;
-			uint radius = uint( ABS( gasSign.Val2 ) );
-			if( radius > 0 )
+			if( gasSign.GetProtoId() == PID_GAS_MARKER )
 			{
-				int zx = 0, zy = 0;
-				for( uint8 j = 0; j < 6; j++ )
+				int[] drawData;
+				uint radius = uint( ABS( gasSign.Val2 ) );
+				if( radius > 0 )
 				{
-					uint8 r0 = 0x7F, g0 = 0x7F, b0 = 0x7F;
-					uint16 tx = gasSign.HexX, ty = gasSign.HexY;
-					MoveHexByDir( tx, ty, j, radius );
-					GetHexPos( tx, ty, zx, zy );
-					drawData.insertLast( zx );
-					drawData.insertLast( zy );
-					drawData.insertLast( COLOR_RGBA( r0, g0, b0, 100 ) );
+					int zx = 0, zy = 0;
+					for( uint8 j = 0; j < 6; j++ )
+					{
+						uint8 r0 = 0x7F, g0 = 0x7F, b0 = 0x7F;
+						uint16 tx = gasSign.HexX, ty = gasSign.HexY;
+						MoveHexByDir( tx, ty, j, radius );
+						GetHexPos( tx, ty, zx, zy );
+						drawData.insertLast( zx );
+						drawData.insertLast( zy );
+						drawData.insertLast( COLOR_RGBA( r0, g0, b0, 100 ) );
+					}
+					DrawPrimitive( DRAW_PRIMITIVE_TRIANGLEFAN, drawData );
 				}
-				DrawPrimitive( DRAW_PRIMITIVE_TRIANGLEFAN, drawData );
+				
+				int hx = 0, hy = 0;
+				GetHexPos( gasSign.HexX, gasSign.HexY, hx, hy );
+				DrawSprite( GasSpriteId, -1, hx - 12, hy - 14, COLOR_LGRAY );
+				DrawText( "S: " + gasSign.Val0, hx - 12, hy - 24, hx, hy, COLOR_LGRAY, FONT_FALLOUT, FT_BORDERED );
+				DrawText( "" + gasSign.Val1 + " sec", hx-12, hy + 12, hx, hy, COLOR_LGRAY, FONT_FALLOUT, FT_BORDERED );
 			}
-			
-			int hx = 0, hy = 0;
-			GetHexPos( gasSign.HexX, gasSign.HexY, hx, hy );
-			DrawSprite( GasSpriteId, -1, hx - 12, hy - 14, COLOR_LGRAY );
-			DrawText( "S: " + gasSign.Val0, hx - 12, hy - 24, hx, hy, COLOR_LGRAY, FONT_FALLOUT, FT_BORDERED );
-			DrawText( "" + gasSign.Val1 + " sec", hx-12, hy + 12, hx, hy, COLOR_LGRAY, FONT_FALLOUT, FT_BORDERED );
 		}
 	}
+	
+	items.resize(0);
 }
 
 void ShowLights()
@@ -6145,16 +6222,21 @@ void ShowLights()
 	for( uint i = 0; i < len; i++ )
 	{
 		ItemCl@ lightSign = items[i];
-		if( lightSign.GetProtoId() == PID_LIGHT_SOURCE )
+		if( valid( lightSign ) )
 		{
-			int hx = 0, hy = 0;
-			GetHexPos( lightSign.HexX, lightSign.HexY, hx, hy );
-			DrawSprite( LightSpriteId, -1, hx - 14, hy - 18, COLOR_CYAN );
-			string state = !FLAG( lightSign.Flags, ITEM_LIGHT ) ? "Off" : "On";
-			DrawText( state, hx - 12, hy - 24, hx, hy, COLOR_CYAN, FONT_FALLOUT, FT_BORDERED );
-			DrawText( "G: " + lightSign.Val1, hx - 12, hy + 12, hx, hy, COLOR_CYAN, FONT_FALLOUT, FT_BORDERED );
+			if( lightSign.GetProtoId() == PID_LIGHT_SOURCE )
+			{
+				int hx = 0, hy = 0;
+				GetHexPos( lightSign.HexX, lightSign.HexY, hx, hy );
+				DrawSprite( LightSpriteId, -1, hx - 14, hy - 18, COLOR_CYAN );
+				string state = !FLAG( lightSign.Flags, ITEM_LIGHT ) ? "Off" : "On";
+				DrawText( state, hx - 12, hy - 24, hx, hy, COLOR_CYAN, FONT_FALLOUT, FT_BORDERED );
+				DrawText( "G: " + lightSign.Val1, hx - 12, hy + 12, hx, hy, COLOR_CYAN, FONT_FALLOUT, FT_BORDERED );
+			}
 		}
 	}
+	
+	items.resize(0);
 }
 
 class FOWindowEventShowData : FOWindowEventData

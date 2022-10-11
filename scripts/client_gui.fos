@@ -514,7 +514,10 @@ class GUIScreen : IGUIScreenOpt
         {
             qmap_iface();
 			
-			controlpanel.draw();
+			if( valid( controlpanel ) )
+			{
+				controlpanel.draw();
+			}
 
 			if( ( __sinf & SINF_HEX ) != 0 )
             {
@@ -526,7 +529,7 @@ class GUIScreen : IGUIScreenOpt
 			CritterCl@ chosen = GetChosen();
             if( !valid( chosen ) )
 			{ 
-				return;
+				return; //TODO: Work even without chosen.
 			}
 			
 			if( LMB_on && FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys )
@@ -631,6 +634,67 @@ class GUIScreen : IGUIScreenOpt
 				DrawPrimitive( DRAW_PRIMITIVE_LINESTRIP, drawData2 );
 			}
 			
+			//Character Voice Radius
+			if( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_VOICE_R ) )
+			{
+				int hxX = chosen.HexX, hxY = chosen.HexY;
+				uint8 r0 = 0x00, g0 = 0x80, b0 = 0xFF;
+				int[] drawData3;
+				int hx = 0, hy = 0;
+				for( uint8 i = 0; i < 6; i++ )
+				{
+					uint16 tx = hxX, ty = hxY;
+					MoveHexByDir( tx, ty, i, 50 - chosen.Stat[ ST_SPEECH_VOLUME ] );
+					GetHexPos( tx, ty, hx, hy );
+					drawData3.insertLast( hx );
+					drawData3.insertLast( hy );
+					drawData3.insertLast( COLOR_RGBA( r0, g0, b0, 255 ) );
+				}
+				
+				uint16 tx = hxX, ty = hxY;
+				MoveHexByDir( tx, ty, 0, 50 - chosen.Stat[ ST_SPEECH_VOLUME ] );
+				GetHexPos( tx, ty, hx, hy );
+				drawData3.insertLast( hx );
+				drawData3.insertLast( hy );
+				drawData3.insertLast( COLOR_RGBA( r0, g0, b0, 255 ) );
+				
+				DrawPrimitive( DRAW_PRIMITIVE_LINESTRIP, drawData3 );
+			}
+			//Character Weapon Radius
+			if( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_WEAPON_R ) )
+			{
+				int radius = 0;
+				uint8 mode = 0;
+				ProtoItem@ weapon = chosen.GetSlotProto( SLOT_HAND1, mode );
+				int wpnMaxDist = _WeaponMaxDist( weapon, mode );
+				if( valid( weapon ) )
+				{
+					radius = _WeaponMaxDist( weapon, mode );
+				}
+				
+				int hxX = chosen.HexX, hxY = chosen.HexY;
+				uint8 r0 = 0xFF, g0 = 0x00, b0 = 0x00;
+				int[] drawData3;
+				int hx = 0, hy = 0;
+				for( uint8 i = 0; i < 6; i++ )
+				{
+					uint16 tx = hxX, ty = hxY;
+					MoveHexByDir( tx, ty, i, radius );
+					GetHexPos( tx, ty, hx, hy );
+					drawData3.insertLast( hx );
+					drawData3.insertLast( hy );
+					drawData3.insertLast( COLOR_RGBA( r0, g0, b0, 255 ) );
+				}
+				
+				uint16 tx = hxX, ty = hxY;
+				MoveHexByDir( tx, ty, 0, radius );
+				GetHexPos( tx, ty, hx, hy );
+				drawData3.insertLast( hx );
+				drawData3.insertLast( hy );
+				drawData3.insertLast( COLOR_RGBA( r0, g0, b0, 255 ) );
+				
+				DrawPrimitive( DRAW_PRIMITIVE_LINESTRIP, drawData3 );
+			}
 			//Combat UI
 			if( GetCurrentCursor() == CURSOR_USE_WEAPON )
 			{
@@ -1197,6 +1261,10 @@ class GUIScreen : IGUIScreenOpt
 			clearShiftGroup();
 		
 			CritterCl@ choo = GetChosen();
+			if( !valid( choo ) )
+			{
+				return false; //TODO: Work even without chosen.
+			}
 
 			if( FLAG( choo.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && GetCurrentCursor() == CURSOR_RTSA )
 			{
@@ -1328,7 +1396,7 @@ class GUIScreen : IGUIScreenOpt
 
     bool KeyPress( uint8 key )
     {
-		CritterCl@ chosen = GetChosen();			
+		CritterCl@ chosen = GetChosen();
 
 		int screen_type = GUI_GetActiveScreen();
 
@@ -1418,10 +1486,18 @@ class GUIScreen : IGUIScreenOpt
 				return true;
 			}
 
+			if( key == DIK_W && !__ConsoleActive 
+				 && !KeyPressed[ DIK_LMENU ] && !KeyPressed[ DIK_RMENU ] 
+				 && !KeyPressed[ DIK_RCONTROL ] && !KeyPressed[ DIK_LCONTROL ] 
+				 && !KeyPressed[ DIK_LSHIFT ] && !KeyPressed[ DIK_RSHIFT ] )
+			{
+				RunServerScriptUnsafe( "general_unsafe@unsafe_ToggleWeaponRadius", 0, 0, 0, null, null );
+			}
+			
 			//GM stelth.
 			if( key == DIK_GRAVE && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] )
 			{
-				RunServerScriptUnsafe("main@unsafe_swap_invis", 0, 0, 0, null, null);
+				RunServerScriptUnsafe( "main@unsafe_swap_invis", 0, 0, 0, null, null );
 				return true;
 			}
 
@@ -1484,23 +1560,37 @@ class GUIScreen : IGUIScreenOpt
 				}
 			}
 
+			//Fast-use hand1 item
+			if( key == DIK_LBRACKET && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LSHIFT ] )
+			{
+				if( valid( chosen ) && !chosen.IsBusy() )
+				{
+					RunServerScriptUnsafe( "main@unsafe_UseItem", 0, 0, 0, null, null );
+					return true;
+				}
+			}
+			
+			//Fast-use hand2 item
+			if( key == DIK_RBRACKET && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LSHIFT ] )
+			{
+				if( valid( chosen ) && !chosen.IsBusy() )
+				{
+					RunServerScriptUnsafe( "main@unsafe_UseItem", 1, 0, 0, null, null );
+					return true;
+				}
+			}
+			
 			//knock.
             if( key == DIK_H && GetCurrentCursor() == CURSOR_DEFAULT && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] )
             {
                 CritterCl@ cr = GetMonitorCritter( __MouseX, __MouseY );
-                ItemCl@ it = GetMonitorItem( __MouseX, __MouseY );
 				
 				if( @cr != null )
 				{
-					RunServerScriptUnsafe( "general_unsafe@unsafe_itemhit", cr.Id, 0, 0, null, null );
-				}
-				else if( @it != null )
-				{
-					RunServerScriptUnsafe( "general_unsafe@unsafe_itemhit2", 0, it.HexX, it.HexY, null, null );
+					RunServerScriptUnsafe( "gameplay@unsafe_DragAndDrop", cr.Id, 0, 0, null, null );
 				}
 				
 				ChangeCursor( CURSOR_DEFAULT );
-				
                 return true;
             }
 			
@@ -1509,7 +1599,7 @@ class GUIScreen : IGUIScreenOpt
 			{
 				uint16 hexX = 0, hexY = 0;
             	GetMonitorHex( __MouseX, __MouseY, hexX, hexY);
-				if( !chosen.IsBusy() )
+				if( valid( chosen ) && !chosen.IsBusy() )
 				{
 					RunServerScriptUnsafe ( "general_unsafe@unsafe_itemthrow", hexX, hexY, 0, null, null );
 				}
@@ -1520,7 +1610,7 @@ class GUIScreen : IGUIScreenOpt
 			//Reload
             if( key == DIK_R && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LSHIFT ] && !KeyPressed[ DIK_LMENU ] )
 			{
-				if( !chosen.IsBusy() )
+				if( valid( chosen ) && !chosen.IsBusy() )
 				{
 					ItemCl@ weapon = chosen.GetItem( 0, SLOT_HAND1 );
 					if( valid( weapon ) )
@@ -1540,9 +1630,9 @@ class GUIScreen : IGUIScreenOpt
 			}				
 
 			//Use on hotkey
-            if( key == DIK_A && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LSHIFT ] )
+            if( key == DIK_A && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LSHIFT ] && valid( chosen ) )
 			{
-				if( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys )
+				if( valid( chosen ) && FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys )
 				{
 					GetCurrentCursor() == CURSOR_RTS ? ChangeCursor( CURSOR_RTSA ) : ChangeCursor( CURSOR_RTS );
 					return true;
@@ -1566,7 +1656,7 @@ class GUIScreen : IGUIScreenOpt
 				{
 					ChangeCursor( CURSOR_USE_OBJECT );
 				}
-				else if( hand.Type == ITEM_TYPE_WEAPON )
+				else if( valid( hand ) && hand.Type == ITEM_TYPE_WEAPON )
 				{
 					ChangeCursor( CURSOR_USE_WEAPON );
 				}
@@ -1575,17 +1665,20 @@ class GUIScreen : IGUIScreenOpt
             }
 
 			//Go to cover
-			if( key == DIK_SPACE && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LSHIFT ] )
+			if( key == DIK_SPACE && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LSHIFT ] && valid( chosen ) )
 			{
-				if( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys )
+				if( !__waiting )
 				{
-					RunServerScriptUnsafe( "mobcontrol@unsafe_relaxNPC", 0, 0, 0, null, control() );
+					if( FLAG( chosen.Param[ PLAYER_FLAGS ], PLAYER_FLAG_RTS ) && __mobhotkeys )
+					{
+						RunServerScriptUnsafe( "mobcontrol@unsafe_relaxNPC", 0, 0, 0, null, control() );
+					}
+					else
+					{
+						RunServerScriptUnsafe( "general_unsafe@unsafe_relax", chosen.Param[ CR_IS_RELAXING ] == 0 ? 5 : 0, 0, 0, null, null );
+					}
+					return true;
 				}
-				else
-				{
-					RunServerScriptUnsafe( "general_unsafe@unsafe_relax", chosen.Param[ CR_IS_RELAXING ] == 0 ? 5 : 0, 0, 0, null, null );
-				}
-				return true;
 			}
 
 			//alt + hotkey
@@ -1640,7 +1733,7 @@ class GUIScreen : IGUIScreenOpt
 						return true;
 					case( DIK_R ):									//Ammo change
 					{
-						if( !chosen.IsBusy() )
+						if( valid( chosen ) && !chosen.IsBusy() )
 						{
 							ItemCl@ weapon = chosen.GetItem( 0, SLOT_HAND1 );
 							if( valid( weapon ) )
@@ -1656,8 +1749,14 @@ class GUIScreen : IGUIScreenOpt
 					case( DIK_SUBTRACT ):
 						RunServerScriptUnsafe( "general_unsafe@unsafe_VoiceVolumeAdjust", 5, 0, 0, null, null );
 						return true;
+					case( DIK_MULTIPLY ):
+						RunServerScriptUnsafe( "general_unsafe@unsafe_ToggleVoiceRadius", 0, 0, 0, null, null );
+						return true;
 					case( DIK_M ):
 						RunServerScriptUnsafe( "player_menu@unsafe_StartPlayerMenu", 0, 0, 0, null, null );
+						return true;
+					case( DIK_N ):
+						RunServerScriptUnsafe( "player_menu@unsafe_StartAnimMenu", 0, 0, 0, null, null );
 						return true;
 				}
 			}
@@ -1687,7 +1786,7 @@ class GUIScreen : IGUIScreenOpt
 					}
 					case( DIK_R ): //Ammo change
 					{
-						if( !chosen.IsBusy() )
+						if( valid( chosen ) && !chosen.IsBusy() )
 						{
 							ItemCl@ weapon = chosen.GetItem( 0, SLOT_HAND1 );
 							if( valid( weapon ) )
@@ -1752,7 +1851,7 @@ class GUIScreen : IGUIScreenOpt
 					switch( key )
 					{
 						case( DIK_T ):
-							RunServerScriptUnsafe( "gm_commands@unsafe_GM_tel", chosen.Id, hexX, hexY, null, null );
+							RunServerScriptUnsafe( "gm_commands@unsafe_GM_tel", valid( chosen ) ? chosen.Id : 0, hexX, hexY, null, null );
 							break;
 						case( DIK_N ):
 							RunServerScriptUnsafe( "gm@unsafe_GM_teleport_to_next_player",  0, 0, 0, null, null );
@@ -1898,7 +1997,7 @@ class GUIScreen : IGUIScreenOpt
         for( uint i = 0, j = Elements.length(); i < j; i++ )
         {
             GUIElement@ e = Elements[ i ];
-            if( e.IsFocused && e.IsTextInput )
+            if( valid(e) && e.IsFocused && e.IsTextInput )
 			{
                 return e.KeyPress( key );
 			}
