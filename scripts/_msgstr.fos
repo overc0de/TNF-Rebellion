@@ -359,6 +359,7 @@
 #define STR_TRAP_PERCEPTION					 ( 6577 )
 #define STR_EMOTE_STEP_TRAP					 ( 6578 )
 #define STR_MAPMSG_CLICK					 ( 6579 )
+#define STR_UNEDUCATED						 ( 6580 )
 
 // Bootlegging
 #define STR_STILL_NOT_READY					 ( 6600 )

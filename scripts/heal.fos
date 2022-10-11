@@ -360,6 +360,11 @@ class MenuDOC_Bullet: CenteredMenuHandler
 	int calculate_chances( bool actual_use )
 	{
 		int skill = cr.Skill[ SK_DOCTOR ];
+		if( cr.Skill[ SK_OUTDOORSMAN ] == 300 )
+		{
+			skill = 300;
+		}
+
 		string skill_info = "DOC base [" + skill + "] ";
 		
 		int damage = 0;
@@ -815,6 +820,11 @@ class MenuDOC_Heavy: CenteredMenuHandler
 	int calculate_chances( bool actual_use )
 	{
 		int skill = cr.Skill[ SK_DOCTOR ];
+		if( cr.Skill[ SK_OUTDOORSMAN ] == 300 )
+		{
+			skill = 300;
+		}
+		
 		string skill_info = "DOC base [" + skill + "] ";
 		
 		int damage = 0;
@@ -1726,8 +1736,18 @@ void proccessHealItem( Critter& cr, HealingItem& usedItem )
 	
 	if( cr.ParamBase[ ST_GLOBAL_OVERDOSE ] < 100 )
 	{
-		cr.StatBase[ ST_CURRENT_HP ] += int( usedItem.instant_heal * traitMul / traitDiv );
+		
+		int instantHeal = int( usedItem.instant_heal * traitMul / traitDiv );
 		int healedAmount = int( usedItem.value_heal * traitMul / traitDiv );
+		
+		if( cr.Skill[ SK_OUTDOORSMAN ] < 275 && !usedItem.ResurectItem )
+		{
+			healedAmount *= 0.2;
+			instantHeal *= 0.2;
+		}
+		
+		cr.StatBase[ ST_CURRENT_HP ] += instantHeal;
+		
 		cr.AddTimeEvent( "cte_quickheal", 0, CTE_QUICKHEAL, healedAmount );
 	}
 	

@@ -3865,6 +3865,12 @@ bool ThrowNets( Critter& cr, Critter& target, int weapon )
 		return false;
 	}
 	
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 250 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 250 );
+		return false;
+	}
+	
 	switch( weapon )
 	{
 		case( PID_REV_BALL1 ):

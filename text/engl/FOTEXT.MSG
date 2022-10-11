@@ -360,6 +360,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {6577}{}{|0xFFFF00 You have almost stepped on a trap, but avoided it at the last second.}
 {6578}{}{steps on a trap}
 {6579}{}{:click:}
+{6580}{}{|0xFFFF00 Action requires @lex skill@% outdoor skill.}
 
 # Bootlegging
 {6600}{}{|0xFFFF00 The still is not ready for distiling.}

@@ -107,6 +107,12 @@ bool PrepareMining( Critter& cr, Item@ tool, Item@ target )
 		}
 	}
 	
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 100 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 100 );
+		return true;
+	}
+
 	start_mining( cr, tool, target );
 	return true;
 }

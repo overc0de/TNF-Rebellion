@@ -164,6 +164,12 @@ bool PrepareFishing( Critter& cr, Item& fishingRod, int hexX, int hexY )
 		return false;
 	}
 
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 150 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 150 );
+		return false;
+	}
+	
 	if( Invalid_maps.find( map.GetProtoId() ) != -1 )
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_FISH_HERE );

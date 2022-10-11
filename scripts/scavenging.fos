@@ -65,6 +65,12 @@ bool PrepareScavenging( Critter& cr, Item@ tool, Item@ target )
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_INJURED_CANT_WORK );
 		return false; 
 	}
+	
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 100 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 100 );
+		return true;
+	}
 
 	if( tool.IsDeteriorable() )
 	{

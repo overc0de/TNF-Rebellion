@@ -107,6 +107,12 @@ bool FastFrying( Critter& cr )
         return true;
     }
 
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 100 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 100 );
+		return true;
+	}
+
 	string name = "food";
 	switch( item.GetProtoId() )
 	{

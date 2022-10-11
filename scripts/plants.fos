@@ -223,6 +223,12 @@ void TryPlantSeed( Critter& cr, Item& seed, int hexX, int hexY, Item@ plant_bed 
 		return;
 	}
 
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 200 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 200 );
+		return;
+	}
+
 	if( plant.type == PLANT_TYPE_FARM )
 	{
 		if( GetDistantion( cr.HexX, cr.HexY, hexX, hexY ) > 1 )
@@ -783,6 +789,12 @@ bool FurtilezePlant( Critter& cr, Item& furtilizer, Item& plant )
 		return false;
 	}
 	
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 200 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 200 );
+		return false;
+	}
+
 	plant.PLANT_FERTILITY ++;
 	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_FERTILIZES_THE_PLANT );
 	cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_YOU_FERTILIZED_THE_PLANT );
@@ -806,6 +818,12 @@ bool TryWaterPlant( Critter& cr, Item& water, Item& plant )
 		return false;
 	}
 	
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 200 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 200 );
+		return false;
+	}
+
 	if( plant.PLANT_WATERING > 0 )
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_ENOUGH_WATER );

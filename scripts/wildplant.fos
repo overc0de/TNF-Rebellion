@@ -210,7 +210,7 @@ bool PickPlant( Critter& cr, Item& wildplant )
 			pickedPlantPid = plant.loot[0];
 		}
 		
-		if( cr.Skill[ SK_OUTDOORSMAN ] > 50 )
+		if( cr.Skill[ SK_OUTDOORSMAN ] >= 150 )
 		{
 			uint len = cr.Skill[ SK_OUTDOORSMAN ] / 50;
 			for( uint i = 0; i < len; i++ )
@@ -221,7 +221,15 @@ bool PickPlant( Critter& cr, Item& wildplant )
 				}
 			}				
 		}
-		
+		else
+		{
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 150 );
+			EraseTimeEvent( wildplant.EVENT );
+			wildplant.EVENT = 0;
+			DeleteItem( wildplant );
+			return true;
+		}
+
 		cr.AddItem( pickedPlantPid, amount );
 		
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_GATHERED, "$proto@msg item " + ( pickedPlantPid * 100 ) + "@$amount" + amount );
@@ -250,7 +258,7 @@ bool checkPlantStage( Item@ wildplant, WildPlant@ plant )
 }
 
 //===============WILDPLANT_SPAWNER_MECHANIC===============//
-//Forced Spawn
+//~run wildplant _ForceWildplantsInit 0 0 0
 void _ForceWildplantsInit( Critter& player, int param0, int param1, int param2 )
 {
     Map@[] maps;

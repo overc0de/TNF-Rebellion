@@ -82,6 +82,12 @@ bool TryPlantMine( Critter& cr, Item& trap, uint16 hexX, uint16 hexY )
 		return false;
 	}
 	
+	if( cr.Skill[ SK_OUTDOORSMAN ] < 225 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 225 );
+		return false;
+	}
+	
 	if( GetDistantion( cr.HexX, cr.HexY, hexX, hexY ) > 1 )
 	{
 		return false;
