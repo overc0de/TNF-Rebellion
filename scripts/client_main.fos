@@ -1960,6 +1960,10 @@ void hit_aim( uint8& aim )
 void combat_result( uint[]& data )
 {
     CritterCl@ chosen = GetChosen();
+	if( !valid( chosen ) || !valid( data ) )
+	{
+		return;
+	}
 
 	testInfo( CR_TEST_MODE_COMBAT, "Data: " + enlistUINT(data) );
 
@@ -1990,7 +1994,7 @@ void combat_result( uint[]& data )
         CritterCl@ cr = GetCritter( who );
 		CritterCl@ trueTarget = null;
 
-        bool self = ( who == GetChosen().Id );
+        bool self = ( who == chosen.Id );
 		
 		bool isDead = true;
 
@@ -2011,7 +2015,7 @@ void combat_result( uint[]& data )
         uint offset;
         if( self )
 		{
-            if( cr.Stat[ ST_GENDER ] == GENDER_MALE )
+            if( valid( cr ) && cr.Stat[ ST_GENDER ] == GENDER_MALE )
 			{
                 offset = 506;
 			}
@@ -2022,11 +2026,11 @@ void combat_result( uint[]& data )
 		}
 		else
 		{
-            if( cr.Stat[ ST_GENDER ] == GENDER_MALE )
+            if( valid( cr ) && cr.Stat[ ST_GENDER ] == GENDER_MALE )
 			{
                 offset = 606;
 			}
-			else if( cr.Stat[ ST_GENDER ] == GENDER_FEMALE )
+			else if( valid( cr ) && cr.Stat[ ST_GENDER ] == GENDER_FEMALE )
 			{
                 offset = 656;
 			}
@@ -2079,7 +2083,10 @@ void combat_result( uint[]& data )
 				damage = data[ current++ ];
 				result = GetMsgStr( TEXTMSG_COMBAT, offset + ( damage > 1 ? 6 : ( damage != 0 ? 16 : 20 ) ) );
 				result = ReplaceText( result, "%s", name );
-				result = ReplaceText( result, "%s", GetMsgStr( TEXTMSG_COMBAT, 1000 + cr.CrTypeAlias * 10 + loc - 1 ) );
+				if( valid( cr ) )
+				{
+					result = ReplaceText( result, "%s", GetMsgStr( TEXTMSG_COMBAT, 1000 + cr.CrTypeAlias * 10 + loc - 1 ) );
+				}
 
 				if( damage > 1 )
 				{
@@ -2108,7 +2115,11 @@ void combat_result( uint[]& data )
 				message = data[ current++ ];
 				result = GetMsgStr( TEXTMSG_COMBAT, offset + ( damage > 1 ? 5 : ( damage != 0 ? 15 : 19 ) ) );
 				result = ReplaceText( result, "%s", name );
-				result = ReplaceText( result, "%s", GetMsgStr( TEXTMSG_COMBAT, 1000 + cr.CrTypeAlias * 10 + loc - 1 ) );
+				if( valid( cr ) )
+				{
+					result = ReplaceText( result, "%s", GetMsgStr( TEXTMSG_COMBAT, 1000 + cr.CrTypeAlias * 10 + loc - 1 ) );
+				}
+				
 				if( damage > 1 )
 				{
 					result = ReplaceText( result, "%d", damage );
@@ -2134,7 +2145,10 @@ void combat_result( uint[]& data )
 				message = data[ current++ ];
 				result = GetMsgStr( TEXTMSG_COMBAT, offset + ( damage > 1 ? 5 : ( damage != 0 ? 15 : 19 ) ) );
 				result = ReplaceText( result, "%s", name );
-				result = ReplaceText( result, "%s", GetMsgStr( TEXTMSG_COMBAT, 1000 + cr.CrTypeAlias * 10 + loc - 1 ) );
+				if( valid( cr ) )
+				{
+					result = ReplaceText( result, "%s", GetMsgStr( TEXTMSG_COMBAT, 1000 + cr.CrTypeAlias * 10 + loc - 1 ) );
+				}
 				if( damage > 1 )
 				{
 					result = ReplaceText( result, "%d", damage );
@@ -2148,6 +2162,10 @@ void combat_result( uint[]& data )
 				if( self )
 				{
 					// It was original target
+					if( !valid( cr ) )
+					{
+						Message("Debug note #1, better call Kost.");
+					}
 					uint gender_info = CLAMP( cr.Stat[ ST_GENDER ], GENDER_MALE, GENDER_IT ) * 100;
 					result = GetMsgStr( TEXTMSG_COMBAT, 608 + gender_info );
 					string nameTrue = "error1";
@@ -2276,7 +2294,10 @@ void combat_result( uint[]& data )
         // On head indication
         if( __DamageHitDelay > 0 && damage > 0 )
 		{
-            MapMessage( "-" + damage, cr.HexX, cr.HexY, __DamageHitDelay, 0xFFC80000, true, Random( -5, 5 ), -20 );
+			if( valid( cr ) )
+			{
+				MapMessage( "-" + damage, cr.HexX, cr.HexY, __DamageHitDelay, 0xFFC80000, true, Random( -5, 5 ), -20 );
+			}
 		}
 	}
 }
