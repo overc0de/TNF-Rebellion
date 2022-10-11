@@ -585,7 +585,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {9532}{}{|0xFFFF00 You've restored your strength.}
 {9533}{}{drinks}
 {9534}{}{You have drunk: |0xFFFF00 @lex proto@|0x3CF800 .}
-{9535}{}{You lost: |0xFFFF00 @lex rad@|0x3CF800  rad.}
+{9535}{}{You lost: |0xFFFF00 @lex rad@|0x3CF800 % rad.}
 {9536}{}{You gained: |0xFFFF00 @lex poison@|0x3CF800  poison.}
 {9537}{}{consumes @lex proto@}
 

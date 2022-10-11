@@ -122,7 +122,7 @@ void Emote( Critter& target, Item& consumed )
 	
 	if( target.ParamBase[ ST_RADIATION_LEVEL ] > 0 && consumed.SPIRIT_LEVEL != 0 )
 	{
-		target.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_LOST_RAD, "$rad" + consumed.SPIRIT_LEVEL );
+		target.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_LOST_RAD, "$rad" + consumed.SPIRIT_LEVEL * 0.025 );
 	}
 	
 	if( consumed.POLUTION_LEVEL != 0 )
