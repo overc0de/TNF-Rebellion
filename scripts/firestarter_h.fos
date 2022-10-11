@@ -7,8 +7,8 @@
 	#define EVENT 						Val3 								// TE recorded here
 	#define FIRE_STRENGTH				Val4 								// wildfire strength
 	#define FIRE_TIMER 					Val5 								// wilfire timer
-	#define FIRE_BURNING_TIME			REAL_SECOND( 39 ) 					// 
-	#define WILD_FIRE_BURNING_TIME 		REAL_SECOND( Random( 4, 10 ) )  	// 
+	#define FIRE_BURNING_TIME			REAL_SECOND( 1 ) 					// 
+	#define WILD_FIRE_BURNING_TIME 		REAL_SECOND( 1 )  					// 
 	#define EXPLOSION_TIMEOUT			Val6 								// to mark expl TE
 	#define FIRE_MARKER					Val7 								// marker to check str
 	#define LIQUID_AMOUNT				Val8								// in fuel 
