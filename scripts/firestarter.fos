@@ -299,6 +299,15 @@ uint e_Burn( uint[]@ values )
 			
 			if( map.GetRain() == 0 || Random( 1, 3 ) != 3 || map.HasRoof( target.HexX, target.HexY ) )
 			{
+				switch( target.GetProtoId() )
+				{
+					case(PID_FIREBARREL):
+					case(PID_FIREPLACE): 
+						return REAL_SECOND(15);
+					case(PID_BRAZIER): 
+						return REAL_HOUR(1);
+				}
+				
 				return FIRE_BURNING_TIME;
 			}
 		}
