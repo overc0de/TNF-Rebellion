@@ -298,7 +298,7 @@ void CombatAttack( Critter& cr, Critter@ target, ProtoItem& weapon, uint8 weapon
 
     int acmod = 0;   // used many times
 
-	int skillVal = getFullSkill( cr, target, skillNum, weaponSubtype );
+	int skillVal = getFullSkill( cr, target, skillNum, weaponSubtype ) + ( valid( weapon ) ? 2 * _WeaponMaxDist( weapon, weaponMode ) : 0 );
 
     // Begin turn based combat
 	
