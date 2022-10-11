@@ -86,7 +86,7 @@ uint cte_bleed( Critter& cr, int identifier, uint& rate )
 	
 	int maxHP = cr.Stat[ ST_MAX_LIFE ];
 
-    int bleed = CLAMP( cr.StatBase[ ST_BLEED ] * 70 / 100 - 1, 0, maxHP );
+    int bleed = CLAMP( int( cr.StatBase[ ST_BLEED ] * 0.9 ) - 1, 0, maxHP );
 	
 	if( bleed <= Random( 1, cr.Stat[ ST_ENDURANCE ] ) )
 	{
@@ -94,16 +94,12 @@ uint cte_bleed( Critter& cr, int identifier, uint& rate )
 		return 0;
 	}
 	
-	cr.StatBase[ ST_BLEED ] = bleed;
-	if( cr.StatBase[ ST_CURRENT_HP ] + cr.Stat [ST_HEALING_RATE] > 0  )
+	if( cr.IsKnockout() || cr.StatBase[ ST_CURRENT_HP ] + cr.Stat [ST_HEALING_RATE] > 0  )
 	{
-		cr.StatBase[ ST_CURRENT_HP ] -= bleed / 2;
-	}
-	else
-	{
-		bleed /= 2;
-    }
-	
+		cr.StatBase[ ST_CURRENT_HP ] -= bleed;
+		cr.StatBase[ ST_BLEED ] = CLAMP( int( bleed * 0.9 ) - 1, 0, maxHP );
+	}	
+
 	uint16 hx = cr.HexX, hy = cr.HexY;
 	Map@ map = cr.GetMap();
 	if( valid( map ) )
