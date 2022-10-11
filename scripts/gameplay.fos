@@ -529,6 +529,8 @@ class Gameplay : iManagerModule, iManager_loop,
 
         if( type == TIME_NEW_HOUR )
         {
+			OreInit();
+
            	GameVar@ cycle = GetGlobalVar( GVAR_rotten_cycle );
 			if( valid( cycle ) ) 
 			{
@@ -593,7 +595,6 @@ class Gameplay : iManagerModule, iManager_loop,
         if( type == TIME_NEW_DAY )       // 142
         {
 			MapLootInit();
-			OreInit();
 			JunkInit();
 			WildplantInit();
 			MobsSpawnInit();
