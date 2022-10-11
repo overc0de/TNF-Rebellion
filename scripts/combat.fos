@@ -2218,7 +2218,7 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 			
 			if( ( dmgType == DAMAGE_NORMAL || dmgType == DAMAGE_UNCALLED ) && totalDmg >= target.Param[ ST_NORMAL_RESIST ] / 2 )
 			{
-				ChangeStatus( target, CR_STATUS_BLEED, totalDmg , true );
+				ChangeStatus( target, CR_STATUS_BLEED, uint( totalDmg ), true );
 			}
 		}
 	}

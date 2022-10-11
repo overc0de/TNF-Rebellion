@@ -1742,8 +1742,8 @@ void proccessHealItem( Critter& cr, HealingItem& usedItem )
 		
 		if( cr.Skill[ SK_OUTDOORSMAN ] < 275 && !usedItem.ResurectItem )
 		{
-			healedAmount *= 0.2;
-			instantHeal *= 0.2;
+			healedAmount = int( healedAmount * 0.2 );
+			instantHeal = int( instantHeal * 0.2 );
 		}
 		
 		cr.StatBase[ ST_CURRENT_HP ] += instantHeal;
