@@ -160,7 +160,7 @@ uint process_mining( Critter@ cr, int& param0, int& param1, int& param2 )
     {
       	param0++;
 		
-		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] )
+		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] || isGM( cr ) )
 		{
 			Profit( cr, tool, target );
 			int skillNum = SK_MINING;
