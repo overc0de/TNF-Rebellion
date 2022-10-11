@@ -2,7 +2,7 @@
 #define POISON_H
 
 	#define POISON_IDENTIFIER_BY_CR    ( 2 )
-	#define POISON_BASE_DURATION       ( REAL_SECOND( 120 ) )
+	#define POISON_BASE_DURATION       ( REAL_SECOND( 60 ) )
 	#define POISON_DURATION_SUB        ( REAL_SECOND( 1 ) )
 
 	#define STR_POISON_GAIN            ( 12810 )
