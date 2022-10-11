@@ -917,7 +917,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 #Furniture
 {9929}{}{|0xFFFF00 You don't have the right key.}
 {9930}{}{|0xFFFF00 You must have the key or the key-ring containing the right key in your hand.}
-{9931}{}{stops pushing}
+{9931}{}{stops pulling}
 {9932}{}{|0xFFFF00 This won't fit in here.}
 {9933}{}{|0xFFFF00 Dismantling is required.}
 {9934}{}{|0xFFFF00 That did nothing.}
@@ -928,7 +928,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {9939}{}{|0xFFFF00 The object is immovable. Use [Repair] to change object state.}
 {9940}{}{tries to stop}
 {9941}{}{|0xFFFF00 You can't move locked or closed furniture.}
-{9942}{}{starts pushing}
+{9942}{}{starts pulling}
 {9943}{}{|0xFFFF00 You can't make a stack any higher.}
 {9944}{}{|0xFFFF00 A critter is preventing you from placing the object.}
 
@@ -1141,7 +1141,7 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {99705}{}{Anchor}
 {99706}{}{Pick up}
 {99707}{}{Turn}
-{99708}{}{Push}
+{99708}{}{Pull}
 {99709}{}{Stop pushing}
 {99710}{}{Lock}
 {99711}{}{Unlock}
