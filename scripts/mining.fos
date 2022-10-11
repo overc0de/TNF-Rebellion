@@ -428,7 +428,7 @@ bool SpawnOre( Map& map )
 			if( map.IsHexPassed( hx, hy ) )
 			{	
 				Item@ BaseOre = map.AddItem( hx, hy, OreList[0][ Random( 0, OreList[0].length() - 2 ) ], 1 );
-				BaseOre.RESOURCE_DNA = ( entireId - 1000 );
+				BaseOre.RESOURCE_DNA = Random( 1, 10 ) == 10 ? ( entireId - 1000 ) : 0;
 			}
 		}
 	}
