@@ -113,14 +113,19 @@ uint cte_Poison( Critter& cr, int identifier, uint& rate )
         return REAL_MINUTE(1);
 	}
 	
+	if( cr.IsKnockout() )
+	{
+		return GetPoisonDuration( cr );
+	}
+	
     int levelVal = cr.Stat[ ST_POISONING_LEVEL ];
     if( levelVal > 0 )
 	{
-        cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_POISON_PROCESS );
-        cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal - 2, 0, 2000 );
+       //cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_POISON_PROCESS );
+       // cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal - 2, 0, 2000 );
         cr.StatBase[ ST_CURRENT_HP ]--;
 		
-        if( levelVal > 150 )
+        if( levelVal > 500 )
 		{
 			uint[] durations;
 			uint[] indexes;
@@ -157,24 +162,17 @@ uint cte_Poison( Critter& cr, int identifier, uint& rate )
 
 uint GetPoisonDuration( Critter& cr )
 {
-    int duration = POISON_BASE_DURATION;
-    int levelVal = cr.Stat[ ST_POISONING_LEVEL ];
-    if( levelVal == 0 )
+    if( cr.Stat[ ST_POISONING_LEVEL ] <= 0 )
 	{
         return 0;
 	}
     
-	duration -= levelVal * POISON_DURATION_SUB;
-    if( duration <= 0 )
+	if( cr.Stat[ ST_POISONING_LEVEL ] > 500 )
 	{
-        duration = REAL_SECOND( 1 );
+		return REAL_SECOND( 10 );
 	}
 	
-	if( cr.IsKnockout() )
-	{
-		duration *= 2;
-	}
-    return duration;
+	return REAL_SECOND( 20 );
 }
 
 void CheckPoisonEvent( Critter& cr )
