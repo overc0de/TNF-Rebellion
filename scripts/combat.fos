@@ -2592,25 +2592,25 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
     {
         if( attacker.Stat[ ST_TOXIC ] > 0 && int( totalDmg ) > 1 )
         {
-			int poison = CLAMP( int( totalDmg ), 0, attacker.Stat[ ST_TOXIC ] );
-			AffectPoison( target, poison );
+			//int poison = CLAMP( int( totalDmg ), 0, attacker.Stat[ ST_TOXIC ] );
+			AffectPoison( target, POISON_RANGE );
         }
 		
 		if( attacker.Stat[ ST_RADIOACTIVE ] > 0 && int( totalDmg ) > 1 )
         {
-			int radiation =CLAMP( int( totalDmg ), 0, attacker.Stat[ ST_RADIOACTIVE ] );
-			AffectRadiation( target, radiation );
+			//int radiation =CLAMP( int( totalDmg ), 0, attacker.Stat[ ST_RADIOACTIVE ] );
+			AffectRadiation( target, RADIATION_RANGE );
 		}
 	}
 
     if( valid( attack.Ammo ) && validAttacker && attack.Ammo.ProtoId == PID_NEED_CART_POISON )
 	{
-        AffectPoison( target, int( totalDmg * 30 / 100 ) );
+        AffectPoison( target, int( totalDmg * 10 ) );
     }
 	
 	if( attack.WeaponPid == PID_KNIFE_P || attack.WeaponPid == PID_SPEAR_P || attack.WeaponPid == PID_MKNIFE_P || attack.WeaponPid == PID_CKNIFE_P )
 	{
-        AffectPoison( target, int( totalDmg * 30 / 100 ) );
+        AffectPoison( target, totalDmg * 10 );
 	}
 	
     if( valid( attack.Ammo ) && attack.Ammo.ProtoId == PID_NEED_CART_NT )
