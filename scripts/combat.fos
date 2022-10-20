@@ -2610,7 +2610,7 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 	
 	if( attack.WeaponPid == PID_KNIFE_P || attack.WeaponPid == PID_SPEAR_P || attack.WeaponPid == PID_MKNIFE_P || attack.WeaponPid == PID_CKNIFE_P )
 	{
-        AffectPoison( target, totalDmg * 10 );
+        AffectPoison( target, int( totalDmg * 10 ) );
 	}
 	
     if( valid( attack.Ammo ) && attack.Ammo.ProtoId == PID_NEED_CART_NT )
