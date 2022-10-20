@@ -544,7 +544,7 @@
 #define CTE_HUNGER                               	( 15 )		// Hunger time-event
 #define CTE_DYSPNEA                              	( 16 )		// Make cr choke and eventually die
 #define CTE_QUICKHEAL                            	( 17 )		// Stimpak and so on healing time event
-#define CTE_AGGRESSION						     	( 18 )		// Autoemotes for bloody mess trait
+#define CTE_SNEAKING                            	( 18 )		// Sneaking TE for check cover
 #define CTE_TYPING							     	( 19 )		// info about character typing "..."
 #define CTE_DIRT							     	( 20 )		// Sweating - getting dirty
 #define CTE_THIRST                               	( 21 )		// Thirst time-event
@@ -759,7 +759,7 @@
 #define SK_THROWING                              	( 205 )
 #define SK_FIRST_AID                            	( 206 ) 	// Hardcoded
 #define SK_DOCTOR                                	( 207 ) 	// Hardcoded
-#define SK_SNEAK                                 	( 208 ) 	// Hardcoded - disabled
+#define SK_SNEAK                                 	( 208 ) 	// Hardcoded
 #define SK_LOCKPICK                              	( 209 ) 	// Hardcoded
 #define SK_STEAL                                 	( 210 )		// Hardcoded
 #define SK_TRAPS                                 	( 211 ) 	// Hardcoded
@@ -1036,7 +1036,7 @@
 #define CR_PERCEPTION                            	( 723 )		// Saves stat before Neurotoxin used
 #define CR_AGILITY                               	( 724 )		// Saves stat before Neurotoxin used
 #define CR_ENDURANCE                            	( 725 )		// Saves stat before Neurotoxin used
-#define CR_IS_AGGRESSIVE                         	( 726 )		// Critter agression if has TRAIT_BLOODY_MESS
+#define CR_IS_AGGRESSIVE                         	( 726 )		// Critter agression for NPC
 #define CR_SLEEPING_STATE                        	( 727 ) 	// Sleep mode - revise
 #define CR_SINF_MODE                            	( 728 ) 	// GM vision modes
 #define CR_LAST_ROTTEN_CYCLE                     	( 729 ) 	// val of last rooting cycle for Cr inventory items
@@ -1118,7 +1118,9 @@
 #define NPC_WAYPOINT_PREVIOUS						( 852 )		// Waypoint Id
 //853..887
 #define CR_CONTROLLED_GROUP	                     	( 888 )
-//889..985
+//889..983
+#define CR_SNEAKING									( 984 )		// Marker for sneaking
+#define CR_ANTIDOTED								( 985 )		// Marker for consuming Antidote
 #define CR_DAZED									( 986 )		// Marker for being dazed
 #define CR_STUNNED									( 987 )		// Marker for being stunned
 #define CR_HOLD_POSITION							( 988 )		// Marker for hold position mode toggle
@@ -1672,6 +1674,7 @@
 #define CALIBER_44_HENRY                         	( 26 )
 #define CALIBER_30_SPRIENGFIELD                   	( 27 )
 #define CALIBER_NAILS                            	( 30 )
+#define CALIBER_BOLT							 	( 31 )
 
 // Geomtry
 #define GEOMETRY_FALLOUT                         	( 0 )

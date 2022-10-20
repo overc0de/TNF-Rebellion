@@ -1,19 +1,5 @@
 # 3.0.8
 
-# DELETED
-[Proto]
-ProtoId=1230
-Type=5
-PicMap=art\inven\reserved.frm
-PicInv=art\inven\reserved.frm
-Flags=30
-DisableEgg=1
-Stackable=1
-Weight=10000
-Volume=500
-Cost=10000
-Material=3
-
 # PID_BOTTLE_CAPS
 [Proto]
 ProtoId=41
@@ -257,11 +243,12 @@ SoundId=48
 Cost=200
 Material=11
 
-[Proto] # PID_ARENA_TERMINAL
+# PID_ARENA_TERMINAL
+[Proto]
 ProtoId=88
 Type=5
 ScriptModule=map_start
-ScriptFunc=_ArenaTerminalInit
+ScriptFunc=_StartTerminalInit
 PicMap=art\scenery\bos0046.frm
 PicInv=art\scenery\bos0046.frm
 Flags=270020608
@@ -2988,7 +2975,24 @@ StartValue_1=-1
 StartValue_2=20
 StartValue_3=168652658
 
-[Proto] # PID_PART_OF_ROPE
+# PID_START_TERMINAL
+[Proto]
+ProtoId=533
+Type=5
+ScriptModule=map_start
+ScriptFunc=_StartTerminalInit
+PicMap=art\scenery\bos0047.frm
+PicInv=art\scenery\bos0047.frm
+Flags=270020608
+DisableEgg=1
+Stackable=0
+Weight=10000
+Volume=1000
+SoundId=48
+Material=1
+
+# PID_PART_OF_ROPE
+[Proto]
 ProtoId=534
 Type=5
 PicMap=art\items\pieceofrope.FRM
@@ -7310,20 +7314,6 @@ SoundId=48
 Cost=100
 Material=2
 
-[Proto] # DELETE_THIS_SHIT
-ProtoId=1751
-Type=5
-PicMap=art\items\ScrapMetal03.FRM
-PicInv=art\inven\MELASSA.FRM
-Flags=150994974
-DisableEgg=1
-Stackable=1
-Weight=200
-Volume=25
-SoundId=48
-Cost=0
-Material=2
-
 [Proto] # PID_MEMORY 
 ProtoId=1752
 Type=5
@@ -9691,7 +9681,8 @@ PicInv=art\inven\reserved.frm
 Flags=33558556
 Material=7
 
-[Proto] # 
+# PID_BLOOD_SMALL_1
+[Proto]
 ProtoId=3321
 Type=5
 PicMap=art\scenery\blood01.frm
@@ -9699,10 +9690,10 @@ PicInv=art\inven\reserved.frm
 Flags=524318
 DisableEgg=1
 SoundId=48
-Material=3
-Item_Subtype=220
+Material=15
 
-[Proto] # 
+# PID_BLOOD_SMALL_2
+[Proto]
 ProtoId=3322
 Type=5
 PicMap=art\scenery\blood02.frm
@@ -9712,7 +9703,8 @@ DisableEgg=1
 SoundId=48
 Material=15
 
-[Proto] # 
+# PID_BLOOD_SMALL_3
+[Proto]
 ProtoId=3323
 Type=5
 PicMap=art\scenery\blood03.frm
@@ -9722,7 +9714,8 @@ DisableEgg=1
 SoundId=48
 Material=15
 
-[Proto] # 
+# PID_BLOOD_BIG_1
+[Proto]
 ProtoId=3324
 Type=5
 PicMap=art\scenery\blood04.frm
@@ -9732,7 +9725,8 @@ DisableEgg=1
 SoundId=48
 Material=15
 
-[Proto] # 
+# PID_BLOOD_BIG_2
+[Proto]
 ProtoId=3325
 Type=5
 PicMap=art\scenery\blood05.frm
@@ -9742,7 +9736,8 @@ DisableEgg=1
 SoundId=48
 Material=15
 
-[Proto] # 
+# PID_BLOOD_BIG_3
+[Proto]
 ProtoId=3326
 Type=5
 PicMap=art\scenery\blood06.frm
@@ -9752,7 +9747,8 @@ DisableEgg=1
 SoundId=48
 Material=15
 
-[Proto] # 
+# PID_BLOOD_BONES_1
+[Proto]
 ProtoId=3327
 Type=5
 PicMap=art\scenery\blood07.frm
@@ -9762,7 +9758,8 @@ DisableEgg=1
 SoundId=48
 Material=15
 
-[Proto] #
+# PID_BLOOD_BONES_2
+[Proto]
 ProtoId=3328
 Type=5
 PicMap=art\scenery\blood08.frm
@@ -9772,7 +9769,8 @@ DisableEgg=1
 SoundId=48
 Material=15
 
-[Proto] # 
+# PID_BLOOD_BONES_3
+[Proto]
 ProtoId=3329
 Type=5
 PicMap=art\scenery\blood09.frm
