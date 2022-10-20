@@ -82,7 +82,7 @@ bool TryPlantMine( Critter& cr, Item& trap, uint16 hexX, uint16 hexY )
 		return false;
 	}
 	
-	if( cr.Skill[ SK_OUTDOORSMAN ] < 225 )
+	if( trap.GetProtoId() == PID_TRAP_DEACTIVATED && cr.Skill[ SK_OUTDOORSMAN ] < 225 )
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 225 );
 		return false;
