@@ -223,11 +223,8 @@ bool PickPlant( Critter& cr, Item& wildplant )
 		}
 		else
 		{
+			amount = 1;
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 125 );
-			EraseTimeEvent( wildplant.EVENT );
-			wildplant.EVENT = 0;
-			DeleteItem( wildplant );
-			return true;
 		}
 
 		cr.AddItem( pickedPlantPid, amount );

@@ -125,12 +125,6 @@ bool PrepareSkinning( Critter& cr, Item@ tool, Critter@ target )
 		return false; 
 	}
 	
-	if( cr.Skill[ SK_OUTDOORSMAN ] < 150 )
-	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 150 );
-		return false;
-	}
-	
 	SkinnableCr@ skinnable = getSkinnableCr( target ); 
 	if( !valid( skinnable ) )
 	{ 
@@ -365,6 +359,12 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target, bool devour )
 					break;
 				default:
 					break;
+			}
+			
+			if( cr.Skill[ SK_OUTDOORSMAN ] < 150 )
+			{
+				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 150 );
+				amount = 1;
 			}
 			
 			cr.AddItem( lootPid, amount );

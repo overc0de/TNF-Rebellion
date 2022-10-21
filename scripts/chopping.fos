@@ -77,12 +77,6 @@ bool PrepareChopping( Critter& cr, Item@ tool, Item@ tree )
 		SetDeterioration( tool, det + 1 );
 	}
 	
-	if( cr.Skill[ SK_OUTDOORSMAN ] < 100 )
-	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 100 );
-		return true;
-	}
-
 	start_chopping( cr, tool, tree );
 	return true;
 }
@@ -314,6 +308,12 @@ bool Profit( Critter& cr, Item& tool, Item@ tree )
 		int skillNum = SK_CHOPPING;
 		raiseSkill( cr, skillNum );
 		
+		if( cr.Skill[ SK_OUTDOORSMAN ] < 100 )
+		{
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 100 );
+			amount = 1;
+		}
+
 		cr.AddItem( PID_FIREWOOD, amount );
 		
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_GATHERED, "$proto@msg item " + ( PID_FIREWOOD * 100 ) + "@$amount" + amount );
