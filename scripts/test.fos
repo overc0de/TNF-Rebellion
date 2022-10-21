@@ -12,6 +12,84 @@
 #include "gm_h.fos"
 #include "entire_h.fos"
 
+Map@ getMap( uint id )
+{
+	if( id == 0 )
+		return null;
+	
+	return GetMap( id );
+}
+
+Item@ getItem( uint id )
+{
+	if( id == 0 )
+		return null;
+	
+	return GetItem( id );
+}
+
+Critter@ getCritter( uint id )
+{
+	if( id == 0 )
+		return null;
+	
+	return GetCritter( id );
+}
+
+void _InitMoney( Item& item, bool firstTime )
+{	
+	bool change = true;
+	string info = "";
+	
+	Map@ map = getMap( item.MapId );
+
+	Critter@ cr = getCritter( item.CritId );
+	if( valid( cr ) )
+	{
+		if( cr.Stat[ST_VAR6] != 0 )
+		{
+			info = "Пропущен персонаж ";
+			change = false;
+		}
+		else
+		{
+			cr.Say( SAY_EMOTE, "звон монет" );
+		}
+		
+		info += crInfo( cr ) + " ";
+		@map = cr.GetMap();
+	}
+	
+	Item@ container = getItem( item.ContainerId );
+	if( valid( container ) )
+	{
+		info = "Доллары заменены на крышки (" + item.GetCount()	+ ") ";
+		item.ChangeProto( PID_REAL_BOTTLE_CAPS );
+		change = false;
+		
+		info += itemName( container ) + " " + item.GetProtoId() + "#" + item.Id;
+		@map = getMap( container.MapId );
+	}
+
+	if( change )
+	{
+		info = "Доллары заменены на крышки (" + item.GetCount()	+ ") " + item.GetProtoId() + "#" + item.Id;
+		item.ChangeProto( PID_REAL_BOTTLE_CAPS );
+	}
+	
+	info = "[ " + info + " ]";
+	
+	if( !valid( map ) )
+	{
+		Log( info );
+	}
+	else
+	{
+		Log( SayLog( map, info, item.HexX, item.HexY ) ); 
+		map.SetText( item.HexX, item.HexY, COLOR_SAND, "|0xFF828a96 :звяк:" );
+	}
+}
+
 
 import bool TransitToNewLocation( Critter& cr, uint16 locPid ) from "stdlib";
 

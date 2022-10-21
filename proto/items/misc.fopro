@@ -4,6 +4,8 @@
 [Proto]
 ProtoId=41
 Type=5
+ScriptModule=test
+ScriptFunc=_InitMoney
 PicMap=art\items\misc\coin_1.png
 PicInv=art\inven\cap2.frm
 Flags=150994974
