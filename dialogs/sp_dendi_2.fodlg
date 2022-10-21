@@ -1,0 +1,96 @@
+[comment]
+
+
+[data]
+lang=russ
+
+[dialog]
+&
+1 1000 None 1 #
+2 1010 D _param p ST_BODY_TYPE = 0 #
+6 1020 D _param p ST_BODY_TYPE = 1 @
+2 2000 None 1 #
+3 2010 D _param p ST_CHARISMA < 5 #
+4 2020 D _param p ST_CHARISMA > 4 #
+0 2030 @
+3 3000 None 1 #
+5 3010 #
+0 3020 @
+4 4000 None 1 #
+5 4010 #
+3 4020 @
+5 5000 None 1 #
+5 5010 D _item p PID_COPPER_ORE > 0 R _item p PID_COPPER_ORE - 1 R _item n PID_COPPER_ORE + 1 R _item p PID_SHELL_CASING + 50 R _param p ST_EXPERIENCE + 25 #
+5 5020 D _item p PID_COPPER_ORE > 4 R _item p PID_COPPER_ORE - 5 R _item n PID_COPPER_ORE + 5 R _item p PID_SHELL_CASING + 50 R _item p PID_REAL_BOTTLE_CAPS + 2 R _param p ST_EXPERIENCE + 125 #
+5 5030 D _item p PID_METAL_ORE > 0 R _item n PID_METAL_ORE + 1 R _item p PID_METAL_ORE - 1 R _item p PID_REAL_BOTTLE_CAPS + 2 R _param p ST_EXPERIENCE + 100 #
+5 5040 D _item p PID_METAL_ORE > 4 R _item n PID_METAL_ORE + 5 R _item p PID_METAL_ORE - 5 R _item p PID_REAL_BOTTLE_CAPS + 10 R _param p ST_EXPERIENCE + 500 #
+5 5050 D _item p PID_COAL > 0 R _item p PID_REAL_BOTTLE_CAPS + 1 R _item p PID_COAL - 1 R _item n PID_COAL + 1 R _param p ST_EXPERIENCE + 50 #
+5 5060 D _item p PID_COAL > 4 R _item p PID_REAL_BOTTLE_CAPS + 5 R _item p PID_COAL - 5 R _item n PID_COAL + 5 R _param p ST_EXPERIENCE + 250 #
+5 5070 D _item p PID_FLINT > 0 R _item n PID_FLINT + 1 R _item p PID_FLINT - 1 R _item p PID_SHELL_CASING + 1 R _param p ST_EXPERIENCE + 10 #
+5 5080 D _item p PID_FLINT > 4 R _item n PID_FLINT + 5 R _item p PID_FLINT - 5 R _item p PID_SHELL_CASING + 5 R _param p ST_EXPERIENCE + 50 #
+5 5090 D _item p PID_URANIUM_ORE > 0 R _item p PID_REAL_BOTTLE_CAPS + 10 R _item p PID_URANIUM_ORE - 1 R _item n PID_URANIUM_ORE + 1 R _param p ST_EXPERIENCE + 500 #
+5 5100 D _item p PID_URANIUM_ORE > 4 R _item p PID_REAL_BOTTLE_CAPS + 50 R _item p PID_URANIUM_ORE - 5 R _item n PID_URANIUM_ORE + 5  R _param p ST_EXPERIENCE + 2500 #
+5 5110 D _item p PID_MINERAL > 0 R _item n PID_MINERAL + 1 R _item p PID_MINERAL - 1 R _item p PID_REAL_BOTTLE_CAPS + 1 R _param p ST_EXPERIENCE + 50 #
+5 5120 D _item p PID_MINERAL > 4 R _item n PID_MINERAL + 5 R _item p PID_MINERAL - 5 R _item p PID_REAL_BOTTLE_CAPS + 5 R _param p ST_EXPERIENCE + 250 #
+5 5130 D _item p PID_LEAD_ORE > 0 R _item p PID_REAL_BOTTLE_CAPS + 10 R _item p PID_LEAD_ORE - 1 R _item n PID_LEAD_ORE + 5 R _param p ST_EXPERIENCE + 250 #
+5 5140 D _item p PID_LEAD_ORE > 4 R _item p PID_REAL_BOTTLE_CAPS + 50 R _item p PID_LEAD_ORE - 5 R _item n PID_LEAD_ORE + 25  R _param p ST_EXPERIENCE + 1250 #
+0 5150 @
+6 6000 None 1 #
+5 6010 #
+9 6020 D _param p ST_BODY_TYPE = 1 D _param p ST_CHARISMA < 7 #
+10 6030 D _param p ST_BODY_TYPE = 1 D _param p ST_CHARISMA > 6 D _param p ST_HUNGER > 50 #
+0 6040 @
+7 7000 None 1 #
+6 7010 R _param p ST_HUNGER - 30 R _param p SK_SEX + 1 R _param p ST_CURRENT_HP - 25 R _param p ST_CURRENT_AP - 150 R _param p ST_EXPERIENCE + 250 @
+8 8000 None 0 #
+0 8010 @
+9 9000 None 0 #
+7 9010 #
+0 9020 &
+
+[russ]
+{100}{}{Малыш Руд}
+{200}{}{Малыш Руд}
+{1000}{}{Преддиалоговые установки}
+{1010}{}{Раб}
+{1020}{}{Рабыня}
+{2000}{}{А кто это пришел, БЕЗ-ДЕЛЬ-НИК?@@Какого хера ты тут крутишься?@@У тебя, сука, работы мало?}
+{2010}{}{Покорно прошу, не бейте, я пришел к вам с ...}
+{2020}{}{Потише начальник, я по делу.}
+{2030}{}{Уже иду работать.}
+{3000}{}{**Он, с полными глазами злости, смотрит как вы ему что-то показываете**@@**Читает журнал пока вы достаёте то, что принесли**}
+{3010}{}{Вот...}
+{3020}{}{Ой, пойду работать.}
+{4000}{}{НАЧАЛЬНИК? Кхм... Показывай что принёс.}
+{4010}{}{Вот...}
+{4020}{}{Ничего.}
+{5000}{}{**Ждёт пока вы выложите всё на стол**}
+{5010}{}{1 медь.}
+{5020}{}{5 медь.}
+{5030}{}{1 железо.}
+{5040}{}{5 железа.}
+{5050}{}{1 уголь.}
+{5060}{}{5 угля.}
+{5070}{}{1 кремень.}
+{5080}{}{5 кремня.}
+{5090}{}{1 уран.}
+{5100}{}{5 урана.}
+{5110}{}{1 минерал.}
+{5120}{}{5 минералов.}
+{5130}{}{1 галенит.}
+{5140}{}{5 галенита.}
+{5150}{}{Ну и всё.}
+{6000}{}{Ну и хули ты тут лазишь?@@Еще раз увижу без дела и ты будешь до конца своих дней гныть в карцере!@@Аппетитный кусочек к нам пожаловал, ну давай выкладывай что там у тебя.@@У тебя, блять, работы мало?}
+{6010}{}{Я тут принесла...}
+{6020}{}{Я хочу есть, но не могу себе это позволить...}
+{6030}{}{Я хочу есть, но не могу себе это позволить...}
+{6040}{}{Простите, уже иду работать.}
+{7000}{}{**После всех грязных дел, что он вытворял с вами, он достаёт из ледника булку с мясом и даёт ее вам** 
+Да, хорошо иметь такую рабыню, вот тебе перекусить за это.}
+{7010}{}{**Вы быстро съедаете кусок булки с мясом**}
+{8000}{}{Ну так иди работай... Я тебе что, холодильник?}
+{8010}{}{Хорошо...}
+{9000}{}{Кажется я знаю как мы можем это уладить. **подходит к вам и лапает ваш зад** Да **цокнув**, очень даже знаю...}
+{9010}{}{**Покорно делать всё что он хочет**}
+{9020}{}{Нет, я так не могу! **выбежать из комнаты**}
+

@@ -1,0 +1,38 @@
+[comment]
+
+
+[data]
+lang=russ
+
+[dialog]
+&
+1 1000 None 1 #
+3 1010 D _param p SK_BARTER < 100 #
+2 1020 D _param p SK_BARTER > 99 @
+2 2000 None 1 #
+2 2010 D _item p PID_SHELL_CASING } 100 R _item p PID_REAL_BOTTLE_CAPS + 1 R _item p PID_SHELL_CASING - 100 #
+2 2020 D _item p PID_REAL_BOTTLE_CAPS > 0 R _item p PID_REAL_BOTTLE_CAPS - 1 R _item p PID_SHELL_CASING + 100 #
+0 2030 @
+3 3000 None 1 #
+3 3010 D _item p PID_SHELL_CASING } 120 R _item p PID_REAL_BOTTLE_CAPS + 1 R _item p PID_SHELL_CASING - 120 #
+3 3020 D _item p PID_REAL_BOTTLE_CAPS > 0 R _item p PID_REAL_BOTTLE_CAPS - 1 R _item p PID_SHELL_CASING + 80 #
+0 3030 &
+
+[russ]
+{100}{}{Джон}
+{200}{}{Джон, назначенный обменник.}
+{210}{}{Джон, обычный с виду парень.}
+{1000}{}{Преддиалоговые установки}
+{1010}{}{До 99 бартера}
+{1020}{}{Больше 100 бартера.}
+{2000}{}{Обмен по лучшим ценам, других тут не будет.
+	Курс 100 к 1.}
+{2010}{}{100 гильз на крышку.}
+{2020}{}{1 крышка на 100 гильз.}
+{2030}{}{У меня всё.}
+{3000}{}{Для таких как ты - выгодных цен не будет!
+	Прямой курс 120 к 1, обратный - 1 к 80.}
+{3010}{}{120 гильз на крышку.}
+{3020}{}{1 крышка на 80 гильз.}
+{3030}{}{У меня всё.}
+
