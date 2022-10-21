@@ -32,8 +32,8 @@ lang=russ
 5 5100 D _item p PID_URANIUM_ORE > 4 R _item p PID_REAL_BOTTLE_CAPS + 50 R _item p PID_URANIUM_ORE - 5 R _item n PID_URANIUM_ORE + 5 #
 5 5110 D _item p PID_MINERAL > 0 R _item n PID_MINERAL + 1 R _item p PID_MINERAL - 1 R _item p PID_REAL_BOTTLE_CAPS + 1 #
 5 5120 D _item p PID_MINERAL > 4 R _item n PID_MINERAL + 5 R _item p PID_MINERAL - 5 R _item p PID_REAL_BOTTLE_CAPS + 5 #
-5 5130 D _item p PID_LEAD_ORE > 0 R _item p PID_REAL_BOTTLE_CAPS + 10 R _item p PID_LEAD_ORE - 1 R _item n PID_LEAD_ORE + 5 #
-5 5140 D _item p PID_LEAD_ORE > 4 R _item p PID_REAL_BOTTLE_CAPS + 50 R _item p PID_LEAD_ORE - 5 R _item n PID_LEAD_ORE + 25 #
+5 5130 D _item p PID_LEAD_ORE > 0 R _item p PID_REAL_BOTTLE_CAPS + 5 R _item p PID_LEAD_ORE - 1 R _item n PID_LEAD_ORE + 1 #
+5 5140 D _item p PID_LEAD_ORE > 4 R _item p PID_REAL_BOTTLE_CAPS + 25 R _item p PID_LEAD_ORE - 5 R _item n PID_LEAD_ORE + 5 #
 0 5150 @
 6 6000 None 1 #
 5 6010 #
