@@ -885,6 +885,7 @@ Welcome to The Long Journey!}
 {7028}{}{Bandaged}
 {7029}{}{Dazed}
 {7030}{}{Stunned}
+{7031}{}{No Sneaking}
 
 # dyspnea
 {7400}{}{faints}
@@ -1782,8 +1783,8 @@ Confirm?}
 {102072}{}{The healing of major wounds and crippled limbs.  Without this skill, it will take a much longer period of time to restore crippled limbs to use.}
 {102073}{}{Doctor}
 # SK_SNEAK
-{102081}{}{-}
-{102082}{}{Disabled.}
+{102081}{}{Sneak}
+{102082}{}{Skill of silent moving, remaining unheard for the other's ears.}
 {102083}{}{Sneak}
 # SK_LOCKPICK
 {102091}{}{Lockpicking}
