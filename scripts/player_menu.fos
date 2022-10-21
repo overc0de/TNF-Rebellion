@@ -560,6 +560,20 @@ uint cte_AFK_mode( Critter& cr, int identifier, uint& rate )
 		StopAFK( cr );
 		return 0;
 	}
+	
+	if( !cr.IsBusy() && !cr.IsDead() && Random( 1, 2 ) == 1 )
+	{
+		if( cr.IsKnockout() )
+		{
+			cr.TimeoutBase[ TO_HEALING ] =  __FullSecond + cr.Timeout[ TO_HEALING ] - REAL_SECOND( 1 );
+		}
+		
+		if( cr.Param[ CR_IS_RELAXING ] != 0 && cr.StatBase[ ST_CURRENT_AP ] >= 50 )
+		{
+			cr.TimeoutBase[ TO_TIREDNESS ] = __FullSecond + cr.Timeout[ TO_TIREDNESS ] - REAL_SECOND( 1 );
+		}
+	}
+	
 	return REAL_MS( 500 );	
 }
 
