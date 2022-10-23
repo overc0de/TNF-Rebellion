@@ -423,8 +423,6 @@ EXPORT int getParam_RegenAp( CritterMutual& cr, uint )
 		val /= STUNNED_AP_REGEN_MALUS;
 	}
 	
-	val -= CLAMP( cr.Params[ ST_POISONING_LEVEL ] * 3, 0, 900 );
-	
     return CLAMP( val, 0, APREGEN_MAX );
 }
 

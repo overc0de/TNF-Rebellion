@@ -110,6 +110,22 @@ class AttackStruct
     }
 };
 
+//~run combat stun value 0 0
+void stun( Critter& cr, int value, int, int )
+{
+	cr.ParamBase[ CR_STUNNED ] += value;
+	
+	uint[] index;
+	if( cr.GetTimeEvents( CTE_STUNNED, index, null, null ) > 0 )
+	{
+		cr.ChangeTimeEvent( index[0], REAL_SECOND( 0 ), 0 );
+	}
+	else
+	{
+		cr.AddTimeEvent( "cte_Stunned", REAL_SECOND( 0 ), CTE_STUNNED, 0 );
+	}
+}
+
 void CombatAttack( Critter& cr, Critter@ target, ProtoItem& weapon, uint8 weaponMode, ProtoItem@ ammo, uint16 hexX, uint16 hexY ) // Export
 {
 	if( !valid( target ) && hexX == 0 && hexY == 0 )
