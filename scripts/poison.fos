@@ -36,12 +36,17 @@ void AffectPoison( Critter& cr, int value )
         return;
 	}
 	
-    cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal + value, 0, 2000 );
+    cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal + value, 0, 1000 );
 	
     levelVal = cr.Stat[ ST_POISONING_LEVEL ];
 
     uint strNum = 0;
-    if( levelVal == 0 )
+	if( levelVal < 0 )
+	{
+		cr.StatBase[ ST_POISONING_LEVEL ] = 0;
+        return;
+	}
+	else if( levelVal == 0 )
 	{
         strNum = STR_POISON_FREE;
     }
@@ -58,21 +63,6 @@ void AffectPoison( Critter& cr, int value )
 	{
         cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, strNum );
 	}
-	
-    if( levelVal > 0 )
-	{
-        if( cr.Damage[ DAMAGE_POISONED ] == 0 )
-		{
-            cr.DamageBase[ DAMAGE_POISONED ] = 1;
-		}
-    }
-	else
-	{
-        if( cr.Damage[ DAMAGE_POISONED ] != 0 )
-		{
-            cr.DamageBase[ DAMAGE_POISONED ] = 0;
-		}
-    }
 
     if( isActive ) // Try hurry event, if new stage aviable
 	{
@@ -100,10 +90,6 @@ void DropPoison( Critter& cr )
 {
     cr.EraseTimeEvents( CTE_POISON );
     cr.StatBase[ ST_POISONING_LEVEL ] = 0;
-    if( cr.Damage[ DAMAGE_POISONED ] != 0 )
-	{
-        cr.DamageBase[ DAMAGE_POISONED ] = 0;
-	}
 }
 
 uint cte_Poison( Critter& cr, int identifier, uint& rate )
@@ -122,7 +108,7 @@ uint cte_Poison( Critter& cr, int identifier, uint& rate )
     if( levelVal > 0 )
 	{
        //cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_POISON_PROCESS );
-       // cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal - 2, 0, 2000 );
+       // cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal - 2, 0, 1000 );
         cr.StatBase[ ST_CURRENT_HP ]--;
 		
         if( levelVal > 500 )
@@ -150,10 +136,6 @@ uint cte_Poison( Critter& cr, int identifier, uint& rate )
     if( cr.Stat[ ST_POISONING_LEVEL ] == 0 )
 	{
         cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_POISON_FREE );
-        if( cr.Damage[ DAMAGE_POISONED ] != 0 )
-		{
-            cr.DamageBase[ DAMAGE_POISONED ] = 0;
-		}
         return 0;
     }
 
