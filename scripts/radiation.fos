@@ -51,21 +51,6 @@ void AffectRadiation( Critter& cr, int value ) // Export
         cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_RADIATION_HIGH_DOSE );
 	}
 	
-    if( levelVal >= RADIATION_DAMAGE_VALUE )
-    {
-        if( cr.Damage[ DAMAGE_RADIATED ] == 0 )
-		{
-            cr.DamageBase[ DAMAGE_RADIATED ] = 1;
-		}
-	}
-    else
-    {
-        if( cr.Damage[ DAMAGE_RADIATED ] != 0 )
-		{
-            cr.DamageBase[ DAMAGE_RADIATED ] = 0;
-		}
-	}
-
     if( isActive )   // Try begin event with new effects
     {
         uint stage = rates[ 0 ];
@@ -101,10 +86,6 @@ void DropRadiation( Critter& cr ) // Export
         cr.EraseTimeEvents( CTE_RADIATION );
     }
     cr.StatBase[ ST_RADIATION_LEVEL ] = 0;
-    if( cr.Damage[ DAMAGE_RADIATED ] != 0 )
-	{
-        cr.DamageBase[ DAMAGE_RADIATED ] = 0;
-	}
 }
 
 uint cte_Radiation( Critter& cr, int identifier, uint& stage )
