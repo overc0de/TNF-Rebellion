@@ -2586,13 +2586,13 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
         if( attacker.Stat[ ST_TOXIC ] > 0 && int( totalDmg ) > 1 )
         {
 			//int poison = CLAMP( int( totalDmg ), 0, attacker.Stat[ ST_TOXIC ] );
-			AffectPoison( target, POISON_RANGE );
+			AffectPoison( target, attacker.Stat[ ST_TOXIC ] * 10 );
         }
 		
 		if( attacker.Stat[ ST_RADIOACTIVE ] > 0 && int( totalDmg ) > 1 )
         {
 			//int radiation =CLAMP( int( totalDmg ), 0, attacker.Stat[ ST_RADIOACTIVE ] );
-			AffectRadiation( target, RADIATION_RANGE );
+			AffectRadiation( target, attacker.Stat[ ST_RADIOACTIVE ] * 10 );
 		}
 	}
 
