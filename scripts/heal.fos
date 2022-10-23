@@ -333,6 +333,7 @@ class MenuDOC_Bullet: CenteredMenuHandler
 			
 					if( chances >= difficuty )
 					{
+						cr.StatBase[ ST_EXPERIENCE ] += 200;
 						ChangeStatus( target, CR_STATUS_BULLET_OVER, 0, false );
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DOCTOR_BULLET_SUCCESS );
 					}
@@ -432,7 +433,11 @@ class MenuDOC_Bullet: CenteredMenuHandler
 				}
 				else
 				{
-					if( actual_use ) SpillOut( item_antiseptik );
+					if( actual_use )
+					{
+						SpillOut( item_antiseptik );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
+					}
 					
 					skill += 0;
 					skill_info += " + booze [0]";
@@ -451,7 +456,11 @@ class MenuDOC_Bullet: CenteredMenuHandler
 				}
 				else
 				{
-					if( actual_use ) SpillOut( item_antiseptik );
+					if( actual_use )
+					{
+						SpillOut( item_antiseptik );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
+					}
 					
 					skill += 50;
 					skill_info += " + spirit [50]";
@@ -480,6 +489,7 @@ class MenuDOC_Bullet: CenteredMenuHandler
 					if( actual_use ) 
 					{
 						_SubItem( item_antiseptik, 1 );
+						cr.StatBase[ ST_EXPERIENCE ] += 200;
 						cr.AddItem( PID_PHIAL, 1 );
 					}
 				}
@@ -513,7 +523,11 @@ class MenuDOC_Bullet: CenteredMenuHandler
 				}
 				else
 				{
-					if( actual_use ) SpillOut( item_anesthetic );
+					if( actual_use )
+					{
+						SpillOut( item_anesthetic );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
+					}
 					
 					skill += 25;
 					skill_info += " + booze [25]";
@@ -532,7 +546,12 @@ class MenuDOC_Bullet: CenteredMenuHandler
 				}
 				else
 				{
-					if( actual_use ) SpillOut( item_anesthetic );
+					if( actual_use )
+					{
+						SpillOut( item_anesthetic );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
+					}
+					
 					
 					skill += 50;
 					skill_info += " + spirit [50]";
@@ -563,6 +582,7 @@ class MenuDOC_Bullet: CenteredMenuHandler
 					if( actual_use ) 
 					{
 						_SubItem( item_anesthetic, 1 );
+						cr.StatBase[ ST_EXPERIENCE ] += 200;
 						cr.AddItem( PID_PHIAL, 1 );
 					}
 				}
@@ -794,6 +814,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 					
 					if( chances >= difficuty )
 					{
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
 						ChangeStatus( target, CR_STATUS_HEAVY_DMG, 0, false );
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DOCTOR_STICHED_WOUND );
 					}
@@ -857,7 +878,10 @@ class MenuDOC_Heavy: CenteredMenuHandler
 					action_info = STR_DOCTOR_STICHED_WOUND;
 
 					if( actual_use )
+					{
 						_SubItem( thread, 1 );
+						cr.StatBase[ ST_EXPERIENCE ] += 50;
+					}
 				}						
 			}
 			break;
@@ -897,7 +921,10 @@ class MenuDOC_Heavy: CenteredMenuHandler
 				else
 				{
 					if( actual_use )
+					{
 						SpillOut( item_antiseptik );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
+					}
 					
 					skill += 25;
 					skill_info += " + booze [25]";
@@ -914,7 +941,11 @@ class MenuDOC_Heavy: CenteredMenuHandler
 					antiseptik = MenuDOC_antiseptik::none;
 				else
 				{
-					if( actual_use ) SpillOut( item_antiseptik );
+					if( actual_use )
+					{
+						SpillOut( item_antiseptik );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
+					}
 					
 					skill += 50;
 					skill_info += " + spirit [50]";
@@ -941,6 +972,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 					if( actual_use ) 
 					{
 						_SubItem( item_antiseptik, 1 );
+						cr.StatBase[ ST_EXPERIENCE ] += 200;
 						cr.AddItem( PID_PHIAL, 1 );
 					}
 				}
@@ -974,6 +1006,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 					if( actual_use ) 
 					{
 						ApplyFoodEffects( target, item_anesthetic );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
 						SpillOut( item_anesthetic );
 					}
 					
@@ -995,6 +1028,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 					if( actual_use ) 
 					{
 						ApplyFoodEffects( target, item_anesthetic );
+						cr.StatBase[ ST_EXPERIENCE ] += 100;
 						SpillOut( item_anesthetic );
 					}
 					
@@ -1025,6 +1059,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 					if( actual_use ) 
 					{
 						_SubItem( item_anesthetic, 1 );
+						cr.StatBase[ ST_EXPERIENCE ] += 200;
 						cr.AddItem( PID_PHIAL, 1 );
 					}
 				}
@@ -1204,6 +1239,7 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							if( !valid( bandage ) ) return true;
 							
 							_SubItem( bandage, 1 );
+							cr.StatBase[ ST_EXPERIENCE ] += 25;
 
 							int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							docTime = CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME );
@@ -1225,6 +1261,7 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							if( !valid( bandage ) ) return true;
 							
 							_SubItem( bandage, 1 );
+							cr.StatBase[ ST_EXPERIENCE ] += 150;
 
 							int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
@@ -1278,6 +1315,7 @@ class MenuDOC_Cripple: CenteredMenuHandler
 
 								_SubItem( splint, 1 );
 								_SubItem( rope, 1 );								
+								cr.StatBase[ ST_EXPERIENCE ] += 150;
 
 								int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 								target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
@@ -1308,6 +1346,7 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							if( !valid( splint ) ) return true;
 							
 							_SubItem( splint, 1 );
+							cr.StatBase[ ST_EXPERIENCE ] += 300;
 
 							int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
@@ -1545,8 +1584,13 @@ uint process_Bandage( Critter@ cr, int& param0, int& param1, int& param2 )
 		param0++;
 	
 		uint bandage_rate = ( cr.Skill[ SK_FIRST_AID ] / 10 ) + cr.Stat[ ST_AGILITY ] + cr.Stat[ ST_INTELLECT ];
-		int difficuty = targetCr.Stat[ ST_CURRENT_HP ] >= 0 ? targetCr.Stat[ ST_MAX_LIFE ] - targetCr.Stat[ ST_CURRENT_HP ] : targetCr.Stat[ ST_MAX_LIFE ];
-		cr.ParamBase[ ST_LTP_SEQUENCE ] = difficuty * 3 / bandage_rate;
+		int HP_with_Bandage = targetCr.ParamBase[ CR_BANDAGE_HEAL ] + targetCr.Stat[ ST_CURRENT_HP ];
+		int difficuty = HP_with_Bandage >= 0 ? targetCr.Stat[ ST_MAX_LIFE ] - HP_with_Bandage : targetCr.Stat[ ST_MAX_LIFE ];
+		
+		BandageItem@ bandageItem = GetBandageItem( bandage );
+		difficuty = CLAMP( difficuty, 0, int( bandageItem.value_bleed ) ); // cuts off wasting time on low HP
+		
+		cr.ParamBase[ ST_LTP_SEQUENCE ] = int( difficuty * 3 / bandage_rate );
 		
 		PlayGenericSound( map, cr.HexX, cr.HexY, "ROBE.mp3", 6 );
 		
@@ -1587,8 +1631,14 @@ void BandageResult( Critter& cr, Critter& targetCr, Item& bandage )
 	int heal_amount = bandageItem.value_heal + ( cr.Skill[ SK_FIRST_AID ] / bandageItem.sk_mod );
 	int max_heal = targetCr.Stat[ ST_CURRENT_HP ] >= 0 ? targetCr.Stat[ ST_MAX_LIFE ] - targetCr.Stat[ ST_CURRENT_HP ] : targetCr.Stat[ ST_MAX_LIFE ];
 	//Log( "cr.Skill[ SK_FIRST_AID ]: " + cr.Skill[ SK_FIRST_AID ] + " bandageItem.sk_mod: " + bandageItem.sk_mod + " heal_amount: " + heal_amount + " max_heal: " + max_heal );
+	
+	int bandageHealEffect = targetCr.ParamBase[ CR_BANDAGE_HEAL ]; //value before heal_amount
 	targetCr.ParamBase[ CR_BANDAGE_HEAL ] = CLAMP( targetCr.ParamBase[ CR_BANDAGE_HEAL ] + heal_amount, 0, max_heal );
-	targetCr.StatBase[ ST_BLEED ] -= bandageItem.value_bleed;
+	bandageHealEffect = targetCr.ParamBase[ CR_BANDAGE_HEAL ] - bandageHealEffect; //delta difference after use of bandage;
+	
+	int bandageBleedEffect = targetCr.StatBase[ ST_BLEED ]; //value before value_bleed
+	targetCr.StatBase[ ST_BLEED ] = CLAMP( targetCr.StatBase[ ST_BLEED ] - bandageItem.value_bleed, 0, targetCr.StatBase[ ST_BLEED ] );
+	bandageBleedEffect -= targetCr.StatBase[ ST_BLEED ];  //delta difference after use of bandage;
 	
 	uint[] index;
 	uint rate = uint( targetCr.Stat[ ST_HEALING_RATE ] * bandageItem.healing_rate );
@@ -1601,6 +1651,7 @@ void BandageResult( Critter& cr, Critter& targetCr, Item& bandage )
 		targetCr.AddTimeEvent( "cte_Bandage", REAL_MINUTE( BANDAGE_HEALING_TIME ), CTE_BANDAGE, rate );
 	}
 	_SubItem( bandage, 1 );
+	targetCr.StatBase[ ST_EXPERIENCE ] += bandageBleedEffect + bandageHealEffect; // more effecient is was - more experience you get
 }
 
 uint cte_Bandage( Critter& targetCr, int identifier, uint& rate )
@@ -1714,6 +1765,7 @@ void UseHealingItem( Critter& cr, Critter& targetCr, Item& item )
 		}
 		
 		_SubItem( item, 1 );
+		cr.StatBase[ ST_EXPERIENCE ] += usedItem.instant_heal + usedItem.value_heal;
 	}
 }
 
