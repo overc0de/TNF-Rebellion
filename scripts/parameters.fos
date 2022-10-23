@@ -209,24 +209,7 @@
 
 	void changedParam_GoodNatured( Critter& cr, uint, int oldValue )
 	{
-		int newValue = cr.Trait[TRAIT_GOOD_NATURED];
-		if( oldValue == newValue || newValue < 0 || newValue > 1 )
-		{
-			return;
-		}
-		
-		int sign = newValue == 0 ? -1 : 1;
-
-		cr.SkillBase[ SK_FIRST_AID ] 		+= 25 * sign;
-		cr.SkillBase[ SK_DOCTOR ] 			+= 25 * sign;
-		cr.SkillBase[ SK_BARTER ] 			+= 25 * sign;
-		
-		cr.SkillBase[ SK_SMALL_GUNS ]		-= 20 * sign;
-		cr.SkillBase[ SK_BIG_GUNS ] 		-= 20 * sign;
-		cr.SkillBase[ SK_ENERGY_WEAPONS ]	-= 20 * sign;
-		cr.SkillBase[ SK_UNARMED ] 			-= 20 * sign;
-		cr.SkillBase[ SK_MELEE_WEAPONS ] 	-= 20 * sign;
-		cr.SkillBase[ SK_THROWING ] 		-= 20 * sign;
+		not_implemented_exception_bummer( cr, oldValue, "Good Natured trait", TRAIT_GOOD_NATURED );
 	}
 
 	void changedParam_FastMetabolism( Critter& cr, uint, int oldValue )
@@ -557,21 +540,7 @@
 			_param_[ ST_CHARISMA ] += SEX_APPEAL_CH_BONUS;
 			_param_[ ST_MAX_LIFE ] -= SEX_APPEAL_HP_MALUS;
 		} 
-		
-		if( _param_[ TRAIT_GOOD_NATURED ] != 0 )
-		{
-			_param_[ SK_FIRST_AID ] 		+= 25;
-			_param_[ SK_DOCTOR ] 			+= 25;
-			_param_[ SK_BARTER ] 			+= 25;
-
-			_param_[ SK_SMALL_GUNS ]		-= 20;
-			_param_[ SK_BIG_GUNS ] 			-= 20;
-			_param_[ SK_ENERGY_WEAPONS ]	-= 20;
-			_param_[ SK_UNARMED ] 			-= 20;
-			_param_[ SK_MELEE_WEAPONS ] 	-= 20;
-			_param_[ SK_THROWING ] 			-= 20;
-		}
-		
+				
 		_param_[ SK_SMALL_GUNS ]	+= 5 * _param_[ ST_PERCEPTION ]	+ 3 * _param_[ ST_AGILITY ]		+ 2 * _param_[ ST_STRENGTH ]	;
 		_param_[ SK_BIG_GUNS ]		+= 5 * _param_[ ST_STRENGTH ]	+ 3 * _param_[ ST_PERCEPTION ]	+ 2 * _param_[ ST_AGILITY ]		;
 		_param_[ SK_ENERGY_WEAPONS ]+= 5 * _param_[ ST_PERCEPTION ] + 3 * _param_[ ST_INTELLECT ]	+ 2 * _param_[ ST_AGILITY ]		;

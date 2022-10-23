@@ -216,30 +216,6 @@ void setSkillsBase( Critter& cr )
 	cr.ParamBase[ cr.ParamBase[ TAG_SKILL2 ] ] += 40;
 	cr.ParamBase[ cr.ParamBase[ TAG_SKILL3 ] ] += 30;
 
-	if( cr.ParamBase[ TRAIT_GOOD_NATURED ] != 0 )
-	{
-		cr.ParamBase[ SK_FIRST_AID ]		+= 25;
-		cr.ParamBase[ SK_DOCTOR ]			+= 25;
-		cr.ParamBase[ SK_BARTER ]			+= 25;
-		cr.ParamBase[ SK_SMALL_GUNS ] 		-= 20;
-		cr.ParamBase[ SK_BIG_GUNS ]			-= 20;
-		cr.ParamBase[ SK_ENERGY_WEAPONS ]	-= 20;
-		cr.ParamBase[ SK_UNARMED ]			-= 20;
-		cr.ParamBase[ SK_MELEE_WEAPONS ]	-= 20;
-		cr.ParamBase[ SK_THROWING ]			-= 20;
-	}
-	
-	if( cr.ParamBase[ TRAIT_SKILLED ] != 0 )
-	{
-		for( uint i = SK_SMALL_GUNS; i <= SK_OUTDOORSMAN; i++ )
-		{
-			if( cr.ParamBase[ i ] != 0 )
-			{
-				cr.ParamBase[ i ] += 10;
-			}
-		}
-	}
-	
 	cr.ParamBase[ ST_LEVEL ] = 1;
 	cr.ParamBase[ ST_EXPERIENCE ] = 0;
 	cr.ParamBase[ ST_UNSPENT_SKILL_POINTS ] = 0;
@@ -3311,8 +3287,8 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS( Critter& player, uint answerI, strin
         player.Say( SAY_DIALOGBOX_BUTTON( 6 ), "" + cr.TraitBase[ TRAIT_HEAVY_HANDED ] + " - HEAVY_HANDED" );
         player.Say( SAY_DIALOGBOX_BUTTON( 7 ), "" + cr.TraitBase[ TRAIT_FAST_SHOT ] + " - FAST_SHOT" );
         player.Say( SAY_DIALOGBOX_BUTTON( 8 ), "" + cr.TraitBase[ TRAIT_BLOODY_MESS ] + " - PSYCOPATH" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 9 ), "" + cr.TraitBase[ TRAIT_JINXED ] + " - JINXED" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 10 ), "" + cr.TraitBase[ TRAIT_GOOD_NATURED ] + " - GOOD_NATURED" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 9 ), "" + cr.TraitBase[ TRAIT_JINXED ] + " - NERD" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 10 ), "" + cr.TraitBase[ TRAIT_GOOD_NATURED ] + " - SURE FOOTED" );
         player.Say( SAY_DIALOGBOX_BUTTON( 11 ), "" + cr.TraitBase[ TRAIT_CHEM_RELIANT ] + " - CHEM_RELIANT" );
         player.Say( SAY_DIALOGBOX_BUTTON( 12 ), "" + cr.TraitBase[ TRAIT_CHEM_RESISTANT ] + " - CHEM_RESISTANT" );
         player.Say( SAY_DIALOGBOX_BUTTON( 13 ), "" + cr.TraitBase[ TRAIT_SEX_APPEAL ] + " - SEXUALITY" );

@@ -92,6 +92,11 @@ void DropPoison( Critter& cr )
     cr.StatBase[ ST_POISONING_LEVEL ] = 0;
 }
 
+void dropPoisonLevel( Critter& cr )
+{
+// cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal - 2, 0, 1000 );
+}
+
 uint cte_Poison( Critter& cr, int identifier, uint& rate )
 {
     if( cr.IsDead() )
@@ -108,7 +113,7 @@ uint cte_Poison( Critter& cr, int identifier, uint& rate )
     if( levelVal > 0 )
 	{
        //cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_POISON_PROCESS );
-       // cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal - 2, 0, 1000 );
+		dropPoisonLevel( cr );
         cr.StatBase[ ST_CURRENT_HP ]--;
 		
         if( levelVal > 500 )
