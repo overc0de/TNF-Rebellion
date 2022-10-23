@@ -252,7 +252,7 @@ int fix_Tribal( Critter& cr, int state, CraftItem& craft )
 			return FIX_FAIL; 
 		}
 		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CRAFT_SOMETHING );
-		cr.StatBase[ST_EXPERIENCE] += 20;
+		cr.StatBase[ST_EXPERIENCE] += 50;
 		return FIX_TIMEOUT; 
 	}
 	GetCraftItems( cr, state, craft );
