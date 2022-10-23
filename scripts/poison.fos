@@ -94,26 +94,51 @@ void DropPoison( Critter& cr )
 
 void dropPoisonLevel( Critter& cr )
 {
-// cr.StatBase[ ST_POISONING_LEVEL ] = CLAMP( levelVal - 2, 0, 1000 );
+	int level = cr.StatBase[ ST_POISONING_LEVEL ];
+	
+	int value = 0;
+	if( level < 50 )
+	{
+		value = 10;
+	}
+	else if( level < 300 )
+	{
+		value = 5;
+	}
+	else if( level < 600 )
+	{
+		value = 3;
+	}
+	else if( level < 800 )
+	{
+		value = 2;
+	}
+	else
+	{
+		value = 1;
+	}
+	
+	//cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_POISON_PROCESS );
+	cr.StatBase[ ST_POISONING_LEVEL ] -= value;
 }
 
 uint cte_Poison( Critter& cr, int identifier, uint& rate )
 {
     if( cr.IsDead() )
 	{
-        return REAL_MINUTE(1);
-	}
-	
-	if( cr.IsKnockout() )
-	{
-		return GetPoisonDuration( cr );
+        return 0;
 	}
 	
     int levelVal = cr.Stat[ ST_POISONING_LEVEL ];
     if( levelVal > 0 )
 	{
-       //cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_POISON_PROCESS );
 		dropPoisonLevel( cr );
+
+		if( cr.IsKnockout() )
+		{
+			return GetPoisonDuration( cr ) * 2;
+		}
+
         cr.StatBase[ ST_CURRENT_HP ]--;
 		
         if( levelVal > 500 )
@@ -149,17 +174,30 @@ uint cte_Poison( Critter& cr, int identifier, uint& rate )
 
 uint GetPoisonDuration( Critter& cr )
 {
-    if( cr.Stat[ ST_POISONING_LEVEL ] <= 0 )
+	int level = cr.StatBase[ ST_POISONING_LEVEL ];
+	
+	if( level <= 0 )
 	{
-        return 0;
+		return 0;
 	}
-    
-	if( cr.Stat[ ST_POISONING_LEVEL ] > 500 )
+	else if( level <= 50 )
+	{
+		return REAL_SECOND( 60 );
+	}
+	else if( level <= 300 )
+	{
+		return REAL_SECOND( 30 );
+	}
+	else if( level <= 600 )
+	{
+		return REAL_SECOND( 20 );
+	}
+	else if( level <= 800 )
 	{
 		return REAL_SECOND( 10 );
 	}
 	
-	return REAL_SECOND( 20 );
+	return REAL_SECOND( 5 );
 }
 
 void CheckPoisonEvent( Critter& cr )
