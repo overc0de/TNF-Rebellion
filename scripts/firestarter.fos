@@ -303,6 +303,7 @@ uint e_Burn( uint[]@ values )
 				{
 					case(PID_FIREBARREL):
 					case(PID_FIREPLACE): 
+					case(PID_FIREPLACE2): 					
 						return REAL_SECOND(15);
 					case(PID_BRAZIER): 
 						return REAL_HOUR(1);
