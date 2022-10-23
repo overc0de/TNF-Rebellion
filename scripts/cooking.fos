@@ -168,6 +168,7 @@ bool FastFrying( Critter& cr )
     cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_FRY_SUCCESS, "$name" + STR_INSERT_ITEM_LINE( item.GetProtoId() * 100 ) );
 
     _SubItem( item, 1 );
+	cr.StatBase[ ST_EXPERIENCE ] += 50;
 	return true;
 }
 
@@ -213,6 +214,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
 		{
 			_CritDeleteItem( cr, PID_MUTATED_FRUIT, 1 );
             _CritDeleteItem( cr, PID_ALGAE, 2 );
+			cr.StatBase[ ST_EXPERIENCE ] += 75;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_SALAD_FAIL );
@@ -244,6 +246,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
             _CritDeleteItem( cr, PID_CABBAGE, 1 );
             _CritDeleteItem( cr, PID_XANDER_ROOT, 1 );
 			_CritDeleteItem( cr, PID_GLASS_BOTTLE_FULL, 1);
+			cr.StatBase[ ST_EXPERIENCE ] += 75;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_SOUP_FAIL );
@@ -277,6 +280,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
         {
             _CritDeleteItem( cr, PID_MEAT, 1 );
             _CritDeleteItem( cr, PID_XANDER_ROOT, 1 );
+			cr.StatBase[ ST_EXPERIENCE ] += 75;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_KEBAB_FAIL );
@@ -306,6 +310,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
         {
             _CritDeleteItem( cr, PID_CORN_FLOUR, 1 );
             _CritDeleteItem( cr, PID_XANDER_ROOT, 1 );
+			cr.StatBase[ ST_EXPERIENCE ] += 100;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TORTILLA_FAIL );
@@ -336,6 +341,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
             _CritDeleteItem( cr, PID_BROC_FLOWER, 2 );
             _CritDeleteItem( cr, PID_MEAT, 1 );
             _CritDeleteItem( cr, PID_MOLERAT_STOMATCH, 1 );
+			cr.StatBase[ ST_EXPERIENCE ] += 150;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_STOMACH_FAIL );
@@ -371,6 +377,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
             _CritDeleteItem( cr, PID_MEAT, 2 );
             _CritDeleteItem( cr, PID_XANDER_ROOT, 1 );
             _CritDeleteItem( cr, PID_BROC_FLOWER, 1 );
+			cr.StatBase[ ST_EXPERIENCE ] += 150;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_STEW_FAIL );
@@ -405,6 +412,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
             _CritDeleteItem( cr, PID_GECKO_MEAT, 1 );
             _CritDeleteItem( cr, PID_FLAPJACK, 1 );
             _CritDeleteItem( cr, PID_CABBAGE, 1 );
+			cr.StatBase[ ST_EXPERIENCE ] += 200;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_BURGER_FAIL );
@@ -439,7 +447,8 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
             _CritDeleteItem( cr, PID_FLAPJACK , 1 );
             _CritDeleteItem( cr, PID_MEAT, 1 );
             _CritDeleteItem( cr, PID_BLACK_MUSHROOMS, 1 );
-            if( isFailed )
+ 			cr.StatBase[ ST_EXPERIENCE ] += 200;
+           if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PIZZA_FAIL );
 			}
@@ -473,6 +482,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
             _CritDeleteItem( cr, PID_FLAPJACK , 1 );
             _CritDeleteItem( cr, PID_COOKED_FISH, 2 );
             _CritDeleteItem( cr, PID_XANDER_ROOT, 2 );
+			cr.StatBase[ ST_EXPERIENCE ] += 200;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PIE_FAIL );
@@ -507,6 +517,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
             _CritDeleteItem( cr, PID_RAT_MEAT , 3 );
             _CritDeleteItem( cr, PID_FLAPJACK, 1 );
             _CritDeleteItem( cr, PID_BROC_FLOWER, 2 );
+			cr.StatBase[ ST_EXPERIENCE ] += 200;
             if( isFailed )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TACO_FAIL );
