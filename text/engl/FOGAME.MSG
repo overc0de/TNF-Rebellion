@@ -886,6 +886,7 @@ Welcome to The Long Journey!}
 {7029}{}{Dazed}
 {7030}{}{Stunned}
 {7031}{}{No Sneaking}
+{7032}{}{Oxygen}
 
 # dyspnea
 {7400}{}{faints}

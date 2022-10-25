@@ -76,7 +76,7 @@ void DypsneaCr( Critter& cr, uint rate )
 	{
 		if( rate > 0 )
 		{
-			if( isGM( cr ) || CheckGasMask( cr ) )
+			if( CheckGasMask( cr ) )
 			{		
 				return;
 			}
@@ -91,7 +91,7 @@ void DypsneaCr( Critter& cr, uint rate )
 
 uint cte_Dyspnea( Critter& cr, int identifier, uint& rate )
 {
-	if( rate <= 0 || CheckGasMask( cr ) )
+	if( rate <= 0 || CheckGasMask( cr ) || cr.IsKnockout() || !cr.IsPlayer() )
 	{		
 		cr.StatBase[ ST_DYSPNEA ] += cr.Stat[ ST_ENDURANCE ] * 10;
 		rate = 0;

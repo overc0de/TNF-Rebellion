@@ -2394,6 +2394,7 @@
 #define STR_DAZED_TITLE						 ( 7029 )
 #define STR_STUNNED_TITLE                    ( 7030 )
 #define STR_SNEAK_TO_TITLE				 	 ( 7031 )
+#define STR_OXYGEN_TITLE				 	 ( 7032 )
 
 // Dyspnea
 #define STR_EMOTE_FAINT						 ( 7400 )

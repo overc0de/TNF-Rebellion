@@ -417,7 +417,7 @@
 
 	void changedParam_Dyspnea( Critter& cr, uint, int oldValue )
 	{
-		if( cr.Stat[ ST_BODY_TYPE ] == BT_ROBOT || !cr.IsPlayer() )
+		if( cr.Stat[ ST_BODY_TYPE ] == BT_ROBOT || !cr.IsPlayer() || cr.IsDead() )
 		{
 			cr.StatBase[ ST_DYSPNEA ] = 1000;
 			return;
@@ -425,33 +425,45 @@
 		
 		cr.StatBase[ ST_DYSPNEA ] = CLAMP( cr.StatBase[ ST_DYSPNEA ], 0, 1000 );
 
-		if( cr.StatBase[ ST_DYSPNEA ] <= 250 && !cr.IsDead() )
+		if( cr.StatBase[ ST_DYSPNEA ] <= 0 )
+		{
+			cr.StatBase[ ST_DYS ] += 2;
+			if( cr.StatBase[ ST_CURRENT_HP ] > 0 ) 
+			{
+				cr.StatBase[ ST_CURRENT_HP ] -= 4;
+			}
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_NEED_BREATH );
+		}
+		else if( cr.StatBase[ ST_DYSPNEA ] <= 250 )
 		{
 			cr.StatBase[ ST_DYS ] += 1;
-			if( cr.StatBase[ ST_DYS ] >= 30 && cr.StatBase[ ST_DYSPNEA ] <= 0 )
+			if( cr.StatBase[ ST_CURRENT_HP ] > 0 ) 
 			{
-				cr.StatBase[ ST_CURRENT_HP ] -= 10;
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_FAINT );
-				cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_NEED_OXIGEN );
+				cr.StatBase[ ST_CURRENT_HP ] -= 2;
 			}
-			else
-			{
-				cr.StatBase[ ST_CURRENT_HP ] -= 5;
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_LOUD_COUGHT );
-				cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_NEED_BREATH );
-			}
-			cr.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( ( Random( 0, 1 ) == 1 ? true : false ) ), 200, cr.HexX, cr.HexY );
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_LOUD_COUGHT );
 		}
 		else if( cr.StatBase[ ST_DYSPNEA ] >= 251 && cr.StatBase[ ST_DYSPNEA ] <= 700 )
 		{
-			cr.StatBase[ ST_DYS ] = 0;
+			cr.StatBase[ ST_DYS ] -= 1;
 			uint Msg = Random( 0, 4 ) == 0 ? STR_EMOTE_HOARSE_BREATHING : STR_EMOTE_HARD_BREATHING;
 			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, Msg );
-			cr.StatBase[ ST_CURRENT_HP ] -= 1;
+			
+			if( cr.StatBase[ ST_CURRENT_HP ] > 0 ) 
+			{
+				cr.StatBase[ ST_CURRENT_HP ] -= 1;
+			}
 		}
 		else if( cr.StatBase[ ST_DYSPNEA ] >= 701 && cr.StatBase[ ST_DYSPNEA ] <= 999 )
 		{
 			cr.StatBase[ ST_DYS ] = 0;
+		}
+
+		if( cr.StatBase[ ST_DYS ] >= 30 )
+		{
+			cr.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( ( Random( 0, 1 ) == 1 ? true : false ) ), 5, cr.HexX, cr.HexY );
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_FAINT );
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_NEED_OXIGEN );
 		}
 	}
 
