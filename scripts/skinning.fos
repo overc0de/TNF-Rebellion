@@ -289,7 +289,7 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target, bool devour )
 			lootPid = skinnable.loot[ deathStage + 1 ];
 		}
 	}
-	
+
 	int amount = 1;
 	//stat bonus
 	int16 stat_bonus = ( cr.Stat[ ST_STRENGTH ] * SKINNING_STR_MOD ) + ( cr.Stat[ ST_AGILITY ] * SKINNING_AGI_MOD );
@@ -373,9 +373,14 @@ bool Profit(  Critter& cr, Item@ tool, Critter& target, bool devour )
 		}
 		else
 		{
-			uint huntMod = cr.Skill[ SK_HUNTING ] * 10 / 30;
-			cr.StatBase[ ST_HUNGER ] += 100 + huntMod;
-			cr.StatBase[ ST_THIRST ] += 100 + huntMod;
+			uint saturation = cr.Skill[ SK_HUNTING ] * 10 / 15 + 100;
+			cr.StatBase[ ST_THIRST ] += saturation;
+
+			int result_hunger = ( cr.Stat[ ST_HUNGER ] + saturation );
+			cr.StatBase[ ST_HUNGER ] = CLAMP( result_hunger, 0, 1000 );
+			
+			int devour_heal = CLAMP( int( ( result_hunger - 1000 ) * 0.1 ), 0, 100 );
+			cr.StatBase[ ST_CURRENT_HP ] += devour_heal;
 		}
 	}
 	
