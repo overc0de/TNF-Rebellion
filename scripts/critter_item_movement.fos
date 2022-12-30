@@ -185,28 +185,28 @@ bool critter_check_move_item( Critter& cr, Item& item, uint8 toSlot, Item@ itemS
         return false;
 	}
 	
-    // Weapon animation
-    if( cr.IsPlayer() && ( toSlot == SLOT_HAND1 || toSlot == SLOT_HAND2 ) )
-    {
-        if( item.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, item.Proto.Weapon_Anim1 ) )
-		{
-			#ifdef __CLIENT
-			Message( TEXTMSG_TEXT, STR_NO_REQUIRED_ANIM ); 
-            #endif // __CLIENT
-			return false;
-		}
-		Item@ offhand = _CritGetItemHandExt( cr );
-		if( valid( offhand ) )
-		{
-			if( offhand.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, offhand.Proto.Weapon_Anim1 ) )
-			{
-				#ifdef __CLIENT
-				Message( TEXTMSG_TEXT, STR_NO_REQUIRED_ANIM );  
-				#endif // __CLIENT
-				return false;
-			}
-		}
-    }
+    // // Weapon animation
+    // if( cr.IsPlayer() && ( toSlot == SLOT_HAND1 || toSlot == SLOT_HAND2 ) )
+    // {
+        // if( item.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, item.Proto.Weapon_Anim1 ) )
+		// {
+			// #ifdef __CLIENT
+			// Message( TEXTMSG_TEXT, STR_NO_REQUIRED_ANIM ); 
+            // #endif // __CLIENT
+			// return false;
+		// }
+		// Item@ offhand = _CritGetItemHandExt( cr );
+		// if( valid( offhand ) )
+		// {
+			// if( offhand.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, offhand.Proto.Weapon_Anim1 ) )
+			// {
+				// #ifdef __CLIENT
+				// Message( TEXTMSG_TEXT, STR_NO_REQUIRED_ANIM );  
+				// #endif // __CLIENT
+				// return false;
+			// }
+		// }
+    // }
 
     // Armor animation
     if( toSlot == SLOT_ARMOR )
@@ -257,15 +257,16 @@ bool critter_check_move_item( Critter& cr, Item& item, uint8 toSlot, Item@ itemS
 
 #ifdef __SERVER
 
-#include "speed_h.fos"
 #include "windup_h.fos"
+#include "speed_h.fos"
 
 import void LookDataRefresh( Critter& critter ) from "main";
 
 // Call on critter item moved.
 void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 {
-	ChangeRunningAP( cr );
+	ChangeCritterSpeed( cr );
+	
 	uint8 toSlot = item.CritSlot;
 	
 	if( toSlot == SLOT_HEAD || fromSlot == SLOT_HEAD )
@@ -490,7 +491,6 @@ void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 		if( cr.CrType != crType ) 
 		{
 			cr.ChangeCrType( crType );
-			ChangeCritterSpeed( cr );
 		}
 
         // Armor modifiers
@@ -550,25 +550,25 @@ void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 		cr.Wait( GetActionTime( ACTION_MOVE_ITEM, cr ) );
 	}
 	
-	Item@ hand = _CritGetItemHand( cr );
-	if( valid( hand ) )
-	{
-		if( hand.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, hand.Proto.Weapon_Anim1 ) )
-		{
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_ANIM_FOR_MAIN_HAND );
-			cr.MoveItem( hand.Id, hand.GetCount(), SLOT_INV );
-		}
-	}
+	// Item@ hand = _CritGetItemHand( cr );
+	// if( valid( hand ) )
+	// {
+		// if( hand.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, hand.Proto.Weapon_Anim1 ) )
+		// {
+			// cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_ANIM_FOR_MAIN_HAND );
+			// cr.MoveItem( hand.Id, hand.GetCount(), SLOT_INV );
+		// }
+	// }
 	
-	Item@ offhand = _CritGetItemHandExt( cr );
-	if( valid( offhand ) )
-	{
-		if( offhand.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, offhand.Proto.Weapon_Anim1 ) )
-		{
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_ANIM_FOR_OFF_HAND );
-			cr.MoveItem( offhand.Id, offhand.GetCount(), SLOT_INV );
-		}
-	}
+	// Item@ offhand = _CritGetItemHandExt( cr );
+	// if( valid( offhand ) )
+	// {
+		// if( offhand.GetType() == ITEM_TYPE_WEAPON && !IsCritterAnim1( cr.CrType, offhand.Proto.Weapon_Anim1 ) )
+		// {
+			// cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_ANIM_FOR_OFF_HAND );
+			// cr.MoveItem( offhand.Id, offhand.GetCount(), SLOT_INV );
+		// }
+	// }
 	
 	LookDataRefresh( cr );
 	cr.RefreshVisible();
@@ -978,15 +978,6 @@ void TryToTakeArmor( Critter& cr, Critter& targetCr )
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_PARTIALLY_TAKE_ARMOR );
 		}
 	}
-}
-
-//weight check for running AP calculations
-void ChangeRunningAP( Critter& cr )
-{
-	float weight_penalty = ( 5.0f * ItemsWeight( cr ) ) / ( cr.Stat[ ST_CARRY_WEIGHT ] * 0.7f );
-	cr.ParamBase[ QST_AP_COST_RUN ] = ExoCheck( cr ) ? 100 : int( 100 * ( 1 + weight_penalty ) );
-	//Log( "AP cost for running: " + cr.ParamBase[ QST_AP_COST_RUN ] + " " + ExoCheck( cr ) );
-
 }
 
 #endif // __SERVER

@@ -143,7 +143,7 @@ class Gameplay : iManagerModule, iManager_loop,
 					cr.ToDead( ANIM2_DEAD_EXPLODE, null );
 				}
 			}
-			cr.ParamBase[ CR_ITEMS_WEIGHT ] = ItemsWeight( cr );
+			//cr.ParamBase[ CR_ITEMS_WEIGHT ] = ItemsWeight( cr );
 		}
 		
 		if( cr.IsDead() && cr.IsPlayer() )
@@ -844,7 +844,7 @@ uint cte_Dirt( Critter& cr, int identifier, uint& rate )
 	uint moved = MovementState( cr );
 	if( moved > MOVE_STATE_STILL )
 	{
-		Chance += ( 100 * ItemsWeight( cr ) / cr.Stat[ ST_CARRY_WEIGHT ] );
+		Chance += ( 100 * cr.Param[ CR_ITEMS_WEIGHT ] / cr.Stat[ ST_CARRY_WEIGHT ] );
 		if( moved == MOVE_STATE_RUN )
 		{
 			Dirt += 1;

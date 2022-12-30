@@ -20,7 +20,7 @@
 {765}{}{PID_CLUB@Как оказалось, сделать устрашающего вида дубину может почти каждый.@@SK_REPAIR 50|SK_OUTDOORSMAN 75@PID_WOOD_PLANK 1|PID_WOOD_PART 1@PID_REVFIST1 1|PID_KNIFE 1|PID_COMBAT_KNIFE 1@PID_CLUB 1@script fix_boy@fix_None}
 {775}{}{PID_CRAFT_M_BARS@Два ключика похожего типа можно разломать и распилить обратно на пустую заготовку.@@@PID_BLANK_KEY 2|PID_TEMPLE_KEY 2|PID_JAIL_KEY 2|PID_VAULT_13_SHACK_KEY 2@@PID_CRAFT_M_BARS 1@script fix_boy@fix_None}
 {800}{}{PID_CRAFT_L_LINT@Разрезаем ножом тряпку на кусочки.@@@PID_CRAFT_L_RAGS 1@PID_KNIFE 1|PID_COMBAT_KNIFE 1|PID_SCISSORS 1@PID_CRAFT_L_LINT 3@script fix_boy@fix_None}
-{805}{}{PID_FLINT@Нужный вам кремний можно найти в груде камней, если поработать с ними молотком.@@@PID_ROCK 8@PID_SLEDGEHAMMER 1@PID_FLINT 1@script fix_boy@fix_None}
+{805}{}{PID_FLINT@Нужный вам кремний можно найти в груде камней, если поработать с ними молотком.@@@PID_ROCK 8@PID_SLEDGEHAMMER 1|PID_PRIMITIVE_SLEDGE 1|PID_HAMMER 1@PID_FLINT 1@script fix_boy@fix_None}s
 {810}{}{PID_BRICK@Смешивая несколько компонентов и обжигая массу жаром огня мы получаем какое-то подобие кирпича.@@SK_REPAIR 75|SK_SCIENCE 150@PID_SAND 3&PID_MINERAL 1&PID_GLASS_BOTTLE_FULL 3|PID_GLASS_BOTTLE_DIRTY_FULL 3@PID_FIREPLACE_TOKEN 1@PID_BRICK 3&PID_BOTTLE_GLASS 3@script fix_boy@fix_Tribal}
 {815}{}{PID_SHARPENED_POLE@Вжик-вжик, и готово!@@SK_REPAIR 50|SK_OUTDOORSMAN 50@PID_WOOD_PLANK 1|PID_CR_STAKE 1@PID_REVFIST1 1|PID_KNIFE 1|PID_COMBAT_KNIFE 1|PID_AXE 1@PID_SHARPENED_POLE 1@script fix_boy@fix_None}
 {817}{}{PID_CHOPPED_FIREWOOD@Пара взмахов топора и полено порублено на дрова.@@SK_OUTDOORSMAN 50@PID_FIREWOOD 1@PID_AXE 1|PID_REVKNIFE2 1|PID_MACHETE 1@PID_CHOPPED_FIREWOOD 1@script fix_boy@fix_None}

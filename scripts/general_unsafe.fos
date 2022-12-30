@@ -20,6 +20,7 @@
 #include "plants_h.fos"
 #include "gathering_h.fos"
 #include "trap_h.fos"
+#include "speed_h.fos"
 
 import void Actions( Critter& cr, uint8 actionType, uint16 pickType ) from "context_callback";
 
@@ -577,6 +578,8 @@ uint e_emptySFX( uint[]@ values )
 	return 0;
 }
 
+import uint8 checkCoast(Map& map, uint16 tx, uint16 ty) from "qmap_coast";
+
 void unsafe_hex_useItem( Critter& cr, int hexX, int hexY, int itm_pid, string@ command, int[] @ param4 )
 {
 	Map@ map = cr.GetMap();
@@ -617,6 +620,20 @@ void unsafe_hex_useItem( Critter& cr, int hexX, int hexY, int itm_pid, string@ c
 		{
 			TryPlantMine( cr, usedItem, hexX, hexY );
 		}
+		
+		if( usedItemPid == PID_BOTTLE_GLASS )
+		{
+			if( checkCoast( map, H2T( hexX ), H2T( hexY ) ) == 0 )
+			{
+				cr.Say( SAY_NETMSG, "Подойдите ближе к берегу." );
+				return;
+			}
+
+			uint count = usedItem.GetCount();
+			_SubItem( usedItem, count );
+			cr.AddItem( PID_GLASS_BOTTLE_DIRTY_FULL, count );
+		}		
+		
 	}
 }
 
@@ -1059,7 +1076,8 @@ void unsafe_itemthrow ( Critter& player, int hx, int hy, int param2, string@ par
 		bool targetFreeHands = ( _CritGetItemHand ( target ) is null );
 		if( targetFreeHands && !( target is player ) )
 		{
-			MoveItem( itemInHand, 1, target);
+			MoveItem( itemInHand, 1, target );
+			ChangeCritterSpeed( target );
 			target.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_CATCHES );
 		}
 		else
@@ -1123,6 +1141,7 @@ void unsafe_itemthrow ( Critter& player, int hx, int hy, int param2, string@ par
 		}
 	}
 	
+	ChangeCritterSpeed( player );
 	currentMap.RunFlyEffect( _WeaponEffect( GetProtoItem(PID_FRAG_GRENADE), _WeaponModeUse (0) ), player, target, player.HexX, player.HexY, tx, ty );
 	_CritAnimateThrow( player );
 	player.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_THROW );

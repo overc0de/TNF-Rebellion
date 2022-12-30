@@ -14,6 +14,9 @@
 #define LOCATION_Deadloc			( 95 )
 #define LOCATION_TLJ_ARENA			( 96 )
 #define LOCATION_Hell				( 300 )
+#define LOCATION_Jail				( 421 )
+#define LOCATION_ruin_riverdale 	( 422 )
+#define LOCATION_Hospital 			( 423 )
 
 //Gameplay Locations
 #define LOCATION_Riverdale			( 52 )
@@ -40,6 +43,9 @@
 #define MAP_TLJ_ARENA4				( 99 )
 #define MAP_TLJ_ARENA5				( 100 )
 #define MAP_HELL					( 400 )
+#define MAP_JAIL					( 659 )
+#define Map_ruin_riverdale 			( 660 )
+#define Map_hospital	 			( 661 )
 
 //Maps Perfection session
 #define MAP_snd1_1					( 10 )
@@ -413,6 +419,13 @@
 #define MAP_v66_lvl4		        ( 646 )
 #define MAP_v66_crawler_in	        ( 647 )
 #define MAP_v66_crawler_out	        ( 648 )
+
+//Maps Jail
+#define Map_Jail 					( 659 )
+
+//Maps Ruin Riverdale
+#define Map_ruin_riverdale 			( 660 )
+#define Map_hospital	 			( 661 )
 
 //Event Maps
 #define MAP_event2_slavers_in		( 102 )

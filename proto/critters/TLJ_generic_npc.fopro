@@ -8183,6 +8183,8 @@ MODE_NO_TALK =				1
 
 #----------------------------------------------------------------------------
 
+
+
 #NPC_PID_VCITY_ROOKEE_F
 [Critter proto]
 Pid=251
@@ -8662,6 +8664,98 @@ ST_LUCK =					5
 ST_AI_ID =					202
 ST_BASE_CRTYPE =			191
 ST_BODY_TYPE =				1
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					1
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				1
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			1
+MODE_NO_LOOT =				1
+MODE_NO_TALK =				1
+
+#----------------------------------------------------------------------------
+
+#NPC_PID_JOHNY_BRANDO
+[Critter proto]
+Pid=266
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				10
+ST_PERCEPTION =				10
+ST_ENDURANCE =				10
+ST_CHARISMA =				10
+ST_INTELLECT =				10
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			461
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				1
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			1
+MODE_NO_LOOT =				1
+MODE_NO_TALK =				1
+
+#----------------------------------------------------------------------------
+
+#NPC_PID_APRIL_BRANDO
+[Critter proto]
+Pid=267
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				10
+ST_PERCEPTION =				10
+ST_ENDURANCE =				10
+ST_CHARISMA =				10
+ST_INTELLECT =				10
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			375
+ST_BODY_TYPE =				0
 ST_LOCOMOTION_TYPE =		0
 ST_BAG_ID =					0
 	
@@ -12182,57 +12276,7 @@ MODE_NO_TALK =				1
 
 #----------------------------------------------------------------------------
 
-#NPC_PID_BANDIT_VETERAN_M
-[Critter proto]
-Pid=458
-
-ST_AGE =					20
-ST_LEVEL =					12
-ST_KILL_EXPERIENCE =		0
-	
-ST_STRENGTH =				6
-ST_PERCEPTION =				6
-ST_ENDURANCE =				6
-ST_CHARISMA =				4
-ST_INTELLECT =				6
-ST_AGILITY =				7
-ST_LUCK =					5
-	
-SK_SMALL_GUNS=              160
-SK_BIG_GUNS=                30
-SK_ENERGY_WEAPONS=          20
-SK_UNARMED=                 70
-SK_MELEE_WEAPONS=           70
-SK_THROWING=                60
-	
-ST_AI_ID =					207
-ST_BASE_CRTYPE =			334
-ST_BODY_TYPE =				0
-ST_LOCOMOTION_TYPE =		0
-ST_BAG_ID =					344
-	
-ST_GENDER =					0
-
-ST_DIALOG_ID =				0
-	
-ST_DAMAGE_TYPE =			1
-
-ST_EMP_RESIST =				500
-	
-ST_TOXIC =					0
-ST_RADIOACTIVE =			0
-	
-MODE_HIDE =					0
-MODE_NO_STEAL =				1
-MODE_NO_BARTER =			1
-MODE_UNLIMITED_AMMO =		1
-MODE_NO_DROP =				0
-MODE_NO_LOOSE_LIMBS =		0
-MODE_SPECIAL_DEAD =			0
-MODE_RANGE_HTH =			0
-MODE_NO_DROP =   			1
-MODE_NO_LOOT =				1
-MODE_NO_TALK =				1
+r
 
 #----------------------------------------------------------------------------
 
@@ -13438,3 +13482,329 @@ MODE_NO_PUSH = 				1
 MODE_NO_UNARMED = 			1
 MODE_NO_WALK = 				1
 MODE_NO_RUN = 				1
+
+#-----------------------------------------------------
+
+#NPC_PID_MERCENARY_MALE_REGULAR
+[Critter proto]
+Pid=2324
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				5
+ST_PERCEPTION =				5
+ST_ENDURANCE =				5
+ST_CHARISMA =				5
+ST_INTELLECT =				5
+ST_AGILITY =				5
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              250
+SK_BIG_GUNS=                250
+SK_ENERGY_WEAPONS=          250
+SK_UNARMED=                 250
+SK_MELEE_WEAPONS=           250
+SK_THROWING=                250
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			62
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_MERCENARY_FEMALE_REGULAR
+[Critter proto]
+Pid=2325
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				5
+ST_PERCEPTION =				5
+ST_ENDURANCE =				5
+ST_CHARISMA =				5
+ST_INTELLECT =				5
+ST_AGILITY =				5
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              250
+SK_BIG_GUNS=                250
+SK_ENERGY_WEAPONS=          250
+SK_UNARMED=                 250
+SK_MELEE_WEAPONS=           250
+SK_THROWING=                250
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			61
+ST_BODY_TYPE =				1
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					1
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_MERCENARY_MALE_VETERAN
+[Critter proto]
+Pid=2326
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				8
+ST_PERCEPTION =				8
+ST_ENDURANCE =				8
+ST_CHARISMA =				5
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			62
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_MERCENARY_FEMALE_VETERAN
+[Critter proto]
+Pid=2327
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				8
+ST_PERCEPTION =				8
+ST_ENDURANCE =				8
+ST_CHARISMA =				5
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			61
+ST_BODY_TYPE =				1
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					1
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_MERCENARY_MALE_COMMANDER
+[Critter proto]
+Pid=2328
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				10
+ST_PERCEPTION =				10
+ST_ENDURANCE =				10
+ST_CHARISMA =				5
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			62
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_MERCENARY_FEMALE_COMMANDER
+[Critter proto]
+Pid=2329
+
+ST_AGE =					20
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				10
+ST_PERCEPTION =				10
+ST_ENDURANCE =				10
+ST_CHARISMA =				5
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			61
+ST_BODY_TYPE =				1
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					1
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------

@@ -6,6 +6,7 @@
 #include "critter_skills_h.fos"
 #include "flask_h.fos"
 #include "furniture_h.fos"
+#include "speed_h.fos"
 
 import bool CheckGard( Map& map, uint16 hexX, uint16 hexY ) from "qmap_farm";
 
@@ -744,6 +745,7 @@ class MenuPlant: CenteredMenuHandler
 			}
 
 			CleanBed( plant );
+			ChangeCritterSpeed( cr );
 		}	
 		return true;
     }

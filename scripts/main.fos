@@ -1832,7 +1832,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 			}
 			//Cart picture update
 			CheckCartPicMap( cont );
-			uint[] val = { cont.Id };
+			uint[] val = { cont.Id, cr.Id };
 			CreateTimeEvent( AFTER( REAL_MS( 10 ) ), "e_UpdateContainer", val, true );
 			return false; 
 		}
@@ -1926,7 +1926,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 			}
 
 			CheckCartPicMap( cont ); // changes cart picture
-			uint[] val = { cont.Id };
+			uint[] val = { cont.Id, cr.Id };
 			CreateTimeEvent( AFTER( REAL_MS( 10 ) ), "e_UpdateContainer", val, true );
 			return false; // in order for items to transfer return false!
 		}
@@ -2824,7 +2824,7 @@ void critter_idle( Critter& cr )
 {
 	CritterRegen( cr );
 	
-	ChangeCritterSpeed( cr );
+	//ChangeCritterSpeed( cr );
 
     manager_critter_idle( cr );
 }
@@ -3892,8 +3892,17 @@ void unsafe_ItemsWeight( Critter& player, int itemId, int param1, int param2, st
 uint e_UpdateContainer( uint[]@ val )
 {
 	Item@ container = GetItem( val[0] );
-	container.Update();
+	if( valid( container ) )
+	{
+		container.Update();
+	}
 	
+	Critter@ cr = GetCritter( val[1] );
+	if( valid( cr ) )
+	{
+		cr.ParamBase[ CR_ITEMS_WEIGHT ] = ItemsWeight( cr );
+	}
+
 	return 0;
 }
 

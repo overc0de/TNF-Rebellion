@@ -143,6 +143,7 @@ shared void InformErrorRandomText( Critter@ cr, string[] @texts = null, uint col
 	InformRandomText(cr, texts, COLOR_RED); 	
 }
 
+#define DEBUG_MSG
 #ifdef DEBUG_MSG
 	shared void DEBUG_SAY( Critter@ cr, string @text = null )
 	{
