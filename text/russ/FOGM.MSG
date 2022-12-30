@@ -386,9 +386,7 @@
 
 # Area 52, Map 103
 {1040}{}{fort_riverdale}
-{1045}{}{Out_of_Business.ogg}
-{1045}{}{The_Courier_Walks_Softly.ogg}
-{1045}{}{Under_the_Stars_Cut.ogg}
+{1045}{}{main_theme_TLJ_2.ogg}
 {1046}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1048}{}{Форт Ривердейл}
 
@@ -430,7 +428,7 @@
 
 # Area 56, Map 113
 {1140}{}{riverdale2_3}
-{1145}{}{24redd.mp3}
+{1145}{}{24redd.ogg}
 {1146}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1148}{}{Утес}
 
@@ -442,13 +440,13 @@
 
 # Area 57, Map 117
 {1180}{}{riverdale3_1_mine1}
-{1185}{}{08vats.mp3}
+{1185}{}{08vats.ogg}
 {1186}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
 {1188}{}{Шахта_МД}
 
 # Area 57, Map 118
 {1190}{}{riverdale3_1_mine2}
-{1195}{}{09glow.mp3}
+{1195}{}{09glow.ogg}
 {1196}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
 {1198}{}{Шахта_ЖЗ}
 
@@ -508,7 +506,7 @@
 
 # Area 65, Map 135
 {1360}{}{riverdale6_3}
-{1365}{}{NNM_FS_05_Collapse.ogg}
+{1365}{}{46NNM_line_of_policy.ogg}
 {1366}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1368}{}{Кладбище}
 
@@ -529,7 +527,7 @@
 
 # Area 67, Map 139
 {1400}{}{riverdale2_1}
-{1405}{}{17arroyo.mp3}
+{1405}{}{17arroyo.ogg}
 {1406}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1408}{}{Рыбацкий привал}
 
@@ -623,7 +621,7 @@
 
 # Area 77, Map 172
 {1730}{}{riverdale_up_2_2}
-{1735}{}{NNM_FS_15_Out-of-Service}
+{1735}{}{10labone.ogg}
 {1736}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1738}{}{Мотель Псов}
 
@@ -641,7 +639,7 @@
 
 # Area 80, Map 178
 {1790}{}{riverdale7_2}
-{1795}{}{07desert.ogg}
+{1795}{}{NNM_FS_05_Collapse.ogg}
 {1796}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1798}{}{Центр}
 
@@ -723,13 +721,13 @@
 
 # Area 83, Map 196
 {1970}{}{riverdale8_2}
-{1975}{}{16follow.mp3}
+{1975}{}{14 - Organic Shadows.ogg}
 {1976}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1978}{}{Цветение}
 
 # Area 83, Map 187
 {1980}{}{riverdale8_2up}
-{1985}{}{09glow.mp3}
+{1985}{}{09 - D.S.Brudge.ogg}
 {1986}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {1988}{}{Институт - 2й этаж}
 
@@ -803,13 +801,13 @@
 
 # Area 130, Map 250
 {2510}{}{riverdale_up_1_1}
-{2515}{}{07desert.mp3}
+{2515}{}{13carvrn.ogg}
 {2516}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {2518}{}{Лесное племя}
 
 # Area 131, Map 252
 {2530}{}{riverdale_canyon_3}
-{2535}{}{07desert.mp3}
+{2535}{}{05 - Anesthetic.ogg}
 {2536}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {2538}{}{Радиолокационная станция}
 
@@ -869,7 +867,7 @@
 
 # Area 139, Map 271
 {2720}{}{riverdale_up_0_2}
-{2725}{}{09glow.mp3}
+{2725}{}{09glow.ogg}
 {2726}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {2728}{}{Старая часовня}
 
@@ -1498,6 +1496,26 @@
 {6425}{}{47NNM_nevada_theme.ogg}
 {6426}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
 {6428}{}{Аванпост Ревнителей}
+
+### Ruin Riverdale session ###
+
+# Area 421, Map 659
+{6590}{}{jail}
+{6595}{}{16 - Stranglet.ogg}
+{6596}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{6598}{}{Тюрьма}
+
+# Area 422, Map 660
+{6600}{}{ruin_riverdale}
+{6605}{}{16 - Stranglet.ogg}
+{6606}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
+{6608}{}{Руины Ривердейла}
+
+# Area 423, Map 661
+{6700}{}{hospital}
+{6705}{}{16 - Stranglet.ogg}
+{6706}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
+{6708}{}{Госпиталь}
 
 #
 # Global map

@@ -415,6 +415,8 @@ bool HandsTied( Critter& cr )
 	return false;
 }
 
+import void break_holding_item( Map@ map, Item@ item ) from "combat";
+
 //Old use Knife to escape code
 bool CutCheck( Critter& cr, Item@ item, Critter@ target )
 { 
@@ -470,9 +472,9 @@ bool CutCheck( Critter& cr, Item@ item, Critter@ target )
 		
 		if( valid( net ) )
 		{
-			_SubItem( net, 1 );
+			break_holding_item( map, net );
 			uint strNum = target.Id == cr.Id ? STR_EMOTE_GETS_FREE : STR_EMOTE_FREES_TARGET;
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, strNum );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, strNum );
 		}
 	}
 	else

@@ -47,7 +47,7 @@ void _MobInit( Critter& npc, bool firstTime )
     npc.SetEvent( CRITTER_EVENT_SHOW_CRITTER_1, "_CritterInAggroRange" );
 
 	npc.ShowCritterDist2 = DISTANCE_UNAGGRO( npc );
-	npc.SetEvent( CRITTER_EVENT_HIDE_CRITTER_2, "_CritterOutOfAggroRange" );
+	//npc.SetEvent( CRITTER_EVENT_HIDE_CRITTER_2, "_CritterOutOfAggroRange" );
 }
 
 void _CritterBecameVisible( Critter& self, Critter& target )
@@ -211,6 +211,8 @@ void _TargetDown( Critter& self, Critter& player, uint anim2begin, uint anim2idl
 // CRITTER_EVENT_SHOW_CRITTER
 void _ShowPlayer( Critter& npc, Critter& player )
 {
+	npc.VarWandering = 0;
+
 	if( !valid( npc ) )
 	{
 		return;
@@ -346,30 +348,37 @@ void _OnMessage( Critter& npc, Critter& fromCrit, int message, int value )
 
     if( message == MSG_GROUP_ATTACK )
 	{
-        Critter@ target = ::GetCritter( value );
-        
-		if( !valid( target ) )
+		if( npc.VarWandering == 1 )
 		{
-			return;
+			npc.VarWandering = 0;
+			//npc.ParamBase[ CR_VAL1 ]++;
+			//npc.Say( SAY_EMOTE_ON_HEAD, "" + npc.ParamBase[ CR_VAL1 ] );
+			
+			Critter@ target = ::GetCritter( value );
+			
+			if( !valid( target ) )
+			{
+				return;
+			}
+			
+			Map@ mapNpc = npc.GetMap();
+			Map@ mapTarget = target.GetMap();
+			
+			if( mapNpc.Id != mapTarget.Id )
+			{
+				return;
+			}
+			
+			uint dist = ::GetCrittersDistantion( npc, target ) ;
+			uint max_dist = DISTANCE_UNAGGRO( npc );
+			
+			if( dist >= max_dist )
+			{
+				return;
+			}
+			
+			AttackOrFind(npc, target);
 		}
-		
-		Map@ mapNpc = npc.GetMap();
-		Map@ mapTarget = target.GetMap();
-		
-		if( mapNpc.Id != mapTarget.Id )
-		{
-			return;
-		}
-		
-		uint dist = ::GetCrittersDistantion( npc, target ) ;
-		uint max_dist = DISTANCE_UNAGGRO( npc );
-        
-		if( dist >= max_dist )
-		{
-			return;
-		}
-		
-		AttackOrFind(npc, target);
 	}
 }
 
@@ -431,6 +440,7 @@ void _Idle( Critter& npc )
 
 				npc.MoveRandom();
 				npc.VarWandering = 1;
+				//npc.ParamBase[ CR_VAL1 ] = 0;
 			}
 		}
 		return;
@@ -521,7 +531,7 @@ void _Idle( Critter& npc )
 		}
 		else
 		{
-			npc.VarWandering = 0;
+			npc.MoveRandom();
 			npc.Wait( Random( 1000, 3000 ) );
 		}
 	}
@@ -542,6 +552,8 @@ int _PlaneBegin( Critter& npc, NpcPlane& plane, int reason, Critter@ someCr, Ite
 	
     if( plane.Type == AI_PLANE_ATTACK )
     {
+		npc.VarWandering = 0;
+		
         Critter@ target = GetCritter( plane.Attack_TargId );
         if( !valid( target ) )
 		{
@@ -614,6 +626,8 @@ int _PlaneEnd( Critter& npc, NpcPlane& plane, int reason, Critter@ someCr, Item@
 // CRITTER_EVENT_ATTACKED
 bool _Attacked( Critter& npc, Critter& attacker )
 {
+	npc.VarWandering = 0;
+	
 	if( !valid( npc ) )
 	{
 		return false;

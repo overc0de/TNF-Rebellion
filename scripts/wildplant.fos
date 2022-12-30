@@ -5,6 +5,7 @@
 #include "_utils.fos"
 #include "wildplant_h.fos"
 #include "entire_h.fos"
+#include "speed_h.fos"
 
 import uint8 checkSand( Map& map, uint16 tx, uint16 ty ) from "qmap_sand";
 import uint8 checkCave( Map& map, uint16 tx, uint16 ty ) from "qmap_cave";
@@ -210,7 +211,7 @@ bool PickPlant( Critter& cr, Item& wildplant )
 			pickedPlantPid = plant.loot[0];
 		}
 		
-		if( cr.Skill[ SK_OUTDOORSMAN ] >= 125 )
+		if( cr.Skill[ SK_OUTDOORSMAN ] > 50 )
 		{
 			uint len = cr.Skill[ SK_OUTDOORSMAN ] / 50;
 			for( uint i = 0; i < len; i++ )
@@ -221,12 +222,7 @@ bool PickPlant( Critter& cr, Item& wildplant )
 				}
 			}				
 		}
-		else
-		{
-			amount = 1;
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 125 );
-		}
-
+		
 		cr.AddItem( pickedPlantPid, amount );
 		
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_GATHERED, "$proto@msg item " + ( pickedPlantPid * 100 ) + "@$amount" + amount );
@@ -234,6 +230,7 @@ bool PickPlant( Critter& cr, Item& wildplant )
 		EraseTimeEvent( wildplant.EVENT );
 		wildplant.EVENT = 0;
 		DeleteItem( wildplant );
+		ChangeCritterSpeed( cr );		
 	} 
 	else 
 	{
@@ -255,7 +252,7 @@ bool checkPlantStage( Item@ wildplant, WildPlant@ plant )
 }
 
 //===============WILDPLANT_SPAWNER_MECHANIC===============//
-//~run wildplant _ForceWildplantsInit 0 0 0
+//Forced Spawn
 void _ForceWildplantsInit( Critter& player, int param0, int param1, int param2 )
 {
     Map@[] maps;

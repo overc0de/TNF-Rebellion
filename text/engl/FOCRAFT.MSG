@@ -20,7 +20,7 @@
 {765}{}{PID_CLUB@A club, for bashing people or as a support for furniture.@@SK_REPAIR 50|SK_OUTDOORSMAN 75@PID_WOOD_PLANK 1|PID_WOOD_PART 1@PID_REVFIST1 1|PID_KNIFE 1|PID_COMBAT_KNIFE 1@PID_CLUB 1@script fix_boy@fix_None}
 {775}{}{PID_CRAFT_M_BARS@Two keys, broken down and remolded back into scrap metal.@@@PID_BLANK_KEY 2|PID_TEMPLE_KEY 2|PID_JAIL_KEY 2|PID_VAULT_13_SHACK_KEY 2@@PID_CRAFT_M_BARS 1@script fix_boy@fix_None}
 {800}{}{PID_CRAFT_L_LINT@Rags, sliced back into scraps of string.@@@PID_CRAFT_L_RAGS 1@PID_KNIFE 1|PID_COMBAT_KNIFE 1|PID_SCISSORS 1@PID_CRAFT_L_LINT 3@script fix_boy@fix_None}
-{805}{}{PID_FLINT@Within the hard exterior of every rock is a loving piece of flint. Too bad a sledge is needed access it.@@@PID_ROCK 8@PID_SLEDGEHAMMER 1@PID_FLINT 1@script fix_boy@fix_None}
+{805}{}{PID_FLINT@Within the hard exterior of every rock is a loving piece of flint. Too bad a sledge is needed access it.@@@PID_ROCK 8@PID_SLEDGEHAMMER 1|PID_PRIMITIVE_SLEDGE 1|PID_HAMMER 1@PID_FLINT 1@script fix_boy@fix_None}
 {810}{}{PID_BRICK@By mixing several components and forming the mass with high temperatures, we get some kind of a brick.@@SK_REPAIR 75|SK_SCIENCE 150@PID_SAND 3&PID_MINERAL 1&PID_GLASS_BOTTLE_FULL 3|PID_GLASS_BOTTLE_DIRTY_FULL 3@PID_FIREPLACE_TOKEN 1@PID_BRICK 3&PID_BOTTLE_GLASS 3@script fix_boy@fix_Tribal}
 {815}{}{PID_SHARPENED_POLE@Whack-whack, and it's done!@@SK_REPAIR 50|SK_OUTDOORSMAN 50@PID_WOOD_PLANK 1|PID_CR_STAKE 1@PID_REVFIST1 1|PID_KNIFE 1|PID_COMBAT_KNIFE 1|PID_AXE 1@PID_SHARPENED_POLE 1@script fix_boy@fix_None}
 {817}{}{PID_CHOPPED_FIREWOOD@A couple of swings of the axe and the log is chopped into firewood.@@SK_OUTDOORSMAN 50@PID_FIREWOOD 1@PID_AXE 1|PID_REVKNIFE2 1|PID_MACHETE 1@PID_CHOPPED_FIREWOOD 1@script fix_boy@fix_None}
