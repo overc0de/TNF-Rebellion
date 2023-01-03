@@ -6,6 +6,7 @@
 **************************************************************/
 #define PID_FRM_ITEM								( 603 )							// FRM item ( simulating anything )
 #define PID_REGION_BOUNDARY_CORNER    				( 6531 ) 						// Tech item for map generation
+#define PID_BULLETIN_BOARD							( 1670 )						// Bulletin board
 
 /**************************************************************
 **************		INTERACTIVE MAP OBJECTS		***************

@@ -1149,6 +1149,19 @@ Material=1
 Container_Volume=15000
 Item_Subtype=200
 
+# PID_BULLETIN_BOARD
+[Proto]
+ProtoId=1670
+Type=5
+PicMap=art\scenery\PNX304.FRM
+PicInv=art\scenery\PNX304.FRM
+Flags=169873944
+DisableEgg=1
+Weight=2530
+Volume=200
+Material=3
+Item_Subtype=200
+
 # PID_CRUSHER_2000
 [Proto]
 ProtoId=1832

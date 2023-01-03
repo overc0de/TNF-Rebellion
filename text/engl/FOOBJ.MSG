@@ -2286,6 +2286,8 @@
 {166801}{}{Containers stacked on top of each other.}
 {166900}{}{Triple Containers}
 {166901}{}{Containers stacked on top of each other.}
+{167000}{}{Bulletin Board}
+{167001}{}{}
 {167800}{}{Elevator}
 {167801}{}{An elevator seamingly in a good working condition.}
 {167900}{}{Carbon Filter}

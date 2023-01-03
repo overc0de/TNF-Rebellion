@@ -98,6 +98,7 @@
 #define DIALOG_klam_dog                      ( 204 )
 #define DIALOG_klam_bakner_visiter           ( 205 )
 #define DIALOG_klam_golden_visiter           ( 206 )
+#define DIALOG_BULLETIN_BOARD		         ( 206 )
 #define DIALOG_klam_sajag                    ( 207 )
 #define DIALOG_klam_ardin                    ( 208 )
 #define DIALOG_klam_majda                    ( 209 )

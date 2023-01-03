@@ -634,6 +634,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			action_info += "scenery #" + targetScen.ProtoId;
 		}
 	}
+	
 	SayLog( cr, action_info + "." );
 	
 	if( !valid( targetScen ) )
@@ -1485,7 +1486,13 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 		CheckItemMovement( cr, targetItem, skill );
 	}
 
-    bool onSelf = ( ( !valid( targetCr ) ) && ( !valid( targetItem ) ) && ( !valid( targetScen ) ) );
+ 	if( valid(targetItem) && targetItem.GetProtoId() == PID_BULLETIN_BOARD )
+	{
+		RunDialog( cr, DIALOG_BULLETIN_BOARD, targetItem.HexX, targetItem.HexY, false );
+		return true;
+	}
+	
+   bool onSelf = ( ( !valid( targetCr ) ) && ( !valid( targetItem ) ) && ( !valid( targetScen ) ) );
 	
 	if( skill != SKILL_PUT_CONT && skill != SKILL_TAKE_CONT )
 	{
