@@ -23,7 +23,7 @@ const string[] SlicingSoundNames = { "Slicing1.ogg", "Slicing2.ogg", "Slicing3.o
 #define MAX_SPIRIT_LEVEL 					   ( 40 )	// Max possible %% in homebrew
 #define SUGAR_FERMENTING_TIME		REAL_SECOND( 3 ) 	// ticks to ferment amount below
 #define SUGAR_FERMENTING_AMOUNT		           ( 10 )	// 10 in g
-#define FERMENTING_MODIFIER					   ( 100 )   // 60 % from sugar becomes spirit
+#define FERMENTING_MODIFIER					   ( 100 )   // % from sugar becomes spirit
 
 #define REMAINING_USES							Val0 	// in flask
 #define EXTRA_WEIGHT							Val2	// of liquid
