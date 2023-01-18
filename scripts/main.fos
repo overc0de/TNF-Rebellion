@@ -3986,10 +3986,10 @@ void LookDataRefresh( Critter& cr )
 		look.ViewDirMultiplier_2 = 50;
 		look.ViewDirMultiplier_3 = 5;
 
-		look.HearDirMultiplier_0 = 80;
+		look.HearDirMultiplier_0 = 100;
 		look.HearDirMultiplier_1 = 100;
 		look.HearDirMultiplier_2 = 100;
-		look.HearDirMultiplier_3 = 70;
+		look.HearDirMultiplier_3 = 100;
 
 		look.RunningNoiseMultiplier = 150;
 		look.RunningHearMultiplier = 50;
