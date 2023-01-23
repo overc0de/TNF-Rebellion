@@ -1,0 +1,772 @@
+#ifndef SMITHING
+#define SMITHING
+
+#include "_utils.fos"
+#include "smithing_h.fos"
+#include "_ltp.fos"
+#include "gathering_h.fos"
+#include "speed_h.fos"
+#include "combat_h.fos"
+#include "furniture_h.fos"
+#include "firestarter_h.fos"
+
+import void DropCr( Critter@ cr, Critter@ target ) from "gameplay";
+import void use_tool( Critter& cr, Item@ tool ) from "repair";
+
+class MenuAnvil: CenteredMenuHandler
+{
+    uint anvil_id;
+    uint map_id;
+	
+    MenuAnvil( Item& anvil, Map& map )
+	{
+        anvil_id = anvil.Id;
+        map_id = map.Id;
+    }
+
+    bool MenuUpdate( Critter& cr, iDialogBox& menu )
+	{
+        Map@ map = GetMap( map_id );
+        if( !valid( map ) )
+		{
+            return false;
+        }
+		
+        Item@ anvil = GetItem( anvil_id );
+        if( !valid( anvil ) )
+		{
+            return false;
+        }
+		
+		if( locked_in_place( anvil ) )
+		{
+			if( hasItems( cr, SmithingTools, SLOT_HAND1 ) && menu.ButtonMsg( STR_ANVIL_MENU_SMITH ) )
+			{
+				Item@ tool = _CritGetItemHand( cr );
+				PrepareSmithing( cr, tool, anvil );
+				return false;
+			}
+
+			if( menu.ButtonMsg( STR_FURNITURE_MENU_EXAMINE ) )
+			{
+				ShowContainer( cr, anvil, TRANSFER_HEX_CONT_UP );
+				return false;
+			}
+			
+			if( menu.ButtonMsg( STR_FURNITURE_MENU_DETACH ) )
+			{
+				LockInPlace( cr, anvil );
+				return true;
+			}
+		}
+		else
+		{
+			if( menu.ButtonMsg( STR_FURNITURE_MENU_ANCHOR ) )
+			{
+				LockInPlace( cr, anvil );
+				return true;
+			}
+
+			if( menu.ButtonMsg( STR_FURNITURE_MENU_PICKUP ) )
+			{
+				PickItem( cr, anvil );
+				ChangeCritterSpeed( cr );
+				return false;
+			}			
+		}
+		return true;
+    }
+	
+	int getDescriptionFile()
+    {
+    	return TEXTMSG_TEXT;
+    }
+
+	int getDescriptionLine()
+	{
+		return STR_ANVIL_MENU_MAIN;
+	}
+	
+    string@ Description( Critter& cr )
+	{
+	
+		string info;
+		Item@ anvil = GetItem( anvil_id );
+		
+		Item@[] MaterialsCheck;
+		anvil.GetItems( uint( -1 ), MaterialsCheck );
+		Item@ material = null;
+		
+		info += "$contains";
+		uint16 materialPid = 0;
+		if( MaterialsCheck.length() == 0 )
+		{ 
+			info += STR_INSERT_TEXT_LINE( STR_EMPTY );
+		}
+		else
+		{
+			for( uint i = 0; i < MaterialsCheck.length(); i ++ )
+			{
+				materialPid = MaterialsCheck[i].GetProtoId();
+				if( MaterialList.find( materialPid ) != -1 )
+				{
+					@material = MaterialsCheck[i];
+					break;
+				}
+			}
+			
+			if( !valid( material ) )
+			{ 
+				info += STR_INSERT_TEXT_LINE( STR_ANVIL_MENU_NO_METAL );
+			}
+			else
+			{
+				info += STR_INSERT_TEXT_LINE( STR_ANVIL_MENU_CONTAINS )
+					 + "$item" + STR_INSERT_ITEM_LINE( materialPid * 100 )
+					 + "$amount" + material.GetCount();
+			}
+		}		
+
+		return info;
+    }
+}
+
+void StartMenuAnvil( Critter& cr, Item& anvil )
+{
+    Map@ map = cr.GetMap();
+    if( !valid( map ) )
+	{
+        return;
+    }
+
+    iMenuHandler@ handler = MenuAnvil( anvil, map );
+    iDialogBox@ menu = OpenMenu( cr, "Anvil", handler );
+}
+
+bool ltp_smithing_inited = false;
+void ltp_smithing_init()
+{
+	LTPREG( LTP_SMITHING, process_Smithing )
+	ltp_smithing_inited = true;
+}
+
+bool PrepareSmithing( Critter& cr, Item@ tool, Item@ anvil ) 
+{
+	Map@ map = cr.GetMap();
+    if( !valid( map ) )
+	{
+		return false;
+	}
+	
+	if( !valid( tool ) )
+	{
+		return false;
+	}
+	
+	if( !valid( anvil ) )
+	{
+		return false;
+	}	
+	
+	if( anvil.GetProtoId() != PID_ANVIL )
+	{
+		return false;
+	}
+	
+	if( !hasItems( cr, SmithingTools, SLOT_HAND1 ) )
+	{
+		return false;
+	}
+
+	if( IsTired( cr ) )
+	{
+		return false;
+	}
+	
+	if( cr.IsDmgTwoArm() || cr.IsDmgTwoLeg() )
+	{ 
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_INJURED_CANT_WORK );
+		return false; 
+	}
+	
+	Item@[] MaterialsCheck;
+	anvil.GetItems( uint( -1 ), MaterialsCheck );
+	Item@ material = null;
+	uint16 materialPid;
+	if( MaterialsCheck.length() == 0 )
+	{ 
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_ANVIL_EMPTY ); 
+		return false; 
+	}
+	else
+	{
+		for( uint i = 0; i < MaterialsCheck.length(); i ++ )
+		{
+			materialPid = MaterialsCheck[i].GetProtoId();
+			if( MaterialList.find( materialPid ) != -1 )
+			{
+				@material = MaterialsCheck[i];
+				break;
+			}
+		}
+		
+		if( !valid( material ) )
+		{ 
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_INGOT ); 
+			return false; 
+		}
+	}
+	
+	start_Smithing( cr, tool, anvil, material );
+	return true;
+}
+
+bool start_Smithing( Critter& cr, Item& tool, Item& anvil, Item@ material )
+{
+	if(!ltp_smithing_inited)
+	{
+		ltp_smithing_init();
+	}
+	
+	if( valid( tool ) && valid( anvil ) )
+	{	
+		uint hit_pause = ACTION_PAUSE_BASE - ( cr.Stat[ ST_STRENGTH ] * ACTION_PAUSE_BONUS_RATE );
+		cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ] = CLAMP( hit_pause, ACTION_PAUSE_MIN, ACTION_PAUSE_MAX );
+		uint smithing_rate = ( cr.Stat[ ST_STRENGTH ] * ACTION_PAUSE_BONUS_RATE ) + OBJECT_DPA_BASE; 
+		cr.ParamBase[ ST_LTP_SEQUENCE ] = int( ceil( float( 3000 / ( CLAMP( smithing_rate, OBJECT_DPA_MIN, OBJECT_DPA_MAX ) ) ) ) );
+		
+		uint[] values = { cr.Id };
+		
+		_CritAnimateSwing( cr );
+		CreateTimeEvent( AFTER( REAL_MS( 700 ) ), "e_SmithingSound", values, false);
+		CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "gathering@e_TiredenessTimeout", cr.Id, true);	
+
+		StartProcess( cr, LTP_SMITHING, 0, anvil.Id, material.Id, cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ] );
+		return true;
+	}
+	return false;
+}
+
+uint process_Smithing( Critter@ cr, int& param0, int& param1, int& param2 )
+{
+    LTPROCESS( cr, param0, LTP_SMITHING )
+	
+    Item@ anvil = GetItem( param1 );
+  	Item@ material = GetItem( param2 );
+  	if( valid( anvil ) && valid( material ) )
+    {
+		param0++;
+		
+		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] )
+		{
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_FINISH_SMITHING );
+			Profit( cr, anvil, material );
+			int skillNum = SK_REPAIR;
+			Accident( cr, skillNum );
+			return 0;
+		}
+		
+		uint[] values = { cr.Id };
+		CreateTimeEvent( AFTER( REAL_MS( 700 ) ), "e_SmithingSound", values, true);
+		CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "gathering@e_TiredenessTimeout", values, true);
+
+		_CritAnimateSwing( cr );
+		
+		if( cr.IsInjured() )
+		{
+			uint damage = INJURED_HP_DAMAGE - cr.Stat[ ST_ENDURANCE ];
+			InjureCritter( cr, damage, DAMAGE_UNCALLED, cr.Dir, cr.Id, HIT_LOCATION_NONE, false );
+		}
+		
+		return cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ];
+	}
+	return 0;
+}
+
+uint e_SmithingSound( uint[]@ values )
+{
+	Critter@ cr = GetCritter(values[0]);
+	Map@ map = cr.GetMap();
+	PlayGenericSound( map, cr.HexX, cr.HexY, _GetOneRandom( SmithingSounds ), 10 );
+	return 0;
+}
+
+void Profit( Critter& cr, Item& anvil, Item& material )
+{
+	if( !valid( anvil) && !valid( material ) )
+	{
+		return;
+	}
+	
+	uint16 materialPid = material.GetProtoId();
+	uint8 index = MaterialList.find( materialPid );
+	uint16 resultPid = ResultList[ index ];
+	uint8 amount = Amount[index];
+	cr.AddItem( resultPid, amount );
+	_SubItem( material, 1 );
+	
+	cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_CRAFTED_PID, "$proto@msg item " +  ( resultPid * 100 ) + "@$amount" + amount + "\n" );
+	cr.StatBase[ ST_EXPERIENCE ] += 25;
+	
+	use_tool( cr, cr.GetItem( 0, SLOT_HAND1 ) );
+}
+
+//Crusher
+void StartMenuCrusher( Critter& cr, Item& crusher )
+{
+    Map@ map = cr.GetMap();
+    if( !valid( map ) )
+	{
+        return;
+    }
+
+    iMenuHandler@ handler = MenuCrusher( crusher, map );
+    iDialogBox@ menu = OpenMenu( cr, "Crusher", handler );
+}
+
+class MenuCrusher: CenteredMenuHandler
+{
+    uint crusher_id;
+    uint map_id;
+	
+    MenuCrusher( Item& crusher, Map& map )
+	{
+        crusher_id = crusher.Id;
+        map_id = map.Id;
+    }
+
+    bool MenuUpdate( Critter& cr, iDialogBox& menu )
+	{
+        Map@ map = GetMap( map_id );
+        if( !valid( map ) )
+		{
+            return false;
+        }
+
+        Item@ crusher = GetItem( crusher_id );
+        if( !valid( crusher ) )
+		{
+            return false;
+        }
+
+		if( locked_in_place( crusher ) )
+		{
+			if( crusher.STATE == STATE_OFF )
+			{
+				if( menu.ButtonMsg( STR_FURNITURE_MENU_EXAMINE ) )
+				{
+					PlayGenericSound( map, crusher.HexX, crusher.HexY, "CLANK1.mp3", 15 );
+					ShowContainer( cr, crusher, TRANSFER_HEX_CONT_UP );
+					return false;
+				}
+				
+				if( menu.ButtonMsg( STR_DEVICE_ACTIVATE ) )
+				{
+					PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN1.mp3", 5 );
+					Item@[] generators;
+					map.GetItems( PID_COAL_POWERGEN, generators );
+					map.GetItems( PID_POWER_NODE, generators );
+					
+					if( generators.length() > 0 )
+					{
+						Item@ generator = generators[0];
+						if( valid( generator ) )
+						{
+							if( generator.STATE != STATE_BURNING )
+							{
+								cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_POWER_IS_OFF );
+								return true;
+							}
+							crusher.STATE = STATE_ON;
+							crusher.PicMap = PIC_CRUSHER_ANIM_ON;
+							UNSETFLAG( crusher.Flags, ITEM_SHOW_ANIM_EXT );
+							crusher.Update();
+							
+							uint[] vals = { crusher.Id, map.Id };
+							crusher.EVENT = CreateTimeEvent( AFTER( REAL_MS( 1500 ) ),"e_CrusherWork", vals, true );
+						}
+					}
+					
+					return true;
+				}
+				if( cr.Param[ CR_YOU_DRAG ] > 0 && menu.ButtonMsg( STR_CRUSHER_MENU_PUT_SOMEONE_IN ) )
+				{
+					Critter@ victim = GetCritter( cr.Param[ CR_YOU_DRAG ] );
+					if( valid( victim ) )
+					{
+						DropCr( cr, victim );
+						uint16 hx = crusher.HexX, hy = crusher.HexY;
+						map.MoveHexByDir( hx, hy, 1, 1 );
+						map.MoveHexByDir( hx, hy, 0, 1 );
+						victim.TransitToHex( hx, hy, cr.Dir, 0 );
+					}
+				}
+			}
+			else
+			{
+				if( menu.ButtonMsg( STR_DEVICE_DEACTIVATE ) )
+				{
+					PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN1.mp3", 5 );
+					crusher.STATE = STATE_OFF;
+					EraseTimeEvent( crusher.EVENT );
+					crusher.EVENT = 0;
+					
+					crusher.PicMap = crusher.Proto.PicMap;
+					SETFLAG( crusher.Flags, ITEM_SHOW_ANIM_EXT );
+					crusher.Update();
+					PlayGenericSound( map, crusher.HexX, crusher.HexY, "STEAM.mp3", 30 );
+					return true;
+				}
+			}
+		}
+		
+		if( crusher.STATE == STATE_OFF && menu.ButtonMsg( STR_FURNITURE_MENU_BUTTON ) )
+		{
+			{
+				_InitFurniture( crusher, true );
+				crusher.Update();
+				StartMenuFuriture( cr, crusher );
+				return false;
+			}		
+		}
+		
+		if( menu.ButtonMsg( STR_CLOSE_MENU_BUTTON ) )
+		{
+			return false;
+		}
+		
+		return true;
+    }
+	
+    int getDescriptionFile()
+    {
+    	return TEXTMSG_TEXT;
+    }
+
+	int getDescriptionLine()
+	{
+		return STR_CRUSHER_MENU_MAIN;
+	}
+	
+    string@ Description( Critter& cr )
+	{
+		Map@ map = GetMap( map_id );
+		Item@ crusher = GetItem( crusher_id );
+		
+		Item@[] MaterialsCheck;
+		crusher.GetItems( uint( -1 ), MaterialsCheck );
+		Item@ material = null;
+		
+		string info = "$contains";
+		uint16 materialPid;
+		if( MaterialsCheck.length() == 0 )
+		{ 
+			info += STR_INSERT_TEXT_LINE( STR_CRUSHER_MENU_EMPTY ); 
+		}
+		else
+		{
+			for( uint i = 0; i < MaterialsCheck.length(); i ++ )
+			{
+				materialPid = MaterialsCheck[i].GetProtoId();
+				if( MaterialList.find( materialPid ) != -1 )
+				{
+					@material = MaterialsCheck[i];
+					break;
+				}
+			}
+			
+			if( !valid( material ) )
+			{ 
+				info += STR_INSERT_TEXT_LINE( STR_CRUSHER_MENU_EMPTY );
+			}
+			else
+			{
+				info += STR_INSERT_TEXT_LINE( STR_CRUSHER_MENU_CONTAINS )
+					 + "$item" + STR_INSERT_ITEM_LINE( materialPid * 100 )
+					 + "$amount" + material.GetCount();
+			}
+		}		
+
+		Item@[] generators;
+		map.GetItems( PID_COAL_POWERGEN, generators );
+		map.GetItems( PID_POWER_NODE, generators );
+		
+		info += "$power";
+		if( generators.length() > 0 )
+		{
+			Item@ generator = generators[ 0 ];
+			if( valid( generator ) )
+			{
+				info += STR_INSERT_TEXT_LINE( STR_CRUSHER_MENU_CONNECED_POWER )
+					 + STR_CHECK_DEVICE_FLAG( "powerStatus", generator.STATE == STATE_BURNING );
+			}
+		}
+		else
+		{
+			info += STR_INSERT_TEXT_LINE( STR_CRUSHER_MENU_NO_POWER );
+		}
+		
+		return info;
+    }
+	
+	bool ShouldRedraw( Critter& cr )
+	{
+		Item@ crusher = GetItem( crusher_id );
+
+		if( !valid( crusher ) || GetDistantion( cr.HexX, cr.HexY, crusher.HexX, crusher.HexY ) >= 2 )
+			return false;
+
+		return true;
+    }
+}
+
+uint e_CrusherWork( uint[]@ values )
+{
+	Map@ map = GetMap( values[1] );
+	if( !valid( map ) )
+	{
+		return 0;
+	}
+
+	Item@ crusher = GetItem( values[0] );
+	if( valid( crusher ) )    
+	{
+		if( crusher.STATE == STATE_OFF )
+		{
+			return 0;
+		}
+		
+		PlayGenericSound( map, crusher.HexX, crusher.HexY, "crusher_work.mp3", 30 );
+		
+		Item@[] stuff;
+		crusher.GetItems( uint( -1 ), stuff );
+		if( stuff.length() > 0 )
+		{
+			CrushIt( crusher, stuff[0], map );
+		}
+		
+		uint16 tx = crusher.HexX, ty = crusher.HexY;
+		map.MoveHexByDir( tx, ty, 1, 1 );
+		map.MoveHexByDir( tx, ty, 0, 1 );
+		Critter@[] victims;
+		map.GetCrittersHex( tx, ty, 1, FIND_ALL, victims );
+		if( victims.length() > 0 )
+		{
+			map.MoveHexByDir( tx, ty, 2, 3 );
+			if( victims[0].IsDead() )
+			{
+				victims[0].ToLife();
+			}
+			
+			victims[0].ToDead( ANIM2_DEAD_EXPLODE, null );
+			victims[0].StatBase[ ST_CURRENT_HP ] = -666;
+			CrimeLog( victims[0], crInfo( victims[0] ) + " was crushed!" );
+			victims[0].ParamBase[ CR_DEATH_STAGE ] = 100;
+			victims[0].TransitToHex( tx, ty, victims[0].Dir, 0 );
+		}
+		return CRUSHER_CYCLE_TIME;
+	}
+	return 0;
+}
+
+void CrushIt( Item& crusher, Item& crushed, Map& map )
+{
+	if( !valid( crushed ) )
+	{
+		return;
+	}
+	
+	PlayGenericSound( map, crusher.HexX, crusher.HexY, "crush_it.mp3", 30 );
+	uint16 crushedPid = crushed.GetProtoId();
+	uint16 resultPid = 0;
+	uint8 amount = 0;
+	
+	if( MaterialList.find( crushedPid ) != -1 )
+	{
+		uint8 index = MaterialList.find( crushedPid );
+		resultPid = ResultList[ index ];
+		amount = Amount[ index ];
+	}
+	else if( crushed.Proto.Material == MATERIAL_METAL || crushed.Proto.Material == MATERIAL_POLYMER || crushed.Proto.Material == MATERIAL_COMPOSITE )
+	{
+		uint weight = crushed.Proto.Weight;
+		if( weight >= 300 )
+		{
+			resultPid = PID_CRAFT_M_BARS;
+			ProtoItem@ protoitem = GetProtoItem( resultPid );
+			amount = weight / protoitem.Weight / 10;
+		}
+	}
+	else if( crushed.Proto.Material == MATERIAL_LEATHER || crushed.Proto.Material == MATERIAL_ARMORED_LEATHER )
+	{
+		uint weight = crushed.Proto.Weight;
+		if( weight >= 750 )
+		{
+			resultPid = PID_CRAFT_L_HIDE;
+			ProtoItem@ protoitem = GetProtoItem( resultPid );
+			amount = weight / protoitem.Weight / 10;
+		}
+	}
+	else if( crushed.Proto.Material == MATERIAL_PLASTIC || crushed.Proto.Material == MATERIAL_FABRIC )
+	{
+		uint weight = crushed.Proto.Weight;
+		if( weight >= 25 )
+		{
+			resultPid = PID_CRAFT_L_LINT;
+			ProtoItem@ protoitem = GetProtoItem( resultPid );
+			amount = weight / protoitem.Weight / 10;
+		}
+	}
+	else if( crushed.Proto.Material == MATERIAL_ORGANIC )
+	{
+		uint weight = crushed.Proto.Weight;
+		if( weight >= 250 )
+		{
+			resultPid = PID_SHIT_SMALL;
+			ProtoItem@ protoitem = GetProtoItem( resultPid );
+			amount = weight / protoitem.Weight / 10;
+		}
+	}
+	else
+	{
+		resultPid = crushedPid;
+		amount = 1;
+	}
+	
+	uint16 hx = crusher.HexX, hy = crusher.HexY;
+	map.MoveHexByDir( hx, hy, 1, 2 );
+	map.MoveHexByDir( hx, hy, 2, 2 );
+
+	if( resultPid > 0 && amount > 0 )
+	{
+		Item@ container;
+		@ container = map.GetItem( hx, hy, PID_IBOX_O );
+		if( !valid( container ) )
+		{
+			@ container = map.GetItem( hx, hy, PID_IBOX_N );
+		}
+		
+		Item@ product = map.AddItem( hx, hy, resultPid, amount );
+		if( valid( product ) )
+		{
+			if( valid( container ) )
+			{
+				MoveItem( product, amount, container, 0 );
+				PlayGenericSound( map, crusher.HexX, crusher.HexY, "CLANK1.mp3", 15 );
+			}
+			else if( product.IsStackable() )
+			{
+				uint[] values = { product.Id };
+				CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "critter_item_movement@e_stack_items", values, true );
+			}
+
+		}
+	}
+	
+	_SubItem( crushed, 1 );
+}
+
+void BlockCrusher( Item& crusher )
+{
+	uint16 hx = 0, hy = 0;
+	Map@ map = crusher.GetMapPosition( hx, hy );
+	if( !valid( map ) )
+	{
+		return;
+	}
+	
+	map.MoveHexByDir( hx, hy, 5, 1 );
+	Item@ blocker0 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker0 ) )
+	{
+		blocker0.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 1, 1 );
+	Item@ blocker1 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker1 ) )
+	{
+		blocker1.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 0, 1 );
+	Item@ blocker2 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker2 ) )
+	{
+		blocker2.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 1, 1 );
+	Item@ blocker3 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker3 ) )
+	{
+		blocker3.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 0, 1 );
+	Item@ blocker4 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker4 ) )
+	{
+		blocker4.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 2, 1 );
+	Item@ blocker5 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker5 ) )
+	{
+		blocker5.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 2, 1 );
+	Item@ blocker6 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker6 ) )
+	{
+		blocker6.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 3, 1 );
+	Item@ blocker7 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker7 ) )
+	{
+		blocker7.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 4, 1 );
+	Item@ blocker8 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker8 ) )
+	{
+		blocker8.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 2, 1 );
+	Item@ blocker9 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker9 ) )
+	{
+		blocker9.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 4, 1 );
+	Item@ blocker10 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker10 ) )
+	{
+		blocker10.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 4, 1 );
+	Item@ blocker11 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker11 ) )
+	{
+		blocker11.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	map.MoveHexByDir( hx, hy, 0, 1 );
+	Item@ blocker12 = map.AddItem( hx, hy, PID_NO_SHOOT_METAL_BLOCKER, 1 );
+	if( valid( blocker12 ) )
+	{
+		blocker12.PARENT_ITM_ID = crusher.Id;
+	}
+	
+	crusher.SetEvent( ITEM_EVENT_FINISH, "furniture@_DeleteBlockers" );
+}
+
+#endif //SMITHING
