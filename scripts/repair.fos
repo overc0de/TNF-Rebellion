@@ -8,6 +8,7 @@
 #include "critter_skills_h.fos"
 #include "handcuffs_h.fos"
 #include "explode_h.fos"
+#include "entire_h.fos"
 
 dictionary decraftItems; //Global variable for decraft ingredients
 
@@ -985,6 +986,10 @@ bool TryRepairItem( Critter& cr, Item& item )
 				cr.DeleteItem( parts[iii], parts[iii + 1] );
 			}
 			
+			for( uint8 i = 0; i < tools.length(); i++ ) {
+				use_tool( cr,  cr.GetItem( tools[i], -1 ) );
+			}
+			
 			Item@ hands = cr.GetItem( 0, SLOT_HAND1 );
 			if( valid( hands ) )
 			{
@@ -996,6 +1001,18 @@ bool TryRepairItem( Critter& cr, Item& item )
 		}
 	}
     return true;
+}
+
+void use_tool( Critter& cr, Item@ tool )
+{
+		if( !valid( tool ) ) return;
+		
+        //Если не изнашиваемое - значит одноразовое (чисто для примера)
+		if( tool.IsDeteriorable() )
+		{
+		uint det = GetDeteriorationProcent( tool );
+		SetDeterioration( tool, det + 1 );
+		}
 }
 
 bool ltp_repair_inited = false;

@@ -11,6 +11,7 @@
 #include "firestarter_h.fos"
 
 import void DropCr( Critter@ cr, Critter@ target ) from "gameplay";
+import void use_tool( Critter& cr, Item@ tool ) from "repair";
 
 class MenuAnvil: CenteredMenuHandler
 {
@@ -305,8 +306,9 @@ void Profit( Critter& cr, Item& anvil, Item& material )
 	_SubItem( material, 1 );
 	
 	cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_CRAFTED_PID, "$proto@msg item " +  ( resultPid * 100 ) + "@$amount" + amount + "\n" );
-
 	cr.StatBase[ ST_EXPERIENCE ] += 25;
+	
+	use_tool( cr, cr.GetItem( 0, SLOT_HAND1 ) );
 }
 
 //Crusher
