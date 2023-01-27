@@ -53,6 +53,7 @@ bool PrepareScavenging( Critter& cr, Item@ tool, Item@ target )
 	if( _ItemIsBroken( tool ) )
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TOOL_BROKEN );
+		_SubItem(tool, 1);
 		return true;
 	}
 
@@ -76,7 +77,7 @@ bool PrepareScavenging( Critter& cr, Item@ tool, Item@ target )
 	if( tool.IsDeteriorable() )
 	{
 		uint det = GetDeteriorationProcent( tool );
-		SetDeterioration( tool, det + 1 );
+		SetDeterioration( tool, det + 1 );	
 	}
 
 	start_scavenging( cr, tool, target );

@@ -74,6 +74,7 @@ bool PrepareMining( Critter& cr, Item@ tool, Item@ target )
 	if( _ItemIsBroken( tool ) )
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TOOL_BROKEN );
+		_SubItem(tool, 1);
 		return true;
 	}
 
