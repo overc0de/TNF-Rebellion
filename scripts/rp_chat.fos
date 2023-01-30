@@ -21,7 +21,10 @@ void unsafe_SetChatTarget( Critter& cr, int id, int, int, string@, int[]@ )
 // Engine client chat is capped at 100 symbols, this proscedure is needed to overide it
 void unsafe_SayRemote( Critter& cr, int sayType, int, int, string@ message, int[]@ ) 
 {
-	cr.Say( sayType, message );
+	if( !cr.IsDead() )
+	{
+		cr.Say( sayType, message );
+	}
 }
 
 //Enables talk through owned NPC or any critter if you are GM
