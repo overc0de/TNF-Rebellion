@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             154
-WorkHexY             126
+WorkHexX             135
+WorkHexY             177
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -86137,7 +86137,7 @@ MapObjType           2
 ProtoId              2049
 MapX                 133
 MapY                 177
-Scenery_ToMapPid     328
+Scenery_ToMapPid     309
 Scenery_ToEntire     10
 Scenery_ToDir        1
 
@@ -92670,7 +92670,7 @@ MapObjType           2
 ProtoId              2049
 MapX                 132
 MapY                 177
-Scenery_ToMapPid     328
+Scenery_ToMapPid     309
 Scenery_ToEntire     10
 Scenery_ToDir        1
 
@@ -92678,7 +92678,7 @@ MapObjType           2
 ProtoId              2049
 MapX                 132
 MapY                 178
-Scenery_ToMapPid     328
+Scenery_ToMapPid     309
 Scenery_ToEntire     10
 Scenery_ToDir        1
 
@@ -92686,7 +92686,7 @@ MapObjType           2
 ProtoId              2049
 MapX                 133
 MapY                 178
-Scenery_ToMapPid     328
+Scenery_ToMapPid     309
 Scenery_ToEntire     10
 Scenery_ToDir        1
 
@@ -92694,7 +92694,7 @@ MapObjType           2
 ProtoId              2049
 MapX                 133
 MapY                 179
-Scenery_ToMapPid     328
+Scenery_ToMapPid     309
 Scenery_ToEntire     10
 Scenery_ToDir        1
 
@@ -92702,7 +92702,7 @@ MapObjType           2
 ProtoId              2049
 MapX                 133
 MapY                 180
-Scenery_ToMapPid     328
+Scenery_ToMapPid     309
 Scenery_ToEntire     10
 Scenery_ToDir        1
 
@@ -92710,7 +92710,7 @@ MapObjType           2
 ProtoId              2049
 MapX                 134
 MapY                 177
-Scenery_ToMapPid     328
+Scenery_ToMapPid     309
 Scenery_ToEntire     10
 Scenery_ToDir        1
 

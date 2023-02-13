@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             207
-WorkHexY             158
+WorkHexX             191
+WorkHexY             172
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -11952,7 +11952,6 @@ tile       306  254            art\tiles\bld2043.frm
 tile       308  254            art\tiles\bld2043.frm
 tile       310  254            art\tiles\bld2043.frm
 tile       312  254            art\tiles\bld2043.frm
-roof       181  255            art\tiles\jrt1000.frm
 tile       96   256            art\tiles\bld2043.frm
 tile       98   256            art\tiles\bld2043.frm
 tile       100  256            art\tiles\bld2043.frm
@@ -12060,8 +12059,6 @@ tile       302  256            art\tiles\bld2043.frm
 tile       304  256            art\tiles\bld2043.frm
 tile       306  256            art\tiles\bld2043.frm
 tile       308  256            art\tiles\bld2043.frm
-roof       177  257            art\tiles\jrt1001.frm
-roof       182  257            art\tiles\jrt1000.frm
 tile       96   258            art\tiles\bld2043.frm
 tile       98   258            art\tiles\bld2043.frm
 tile       100  258            art\tiles\bld2043.frm
@@ -12167,7 +12164,6 @@ tile       298  258            art\tiles\bld2043.frm
 tile       300  258            art\tiles\bld2043.frm
 tile       302  258            art\tiles\bld2043.frm
 tile       304  258            art\tiles\bld2043.frm
-roof       175  259            art\tiles\jrt1002.frm
 tile       98   260            art\tiles\bld2043.frm
 tile       100  260            art\tiles\bld2043.frm
 tile       102  260            art\tiles\bld2043.frm
@@ -68565,8 +68561,9 @@ ProtoId              2356
 MapX                 189
 MapY                 178
 OffsetX              17
-Scenery_ToMapPid     242
-Scenery_ToEntire     123
+Scenery_ToMapPid     290
+Scenery_ToEntire     5
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              5588
@@ -68672,8 +68669,9 @@ MapObjType           2
 ProtoId              2348
 MapX                 194
 MapY                 179
-Scenery_ToMapPid     241
+Scenery_ToMapPid     291
 Scenery_ToEntire     6
+Scenery_ToDir        3
 
 MapObjType           1
 ProtoId              2960
@@ -74679,5 +74677,24 @@ MapObjType           2
 ProtoId              5622
 MapX                 209
 MapY                 210
+
+MapObjType           2
+ProtoId              23541
+MapX                 153
+MapY                 226
+
+MapObjType           2
+ProtoId              3853
+MapX                 190
+MapY                 180
+Scenery_ToEntire     5
+Scenery_ToDir        3
+
+MapObjType           2
+ProtoId              3853
+MapX                 196
+MapY                 179
+Scenery_ToEntire     6
+Scenery_ToDir        3
 
 
