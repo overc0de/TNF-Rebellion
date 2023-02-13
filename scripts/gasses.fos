@@ -112,13 +112,18 @@ bool CheckGasMask( Critter& cr )
 	uint det = 0;
 	Item@ respirator = _CritGetItemHead( cr );
 	if( valid( respirator ) )
-	{
-		det = GetDeteriorationProcent( respirator );
-		if( det < 5 && Respirators.find( respirator.GetProtoId() ) != -1 )
-		{
-			return true;
-		}
-	}
+    {
+        det = GetDeteriorationProcent( respirator );
+        if( det < 99 && Respirators.find( respirator.GetProtoId() ) != -1 )
+        {
+            if (Random(0,2)==0)
+            {
+            SetDeterioration( respirator, det + 1 );
+			cr.Say(SAY_NETMSG,"ѕук-пук -1");
+            }
+            return true;
+        }
+    }
 	
 	Item@ armor = _CritGetItemArmor( cr );
 	if( valid( armor ) )

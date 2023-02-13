@@ -9,11 +9,11 @@ void unsafe_StoreMenu( Critter& player, int param0, int param1, int param2, stri
 
 void StoreMenu( Critter& cr ) //exported
 {
-	string[] data = { "store@answer_openStore", "Select a category:", 
-		"Dump Junk Here", "Mellee", "Ammo and Thrown", "Tools", "Armour 3.0 Class", "Armour 3,5+ class", "Drugs", "Comodities", "Consumables", "Junk",
-			 "Headgear", "Apparel", "Small Guns", "Big Guns", "Energy Weapons", "Food", "Blueprints", "Activation"
-	};
-	DIALOG_MENU( cr, data );
+    string[] data = { "store@answer_openStore", "Выберите категорию:", 
+        "Мусорка", "Ближнее", "Патроны и метательное", "Инструменты", "Броня до 3 класса", "Броня 3+ класса", "Препараты", "Разное", "Расходники", "Хлам",
+             "Шапки и шлема", "Наряд", "Легкое оружие", "Тяж.Оружие", "Энергетическое оружие", "Жратва", "Чертежи", "Активация"
+    };
+    DIALOG_MENU( cr, data );
 }
 
 void answer_openStore( Critter& player, uint answerI, string& answerS )
