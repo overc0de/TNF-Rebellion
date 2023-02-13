@@ -5141,12 +5141,15 @@ PicMap=art\items\Raspir.frm
 PicInv=art\inven\GasMask.png
 Flags=402653214
 DisableEgg=1
+Stackable=0
+Deteriorable=1
 Weight=1211
 Volume=20
 SoundId=48
 Cost=547
 Material=2
 Slot=5
+HeadItem_Perk=10
 
 [Proto] # PID_RAD_LOW
 ProtoId=1437
@@ -11911,12 +11914,14 @@ PicInv=art\inven\gasmask.frm
 Flags=134217758
 DisableEgg=1
 Stackable=0
+Deteriorable=1
 Weight=420
 Volume=30
 SoundId=48
 Cost=200
 Material=2
 Slot=5
+HeadItem_Perk=10
 
 [Proto] # PID_ANCIENT_BOOK 
 ProtoId=15020
@@ -12039,12 +12044,14 @@ PicInv=art\inven\raspir2.frm
 Flags=134217758
 DisableEgg=1
 Stackable=0
+Deteriorable=1
 Weight=520
 Volume=30
 SoundId=48
 Cost=200
 Material=2
 Slot=5
+HeadItem_Perk=11
 
 [Proto] #
 ProtoId=15029
@@ -13403,12 +13410,14 @@ PicInv=art\inven\gasmask3.png
 Flags=134217758
 DisableEgg=1
 Stackable=0
+Deteriorable=1
 Weight=600
 Volume=30
 SoundId=48
 Cost=300
 Material=2
 Slot=5
+HeadItem_Perk=10
 
 [Proto] # PID_MILITARY_CAP
 ProtoId=22001
@@ -13892,11 +13901,14 @@ PicMap=art\items\Raspir.frm
 PicInv=art\inven\Respirator.png
 Flags=402653214
 DisableEgg=1
+Stackable=0
+Deteriorable=1
 Weight=1850
 Volume=25
 SoundId=48
 Material=7
 Slot=5
+HeadItem_Perk=10
 
 [Proto] # PID_ACTIVE_SLAVE_COLLAR_BOMB
 ProtoId=22033
