@@ -1036,7 +1036,7 @@
 {3438}{}{Junkyard}
 
 # Area 221, Map 344
-{3450}{}{silverlake_dump_mount}
+{3450}{}{silverlake_ranch}
 {3455}{}{28Rangers-journey.ogg}
 {3456}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {3458}{}{Hacienda}
