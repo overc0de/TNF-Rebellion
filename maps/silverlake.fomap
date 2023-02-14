@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             161
-WorkHexY             219
+WorkHexX             178
+WorkHexY             223
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -31475,7 +31475,7 @@ MapObjType           2
 ProtoId              10607
 MapX                 192
 MapY                 129
-Scenery_ToMapPid     308
+Scenery_ToMapPid     288
 Scenery_ToEntire     20
 Scenery_ToDir        2
 
@@ -33298,7 +33298,7 @@ MapObjType           2
 ProtoId              22567
 MapX                 152
 MapY                 188
-Scenery_ToMapPid     307
+Scenery_ToMapPid     287
 Scenery_ToEntire     10
 Scenery_ToDir        2
 
@@ -51515,18 +51515,6 @@ MapX                 135
 MapY                 129
 
 MapObjType           2
-ProtoId              23178
-MapX                 230
-MapY                 159
-
-MapObjType           2
-ProtoId              23176
-MapX                 234
-MapY                 140
-OffsetX              9
-OffsetY              -9
-
-MapObjType           2
 ProtoId              2871
 MapX                 125
 MapY                 156
@@ -51599,18 +51587,6 @@ MapX                 140
 MapY                 209
 OffsetX              10
 OffsetY              4
-
-MapObjType           2
-ProtoId              23176
-MapX                 178
-MapY                 136
-OffsetX              -9
-OffsetY              -4
-
-MapObjType           2
-ProtoId              23536
-MapX                 194
-MapY                 185
 
 MapObjType           2
 ProtoId              1623
@@ -51890,11 +51866,6 @@ MapY                 248
 MapObjType           2
 ProtoId              2067
 MapX                 160
-MapY                 238
-
-MapObjType           2
-ProtoId              2067
-MapX                 160
 MapY                 247
 
 MapObjType           2
@@ -51931,11 +51902,6 @@ MapObjType           2
 ProtoId              3227
 MapX                 142
 MapY                 248
-
-MapObjType           2
-ProtoId              2067
-MapX                 162
-MapY                 238
 
 MapObjType           2
 ProtoId              22769
@@ -68079,13 +68045,6 @@ MapX                 139
 MapY                 137
 
 MapObjType           2
-ProtoId              11068
-MapX                 140
-MapY                 128
-OffsetX              1
-OffsetY              23
-
-MapObjType           2
 ProtoId              2067
 MapX                 140
 MapY                 128
@@ -68276,31 +68235,6 @@ MapX                 133
 MapY                 143
 
 MapObjType           2
-ProtoId              1623
-MapX                 75
-MapY                 148
-
-MapObjType           2
-ProtoId              1623
-MapX                 75
-MapY                 149
-
-MapObjType           2
-ProtoId              1623
-MapX                 75
-MapY                 150
-
-MapObjType           2
-ProtoId              1623
-MapX                 75
-MapY                 151
-
-MapObjType           2
-ProtoId              1623
-MapX                 75
-MapY                 152
-
-MapObjType           2
 ProtoId              2495
 MapX                 134
 MapY                 140
@@ -68324,31 +68258,6 @@ MapObjType           2
 ProtoId              1623
 MapX                 134
 MapY                 143
-
-MapObjType           2
-ProtoId              2497
-MapX                 76
-MapY                 148
-
-MapObjType           2
-ProtoId              1623
-MapX                 76
-MapY                 149
-
-MapObjType           2
-ProtoId              2498
-MapX                 76
-MapY                 150
-
-MapObjType           1
-ProtoId              178
-MapX                 76
-MapY                 150
-
-MapObjType           2
-ProtoId              1623
-MapX                 76
-MapY                 151
 
 MapObjType           2
 ProtoId              22714
@@ -68987,5 +68896,10 @@ MapObjType           2
 ProtoId              2067
 MapX                 163
 MapY                 225
+
+MapObjType           2
+ProtoId              2685
+MapX                 208
+MapY                 145
 
 
