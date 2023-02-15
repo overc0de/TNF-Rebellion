@@ -931,13 +931,13 @@
 {2910}{}{silverlake_downtown_dn}
 {2915}{}{NNM_Stalker_Bar_100_rentgen.ogg}
 {2916}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{2918}{}{Silverlake Downtown - 0 этаж}
+{2918}{}{}
 
 # Area 203, Map 291
 {2920}{}{silverlake_downtown_up}
 {2925}{}{51NNM_ride_to_cheyenne.ogg}
 {2926}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{2928}{}{Silverlake Downtown - 2 этаж}
+{2928}{}{}
 
 # Area 204, Map 292
 {2930}{}{silverlake_ruin1}
@@ -1009,19 +1009,19 @@
 {3130}{}{silverlake_radiotower_dn}
 {3135}{}{27Lost_Knowledge.ogg}
 {3136}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{3138}{}{Бункер}
+{3138}{}{}
 
 # Area 213, Map 313
 {3140}{}{silverlake_radiotower_dn1}
 {3145}{}{}
 {3146}{}{bats:20, electric:20, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10}
-{3148}{}{Лаборатория 1 этаж}
+{3148}{}{}
 
 # Area 213, Map 314
 {3150}{}{silverlake_radiotower_dn2}
 {3155}{}{NNM_Stalker_Cold_Freezing_Out.ogg}
 {3156}{}{bats:20, coolant:10, electri1:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10}
-{3158}{}{Подземный бункер}
+{3158}{}{}
 
 # Area 214, Map 315
 {3160}{}{silverlake_road_south1}
@@ -1060,7 +1060,7 @@
 {3268}{}{Junkyard}
 
 # Area 221, Map 327
-{3280}{}{silverlake_dump_mount}
+{3280}{}{silverlake_ranch}
 {3285}{}{28Rangers-journey.ogg}
 {3286}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {3288}{}{Hacienda}
