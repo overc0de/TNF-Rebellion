@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             163
-WorkHexY             172
+WorkHexX             161
+WorkHexY             137
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -30723,6 +30723,13 @@ MapX                 153
 MapY                 143
 
 MapObjType           2
+ProtoId              22695
+MapX                 153
+MapY                 146
+OffsetX              9
+OffsetY              3
+
+MapObjType           2
 ProtoId              5621
 MapX                 153
 MapY                 147
@@ -32723,6 +32730,13 @@ MapObjType           2
 ProtoId              5621
 MapX                 179
 MapY                 143
+
+MapObjType           2
+ProtoId              22694
+MapX                 179
+MapY                 146
+OffsetX              4
+OffsetY              5
 
 MapObjType           2
 ProtoId              22411
@@ -77986,28 +78000,14 @@ MapObjType           2
 ProtoId              2197
 MapX                 154
 MapY                 145
-Scenery_ToMapPid     295
+Scenery_ToMapPid     314
 Scenery_ToEntire     2
 
 MapObjType           2
 ProtoId              2197
 MapX                 177
 MapY                 146
-Scenery_ToMapPid     295
+Scenery_ToMapPid     314
 Scenery_ToEntire     1
-
-MapObjType           2
-ProtoId              22695
-MapX                 153
-MapY                 146
-OffsetX              9
-OffsetY              3
-
-MapObjType           2
-ProtoId              22694
-MapX                 179
-MapY                 146
-OffsetX              4
-OffsetY              5
 
 
