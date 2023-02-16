@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             0
-WorkHexY             0
+WorkHexX             191
+WorkHexY             169
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -11952,7 +11952,6 @@ tile       306  254            art\tiles\bld2043.frm
 tile       308  254            art\tiles\bld2043.frm
 tile       310  254            art\tiles\bld2043.frm
 tile       312  254            art\tiles\bld2043.frm
-roof       181  255            art\tiles\jrt1000.frm
 tile       96   256            art\tiles\bld2043.frm
 tile       98   256            art\tiles\bld2043.frm
 tile       100  256            art\tiles\bld2043.frm
@@ -12060,8 +12059,6 @@ tile       302  256            art\tiles\bld2043.frm
 tile       304  256            art\tiles\bld2043.frm
 tile       306  256            art\tiles\bld2043.frm
 tile       308  256            art\tiles\bld2043.frm
-roof       177  257            art\tiles\jrt1001.frm
-roof       182  257            art\tiles\jrt1000.frm
 tile       96   258            art\tiles\bld2043.frm
 tile       98   258            art\tiles\bld2043.frm
 tile       100  258            art\tiles\bld2043.frm
@@ -12167,7 +12164,6 @@ tile       298  258            art\tiles\bld2043.frm
 tile       300  258            art\tiles\bld2043.frm
 tile       302  258            art\tiles\bld2043.frm
 tile       304  258            art\tiles\bld2043.frm
-roof       175  259            art\tiles\jrt1002.frm
 tile       98   260            art\tiles\bld2043.frm
 tile       100  260            art\tiles\bld2043.frm
 tile       102  260            art\tiles\bld2043.frm
@@ -12692,7 +12688,6 @@ tile       178  270            art\tiles\bld2043.frm
 tile       180  270            art\tiles\bld2043.frm
 tile       182  270            art\tiles\bld2043.frm
 tile       184  270            art\tiles\bld2043.frm
-roof       185  270            art\tiles\jrt1000.frm
 tile       186  270            art\tiles\bld2043.frm
 tile       188  270            art\tiles\bld2043.frm
 tile       190  270            art\tiles\bld2043.frm
@@ -12827,9 +12822,6 @@ tile       270  272            art\tiles\bld2043.frm
 tile       272  272            art\tiles\bld2043.frm
 tile       274  272            art\tiles\bld2043.frm
 tile       276  272            art\tiles\bld2043.frm
-roof       174  273            art\tiles\plk3001.frm
-roof       179  273            art\tiles\plk3000.frm
-roof       190  273            art\tiles\plk1000.frm
 tile       108  274            art\tiles\bld2043.frm
 tile       110  274            art\tiles\bld2043.frm
 tile       112  274            art\tiles\bld2043.frm
@@ -12869,7 +12861,6 @@ tile       178  274            art\tiles\bld2043.frm
 tile       180  274            art\tiles\bld2043.frm
 tile       182  274            art\tiles\bld2043.frm
 tile       184  274            art\tiles\bld2043.frm
-roof       185  274            art\tiles\plk2000.frm
 tile       186  274            art\tiles\bld2043.frm
 tile       188  274            art\tiles\bld2043.frm
 tile       190  274            art\tiles\bld2043.frm
@@ -12914,7 +12905,6 @@ tile       266  274            art\tiles\bld2043.frm
 tile       268  274            art\tiles\bld2043.frm
 tile       270  274            art\tiles\bld2043.frm
 tile       272  274            art\tiles\bld2043.frm
-roof       198  275            art\tiles\plk5000.frm
 tile       108  276            art\tiles\bld2043.frm
 tile       110  276            art\tiles\bld2043.frm
 tile       112  276            art\tiles\bld2043.frm
@@ -12948,7 +12938,6 @@ tile       166  276            art\tiles\bld2043.frm
 tile       168  276            art\tiles\bld2043.frm
 tile       170  276            art\tiles\bld2043.frm
 tile       172  276            art\tiles\bld2043.frm
-roof       173  276            art\tiles\plk4000.frm
 tile       174  276            art\tiles\bld2043.frm
 tile       176  276            art\tiles\bld2043.frm
 tile       178  276            art\tiles\bld2043.frm
@@ -13075,7 +13064,6 @@ tile       258  278            art\tiles\bld2043.frm
 tile       260  278            art\tiles\bld2043.frm
 tile       262  278            art\tiles\bld2043.frm
 tile       264  278            art\tiles\bld2043.frm
-roof       198  279            art\tiles\plk7000.frm
 tile       112  280            art\tiles\bld2043.frm
 tile       114  280            art\tiles\bld2043.frm
 tile       116  280            art\tiles\bld2043.frm
@@ -13120,7 +13108,6 @@ tile       192  280            art\tiles\bld2043.frm
 tile       194  280            art\tiles\bld2043.frm
 tile       196  280            art\tiles\bld2043.frm
 tile       198  280            art\tiles\bld2043.frm
-roof       199  280            art\tiles\plk6000.frm
 tile       200  280            art\tiles\bld2043.frm
 tile       202  280            art\tiles\bld2043.frm
 tile       204  280            art\tiles\bld2043.frm
@@ -68574,8 +68561,9 @@ ProtoId              2356
 MapX                 189
 MapY                 178
 OffsetX              17
-Scenery_ToMapPid     242
-Scenery_ToEntire     123
+Scenery_ToMapPid     310
+Scenery_ToEntire     5
+Scenery_ToDir        5
 
 MapObjType           2
 ProtoId              5588
@@ -68676,13 +68664,6 @@ MapObjType           2
 ProtoId              5586
 MapX                 194
 MapY                 177
-
-MapObjType           2
-ProtoId              2348
-MapX                 194
-MapY                 179
-Scenery_ToMapPid     241
-Scenery_ToEntire     6
 
 MapObjType           1
 ProtoId              2960
@@ -74610,41 +74591,6 @@ MapX                 122
 MapY                 246
 
 MapObjType           2
-ProtoId              5962
-MapX                 248
-MapY                 155
-
-MapObjType           2
-ProtoId              5959
-MapX                 249
-MapY                 155
-
-MapObjType           2
-ProtoId              5962
-MapX                 250
-MapY                 155
-
-MapObjType           2
-ProtoId              5959
-MapX                 251
-MapY                 155
-
-MapObjType           2
-ProtoId              5957
-MapX                 252
-MapY                 155
-
-MapObjType           2
-ProtoId              5958
-MapX                 253
-MapY                 155
-
-MapObjType           2
-ProtoId              5957
-MapX                 254
-MapY                 155
-
-MapObjType           2
 ProtoId              5622
 MapX                 210
 MapY                 207
@@ -74723,5 +74669,32 @@ MapObjType           2
 ProtoId              5622
 MapX                 209
 MapY                 210
+
+MapObjType           2
+ProtoId              23541
+MapX                 153
+MapY                 226
+
+MapObjType           2
+ProtoId              3853
+MapX                 190
+MapY                 181
+Scenery_ToEntire     5
+Scenery_ToDir        3
+
+MapObjType           2
+ProtoId              3853
+MapX                 196
+MapY                 179
+Scenery_ToEntire     6
+Scenery_ToDir        3
+
+MapObjType           2
+ProtoId              2348
+MapX                 194
+MapY                 179
+Scenery_ToMapPid     310
+Scenery_ToEntire     6
+Scenery_ToDir        3
 
 
