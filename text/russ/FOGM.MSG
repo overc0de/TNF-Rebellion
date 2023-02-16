@@ -927,6 +927,12 @@
 {3106}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {3108}{}{Silverlake Downtown}
 
+# Area 203, Map 310
+{3110}{}{silverlake_downtown_dn}
+{3115}{}{NNM_Stalker_Bar_100_rentgen.ogg}
+{3116}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{3118}{}{Silverlake Downtown}
+
 # Area 204, Map 311
 {3120}{}{silverlake_ruin1}
 {3125}{}{29mark-morgan-curst.ogg}
@@ -1043,7 +1049,7 @@
 
 # Area 221, Map 345
 {3460}{}{silverlake_ranch_dn}
-{3465}{}{City_of_the_Fallen-The_Hourglass.ogg}
+{3465}{}{17arroyo.ogg}
 {3466}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
 {3468}{}{Hacienda Cave}
 
@@ -1500,22 +1506,28 @@
 ### Ruin Riverdale session ###
 
 # Area 421, Map 659
-{6590}{}{jail}
-{6595}{}{16 - Stranglet.ogg}
-{6596}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
-{6598}{}{Тюрьма}
+{6600}{}{jail}
+{6605}{}{16 - Stranglet.ogg}
+{6606}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{6608}{}{Тюрьма}
 
 # Area 422, Map 660
-{6600}{}{ruin_riverdale}
-{6605}{}{16 - Stranglet.ogg}
-{6606}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{6608}{}{Руины Ривердейла}
+{6610}{}{hospital}
+{6615}{}{16 - Stranglet.ogg}
+{6616}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
+{6618}{}{Госпиталь}
 
-# Area 423, Map 661
-{6700}{}{hospital}
-{6705}{}{16 - Stranglet.ogg}
-{6706}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{6708}{}{Госпиталь}
+# Area 423, Map 663
+{6640}{}{under_lab}
+{6645}{}{}
+{6646}{}{bats:20, electric:20, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10}
+{6648}{}{Лаборатория}
+
+# Area 423, Map 664
+{6650}{}{under_lab_dn}
+{6655}{}{NNM_Stalker_Cold_Freezing_Out.ogg}
+{6656}{}{bats:20, coolant:10, electri1:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10}
+{6658}{}{Подземный бункер}
 
 #
 # Global map
