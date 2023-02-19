@@ -16,7 +16,7 @@ void ShowTeleports( Critter& cr )
 {
 	InitTeleports();
 	iMenuHandler@ handler = MenuTeleports( "", teleports, null );
-	iDialogBox@ menu = OpenMenu( cr, "Select", handler );
+	iDialogBox@ menu = OpenMenu( cr, "SelectTeleport", handler );
 }
 
 class MenuTeleports: CenteredMenuHandler
@@ -419,6 +419,111 @@ class Teleport
 	{
 		return _pos.TransitToMap( cr );
 	}
+}
+
+void ShowPlayers( Critter& cr )
+{
+	OpenMenu( cr, "SelectPlayer", MenuPlayers() );
+}
+
+class MenuPlayers: CenteredMenuHandler
+{
+	bool MenuUpdate( Critter& cr, iDialogBox& menu )
+	{
+		Critter@[] crs;
+		uint count = GetAllPlayers( crs );
+		for( uint n = 0; n < count; n++ )
+		{
+			string text;
+			
+			if( isGM( crs[n] ) )
+			{//ГМ:
+				text += "[GM]";
+			}
+			else if( crs[n].IsDead() )
+			{//Труп:
+				text += "x_X";
+			}
+			else if( crs[n].IsKnockout() )
+			{
+				if( crs[n].Stat[ ST_CURRENT_HP ] > 0 )
+				{//Просто лежит
+					text += "-_-";
+				}
+				else
+				{//В минусах
+					text += "o_O";
+				}
+			}
+			else
+			{//Цел, жив, орёл
+				text += "^_^";
+			}
+			
+			text += " " + GetPlayerName( crs[n].Id );
+			
+			if( menu.Button( text ) )
+			{ 
+				Map@ map = crs[n].GetMap();
+				if( !valid( map ) )
+				{
+					cr.Say( SAY_NETMSG, "Цель на глобале, используйте '#cr2me " + crs[n].Id + "' что бы выдернуть её к себе." );
+				}
+				
+				Location@ loc = map.GetLocation();
+				cr.SetWorldPos(loc.WorldX, loc.WorldY);
+
+				uint16 hexX, hexY;
+				do
+				{
+					hexX = crs[n].HexX;
+					hexY = crs[n].HexY;
+					
+					map.MoveHexByDir( hexX, hexY, Random( 0, 5 ), Random( 3, 5 ) );
+				}
+				while( !map.IsHexPassed( hexX, hexY ) );
+				
+				cr.TransitToMap( map.Id, hexX, hexY, 0 );
+			}
+		}		
+		
+		if( menu.ButtonMsg( STR_CLOSE_MENU_BUTTON ) )
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	int getDescriptionFile()
+	{
+		return TEXTMSG_TEXT;
+	}
+
+	int getDescriptionLine()
+	{
+		return STR_TELEPORTS_MENU_MAIN;
+	}
+	
+	string@ Description( Critter& cr )
+	{
+		Map@ map = cr.GetMap();
+		uint count = CountMapPlayers( map );
+		
+		Critter@[] crs;
+		uint online = GetAllPlayers(crs);
+		
+		string info = "$name" + "\n" 
+					+ "Онлайн " + online + " игроков." + "\n" 
+					+ "На карте " + count + " игроков.";
+		
+		return info;
+	}
+	
+	bool ShouldRedraw( Critter& cr )
+	{
+		return true;
+	}	
 }
 
 #endif

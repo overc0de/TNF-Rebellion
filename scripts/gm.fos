@@ -22,6 +22,7 @@
 #include "furniture_h.fos"
 #include "gasses_h.fos"
 #include "_npc_pids.fos"
+#include "teleports_h.fos"
 
 import  void GM_brokeItem( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ param4 ) from "gm_commands";
 
@@ -38,8 +39,6 @@ import void unsafe_sleep( Critter& player, int isBack, int isRemote, int param2,
 import void PlayMusic(Map& map, string& musicName, uint pos, uint repeat) from "media";
 
 import void StoreMenu( Critter& cr ) from "store";
-
-import void ShowTeleports( Critter& cr ) from "teleports";
 
 import NpcNamesHolder@ getNpcNamesHolder() from "npc_names_holder";
 
@@ -1070,6 +1069,12 @@ class MenuGMMain: CenteredMenuHandler
 		if( menu.ButtonMsg( STR_GM_MENU_TELEPORTS ) )
 		{
 			ShowTeleports( gm );
+			return false;
+		}		
+		
+		if( menu.ButtonMsg( STR_GM_MENU_PLAYERS ) )
+		{
+			ShowPlayers( gm );
 			return false;
 		}		
 		

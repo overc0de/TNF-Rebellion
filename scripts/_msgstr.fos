@@ -1567,6 +1567,7 @@
 
 #define STR_GM_MENU_MAIN						( 101001 )
 #define STR_GM_MENU_TELEPORTS					( 101002 )
+#define STR_GM_MENU_PLAYERS						( 101180 ) //TODO: reorder propertly
 #define STR_GM_MENU_STORAGE						( 101003 )
 #define STR_GM_MENU_MAP_SPAWNERS				( 101004 )
 #define STR_GM_MENU_GM_VISION					( 101005 )
@@ -1746,6 +1747,7 @@
 #define STR_CONTRL_GROUP_NAME	                ( 101177 )
 #define STR_GM_HEXMENU_SPAWN_NPC				( 101178 )
 #define STR_GM_SPAWNMENU_SELECT_HUMANOID_MOB	( 101179 )
+//#define STR_GM_MENU_PLAYERS						( 101180 ) //TODO: reorder propertly
 
 // GM menu npc groups
 #define STR_GM_MENU_NPC_GROUPS_BEGIN			( 101200 )

@@ -1959,6 +1959,7 @@ Local mod: |0xFFFF00 @lex yearMod@|0x3CF800 }
 {101177}{}{Group #ID}
 {101178}{}{Spawn NPC}
 {101179}{}{Select Humanoid NPC}
+{101180}{}{Players}
 
 # GM menu NPC groups
 # Mobs
