@@ -1800,7 +1800,7 @@ Select your command:}
 {101024}{}{Local map mob spawner: 
 [ Spawn of X mobs ] Mob Type}
 {101025}{}{Player logins}
-{101026}{}{ID in desc}
+{101026}{}{Player HPs}
 {101027}{}{ID over head}
 {101028}{}{ID in chat}
 {101029}{}{ID items in chat}	
