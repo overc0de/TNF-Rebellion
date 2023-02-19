@@ -107,12 +107,6 @@ bool FastFrying( Critter& cr )
         return true;
     }
 
-	if( cr.Skill[ SK_OUTDOORSMAN ] < 100 )
-	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 100 );
-		return true;
-	}
-
 	string name = "food";
 	switch( item.GetProtoId() )
 	{
@@ -159,11 +153,8 @@ bool FastFrying( Critter& cr )
 	
 	SayLog( cr, crInfo( cr ) + " fries " + name + "." );
 	
-	if( Random( 1, 5 ) == 5 )
-	{
-		int skillNum = SK_COOKING;
-		raiseSkill( cr, skillNum );
-	}
+	int skillNum = SK_COOKING;
+	raiseSkill( cr, skillNum );
 	
     cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_FRY_SUCCESS, "$name" + STR_INSERT_ITEM_LINE( item.GetProtoId() * 100 ) );
 
@@ -172,26 +163,18 @@ bool FastFrying( Critter& cr )
 	return true;
 }
 
+uint cookingSkill( Critter& cr )
+{
+	return MAX( cr.Skill[ SK_COOKING ], cr.Skill[ SK_OUTDOORSMAN ] );
+}
+
 bool CookingMenu( Critter& cr )
 {
-	uint16 count = 0;
-	if( cr.Skill[ SK_COOKING ] < 100 ) 
-	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_RECIPES );
-	}
-	
-	int skill = ( cr.Skill[ SK_COOKING ] - 100 ) / 10;
-	int skill_max = foodNames.length();
-	skill = CLAMP( skill, 0, skill_max );
-	for( int i = 0; i < skill; i++ )
-	{
-		count++;
-	}
-
-	cr.ShowScreen( SCREEN_DIALOGBOX, count, "answer_PATTERN" );
+	int count_max = foodNames.length();
+	cr.ShowScreen( SCREEN_DIALOGBOX, count_max, "answer_PATTERN" );
 	cr.SayMsg( SAY_DIALOGBOX_TEXT, TEXTMSG_TEXT, STR_SELECT_RECIPE );
 	
-	for( uint8 i = 0; i < count; i++ )
+	for( int i = 0; i < count_max; i++ )
 	{
 		cr.SayMsg( SAY_DIALOGBOX_BUTTON( i ), TEXTMSG_TEXT, foodNames[ i ] );
 	}
@@ -203,7 +186,7 @@ void answer_PATTERN( Critter& cr, uint answerI, string& answerS )
 	SayLog( cr, crInfo( cr ) + " is preparing a meal." );
 	
 	bool isFailed = false;
-	if( Random( 0, 100 ) + cr.Skill[ SK_COOKING ] < int( 120 + answerI * 10 ) )
+	if( Random( 0, 100 ) + cookingSkill(cr) < int( 120 + answerI * 10 ) )
 	{
 		isFailed = true;
 	}

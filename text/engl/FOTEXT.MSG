@@ -150,16 +150,16 @@ The pot is filled for |0xFFFF00 @lex current@ |0x3CF800 out of |0xFFFF00 @lex ma
 {6201}{}{It seams the the brewing has ended.}
 
 # Cooking
-{6268}{}{Salad}
-{6269}{}{Soup}
-{6270}{}{Kebab}
-{6271}{}{Tortilla}
-{6272}{}{Stomach}
-{6273}{}{Stew}
-{6274}{}{Burger}
-{6275}{}{Pizza}
-{6276}{}{Fish Pie}
-{6277}{}{Taco}
+{6268}{}{[120%] Salad}
+{6269}{}{[130%] Soup}
+{6270}{}{[140%] Kebab}
+{6271}{}{[150%] Tortilla}
+{6272}{}{[160%] Stomach}
+{6273}{}{[170%] Stew}
+{6274}{}{[180%] Burger}
+{6275}{}{[190%] Pizza}
+{6276}{}{[200%] Fish Pie}
+{6277}{}{[210%] Taco}
 {6278}{}{Select Recipe:}
 {6279}{}{warms hands}
 {6280}{}{|0xFFFF00 You require some meat.}
