@@ -10,6 +10,11 @@
 
 import bool CheckGard( Map& map, uint16 hexX, uint16 hexY ) from "qmap_farm";
 
+uint farmingSkill( Critter& cr )
+{
+	return cr.Skill[ SK_FARMING ] + int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+}
+
 class Plant
 {
 	uint16 pid;
@@ -223,12 +228,6 @@ void TryPlantSeed( Critter& cr, Item& seed, int hexX, int hexY, Item@ plant_bed 
 	if( !valid( plant ) ) 
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_YOU_CANT_PLANT_THIS );
-		return;
-	}
-
-	if( cr.Skill[ SK_OUTDOORSMAN ] < 200 )
-	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 200 );
 		return;
 	}
 
@@ -797,12 +796,6 @@ bool FurtilezePlant( Critter& cr, Item& fertilizer, Item& plant )
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_ENOUGH_FERTILIZER );
 		return false;
 	}
-	
-	if( cr.Skill[ SK_OUTDOORSMAN ] < 200 )
-	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 200 );
-		return false;
-	}
 
 	plant.PLANT_FERTILITY ++;
 	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_FERTILIZES_THE_PLANT );
@@ -810,7 +803,7 @@ bool FurtilezePlant( Critter& cr, Item& fertilizer, Item& plant )
 	_SubItem( fertilizer, 1 );
 	TryRaiseSkill( cr );
 	int amount = 0;
-	amount += ( cr.ParamBase[ SK_FARMING ] / 50 );
+	amount += farmingSkill(cr) / 50;
 	IncreaseCrop( plant, amount );
 	return true;
 }
@@ -827,12 +820,6 @@ bool TryWaterPlant( Critter& cr, Item& water, Item& plant )
 		return false;
 	}
 	
-	if( cr.Skill[ SK_OUTDOORSMAN ] < 200 )
-	{
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNEDUCATED,  "$skill" + 200 );
-		return false;
-	}
-
 	if( plant.PLANT_WATERING > 0 )
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_ENOUGH_WATER );
