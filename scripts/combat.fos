@@ -3903,7 +3903,7 @@ bool CheckEvasion( Critter& cr, Critter& target, int power )
 		return false;
 	}
 	
-	float chance = 100 * ( cr.SkillBase[ SK_THROWING ] / 300.0 + ( target.IsRuning ? 0.2 : 0 ) );
+	float chance = 100.0f * ( ( cr.SkillBase[ SK_THROWING ] + cr.SkillBase[ SK_OUTDOORSMAN ] * 0.5f ) / 300.0f + ( target.IsRuning ? 0.2f : 0.0f ) );
 	bool isHolded = chance >= Random( 1, 100 );
 	
 	if( !isHolded )
