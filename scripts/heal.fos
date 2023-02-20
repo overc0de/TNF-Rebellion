@@ -1789,10 +1789,21 @@ void proccessHealItem( Critter& cr, HealingItem& usedItem )
 		int instantHeal = int( usedItem.instant_heal * traitMul / traitDiv );
 		int healedAmount = int( usedItem.value_heal * traitMul / traitDiv );
 		
-		if( cr.Skill[ SK_OUTDOORSMAN ] < 275 && !usedItem.ResurectItem )
+		if( !usedItem.ResurectItem )
 		{
-			healedAmount = int( healedAmount * 0.2 );
-			instantHeal = int( instantHeal * 0.2 );
+			float multiplier = ( cr.Skill[ SK_OUTDOORSMAN ] + cr.Skill[ SK_FIRST_AID ] + cr.Skill[ SK_DOCTOR ] ) / 600.0f;
+			
+			if( multiplier < 0.2 )
+			{
+				multiplier = 0.2f; //Минимальная эффективность = 20%, 10 хп
+			}
+			else if( multiplier > 1.0f )
+			{
+				multiplier = 1.0f; //Максимальная эффективность = 100%, 50 хп
+			}
+			
+			healedAmount = int( healedAmount * multiplier );
+			instantHeal = int( instantHeal * multiplier );
 		}
 		
 		cr.StatBase[ ST_CURRENT_HP ] += instantHeal;
