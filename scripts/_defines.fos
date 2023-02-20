@@ -1244,7 +1244,7 @@
 // Roleplay
 // binyan: timeout to hotkey say
 #define SAY_TIMEOUT                              	( __FullSecond + REAL_SECOND( 3 ) )
-#define FIRST_AID_TIMEOUT                        	# (cr)	( __FullSecond + REAL_SECOND( 30 - cr.Skill[SK_FIRST_AID] / 10 ) )
+#define FIRST_AID_TIMEOUT                        	# (cr)	( __FullSecond + REAL_SECOND( 30 - cr.Skill[SK_FIRST_AID] / 10 - cr.Skill[SK_OUTDOORSMAN] / 20 ) )
 #define DOCTOR_TIMEOUT                           	# (cr)	( __FullSecond + REAL_SECOND( 30 ) )
 #define REPAIR_TIMEOUT                           	# (cr)	( __FullSecond + REAL_SECOND( 20 ) )
 #define SCIENCE_TIMEOUT                          	# (cr)	( __FullSecond + REAL_SECOND( 20 ) )

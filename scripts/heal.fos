@@ -13,6 +13,11 @@
 #include "_ltp.fos"
 #include "gathering_h.fos"
 
+uint doctorSkill( Critter& cr )
+{
+	return cr.Skill[ SK_DOCTOR ] + uint( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+}
+
 void StartMenuDOC( Critter& healer, Critter& target )
 {
 	OpenMenu( healer, "DOC", MenuDOC( target ) );
@@ -360,11 +365,7 @@ class MenuDOC_Bullet: CenteredMenuHandler
 
 	int calculate_chances( bool actual_use )
 	{
-		int skill = cr.Skill[ SK_DOCTOR ];
-		if( cr.Skill[ SK_OUTDOORSMAN ] == 300 )
-		{
-			skill = 300;
-		}
+		int skill = doctorSkill(cr);
 
 		string skill_info = "DOC base [" + skill + "] ";
 		
@@ -840,11 +841,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 	
 	int calculate_chances( bool actual_use )
 	{
-		int skill = cr.Skill[ SK_DOCTOR ];
-		if( cr.Skill[ SK_OUTDOORSMAN ] == 300 )
-		{
-			skill = 300;
-		}
+		int skill = doctorSkill(cr);
 		
 		string skill_info = "DOC base [" + skill + "] ";
 		
@@ -1241,12 +1238,12 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							_SubItem( bandage, 1 );
 							cr.StatBase[ ST_EXPERIENCE ] += 25;
 
-							int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
+							int docTime = MAX_LIMB_HEALING_TIME - doctorSkill(cr) - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							docTime = CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME );
 							target.AddTimeEvent( "cte_Doc", REAL_MINUTE( docTime ), CTE_DOC, limb );
 							cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DOCTOR_EYE_PATCHED );
 							
-							testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( cr.Skill[ SK_DOCTOR ] ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
+							testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( doctorSkill(cr) ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
 							
 							stage = MenuCripple_stage::main;
 							limb = 0;
@@ -1263,11 +1260,11 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							_SubItem( bandage, 1 );
 							cr.StatBase[ ST_EXPERIENCE ] += 150;
 
-							int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
+							int docTime = MAX_LIMB_HEALING_TIME - doctorSkill(cr) * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
 							cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DOCTOR_EYE_BANDAGED);
 
-							testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( cr.Skill[ SK_DOCTOR ] * 2 ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
+							testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( doctorSkill(cr) * 2 ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
 							
 							stage = MenuCripple_stage::main;
 							limb = 0;
@@ -1317,11 +1314,11 @@ class MenuDOC_Cripple: CenteredMenuHandler
 								_SubItem( rope, 1 );								
 								cr.StatBase[ ST_EXPERIENCE ] += 150;
 
-								int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
+								int docTime = MAX_LIMB_HEALING_TIME - doctorSkill(cr) - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 								target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
 								cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DOCTOR_IMPROVISED_BRACE );
 								
-								testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( cr.Skill[ SK_DOCTOR ] ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
+								testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( doctorSkill(cr) ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
 
 								stage = MenuCripple_stage::main;
 								limb = 0;
@@ -1348,11 +1345,11 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							_SubItem( splint, 1 );
 							cr.StatBase[ ST_EXPERIENCE ] += 300;
 
-							int docTime = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
+							int docTime = MAX_LIMB_HEALING_TIME - doctorSkill(cr) * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
 							cr.SayMsg( SAY_NETMSG,  TEXTMSG_TEXT, STR_DOCTOR_MEDICAL_BRACE );
 
-							testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( cr.Skill[ SK_DOCTOR ] * 2 ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
+							testInfo( cr, "Time: " + MAX_LIMB_HEALING_TIME + " - " + ( doctorSkill(cr) * 2 ) + " - " + ( target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY ) + " = " + docTime	);
 							
 							stage = MenuCripple_stage::main;
 							limb = 0;
@@ -1386,9 +1383,9 @@ class MenuDOC_Cripple: CenteredMenuHandler
 				
 			case(MenuCripple_stage::tool):
 			{
-				int max = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
+				int max = MAX_LIMB_HEALING_TIME - doctorSkill(cr) - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 				max = CLAMP( max, 5, MAX_LIMB_HEALING_TIME );
-				int min = MAX_LIMB_HEALING_TIME - cr.Skill[ SK_DOCTOR ] * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
+				int min = MAX_LIMB_HEALING_TIME - doctorSkill(cr) * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 				min = CLAMP( min, 5, MAX_LIMB_HEALING_TIME );
 				
 				return lex + description + STR_INSERT_TEXT_LINE( STR_HEAL_MENU_DESC_APPROXIMATE_TIME ) + "$minMinutes" + min + "$maxMinutes" + max; 

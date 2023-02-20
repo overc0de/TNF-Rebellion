@@ -115,7 +115,7 @@ bool PrepareMining( Critter& cr, Item@ tool, Item@ target )
 
 uint miningSkill( Critter& cr )
 {
-	return cr.Skill[ SK_MINING ] + int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+	return cr.Skill[ SK_MINING ] + uint( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
 }
 
 bool start_mining( Critter& cr, Item& tool, Item& target )

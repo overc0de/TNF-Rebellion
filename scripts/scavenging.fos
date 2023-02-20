@@ -80,7 +80,7 @@ bool PrepareScavenging( Critter& cr, Item@ tool, Item@ target )
 
 uint scavengingSkill( Critter& cr )
 {
-	return cr.Skill[ SK_SCAVENGING ] + int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+	return cr.Skill[ SK_SCAVENGING ] + uint( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
 }
 
 bool start_scavenging( Critter& cr, Item& tool, Item& target )

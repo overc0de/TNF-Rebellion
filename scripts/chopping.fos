@@ -85,7 +85,7 @@ bool PrepareChopping( Critter& cr, Item@ tool, Item@ tree )
 
 uint choppingSkill( Critter& cr )
 {
-	return cr.Skill[ SK_CHOPPING ] + int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+	return cr.Skill[ SK_CHOPPING ] + uint( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
 }
 
 bool start_chopping( Critter& cr, Item& tool, Item& tree )

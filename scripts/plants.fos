@@ -12,7 +12,7 @@ import bool CheckGard( Map& map, uint16 hexX, uint16 hexY ) from "qmap_farm";
 
 uint farmingSkill( Critter& cr )
 {
-	return cr.Skill[ SK_FARMING ] + int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+	return cr.Skill[ SK_FARMING ] + uint( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
 }
 
 class Plant

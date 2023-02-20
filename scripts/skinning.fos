@@ -11,7 +11,7 @@
 
 uint huntingSkill( Critter& cr )
 {
-	return cr.Skill[ SK_HUNTING ] + int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+	return cr.Skill[ SK_HUNTING ] + uint( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
 }
 
 bool ltp_devour_inited = false;

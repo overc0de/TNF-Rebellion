@@ -14,7 +14,7 @@ import uint8 checkWater( Map& map, uint16 tx, uint16 ty ) from "qmap_water";
 
 uint fishingSkill( Critter& cr )
 {
-	return cr.Skill[ SK_FISHING ] + int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
+	return cr.Skill[ SK_FISHING ] + uint( cr.Skill[ SK_OUTDOORSMAN ] * 0.5 );
 }
 
 bool PrepareFishingRod( Critter& cr, Item& item )
@@ -393,7 +393,7 @@ void floaterBite( Critter& cr, Item& floater, Item& fishingRod )
 				fishingRod.HAS_BAIT = 0;
 				
 				uint val = floater.DEPTH * 100 + 50;
-				if( Random( 0, val ) < fishingSkill(cr) )
+				if( Random( 0, val ) < int( fishingSkill(cr) ) )
 				{
 					floater.SHOW_FISH = 1;
 				}
@@ -817,7 +817,7 @@ void fishAction( Critter& cr, Item& floater )
 	}
 	
 	uint val = floater.DEPTH * 100 + 50;
-	if( Random( 0, val ) < fishingSkill(cr) )
+	if( Random( 0, val ) < int( fishingSkill(cr) ) )
 	{
 		floater.SHOW_ACTION = 1;
 	}
