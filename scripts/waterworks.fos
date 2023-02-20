@@ -257,7 +257,7 @@ uint process_waterwell( Critter@ cr, int& param0, int& param1, int& param2 )
 		uint autoemote = Random( 1, 10 );
 		if( autoemote == 10 )
 		{ 
-			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_SPINS_BOBBIN );
+			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_SPINS_BOBBIN );
 		}
 		
 		param0++;
@@ -704,7 +704,7 @@ uint process_gather_water( Critter@ cr, int& param0, int& param1, int& param2 )
 		uint autoemote = Random( 1, 10 );
 		if( autoemote == 10 )
 		{
-			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FILLS_TARE );
+			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FILLS_TARE );
 		}
 		
 		if( hasItem( cr, waterPump.WATERSOURCE_DNA ) )
@@ -925,7 +925,7 @@ void start_washing( Critter& cr, bool handsOnly )
 	cr.ParamBase[ ST_LTP_SEQUENCE ] = CalcWashingIterations( cr.ParamBase[ CR_DIRTINESS ] );
 	
 	uint strMsg = handsOnly ? STR_EMOTE_WASH_HANDS : STR_EMOTE_WASH_SELF;
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, strMsg );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, strMsg );
 	
 	StartProcess( cr, LTP_WASHING, 0, handsOnly ? 0 : 1, 0, cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ] );
 }
@@ -958,7 +958,7 @@ uint process_washing( Critter@ cr, int& param0, int& param1, int& param2 )
 	if( Random( 1, 10 ) == 10 )
 	{
 		uint strMsg = param1 == 0 ? STR_EMOTE_WASH_HANDS : STR_EMOTE_WASH_SELF;
-		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, strMsg );
+		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, strMsg );
 	}
 	
     return cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ];
@@ -1089,7 +1089,7 @@ void SoapEffect( Critter& player, Critter& target, uint soap_pid, int water_sour
 		case( PID_ITSOAP01_PRT ):
 		{
 			uint msgStr = isHandsOnly ? STR_EMOTE_WASH_HANDS_UTILITY : STR_EMOTE_WASH_SELF_UTILITY;
-			target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, msgStr );
+			//target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, msgStr );
 			target.ParamBase[ CR_DIRTINESS ] = int( target.ParamBase[ CR_DIRTINESS ] * 0.8 ) - 5;
 
 			soap.REMAINING_USES--;
@@ -1111,7 +1111,7 @@ void SoapEffect( Critter& player, Critter& target, uint soap_pid, int water_sour
 		case( PID_FPSHL6_PRT ):
 		{
 			uint msgStr = isHandsOnly ? STR_EMOTE_WASH_HANDS_PERFUME : STR_EMOTE_WASH_SELF_PERFUME;
-			target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, msgStr );
+			//target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, msgStr );
 			target.ParamBase[ CR_DIRTINESS ] = int( target.ParamBase[ CR_DIRTINESS ] * 0.6 ) - 10;
 			
 			if( target.ParamBase[ CR_DIRTINESS ] <= 0 && target.GetTimeEvents( CTE_ROTTEN, null, null, null ) < 1 )
@@ -1132,7 +1132,7 @@ void SoapEffect( Critter& player, Critter& target, uint soap_pid, int water_sour
 		default:
 		{
 			uint msgStr = isHandsOnly ? STR_EMOTE_WASH_HANDS : STR_EMOTE_WASH_SELF;
-			target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, msgStr );
+			//target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, msgStr );
 			target.ParamBase[ CR_DIRTINESS ] -= 1 + Random( 0, int( target.ParamBase[ CR_DIRTINESS ] * 0.2 ) );
 			
 			if( water_source > 0 )

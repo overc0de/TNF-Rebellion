@@ -33,7 +33,7 @@ bool FireCheck( Critter& cr, Item@ item, Item@ target )
 
 	if(	( item.GetProtoId() == PID_SHOVEL || item.GetProtoId() == PID_SPADE ) && firePid == PID_FIREPLACE_OFF )
 	{
- 		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_REMOVE_ASH );
+ 		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_REMOVE_ASH );
 		DeleteItem( target );
 		return true;
 	}
@@ -96,7 +96,7 @@ bool Ignite( Critter& cr, Item& item, Item& target )
 		
 		_CritAnimateUse(cr);
 		
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_IGNITE_FIRE );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_IGNITE_FIRE );
 		switch( target.GetProtoId() )
 		{
 			case( PID_FIREBARREL ):
@@ -187,7 +187,7 @@ bool Extinguish( Critter& cr, Item& item, Item& target )
 		
 	if( target.STATE == STATE_EXTINGUISHED && target.CURRENT_FUEL >= 0 )
 	{
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_POUR_WATER );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_POUR_WATER );
 		PlayGenericSound( map, target.HexX, target.HexY, "splash.ogg", 10 );
 		if( target.CURRENT_FUEL == 0 )
 		{
@@ -206,7 +206,7 @@ bool Extinguish( Critter& cr, Item& item, Item& target )
 	{
 		target.STATE = STATE_EXTINGUISHED;
 		target.CURRENT_FUEL = MAX( target.CURRENT_FUEL - Random( 1800, 5400 ), 0 );
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_EXTINQUISH );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_EXTINQUISH );
 		PlayGenericSound( map, target.HexX, target.HexY, "STEAM1.mp3", 10 );
 		
 		if( target.GetProtoId() == PID_FIREBARREL )
@@ -408,13 +408,13 @@ bool FeedTheFire( Critter& cr, Item& item, Item& target )
 	if( item.GetProtoId() == PID_COAL )
 	{
 		target.CURRENT_FUEL = MIN(target.CURRENT_FUEL + 5400, target.MAX_FUEL);
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_COAL );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_COAL );
 		PlayGenericSound( map, target.HexX, target.HexY, "ROCK.mp3", 10 );
 	}
 	else
 	{	
 		target.CURRENT_FUEL = MIN(target.CURRENT_FUEL + 1800, target.MAX_FUEL);
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_WOOD );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_WOOD );
 		PlayGenericSound( map, target.HexX, target.HexY, "BRDSWELL.mp3", 10 );
 	}
 	
@@ -442,14 +442,14 @@ void BurnIt( Critter& cr, Item& item, Item& target )
 	else if( Explosives.find(destructablePid) != -1 )
 	{
 		_SubItem( item, 1 );
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_PUTS_EXPLOSIVES_FIRE );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_PUTS_EXPLOSIVES_FIRE );
 		uint[] values = {target.Id};
 		target.EXPLOSION_TIMEOUT = CreateTimeEvent( AFTER( REAL_SECOND( Random( 0, 10 ) ) ),"e_Explosives", values, true );
 		return;
 	}
 	else
 	{
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_PUTS_ITEM_FIRE );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_PUTS_ITEM_FIRE );
 		if( item.GetProtoId() == PID_SHIT_SMALL || item.GetProtoId() == PID_SHIT_BIG || item.GetProtoId() == PID_SHIT_HUGE )
 		{
 			uint16 hexX=0, hexY=0;

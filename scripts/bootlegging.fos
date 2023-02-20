@@ -68,7 +68,7 @@ bool IgniteStill( Critter& cr, Item& item, Item& still )
 		}
 		still.STATE = STATE_WORKING_100;
 		_CritAnimateUse( cr );
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_IGNITE_FIRE );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_IGNITE_FIRE );
 		still.PicMap = PIC_STILL_ANIM_ON;
 		setAnimState( still );
 		uint[] values = { still.Id };
@@ -288,13 +288,13 @@ bool FeedStillFire( Critter& cr, Map& map, Item& item, Item& still )
 	if( item.GetProtoId() == PID_COAL )
 	{
 		still.CURRENT_FUEL = MIN( still.CURRENT_FUEL + 5400, STILL_MAX_FUEL );
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_COAL );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_COAL );
 		PlayGenericSound( map, still.HexX, still.HexY, "ROCK.mp3", 10 );
 	}
 	else
 	{	
 		still.CURRENT_FUEL = MIN( still.CURRENT_FUEL + 1800, STILL_MAX_FUEL );
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_WOOD );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_WOOD );
 		PlayGenericSound( map, still.HexX, still.HexY, "BRDSWELL.mp3", 10 );
 	}
 
@@ -839,7 +839,7 @@ uint process_spirit_out( Critter@ cr, int& param0, int& param1, int& param2 )
 		uint autoemote = Random( 1, 10 );
 		if( autoemote == 10 )
 		{
-			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FILLS_BOTTLE );
+			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FILLS_BOTTLE );
 		}
 		
 		if( hasItem( cr, PID_SPIRIT_PRT ) )

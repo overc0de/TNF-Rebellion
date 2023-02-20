@@ -283,7 +283,7 @@ class MenuSlotMachine: CenteredMenuHandler
 			{
 				ShowContainer( cr, target, TRANSFER_HEX_CONT_UP );
 				PlayGenericSound( map, cr.HexX, cr.HexY, "IOCNTNRB.mp3", 15 );
-				cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_OPENS_MACHINE );
+				//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_OPENS_MACHINE );
 				return false;
 			}
         }

@@ -348,12 +348,12 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_DISTIL_WATER ):
 			case( PID_GLASS_BOTTLE_FULL ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( ( targetItem.Proto.Weight - 150 ) * transferAmount );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_WATER );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_WATER );
 				break;
 			case( PID_GLASS_BOTTLE_DIRTY_FULL ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( ( targetItem.Proto.Weight - 150 ) * transferAmount );
 				cont.HB_POLUTION_LEVEL = cont.HB_POLUTION_LEVEL + ( ( targetItem.Proto.Weight - 150 ) * transferAmount / 10 );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BAD_WATER );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BAD_WATER );
 				break;
 			case( PID_ATOM_COLA ):
 			case( PID_ATOM_COLA_SEA ):
@@ -364,7 +364,7 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_ATOM_COLA_CRAFT ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( ( targetItem.Proto.Weight - 260 ) * transferAmount );
 				cont.SUGAR_LEVEL = cont.SUGAR_LEVEL + ( ( targetItem.Proto.Weight - 540 ) * transferAmount );				
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_COLA );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_COLA );
 				break;
 			case( PID_BEER ):
 			case( PID_BEER_LIGHT ):
@@ -372,13 +372,13 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_BEER_DARK ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( ( targetItem.Proto.Weight - 250 ) * transferAmount );
 				cont.SUGAR_LEVEL = cont.SUGAR_LEVEL + ( ( targetItem.Proto.Weight - 550 ) * transferAmount );				
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BEER );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BEER );
 				break;
 			case( PID_GAMMA_GULP_BEER ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( ( targetItem.Proto.Weight - 250 ) * transferAmount );
 				cont.SUGAR_LEVEL = cont.SUGAR_LEVEL + ( ( targetItem.Proto.Weight - 550 ) * transferAmount );
 				cont.HB_POLUTION_LEVEL = cont.HB_POLUTION_LEVEL + 5 * transferAmount;			
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_GAMMA_GULP );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_GAMMA_GULP );
 				break;
 			case( PID_ATOMIC_COCTAIL ):
 			case( PID_GROG ):
@@ -392,11 +392,11 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_BOTTLE_MILCH2 ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( ( targetItem.Proto.Weight - 150 ) * transferAmount );
 				cont.HB_POLUTION_LEVEL = cont.HB_POLUTION_LEVEL + ( ( targetItem.Proto.Weight - 150 ) * transferAmount / 100  );			
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_STRONG_ALCOHOL );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_STRONG_ALCOHOL );
 				break;
 			default:
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( ( targetItem.Proto.Weight - 150 ) * transferAmount );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_LIQUID );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_LIQUID );
 				break;
 		}
 		
@@ -420,12 +420,12 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_DISTIL_WATER_PRT ):
 			case( PID_GLASS_BOTTLE_FULL_PRT ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( targetItem.REMAINING_USES * 100 );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_WATER );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_WATER );
 				break;
 			case( PID_GLASS_BOTTLE_DIRTY_FULL_PRT ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( targetItem.REMAINING_USES * 100 );
 				cont.HB_POLUTION_LEVEL = cont.HB_POLUTION_LEVEL + ( targetItem.REMAINING_USES * 10 );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BAD_WATER );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BAD_WATER );
 				break;
 			case( PID_ATOM_COLA_PRT ):
 			case( PID_ATOM_COLA_SEA_PRT ):
@@ -436,7 +436,7 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_ATOM_COLA_CRAFT_PRT ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( targetItem.REMAINING_USES * 78 );
 				cont.SUGAR_LEVEL = cont.SUGAR_LEVEL + ( targetItem.REMAINING_USES * 22 );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_COLA );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_COLA );
 				break;
 			case( PID_BEER_PRT ):
 			case( PID_BEER_LIGHT_PRT ):
@@ -444,13 +444,13 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_BEER_DARK_PRT ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( targetItem.REMAINING_USES * 80 );
 				cont.SUGAR_LEVEL = cont.SUGAR_LEVEL + ( targetItem.REMAINING_USES * 20 );				
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BEER );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_BEER );
 				break;
 			case( PID_GAMMA_GULP_BEER_PRT ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( targetItem.REMAINING_USES * 80 );
 				cont.SUGAR_LEVEL = cont.SUGAR_LEVEL + ( targetItem.REMAINING_USES * 20 );	
 				cont.HB_POLUTION_LEVEL = cont.HB_POLUTION_LEVEL + targetItem.REMAINING_USES;			
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_GAMMA_GULP );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_GAMMA_GULP );
 				break;
 			case( PID_ATOMIC_COCTAIL_PRT ):
 			case( PID_GROG_PRT ):
@@ -464,11 +464,11 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			case( PID_BOTTLE_MILCH2_PRT ):
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( targetItem.REMAINING_USES * 100 );
 				cont.HB_POLUTION_LEVEL = cont.HB_POLUTION_LEVEL + ( targetItem.REMAINING_USES * 2 );					
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_STRONG_ALCOHOL );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_STRONG_ALCOHOL );
 				break;
 			default:
 				cont.LIQUID_LEVEL = cont.LIQUID_LEVEL + ( targetItem.REMAINING_USES * 100 );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_LIQUID );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_LIQUID );
 				break;
 		}
 		cr.AddItem( PID_BOTTLE_GLASS, 1 );
@@ -481,7 +481,7 @@ bool TransferToPot( Critter& cr, Item& targetItem, Item& cont )
 			if( ( ( targetItem.Proto.Weight * transferAmount ) + cont.CURRENT_CAPACITY ) <= cont.CAPACITY )
 			{
 				MoveItem( targetItem, transferAmount, cont, 0 );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_INGRIDIENT );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_INGRIDIENT );
 				cont.CURRENT_CAPACITY = cont.CURRENT_CAPACITY + ( targetItem.Proto.Weight * transferAmount );
 				cont.STACH_LEVEL = cont.STACH_LEVEL + ( targetItem.Proto.Weight * transferAmount );
 			}
@@ -553,7 +553,7 @@ bool AddFerment( Critter& cr )
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_REQUIRE_YEAST );
 		return false;
 	}
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_YEAST );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_ADD_YEAST );
 	PlayGenericSound( map, target.HexX, target.HexY, "ROBE.mp3", 4 );
 	_SubItem( ferment, 1 );
 	cr.AddItem( PID_METAL_CAN, 1);
@@ -643,7 +643,7 @@ uint process_slicing( Critter@ cr, int& param0, int& param1, int& param2 )
 		uint autoemote = Random( 0, 4 );
 		if( autoemote == 4 )
 		{
-			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_GRINDS_INGRIDIENTS );
+			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_GRINDS_INGRIDIENTS );
 		}
 		uint[] values = { cr.Id };
 		CreateTimeEvent( AFTER( REAL_MS( 300 ) ), "e_SlicingSound", values, true );
@@ -804,7 +804,7 @@ bool OpenClose( Critter& cr )
 		ProtoItem@ proto = GetProtoItem( PID_POT_ALCO );
 		target.PicMap = proto.PicMap;
 		target.Update();
-		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_OPEN_LID );
+		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_OPEN_LID );
 		if( target.STATE >= 2 )
 		{
 			uint[] values = {target.Id};
@@ -815,7 +815,7 @@ bool OpenClose( Critter& cr )
 	{
 		target.PicMap = PIC_POT_CLOSED;
 		target.Update();
-		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CLOSE_LID );
+		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CLOSE_LID );
 	}
 	
 	if( target.STATE > 0 && target.PicMap != PIC_POT_CLOSED )
@@ -1103,19 +1103,19 @@ bool DisposeBrew( Critter& cr )
 	_CritAnimateUse(cr);
 	if( target.LIQUID_LEVEL == 0 && target.STACH_LEVEL > 0 )
 	{
-        cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_SHAKES_OUT );
+        //cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_SHAKES_OUT );
 		map.SetTextMsg( target.HexX, target.HexY, COLOR_LGRAY, TEXTMSG_TEXT, STR_MAPMSG_INGRIDIENTS_SCATTER );
 		DropContainerItems( map, target );
 	}
 	else if( target.LIQUID_LEVEL >= target.CURRENT_CAPACITY )
 	{
-		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_POURS_OUT );
+		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_POURS_OUT );
 		map.SetTextMsg( target.HexX, target.HexY, COLOR_LGRAY, TEXTMSG_TEXT, STR_MAPMSG_PADDLE_FORMED );
 		PlayGenericSound( map, target.HexX, target.HexY, "splash.ogg", 10 );
 	}
 	else
 	{
-		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_POURS_OUT );
+		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_POURS_OUT );
 		PlayGenericSound( map, target.HexX, target.HexY, "splash.ogg", 10 );
 		map.SetTextMsg( target.HexX, target.HexY, COLOR_LGRAY, TEXTMSG_TEXT, STR_MAPMSG_SICKENING_SMELL);
 		DropContainerItems( map, target );

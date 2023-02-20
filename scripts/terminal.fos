@@ -268,7 +268,7 @@ class MenuTerminal: CenteredMenuHandler
 						PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN1.mp3", 5 );
 						ShowContainer( cr, terminal, TRANSFER_HEX_CONT_UP );
 						PlayGenericSound( map, terminal.HexX, terminal.HexY, "SCDOORSM.mp3", 10 );
-						cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TERMINAL_OPEN );
+						//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TERMINAL_OPEN );
 						return false;
 					}
 				}
@@ -1066,7 +1066,7 @@ class MenuSelectCard: CenteredMenuHandler
 			if( menu.ButtonMsg( STR_CONFIRM ) )
 			{
 				PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN1.mp3", 5 );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TERMINAL_SELECT_CARD );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TERMINAL_SELECT_CARD );
 				
 				Critter@[] crs;
 				for( uint j = 0; j < TurretPids.length(); j ++ ) 
@@ -1096,7 +1096,7 @@ class MenuSelectCard: CenteredMenuHandler
 		if( menu.ButtonMsg( STR_TERMINAL_MENU_DISABLE_CARDS ) )
 		{
 			PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN1.mp3", 5 );
-			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TERMINAL_DISABLE_CARD );
+			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TERMINAL_DISABLE_CARD );
 			
 			Critter@[] crs;
 			for( uint j = 0; j < TurretPids.length(); j ++ ) 

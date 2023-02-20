@@ -263,7 +263,7 @@ void TryPlantSeed( Critter& cr, Item& seed, int hexX, int hexY, Item@ plant_bed 
 			if( plant_bed.PLANT_WATERING > 0 && plant_bed.PLANT_FERTILITY > 0 )
 			{
 				PlantBarrel( cr, seed, plant_bed );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_MUSHROOM );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_MUSHROOM );
 			}
 			else
 			{
@@ -282,7 +282,7 @@ void TryPlantSeed( Critter& cr, Item& seed, int hexX, int hexY, Item@ plant_bed 
 			if( plant_bed.PLANT_WATERING > 0 && plant_bed.PLANT_FERTILITY > 0 )
 			{
 				PlantHydro( cr, seed, plant_bed );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_HYDRO );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_HYDRO );
 			}
 			else
 			{
@@ -301,7 +301,7 @@ void TryPlantSeed( Critter& cr, Item& seed, int hexX, int hexY, Item@ plant_bed 
 			if( plant_bed.PLANT_WATERING > 0 && plant_bed.PLANT_FERTILITY > 0 )
 			{
 				PlantMushroom( cr, seed, plant_bed );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_MUSHROOM );
+				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_MUSHROOM );
 			}
 			else
 			{
@@ -319,7 +319,7 @@ void PlantSeed( Critter& cr, Item& seed, int hexX, int hexY )
 {
 	Map@ map = cr.GetMap();	
 	Item@ plantedSeed = map.AddItem( hexX, hexY, seed.GetProtoId(), 1 );
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_SEED );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_PLANTING_SEED );
 	uint[] values = { plantedSeed.Id };
 	plantedSeed.PLANT_EVENT = CreateTimeEvent( AFTER( REAL_MINUTE( Random( 300, 360 ) ) ), "e_SeedEvent", values, true );
 	_SubItem( seed, 1 );
@@ -798,7 +798,7 @@ bool FurtilezePlant( Critter& cr, Item& fertilizer, Item& plant )
 	}
 
 	plant.PLANT_FERTILITY ++;
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_FERTILIZES_THE_PLANT );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_FERTILIZES_THE_PLANT );
 	cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_YOU_FERTILIZED_THE_PLANT );
 	_SubItem( fertilizer, 1 );
 	TryRaiseSkill( cr );
@@ -849,7 +849,7 @@ void WaterPlant( Critter& cr, Item& water, Item& plant )
 	water.Update();
 	plant.PLANT_WATERING ++;
 	cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_YOU_HAVE_WATERED_THE_PLANT );
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_WATERS_THE_PLANT );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_PLANTS_WATERS_THE_PLANT );
 	
 	if( water.REMAINING_USES < 1 )
 	{

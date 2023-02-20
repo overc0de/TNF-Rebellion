@@ -203,7 +203,7 @@ bool FluteUse( Critter& cr )
 	
 	Map@ map = cr.GetMap();
 	PlayGenericSound( map, cr.HexX, cr.HexY, _GetOneRandom( Sounds ), cr.Stat[ ST_ENDURANCE ] * 5 );
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FLUTE );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FLUTE );
     return true;
 }
 
@@ -553,7 +553,7 @@ bool ChargeLamp( Critter& cr, Item& oil, Item& lamp )
 		PlayGenericSound( map, cr.HexX, cr.HexY, "ROBE.mp3", 6 );
 	}
 	
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_RELOAD_LAMP );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_RELOAD_LAMP );
 	lamp.ITEM_CHARGE = 120;
 	_SubItem( oil, 1 );
 	return true;
@@ -642,7 +642,7 @@ bool ChargeFlashlight( Critter& cr, Item& battery, Item& flashlight )
 	}
 	
 	flashlight.ITEM_CHARGE = battery.GetProtoId() == PID_SMALL_ENERGY_CELL ? 480 : 240;
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_RELOAD_FLASHLIGHT );
+	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_RELOAD_FLASHLIGHT );
 	_SubItem( battery, 1 );
 	flashlight.Update();
 	return true;
@@ -667,7 +667,7 @@ bool FlareUse( Critter& cr, Item@ item )
 	Map@ map = cr.GetMap();
 	if( valid( map ) )
 	{
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_FLARE_ON );
+		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_FLARE_ON );
 		PlayGenericSound( map, cr.HexX, cr.HexY, "flare.ogg", 6 );
 	}
 	

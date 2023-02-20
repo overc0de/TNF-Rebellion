@@ -77,7 +77,7 @@ bool StartDefib( Critter& cr, Critter& targetCr, Item& item )
 	
 	StartProcess( cr, LTP_DEFIB, 0, targetCr.Id, item.Id, cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ] );
 
-	cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_EMOTE_ENGAGE_DEFIB );
+	//cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_EMOTE_ENGAGE_DEFIB );
 	return true;
 }
 
@@ -161,7 +161,7 @@ bool ChargeDefib( Critter& cr, Item& battery, Item& defib )
 	}
 	
 	defib.ITEM_CHARGE ++;
-	cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_EMOTE_RECHARGE_DEFIB );
+	//cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_EMOTE_RECHARGE_DEFIB );
 	cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_RECHARGE_DEFIB );
 	_SubItem( battery, 1 );
 	return true;

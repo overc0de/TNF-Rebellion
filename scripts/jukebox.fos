@@ -224,7 +224,7 @@ class MenuJukebox: CenteredMenuHandler
 					TransferItemToJukebox( cash, jukebox );
 					PlayJukeSound( map, jukebox );
 					jukebox.BALANCE += balance_change;
-					cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_INSERT_MONEY );
+					//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_INSERT_MONEY );
 					return true;
 				}
 			}
@@ -239,7 +239,7 @@ class MenuJukebox: CenteredMenuHandler
 					_SubItem( change, uint( changeCount ) );
 					cr.AddItem( PID_BOTTLE_CAPS, changeCount );
 					jukebox.BALANCE -= changeCount;
-					cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_COLLECTS_CHANGE );
+					//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_COLLECTS_CHANGE );
 					return false;
 				}
 				else
@@ -297,7 +297,7 @@ class MenuJukebox: CenteredMenuHandler
 				{
 					ShowContainer( cr, jukebox, TRANSFER_HEX_CONT_UP );
 					PlayGenericSound( map, cr.HexX, cr.HexY, "IOCNTNRB.mp3", 15 );
-					cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_OPENS_MACHINE );
+					//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_OPENS_MACHINE );
 					return false;
 				}
 			}

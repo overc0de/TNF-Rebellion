@@ -254,16 +254,16 @@ void ChangeWindup( Critter& cr, bool ignore_bussy )
 			if( realWeapon.ITEM_GM_LEXEM == PID_POPUP )
 			{
 				string desc = getItemTextName( Item_GetLexems( realWeapon ) );
-				cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name, "$proto" + desc );
+				//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name, "$proto" + desc );
 			}
 			else
 			{
-				cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name, "$proto@msg item " +  ( weapon.ProtoId * 100 ) + "@" );
+				//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name, "$proto@msg item " +  ( weapon.ProtoId * 100 ) + "@" );
 			}
 		}
 		else
 		{
-			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name );
+			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name );
 		}
 	}
 }

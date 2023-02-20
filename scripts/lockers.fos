@@ -66,13 +66,13 @@ bool UseItemOnLocker( Critter& cr, Item& locker, Item& item )
                 {
                     UNSETFLAG( locker.LockerCondition, LOCKER_LOCKED );
                     cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNLOCK_DOOR );
-					cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
+					//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
                 }
                 else
                 {
                     SETFLAG( locker.LockerCondition, LOCKER_LOCKED );
                     cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_LOCK_DOOR );
-					cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_LOCKS );
+					//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_LOCKS );
                 }
 				PlayGenericSound( map, cr.HexX, cr.HexY, "ui_lockpicking_unlock.wav", 4 );
                 return true;
@@ -563,7 +563,7 @@ void answer_LOCKPICK( Critter& player, uint answerI, string& answerS )
 				UNSETFLAG( lockItm.LockerCondition, LOCKER_LOCKED );
 				player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNLOCK_DOOR );
 				LogItemMovement( player, lockItm, "unlocks" ); 
-				player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
+				//player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
 				PlayGenericSound( map, player.HexX, player.HexY, "ui_lockpicking_unlock.wav", 6 );
 			}
 			else
@@ -571,7 +571,7 @@ void answer_LOCKPICK( Critter& player, uint answerI, string& answerS )
 				SETFLAG( lockItm.LockerCondition, LOCKER_LOCKED );
 				player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_LOCK_DOOR );
 				LogItemMovement( player, lockItm, "locks" ); 
-				player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_LOCKS );
+				//player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_LOCKS );
 				PlayGenericSound( map, player.HexX, player.HexY, "ui_lockpicking_unlock.wav", 6 );
 			}
 		}
@@ -584,7 +584,7 @@ void answer_LOCKPICK( Critter& player, uint answerI, string& answerS )
 				{
 					UNSETFLAG( lockItm.LockerCondition, LOCKER_LOCKED );
 					player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNLOCK_DOOR );
-					player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
+					//player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
 					LogItemMovement( player, lockItm, "unlocks" );
 					PlayGenericSound( map, player.HexX, player.HexY, "ui_lockpicking_unlock.wav", 6 );
 				}
@@ -592,7 +592,7 @@ void answer_LOCKPICK( Critter& player, uint answerI, string& answerS )
 				{
 					SETFLAG( lockItm.LockerCondition, LOCKER_LOCKED );
 					player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_LOCK_DOOR );
-					player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_LOCKS );
+					//player.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_LOCKS );
 					LogItemMovement( player, lockItm, "locks" );
 					PlayGenericSound( map, player.HexX, player.HexY, "ui_lockpicking_unlock.wav", 6 );
 				}
@@ -631,7 +631,7 @@ bool takeKey( Critter& cr, Item& locker )
 			UNSETFLAG( list[i].Flags, ITEM_HIDDEN );
 			list[i].Update();
 			PlayGenericSound( map, cr.HexX, cr.HexY, "ui_lockpicking_enter.wav", 6 );
-			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_EJECT_KEY );
+			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_EJECT_KEY );
 			return true;
 		}
 	}
@@ -677,7 +677,7 @@ bool putKey( Critter& cr, Item& locker )
 
 	key.Update();
 	PlayGenericSound( map, cr.HexX, cr.HexY, "ui_lockpicking_enter.wav", 6 );
-	cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_INJECTS_KEY );
+	//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_INJECTS_KEY );
 	return true;
 }
 
