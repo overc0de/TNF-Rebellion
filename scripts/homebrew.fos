@@ -1012,7 +1012,7 @@ uint process_pouring( Critter@ cr, int& param0, int& param1, int& param2 )
 		uint autoemote = Random( 1, 10 );
 		if( autoemote == 10 )
 		{
-			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FILLS_BOTTLE );
+			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FILLS_BOTTLE );
 		}
 		
 		if( hasItem( cr, PID_HOMEBREW_PRT ) )
