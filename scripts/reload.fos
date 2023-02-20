@@ -44,7 +44,7 @@ void ReloadWeapon( Critter& cr, Item& weapon, Item@ ammo )
 	if( valid( ammo ) && weapon.AmmoPid != ammo.GetProtoId() )
 	{
 		LogItemMovement( cr, weapon, "changes ammo: " + itemDesc( ammo ) + " in" );
-		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_CHANGE_AMMO );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_CHANGE_AMMO );
 		ammo_switch = true;
 	}
 
@@ -71,7 +71,7 @@ void ReloadWeapon( Critter& cr, Item& weapon, Item@ ammo )
 			if( !ammo_switch )
 			{
 				LogItemMovement( cr, weapon, "unloads " + itemDesc( existAmmo ) + " from" );
-				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_UNLOAD_WEAPON );
+				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_UNLOAD_WEAPON );
 			}
 		}
 		if( !ammo_switch )
@@ -87,17 +87,17 @@ void ReloadWeapon( Critter& cr, Item& weapon, Item@ ammo )
 			LogItemMovement( cr, weapon, "checks ammo" );
 			if( weapon_Subtype > ITEM_SUBTYPE_WEAPON_NORMAL_END )
 			{
-				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_CHECK_CHARGE );
+				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_CHECK_CHARGE );
 			}
 			else
 			{
-				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_ARM_WEAPON );
+				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_ARM_WEAPON );
 			}				
 			return;
 		}
 		
 		LogItemMovement( cr, weapon, "loads gun with: " + itemDesc( ammo ) );
-		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_RELOADS_GUN );			
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_RELOADS_GUN );			
 	}
 	
 	if( weapon.ROUNDS_FIRED > 0 && ( weapon_Subtype == ITEM_SUBTYPE_WEAPON_NORMAL_PISTOL_REVOLVER ) )
@@ -216,7 +216,7 @@ void ProcessSpecialWeapon( Critter& cr, Item& weapon )
 	uint16 weaponPid = weapon.GetProtoId();
 	if( ChargableWeapons.find( weaponPid ) != -1 )
 	{
-		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_CHECK_CHARGE );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_CHECK_CHARGE );
 		if( weapon.WEAPON_EVENT == 0 )
 		{
 			uint[] val = { weapon.Id };

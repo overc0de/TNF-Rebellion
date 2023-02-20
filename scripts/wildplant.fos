@@ -184,7 +184,7 @@ bool PickPlant( Critter& cr, Item& wildplant )
 	}
 	
 	uint16 wildplantPid = wildplant.GetProtoId();
-	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_PICK_PLANT );
+	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_PICK_PLANT );
 	WildPlant@ plant = getWildplant( wildplant );
 	
 	bool isAlive = ( wildplant.GROWTH_STAGE < plant.stages ) || ( plant.stages == 1 );

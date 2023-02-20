@@ -25,7 +25,7 @@ bool PrepareFishingRod( Critter& cr, Item& item )
 		if( hasItem( cr, PID_ROD, SLOT_HAND1 ) )
 		{
 			SingleItemProtoChange( cr, PID_ROD_STRING, SLOT_HAND1 );
-			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_LINE );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_LINE );
 			_SubItem( item, 1 );
 		}
 		else
@@ -39,7 +39,7 @@ bool PrepareFishingRod( Critter& cr, Item& item )
 		if( hasItem( cr, PID_ROD_STRING, SLOT_HAND1 ) )
 		{
 			SingleItemProtoChange( cr, PID_ROD_STRING_HOOK, SLOT_HAND1 );
-			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_HOOK );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_HOOK );
 			_SubItem( item, 1 );
 		}
 		else
@@ -54,7 +54,7 @@ bool PrepareFishingRod( Critter& cr, Item& item )
 			Item@ rod = cr.GetItem( 0, SLOT_HAND1 );
 			int index = Bait.find( pid );
 			rod.Val0 = pid;
-			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_BAIT, "$bait@msg item " + ( pid * 100 ) + "@" );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_ADD_BAIT, "$bait@msg item " + ( pid * 100 ) + "@" );
 			_SubItem( item, 1 );
 		}
 		
@@ -233,7 +233,7 @@ void check_tiles( Critter& cr, Item& fishingRod, int hexX, int hexY )
 				cr.SetAnims(COND_LIFE, 0, ANIM2_IDLE);
 				DeleteItem( floatCheck );
 				cr.ParamBase[ ST_LTP_TIME ] = -1;
-				//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TAKE_ROD_OUT );
+				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_TAKE_ROD_OUT );
 				return;
 			}
 		}
@@ -263,7 +263,7 @@ bool start_fishing( Critter& cr, Item& fishingRod, Item& floater, Map& map )
 	{
         ltp_init();
 	}
-   	//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_CAST_ROD );
+   	cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_CAST_ROD );
 	PlayGenericSound( map, cr.HexX, cr.HexY, "rod_throw.ogg", 8 );
 	
 	StartProcess( cr, LTP_FISHING, 0, floater.Id, fishingRod.Id, 1000 );
@@ -361,7 +361,7 @@ uint e_floaterCheck( uint[]@ values )
 		
 		if( valid( cr ) )
 		{
-			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_TAKE_ROD_OUT );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_TAKE_ROD_OUT );
 			FinishFishing( cr, floater );
 		}
 		else
@@ -617,7 +617,7 @@ class MenuFishing: CenteredMenuHandler
 		
 		if( menu.ButtonMsg( STR_FISH_MENU_CUT_LINE ) )
 		{
-			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_TAKE_ROD_OUT );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_TAKE_ROD_OUT );
 			FinishFishing( cr, floater );
 			if( hasItem( cr, PID_ROD_STRING_HOOK, SLOT_HAND1 ) )
 			{

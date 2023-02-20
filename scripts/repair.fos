@@ -1210,7 +1210,7 @@ uint process_repair( Critter@ cr, int& param0, int& param1, int& param2 )
 
 		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] )
 		{
-			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FINISH_REPAIR );
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FINISH_REPAIR );
 			RepairResult( cr, item, repair );
 			
 			if( item.GetType() == ITEM_TYPE_WEAPON && item.Proto.Weapon_MaxAmmoCount > 0 )
@@ -2633,7 +2633,7 @@ uint process_decraft( Critter@ cr, int& param0, int& param1, int& param2 )
 		
 		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] )
 		{
-			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FINISH_DECRAFT );
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_FINISH_DECRAFT );
 			DecraftResult( cr, item );
 			return 0;
 		}

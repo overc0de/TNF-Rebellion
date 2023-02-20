@@ -37,7 +37,7 @@ void TakeCigarettes( Critter& cr, Item& pack )
 	
 	if( Pid == PID_CIGARETTES )
 	{
-		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_OPEN_CIGS );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_OPEN_CIGS );
 		_SubItem( pack, 1 );
 		cr.AddItem( PID_CIGARETTES_PRT, 1 );
 	}
@@ -48,7 +48,7 @@ void TakeCigarettes( Critter& cr, Item& pack )
 	}
 	else
 	{
-		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKES_CIG );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKES_CIG );
 		cr.AddItem( PID_CIGARETTE, 1 );
 		pack.REMAINING_USES--;
 		pack.Update();

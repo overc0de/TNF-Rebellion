@@ -259,7 +259,7 @@ uint process_Smithing( Critter@ cr, int& param0, int& param1, int& param2 )
 		
 		if( param0 > cr.ParamBase[ ST_LTP_SEQUENCE ] )
 		{
-			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_FINISH_SMITHING );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_FINISH_SMITHING );
 			Profit( cr, anvil, material );
 			int skillNum = SK_REPAIR;
 			Accident( cr, skillNum );

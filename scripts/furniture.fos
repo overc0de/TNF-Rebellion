@@ -265,7 +265,7 @@ class MenuFuriture: CenteredMenuHandler
 					{
 						UNSETFLAG( furniture.LockerCondition, LOCKER_LOCKED );
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNLOCK_DOOR );
-						//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
+						cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_UNLOCKS );
 						PlayGenericSound( map, cr.HexX, cr.HexY, "ui_lockpicking_unlock.wav", 4 );
 						return true;
 					}
@@ -369,7 +369,7 @@ bool StartMenuFuriture( Critter& cr, Item& furniture )
 void StopDragging( Critter& cr, Item& item )
 {
 	item.SetScript( "_InitStopped" );
-	//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_STOP_PULL );
+	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_STOP_PULL );
 	cr.EraseTimeEvents( CTE_FURNITURE_DRAGGING );
 	LogItemMovement( cr, item, "stops moving furniture (" + cr.HexX + ", " + cr.HexY + ")" ); 
 }
@@ -757,7 +757,7 @@ class FurnitureList
 			return true;
 		}
 
-		//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_START_PULL );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_START_PULL );
 		
 		furniture.SetScript( "_InitDragging" );
 		furniture.HolderCr = cr.Id;

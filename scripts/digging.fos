@@ -165,7 +165,7 @@ bool CheckRemainsRemoval( Critter& cr, Item@ targetItem )
 		uint16 pid = targetItem.GetProtoId();
 		if( Ashes.find( targetItem.GetProtoId() ) != -1 )
 		{
-			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_REMOVE_ASH );
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_REMOVE_ASH );
 			DeleteItem( targetItem );
 		}
 		else if( pid >= PID_BLOOD_BONES_1 && targetItem.GetProtoId() <= PID_BLOOD_BONES_3 )
@@ -173,7 +173,7 @@ bool CheckRemainsRemoval( Critter& cr, Item@ targetItem )
 			
 			cr.Animate( 0, ANIM2_PICKUP, null, false, true );
 			targetItem.Val0 += Random( 1, 3 );
-			//cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_REMOVE_SOME_REMAINS );
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_REMOVE_SOME_REMAINS );
 			
 			if( targetItem.Val0 > 10 )
 			{

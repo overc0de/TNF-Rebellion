@@ -903,7 +903,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 	//Blood wrapping
 	if( ( pid == PID_CRAFT_L_RAGS || pid == PID_BANDAGE || pid == PID_TOWEL || pid == PID_OLD_TOWEL ) && valid( targetItem ) && targetItem.GetProtoId() >= PID_BLOOD_SMALL_1 && targetItem.GetProtoId() <= PID_BLOOD_BIG_3 )
 	{
-		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_WIPE_BLOOD );
+		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_WIPE_BLOOD );
 		cr.Animate( 0, ANIM2_PICKUP, null, false, true );
 		targetItem.Val0 -= Random( 1, 3 );
 		if( pid == PID_TOWEL )
@@ -1157,7 +1157,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			
 			cr.MoveItem( openedBottle.Id, openedBottle.GetCount(), SLOT_HAND1 );
 			
-			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_OPENS_BOTTLE );
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_OPENS_BOTTLE );
 			
 			return true;
 		} 
@@ -1293,7 +1293,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 				UseDrugOn( cr, targetCr, item );
 			}
 			cr.Action( ACTION_USE_ITEM, 1, item );
-			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CONSUMED, "$proto@msg item " + ( pid * 100 ) + "@" );
+			//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CONSUMED, "$proto@msg item " + ( pid * 100 ) + "@" );
 		}
 		return true;
     }
@@ -1334,7 +1334,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 	if( pid == PID_ACTIVE_FLARE )
 	{
         _SubItem( item, 1 );
-		//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_FLARE_OFF );
+		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_FLARE_OFF );
 		PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN4.mp3", 4 );
         return true;
     }
@@ -1859,21 +1859,21 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 					switch( type )
 					{
 						case( ITEM_TYPE_ARMOR ):
-							//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_ARMOR );
+							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_ARMOR );
 							break;
 						case( ITEM_TYPE_DRINK ):
 						case( ITEM_TYPE_FOOD ):
 						case( ITEM_TYPE_CONTAINER ):
-							//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_CONTAINER, "$proto@msg item " +  ( targetItem.Proto.ProtoId * 100 ) + "@" );
+							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_CONTAINER, "$proto@msg item " +  ( targetItem.Proto.ProtoId * 100 ) + "@" );
 							break;
 						case( ITEM_TYPE_WEAPON ):
 							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_WEAPON );
 							break;
 						case( ITEM_TYPE_AMMO ):
-							//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_AMMO );
+							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_AMMO );
 							break;
 						default:
-							//cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_SMTH );
+							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_SMTH );
 							break;
 					}
 				}
@@ -1950,7 +1950,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 			{			
 				return false;
 			}
-			//cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_INSPECTS );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_INSPECTS );
 			cr.Action( ACTION_PICK_CRITTER, 0, null );
 			
 			ShowContainer( cr, targetCr, TRANSFER_CRIT_LOOT );
