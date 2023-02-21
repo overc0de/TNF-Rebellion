@@ -1258,7 +1258,9 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			else
 			{
 				cr.Action( ACTION_USE_ITEM, 2, item );
-				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CONSUMED, "$proto@msg item " + ( pid * 100 ) + "@" );
+				
+				uint saytype = item.GetType() == ITEM_TYPE_DRUG ? SAY_EMOTE : SAY_EMOTE_ON_HEAD;
+				cr.SayMsg( saytype, TEXTMSG_TEXT, STR_EMOTE_CONSUMED, "$proto@msg item " + ( pid * 100 ) + "@" );
 			
             	ProccessFood( cr, cr, item );
 
@@ -1867,7 +1869,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_CONTAINER, "$proto@msg item " +  ( targetItem.Proto.ProtoId * 100 ) + "@" );
 							break;
 						case( ITEM_TYPE_WEAPON ):
-							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_WEAPON );
+							cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_TAKE_WEAPON );
 							break;
 						case( ITEM_TYPE_AMMO ):
 							cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_TAKE_AMMO );
