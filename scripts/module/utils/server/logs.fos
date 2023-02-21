@@ -199,7 +199,7 @@ string SayLog( Map@ map, string@ message, int x = 0, int y = 0 )
 
 	string result = "";
 	
-	string@ map_name = !valid( map ) ? "Global" : GetMsgStr( 1, TEXTMSG_GM, ( map.GetProtoId() + 1 ) * 10 + 8 );
+	string@ map_name = !valid( map ) ? "Global" : GetMsgStr( 0, TEXTMSG_GM, ( map.GetProtoId() + 1 ) * 10 + 8 );
 	if( !valid( map_name ) )
 	{
 		@map_name = "[ Map #" + map.Id + " PID " + map.GetProtoId() + " ]";
