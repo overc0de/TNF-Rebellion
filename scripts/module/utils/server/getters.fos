@@ -554,7 +554,7 @@ shared string itemDesc( Item@ item )
 		return "[null]";
 	}
 	
-	return itemName( item ) + itemCount(item) + " " + item.GetProtoId() + "#" + item.Id;
+	return "[ " + itemName( item ) + " ] " + itemCount(item) + " " + item.GetProtoId() + "#" + item.Id;
 }
 
 shared string itemName( Item& item ) 
@@ -564,8 +564,8 @@ shared string itemName( Item& item )
 
 shared string itemName( uint pid, string@ lexems = null )
 {
-	string@ name = GetMsgStr( 1, TEXTMSG_ITEM, pid * 100 );
-	return valid( name ) ? "[ " + name + ( valid( lexems ) ? ", " + lexems : "" ) + " ]" : "";
+	string@ name = GetMsgStr( 0, TEXTMSG_ITEM, pid * 100 );
+	return valid( name ) ? name + ( valid( lexems ) ? ", " + lexems : "" ) : "";
 }
 
 shared string itemNameID( uint id ) 

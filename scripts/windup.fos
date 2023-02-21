@@ -245,27 +245,30 @@ void ChangeWindup( Critter& cr, bool ignore_bussy )
 		}
 	}
 	
-	SayLog( cr, crInfo( cr ) + " :" + action_name + ":" );
-
-	if( !ignore_bussy )
+	string desc;
+	if( valid( realWeapon ) )
 	{
-		if( valid( realWeapon ) )
+		if( realWeapon.ITEM_GM_LEXEM == PID_POPUP )
 		{
-			if( realWeapon.ITEM_GM_LEXEM == PID_POPUP )
-			{
-				string desc = getItemTextName( Item_GetLexems( realWeapon ) );
-				cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name, "$proto" + desc );
-			}
-			else
-			{
-				cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name, "$proto@msg item " +  ( weapon.ProtoId * 100 ) + "@" );
-			}
+			desc = getItemTextName( Item_GetLexems( realWeapon ) );
 		}
 		else
 		{
-			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name );
+			if( realWeapon.ITEM_GM_LEXEM == 0 )
+				desc = itemName( weapon.ProtoId, null );
+			else
+				desc = itemName( realWeapon.ITEM_GM_LEXEM, null );
 		}
+
+		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name, "$proto" + desc );
 	}
+	else
+	{
+		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, action_name );
+	}
+
+	string action = replaceText( GetTextMsgStr( action_name ), "@lex proto@", "[ " + desc + " ]" );
+	SayLog( cr, crInfo( cr ) + " " + action );
 }
 
 uint e_gunWindupVFX( uint[]@ values )
