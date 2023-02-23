@@ -1998,6 +1998,42 @@ void PlayMapMusic( Map& map, string@ path )
 	}
 }
 
+//~run gm TestMapMusic 0 0 0
+void TestMapMusic( Critter& cr, int, int, int )
+{
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "FonlineMusic" );
+	for( uint i = 0, l = FonlineMusic.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/music/" + FonlineMusic[i], null );
+
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "ActionMusic" );
+	for( uint i = 0, l = ActionMusic.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/music/" + ActionMusic[i], null );
+
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "SuspenceMusic" );
+	for( uint i = 0, l = SuspenceMusic.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/music/" + SuspenceMusic[i], null );
+
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "NNMplaylist" );
+	for( uint i = 0, l = NNMplaylist.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/music/" + NNMplaylist[i], null );
+
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "OtherMusic" );
+	for( uint i = 0, l = OtherMusic.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/music/" + OtherMusic[i], null );
+
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "CringeMusic" );
+	for( uint i = 0, l = CringeMusic.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/music/" + CringeMusic[i], null );
+
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "GMSFX" );
+	for( uint i = 0, l = GMSFX.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/sfx/" + GMSFX[i], null );
+
+	cr.Say( SAY_NETMSG, "|0xFFFFFF      " + "JukeboxMusic" );
+	for( uint i = 0, l = JukeboxMusic.length(); i < l; i++ )
+		cr.RunClientScript( "fofmod@__testMusic", 0, 0, 0, "sound/music/" + JukeboxMusic[i], null );
+}
+
 class MenuGMTime: CenteredMenuHandler
 {
     uint map_id;
