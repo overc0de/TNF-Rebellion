@@ -188,10 +188,8 @@ void Init3DListenerDefault()
 
 void TouchArchive()
 {
-	FMOD_TouchArchive("./data/patch005_NNM_music.zip");
-	FMOD_TouchArchive("./data/patch007_music.zip");
-	FMOD_TouchArchive("./data/patch017_music2.zip");
-	FMOD_TouchArchive("./data/patch057_SFX.zip");
+	FMOD_TouchArchive("./data/MUSIC.zip");
+	FMOD_TouchArchive("./data/SFX.zip");
 }
 
 bool FOFMOD_Initialize()
@@ -702,8 +700,10 @@ void __PlayJukeboxTune( int soundId, int hexX, int hexY, string@ path, int[]@ pa
 	FMODChannel@ sound = FMOD_PlayMusic( path, true );
 	if( !valid( sound ) )
 	{
+		Message( "|0xFFFF00 " + path + "|0x00FF00 " + " not found!" );//DEBUG
 		return;
 	}
+	
 	float ox = 0.0f, oy = 0.0f;
 	CoordinatesHexToGrid( hexX, hexY, ox, oy );
 	float maxDist = param4[0];
@@ -716,15 +716,25 @@ void __PlayJukeboxTune( int soundId, int hexX, int hexY, string@ path, int[]@ pa
 	PlayingSoundCount++;
 }
 
-// Map-wide sound init
-void __PlayMapMusic( int soundId, int timeStamp, int param2, string@ path, int[]@ param4 )
+void __testMusic( int soundId, int timeStamp, int param2, string@ path, int[]@ param4 )
 {
-
-	//Log("Playing from remote sound id " + soundId + " " + path );
 	FMODChannel@ sound = FMOD_PlayMusic( path, true );
 
 	if( !valid( sound ) )
 	{
+		Message( "|0xFFFF00 " + path + "|0x00FF00 " + " not found!" );//DEBUG
+		return;
+	}
+}
+
+// Map-wide sound init
+void __PlayMapMusic( int soundId, int timeStamp, int param2, string@ path, int[]@ param4 )
+{
+	FMODChannel@ sound = FMOD_PlayMusic( path, true );
+
+	if( !valid( sound ) )
+	{
+		Message( "|0xFFFF00 " + path + "|0x00FF00 " + " not found!" );//DEBUG
 		return;
 	}
 	
