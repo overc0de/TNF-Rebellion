@@ -2,7 +2,7 @@
 
 string[] FonlineMusic = {
 	"01hub.mp3",
-	"02Flame_of_the_Ancient_World.ogg",
+	"02Flame_of_the_Ancient_World.mp3",
 	"03wrldmp.mp3",
 	"04Metallic Monks.mp3",
 	"05raider.mp3",
@@ -178,7 +178,6 @@ string[] CringeMusic = {
 
 string[] GMSFX = {
 	"vet_1.ogg",
-	"vet_1.ogg",
 	"wind1.mp3",
 	"wind2.mp3",
 	"Fail.ogg",
@@ -194,8 +193,7 @@ string[] GMSFX = {
 	"BELLTOL1.mp3",
 	"BELLTOLL.mp3",
 	"SHOTS.mp3",
-	"SHOTS1.mp3",
-	"sndSrn.ogg"
+	"SHOTS1.mp3"
 };
 
 string[] JukeboxMusic = {
