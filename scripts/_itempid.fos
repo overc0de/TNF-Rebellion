@@ -2997,6 +2997,7 @@
 #define PID_CR_STAND                                ( 841 )                         // Дикарская подставка, == 4505, 4506, 4507, 4508
 #define PID_CR_STAKE                                ( 843 )                         // Кол, == 3224, 3225, 3226, 3227
 #define PID_CR_CART                                 ( 845 )                         // Тачка, == 2368
+#define PID_MAILBOX									( 23716 )						// Mailbox, == 2257
 #define PID_BARREL_GENERIC							( 1617 )						// Barrel 1
 #define PID_BARREL_2								( 1618 )						// Barrel 2
 #define PID_BARREL_3								( 1619 )						// Barrel 3

@@ -1392,6 +1392,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 	{
         return true;
 	}
+	
 	//Showel on self to make a bed in GM mode
     if( pid == PID_SHOVEL && useOnSelf )
 	{
@@ -1401,8 +1402,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 	// Item use on locker
     if( valid( targetItem ) && ( targetItem.GetType() == ITEM_TYPE_DOOR || targetItem.GetType() == ITEM_TYPE_CONTAINER ) )
 	{
-		UseItemOnLocker( cr, targetItem, item );
-        return true;
+        return UseItemOnLocker( cr, targetItem, item );;
 	}
 
     // Take process to engine
@@ -3685,6 +3685,7 @@ void unsafe_set_aim( Critter& cr, int aim, int, int, string@, int[]@ )
    cr.ParamBase[CR_AUTO_AIM] = aim;
 }
 
+//import bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container ) from "main";
 bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container )
 {
 	if( !valid( item ) || !valid( container ) )
@@ -3696,6 +3697,11 @@ bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container )
 	uint pid = item.GetProtoId();
 	uint type = item.GetType();
 	uint subtype = item.Proto.Item_Subtype;
+	
+	if( container_pid == pid )
+	{
+		return false;
+	}
 	
 	if( container_pid == PID_AMMO_PACK )
 	{
@@ -3714,13 +3720,17 @@ bool canPutItemInContainer( Critter& cr, Item@ item, Item@ container )
 	{
 		PID_HOLODISK, PID_MORNING_STAR_MINE, PID_KOKOWEEF_MINE_SCRIP, PID_GOLDEN_COIN, PID_GOLDEN_JEWELRY, PID_BLUE_PASS_KEY, PID_DOG_TAGS,
 		PID_BOTTLE_CAPS, PID_REAL_BOTTLE_CAPS, PID_TANKER_PASS, PID_TALISMAN, PID_DOLLAR_100, PID_DOLLAR_20, PID_DOLLAR_5, PID_RPSTUFF2, PID_RPSTUFF4, PID_PICTURE,
-		PID_PREWAR_DOLLAR_100, PID_PREWAR_DOLLAR_20, PID_PREWAR_DOLLAR_5, PID_PREWAR_DOLLAR_1
+		PID_PREWAR_DOLLAR_100, PID_PREWAR_DOLLAR_20, PID_PREWAR_DOLLAR_5, PID_PREWAR_DOLLAR_1, 
+		PID_RUIN_MAP, PID_RAIDERS_MAP, PID_RANGER_MAP, PID_MAP, PID_PACKAGE_CHEK,
+		
+		PID_HANDWRITINGS, PID_WALLET, PID_CRAFT_RECIPES, PID_PASSPORT, PID_LETTER, PID_POSTMAN_LETTER, PID_PAPERS_JAMMED,
+		PID_ELRON_FIELD_REP, PID_CLIPBOARD, PID_FLIST08, PID_FLIST09, PID_StrpBlt, PID_mgzn01
 	};
 	
 	uint[] paper_container_pids =
 	{
 		PID_HANDWRITINGS, PID_WALLET, PID_CRAFT_RECIPES, PID_PASSPORT, PID_LETTER, PID_POSTMAN_LETTER, PID_PAPERS_JAMMED,
-		PID_ELRON_FIELD_REP, PID_CLIPBOARD, PID_FLIST08, PID_FLIST09, PID_StrpBlt, PID_mgzn01
+		PID_ELRON_FIELD_REP, PID_CLIPBOARD, PID_FLIST08, PID_FLIST09, PID_StrpBlt, PID_mgzn01, PID_MAILBOX
 	};
 	
 	if( ( proper_paper_containment_pids.find( pid ) == -1 && type != ITEM_TYPE_KEY ) && paper_container_pids.find( container_pid ) != -1 )
