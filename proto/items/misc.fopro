@@ -13388,7 +13388,7 @@ StartValue_0=5
 
 [Proto] # PID_RUIN_MAP
 ProtoId=21005
-Type=23
+Type=5
 PicMap=art\items\map1.FRM
 PicInv=art\inven\ranger2.frm
 Flags=402653214
