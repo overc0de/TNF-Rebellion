@@ -63,6 +63,12 @@
 {196}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {198}{}{Ферма}
 
+# Area 5, Map 19
+{200}{}{sandbox1_5dn}
+{205}{}{58Tales_of_the_Past.ogg}
+{206}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{208}{}{Подвал фермы}
+
 # Area 6, Map 20
 {210}{}{sandbox2_1}
 {215}{}{55NNM_wind_of_war.ogg}
@@ -107,6 +113,30 @@
 {265}{}{55NNM_wind_of_war.ogg}
 {266}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
 {268}{}{Перфекшен}
+
+# Area 8, Map 26
+{270}{}{sandbox2_3dn2}
+{275}{}{58Tales_of_the_Past.ogg}
+{276}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{278}{}{Дальняя шахта}
+
+# Area 8, Map 27
+{280}{}{sandbox2_3dn3}
+{285}{}{58Tales_of_the_Past.ogg}
+{286}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{288}{}{Подпол Перфекшена}
+
+# Area 8, Map 28
+{290}{}{sandbox2_3dn4}
+{295}{}{58Tales_of_the_Past.ogg}
+{296}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{298}{}{Подвал бара}
+
+# Area 8, Map 29
+{300}{}{sandbox2_3dn5}
+{305}{}{04Metallic Monks.ogg}
+{306}{}{bangpip1:5, bangpipe:5, clang:5, clang1:5, clank:5, clank1:5, coolant:5, fixstill:5, jupiter:5, mechpum1:5, mechpum:5, neptune:5, steam:5, steam1:5, water:5, water1:5}
+{308}{}{Кузница Мира}
 
 # Area 9, Map 30
 {310}{}{sandbox2_4}
@@ -259,15 +289,15 @@
 {698}{}{Химзавод}
 
 # Area 27, Map 69
-{700}{}{sandbox_bos}
+{700}{}{sandbox_church}
 {705}{}{07desert.ogg}
 {706}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {708}{}{Могильник}
 
 # Area 27, Map 70
-{710}{}{sandbox_bos_dn1}
+{710}{}{sandbox_church_dn1}
 {715}{}{29mark-morgan-curst.ogg}
-{716}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
+{716}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5, fixstill:5, jupiter:5, mechpum1:5, mechpum:5, neptune:5,}
 {718}{}{Погреб}
 
 # Area 27, Map 71

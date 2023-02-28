@@ -105,8 +105,6 @@
 #define MAP_perfection_ext4			( 68 )
 #define MAP_snd_bos					( 69 )
 #define MAP_snd_bos_dn1				( 70 )
-#define MAP_snd_bos_dn2				( 71 )
-#define MAP_snd_bos_dn3				( 72 )
 #define MAP_snd0_2					( 73 )
 #define MAP_snd0_2dn				( 74 )
 #define MAP_snd0_5					( 77 )

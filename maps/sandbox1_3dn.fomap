@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              300
 MaxHexY              300
-WorkHexX             107
-WorkHexY             174
+WorkHexX             112
+WorkHexY             176
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -29290,7 +29290,7 @@ MapX                 124
 MapY                 169
 AnimStayBegin        1
 AnimStayEnd          1
-Item_Val1            7
+Item_Val1            22
 Item_Val2            1
 
 MapObjType           2
