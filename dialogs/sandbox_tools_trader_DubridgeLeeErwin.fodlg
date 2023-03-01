@@ -26,8 +26,7 @@ lang=engl russ
 65506 7030 #
 13 7040 D _var n loyality = 6 #
 15 7050 #
-17 7060 #
-0 7070 @
+0 7060 @
 10 8000 None 1 #
 9 8010 D _script dialog@you_are_human 0  #
 0 8020 @
@@ -81,9 +80,7 @@ lang=engl russ
 16 12010 #
 9 12020 @
 16 13000 None 0 #
-9 13010 @
-17 14000 None 0 #
-9 14010 &
+9 13010 &
 
 [engl]
 {100}{}{Dubree Li Erwin}
@@ -107,8 +104,7 @@ lang=engl russ
 {7030}{}{Let's trade.}
 {7040}{}{I am about your job...}
 {7050}{}{You are talking in a very weird way... What is this language?}
-{7060}{}{What do you think of Riverdale? A town north of here.}
-{7070}{}{I will be going now.}
+{7060}{}{I will be going now.}
 {8000}{}{[ Flips his tools. ] Name's Dubree. And I ain't doing fixes, so don't even ask me about it.}
 {8010}{}{Alright, one more thing to ask...}
 {8020}{}{Was nice to meet ya. I will be going now.}
@@ -163,8 +159,6 @@ lang=engl russ
 {12020}{}{Right, bettwe for us to switch the topic.}
 {13000}{}{Because European Confederation got bombed out long before the U.S... Eastern Commonwealth launched the rockets, EC answered with their biological weapons... I am sure you can't even understand the half of what I am saying, so whatever.}
 {13010}{}{Alright, let me ask you something else.}
-{14000}{}{I think this is a town of scums. They nealy killed one of ours for nothing. I ain't going there and you shouldn't either.}
-{14010}{}{Got it. Now let's switch the topic.}
 
 [russ]
 {100}{}{Дюбридж Ли Эрвин}
@@ -195,9 +189,8 @@ lang=engl russ
 {7020}{}{[Спросить про работу]}
 {7030}{}{[Предложить бартер]}
 {7040}{}{Я по делу...}
-{7050}{}{You are talking in a very weird way... What is this language?}
-{7060}{}{What do you think of Riverdale? A town north of here.}
-{7070}{}{I will be going now.}
+{7050}{}{Знаешь, у тебя очень странный акцент. Откуда ты?}
+{7060}{}{Я, пожалуй, пойду.}
 {8000}{}{[Разрезая проволоку пасатижами на куски, гуль представился вам.]
 
  - Меня зовут Дюбридж Ли Эрвин, и нет я не занимаюсь ремонтом.}
@@ -214,7 +207,7 @@ lang=engl russ
  - Давай посмотрим что у тебя есть.}
 {10010}{}{Я передума@sex@|л||ла|, хочу еще кое о чем спросить тебя.}
 {10020}{}{[Глянуть прайслист]}
-{10030}{}{Инструменты (1 шт.) за 141 монету.}
+{10030}{}{Инструменты (1 шт.) за 30 монет.}
 {10040}{}{Суперремнабор (1 шт.) за 674 монеты.}
 {10050}{}{Техническое масло (1 шт.) за 150 монет.}
 {10060}{}{Отмычки (1 шт.) за 468 монет.}
@@ -255,11 +248,9 @@ lang=engl russ
 {11170}{}{Кирка (1 шт.) за 114 монет.}
 {11180}{}{Кувалда (1 шт.) за 50 монет.}
 {11190}{}{Я кароче пойду, ага, пока.}
-{12000}{}{Well, let's say, mon cher, that before the war I used to live in some far-far lands called the European Confederation. The name won't tell you anything anyway...}
-{12010}{}{Why coming here from far-far away then?}
-{12020}{}{Right, bettwe for us to switch the topic.}
-{13000}{}{Because European Confederation got bombed out long before the U.S... Eastern Commonwealth launched the rockets, EC answered with their biological weapons... I am sure you can't even understand the half of what I am saying, so whatever.}
-{13010}{}{Alright, let me ask you something else.}
-{14000}{}{I think this is a town of scums. They nealy killed one of ours for nothing. I ain't going there and you shouldn't either.}
-{14010}{}{Got it. Now let's switch the topic.}
+{12000}{}{Ну, mon cher, что до войны я жил далеко-далеко отсюда, в так называемой Европейской Конфедерации. Название города тебе все равно ничего не скажет...}
+{12010}{}{А что заставило тебя сюда придти? Путь-то неблизкий.}
+{12020}{}{Ладно, давай сменим тему.}
+{13000}{}{Да потому что Европейскую Конфедерацию начали бомбить задолго до того, как США... Союз стран ближнего востока запустил в нас ракеты, Конфедерация ответила им биологическим оружием... Я уверен, что ты даже и половины не понимаешь из того, что я говорю, так что неважно.}
+{13010}{}{Ладно, давай спрошу что-то ещё.}
 

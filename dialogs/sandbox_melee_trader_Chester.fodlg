@@ -23,8 +23,7 @@ lang=engl russ
 12 6020 #
 65506 6030 #
 13 6040 D _var n loyality = 6 #
-0 6050 #
-15 6060 @
+0 6050 @
 10 7000 None 1 #
 11 7010 #
 9 7020 #
@@ -57,9 +56,7 @@ lang=engl russ
 14 11070 #
 14 11080 #
 14 11090 #
-0 11100 @
-15 12000 None 0 #
-2 12010 &
+0 11100 &
 
 [engl]
 {100}{}{none}
@@ -81,7 +78,6 @@ lang=engl russ
 {6030}{}{Let me see your stock.}
 {6040}{}{I have some stuff to sell. Mind taking a look?}
 {6050}{}{I will be going now. See you later.}
-{6060}{}{What do you think of the town?}
 {7000}{}{[ Starts spinning a knife in his other hand ] Name's Chester. Chester Wild. A blacksmith, a fighter, a trader and just a guy who prefers smashing faces of fuckers with melee type of weapons.}
 {7010}{}{So what do you do around here?}
 {7020}{}{Very well, let's switch the topic.}
@@ -115,8 +111,6 @@ lang=engl russ
 {11080}{}{Forged spear for 45 coins.}
 {11090}{}{Sickle for 50 coins.}
 {11100}{}{Great, I will keep it in mind. Bye,}
-{12000}{}{Riverdale? Oh it's a fine city with less fine people around. [He chuckles] I hope that the new mayor here will be able to fix the Goldstein's shit.}
-{12010}{}{Right, let us switch the topic.}
 
 [russ]
 {100}{}{Честер}
@@ -144,7 +138,6 @@ lang=engl russ
 {6030}{}{[Предложить бартер]}
 {6040}{}{Я по делу...}
 {6050}{}{[Молча уйти]}
-{6060}{}{What do you think of the town?}
 {7000}{}{[Не обращая на вас внимания, занимаясь работой.]
 
  - Меня зовут Честер, я кую оружие.}
@@ -173,8 +166,8 @@ lang=engl russ
 {10060}{}{Электрокнут (1 шт.) за 770 монет.}
 {10070}{}{Примитивное мачете (1 шт.) за 12 монет.}
 {10080}{}{[Похоже у торговца закончились деньги. Стоит заглянуть в другой раз.]}
-{10090}{}{Forged spear for 45 coins.}
-{10100}{}{Sickle for 50 coins.}
+{10090}{}{Кованное копьё (1 шт.) за 45 монет.}
+{10100}{}{Серп(1 шт.) за 50 монет.}
 {11000}{}{[Торговец демонстрирует вам доску с расчерченной таблицей товаров и цен.]
 
  - Ну смотри, выбирай.}
@@ -185,9 +178,7 @@ lang=engl russ
 {11050}{}{Боевой нож (1 шт.) за 61 монету.}
 {11060}{}{Электрокнут (1 шт.) за 880 монет.}
 {11070}{}{Примитивное мачете (1 шт.) за 12 монет.}
-{11080}{}{Forged spear for 45 coins.}
-{11090}{}{Sickle for 50 coins.}
-{11100}{}{Great, I will keep it in mind. Bye,}
-{12000}{}{Riverdale? Oh it's a fine city with less fine people around. [He chuckles] I hope that the new mayor here will be able to fix the Goldstein's shit.}
-{12010}{}{Right, let us switch the topic.}
+{11080}{}{Кованное копьё (1 шт.) за 45 монет.}
+{11090}{}{Серп(1 шт.) за 50 монет.}
+{11100}{}{Круто, буду держать в уме. Пока.}
 
