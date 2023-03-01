@@ -788,6 +788,8 @@
 {15111}{}{This creature has neither eyes nor fingers. Vile long boneless tentacles come out of the body.}
 {15120}{}{Large Wanamingo}
 {15121}{}{A big and scary eyeless creature with long, nasty tentacles.}
+{15130}{}{Terrifying Wanamingo}
+{15131}{}{A big and scary eyeless creature with long, nasty tentacles.}
 
 #MOTERALIENS
 {15400}{}{Wanamingo Matriach}
