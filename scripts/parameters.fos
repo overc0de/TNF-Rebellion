@@ -163,7 +163,8 @@
 					
 					cr.StatBase[ ST_LEVEL ]++;
 
-					cr.StatBase[ ST_UNSPENT_SKILL_POINTS ] += 5 + cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ] + ( cr.Trait[ TRAIT_SKILLED ] > 0 ? cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ] / 2 : 0 ); // Skill points
+					cr.StatBase[ ST_UNSPENT_SKILL_POINTS ] += 5 + cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ]; // Skill points
+//					cr.StatBase[ ST_UNSPENT_SKILL_POINTS ] += 5 + cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ] + ( cr.Trait[ TRAIT_SKILLED ] > 0 ? cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ] / 2 : 0 ); // Skill points calc with SKILLED
 				}
 				else
 				{
