@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             139
-WorkHexY             145
+WorkHexX             178
+WorkHexY             161
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -12,7 +12,7 @@ DayTime              300  600  1200 1440
 DayColor0            18  18  53 
 DayColor1            129 119 110
 DayColor2            128 104 86 
-DayColor3            6   6   29
+DayColor3            6   6   29 
 
 [Tiles]
 roof       126  20             art\tiles\enfl047.frm
@@ -1875,7 +1875,7 @@ tile       148  104            art\tiles\edg5002.frm
 tile       150  104            art\tiles\edg5007.frm
 tile       152  104            art\tiles\edg5007.frm
 tile       154  104            art\tiles\edg5002.frm
-tile       156  104            art\tiles\gar2000.frm
+tile       156  104            art\tiles\edg5007.frm
 tile       158  104            art\tiles\edg5002.frm
 tile       160  104            art\tiles\edg5002.frm
 tile       162  104            art\tiles\edg5005.frm
@@ -1962,27 +1962,27 @@ tile       120  106            art\tiles\edg2003.frm
 tile       122  106            art\tiles\edg6008.frm
 tile       124  106            art\tiles\edg5004.frm
 tile       126  106            art\tiles\edg5001.frm
-tile       128  106            art\tiles\gar2000.frm
-tile       130  106            art\tiles\gar2000.frm
-tile       132  106            art\tiles\gar2000.frm
-tile       134  106            art\tiles\gar2000.frm
-tile       136  106            art\tiles\gar2000.frm
-tile       138  106            art\tiles\gar2000.frm
-tile       140  106            art\tiles\gar2000.frm
-tile       142  106            art\tiles\gar2000.frm
-tile       144  106            art\tiles\gar2000.frm
-tile       146  106            art\tiles\gar2000.frm
-tile       148  106            art\tiles\gar2000.frm
-tile       150  106            art\tiles\edg5002.frm
-tile       152  106            art\tiles\gar2000.frm
-tile       154  106            art\tiles\gar2000.frm
-tile       156  106            art\tiles\gar2002.frm
-tile       158  106            art\tiles\gar2000.frm
-tile       160  106            art\tiles\gar2000.frm
-tile       162  106            art\tiles\gar2000.frm
-tile       164  106            art\tiles\gar2000.frm
-tile       166  106            art\tiles\gar2000.frm
-tile       168  106            art\tiles\gar2000.frm
+tile       128  106            art\tiles\edg5002.frm
+tile       130  106            art\tiles\edg5007.frm
+tile       132  106            art\tiles\edg5002.frm
+tile       134  106            art\tiles\edg5007.frm
+tile       136  106            art\tiles\edg5003.frm
+tile       138  106            art\tiles\edg5003.frm
+tile       140  106            art\tiles\edg5002.frm
+tile       142  106            art\tiles\edg5005.frm
+tile       144  106            art\tiles\edg5006.frm
+tile       146  106            art\tiles\edg5002.frm
+tile       148  106            art\tiles\edg5004.frm
+tile       150  106            art\tiles\edg5000.frm
+tile       152  106            art\tiles\edg5004.frm
+tile       154  106            art\tiles\edg5004.frm
+tile       156  106            art\tiles\edg5000.frm
+tile       158  106            art\tiles\edg5004.frm
+tile       160  106            art\tiles\edg5000.frm
+tile       162  106            art\tiles\edg5002.frm
+tile       164  106            art\tiles\edg5000.frm
+tile       166  106            art\tiles\edg5000.frm
+tile       168  106            art\tiles\edg5000.frm
 tile       170  106            art\tiles\edg5002.frm
 tile       172  106            art\tiles\edg5007.frm
 tile       174  106            art\tiles\edg5000.frm
@@ -2065,30 +2065,30 @@ tile       118  108            art\tiles\edg5006.frm
 tile       120  108            art\tiles\edg5001.frm
 tile       122  108            art\tiles\edg5005.frm
 tile       124  108            art\tiles\edg5002.frm
-tile       126  108            art\tiles\gar2000.frm
-tile       128  108            art\tiles\gar2001.frm
-tile       130  108            art\tiles\gar2003.frm
-tile       132  108            art\tiles\gar2001.frm
-tile       134  108            art\tiles\gar2003.frm
-tile       136  108            art\tiles\gar2001.frm
-tile       138  108            art\tiles\gar2003.frm
-tile       140  108            art\tiles\gar2002.frm
-tile       142  108            art\tiles\gar2003.frm
-tile       144  108            art\tiles\gar2002.frm
-tile       146  108            art\tiles\gar2001.frm
-tile       148  108            art\tiles\gar2001.frm
-tile       150  108            art\tiles\gar2000.frm
-tile       152  108            art\tiles\gar2003.frm
-tile       154  108            art\tiles\gar2001.frm
-tile       156  108            art\tiles\gar2002.frm
-tile       158  108            art\tiles\gar2003.frm
-tile       160  108            art\tiles\gar2001.frm
-tile       162  108            art\tiles\gar2002.frm
-tile       164  108            art\tiles\gar2003.frm
-tile       166  108            art\tiles\gar2001.frm
-tile       168  108            art\tiles\gar2002.frm
-tile       170  108            art\tiles\gar2000.frm
-tile       172  108            art\tiles\edg5002.frm
+tile       126  108            art\tiles\edg5008.frm
+tile       128  108            art\tiles\edg5000.frm
+tile       130  108            art\tiles\edg5002.frm
+tile       132  108            art\tiles\edg5007.frm
+tile       134  108            art\tiles\edg5003.frm
+tile       136  108            art\tiles\edg5003.frm
+tile       138  108            art\tiles\edg5002.frm
+tile       140  108            art\tiles\edg5005.frm
+tile       142  108            art\tiles\edg5006.frm
+tile       144  108            art\tiles\edg5002.frm
+tile       146  108            art\tiles\edg5004.frm
+tile       148  108            art\tiles\edg5005.frm
+tile       150  108            art\tiles\edg5002.frm
+tile       152  108            art\tiles\edg5007.frm
+tile       154  108            art\tiles\edg5007.frm
+tile       156  108            art\tiles\edg5002.frm
+tile       158  108            art\tiles\edg5007.frm
+tile       160  108            art\tiles\edg5003.frm
+tile       162  108            art\tiles\edg5003.frm
+tile       164  108            art\tiles\edg5002.frm
+tile       166  108            art\tiles\edg5005.frm
+tile       168  108            art\tiles\edg5006.frm
+tile       170  108            art\tiles\edg5002.frm
+tile       172  108            art\tiles\edg5007.frm
 tile       174  108            art\tiles\edg5004.frm
 tile       176  108            art\tiles\edg5000.frm
 tile       178  108            art\tiles\edg5002.frm
@@ -2169,32 +2169,32 @@ tile       116  110            art\tiles\edg5007.frm
 tile       118  110            art\tiles\edg5008.frm
 tile       120  110            art\tiles\edg5001.frm
 tile       122  110            art\tiles\edg5006.frm
-tile       124  110            art\tiles\gar2000.frm
-tile       126  110            art\tiles\gar2003.frm
-tile       128  110            art\tiles\gar2001.frm
-tile       130  110            art\tiles\gar2003.frm
-tile       132  110            art\tiles\gar2001.frm
-tile       134  110            art\tiles\gar2003.frm
-tile       136  110            art\tiles\gar2001.frm
-tile       138  110            art\tiles\gar2003.frm
-tile       140  110            art\tiles\gar2003.frm
-tile       142  110            art\tiles\gar2003.frm
-tile       144  110            art\tiles\gar2002.frm
-tile       146  110            art\tiles\gar2001.frm
-tile       148  110            art\tiles\gar2001.frm
-tile       150  110            art\tiles\gar2002.frm
-tile       152  110            art\tiles\gar2003.frm
-tile       154  110            art\tiles\gar2001.frm
-tile       156  110            art\tiles\gar2002.frm
-tile       158  110            art\tiles\gar2003.frm
-tile       160  110            art\tiles\gar2001.frm
-tile       162  110            art\tiles\gar2002.frm
-tile       164  110            art\tiles\gar2003.frm
-tile       166  110            art\tiles\gar2001.frm
-tile       168  110            art\tiles\gar2002.frm
-tile       170  110            art\tiles\gar2003.frm
-tile       172  110            art\tiles\edg5002.frm
-tile       174  110            art\tiles\edg5007.frm
+tile       124  110            art\tiles\edg5001.frm
+tile       126  110            art\tiles\edg5000.frm
+tile       128  110            art\tiles\edg5000.frm
+tile       130  110            art\tiles\edg5000.frm
+tile       132  110            art\tiles\edg5004.frm
+tile       134  110            art\tiles\edg5000.frm
+tile       136  110            art\tiles\edg5002.frm
+tile       138  110            art\tiles\edg5000.frm
+tile       140  110            art\tiles\edg5000.frm
+tile       142  110            art\tiles\edg5000.frm
+tile       144  110            art\tiles\edg5003.frm
+tile       146  110            art\tiles\edg5000.frm
+tile       148  110            art\tiles\edg5002.frm
+tile       150  110            art\tiles\edg5004.frm
+tile       152  110            art\tiles\edg5000.frm
+tile       154  110            art\tiles\edg5002.frm
+tile       156  110            art\tiles\edg5000.frm
+tile       158  110            art\tiles\edg5000.frm
+tile       160  110            art\tiles\edg5000.frm
+tile       162  110            art\tiles\edg5003.frm
+tile       164  110            art\tiles\edg5000.frm
+tile       166  110            art\tiles\edg5001.frm
+tile       168  110            art\tiles\edg5000.frm
+tile       170  110            art\tiles\edg5006.frm
+tile       172  110            art\tiles\edg5001.frm
+tile       174  110            art\tiles\edg5005.frm
 tile       176  110            art\tiles\edg5002.frm
 tile       178  110            art\tiles\edg5000.frm
 tile       180  110            art\tiles\edg5004.frm
@@ -2276,34 +2276,34 @@ tile       116  112            art\tiles\edg2001.frm
 tile       118  112            art\tiles\edg6000.frm
 tile       120  112            art\tiles\edg5000.frm
 tile       122  112            art\tiles\edg5008.frm
-tile       124  112            art\tiles\gar2001.frm
-tile       126  112            art\tiles\gar2003.frm
-tile       128  112            art\tiles\gar2001.frm
-tile       130  112            art\tiles\gar2003.frm
-tile       132  112            art\tiles\gar2001.frm
-tile       134  112            art\tiles\gar2003.frm
-tile       136  112            art\tiles\gar2001.frm
-tile       138  112            art\tiles\gar2003.frm
-tile       140  112            art\tiles\gar2002.frm
-tile       142  112            art\tiles\gar2003.frm
-tile       144  112            art\tiles\gar2002.frm
-tile       146  112            art\tiles\gar2001.frm
-tile       148  112            art\tiles\gar2001.frm
-tile       150  112            art\tiles\gar2002.frm
-tile       152  112            art\tiles\gar2003.frm
-tile       154  112            art\tiles\gar2001.frm
-tile       156  112            art\tiles\gar2002.frm
-tile       158  112            art\tiles\gar2002.frm
-tile       160  112            art\tiles\gar2001.frm
-tile       162  112            art\tiles\gar2002.frm
-tile       164  112            art\tiles\gar2003.frm
-tile       166  112            art\tiles\gar2001.frm
-tile       168  112            art\tiles\gar2002.frm
-tile       170  112            art\tiles\gar2003.frm
-tile       172  112            art\tiles\gar2000.frm
-tile       174  112            art\tiles\edg5000.frm
-tile       176  112            art\tiles\edg5004.frm
-tile       178  112            art\tiles\gar2000.frm
+tile       124  112            art\tiles\edg5000.frm
+tile       126  112            art\tiles\edg5002.frm
+tile       128  112            art\tiles\edg5007.frm
+tile       130  112            art\tiles\edg5002.frm
+tile       132  112            art\tiles\edg5007.frm
+tile       134  112            art\tiles\edg5003.frm
+tile       136  112            art\tiles\edg5003.frm
+tile       138  112            art\tiles\edg5002.frm
+tile       140  112            art\tiles\edg5005.frm
+tile       142  112            art\tiles\edg5006.frm
+tile       144  112            art\tiles\edg5002.frm
+tile       146  112            art\tiles\edg5004.frm
+tile       148  112            art\tiles\edg5005.frm
+tile       150  112            art\tiles\edg5007.frm
+tile       152  112            art\tiles\edg5003.frm
+tile       154  112            art\tiles\edg5003.frm
+tile       156  112            art\tiles\edg5002.frm
+tile       158  112            art\tiles\edg5005.frm
+tile       160  112            art\tiles\edg5000.frm
+tile       162  112            art\tiles\edg5007.frm
+tile       164  112            art\tiles\edg5000.frm
+tile       166  112            art\tiles\edg5004.frm
+tile       168  112            art\tiles\edg5000.frm
+tile       170  112            art\tiles\edg6003.frm
+tile       172  112            art\tiles\edg2002.frm
+tile       174  112            art\tiles\edg2002.frm
+tile       176  112            art\tiles\edg6001.frm
+tile       178  112            art\tiles\edg5002.frm
 tile       180  112            art\tiles\edg5002.frm
 tile       182  112            art\tiles\edg5007.frm
 tile       184  112            art\tiles\edg5000.frm
@@ -2385,37 +2385,36 @@ tile       114  114            art\tiles\edg5004.frm
 tile       116  114            art\tiles\edg4002.frm
 tile       118  114            art\tiles\edg6000.frm
 tile       120  114            art\tiles\edg5003.frm
-tile       122  114            art\tiles\gar2000.frm
-tile       122  114            art\tiles\gar2000.frm
-tile       124  114            art\tiles\gar2001.frm
-tile       126  114            art\tiles\gar2003.frm
-tile       128  114            art\tiles\gar2001.frm
-tile       130  114            art\tiles\gar2003.frm
-tile       132  114            art\tiles\gar2001.frm
-tile       134  114            art\tiles\gar2003.frm
-tile       136  114            art\tiles\gar2001.frm
-tile       138  114            art\tiles\gar2003.frm
-tile       140  114            art\tiles\gar2003.frm
-tile       142  114            art\tiles\gar2003.frm
-tile       144  114            art\tiles\gar2003.frm
-tile       146  114            art\tiles\gar2001.frm
-tile       148  114            art\tiles\gar2001.frm
-tile       150  114            art\tiles\gar2002.frm
-tile       152  114            art\tiles\gar2003.frm
-tile       154  114            art\tiles\gar2001.frm
-tile       156  114            art\tiles\gar2002.frm
-tile       158  114            art\tiles\gar2003.frm
-tile       160  114            art\tiles\gar2001.frm
-tile       162  114            art\tiles\gar2002.frm
-tile       164  114            art\tiles\gar2003.frm
-tile       166  114            art\tiles\gar2001.frm
-tile       168  114            art\tiles\gar2002.frm
-tile       170  114            art\tiles\gar2003.frm
-tile       172  114            art\tiles\gar2001.frm
-tile       174  114            art\tiles\gar2000.frm
-tile       176  114            art\tiles\gar2000.frm
-tile       178  114            art\tiles\gar2002.frm
-tile       180  114            art\tiles\gar2000.frm
+tile       122  114            art\tiles\edg5000.frm
+tile       124  114            art\tiles\edg5001.frm
+tile       126  114            art\tiles\edg5000.frm
+tile       128  114            art\tiles\edg5001.frm
+tile       130  114            art\tiles\edg5001.frm
+tile       132  114            art\tiles\edg5000.frm
+tile       134  114            art\tiles\edg5004.frm
+tile       136  114            art\tiles\edg5000.frm
+tile       138  114            art\tiles\edg5002.frm
+tile       140  114            art\tiles\edg5000.frm
+tile       142  114            art\tiles\edg5000.frm
+tile       144  114            art\tiles\edg5000.frm
+tile       146  114            art\tiles\edg5003.frm
+tile       148  114            art\tiles\edg5000.frm
+tile       150  114            art\tiles\edg5000.frm
+tile       152  114            art\tiles\edg5004.frm
+tile       154  114            art\tiles\edg5000.frm
+tile       156  114            art\tiles\edg5002.frm
+tile       158  114            art\tiles\edg5000.frm
+tile       160  114            art\tiles\edg5004.frm
+tile       162  114            art\tiles\edg5000.frm
+tile       164  114            art\tiles\edg5004.frm
+tile       166  114            art\tiles\edg5003.frm
+tile       168  114            art\tiles\edg5003.frm
+tile       170  114            art\tiles\edg1002.frm
+tile       172  114            art\tiles\edg4002.frm
+tile       174  114            art\tiles\edg4004.frm
+tile       176  114            art\tiles\edg2000.frm
+tile       178  114            art\tiles\edg5002.frm
+tile       180  114            art\tiles\edg5007.frm
 tile       182  114            art\tiles\edg5001.frm
 tile       184  114            art\tiles\edg5001.frm
 tile       186  114            art\tiles\edg5000.frm
@@ -2503,36 +2502,36 @@ tile       114  116            art\tiles\edg5007.frm
 tile       116  116            art\tiles\edg4000.frm
 tile       118  116            art\tiles\edgs003.frm
 tile       120  116            art\tiles\edg5004.frm
-tile       122  116            art\tiles\gar2003.frm
-tile       124  116            art\tiles\gar2001.frm
-tile       126  116            art\tiles\gar2003.frm
-tile       128  116            art\tiles\gar2001.frm
-tile       130  116            art\tiles\gar2003.frm
-tile       132  116            art\tiles\gar2001.frm
-tile       134  116            art\tiles\gar2003.frm
-tile       136  116            art\tiles\gar2001.frm
-tile       138  116            art\tiles\gar2003.frm
-tile       140  116            art\tiles\gar2002.frm
-tile       142  116            art\tiles\gar2003.frm
-tile       144  116            art\tiles\gar2002.frm
-tile       146  116            art\tiles\gar2001.frm
-tile       148  116            art\tiles\gar2001.frm
-tile       150  116            art\tiles\gar2002.frm
-tile       152  116            art\tiles\gar2003.frm
-tile       154  116            art\tiles\gar2001.frm
-tile       156  116            art\tiles\gar2002.frm
-tile       158  116            art\tiles\gar2003.frm
-tile       160  116            art\tiles\gar2001.frm
-tile       162  116            art\tiles\gar2002.frm
-tile       164  116            art\tiles\gar2002.frm
-tile       166  116            art\tiles\gar2001.frm
-tile       168  116            art\tiles\gar2002.frm
-tile       170  116            art\tiles\gar2003.frm
-tile       172  116            art\tiles\gar2001.frm
-tile       174  116            art\tiles\gar2003.frm
-tile       176  116            art\tiles\gar2001.frm
-tile       178  116            art\tiles\gar2002.frm
-tile       180  116            art\tiles\gar2003.frm
+tile       122  116            art\tiles\edg5002.frm
+tile       124  116            art\tiles\edg5000.frm
+tile       126  116            art\tiles\edg5002.frm
+tile       128  116            art\tiles\edg5000.frm
+tile       130  116            art\tiles\edg5004.frm
+tile       132  116            art\tiles\edg5002.frm
+tile       134  116            art\tiles\edg5007.frm
+tile       136  116            art\tiles\edg5003.frm
+tile       138  116            art\tiles\edg5003.frm
+tile       140  116            art\tiles\edg5002.frm
+tile       142  116            art\tiles\edg5005.frm
+tile       144  116            art\tiles\edg5006.frm
+tile       146  116            art\tiles\edg5002.frm
+tile       148  116            art\tiles\edg5004.frm
+tile       150  116            art\tiles\edg5002.frm
+tile       152  116            art\tiles\edg5007.frm
+tile       154  116            art\tiles\edg5003.frm
+tile       156  116            art\tiles\edg5003.frm
+tile       158  116            art\tiles\edg5002.frm
+tile       160  116            art\tiles\edg5007.frm
+tile       162  116            art\tiles\edg5002.frm
+tile       164  116            art\tiles\edg5007.frm
+tile       166  116            art\tiles\edg5002.frm
+tile       168  116            art\tiles\edg5005.frm
+tile       170  116            art\tiles\edg5004.frm
+tile       172  116            art\tiles\edg6005.frm
+tile       174  116            art\tiles\edg1001.frm
+tile       176  116            art\tiles\edg6008.frm
+tile       178  116            art\tiles\edg5000.frm
+tile       180  116            art\tiles\edg5004.frm
 tile       182  116            art\tiles\edg5000.frm
 tile       184  116            art\tiles\edg5007.frm
 tile       186  116            art\tiles\towr06.frm
@@ -2622,36 +2621,36 @@ tile       114  118            art\tiles\edg5000.frm
 tile       116  118            art\tiles\edg4007.frm
 tile       118  118            art\tiles\edg6007.frm
 tile       120  118            art\tiles\edg5002.frm
-tile       122  118            art\tiles\gar2001.frm
-tile       124  118            art\tiles\gar2001.frm
-tile       126  118            art\tiles\gar2003.frm
-tile       128  118            art\tiles\gar2001.frm
-tile       130  118            art\tiles\gar2003.frm
-tile       132  118            art\tiles\gar2001.frm
-tile       134  118            art\tiles\gar2003.frm
-tile       136  118            art\tiles\gar2001.frm
-tile       138  118            art\tiles\gar2003.frm
-tile       140  118            art\tiles\gar2002.frm
-tile       142  118            art\tiles\gar2003.frm
-tile       144  118            art\tiles\gar2002.frm
-tile       146  118            art\tiles\gar2001.frm
-tile       148  118            art\tiles\gar2001.frm
-tile       150  118            art\tiles\gar2002.frm
-tile       152  118            art\tiles\gar2002.frm
-tile       154  118            art\tiles\gar2001.frm
-tile       156  118            art\tiles\gar2002.frm
-tile       158  118            art\tiles\gar2003.frm
-tile       160  118            art\tiles\gar2001.frm
-tile       162  118            art\tiles\gar2002.frm
-tile       164  118            art\tiles\gar2003.frm
-tile       166  118            art\tiles\gar2001.frm
-tile       168  118            art\tiles\gar2002.frm
-tile       170  118            art\tiles\gar2003.frm
-tile       172  118            art\tiles\gar2001.frm
-tile       174  118            art\tiles\gar2003.frm
-tile       176  118            art\tiles\gar2001.frm
-tile       178  118            art\tiles\gar2002.frm
-tile       180  118            art\tiles\gar2003.frm
+tile       122  118            art\tiles\edg5000.frm
+tile       124  118            art\tiles\edg5007.frm
+tile       126  118            art\tiles\edg5000.frm
+tile       128  118            art\tiles\edg5002.frm
+tile       130  118            art\tiles\edg5007.frm
+tile       132  118            art\tiles\edg5002.frm
+tile       134  118            art\tiles\edg5007.frm
+tile       136  118            art\tiles\edg5003.frm
+tile       138  118            art\tiles\edg5003.frm
+tile       140  118            art\tiles\edg5002.frm
+tile       142  118            art\tiles\edg5005.frm
+tile       144  118            art\tiles\edg5006.frm
+tile       146  118            art\tiles\edg5002.frm
+tile       148  118            art\tiles\edg5004.frm
+tile       150  118            art\tiles\edg5005.frm
+tile       152  118            art\tiles\edg5002.frm
+tile       154  118            art\tiles\edg6003.frm
+tile       156  118            art\tiles\edg6006.frm
+tile       158  118            art\tiles\edg6002.frm
+tile       160  118            art\tiles\edg5001.frm
+tile       162  118            art\tiles\edg5003.frm
+tile       164  118            art\tiles\edg5002.frm
+tile       166  118            art\tiles\edg5006.frm
+tile       168  118            art\tiles\edg5001.frm
+tile       170  118            art\tiles\edg5005.frm
+tile       172  118            art\tiles\edg5002.frm
+tile       174  118            art\tiles\edg5000.frm
+tile       176  118            art\tiles\edg5004.frm
+tile       178  118            art\tiles\edg5006.frm
+tile       180  118            art\tiles\edg5002.frm
 tile       182  118            art\tiles\edg5001.frm
 tile       184  118            art\tiles\edg5003.frm
 tile       186  118            art\tiles\towr04.frm
@@ -2748,36 +2747,36 @@ tile       114  120            art\tiles\edg5005.frm
 tile       116  120            art\tiles\edg4004.frm
 tile       118  120            art\tiles\edg2000.frm
 tile       120  120            art\tiles\edg5000.frm
-tile       122  120            art\tiles\gar2003.frm
-tile       124  120            art\tiles\gar2001.frm
-tile       126  120            art\tiles\gar2003.frm
-tile       128  120            art\tiles\gar2003.frm
-tile       130  120            art\tiles\gar2003.frm
-tile       132  120            art\tiles\gar2001.frm
-tile       134  120            art\tiles\gar2003.frm
-tile       136  120            art\tiles\gar2001.frm
-tile       138  120            art\tiles\gar2003.frm
-tile       140  120            art\tiles\gar2002.frm
-tile       142  120            art\tiles\gar2003.frm
-tile       144  120            art\tiles\gar2002.frm
-tile       146  120            art\tiles\gar2001.frm
-tile       148  120            art\tiles\gar2001.frm
-tile       150  120            art\tiles\gar2002.frm
-tile       152  120            art\tiles\gar2003.frm
-tile       154  120            art\tiles\gar2001.frm
-tile       156  120            art\tiles\gar2002.frm
-tile       158  120            art\tiles\gar2003.frm
-tile       160  120            art\tiles\gar2001.frm
-tile       162  120            art\tiles\gar2002.frm
-tile       164  120            art\tiles\gar2003.frm
-tile       166  120            art\tiles\gar2001.frm
-tile       168  120            art\tiles\gar2002.frm
-tile       170  120            art\tiles\gar2003.frm
-tile       172  120            art\tiles\gar2001.frm
-tile       174  120            art\tiles\gar2003.frm
-tile       176  120            art\tiles\gar2001.frm
-tile       178  120            art\tiles\gar2002.frm
-tile       180  120            art\tiles\gar2003.frm
+tile       122  120            art\tiles\edg5006.frm
+tile       124  120            art\tiles\edg5001.frm
+tile       126  120            art\tiles\edg5001.frm
+tile       128  120            art\tiles\edg5002.frm
+tile       130  120            art\tiles\edg5007.frm
+tile       132  120            art\tiles\edg5000.frm
+tile       134  120            art\tiles\edg5004.frm
+tile       136  120            art\tiles\edg5000.frm
+tile       138  120            art\tiles\gar2000.frm
+tile       140  120            art\tiles\gar2000.frm
+tile       142  120            art\tiles\gar2000.frm
+tile       144  120            art\tiles\gar2000.frm
+tile       146  120            art\tiles\gar2000.frm
+tile       148  120            art\tiles\gar2000.frm
+tile       150  120            art\tiles\edg5003.frm
+tile       152  120            art\tiles\edg5000.frm
+tile       154  120            art\tiles\edg1001.frm
+tile       156  120            art\tiles\edg6009.frm
+tile       158  120            art\tiles\edg1001.frm
+tile       160  120            art\tiles\edg5000.frm
+tile       162  120            art\tiles\edg5005.frm
+tile       164  120            art\tiles\edg5000.frm
+tile       166  120            art\tiles\edg5001.frm
+tile       168  120            art\tiles\edg5000.frm
+tile       170  120            art\tiles\edg5003.frm
+tile       172  120            art\tiles\edg5000.frm
+tile       174  120            art\tiles\edg5001.frm
+tile       176  120            art\tiles\edg5000.frm
+tile       178  120            art\tiles\edg5007.frm
+tile       180  120            art\tiles\edg5000.frm
 tile       182  120            art\tiles\edg5000.frm
 tile       184  120            art\tiles\edg5005.frm
 tile       186  120            art\tiles\towr04.frm
@@ -2878,36 +2877,36 @@ tile       114  122            art\tiles\edg5003.frm
 tile       116  122            art\tiles\edg7000.frm
 tile       118  122            art\tiles\edg7002.frm
 tile       120  122            art\tiles\edg5000.frm
-tile       122  122            art\tiles\gar2003.frm
-tile       124  122            art\tiles\gar2001.frm
-tile       126  122            art\tiles\gar2003.frm
-tile       128  122            art\tiles\gar2003.frm
-tile       130  122            art\tiles\gar2003.frm
-tile       132  122            art\tiles\gar2001.frm
-tile       134  122            art\tiles\gar2003.frm
-tile       136  122            art\tiles\gar2001.frm
+tile       122  122            art\tiles\edg5001.frm
+tile       124  122            art\tiles\edg5000.frm
+tile       126  122            art\tiles\edg5003.frm
+tile       128  122            art\tiles\edg5000.frm
+tile       130  122            art\tiles\edg5004.frm
+tile       132  122            art\tiles\edg5002.frm
+tile       134  122            art\tiles\edg5007.frm
+tile       136  122            art\tiles\edg6003.frm
 tile       138  122            art\tiles\gar2003.frm
 tile       140  122            art\tiles\gar2002.frm
 tile       142  122            art\tiles\gar2003.frm
 tile       144  122            art\tiles\gar2002.frm
 tile       146  122            art\tiles\gar2001.frm
 tile       148  122            art\tiles\gar2001.frm
-tile       150  122            art\tiles\gar2002.frm
-tile       152  122            art\tiles\gar2003.frm
-tile       154  122            art\tiles\gar2001.frm
-tile       156  122            art\tiles\gar2002.frm
-tile       158  122            art\tiles\gar2003.frm
-tile       160  122            art\tiles\gar2001.frm
-tile       162  122            art\tiles\gar2002.frm
-tile       164  122            art\tiles\gar2003.frm
-tile       166  122            art\tiles\gar2001.frm
-tile       168  122            art\tiles\gar2002.frm
-tile       170  122            art\tiles\gar2003.frm
-tile       172  122            art\tiles\gar2001.frm
-tile       174  122            art\tiles\gar2003.frm
-tile       176  122            art\tiles\gar2001.frm
-tile       178  122            art\tiles\gar2002.frm
-tile       180  122            art\tiles\gar2003.frm
+tile       150  122            art\tiles\edg6003.frm
+tile       152  122            art\tiles\edg3001.frm
+tile       154  122            art\tiles\edg3001.frm
+tile       156  122            art\tiles\edg3001.frm
+tile       158  122            art\tiles\edg6001.frm
+tile       160  122            art\tiles\edg3001.frm
+tile       162  122            art\tiles\edg6002.frm
+tile       164  122            art\tiles\edg3001.frm
+tile       166  122            art\tiles\edg6001.frm
+tile       168  122            art\tiles\edg3001.frm
+tile       170  122            art\tiles\edg6002.frm
+tile       172  122            art\tiles\edg6000.frm
+tile       174  122            art\tiles\edg5002.frm
+tile       176  122            art\tiles\edg5001.frm
+tile       178  122            art\tiles\edg5003.frm
+tile       180  122            art\tiles\edg5002.frm
 tile       182  122            art\tiles\edg5004.frm
 tile       184  122            art\tiles\edg5001.frm
 tile       186  122            art\tiles\towr04.frm
@@ -3010,36 +3009,36 @@ tile       114  124            art\tiles\edg5001.frm
 tile       116  124            art\tiles\edg5000.frm
 tile       118  124            art\tiles\edg5007.frm
 tile       120  124            art\tiles\edg5005.frm
-tile       122  124            art\tiles\gar2003.frm
-tile       124  124            art\tiles\gar2001.frm
-tile       126  124            art\tiles\gar2003.frm
-tile       128  124            art\tiles\gar2001.frm
-tile       130  124            art\tiles\gar2003.frm
-tile       132  124            art\tiles\gar2003.frm
-tile       134  124            art\tiles\gar2003.frm
-tile       136  124            art\tiles\gar2001.frm
+tile       122  124            art\tiles\edg5000.frm
+tile       124  124            art\tiles\edg5003.frm
+tile       126  124            art\tiles\edg5007.frm
+tile       128  124            art\tiles\edg5002.frm
+tile       130  124            art\tiles\edg5007.frm
+tile       132  124            art\tiles\edg5004.frm
+tile       134  124            art\tiles\edg5000.frm
+tile       136  124            art\tiles\edg1001.frm
 tile       138  124            art\tiles\gar2003.frm
-tile       140  124            art\tiles\gar2002.frm
+tile       140  124            art\tiles\gar2003.frm
 tile       142  124            art\tiles\gar2003.frm
 tile       144  124            art\tiles\gar2002.frm
 tile       146  124            art\tiles\gar2001.frm
 tile       148  124            art\tiles\gar2001.frm
-tile       150  124            art\tiles\gar2002.frm
-tile       152  124            art\tiles\gar2003.frm
-tile       154  124            art\tiles\gar2001.frm
-tile       156  124            art\tiles\gar2002.frm
-tile       158  124            art\tiles\gar2003.frm
-tile       160  124            art\tiles\gar2001.frm
-tile       162  124            art\tiles\gar2002.frm
-tile       164  124            art\tiles\gar2003.frm
-tile       166  124            art\tiles\gar2001.frm
-tile       168  124            art\tiles\gar2002.frm
-tile       170  124            art\tiles\gar2003.frm
-tile       172  124            art\tiles\gar2001.frm
-tile       174  124            art\tiles\gar2003.frm
-tile       176  124            art\tiles\gar2001.frm
-tile       178  124            art\tiles\gar2002.frm
-tile       180  124            art\tiles\gar2003.frm
+tile       150  124            art\tiles\edg6006.frm
+tile       152  124            art\tiles\edg4001.frm
+tile       154  124            art\tiles\edg4005.frm
+tile       156  124            art\tiles\edg4006.frm
+tile       158  124            art\tiles\edg6010.frm
+tile       160  124            art\tiles\edg4008.frm
+tile       162  124            art\tiles\edg4007.frm
+tile       164  124            art\tiles\edg4000.frm
+tile       166  124            art\tiles\edg4008.frm
+tile       168  124            art\tiles\edg4006.frm
+tile       170  124            art\tiles\edg1000.frm
+tile       172  124            art\tiles\edgs003.frm
+tile       174  124            art\tiles\edg2002.frm
+tile       176  124            art\tiles\edg2001.frm
+tile       178  124            art\tiles\edg5005.frm
+tile       180  124            art\tiles\edg5000.frm
 tile       182  124            art\tiles\edg5002.frm
 tile       184  124            art\tiles\edg5000.frm
 tile       186  124            art\tiles\towr04.frm
@@ -3144,37 +3143,37 @@ tile       112  126            art\tiles\bld2043.frm
 tile       114  126            art\tiles\edg5007.frm
 tile       116  126            art\tiles\edg5000.frm
 tile       118  126            art\tiles\edg5007.frm
-tile       120  126            art\tiles\gar2000.frm
-tile       122  126            art\tiles\gar2003.frm
-tile       124  126            art\tiles\gar2001.frm
-tile       126  126            art\tiles\gar2003.frm
-tile       128  126            art\tiles\gar2001.frm
-tile       130  126            art\tiles\gar2003.frm
-tile       132  126            art\tiles\gar2003.frm
-tile       134  126            art\tiles\gar2003.frm
-tile       136  126            art\tiles\gar2001.frm
+tile       120  126            art\tiles\edg5007.frm
+tile       122  126            art\tiles\edg5003.frm
+tile       124  126            art\tiles\edg5000.frm
+tile       126  126            art\tiles\edg5007.frm
+tile       128  126            art\tiles\edg5004.frm
+tile       130  126            art\tiles\edg5000.frm
+tile       132  126            art\tiles\edg5001.frm
+tile       134  126            art\tiles\edg5005.frm
+tile       136  126            art\tiles\edg5002.frm
 tile       138  126            art\tiles\gar2003.frm
 tile       140  126            art\tiles\gar2002.frm
-tile       142  126            art\tiles\gar2002.frm
+tile       142  126            art\tiles\gar2003.frm
 tile       144  126            art\tiles\gar2002.frm
 tile       146  126            art\tiles\gar2001.frm
 tile       148  126            art\tiles\gar2001.frm
-tile       150  126            art\tiles\gar2002.frm
-tile       152  126            art\tiles\gar2003.frm
-tile       154  126            art\tiles\gar2001.frm
-tile       156  126            art\tiles\gar2002.frm
-tile       158  126            art\tiles\gar2003.frm
-tile       160  126            art\tiles\gar2001.frm
-tile       162  126            art\tiles\gar2002.frm
-tile       164  126            art\tiles\gar2003.frm
-tile       166  126            art\tiles\gar2001.frm
-tile       168  126            art\tiles\gar2002.frm
-tile       170  126            art\tiles\gar2003.frm
-tile       172  126            art\tiles\gar2001.frm
-tile       174  126            art\tiles\gar2003.frm
-tile       176  126            art\tiles\gar2001.frm
-tile       178  126            art\tiles\gar2002.frm
-tile       180  126            art\tiles\gar2003.frm
+tile       150  126            art\tiles\edg7001.frm
+tile       152  126            art\tiles\edg4002.frm
+tile       154  126            art\tiles\edg4001.frm
+tile       156  126            art\tiles\edg4005.frm
+tile       158  126            art\tiles\edg4002.frm
+tile       160  126            art\tiles\edg4001.frm
+tile       162  126            art\tiles\edg4005.frm
+tile       164  126            art\tiles\edg4002.frm
+tile       166  126            art\tiles\edg4001.frm
+tile       168  126            art\tiles\edg4005.frm
+tile       170  126            art\tiles\edg6007.frm
+tile       172  126            art\tiles\edgs004.frm
+tile       174  126            art\tiles\edg1000.frm
+tile       176  126            art\tiles\edg4005.frm
+tile       178  126            art\tiles\edg2000.frm
+tile       180  126            art\tiles\edg5006.frm
 tile       182  126            art\tiles\edg5003.frm
 tile       184  126            art\tiles\edg5002.frm
 tile       186  126            art\tiles\towr08.frm
@@ -3282,37 +3281,37 @@ tile       112  128            art\tiles\bld2043.frm
 tile       114  128            art\tiles\edg5004.frm
 tile       116  128            art\tiles\edg5000.frm
 tile       118  128            art\tiles\edg5004.frm
-tile       120  128            art\tiles\gar2003.frm
-tile       122  128            art\tiles\gar2003.frm
-tile       124  128            art\tiles\gar2001.frm
-tile       126  128            art\tiles\gar2003.frm
-tile       128  128            art\tiles\gar2001.frm
-tile       130  128            art\tiles\gar2003.frm
-tile       132  128            art\tiles\gar2001.frm
-tile       134  128            art\tiles\gar2003.frm
-tile       136  128            art\tiles\gar2001.frm
+tile       120  128            art\tiles\edg5004.frm
+tile       122  128            art\tiles\edg5002.frm
+tile       124  128            art\tiles\edg5006.frm
+tile       126  128            art\tiles\edg5001.frm
+tile       128  128            art\tiles\edg5001.frm
+tile       130  128            art\tiles\edg5005.frm
+tile       132  128            art\tiles\edg5000.frm
+tile       134  128            art\tiles\edg5003.frm
+tile       136  128            art\tiles\edg5000.frm
 tile       138  128            art\tiles\gar2003.frm
-tile       140  128            art\tiles\gar2002.frm
+tile       140  128            art\tiles\gar2003.frm
 tile       142  128            art\tiles\gar2003.frm
-tile       144  128            art\tiles\gar2002.frm
+tile       144  128            art\tiles\gar2003.frm
 tile       146  128            art\tiles\gar2001.frm
 tile       148  128            art\tiles\gar2001.frm
-tile       150  128            art\tiles\gar2002.frm
-tile       152  128            art\tiles\gar2003.frm
-tile       154  128            art\tiles\gar2001.frm
-tile       156  128            art\tiles\gar2002.frm
-tile       158  128            art\tiles\gar2003.frm
-tile       160  128            art\tiles\gar2001.frm
-tile       162  128            art\tiles\gar2002.frm
-tile       164  128            art\tiles\gar2003.frm
-tile       166  128            art\tiles\gar2001.frm
-tile       168  128            art\tiles\gar2002.frm
-tile       170  128            art\tiles\gar2003.frm
-tile       172  128            art\tiles\gar2001.frm
-tile       174  128            art\tiles\gar2003.frm
-tile       176  128            art\tiles\gar2001.frm
-tile       178  128            art\tiles\gar2002.frm
-tile       180  128            art\tiles\gar2003.frm
+tile       150  128            art\tiles\edg6011.frm
+tile       152  128            art\tiles\edg1000.frm
+tile       154  128            art\tiles\edg4000.frm
+tile       156  128            art\tiles\edg4007.frm
+tile       158  128            art\tiles\edg4008.frm
+tile       160  128            art\tiles\edg4000.frm
+tile       162  128            art\tiles\edg4006.frm
+tile       164  128            art\tiles\edg4008.frm
+tile       166  128            art\tiles\edg6009.frm
+tile       168  128            art\tiles\edg4007.frm
+tile       170  128            art\tiles\edg1000.frm
+tile       172  128            art\tiles\edgs003.frm
+tile       174  128            art\tiles\edg6005.frm
+tile       176  128            art\tiles\edg4007.frm
+tile       178  128            art\tiles\edg6004.frm
+tile       180  128            art\tiles\edg5001.frm
 tile       182  128            art\tiles\edg5000.frm
 tile       184  128            art\tiles\edg5000.frm
 tile       186  128            art\tiles\edg5000.frm
@@ -3421,37 +3420,37 @@ tile       112  130            art\tiles\bld2043.frm
 tile       114  130            art\tiles\edg5000.frm
 tile       116  130            art\tiles\edg5005.frm
 tile       118  130            art\tiles\edg5001.frm
-tile       120  130            art\tiles\gar2003.frm
-tile       122  130            art\tiles\gar2003.frm
-tile       124  130            art\tiles\gar2001.frm
-tile       126  130            art\tiles\gar2003.frm
-tile       128  130            art\tiles\gar2001.frm
-tile       130  130            art\tiles\gar2003.frm
-tile       132  130            art\tiles\gar2001.frm
-tile       134  130            art\tiles\gar2003.frm
-tile       136  130            art\tiles\gar2001.frm
+tile       120  130            art\tiles\edg5001.frm
+tile       122  130            art\tiles\edg5000.frm
+tile       124  130            art\tiles\edg5001.frm
+tile       126  130            art\tiles\edg5000.frm
+tile       128  130            art\tiles\edg5000.frm
+tile       130  130            art\tiles\edg5003.frm
+tile       132  130            art\tiles\edg5003.frm
+tile       134  130            art\tiles\edg5001.frm
+tile       136  130            art\tiles\edg5000.frm
 tile       138  130            art\tiles\gar2003.frm
 tile       140  130            art\tiles\gar2002.frm
 tile       142  130            art\tiles\gar2003.frm
 tile       144  130            art\tiles\gar2002.frm
 tile       146  130            art\tiles\gar2001.frm
 tile       148  130            art\tiles\gar2001.frm
-tile       150  130            art\tiles\gar2002.frm
-tile       152  130            art\tiles\gar2003.frm
-tile       154  130            art\tiles\gar2001.frm
-tile       156  130            art\tiles\gar2002.frm
-tile       158  130            art\tiles\gar2003.frm
-tile       160  130            art\tiles\gar2001.frm
-tile       162  130            art\tiles\gar2002.frm
-tile       164  130            art\tiles\gar2003.frm
-tile       166  130            art\tiles\gar2001.frm
-tile       168  130            art\tiles\gar2002.frm
-tile       170  130            art\tiles\gar2003.frm
-tile       172  130            art\tiles\gar2001.frm
-tile       174  130            art\tiles\gar2003.frm
-tile       176  130            art\tiles\gar2001.frm
-tile       178  130            art\tiles\gar2002.frm
-tile       180  130            art\tiles\gar2003.frm
+tile       150  130            art\tiles\edg5000.frm
+tile       152  130            art\tiles\edg1002.frm
+tile       154  130            art\tiles\edgs000.frm
+tile       156  130            art\tiles\edg6009.frm
+tile       158  130            art\tiles\edg1001.frm
+tile       160  130            art\tiles\edg6008.frm
+tile       162  130            art\tiles\edgs001.frm
+tile       164  130            art\tiles\edg6009.frm
+tile       166  130            art\tiles\edg1000.frm
+tile       168  130            art\tiles\edg2000.frm
+tile       170  130            art\tiles\edg1002.frm
+tile       172  130            art\tiles\edgs004.frm
+tile       174  130            art\tiles\edg1001.frm
+tile       176  130            art\tiles\edg6009.frm
+tile       178  130            art\tiles\edg6007.frm
+tile       180  130            art\tiles\edg5000.frm
 tile       182  130            art\tiles\edg5006.frm
 tile       184  130            art\tiles\edg5005.frm
 tile       186  130            art\tiles\edg5006.frm
@@ -3553,37 +3552,37 @@ tile       112  132            art\tiles\bld2043.frm
 tile       114  132            art\tiles\edg5000.frm
 tile       116  132            art\tiles\edg5003.frm
 tile       118  132            art\tiles\edg5000.frm
-tile       120  132            art\tiles\gar2003.frm
-tile       122  132            art\tiles\gar2003.frm
-tile       124  132            art\tiles\gar2001.frm
-tile       126  132            art\tiles\gar2004.frm
-tile       128  132            art\tiles\gar2004.frm
-tile       130  132            art\tiles\gar2004.frm
-tile       132  132            art\tiles\gar2004.frm
-tile       134  132            art\tiles\gar2004.frm
-tile       136  132            art\tiles\gar2004.frm
+tile       120  132            art\tiles\edg5000.frm
+tile       122  132            art\tiles\edg5002.frm
+tile       124  132            art\tiles\edg5000.frm
+tile       126  132            art\tiles\edg5003.frm
+tile       128  132            art\tiles\edg5003.frm
+tile       130  132            art\tiles\edg5001.frm
+tile       132  132            art\tiles\edg5000.frm
+tile       134  132            art\tiles\edg5007.frm
+tile       136  132            art\tiles\edg5005.frm
 tile       138  132            art\tiles\gar2004.frm
 tile       140  132            art\tiles\gar2004.frm
 tile       142  132            art\tiles\gar2003.frm
 tile       144  132            art\tiles\gar2002.frm
 tile       146  132            art\tiles\gar2001.frm
 tile       148  132            art\tiles\gar2001.frm
-tile       150  132            art\tiles\gar2004.frm
-tile       152  132            art\tiles\gar2004.frm
-tile       154  132            art\tiles\gar2004.frm
-tile       156  132            art\tiles\gar2004.frm
-tile       158  132            art\tiles\gar2004.frm
-tile       160  132            art\tiles\gar2004.frm
-tile       162  132            art\tiles\gar2004.frm
-tile       164  132            art\tiles\gar2004.frm
-tile       166  132            art\tiles\gar2001.frm
-tile       168  132            art\tiles\gar2002.frm
-tile       170  132            art\tiles\gar2003.frm
-tile       172  132            art\tiles\gar2001.frm
-tile       174  132            art\tiles\gar2003.frm
-tile       176  132            art\tiles\gar2001.frm
-tile       178  132            art\tiles\gar2002.frm
-tile       180  132            art\tiles\gar2003.frm
+tile       150  132            art\tiles\edg5004.frm
+tile       152  132            art\tiles\edg5000.frm
+tile       154  132            art\tiles\edg5002.frm
+tile       156  132            art\tiles\edg5000.frm
+tile       158  132            art\tiles\edg5000.frm
+tile       160  132            art\tiles\edg5000.frm
+tile       162  132            art\tiles\edg5003.frm
+tile       164  132            art\tiles\edg6011.frm
+tile       166  132            art\tiles\edg1001.frm
+tile       168  132            art\tiles\edg7002.frm
+tile       170  132            art\tiles\edg6011.frm
+tile       172  132            art\tiles\edg5000.frm
+tile       174  132            art\tiles\edg5002.frm
+tile       176  132            art\tiles\edg5000.frm
+tile       178  132            art\tiles\edg5000.frm
+tile       180  132            art\tiles\edg5003.frm
 tile       182  132            art\tiles\edg5002.frm
 tile       184  132            art\tiles\edg5003.frm
 tile       186  132            art\tiles\edg5002.frm
@@ -3685,9 +3684,9 @@ tile       112  134            art\tiles\bld2043.frm
 tile       114  134            art\tiles\edg5004.frm
 tile       116  134            art\tiles\edg5001.frm
 tile       118  134            art\tiles\edg5003.frm
-tile       120  134            art\tiles\gar2003.frm
-tile       122  134            art\tiles\gar2003.frm
-tile       124  134            art\tiles\gar2001.frm
+tile       120  134            art\tiles\edg5003.frm
+tile       122  134            art\tiles\edg5001.frm
+tile       124  134            art\tiles\edg2001.frm
 tile       126  134            art\tiles\edg5005.frm
 tile       128  134            art\tiles\edg5003.frm
 tile       130  134            art\tiles\edg5000.frm
@@ -3708,14 +3707,14 @@ tile       158  134            art\tiles\edg5000.frm
 tile       160  134            art\tiles\edg5003.frm
 tile       162  134            art\tiles\edg5000.frm
 tile       164  134            art\tiles\edg5007.frm
-tile       166  134            art\tiles\gar2001.frm
-tile       168  134            art\tiles\gar2002.frm
-tile       170  134            art\tiles\gar2003.frm
-tile       172  134            art\tiles\gar2001.frm
-tile       174  134            art\tiles\gar2003.frm
-tile       176  134            art\tiles\gar2001.frm
-tile       178  134            art\tiles\gar2002.frm
-tile       180  134            art\tiles\gar2003.frm
+tile       166  134            art\tiles\edg3001.frm
+tile       168  134            art\tiles\edg6002.frm
+tile       170  134            art\tiles\edg3001.frm
+tile       172  134            art\tiles\edg6001.frm
+tile       174  134            art\tiles\edg6000.frm
+tile       176  134            art\tiles\edg5003.frm
+tile       178  134            art\tiles\edg5000.frm
+tile       180  134            art\tiles\edg5002.frm
 tile       182  134            art\tiles\edg5003.frm
 tile       184  134            art\tiles\edg5000.frm
 tile       186  134            art\tiles\edg5003.frm
@@ -3817,9 +3816,9 @@ tile       112  136            art\tiles\bld2043.frm
 tile       114  136            art\tiles\edg5007.frm
 tile       116  136            art\tiles\edg5007.frm
 tile       118  136            art\tiles\edg5000.frm
-tile       120  136            art\tiles\gar2003.frm
-tile       122  136            art\tiles\gar2003.frm
-tile       124  136            art\tiles\gar2001.frm
+tile       120  136            art\tiles\edg5003.frm
+tile       122  136            art\tiles\edg5001.frm
+tile       124  136            art\tiles\edg2003.frm
 tile       126  136            art\tiles\edg5006.frm
 tile       128  136            art\tiles\edg5006.frm
 tile       130  136            art\tiles\edg5005.frm
@@ -3840,14 +3839,14 @@ tile       158  136            art\tiles\edg5006.frm
 tile       160  136            art\tiles\edg5005.frm
 tile       162  136            art\tiles\edg5001.frm
 tile       164  136            art\tiles\edg5004.frm
-tile       166  136            art\tiles\gar2001.frm
-tile       168  136            art\tiles\gar2002.frm
-tile       170  136            art\tiles\gar2003.frm
-tile       172  136            art\tiles\gar2001.frm
-tile       174  136            art\tiles\gar2003.frm
-tile       176  136            art\tiles\gar2001.frm
-tile       178  136            art\tiles\gar2002.frm
-tile       180  136            art\tiles\gar2003.frm
+tile       166  136            art\tiles\edg3000.frm
+tile       168  136            art\tiles\edg3000.frm
+tile       170  136            art\tiles\edg4001.frm
+tile       172  136            art\tiles\edg4001.frm
+tile       174  136            art\tiles\edg4006.frm
+tile       176  136            art\tiles\edg5002.frm
+tile       178  136            art\tiles\edg5001.frm
+tile       180  136            art\tiles\edg5000.frm
 tile       182  136            art\tiles\edg5004.frm
 tile       184  136            art\tiles\edg5003.frm
 tile       186  136            art\tiles\edg5000.frm
@@ -3949,9 +3948,9 @@ tile       112  138            art\tiles\bld2043.frm
 tile       114  138            art\tiles\edg5003.frm
 tile       116  138            art\tiles\edg5004.frm
 tile       118  138            art\tiles\edg5001.frm
-tile       120  138            art\tiles\gar2003.frm
-tile       122  138            art\tiles\gar2003.frm
-tile       124  138            art\tiles\gar2001.frm
+tile       120  138            art\tiles\edg5000.frm
+tile       122  138            art\tiles\edg5007.frm
+tile       124  138            art\tiles\edg6008.frm
 tile       126  138            art\tiles\edg5004.frm
 tile       128  138            art\tiles\edg5007.frm
 tile       130  138            art\tiles\edg6003.frm
@@ -3972,14 +3971,14 @@ tile       158  138            art\tiles\edg5004.frm
 tile       160  138            art\tiles\edg6003.frm
 tile       162  138            art\tiles\edg5003.frm
 tile       164  138            art\tiles\edg5000.frm
-tile       166  138            art\tiles\gar2001.frm
-tile       168  138            art\tiles\gar2002.frm
-tile       170  138            art\tiles\gar2003.frm
-tile       172  138            art\tiles\gar2001.frm
-tile       174  138            art\tiles\gar2003.frm
-tile       176  138            art\tiles\gar2001.frm
-tile       178  138            art\tiles\gar2002.frm
-tile       180  138            art\tiles\gar2003.frm
+tile       166  138            art\tiles\edg4003.frm
+tile       168  138            art\tiles\edg4003.frm
+tile       170  138            art\tiles\edg4006.frm
+tile       172  138            art\tiles\edg2003.frm
+tile       174  138            art\tiles\edg4000.frm
+tile       176  138            art\tiles\edg6006.frm
+tile       178  138            art\tiles\edg6000.frm
+tile       180  138            art\tiles\edg5002.frm
 tile       182  138            art\tiles\edg5000.frm
 tile       184  138            art\tiles\edg5002.frm
 tile       186  138            art\tiles\edg5004.frm
@@ -4081,9 +4080,9 @@ tile       112  140            art\tiles\bld2043.frm
 tile       114  140            art\tiles\edg5002.frm
 tile       116  140            art\tiles\edg5000.frm
 tile       118  140            art\tiles\edg5003.frm
-tile       120  140            art\tiles\gar2003.frm
-tile       122  140            art\tiles\gar2003.frm
-tile       124  140            art\tiles\gar2001.frm
+tile       120  140            art\tiles\edg5001.frm
+tile       122  140            art\tiles\edg5004.frm
+tile       124  140            art\tiles\edg5006.frm
 tile       126  140            art\tiles\edg5001.frm
 tile       128  140            art\tiles\edg5000.frm
 tile       130  140            art\tiles\edg1002.frm
@@ -4104,14 +4103,14 @@ tile       158  140            art\tiles\edg5000.frm
 tile       160  140            art\tiles\edg1002.frm
 tile       162  140            art\tiles\edg4002.frm
 tile       164  140            art\tiles\edg5000.frm
-tile       166  140            art\tiles\gar2001.frm
-tile       168  140            art\tiles\gar2002.frm
-tile       170  140            art\tiles\gar2003.frm
-tile       172  140            art\tiles\gar2001.frm
-tile       174  140            art\tiles\gar2003.frm
-tile       176  140            art\tiles\gar2001.frm
-tile       178  140            art\tiles\gar2002.frm
-tile       180  140            art\tiles\gar2003.frm
+tile       166  140            art\tiles\edg3000.frm
+tile       168  140            art\tiles\edg3000.frm
+tile       170  140            art\tiles\edg2003.frm
+tile       172  140            art\tiles\edg3000.frm
+tile       174  140            art\tiles\edg2003.frm
+tile       176  140            art\tiles\edg3000.frm
+tile       178  140            art\tiles\edgs003.frm
+tile       180  140            art\tiles\edg2000.frm
 tile       182  140            art\tiles\edg5003.frm
 tile       184  140            art\tiles\edg5000.frm
 tile       186  140            art\tiles\edg5003.frm
@@ -4213,9 +4212,9 @@ tile       112  142            art\tiles\bld2043.frm
 tile       114  142            art\tiles\edg5005.frm
 tile       116  142            art\tiles\edg5000.frm
 tile       118  142            art\tiles\edg5007.frm
-tile       120  142            art\tiles\gar2003.frm
-tile       122  142            art\tiles\gar2003.frm
-tile       124  142            art\tiles\gar2001.frm
+tile       120  142            art\tiles\edg5003.frm
+tile       122  142            art\tiles\edg5000.frm
+tile       124  142            art\tiles\edg5004.frm
 tile       126  142            art\tiles\edg5000.frm
 tile       128  142            art\tiles\edg5002.frm
 tile       130  142            art\tiles\edg6002.frm
@@ -4236,14 +4235,14 @@ tile       158  142            art\tiles\edg5003.frm
 tile       160  142            art\tiles\edg6002.frm
 tile       162  142            art\tiles\edg4000.frm
 tile       164  142            art\tiles\edg5004.frm
-tile       166  142            art\tiles\gar2001.frm
-tile       168  142            art\tiles\gar2002.frm
-tile       170  142            art\tiles\gar2003.frm
-tile       172  142            art\tiles\gar2001.frm
-tile       174  142            art\tiles\gar2003.frm
-tile       176  142            art\tiles\gar2001.frm
-tile       178  142            art\tiles\gar2002.frm
-tile       180  142            art\tiles\gar2002.frm
+tile       166  142            art\tiles\edg2003.frm
+tile       168  142            art\tiles\edg2003.frm
+tile       170  142            art\tiles\edg2001.frm
+tile       172  142            art\tiles\edg2002.frm
+tile       174  142            art\tiles\edgs001.frm
+tile       176  142            art\tiles\edg6009.frm
+tile       178  142            art\tiles\edg4006.frm
+tile       180  142            art\tiles\edg2000.frm
 tile       182  142            art\tiles\edg5003.frm
 tile       184  142            art\tiles\edg5003.frm
 tile       186  142            art\tiles\edg5001.frm
@@ -4345,9 +4344,9 @@ tile       112  144            art\tiles\bld2043.frm
 tile       114  144            art\tiles\edg5000.frm
 tile       116  144            art\tiles\edg5004.frm
 tile       118  144            art\tiles\edg5000.frm
-tile       120  144            art\tiles\gar2003.frm
-tile       122  144            art\tiles\gar2004.frm
-tile       124  144            art\tiles\gar2004.frm
+tile       120  144            art\tiles\edg5007.frm
+tile       122  144            art\tiles\edg5000.frm
+tile       124  144            art\tiles\edg5001.frm
 tile       126  144            art\tiles\edg5003.frm
 tile       128  144            art\tiles\edg1003.frm
 tile       130  144            art\tiles\edg4008.frm
@@ -4368,14 +4367,14 @@ tile       158  144            art\tiles\edg5004.frm
 tile       160  144            art\tiles\edg5005.frm
 tile       162  144            art\tiles\edg5002.frm
 tile       164  144            art\tiles\edg5007.frm
-tile       166  144            art\tiles\gar2001.frm
-tile       168  144            art\tiles\gar2002.frm
-tile       170  144            art\tiles\gar2003.frm
-tile       172  144            art\tiles\gar2001.frm
-tile       174  144            art\tiles\gar2003.frm
-tile       176  144            art\tiles\gar2001.frm
-tile       178  144            art\tiles\gar2002.frm
-tile       180  144            art\tiles\gar2003.frm
+tile       166  144            art\tiles\edg4007.frm
+tile       168  144            art\tiles\edg4000.frm
+tile       170  144            art\tiles\edg2003.frm
+tile       172  144            art\tiles\edg4002.frm
+tile       174  144            art\tiles\edg6004.frm
+tile       176  144            art\tiles\edg6006.frm
+tile       178  144            art\tiles\edg4005.frm
+tile       180  144            art\tiles\edg2000.frm
 tile       182  144            art\tiles\edg5000.frm
 tile       184  144            art\tiles\edg5000.frm
 tile       186  144            art\tiles\edg5007.frm
@@ -4477,7 +4476,7 @@ tile       112  146            art\tiles\bld2043.frm
 tile       114  146            art\tiles\edg5006.frm
 tile       116  146            art\tiles\edg5007.frm
 tile       118  146            art\tiles\edg5002.frm
-tile       120  146            art\tiles\gar2004.frm
+tile       120  146            art\tiles\edg5003.frm
 tile       122  146            art\tiles\edg5004.frm
 tile       124  146            art\tiles\edg5000.frm
 tile       126  146            art\tiles\edg5004.frm
@@ -4508,14 +4507,14 @@ tile       158  146            art\tiles\edg5003.frm
 tile       160  146            art\tiles\edg5000.frm
 tile       162  146            art\tiles\edg5004.frm
 tile       164  146            art\tiles\edg5000.frm
-tile       166  146            art\tiles\gar2004.frm
-tile       168  146            art\tiles\gar2002.frm
-tile       170  146            art\tiles\gar2003.frm
-tile       172  146            art\tiles\gar2001.frm
-tile       174  146            art\tiles\gar2003.frm
-tile       176  146            art\tiles\gar2002.frm
-tile       178  146            art\tiles\gar2002.frm
-tile       180  146            art\tiles\gar2003.frm
+tile       166  146            art\tiles\edg4003.frm
+tile       168  146            art\tiles\edg1001.frm
+tile       170  146            art\tiles\edg6008.frm
+tile       172  146            art\tiles\edgs001.frm
+tile       174  146            art\tiles\edg6009.frm
+tile       176  146            art\tiles\edg5002.frm
+tile       178  146            art\tiles\edg1001.frm
+tile       180  146            art\tiles\edg7002.frm
 tile       182  146            art\tiles\edg5001.frm
 tile       184  146            art\tiles\edg5001.frm
 tile       186  146            art\tiles\edg5004.frm
@@ -4652,13 +4651,13 @@ tile       160  148            art\tiles\edg5006.frm
 tile       162  148            art\tiles\edg5001.frm
 tile       164  148            art\tiles\edg5005.frm
 tile       166  148            art\tiles\edg1000.frm
-tile       168  148            art\tiles\gar2002.frm
-tile       170  148            art\tiles\gar2003.frm
-tile       172  148            art\tiles\gar2001.frm
-tile       174  148            art\tiles\gar2003.frm
-tile       176  148            art\tiles\gar2001.frm
-tile       178  148            art\tiles\gar2002.frm
-tile       180  148            art\tiles\gar2003.frm
+tile       168  148            art\tiles\edg5007.frm
+tile       170  148            art\tiles\edg5003.frm
+tile       172  148            art\tiles\edg5000.frm
+tile       174  148            art\tiles\edg5003.frm
+tile       176  148            art\tiles\edg5003.frm
+tile       178  148            art\tiles\edg5002.frm
+tile       180  148            art\tiles\edg5002.frm
 tile       182  148            art\tiles\edg5003.frm
 tile       184  148            art\tiles\edg5003.frm
 tile       186  148            art\tiles\edg5000.frm
@@ -4795,13 +4794,13 @@ tile       160  150            art\tiles\edg6003.frm
 tile       162  150            art\tiles\edg2001.frm
 tile       164  150            art\tiles\edgs004.frm
 tile       166  150            art\tiles\edg1001.frm
-tile       168  150            art\tiles\gar2002.frm
-tile       170  150            art\tiles\gar2003.frm
-tile       172  150            art\tiles\gar2001.frm
-tile       174  150            art\tiles\gar2003.frm
-tile       176  150            art\tiles\gar2001.frm
-tile       178  150            art\tiles\gar2002.frm
-tile       180  150            art\tiles\gar2003.frm
+tile       168  150            art\tiles\edg5000.frm
+tile       170  150            art\tiles\edg5007.frm
+tile       172  150            art\tiles\edg5000.frm
+tile       174  150            art\tiles\edg5007.frm
+tile       176  150            art\tiles\edg5007.frm
+tile       178  150            art\tiles\edg5000.frm
+tile       180  150            art\tiles\edg5007.frm
 tile       182  150            art\tiles\edg5007.frm
 tile       184  150            art\tiles\edg5007.frm
 tile       186  150            art\tiles\edg5000.frm
@@ -4938,13 +4937,13 @@ tile       160  152            art\tiles\edg1002.frm
 tile       162  152            art\tiles\edg1000.frm
 tile       164  152            art\tiles\edg2000.frm
 tile       166  152            art\tiles\edg5000.frm
-tile       168  152            art\tiles\gar2002.frm
-tile       170  152            art\tiles\gar2003.frm
-tile       172  152            art\tiles\gar2001.frm
-tile       174  152            art\tiles\gar2003.frm
-tile       176  152            art\tiles\gar2001.frm
-tile       178  152            art\tiles\gar2002.frm
-tile       180  152            art\tiles\gar2003.frm
+tile       168  152            art\tiles\edg5000.frm
+tile       170  152            art\tiles\edg5003.frm
+tile       172  152            art\tiles\edg5003.frm
+tile       174  152            art\tiles\edg5000.frm
+tile       176  152            art\tiles\edg5004.frm
+tile       178  152            art\tiles\edg5003.frm
+tile       180  152            art\tiles\edg5000.frm
 tile       182  152            art\tiles\edg5000.frm
 tile       184  152            art\tiles\edg5000.frm
 tile       186  152            art\tiles\edg5004.frm
@@ -5083,13 +5082,13 @@ tile       160  154            art\tiles\edg6011.frm
 tile       162  154            art\tiles\edg1001.frm
 tile       164  154            art\tiles\edg7002.frm
 tile       166  154            art\tiles\edg1000.frm
-tile       168  154            art\tiles\gar2004.frm
-tile       170  154            art\tiles\gar2003.frm
-tile       172  154            art\tiles\gar2001.frm
-tile       174  154            art\tiles\gar2003.frm
-tile       176  154            art\tiles\gar2001.frm
-tile       178  154            art\tiles\gar2002.frm
-tile       180  154            art\tiles\gar2003.frm
+tile       168  154            art\tiles\edg5000.frm
+tile       170  154            art\tiles\edg5007.frm
+tile       172  154            art\tiles\edg5007.frm
+tile       174  154            art\tiles\edg5007.frm
+tile       176  154            art\tiles\edg6000.frm
+tile       178  154            art\tiles\edg5001.frm
+tile       180  154            art\tiles\edg5003.frm
 tile       182  154            art\tiles\edg5002.frm
 tile       184  154            art\tiles\edg5002.frm
 tile       186  154            art\tiles\edg5007.frm
@@ -5229,12 +5228,12 @@ tile       162  156            art\tiles\edg5002.frm
 tile       164  156            art\tiles\edgs004.frm
 tile       166  156            art\tiles\edg1001.frm
 tile       168  156            art\tiles\edg2001.frm
-tile       170  156            art\tiles\gar2004.frm
-tile       172  156            art\tiles\gar2004.frm
-tile       174  156            art\tiles\gar2004.frm
-tile       176  156            art\tiles\gar2001.frm
-tile       178  156            art\tiles\gar2002.frm
-tile       180  156            art\tiles\gar2003.frm
+tile       170  156            art\tiles\edg6004.frm
+tile       172  156            art\tiles\edg5000.frm
+tile       174  156            art\tiles\edg5000.frm
+tile       176  156            art\tiles\edg5001.frm
+tile       178  156            art\tiles\edg5007.frm
+tile       180  156            art\tiles\edg5000.frm
 tile       182  156            art\tiles\edg5004.frm
 tile       184  156            art\tiles\edg5004.frm
 tile       186  156            art\tiles\edg5000.frm
@@ -5260,9 +5259,7 @@ tile       224  156            art\tiles\edg1002.frm
 tile       226  156            art\tiles\edg4003.frm
 tile       228  156            art\tiles\edg4004.frm
 tile       230  156            art\tiles\edg2000.frm
-tile       232  156            art\tiles\edg5004.frm
 tile       232  156            art\tiles\edg2000.frm
-tile       234  156            art\tiles\edg5000.frm
 tile       234  156            art\tiles\edg5004.frm
 tile       236  156            art\tiles\edg1003.frm
 tile       238  156            art\tiles\edg4002.frm
@@ -5379,9 +5376,9 @@ tile       168  158            art\tiles\edg1000.frm
 tile       170  158            art\tiles\edg2000.frm
 tile       172  158            art\tiles\edg5000.frm
 tile       174  158            art\tiles\edg5005.frm
-tile       176  158            art\tiles\gar2004.frm
-tile       178  158            art\tiles\gar2004.frm
-tile       180  158            art\tiles\gar2003.frm
+tile       176  158            art\tiles\edg5003.frm
+tile       178  158            art\tiles\edg5004.frm
+tile       180  158            art\tiles\edg5001.frm
 tile       182  158            art\tiles\edg5001.frm
 tile       184  158            art\tiles\edg5001.frm
 tile       186  158            art\tiles\edg5005.frm
@@ -5529,7 +5526,7 @@ tile       172  160            art\tiles\edg5002.frm
 tile       174  160            art\tiles\edg5006.frm
 tile       176  160            art\tiles\edg5001.frm
 tile       178  160            art\tiles\edg5000.frm
-tile       180  160            art\tiles\gar2004.frm
+tile       180  160            art\tiles\edg5007.frm
 tile       182  160            art\tiles\edg5000.frm
 tile       184  160            art\tiles\edg5000.frm
 tile       186  160            art\tiles\edg5003.frm
@@ -5665,7 +5662,7 @@ tile       164  162            art\tiles\edg6004.frm
 tile       166  162            art\tiles\edg5000.frm
 tile       168  162            art\tiles\edg5002.frm
 tile       170  162            art\tiles\edg5000.frm
-tile       172  162            art\tiles\edg6003.frm
+tile       172  162            art\tiles\edg5003.frm
 tile       174  162            art\tiles\edg5000.frm
 tile       176  162            art\tiles\edg5003.frm
 tile       178  162            art\tiles\edg5003.frm
@@ -5810,8 +5807,8 @@ tile       164  164            art\tiles\edg2000.frm
 tile       166  164            art\tiles\edg5003.frm
 tile       168  164            art\tiles\edg5003.frm
 tile       170  164            art\tiles\edg5002.frm
-tile       172  164            art\tiles\edg1002.frm
-tile       174  164            art\tiles\edg5006.frm
+tile       172  164            art\tiles\edg5007.frm
+tile       174  164            art\tiles\edg5000.frm
 tile       176  164            art\tiles\edg5000.frm
 tile       178  164            art\tiles\edg5000.frm
 tile       180  164            art\tiles\edg5007.frm
@@ -5952,8 +5949,8 @@ tile       158  166            art\tiles\edg5003.frm
 tile       160  166            art\tiles\edg4008.frm
 tile       162  166            art\tiles\edg4007.frm
 tile       164  166            art\tiles\edg2000.frm
-tile       166  166            art\tiles\gar2000.frm
-tile       168  166            art\tiles\gar2000.frm
+tile       166  166            art\tiles\edg5000.frm
+tile       168  166            art\tiles\edg5007.frm
 tile       170  166            art\tiles\edg5003.frm
 tile       172  166            art\tiles\edg5000.frm
 tile       174  166            art\tiles\edg5007.frm
@@ -5985,9 +5982,7 @@ roof       208  166            art\tiles\plk2000.frm
 tile       210  166            art\tiles\crbm007.frm
 roof       210  166            art\tiles\plk4000.frm
 tile       212  166            art\tiles\crbm007.frm
-tile       212  166            art\tiles\crbm007.frm
 roof       212  166            art\tiles\plk2000.frm
-tile       214  166            art\tiles\crbm007.frm
 tile       214  166            art\tiles\crbm007.frm
 roof       214  166            art\tiles\plk3000.frm
 tile       216  166            art\tiles\crbm007.frm
@@ -6043,8 +6038,6 @@ tile       310  166            art\tiles\bld2043.frm
 tile       312  166            art\tiles\bld2043.frm
 tile       314  166            art\tiles\bld2043.frm
 tile       316  166            art\tiles\bld2043.frm
-roof       121  167            art\tiles\atoll9.png
-roof       123  167            art\tiles\atoll9.png
 tile       54   168            art\tiles\bld2043.frm
 tile       56   168            art\tiles\bld2043.frm
 tile       58   168            art\tiles\bld2043.frm
@@ -6101,9 +6094,9 @@ tile       158  168            art\tiles\edg1002.frm
 tile       160  168            art\tiles\edg4003.frm
 tile       162  168            art\tiles\edg1000.frm
 tile       164  168            art\tiles\edg2000.frm
-tile       166  168            art\tiles\gar2002.frm
-tile       168  168            art\tiles\gar2001.frm
-tile       170  168            art\tiles\gar2000.frm
+tile       166  168            art\tiles\edg5001.frm
+tile       168  168            art\tiles\edg5004.frm
+tile       170  168            art\tiles\edg5004.frm
 tile       172  168            art\tiles\edg5004.frm
 tile       174  168            art\tiles\edg5003.frm
 tile       176  168            art\tiles\edg5007.frm
@@ -6134,9 +6127,7 @@ roof       208  168            art\tiles\plk1000.frm
 tile       210  168            art\tiles\crbm007.frm
 roof       210  168            art\tiles\plk1000.frm
 tile       212  168            art\tiles\crbm007.frm
-tile       212  168            art\tiles\crbm007.frm
 roof       212  168            art\tiles\plk1000.frm
-tile       214  168            art\tiles\crbm007.frm
 tile       214  168            art\tiles\crbm007.frm
 roof       214  168            art\tiles\plk3001.frm
 tile       216  168            art\tiles\crbm007.frm
@@ -6193,8 +6184,6 @@ tile       312  168            art\tiles\bld2043.frm
 tile       314  168            art\tiles\bld2043.frm
 tile       316  168            art\tiles\bld2043.frm
 tile       318  168            art\tiles\bld2043.frm
-roof       121  169            art\tiles\atoll9.png
-roof       123  169            art\tiles\atoll9.png
 tile       56   170            art\tiles\bld2043.frm
 tile       58   170            art\tiles\bld2043.frm
 tile       60   170            art\tiles\bld2043.frm
@@ -6250,9 +6239,9 @@ tile       158  170            art\tiles\edg1003.frm
 tile       160  170            art\tiles\edg4006.frm
 tile       162  170            art\tiles\edg4007.frm
 tile       164  170            art\tiles\edg2000.frm
-tile       166  170            art\tiles\gar2002.frm
-tile       168  170            art\tiles\gar2001.frm
-tile       170  170            art\tiles\gar2003.frm
+tile       166  170            art\tiles\edg5003.frm
+tile       168  170            art\tiles\edg5000.frm
+tile       170  170            art\tiles\edg5000.frm
 tile       172  170            art\tiles\edg5001.frm
 tile       174  170            art\tiles\edg5003.frm
 tile       176  170            art\tiles\edg5000.frm
@@ -6395,9 +6384,9 @@ tile       158  172            art\tiles\edg1002.frm
 tile       160  172            art\tiles\edg4003.frm
 tile       162  172            art\tiles\edgs002.frm
 tile       164  172            art\tiles\edg2000.frm
-tile       166  172            art\tiles\gar2002.frm
-tile       168  172            art\tiles\gar2001.frm
-tile       170  172            art\tiles\gar2003.frm
+tile       166  172            art\tiles\edg5001.frm
+tile       168  172            art\tiles\edg5004.frm
+tile       170  172            art\tiles\edg5004.frm
 tile       172  172            art\tiles\edg5001.frm
 tile       174  172            art\tiles\edg5003.frm
 tile       176  172            art\tiles\edg5005.frm
@@ -6540,11 +6529,11 @@ tile       158  174            art\tiles\edg1003.frm
 tile       160  174            art\tiles\edg4001.frm
 tile       162  174            art\tiles\edg4003.frm
 tile       164  174            art\tiles\edg6004.frm
-tile       166  174            art\tiles\gar2002.frm
-tile       168  174            art\tiles\gar2001.frm
-tile       170  174            art\tiles\gar2003.frm
-tile       172  174            art\tiles\gar2000.frm
-tile       174  174            art\tiles\gar2000.frm
+tile       166  174            art\tiles\edg5003.frm
+tile       168  174            art\tiles\edg5000.frm
+tile       170  174            art\tiles\edg5000.frm
+tile       172  174            art\tiles\edg5000.frm
+tile       174  174            art\tiles\edg5003.frm
 tile       176  174            art\tiles\edg5003.frm
 tile       178  174            art\tiles\edg5000.frm
 tile       180  174            art\tiles\edg5007.frm
@@ -6654,10 +6643,10 @@ tile       122  176            art\tiles\edg5001.frm
 tile       124  176            art\tiles\edg5004.frm
 tile       126  176            art\tiles\edg5006.frm
 tile       128  176            art\tiles\edg5006.frm
-tile       130  176            art\tiles\gar2000.frm
-tile       132  176            art\tiles\gar2000.frm
-tile       134  176            art\tiles\gar2000.frm
-tile       136  176            art\tiles\gar2000.frm
+tile       130  176            art\tiles\edg5000.frm
+tile       132  176            art\tiles\edg5004.frm
+tile       134  176            art\tiles\edg5000.frm
+tile       136  176            art\tiles\edg5004.frm
 tile       138  176            art\tiles\gar2000.frm
 tile       140  176            art\tiles\gar2000.frm
 tile       142  176            art\tiles\gar2003.frm
@@ -6665,21 +6654,21 @@ tile       144  176            art\tiles\gar2003.frm
 tile       146  176            art\tiles\gar2002.frm
 tile       148  176            art\tiles\gar2001.frm
 tile       150  176            art\tiles\gar2000.frm
-tile       152  176            art\tiles\gar2000.frm
-tile       154  176            art\tiles\gar2000.frm
-tile       156  176            art\tiles\gar2000.frm
-tile       158  176            art\tiles\gar2000.frm
-tile       160  176            art\tiles\gar2000.frm
-tile       162  176            art\tiles\gar2000.frm
-tile       164  176            art\tiles\gar2000.frm
-tile       166  176            art\tiles\gar2002.frm
-tile       168  176            art\tiles\gar2001.frm
-tile       170  176            art\tiles\gar2003.frm
-tile       172  176            art\tiles\gar2002.frm
-tile       174  176            art\tiles\gar2001.frm
+tile       152  176            art\tiles\edg5000.frm
+tile       154  176            art\tiles\edg5004.frm
+tile       156  176            art\tiles\edg5003.frm
+tile       158  176            art\tiles\edg6005.frm
+tile       160  176            art\tiles\edg2003.frm
+tile       162  176            art\tiles\edgs004.frm
+tile       164  176            art\tiles\edg5003.frm
+tile       166  176            art\tiles\edg5007.frm
+tile       168  176            art\tiles\edg5000.frm
+tile       170  176            art\tiles\edg5003.frm
+tile       172  176            art\tiles\edg5000.frm
+tile       174  176            art\tiles\edg5003.frm
 tile       176  176            art\tiles\edg5001.frm
-tile       178  176            art\tiles\gar2000.frm
-tile       180  176            art\tiles\gar2000.frm
+tile       178  176            art\tiles\edg5000.frm
+tile       180  176            art\tiles\edg5003.frm
 tile       182  176            art\tiles\edg5003.frm
 tile       184  176            art\tiles\edg5004.frm
 tile       186  176            art\tiles\edg5000.frm
@@ -6786,10 +6775,10 @@ tile       122  178            art\tiles\edg2003.frm
 tile       124  178            art\tiles\edg6004.frm
 tile       126  178            art\tiles\edg5004.frm
 tile       128  178            art\tiles\edg5000.frm
-tile       130  178            art\tiles\gar2001.frm
-tile       132  178            art\tiles\gar2003.frm
-tile       134  178            art\tiles\gar2002.frm
-tile       136  178            art\tiles\gar2001.frm
+tile       130  178            art\tiles\edg5000.frm
+tile       132  178            art\tiles\edg5000.frm
+tile       134  178            art\tiles\edg5000.frm
+tile       136  178            art\tiles\edg5000.frm
 tile       138  178            art\tiles\gar2003.frm
 tile       140  178            art\tiles\gar2002.frm
 tile       142  178            art\tiles\gar2003.frm
@@ -6797,22 +6786,21 @@ tile       144  178            art\tiles\gar2003.frm
 tile       146  178            art\tiles\gar2002.frm
 tile       148  178            art\tiles\gar2001.frm
 tile       150  178            art\tiles\gar2002.frm
-tile       152  178            art\tiles\gar2001.frm
-tile       154  178            art\tiles\gar2003.frm
-tile       156  178            art\tiles\gar2002.frm
-tile       158  178            art\tiles\gar2001.frm
-tile       160  178            art\tiles\gar2003.frm
-tile       162  178            art\tiles\gar2002.frm
-tile       164  178            art\tiles\gar2001.frm
-tile       166  178            art\tiles\gar2002.frm
-tile       168  178            art\tiles\gar2001.frm
-tile       170  178            art\tiles\gar2003.frm
-tile       172  178            art\tiles\gar2002.frm
-tile       174  178            art\tiles\gar2002.frm
-tile       176  178            art\tiles\gar2000.frm
-tile       178  178            art\tiles\gar2002.frm
-tile       180  178            art\tiles\gar2001.frm
-tile       182  178            art\tiles\gar2000.frm
+tile       152  178            art\tiles\edg5000.frm
+tile       154  178            art\tiles\edg5000.frm
+tile       156  178            art\tiles\edg5004.frm
+tile       158  178            art\tiles\edg1001.frm
+tile       160  178            art\tiles\edg3000.frm
+tile       162  178            art\tiles\edgs004.frm
+tile       164  178            art\tiles\edg5007.frm
+tile       166  178            art\tiles\edg5007.frm
+tile       168  178            art\tiles\edg5000.frm
+tile       170  178            art\tiles\edg5003.frm
+tile       172  178            art\tiles\edg5003.frm
+tile       174  178            art\tiles\edg5001.frm
+tile       176  178            art\tiles\edg5000.frm
+tile       178  178            art\tiles\edg5003.frm
+tile       180  178            art\tiles\edg5007.frm
 tile       182  178            art\tiles\edg5000.frm
 tile       184  178            art\tiles\edg5001.frm
 tile       186  178            art\tiles\edg5005.frm
@@ -6919,10 +6907,10 @@ tile       122  180            art\tiles\edg4001.frm
 tile       124  180            art\tiles\edg2002.frm
 tile       126  180            art\tiles\edg5001.frm
 tile       128  180            art\tiles\edg5006.frm
-tile       130  180            art\tiles\gar2001.frm
-tile       132  180            art\tiles\gar2003.frm
-tile       134  180            art\tiles\gar2002.frm
-tile       136  180            art\tiles\gar2001.frm
+tile       130  180            art\tiles\edg5002.frm
+tile       132  180            art\tiles\edg5005.frm
+tile       134  180            art\tiles\edg5002.frm
+tile       136  180            art\tiles\edg5005.frm
 tile       138  180            art\tiles\gar2003.frm
 tile       140  180            art\tiles\gar2002.frm
 tile       142  180            art\tiles\gar2003.frm
@@ -6930,23 +6918,22 @@ tile       144  180            art\tiles\gar2003.frm
 tile       146  180            art\tiles\gar2002.frm
 tile       148  180            art\tiles\gar2001.frm
 tile       150  180            art\tiles\gar2002.frm
-tile       152  180            art\tiles\gar2001.frm
-tile       154  180            art\tiles\gar2003.frm
-tile       156  180            art\tiles\gar2002.frm
-tile       158  180            art\tiles\gar2001.frm
-tile       160  180            art\tiles\gar2003.frm
-tile       162  180            art\tiles\gar2002.frm
-tile       164  180            art\tiles\gar2001.frm
-tile       166  180            art\tiles\gar2002.frm
-tile       168  180            art\tiles\gar2001.frm
-tile       170  180            art\tiles\gar2003.frm
-tile       172  180            art\tiles\gar2002.frm
-tile       174  180            art\tiles\gar2002.frm
-tile       176  180            art\tiles\gar2001.frm
-tile       178  180            art\tiles\gar2002.frm
-tile       180  180            art\tiles\gar2001.frm
-tile       182  180            art\tiles\gar2003.frm
-tile       182  180            art\tiles\edg5003.frm
+tile       152  180            art\tiles\edg5002.frm
+tile       154  180            art\tiles\edg5005.frm
+tile       156  180            art\tiles\edg5002.frm
+tile       158  180            art\tiles\edg4000.frm
+tile       160  180            art\tiles\edg3000.frm
+tile       162  180            art\tiles\edgs003.frm
+tile       164  180            art\tiles\edg5007.frm
+tile       166  180            art\tiles\edg5007.frm
+tile       168  180            art\tiles\edg5000.frm
+tile       170  180            art\tiles\edg5003.frm
+tile       172  180            art\tiles\edg5000.frm
+tile       174  180            art\tiles\edg5007.frm
+tile       176  180            art\tiles\edg5003.frm
+tile       178  180            art\tiles\edg5001.frm
+tile       180  180            art\tiles\edg5001.frm
+tile       182  180            art\tiles\edg5000.frm
 tile       184  180            art\tiles\edg5000.frm
 tile       186  180            art\tiles\edg5003.frm
 tile       188  180            art\tiles\edg5000.frm
@@ -7052,10 +7039,10 @@ tile       122  182            art\tiles\edg2003.frm
 tile       124  182            art\tiles\edg2000.frm
 tile       126  182            art\tiles\edg5000.frm
 tile       128  182            art\tiles\edg5002.frm
-tile       130  182            art\tiles\gar2001.frm
-tile       132  182            art\tiles\gar2003.frm
-tile       134  182            art\tiles\gar2002.frm
-tile       136  182            art\tiles\gar2001.frm
+tile       130  182            art\tiles\edg5003.frm
+tile       132  182            art\tiles\edg5000.frm
+tile       134  182            art\tiles\edg5003.frm
+tile       136  182            art\tiles\edg5000.frm
 tile       138  182            art\tiles\gar2003.frm
 tile       140  182            art\tiles\gar2002.frm
 tile       142  182            art\tiles\gar2003.frm
@@ -7063,23 +7050,22 @@ tile       144  182            art\tiles\gar2003.frm
 tile       146  182            art\tiles\gar2002.frm
 tile       148  182            art\tiles\gar2001.frm
 tile       150  182            art\tiles\gar2002.frm
-tile       152  182            art\tiles\gar2001.frm
-tile       154  182            art\tiles\gar2003.frm
-tile       156  182            art\tiles\gar2002.frm
-tile       158  182            art\tiles\gar2001.frm
-tile       160  182            art\tiles\gar2003.frm
-tile       162  182            art\tiles\gar2002.frm
-tile       164  182            art\tiles\gar2001.frm
-tile       166  182            art\tiles\gar2002.frm
-tile       168  182            art\tiles\gar2001.frm
-tile       170  182            art\tiles\gar2003.frm
-tile       172  182            art\tiles\gar2002.frm
-tile       174  182            art\tiles\gar2001.frm
-tile       176  182            art\tiles\gar2001.frm
-tile       178  182            art\tiles\gar2003.frm
-tile       180  182            art\tiles\gar2002.frm
-tile       182  182            art\tiles\gar2001.frm
-tile       182  182            art\tiles\edg5000.frm
+tile       152  182            art\tiles\edg5003.frm
+tile       154  182            art\tiles\edg5000.frm
+tile       156  182            art\tiles\edg5000.frm
+tile       158  182            art\tiles\edg1001.frm
+tile       160  182            art\tiles\edg4005.frm
+tile       162  182            art\tiles\edg4007.frm
+tile       164  182            art\tiles\edg4003.frm
+tile       166  182            art\tiles\edg4004.frm
+tile       168  182            art\tiles\edg5000.frm
+tile       170  182            art\tiles\edg5003.frm
+tile       172  182            art\tiles\edg5001.frm
+tile       174  182            art\tiles\edg5004.frm
+tile       176  182            art\tiles\edg5000.frm
+tile       178  182            art\tiles\edg5007.frm
+tile       180  182            art\tiles\edg5007.frm
+tile       182  182            art\tiles\edg5003.frm
 tile       184  182            art\tiles\edg5003.frm
 tile       186  182            art\tiles\edg5001.frm
 tile       188  182            art\tiles\edg5003.frm
@@ -7185,10 +7171,10 @@ tile       122  184            art\tiles\edg4000.frm
 tile       124  184            art\tiles\edg2003.frm
 tile       126  184            art\tiles\edg5003.frm
 tile       128  184            art\tiles\edg5003.frm
-tile       130  184            art\tiles\gar2001.frm
-tile       132  184            art\tiles\gar2003.frm
-tile       134  184            art\tiles\gar2002.frm
-tile       136  184            art\tiles\gar2001.frm
+tile       130  184            art\tiles\edg5004.frm
+tile       132  184            art\tiles\edg5006.frm
+tile       134  184            art\tiles\edg5004.frm
+tile       136  184            art\tiles\edg5006.frm
 tile       138  184            art\tiles\gar2003.frm
 tile       140  184            art\tiles\gar2002.frm
 tile       142  184            art\tiles\gar2003.frm
@@ -7196,23 +7182,22 @@ tile       144  184            art\tiles\gar2003.frm
 tile       146  184            art\tiles\gar2002.frm
 tile       148  184            art\tiles\gar2001.frm
 tile       150  184            art\tiles\gar2002.frm
-tile       152  184            art\tiles\gar2001.frm
-tile       154  184            art\tiles\gar2003.frm
-tile       156  184            art\tiles\gar2002.frm
-tile       158  184            art\tiles\gar2001.frm
-tile       160  184            art\tiles\gar2003.frm
-tile       162  184            art\tiles\gar2002.frm
-tile       164  184            art\tiles\gar2001.frm
-tile       166  184            art\tiles\gar2002.frm
-tile       168  184            art\tiles\gar2001.frm
-tile       170  184            art\tiles\gar2003.frm
-tile       172  184            art\tiles\gar2002.frm
-tile       174  184            art\tiles\gar2001.frm
-tile       176  184            art\tiles\gar2001.frm
-tile       178  184            art\tiles\gar2003.frm
-tile       180  184            art\tiles\gar2002.frm
-tile       182  184            art\tiles\gar2001.frm
-tile       182  184            art\tiles\edg5001.frm
+tile       152  184            art\tiles\edg5004.frm
+tile       154  184            art\tiles\edg5006.frm
+tile       156  184            art\tiles\edg5000.frm
+tile       158  184            art\tiles\edg6003.frm
+tile       160  184            art\tiles\edg4002.frm
+tile       162  184            art\tiles\edg4000.frm
+tile       164  184            art\tiles\edg3000.frm
+tile       166  184            art\tiles\edg2003.frm
+tile       168  184            art\tiles\edg2003.frm
+tile       170  184            art\tiles\edg5002.frm
+tile       172  184            art\tiles\edg5003.frm
+tile       174  184            art\tiles\edg5000.frm
+tile       176  184            art\tiles\edg5001.frm
+tile       178  184            art\tiles\edg5004.frm
+tile       180  184            art\tiles\edg5004.frm
+tile       182  184            art\tiles\edg5000.frm
 tile       184  184            art\tiles\edg5000.frm
 tile       186  184            art\tiles\edg5007.frm
 tile       188  184            art\tiles\edg5000.frm
@@ -7318,10 +7303,10 @@ tile       122  186            art\tiles\edg2003.frm
 tile       124  186            art\tiles\edg6008.frm
 tile       126  186            art\tiles\edg5004.frm
 tile       128  186            art\tiles\edg5000.frm
-tile       130  186            art\tiles\gar2001.frm
-tile       132  186            art\tiles\gar2003.frm
-tile       134  186            art\tiles\gar2002.frm
-tile       136  186            art\tiles\gar2001.frm
+tile       130  186            art\tiles\edg5000.frm
+tile       132  186            art\tiles\edg5000.frm
+tile       134  186            art\tiles\edg5000.frm
+tile       136  186            art\tiles\edg5002.frm
 tile       138  186            art\tiles\gar2003.frm
 tile       140  186            art\tiles\gar2002.frm
 tile       142  186            art\tiles\gar2003.frm
@@ -7329,23 +7314,22 @@ tile       144  186            art\tiles\gar2003.frm
 tile       146  186            art\tiles\gar2002.frm
 tile       148  186            art\tiles\gar2001.frm
 tile       150  186            art\tiles\gar2002.frm
-tile       152  186            art\tiles\gar2001.frm
-tile       154  186            art\tiles\gar2003.frm
-tile       156  186            art\tiles\gar2002.frm
-tile       158  186            art\tiles\gar2001.frm
-tile       160  186            art\tiles\gar2003.frm
-tile       162  186            art\tiles\gar2002.frm
-tile       164  186            art\tiles\gar2001.frm
-tile       166  186            art\tiles\gar2002.frm
-tile       168  186            art\tiles\gar2001.frm
-tile       170  186            art\tiles\gar2003.frm
-tile       172  186            art\tiles\gar2002.frm
-tile       174  186            art\tiles\gar2001.frm
-tile       176  186            art\tiles\gar2001.frm
-tile       178  186            art\tiles\gar2003.frm
-tile       180  186            art\tiles\gar2002.frm
-tile       182  186            art\tiles\gar2001.frm
-tile       182  186            art\tiles\edg5003.frm
+tile       152  186            art\tiles\edg5000.frm
+tile       154  186            art\tiles\edg5004.frm
+tile       156  186            art\tiles\edg5005.frm
+tile       158  186            art\tiles\edg1002.frm
+tile       160  186            art\tiles\edg4003.frm
+tile       162  186            art\tiles\edgs003.frm
+tile       164  186            art\tiles\edg5007.frm
+tile       166  186            art\tiles\edg6011.frm
+tile       168  186            art\tiles\edg4000.frm
+tile       170  186            art\tiles\edg5000.frm
+tile       172  186            art\tiles\edg5007.frm
+tile       174  186            art\tiles\edg5000.frm
+tile       176  186            art\tiles\edg5003.frm
+tile       178  186            art\tiles\edg5000.frm
+tile       180  186            art\tiles\edg5000.frm
+tile       182  186            art\tiles\edg5001.frm
 tile       184  186            art\tiles\edg5001.frm
 tile       186  186            art\tiles\edg5004.frm
 tile       188  186            art\tiles\edg5001.frm
@@ -7451,10 +7435,10 @@ tile       122  188            art\tiles\edg5001.frm
 tile       124  188            art\tiles\edg5005.frm
 tile       126  188            art\tiles\edg5002.frm
 tile       128  188            art\tiles\edg5000.frm
-tile       130  188            art\tiles\gar2001.frm
-tile       132  188            art\tiles\gar2003.frm
-tile       134  188            art\tiles\gar2002.frm
-tile       136  188            art\tiles\gar2001.frm
+tile       130  188            art\tiles\edg5003.frm
+tile       132  188            art\tiles\edg5002.frm
+tile       134  188            art\tiles\edg5003.frm
+tile       136  188            art\tiles\edg5003.frm
 tile       138  188            art\tiles\gar2003.frm
 tile       140  188            art\tiles\gar2002.frm
 tile       142  188            art\tiles\gar2003.frm
@@ -7462,23 +7446,22 @@ tile       144  188            art\tiles\gar2003.frm
 tile       146  188            art\tiles\gar2002.frm
 tile       148  188            art\tiles\gar2001.frm
 tile       150  188            art\tiles\gar2002.frm
-tile       152  188            art\tiles\gar2001.frm
-tile       154  188            art\tiles\gar2003.frm
-tile       156  188            art\tiles\gar2002.frm
-tile       158  188            art\tiles\gar2001.frm
-tile       160  188            art\tiles\gar2003.frm
-tile       162  188            art\tiles\gar2003.frm
-tile       164  188            art\tiles\gar2001.frm
-tile       166  188            art\tiles\gar2002.frm
-tile       168  188            art\tiles\gar2001.frm
-tile       170  188            art\tiles\gar2003.frm
-tile       172  188            art\tiles\gar2002.frm
-tile       174  188            art\tiles\gar2001.frm
-tile       176  188            art\tiles\gar2001.frm
-tile       178  188            art\tiles\gar2003.frm
-tile       180  188            art\tiles\gar2002.frm
-tile       182  188            art\tiles\gar2001.frm
-tile       182  188            art\tiles\edg5007.frm
+tile       152  188            art\tiles\edg5002.frm
+tile       154  188            art\tiles\edg5007.frm
+tile       156  188            art\tiles\edg5006.frm
+tile       158  188            art\tiles\edg6003.frm
+tile       160  188            art\tiles\edg2003.frm
+tile       162  188            art\tiles\edg6007.frm
+tile       164  188            art\tiles\edg5001.frm
+tile       166  188            art\tiles\edg7001.frm
+tile       168  188            art\tiles\edg2003.frm
+tile       170  188            art\tiles\edg5003.frm
+tile       172  188            art\tiles\edg5000.frm
+tile       174  188            art\tiles\edg5004.frm
+tile       176  188            art\tiles\edg5007.frm
+tile       178  188            art\tiles\edg5000.frm
+tile       180  188            art\tiles\edg5000.frm
+tile       182  188            art\tiles\edg5003.frm
 tile       184  188            art\tiles\edg5003.frm
 tile       186  188            art\tiles\edg5000.frm
 tile       188  188            art\tiles\edg5003.frm
@@ -7584,34 +7567,33 @@ tile       122  190            art\tiles\edg5000.frm
 tile       124  190            art\tiles\edg5003.frm
 tile       126  190            art\tiles\edg5000.frm
 tile       128  190            art\tiles\edg5001.frm
-tile       130  190            art\tiles\gar2001.frm
-tile       132  190            art\tiles\gar2003.frm
-tile       134  190            art\tiles\gar2002.frm
-tile       136  190            art\tiles\gar2001.frm
+tile       130  190            art\tiles\edg5000.frm
+tile       132  190            art\tiles\edg5003.frm
+tile       134  190            art\tiles\edg5004.frm
+tile       136  190            art\tiles\edg5000.frm
 tile       138  190            art\tiles\gar2003.frm
 tile       140  190            art\tiles\gar2002.frm
 tile       142  190            art\tiles\gar2003.frm
 tile       144  190            art\tiles\gar2003.frm
 tile       146  190            art\tiles\gar2002.frm
 tile       148  190            art\tiles\gar2001.frm
-tile       150  190            art\tiles\gar2002.frm
-tile       152  190            art\tiles\gar2001.frm
-tile       154  190            art\tiles\gar2003.frm
-tile       156  190            art\tiles\gar2002.frm
-tile       158  190            art\tiles\gar2001.frm
-tile       160  190            art\tiles\gar2003.frm
-tile       162  190            art\tiles\gar2002.frm
-tile       164  190            art\tiles\gar2001.frm
-tile       166  190            art\tiles\gar2002.frm
-tile       168  190            art\tiles\gar2001.frm
-tile       170  190            art\tiles\gar2003.frm
-tile       172  190            art\tiles\gar2002.frm
-tile       174  190            art\tiles\gar2001.frm
-tile       176  190            art\tiles\gar2001.frm
-tile       178  190            art\tiles\gar2003.frm
-tile       180  190            art\tiles\gar2003.frm
-tile       182  190            art\tiles\gar2001.frm
-tile       182  190            art\tiles\edg5000.frm
+tile       150  190            art\tiles\gar2003.frm
+tile       152  190            art\tiles\edg5002.frm
+tile       154  190            art\tiles\edg5007.frm
+tile       156  190            art\tiles\edg5004.frm
+tile       158  190            art\tiles\edg1002.frm
+tile       160  190            art\tiles\edg4000.frm
+tile       162  190            art\tiles\edg2000.frm
+tile       164  190            art\tiles\edg6004.frm
+tile       166  190            art\tiles\edg7002.frm
+tile       168  190            art\tiles\edg3000.frm
+tile       170  190            art\tiles\edg6006.frm
+tile       172  190            art\tiles\edg5002.frm
+tile       174  190            art\tiles\edg5007.frm
+tile       176  190            art\tiles\edg5000.frm
+tile       178  190            art\tiles\edg5004.frm
+tile       180  190            art\tiles\edg5004.frm
+tile       182  190            art\tiles\edg5007.frm
 tile       184  190            art\tiles\edg5007.frm
 tile       186  190            art\tiles\edg5000.frm
 tile       188  190            art\tiles\edg5007.frm
@@ -7717,34 +7699,33 @@ tile       122  192            art\tiles\edg5002.frm
 tile       124  192            art\tiles\edg5000.frm
 tile       126  192            art\tiles\edg5000.frm
 tile       128  192            art\tiles\edg5001.frm
-tile       130  192            art\tiles\gar2001.frm
-tile       132  192            art\tiles\gar2003.frm
-tile       134  192            art\tiles\gar2002.frm
-tile       136  192            art\tiles\gar2001.frm
+tile       130  192            art\tiles\edg5002.frm
+tile       132  192            art\tiles\edg5003.frm
+tile       134  192            art\tiles\edg5003.frm
+tile       136  192            art\tiles\edg5002.frm
 tile       138  192            art\tiles\gar2003.frm
 tile       140  192            art\tiles\gar2002.frm
 tile       142  192            art\tiles\gar2003.frm
 tile       144  192            art\tiles\gar2003.frm
 tile       146  192            art\tiles\gar2002.frm
 tile       148  192            art\tiles\gar2001.frm
-tile       150  192            art\tiles\gar2002.frm
-tile       152  192            art\tiles\gar2001.frm
-tile       154  192            art\tiles\gar2003.frm
-tile       156  192            art\tiles\gar2002.frm
-tile       158  192            art\tiles\gar2001.frm
-tile       160  192            art\tiles\gar2003.frm
-tile       162  192            art\tiles\gar2002.frm
-tile       164  192            art\tiles\gar2001.frm
-tile       166  192            art\tiles\gar2002.frm
-tile       168  192            art\tiles\gar2001.frm
-tile       170  192            art\tiles\gar2003.frm
-tile       172  192            art\tiles\gar2003.frm
-tile       174  192            art\tiles\gar2001.frm
-tile       176  192            art\tiles\gar2001.frm
-tile       178  192            art\tiles\gar2003.frm
-tile       180  192            art\tiles\gar2002.frm
-tile       182  192            art\tiles\gar2001.frm
-tile       182  192            art\tiles\edg5003.frm
+tile       150  192            art\tiles\gar2004.frm
+tile       152  192            art\tiles\edg5000.frm
+tile       154  192            art\tiles\edg5004.frm
+tile       156  192            art\tiles\edg2003.frm
+tile       158  192            art\tiles\edg5000.frm
+tile       160  192            art\tiles\edg4006.frm
+tile       162  192            art\tiles\edg2000.frm
+tile       164  192            art\tiles\edg7002.frm
+tile       166  192            art\tiles\edg6011.frm
+tile       168  192            art\tiles\edg3000.frm
+tile       170  192            art\tiles\edg5002.frm
+tile       172  192            art\tiles\edg5004.frm
+tile       174  192            art\tiles\edg5000.frm
+tile       176  192            art\tiles\edg5002.frm
+tile       178  192            art\tiles\edg5007.frm
+tile       180  192            art\tiles\edg5007.frm
+tile       182  192            art\tiles\edg5000.frm
 tile       184  192            art\tiles\edg5000.frm
 tile       186  192            art\tiles\edg5004.frm
 tile       188  192            art\tiles\edg5007.frm
@@ -7850,34 +7831,33 @@ tile       122  194            art\tiles\edg5003.frm
 tile       124  194            art\tiles\edg5002.frm
 tile       126  194            art\tiles\edg5005.frm
 tile       128  194            art\tiles\edg5000.frm
-tile       130  194            art\tiles\gar2004.frm
-tile       132  194            art\tiles\gar2004.frm
-tile       134  194            art\tiles\gar2004.frm
-tile       136  194            art\tiles\gar2001.frm
+tile       130  194            art\tiles\edg5003.frm
+tile       132  194            art\tiles\edg5004.frm
+tile       134  194            art\tiles\edg5000.frm
+tile       136  194            art\tiles\edg5003.frm
 tile       138  194            art\tiles\gar2003.frm
-tile       140  194            art\tiles\gar2002.frm
+tile       140  194            art\tiles\gar2004.frm
 tile       142  194            art\tiles\gar2003.frm
-tile       144  194            art\tiles\gar2003.frm
+tile       144  194            art\tiles\gar2004.frm
 tile       146  194            art\tiles\gar2002.frm
 tile       148  194            art\tiles\gar2001.frm
-tile       150  194            art\tiles\gar2002.frm
-tile       152  194            art\tiles\gar2001.frm
-tile       154  194            art\tiles\gar2003.frm
-tile       156  194            art\tiles\gar2002.frm
-tile       158  194            art\tiles\gar2001.frm
-tile       160  194            art\tiles\gar2003.frm
-tile       162  194            art\tiles\gar2002.frm
-tile       164  194            art\tiles\gar2001.frm
-tile       166  194            art\tiles\gar2002.frm
-tile       168  194            art\tiles\gar2001.frm
-tile       170  194            art\tiles\gar2003.frm
-tile       172  194            art\tiles\gar2002.frm
-tile       174  194            art\tiles\gar2001.frm
-tile       176  194            art\tiles\gar2001.frm
-tile       178  194            art\tiles\gar2003.frm
-tile       180  194            art\tiles\gar2002.frm
-tile       182  194            art\tiles\gar2001.frm
-tile       182  194            art\tiles\edg5000.frm
+tile       150  194            art\tiles\edg5004.frm
+tile       152  194            art\tiles\edg5002.frm
+tile       154  194            art\tiles\edg5007.frm
+tile       156  194            art\tiles\edgs003.frm
+tile       158  194            art\tiles\edg7001.frm
+tile       160  194            art\tiles\edg4000.frm
+tile       162  194            art\tiles\edg5000.frm
+tile       164  194            art\tiles\edg5007.frm
+tile       166  194            art\tiles\edg3000.frm
+tile       168  194            art\tiles\edg4006.frm
+tile       170  194            art\tiles\edg5000.frm
+tile       172  194            art\tiles\edg5000.frm
+tile       174  194            art\tiles\edg5003.frm
+tile       176  194            art\tiles\edg5004.frm
+tile       178  194            art\tiles\edg5000.frm
+tile       180  194            art\tiles\edg5000.frm
+tile       182  194            art\tiles\edg5002.frm
 tile       184  194            art\tiles\edg5002.frm
 tile       186  194            art\tiles\edg5007.frm
 tile       188  194            art\tiles\edg5000.frm
@@ -7993,31 +7973,30 @@ tile       128  196            art\tiles\edg5001.frm
 tile       130  196            art\tiles\edg5003.frm
 tile       132  196            art\tiles\edg5002.frm
 tile       134  196            art\tiles\edg5006.frm
-tile       136  196            art\tiles\gar2001.frm
-tile       138  196            art\tiles\gar2003.frm
-tile       140  196            art\tiles\gar2002.frm
-tile       142  196            art\tiles\gar2003.frm
-tile       144  196            art\tiles\gar2003.frm
-tile       146  196            art\tiles\gar2002.frm
+tile       136  196            art\tiles\edg5004.frm
+tile       138  196            art\tiles\gar2004.frm
+tile       140  196            art\tiles\edg5004.frm
+tile       142  196            art\tiles\gar2004.frm
+tile       144  196            art\tiles\edg5000.frm
+tile       146  196            art\tiles\gar2004.frm
 tile       148  196            art\tiles\gar2001.frm
-tile       150  196            art\tiles\gar2002.frm
-tile       152  196            art\tiles\gar2001.frm
-tile       154  196            art\tiles\gar2003.frm
-tile       156  196            art\tiles\gar2002.frm
-tile       158  196            art\tiles\gar2001.frm
-tile       160  196            art\tiles\gar2003.frm
-tile       162  196            art\tiles\gar2002.frm
-tile       164  196            art\tiles\gar2001.frm
-tile       166  196            art\tiles\gar2002.frm
-tile       168  196            art\tiles\gar2001.frm
-tile       170  196            art\tiles\gar2003.frm
-tile       172  196            art\tiles\gar2002.frm
-tile       174  196            art\tiles\gar2001.frm
-tile       176  196            art\tiles\gar2001.frm
-tile       178  196            art\tiles\gar2003.frm
-tile       180  196            art\tiles\gar2002.frm
-tile       182  196            art\tiles\gar2001.frm
-tile       182  196            art\tiles\edg5001.frm
+tile       150  196            art\tiles\edg5001.frm
+tile       152  196            art\tiles\edg5004.frm
+tile       154  196            art\tiles\edg5000.frm
+tile       156  196            art\tiles\edg5004.frm
+tile       158  196            art\tiles\edg7002.frm
+tile       160  196            art\tiles\edg2003.frm
+tile       162  196            art\tiles\edg4000.frm
+tile       164  196            art\tiles\edg3000.frm
+tile       166  196            art\tiles\edg3000.frm
+tile       168  196            art\tiles\edg2003.frm
+tile       170  196            art\tiles\edg5002.frm
+tile       172  196            art\tiles\edg5003.frm
+tile       174  196            art\tiles\edg5001.frm
+tile       176  196            art\tiles\edg5000.frm
+tile       178  196            art\tiles\edg5003.frm
+tile       180  196            art\tiles\edg5003.frm
+tile       182  196            art\tiles\edg5004.frm
 tile       184  196            art\tiles\edg5004.frm
 tile       186  196            art\tiles\edg5000.frm
 tile       188  196            art\tiles\edg5007.frm
@@ -8133,31 +8112,30 @@ tile       128  198            art\tiles\edg5000.frm
 tile       130  198            art\tiles\edg5005.frm
 tile       132  198            art\tiles\edg5000.frm
 tile       134  198            art\tiles\edg5001.frm
-tile       136  198            art\tiles\gar2001.frm
-tile       138  198            art\tiles\gar2003.frm
-tile       140  198            art\tiles\gar2002.frm
-tile       142  198            art\tiles\gar2003.frm
-tile       144  198            art\tiles\gar2003.frm
-tile       146  198            art\tiles\gar2002.frm
+tile       136  198            art\tiles\edg5000.frm
+tile       138  198            art\tiles\edg5000.frm
+tile       140  198            art\tiles\edg5002.frm
+tile       142  198            art\tiles\edg5000.frm
+tile       144  198            art\tiles\edg5004.frm
+tile       146  198            art\tiles\edg5000.frm
 tile       148  198            art\tiles\gar2001.frm
-tile       150  198            art\tiles\gar2002.frm
-tile       152  198            art\tiles\gar2001.frm
-tile       154  198            art\tiles\gar2003.frm
-tile       156  198            art\tiles\gar2002.frm
-tile       158  198            art\tiles\gar2001.frm
-tile       160  198            art\tiles\gar2003.frm
-tile       162  198            art\tiles\gar2002.frm
-tile       164  198            art\tiles\gar2001.frm
-tile       166  198            art\tiles\gar2002.frm
-tile       168  198            art\tiles\gar2001.frm
-tile       170  198            art\tiles\gar2003.frm
-tile       172  198            art\tiles\gar2002.frm
-tile       174  198            art\tiles\gar2001.frm
-tile       176  198            art\tiles\gar2001.frm
-tile       178  198            art\tiles\gar2003.frm
-tile       180  198            art\tiles\gar2002.frm
-tile       182  198            art\tiles\gar2001.frm
-tile       182  198            art\tiles\edg5003.frm
+tile       150  198            art\tiles\edg5000.frm
+tile       152  198            art\tiles\edg5001.frm
+tile       154  198            art\tiles\edg5005.frm
+tile       156  198            art\tiles\edg5001.frm
+tile       158  198            art\tiles\edg6011.frm
+tile       160  198            art\tiles\edg4000.frm
+tile       162  198            art\tiles\edg3000.frm
+tile       164  198            art\tiles\edg5004.frm
+tile       166  198            art\tiles\edg5005.frm
+tile       168  198            art\tiles\edg5002.frm
+tile       170  198            art\tiles\edg5000.frm
+tile       172  198            art\tiles\edg5000.frm
+tile       174  198            art\tiles\edg5007.frm
+tile       176  198            art\tiles\edg5003.frm
+tile       178  198            art\tiles\edg5001.frm
+tile       180  198            art\tiles\edg5001.frm
+tile       182  198            art\tiles\edg5000.frm
 tile       184  198            art\tiles\edg5000.frm
 tile       186  198            art\tiles\edg5003.frm
 tile       188  198            art\tiles\edg5000.frm
@@ -8273,31 +8251,30 @@ tile       128  200            art\tiles\edg5000.frm
 tile       130  200            art\tiles\edg5001.frm
 tile       132  200            art\tiles\edg5002.frm
 tile       134  200            art\tiles\edg5000.frm
-tile       136  200            art\tiles\gar2001.frm
-tile       138  200            art\tiles\gar2003.frm
-tile       140  200            art\tiles\gar2002.frm
-tile       142  200            art\tiles\gar2003.frm
-tile       144  200            art\tiles\gar2003.frm
-tile       146  200            art\tiles\gar2002.frm
-tile       148  200            art\tiles\gar2001.frm
-tile       150  200            art\tiles\gar2002.frm
-tile       152  200            art\tiles\gar2001.frm
-tile       154  200            art\tiles\gar2003.frm
-tile       156  200            art\tiles\gar2002.frm
-tile       158  200            art\tiles\gar2001.frm
-tile       160  200            art\tiles\gar2003.frm
-tile       162  200            art\tiles\gar2001.frm
-tile       164  200            art\tiles\gar2001.frm
-tile       166  200            art\tiles\gar2002.frm
-tile       168  200            art\tiles\gar2001.frm
-tile       170  200            art\tiles\gar2003.frm
-tile       172  200            art\tiles\gar2002.frm
-tile       174  200            art\tiles\gar2001.frm
-tile       176  200            art\tiles\gar2001.frm
-tile       178  200            art\tiles\gar2003.frm
-tile       180  200            art\tiles\gar2002.frm
-tile       182  200            art\tiles\gar2001.frm
-tile       182  200            art\tiles\edg5007.frm
+tile       136  200            art\tiles\edg5002.frm
+tile       138  200            art\tiles\edg5005.frm
+tile       140  200            art\tiles\edg5003.frm
+tile       142  200            art\tiles\edg5000.frm
+tile       144  200            art\tiles\edg5004.frm
+tile       146  200            art\tiles\edg5000.frm
+tile       148  200            art\tiles\gar2004.frm
+tile       150  200            art\tiles\edg5003.frm
+tile       152  200            art\tiles\edg5000.frm
+tile       154  200            art\tiles\edg5003.frm
+tile       156  200            art\tiles\edg5000.frm
+tile       158  200            art\tiles\edg7001.frm
+tile       160  200            art\tiles\edg2003.frm
+tile       162  200            art\tiles\edg3000.frm
+tile       164  200            art\tiles\edg5003.frm
+tile       166  200            art\tiles\edg5000.frm
+tile       168  200            art\tiles\edg6003.frm
+tile       170  200            art\tiles\edg4000.frm
+tile       172  200            art\tiles\edg5001.frm
+tile       174  200            art\tiles\edg5004.frm
+tile       176  200            art\tiles\edg5000.frm
+tile       178  200            art\tiles\edg5007.frm
+tile       180  200            art\tiles\edg5007.frm
+tile       182  200            art\tiles\edg5003.frm
 tile       184  200            art\tiles\edg5003.frm
 tile       186  200            art\tiles\edg5001.frm
 tile       188  200            art\tiles\edg5003.frm
@@ -8413,30 +8390,29 @@ tile       128  202            art\tiles\edg6006.frm
 tile       130  202            art\tiles\edg6007.frm
 tile       132  202            art\tiles\edg5000.frm
 tile       134  202            art\tiles\edg5003.frm
-tile       136  202            art\tiles\gar2004.frm
-tile       138  202            art\tiles\gar2004.frm
-tile       140  202            art\tiles\gar2004.frm
-tile       142  202            art\tiles\gar2003.frm
-tile       144  202            art\tiles\gar2003.frm
-tile       146  202            art\tiles\gar2002.frm
-tile       148  202            art\tiles\gar2002.frm
-tile       150  202            art\tiles\gar2002.frm
-tile       152  202            art\tiles\gar2001.frm
-tile       154  202            art\tiles\gar2002.frm
-tile       156  202            art\tiles\gar2002.frm
-tile       158  202            art\tiles\gar2001.frm
-tile       160  202            art\tiles\gar2003.frm
-tile       162  202            art\tiles\gar2002.frm
-tile       164  202            art\tiles\gar2001.frm
-tile       166  202            art\tiles\gar2002.frm
-tile       168  202            art\tiles\gar2001.frm
-tile       170  202            art\tiles\gar2003.frm
-tile       172  202            art\tiles\gar2002.frm
-tile       174  202            art\tiles\gar2001.frm
-tile       176  202            art\tiles\gar2001.frm
-tile       178  202            art\tiles\gar2003.frm
-tile       180  202            art\tiles\gar2002.frm
-tile       182  202            art\tiles\gar2001.frm
+tile       136  202            art\tiles\edg5002.frm
+tile       138  202            art\tiles\edg5005.frm
+tile       140  202            art\tiles\edg5000.frm
+tile       142  202            art\tiles\edg5000.frm
+tile       144  202            art\tiles\edg5000.frm
+tile       146  202            art\tiles\edg5000.frm
+tile       148  202            art\tiles\edg5000.frm
+tile       150  202            art\tiles\edg5004.frm
+tile       152  202            art\tiles\edg5003.frm
+tile       154  202            art\tiles\edg5001.frm
+tile       156  202            art\tiles\edg5003.frm
+tile       158  202            art\tiles\edg7002.frm
+tile       160  202            art\tiles\edg4000.frm
+tile       162  202            art\tiles\edg2003.frm
+tile       164  202            art\tiles\edg5002.frm
+tile       166  202            art\tiles\edg5006.frm
+tile       168  202            art\tiles\edg1003.frm
+tile       170  202            art\tiles\edg2003.frm
+tile       172  202            art\tiles\edg5007.frm
+tile       174  202            art\tiles\edg5000.frm
+tile       176  202            art\tiles\edg5001.frm
+tile       178  202            art\tiles\edg5004.frm
+tile       180  202            art\tiles\edg5004.frm
 tile       182  202            art\tiles\edg5000.frm
 tile       184  202            art\tiles\edg5000.frm
 tile       186  202            art\tiles\edg5007.frm
@@ -8557,29 +8533,28 @@ tile       136  204            art\tiles\edg5004.frm
 roof       136  204            art\tiles\jrt1000.frm
 tile       138  204            art\tiles\edg5000.frm
 roof       138  204            art\tiles\jrt1002.frm
-tile       140  204            art\tiles\edg5004.frm
-tile       142  204            art\tiles\gar2004.frm
-tile       144  204            art\tiles\gar2003.frm
-tile       146  204            art\tiles\gar2002.frm
-tile       148  204            art\tiles\gar2002.frm
-tile       150  204            art\tiles\gar2002.frm
-tile       152  204            art\tiles\gar2001.frm
-tile       154  204            art\tiles\gar2003.frm
-tile       156  204            art\tiles\gar2002.frm
-tile       158  204            art\tiles\gar2001.frm
-tile       160  204            art\tiles\gar2003.frm
-tile       162  204            art\tiles\gar2002.frm
-tile       164  204            art\tiles\gar2001.frm
-tile       166  204            art\tiles\gar2002.frm
-tile       168  204            art\tiles\gar2001.frm
-tile       170  204            art\tiles\gar2003.frm
-tile       172  204            art\tiles\gar2002.frm
-tile       174  204            art\tiles\gar2001.frm
-tile       176  204            art\tiles\gar2001.frm
-tile       178  204            art\tiles\gar2003.frm
-tile       180  204            art\tiles\gar2003.frm
-tile       182  204            art\tiles\gar2001.frm
-tile       182  204            art\tiles\edg5003.frm
+tile       140  204            art\tiles\edg5003.frm
+tile       142  204            art\tiles\edg5000.frm
+tile       144  204            art\tiles\edg5007.frm
+tile       146  204            art\tiles\edg5000.frm
+tile       148  204            art\tiles\edg5001.frm
+tile       150  204            art\tiles\edg5006.frm
+tile       152  204            art\tiles\edg5003.frm
+tile       154  204            art\tiles\edg5002.frm
+tile       156  204            art\tiles\edg5004.frm
+tile       158  204            art\tiles\edg6011.frm
+tile       160  204            art\tiles\edg4006.frm
+tile       162  204            art\tiles\edg4003.frm
+tile       164  204            art\tiles\edg5000.frm
+tile       166  204            art\tiles\edg5001.frm
+tile       168  204            art\tiles\edg1003.frm
+tile       170  204            art\tiles\edg6004.frm
+tile       172  204            art\tiles\edg5000.frm
+tile       174  204            art\tiles\edg5006.frm
+tile       176  204            art\tiles\edg5007.frm
+tile       178  204            art\tiles\edg5000.frm
+tile       180  204            art\tiles\edg5000.frm
+tile       182  204            art\tiles\edg5004.frm
 tile       184  204            art\tiles\edg5001.frm
 tile       186  204            art\tiles\edg5004.frm
 tile       188  204            art\tiles\edg5001.frm
@@ -8702,27 +8677,26 @@ tile       138  206            art\tiles\crbm007.frm
 roof       138  206            art\tiles\plk1000.frm
 tile       140  206            art\tiles\edg5004.frm
 tile       142  206            art\tiles\edg5000.frm
-tile       144  206            art\tiles\gar2003.frm
-tile       146  206            art\tiles\gar2002.frm
-tile       148  206            art\tiles\gar2001.frm
-tile       150  206            art\tiles\gar2002.frm
-tile       152  206            art\tiles\gar2001.frm
-tile       154  206            art\tiles\gar2003.frm
-tile       156  206            art\tiles\gar2002.frm
-tile       158  206            art\tiles\gar2001.frm
-tile       160  206            art\tiles\gar2003.frm
-tile       162  206            art\tiles\gar2002.frm
-tile       164  206            art\tiles\gar2001.frm
-tile       166  206            art\tiles\gar2002.frm
-tile       168  206            art\tiles\gar2001.frm
-tile       170  206            art\tiles\gar2003.frm
-tile       172  206            art\tiles\gar2003.frm
-tile       174  206            art\tiles\gar2001.frm
-tile       176  206            art\tiles\gar2001.frm
-tile       178  206            art\tiles\gar2003.frm
-tile       180  206            art\tiles\gar2002.frm
-tile       182  206            art\tiles\gar2001.frm
-tile       182  206            art\tiles\edg5000.frm
+tile       144  206            art\tiles\edg5001.frm
+tile       146  206            art\tiles\edg6001.frm
+tile       148  206            art\tiles\edg3001.frm
+tile       150  206            art\tiles\edg6002.frm
+tile       152  206            art\tiles\edg3001.frm
+tile       154  206            art\tiles\edg6001.frm
+tile       156  206            art\tiles\edg5002.frm
+tile       158  206            art\tiles\edg3000.frm
+tile       160  206            art\tiles\edg4000.frm
+tile       162  206            art\tiles\edg3000.frm
+tile       164  206            art\tiles\edg5002.frm
+tile       166  206            art\tiles\edg5000.frm
+tile       168  206            art\tiles\edg1003.frm
+tile       170  206            art\tiles\edg2003.frm
+tile       172  206            art\tiles\edg2001.frm
+tile       174  206            art\tiles\edg5003.frm
+tile       176  206            art\tiles\edg5000.frm
+tile       178  206            art\tiles\edg5006.frm
+tile       180  206            art\tiles\edg5002.frm
+tile       182  206            art\tiles\edg5007.frm
 tile       184  206            art\tiles\edg5007.frm
 tile       186  206            art\tiles\edg5000.frm
 tile       188  206            art\tiles\edg5001.frm
@@ -8844,27 +8818,26 @@ tile       138  208            art\tiles\crbm007.frm
 roof       138  208            art\tiles\plk4000.frm
 tile       140  208            art\tiles\edg5003.frm
 tile       142  208            art\tiles\edg5002.frm
-tile       144  208            art\tiles\gar2003.frm
-tile       146  208            art\tiles\gar2002.frm
-tile       148  208            art\tiles\gar2001.frm
-tile       150  208            art\tiles\gar2002.frm
-tile       152  208            art\tiles\gar2001.frm
-tile       154  208            art\tiles\gar2003.frm
-tile       156  208            art\tiles\gar2002.frm
-tile       158  208            art\tiles\gar2002.frm
-tile       160  208            art\tiles\gar2003.frm
-tile       162  208            art\tiles\gar2002.frm
-tile       164  208            art\tiles\gar2001.frm
-tile       166  208            art\tiles\gar2002.frm
-tile       168  208            art\tiles\gar2001.frm
-tile       170  208            art\tiles\gar2003.frm
-tile       172  208            art\tiles\gar2002.frm
-tile       174  208            art\tiles\gar2001.frm
-tile       176  208            art\tiles\gar2001.frm
-tile       178  208            art\tiles\gar2003.frm
-tile       180  208            art\tiles\gar2002.frm
-tile       182  208            art\tiles\gar2001.frm
-tile       182  208            art\tiles\edg5001.frm
+tile       144  208            art\tiles\edg5001.frm
+tile       146  208            art\tiles\edg5000.frm
+tile       148  208            art\tiles\edg6002.frm
+tile       150  208            art\tiles\edg4001.frm
+tile       152  208            art\tiles\edg6002.frm
+tile       154  208            art\tiles\edg4001.frm
+tile       156  208            art\tiles\edg2003.frm
+tile       158  208            art\tiles\edg4001.frm
+tile       160  208            art\tiles\edgs003.frm
+tile       162  208            art\tiles\edg7002.frm
+tile       164  208            art\tiles\edg5004.frm
+tile       166  208            art\tiles\edg5006.frm
+tile       168  208            art\tiles\edg7002.frm
+tile       170  208            art\tiles\edg6009.frm
+tile       172  208            art\tiles\edg6008.frm
+tile       174  208            art\tiles\edg5006.frm
+tile       176  208            art\tiles\edg5002.frm
+tile       178  208            art\tiles\edg5000.frm
+tile       180  208            art\tiles\edg5004.frm
+tile       182  208            art\tiles\edg5000.frm
 tile       184  208            art\tiles\edg5000.frm
 tile       186  208            art\tiles\edg5006.frm
 tile       188  208            art\tiles\edg5006.frm
@@ -8979,28 +8952,26 @@ tile       138  210            art\tiles\crbm007.frm
 roof       138  210            art\tiles\plk1000.frm
 tile       140  210            art\tiles\edg5007.frm
 tile       142  210            art\tiles\edg5007.frm
-tile       144  210            art\tiles\gar2003.frm
-tile       146  210            art\tiles\gar2002.frm
-tile       148  210            art\tiles\gar2001.frm
-tile       150  210            art\tiles\gar2002.frm
-tile       152  210            art\tiles\gar2001.frm
-tile       154  210            art\tiles\gar2003.frm
-tile       156  210            art\tiles\gar2002.frm
-tile       158  210            art\tiles\gar2002.frm
-tile       160  210            art\tiles\gar2003.frm
-tile       162  210            art\tiles\gar2002.frm
-tile       164  210            art\tiles\gar2001.frm
-tile       166  210            art\tiles\gar2002.frm
-tile       168  210            art\tiles\gar2001.frm
-tile       170  210            art\tiles\gar2003.frm
-tile       172  210            art\tiles\gar2002.frm
-tile       174  210            art\tiles\gar2001.frm
-tile       176  210            art\tiles\gar2001.frm
-tile       178  210            art\tiles\gar2003.frm
-tile       180  210            art\tiles\gar2002.frm
-tile       182  210            art\tiles\gar2001.frm
+tile       144  210            art\tiles\edg5000.frm
+tile       146  210            art\tiles\edg6006.frm
+tile       148  210            art\tiles\edg4002.frm
+tile       150  210            art\tiles\edg6010.frm
+tile       152  210            art\tiles\edg4002.frm
+tile       154  210            art\tiles\edg6010.frm
+tile       156  210            art\tiles\edgs002.frm
+tile       158  210            art\tiles\edg2003.frm
+tile       160  210            art\tiles\edgs004.frm
+tile       162  210            art\tiles\edg5003.frm
+tile       164  210            art\tiles\edg5000.frm
+tile       166  210            art\tiles\edg5004.frm
+tile       168  210            art\tiles\edg5000.frm
+tile       170  210            art\tiles\edg5000.frm
+tile       172  210            art\tiles\edg5003.frm
+tile       174  210            art\tiles\edg5007.frm
+tile       176  210            art\tiles\edg5000.frm
+tile       178  210            art\tiles\edg5000.frm
+tile       180  210            art\tiles\edg5000.frm
 tile       182  210            art\tiles\edg5003.frm
-tile       182  210            art\tiles\edg5000.frm
 tile       184  210            art\tiles\edg5000.frm
 tile       186  210            art\tiles\edg5004.frm
 tile       188  210            art\tiles\edg5000.frm
@@ -9115,27 +9086,25 @@ tile       138  212            art\tiles\crbm007.frm
 roof       138  212            art\tiles\plk2000.frm
 tile       140  212            art\tiles\edg5000.frm
 tile       142  212            art\tiles\edg5004.frm
-tile       144  212            art\tiles\gar2003.frm
-tile       146  212            art\tiles\gar2002.frm
-tile       148  212            art\tiles\gar2001.frm
-tile       150  212            art\tiles\gar2002.frm
-tile       152  212            art\tiles\gar2003.frm
-tile       154  212            art\tiles\gar2003.frm
-tile       156  212            art\tiles\gar2002.frm
-tile       158  212            art\tiles\gar2001.frm
-tile       160  212            art\tiles\gar2003.frm
-tile       162  212            art\tiles\gar2002.frm
-tile       164  212            art\tiles\gar2001.frm
-tile       166  212            art\tiles\gar2002.frm
-tile       168  212            art\tiles\gar2001.frm
-tile       170  212            art\tiles\gar2003.frm
-tile       172  212            art\tiles\gar2002.frm
-tile       174  212            art\tiles\gar2001.frm
-tile       176  212            art\tiles\gar2001.frm
-tile       178  212            art\tiles\gar2003.frm
-tile       180  212            art\tiles\gar2002.frm
-tile       182  212            art\tiles\gar2001.frm
-tile       182  212            art\tiles\edg5007.frm
+tile       144  212            art\tiles\edg5003.frm
+tile       146  212            art\tiles\edg6005.frm
+tile       148  212            art\tiles\edg6004.frm
+tile       150  212            art\tiles\edgs000.frm
+tile       152  212            art\tiles\edg6004.frm
+tile       154  212            art\tiles\edgs000.frm
+tile       156  212            art\tiles\edg6009.frm
+tile       158  212            art\tiles\edg6008.frm
+tile       160  212            art\tiles\edg5003.frm
+tile       162  212            art\tiles\edg5007.frm
+tile       164  212            art\tiles\edg5000.frm
+tile       166  212            art\tiles\edg5001.frm
+tile       168  212            art\tiles\edg6003.frm
+tile       170  212            art\tiles\edg6006.frm
+tile       172  212            art\tiles\edg2002.frm
+tile       174  212            art\tiles\edg2001.frm
+tile       176  212            art\tiles\edg5004.frm
+tile       178  212            art\tiles\edg5004.frm
+tile       180  212            art\tiles\edg5000.frm
 tile       182  212            art\tiles\edg5003.frm
 tile       184  212            art\tiles\edg5000.frm
 tile       186  212            art\tiles\edg5004.frm
@@ -9251,26 +9220,25 @@ tile       138  214            art\tiles\edg5007.frm
 roof       138  214            art\tiles\plk6000.frm
 tile       140  214            art\tiles\edg5002.frm
 tile       142  214            art\tiles\edg5001.frm
-tile       144  214            art\tiles\gar2003.frm
-tile       146  214            art\tiles\gar2002.frm
-tile       148  214            art\tiles\gar2001.frm
-tile       150  214            art\tiles\gar2002.frm
-tile       152  214            art\tiles\gar2001.frm
-tile       154  214            art\tiles\gar2003.frm
-tile       156  214            art\tiles\gar2002.frm
-tile       158  214            art\tiles\gar2001.frm
-tile       160  214            art\tiles\gar2003.frm
-tile       162  214            art\tiles\gar2002.frm
-tile       164  214            art\tiles\gar2001.frm
-tile       166  214            art\tiles\gar2002.frm
-tile       168  214            art\tiles\gar2001.frm
-tile       170  214            art\tiles\gar2003.frm
-tile       172  214            art\tiles\gar2002.frm
-tile       174  214            art\tiles\gar2001.frm
-tile       176  214            art\tiles\gar2001.frm
-tile       178  214            art\tiles\gar2003.frm
-tile       180  214            art\tiles\gar2002.frm
-tile       182  214            art\tiles\gar2001.frm
+tile       144  214            art\tiles\edg5000.frm
+tile       146  214            art\tiles\edg1002.frm
+tile       148  214            art\tiles\edg3001.frm
+tile       150  214            art\tiles\edg6001.frm
+tile       152  214            art\tiles\edg3001.frm
+tile       154  214            art\tiles\edg6001.frm
+tile       156  214            art\tiles\edg3001.frm
+tile       158  214            art\tiles\edg6002.frm
+tile       160  214            art\tiles\edg6001.frm
+tile       162  214            art\tiles\edg3001.frm
+tile       164  214            art\tiles\edg6002.frm
+tile       166  214            art\tiles\edg6009.frm
+tile       168  214            art\tiles\edg1002.frm
+tile       170  214            art\tiles\edg6005.frm
+tile       172  214            art\tiles\edg4008.frm
+tile       174  214            art\tiles\edg4007.frm
+tile       176  214            art\tiles\edg6004.frm
+tile       178  214            art\tiles\edg6004.frm
+tile       180  214            art\tiles\edg5006.frm
 tile       182  214            art\tiles\edg5000.frm
 tile       184  214            art\tiles\edg5006.frm
 tile       186  214            art\tiles\edg5001.frm
@@ -9382,26 +9350,25 @@ tile       136  216            art\tiles\edg5002.frm
 tile       138  216            art\tiles\edg5007.frm
 tile       140  216            art\tiles\edg5003.frm
 tile       142  216            art\tiles\edg5002.frm
-tile       144  216            art\tiles\gar2004.frm
-tile       146  216            art\tiles\gar2002.frm
-tile       148  216            art\tiles\gar2001.frm
-tile       150  216            art\tiles\gar2002.frm
-tile       152  216            art\tiles\gar2001.frm
-tile       154  216            art\tiles\gar2001.frm
-tile       156  216            art\tiles\gar2002.frm
-tile       158  216            art\tiles\gar2002.frm
-tile       160  216            art\tiles\gar2003.frm
-tile       162  216            art\tiles\gar2002.frm
-tile       164  216            art\tiles\gar2001.frm
-tile       166  216            art\tiles\gar2002.frm
-tile       168  216            art\tiles\gar2001.frm
-tile       170  216            art\tiles\gar2003.frm
-tile       172  216            art\tiles\gar2002.frm
-tile       174  216            art\tiles\gar2001.frm
-tile       176  216            art\tiles\gar2001.frm
-tile       178  216            art\tiles\gar2003.frm
-tile       180  216            art\tiles\gar2002.frm
-tile       182  216            art\tiles\gar2001.frm
+tile       144  216            art\tiles\edg5001.frm
+tile       146  216            art\tiles\edg6009.frm
+tile       148  216            art\tiles\edg4000.frm
+tile       150  216            art\tiles\edg4008.frm
+tile       152  216            art\tiles\edg4000.frm
+tile       154  216            art\tiles\edg4008.frm
+tile       156  216            art\tiles\edg4006.frm
+tile       158  216            art\tiles\edg1000.frm
+tile       160  216            art\tiles\edgs003.frm
+tile       162  216            art\tiles\edgs000.frm
+tile       164  216            art\tiles\edg6009.frm
+tile       166  216            art\tiles\edg6008.frm
+tile       168  216            art\tiles\edg6003.frm
+tile       170  216            art\tiles\edg1002.frm
+tile       172  216            art\tiles\edg4003.frm
+tile       174  216            art\tiles\edg4004.frm
+tile       176  216            art\tiles\edg2000.frm
+tile       178  216            art\tiles\edg2000.frm
+tile       180  216            art\tiles\edg5001.frm
 tile       182  216            art\tiles\edg5001.frm
 tile       184  216            art\tiles\edg5001.frm
 tile       186  216            art\tiles\edg5000.frm
@@ -9513,26 +9480,25 @@ tile       136  218            art\tiles\edg5000.frm
 tile       138  218            art\tiles\edg5004.frm
 tile       140  218            art\tiles\edg5000.frm
 tile       142  218            art\tiles\edg5004.frm
-tile       144  218            art\tiles\edg5000.frm
-tile       146  218            art\tiles\gar2004.frm
-tile       148  218            art\tiles\gar2001.frm
-tile       150  218            art\tiles\gar2002.frm
-tile       152  218            art\tiles\gar2001.frm
-tile       154  218            art\tiles\gar2001.frm
-tile       156  218            art\tiles\gar2002.frm
-tile       158  218            art\tiles\gar2001.frm
-tile       160  218            art\tiles\gar2003.frm
-tile       162  218            art\tiles\gar2002.frm
-tile       164  218            art\tiles\gar2001.frm
-tile       166  218            art\tiles\gar2002.frm
-tile       168  218            art\tiles\gar2001.frm
-tile       170  218            art\tiles\gar2003.frm
-tile       172  218            art\tiles\gar2002.frm
-tile       174  218            art\tiles\gar2001.frm
-tile       176  218            art\tiles\gar2001.frm
-tile       178  218            art\tiles\gar2003.frm
-tile       180  218            art\tiles\gar2004.frm
-tile       182  218            art\tiles\gar2004.frm
+tile       144  218            art\tiles\edg5003.frm
+tile       146  218            art\tiles\edg6010.frm
+tile       148  218            art\tiles\edg4002.frm
+tile       150  218            art\tiles\edg4001.frm
+tile       152  218            art\tiles\edg4002.frm
+tile       154  218            art\tiles\edg4001.frm
+tile       156  218            art\tiles\edg4005.frm
+tile       158  218            art\tiles\edg6007.frm
+tile       160  218            art\tiles\edgs004.frm
+tile       162  218            art\tiles\edg5006.frm
+tile       164  218            art\tiles\edg5002.frm
+tile       166  218            art\tiles\edg5004.frm
+tile       168  218            art\tiles\edg1002.frm
+tile       170  218            art\tiles\edg6009.frm
+tile       172  218            art\tiles\edg4006.frm
+tile       174  218            art\tiles\edg4007.frm
+tile       176  218            art\tiles\edg6001.frm
+tile       178  218            art\tiles\edg5002.frm
+tile       180  218            art\tiles\edg5000.frm
 tile       182  218            art\tiles\edg5003.frm
 tile       184  218            art\tiles\edg5000.frm
 tile       186  218            art\tiles\edg5003.frm
@@ -9647,24 +9613,23 @@ tile       140  220            art\tiles\edg5002.frm
 tile       142  220            art\tiles\edg5007.frm
 tile       144  220            art\tiles\edg5002.frm
 tile       146  220            art\tiles\edg5005.frm
-tile       148  220            art\tiles\gar2004.frm
-tile       150  220            art\tiles\gar2002.frm
-tile       152  220            art\tiles\gar2001.frm
-tile       154  220            art\tiles\gar2003.frm
-tile       156  220            art\tiles\gar2002.frm
-tile       158  220            art\tiles\gar2001.frm
-tile       160  220            art\tiles\gar2003.frm
-tile       162  220            art\tiles\gar2002.frm
-tile       164  220            art\tiles\gar2001.frm
-tile       166  220            art\tiles\gar2002.frm
-tile       168  220            art\tiles\gar2001.frm
-tile       170  220            art\tiles\gar2003.frm
-tile       172  220            art\tiles\gar2002.frm
-tile       174  220            art\tiles\gar2001.frm
-tile       176  220            art\tiles\gar2001.frm
-tile       178  220            art\tiles\gar2003.frm
+tile       148  220            art\tiles\edg4008.frm
+tile       150  220            art\tiles\edg6009.frm
+tile       152  220            art\tiles\edg4008.frm
+tile       154  220            art\tiles\edg6009.frm
+tile       156  220            art\tiles\edg4007.frm
+tile       158  220            art\tiles\edg1000.frm
+tile       160  220            art\tiles\edgs003.frm
+tile       162  220            art\tiles\edg5000.frm
+tile       164  220            art\tiles\edg6001.frm
+tile       166  220            art\tiles\edg5003.frm
+tile       168  220            art\tiles\edg5000.frm
+tile       170  220            art\tiles\edg6010.frm
+tile       172  220            art\tiles\edg4003.frm
+tile       174  220            art\tiles\edgs002.frm
+tile       176  220            art\tiles\edg6004.frm
+tile       178  220            art\tiles\edg5000.frm
 tile       180  220            art\tiles\edg5003.frm
-tile       182  220            art\tiles\edg5000.frm
 tile       182  220            art\tiles\edg5007.frm
 tile       184  220            art\tiles\edg5003.frm
 tile       186  220            art\tiles\edg5000.frm
@@ -9780,26 +9745,24 @@ tile       142  222            art\tiles\edg5001.frm
 tile       144  222            art\tiles\edg5003.frm
 tile       146  222            art\tiles\edg5001.frm
 tile       148  222            art\tiles\edg5006.frm
-tile       150  222            art\tiles\gar2002.frm
-tile       152  222            art\tiles\gar2001.frm
-tile       154  222            art\tiles\gar2001.frm
-tile       156  222            art\tiles\gar2002.frm
-tile       158  222            art\tiles\gar2001.frm
-tile       160  222            art\tiles\gar2003.frm
-tile       162  222            art\tiles\gar2002.frm
-tile       164  222            art\tiles\gar2001.frm
-tile       166  222            art\tiles\gar2002.frm
-tile       168  222            art\tiles\gar2001.frm
-tile       170  222            art\tiles\gar2003.frm
-tile       172  222            art\tiles\gar2002.frm
-tile       174  222            art\tiles\gar2001.frm
-tile       176  222            art\tiles\gar2001.frm
-tile       178  222            art\tiles\gar2003.frm
+tile       150  222            art\tiles\edg2003.frm
+tile       152  222            art\tiles\edg4000.frm
+tile       154  222            art\tiles\edg3000.frm
+tile       156  222            art\tiles\edg2003.frm
+tile       158  222            art\tiles\edg2003.frm
+tile       160  222            art\tiles\edg2003.frm
+tile       162  222            art\tiles\edg4002.frm
+tile       164  222            art\tiles\edgs002.frm
+tile       166  222            art\tiles\edg5000.frm
+tile       168  222            art\tiles\edg5000.frm
+tile       170  222            art\tiles\edg1003.frm
+tile       172  222            art\tiles\edg4001.frm
+tile       174  222            art\tiles\edg4003.frm
+tile       176  222            art\tiles\edg2000.frm
+tile       178  222            art\tiles\edg5000.frm
 tile       180  222            art\tiles\edg5002.frm
 tile       182  222            art\tiles\edg5004.frm
-tile       184  222            art\tiles\edg5007.frm
-tile       184  222            art\tiles\edg5002.frm
-tile       186  222            art\tiles\edg5002.frm
+tile       184  222            art\tiles\edg5005.frm
 tile       186  222            art\tiles\edg5001.frm
 tile       188  222            art\tiles\edg5001.frm
 tile       190  222            art\tiles\edg5000.frm
@@ -9912,24 +9875,24 @@ tile       142  224            art\tiles\edg5000.frm
 tile       144  224            art\tiles\edg5005.frm
 tile       146  224            art\tiles\edg5000.frm
 tile       148  224            art\tiles\edg5001.frm
-tile       150  224            art\tiles\gar2001.frm
-tile       152  224            art\tiles\gar2001.frm
-tile       154  224            art\tiles\gar2001.frm
-tile       156  224            art\tiles\gar2002.frm
-tile       158  224            art\tiles\gar2001.frm
-tile       160  224            art\tiles\gar2003.frm
-tile       162  224            art\tiles\gar2002.frm
-tile       164  224            art\tiles\gar2001.frm
-tile       166  224            art\tiles\gar2002.frm
-tile       168  224            art\tiles\gar2001.frm
-tile       170  224            art\tiles\gar2003.frm
-tile       172  224            art\tiles\gar2002.frm
-tile       174  224            art\tiles\gar2002.frm
-tile       176  224            art\tiles\gar2001.frm
-tile       178  224            art\tiles\gar2003.frm
+tile       150  224            art\tiles\edg6006.frm
+tile       152  224            art\tiles\edg4001.frm
+tile       154  224            art\tiles\edg4000.frm
+tile       156  224            art\tiles\edg3001.frm
+tile       158  224            art\tiles\edg6002.frm
+tile       160  224            art\tiles\edg3001.frm
+tile       162  224            art\tiles\edg4008.frm
+tile       164  224            art\tiles\edg4003.frm
+tile       166  224            art\tiles\edg5000.frm
+tile       168  224            art\tiles\edg5000.frm
+tile       170  224            art\tiles\edg5000.frm
+tile       172  224            art\tiles\edg6009.frm
+tile       174  224            art\tiles\edg6008.frm
+tile       176  224            art\tiles\edg5007.frm
+tile       178  224            art\tiles\edg5005.frm
 tile       180  224            art\tiles\edg5000.frm
 tile       182  224            art\tiles\edg5003.frm
-tile       184  224            art\tiles\edg5000.frm
+tile       184  224            art\tiles\edg5006.frm
 tile       186  224            art\tiles\edg5000.frm
 tile       188  224            art\tiles\edg5002.frm
 tile       190  224            art\tiles\edg5001.frm
@@ -9944,7 +9907,6 @@ tile       206  224            art\tiles\edg5000.frm
 tile       208  224            art\tiles\edg5002.frm
 tile       210  224            art\tiles\edg5000.frm
 tile       212  224            art\tiles\edg1001.frm
-tile       214  224            art\tiles\edg6009.frm
 tile       214  224            art\tiles\edg7000.frm
 tile       216  224            art\tiles\edg5003.frm
 tile       218  224            art\tiles\edg5007.frm
@@ -10043,24 +10005,24 @@ tile       142  226            art\tiles\edg5000.frm
 tile       144  226            art\tiles\edg5001.frm
 tile       146  226            art\tiles\edg5002.frm
 tile       148  226            art\tiles\edg5000.frm
-tile       150  226            art\tiles\gar2004.frm
-tile       152  226            art\tiles\gar2004.frm
-tile       154  226            art\tiles\gar2004.frm
-tile       156  226            art\tiles\gar2002.frm
-tile       158  226            art\tiles\gar2001.frm
-tile       160  226            art\tiles\gar2003.frm
-tile       162  226            art\tiles\gar2002.frm
-tile       164  226            art\tiles\gar2001.frm
-tile       166  226            art\tiles\gar2002.frm
-tile       168  226            art\tiles\gar2001.frm
-tile       170  226            art\tiles\gar2003.frm
-tile       172  226            art\tiles\gar2002.frm
-tile       174  226            art\tiles\gar2001.frm
-tile       176  226            art\tiles\gar2004.frm
-tile       178  226            art\tiles\gar2004.frm
+tile       150  226            art\tiles\edgs000.frm
+tile       152  226            art\tiles\edg4008.frm
+tile       154  226            art\tiles\edg6004.frm
+tile       156  226            art\tiles\edgs000.frm
+tile       158  226            art\tiles\edg6004.frm
+tile       160  226            art\tiles\edgs000.frm
+tile       162  226            art\tiles\edg6009.frm
+tile       164  226            art\tiles\edg6008.frm
+tile       166  226            art\tiles\edg5004.frm
+tile       168  226            art\tiles\edg5004.frm
+tile       170  226            art\tiles\edg5005.frm
+tile       172  226            art\tiles\edg5002.frm
+tile       174  226            art\tiles\edg7002.frm
+tile       176  226            art\tiles\edg5004.frm
+tile       178  226            art\tiles\edg5006.frm
 tile       180  226            art\tiles\edg5002.frm
 tile       182  226            art\tiles\edg5000.frm
-tile       184  226            art\tiles\edg5002.frm
+tile       184  226            art\tiles\edg5000.frm
 tile       186  226            art\tiles\edg5005.frm
 tile       188  226            art\tiles\edg5003.frm
 tile       190  226            art\tiles\edg5000.frm
@@ -10173,16 +10135,16 @@ tile       148  228            art\tiles\edg5003.frm
 tile       150  228            art\tiles\edg5003.frm
 tile       152  228            art\tiles\edg5002.frm
 tile       154  228            art\tiles\edg5007.frm
-tile       156  228            art\tiles\gar2002.frm
-tile       158  228            art\tiles\gar2001.frm
-tile       160  228            art\tiles\gar2003.frm
-tile       162  228            art\tiles\gar2002.frm
-tile       164  228            art\tiles\gar2004.frm
-tile       166  228            art\tiles\gar2004.frm
-tile       168  228            art\tiles\gar2001.frm
-tile       170  228            art\tiles\gar2003.frm
-tile       172  228            art\tiles\gar2002.frm
-tile       174  228            art\tiles\gar2001.frm
+tile       156  228            art\tiles\edg5004.frm
+tile       158  228            art\tiles\edg5000.frm
+tile       160  228            art\tiles\edg5002.frm
+tile       162  228            art\tiles\edg5000.frm
+tile       164  228            art\tiles\edg5002.frm
+tile       166  228            art\tiles\edg5007.frm
+tile       168  228            art\tiles\edg5007.frm
+tile       170  228            art\tiles\edg5006.frm
+tile       172  228            art\tiles\edg5003.frm
+tile       174  228            art\tiles\edg5000.frm
 tile       176  228            art\tiles\edg5003.frm
 tile       178  228            art\tiles\edg5001.frm
 tile       180  228            art\tiles\edg5000.frm
@@ -10297,16 +10259,16 @@ tile       148  230            art\tiles\edg5000.frm
 tile       150  230            art\tiles\edg5004.frm
 tile       152  230            art\tiles\edg5000.frm
 tile       154  230            art\tiles\edg5002.frm
-tile       156  230            art\tiles\gar2004.frm
-tile       158  230            art\tiles\gar2004.frm
-tile       160  230            art\tiles\gar2004.frm
-tile       162  230            art\tiles\gar2004.frm
+tile       156  230            art\tiles\edg5007.frm
+tile       158  230            art\tiles\edg5003.frm
+tile       160  230            art\tiles\edg5003.frm
+tile       162  230            art\tiles\edg5002.frm
 tile       164  230            art\tiles\edg5005.frm
 tile       166  230            art\tiles\edg5003.frm
-tile       168  230            art\tiles\gar2004.frm
-tile       170  230            art\tiles\gar2004.frm
-tile       172  230            art\tiles\gar2004.frm
-tile       174  230            art\tiles\gar2004.frm
+tile       168  230            art\tiles\edg5002.frm
+tile       170  230            art\tiles\edg5002.frm
+tile       172  230            art\tiles\edg5000.frm
+tile       174  230            art\tiles\edg5004.frm
 tile       176  230            art\tiles\edg5000.frm
 tile       178  230            art\tiles\edg5007.frm
 tile       180  230            art\tiles\edg5000.frm
@@ -35213,12 +35175,6 @@ Scenery_ToEntire     217
 
 MapObjType           2
 ProtoId              3853
-MapX                 138
-MapY                 208
-Scenery_ToEntire     201
-
-MapObjType           2
-ProtoId              3853
 MapX                 136
 MapY                 229
 Scenery_ToEntire     201
@@ -40218,12 +40174,6 @@ Scenery_ToEntire     217
 
 MapObjType           2
 ProtoId              3853
-MapX                 160
-MapY                 110
-Scenery_ToEntire     217
-
-MapObjType           2
-ProtoId              3853
 MapX                 155
 MapY                 119
 Scenery_ToEntire     217
@@ -40525,5 +40475,1447 @@ MapObjType           2
 ProtoId              2067
 MapX                 141
 MapY                 148
+
+MapObjType           2
+ProtoId              2103
+MapX                 153
+MapY                 122
+
+MapObjType           1
+ProtoId              16572
+MapX                 154
+MapY                 115
+
+MapObjType           2
+ProtoId              2104
+MapX                 154
+MapY                 118
+
+MapObjType           1
+ProtoId              16570
+MapX                 154
+MapY                 120
+
+MapObjType           2
+ProtoId              3806
+MapX                 155
+MapY                 110
+
+MapObjType           1
+ProtoId              16572
+MapX                 155
+MapY                 123
+
+MapObjType           2
+ProtoId              2105
+MapX                 156
+MapY                 108
+
+MapObjType           2
+ProtoId              2102
+MapX                 156
+MapY                 108
+
+MapObjType           2
+ProtoId              2102
+MapX                 157
+MapY                 108
+
+MapObjType           2
+ProtoId              3806
+MapX                 157
+MapY                 111
+
+MapObjType           2
+ProtoId              2102
+MapX                 157
+MapY                 115
+
+MapObjType           2
+ProtoId              2103
+MapX                 157
+MapY                 123
+
+MapObjType           2
+ProtoId              2080
+MapX                 158
+MapY                 109
+
+MapObjType           1
+ProtoId              2945
+MapX                 159
+MapY                 117
+
+MapObjType           2
+ProtoId              2104
+MapX                 159
+MapY                 123
+
+MapObjType           2
+ProtoId              3806
+MapX                 161
+MapY                 112
+
+MapObjType           2
+ProtoId              2078
+MapX                 162
+MapY                 112
+
+MapObjType           2
+ProtoId              3806
+MapX                 162
+MapY                 111
+
+MapObjType           2
+ProtoId              3806
+MapX                 163
+MapY                 111
+
+MapObjType           2
+ProtoId              2104
+MapX                 166
+MapY                 116
+
+MapObjType           2
+ProtoId              2105
+MapX                 166
+MapY                 117
+
+MapObjType           1
+ProtoId              2946
+MapX                 166
+MapY                 122
+
+MapObjType           1
+ProtoId              2321
+MapX                 166
+MapY                 133
+
+MapObjType           1
+ProtoId              2947
+MapX                 168
+MapY                 118
+
+MapObjType           2
+ProtoId              2103
+MapX                 168
+MapY                 121
+
+MapObjType           2
+ProtoId              3806
+MapX                 169
+MapY                 110
+
+MapObjType           2
+ProtoId              23276
+MapX                 173
+MapY                 124
+
+MapObjType           2
+ProtoId              23188
+MapX                 173
+MapY                 126
+
+MapObjType           2
+ProtoId              3806
+MapX                 175
+MapY                 109
+
+MapObjType           2
+ProtoId              2105
+MapX                 176
+MapY                 108
+
+MapObjType           1
+ProtoId              2946
+MapX                 177
+MapY                 119
+
+MapObjType           2
+ProtoId              2103
+MapX                 178
+MapY                 108
+
+MapObjType           1
+ProtoId              2317
+MapX                 178
+MapY                 112
+
+MapObjType           2
+ProtoId              2102
+MapX                 179
+MapY                 107
+
+MapObjType           1
+ProtoId              16569
+MapX                 179
+MapY                 110
+
+MapObjType           1
+ProtoId              16571
+MapX                 179
+MapY                 110
+
+MapObjType           2
+ProtoId              2103
+MapX                 179
+MapY                 119
+
+MapObjType           2
+ProtoId              2104
+MapX                 180
+MapY                 105
+
+MapObjType           1
+ProtoId              2319
+MapX                 180
+MapY                 106
+
+MapObjType           2
+ProtoId              2103
+MapX                 180
+MapY                 111
+
+MapObjType           2
+ProtoId              2575
+MapX                 180
+MapY                 116
+
+MapObjType           2
+ProtoId              2575
+MapX                 180
+MapY                 124
+
+MapObjType           2
+ProtoId              2105
+MapX                 181
+MapY                 121
+
+MapObjType           1
+ProtoId              2947
+MapX                 181
+MapY                 129
+
+MapObjType           1
+ProtoId              16569
+MapX                 181
+MapY                 130
+
+MapObjType           2
+ProtoId              2102
+MapX                 182
+MapY                 123
+
+MapObjType           1
+ProtoId              16574
+MapX                 182
+MapY                 131
+
+MapObjType           1
+ProtoId              2945
+MapX                 182
+MapY                 134
+
+MapObjType           1
+ProtoId              2945
+MapX                 183
+MapY                 125
+
+MapObjType           2
+ProtoId              2104
+MapX                 158
+MapY                 188
+
+MapObjType           2
+ProtoId              2102
+MapX                 158
+MapY                 190
+
+MapObjType           2
+ProtoId              2104
+MapX                 158
+MapY                 203
+
+MapObjType           2
+ProtoId              2463
+MapX                 159
+MapY                 186
+
+MapObjType           2
+ProtoId              2117
+MapX                 159
+MapY                 188
+
+MapObjType           2
+ProtoId              2102
+MapX                 159
+MapY                 189
+
+MapObjType           2
+ProtoId              2117
+MapX                 160
+MapY                 183
+
+MapObjType           2
+ProtoId              2102
+MapX                 160
+MapY                 188
+
+MapObjType           2
+ProtoId              2103
+MapX                 161
+MapY                 192
+
+MapObjType           1
+ProtoId              2947
+MapX                 161
+MapY                 192
+
+MapObjType           2
+ProtoId              2103
+MapX                 162
+MapY                 191
+
+MapObjType           2
+ProtoId              2103
+MapX                 162
+MapY                 192
+
+MapObjType           2
+ProtoId              2103
+MapX                 162
+MapY                 193
+
+MapObjType           2
+ProtoId              2103
+MapX                 162
+MapY                 197
+
+MapObjType           1
+ProtoId              16241
+MapX                 162
+MapY                 203
+
+MapObjType           2
+ProtoId              2102
+MapX                 163
+MapY                 178
+
+MapObjType           2
+ProtoId              2104
+MapX                 163
+MapY                 178
+
+MapObjType           2
+ProtoId              2103
+MapX                 163
+MapY                 178
+
+MapObjType           2
+ProtoId              3736
+MapX                 163
+MapY                 197
+
+MapObjType           2
+ProtoId              3729
+MapX                 165
+MapY                 178
+
+MapObjType           2
+ProtoId              2103
+MapX                 165
+MapY                 183
+
+MapObjType           2
+ProtoId              2103
+MapX                 165
+MapY                 185
+
+MapObjType           2
+ProtoId              2105
+MapX                 166
+MapY                 183
+
+MapObjType           2
+ProtoId              3806
+MapX                 166
+MapY                 183
+
+MapObjType           2
+ProtoId              2103
+MapX                 166
+MapY                 184
+
+MapObjType           2
+ProtoId              2103
+MapX                 166
+MapY                 185
+
+MapObjType           2
+ProtoId              2103
+MapX                 166
+MapY                 186
+
+MapObjType           2
+ProtoId              2086
+MapX                 166
+MapY                 186
+
+MapObjType           1
+ProtoId              16569
+MapX                 166
+MapY                 207
+
+MapObjType           2
+ProtoId              2573
+MapX                 167
+MapY                 178
+
+MapObjType           2
+ProtoId              2105
+MapX                 167
+MapY                 178
+
+MapObjType           2
+ProtoId              2103
+MapX                 167
+MapY                 182
+
+MapObjType           2
+ProtoId              2105
+MapX                 167
+MapY                 183
+
+MapObjType           2
+ProtoId              2105
+MapX                 167
+MapY                 184
+
+MapObjType           2
+ProtoId              2105
+MapX                 167
+MapY                 185
+
+MapObjType           2
+ProtoId              2103
+MapX                 167
+MapY                 186
+
+MapObjType           2
+ProtoId              2103
+MapX                 167
+MapY                 187
+
+MapObjType           2
+ProtoId              2105
+MapX                 168
+MapY                 182
+
+MapObjType           2
+ProtoId              2103
+MapX                 168
+MapY                 183
+
+MapObjType           2
+ProtoId              2105
+MapX                 168
+MapY                 184
+
+MapObjType           2
+ProtoId              2105
+MapX                 168
+MapY                 185
+
+MapObjType           2
+ProtoId              2103
+MapX                 168
+MapY                 187
+
+MapObjType           2
+ProtoId              2105
+MapX                 168
+MapY                 195
+
+MapObjType           2
+ProtoId              2103
+MapX                 169
+MapY                 182
+
+MapObjType           2
+ProtoId              2105
+MapX                 169
+MapY                 184
+
+MapObjType           2
+ProtoId              3806
+MapX                 169
+MapY                 185
+
+MapObjType           1
+ProtoId              2946
+MapX                 169
+MapY                 186
+
+MapObjType           2
+ProtoId              2108
+MapX                 169
+MapY                 187
+
+MapObjType           2
+ProtoId              2105
+MapX                 169
+MapY                 187
+
+MapObjType           2
+ProtoId              2103
+MapX                 170
+MapY                 181
+
+MapObjType           2
+ProtoId              2103
+MapX                 170
+MapY                 182
+
+MapObjType           2
+ProtoId              2103
+MapX                 170
+MapY                 183
+
+MapObjType           2
+ProtoId              2104
+MapX                 170
+MapY                 185
+
+MapObjType           2
+ProtoId              2103
+MapX                 170
+MapY                 186
+
+MapObjType           2
+ProtoId              2103
+MapX                 171
+MapY                 179
+
+MapObjType           2
+ProtoId              2103
+MapX                 171
+MapY                 185
+
+MapObjType           2
+ProtoId              2104
+MapX                 171
+MapY                 187
+
+MapObjType           2
+ProtoId              2103
+MapX                 172
+MapY                 184
+
+MapObjType           2
+ProtoId              2105
+MapX                 172
+MapY                 184
+
+MapObjType           2
+ProtoId              2103
+MapX                 172
+MapY                 185
+
+MapObjType           2
+ProtoId              2105
+MapX                 172
+MapY                 186
+
+MapObjType           2
+ProtoId              2279
+MapX                 173
+MapY                 184
+
+MapObjType           2
+ProtoId              2103
+MapX                 173
+MapY                 186
+
+MapObjType           2
+ProtoId              2104
+MapX                 173
+MapY                 203
+
+MapObjType           1
+ProtoId              2946
+MapX                 173
+MapY                 204
+
+MapObjType           2
+ProtoId              2105
+MapX                 174
+MapY                 185
+
+MapObjType           2
+ProtoId              2102
+MapX                 174
+MapY                 188
+
+MapObjType           1
+ProtoId              2321
+MapX                 174
+MapY                 189
+
+MapObjType           2
+ProtoId              2103
+MapX                 174
+MapY                 191
+
+MapObjType           2
+ProtoId              16996
+MapX                 176
+MapY                 177
+
+MapObjType           2
+ProtoId              16997
+MapX                 176
+MapY                 177
+
+MapObjType           2
+ProtoId              2104
+MapX                 176
+MapY                 185
+
+MapObjType           2
+ProtoId              2104
+MapX                 177
+MapY                 177
+
+MapObjType           2
+ProtoId              2279
+MapX                 177
+MapY                 177
+
+MapObjType           1
+ProtoId              2945
+MapX                 177
+MapY                 177
+
+MapObjType           2
+ProtoId              2104
+MapX                 177
+MapY                 179
+
+MapObjType           2
+ProtoId              2105
+MapX                 177
+MapY                 180
+
+MapObjType           2
+ProtoId              2103
+MapX                 177
+MapY                 189
+
+MapObjType           2
+ProtoId              2103
+MapX                 177
+MapY                 194
+
+MapObjType           2
+ProtoId              2103
+MapX                 177
+MapY                 202
+
+MapObjType           2
+ProtoId              2105
+MapX                 178
+MapY                 194
+
+MapObjType           2
+ProtoId              2103
+MapX                 178
+MapY                 195
+
+MapObjType           2
+ProtoId              2103
+MapX                 179
+MapY                 173
+
+MapObjType           2
+ProtoId              2103
+MapX                 179
+MapY                 196
+
+MapObjType           2
+ProtoId              2279
+MapX                 179
+MapY                 197
+
+MapObjType           2
+ProtoId              2280
+MapX                 179
+MapY                 200
+
+MapObjType           1
+ProtoId              2947
+MapX                 180
+MapY                 182
+
+MapObjType           2
+ProtoId              2103
+MapX                 181
+MapY                 181
+
+MapObjType           1
+ProtoId              2945
+MapX                 182
+MapY                 199
+
+MapObjType           2
+ProtoId              1624
+MapX                 166
+MapY                 178
+
+MapObjType           2
+ProtoId              1624
+MapX                 165
+MapY                 179
+
+MapObjType           2
+ProtoId              3806
+MapX                 174
+MapY                 160
+
+MapObjType           2
+ProtoId              2278
+MapX                 172
+MapY                 157
+
+MapObjType           2
+ProtoId              2278
+MapX                 171
+MapY                 163
+
+MapObjType           2
+ProtoId              2278
+MapX                 174
+MapY                 158
+
+MapObjType           2
+ProtoId              2278
+MapX                 173
+MapY                 164
+
+MapObjType           2
+ProtoId              2278
+MapX                 172
+MapY                 164
+
+MapObjType           2
+ProtoId              2278
+MapX                 174
+MapY                 165
+
+MapObjType           2
+ProtoId              2278
+MapX                 174
+MapY                 159
+
+MapObjType           2
+ProtoId              2278
+MapX                 176
+MapY                 160
+
+MapObjType           2
+ProtoId              2278
+MapX                 175
+MapY                 165
+
+MapObjType           2
+ProtoId              2278
+MapX                 177
+MapY                 166
+
+MapObjType           2
+ProtoId              2278
+MapX                 176
+MapY                 161
+
+MapObjType           2
+ProtoId              2278
+MapX                 178
+MapY                 162
+
+MapObjType           2
+ProtoId              2278
+MapX                 176
+MapY                 164
+
+MapObjType           2
+ProtoId              2278
+MapX                 178
+MapY                 165
+
+MapObjType           2
+ProtoId              2278
+MapX                 177
+MapY                 163
+
+MapObjType           2
+ProtoId              2278
+MapX                 179
+MapY                 164
+
+MapObjType           2
+ProtoId              2278
+MapX                 177
+MapY                 164
+
+MapObjType           2
+ProtoId              2278
+MapX                 179
+MapY                 165
+
+MapObjType           2
+ProtoId              2278
+MapX                 171
+MapY                 159
+
+MapObjType           2
+ProtoId              2278
+MapX                 173
+MapY                 160
+
+MapObjType           2
+ProtoId              2278
+MapX                 171
+MapY                 161
+
+MapObjType           2
+ProtoId              2278
+MapX                 173
+MapY                 162
+
+MapObjType           2
+ProtoId              2278
+MapX                 173
+MapY                 162
+
+MapObjType           2
+ProtoId              2278
+MapX                 175
+MapY                 162
+OffsetX              6
+OffsetY              -9
+
+MapObjType           2
+ProtoId              2278
+MapX                 175
+MapY                 163
+
+MapObjType           2
+ProtoId              2278
+MapX                 174
+MapY                 163
+
+MapObjType           2
+ProtoId              3806
+MapX                 170
+MapY                 158
+
+MapObjType           2
+ProtoId              3806
+MapX                 177
+MapY                 162
+
+MapObjType           2
+ProtoId              10041
+MapX                 177
+MapY                 162
+
+MapObjType           2
+ProtoId              2278
+MapX                 177
+MapY                 163
+
+MapObjType           2
+ProtoId              10041
+MapX                 177
+MapY                 163
+
+MapObjType           2
+ProtoId              10039
+MapX                 177
+MapY                 164
+
+MapObjType           2
+ProtoId              2279
+MapX                 123
+MapY                 189
+
+MapObjType           2
+ProtoId              2103
+MapX                 123
+MapY                 191
+
+MapObjType           2
+ProtoId              2104
+MapX                 213
+MapY                 118
+
+MapObjType           1
+ProtoId              2946
+MapX                 213
+MapY                 119
+
+MapObjType           2
+ProtoId              2105
+MapX                 124
+MapY                 190
+
+MapObjType           2
+ProtoId              2102
+MapX                 124
+MapY                 193
+
+MapObjType           1
+ProtoId              2321
+MapX                 214
+MapY                 104
+
+MapObjType           2
+ProtoId              2103
+MapX                 214
+MapY                 106
+
+MapObjType           2
+ProtoId              16996
+MapX                 126
+MapY                 182
+
+MapObjType           2
+ProtoId              16997
+MapX                 126
+MapY                 182
+
+MapObjType           2
+ProtoId              2104
+MapX                 126
+MapY                 190
+
+MapObjType           2
+ProtoId              2104
+MapX                 127
+MapY                 182
+
+MapObjType           2
+ProtoId              2279
+MapX                 127
+MapY                 182
+
+MapObjType           1
+ProtoId              2945
+MapX                 127
+MapY                 182
+
+MapObjType           2
+ProtoId              2104
+MapX                 127
+MapY                 184
+
+MapObjType           2
+ProtoId              2105
+MapX                 127
+MapY                 185
+
+MapObjType           2
+ProtoId              2103
+MapX                 217
+MapY                 104
+
+MapObjType           2
+ProtoId              2103
+MapX                 217
+MapY                 109
+
+MapObjType           2
+ProtoId              2103
+MapX                 217
+MapY                 117
+
+MapObjType           2
+ProtoId              2105
+MapX                 218
+MapY                 109
+
+MapObjType           2
+ProtoId              2103
+MapX                 218
+MapY                 110
+
+MapObjType           2
+ProtoId              2103
+MapX                 129
+MapY                 178
+
+MapObjType           2
+ProtoId              2103
+MapX                 219
+MapY                 111
+
+MapObjType           2
+ProtoId              2279
+MapX                 219
+MapY                 112
+
+MapObjType           2
+ProtoId              2280
+MapX                 219
+MapY                 115
+
+MapObjType           1
+ProtoId              2947
+MapX                 130
+MapY                 187
+
+MapObjType           2
+ProtoId              2103
+MapX                 131
+MapY                 186
+
+MapObjType           1
+ProtoId              2945
+MapX                 222
+MapY                 114
+
+MapObjType           2
+ProtoId              2126
+MapX                 124
+MapY                 106
+
+MapObjType           2
+ProtoId              2103
+MapX                 124
+MapY                 108
+
+MapObjType           2
+ProtoId              2575
+MapX                 152
+MapY                 228
+
+MapObjType           2
+ProtoId              2105
+MapX                 125
+MapY                 108
+
+MapObjType           1
+ProtoId              2947
+MapX                 153
+MapY                 233
+
+MapObjType           1
+ProtoId              16569
+MapX                 153
+MapY                 234
+
+MapObjType           2
+ProtoId              2102
+MapX                 154
+MapY                 227
+
+MapObjType           1
+ProtoId              16574
+MapX                 154
+MapY                 235
+
+MapObjType           1
+ProtoId              2945
+MapX                 154
+MapY                 238
+
+MapObjType           2
+ProtoId              2103
+MapX                 127
+MapY                 110
+
+MapObjType           1
+ProtoId              2945
+MapX                 155
+MapY                 229
+
+MapObjType           2
+ProtoId              2103
+MapX                 128
+MapY                 108
+
+MapObjType           2
+ProtoId              2105
+MapX                 130
+MapY                 107
+
+MapObjType           2
+ProtoId              2105
+MapX                 130
+MapY                 108
+
+MapObjType           2
+ProtoId              2105
+MapX                 130
+MapY                 110
+
+MapObjType           2
+ProtoId              2104
+MapX                 130
+MapY                 112
+
+MapObjType           2
+ProtoId              2103
+MapX                 131
+MapY                 109
+
+MapObjType           2
+ProtoId              2102
+MapX                 131
+MapY                 112
+
+MapObjType           1
+ProtoId              2946
+MapX                 131
+MapY                 113
+
+MapObjType           2
+ProtoId              2102
+MapX                 131
+MapY                 114
+
+MapObjType           2
+ProtoId              2574
+MapX                 131
+MapY                 114
+
+MapObjType           2
+ProtoId              2574
+MapX                 131
+MapY                 116
+
+MapObjType           2
+ProtoId              2111
+MapX                 132
+MapY                 112
+
+MapObjType           2
+ProtoId              2105
+MapX                 132
+MapY                 112
+
+MapObjType           2
+ProtoId              2104
+MapX                 132
+MapY                 114
+
+MapObjType           2
+ProtoId              2111
+MapX                 135
+MapY                 112
+
+MapObjType           2
+ProtoId              2105
+MapX                 135
+MapY                 112
+
+MapObjType           2
+ProtoId              2103
+MapX                 135
+MapY                 113
+
+MapObjType           2
+ProtoId              2111
+MapX                 135
+MapY                 114
+
+MapObjType           2
+ProtoId              2105
+MapX                 135
+MapY                 114
+
+MapObjType           2
+ProtoId              2103
+MapX                 135
+MapY                 115
+
+MapObjType           1
+ProtoId              2318
+MapX                 136
+MapY                 114
+
+MapObjType           2
+ProtoId              2102
+MapX                 137
+MapY                 116
+
+MapObjType           2
+ProtoId              2105
+MapX                 138
+MapY                 105
+
+MapObjType           2
+ProtoId              2104
+MapX                 138
+MapY                 112
+
+MapObjType           1
+ProtoId              16567
+MapX                 138
+MapY                 113
+
+MapObjType           2
+ProtoId              2104
+MapX                 138
+MapY                 115
+
+MapObjType           2
+ProtoId              2102
+MapX                 139
+MapY                 112
+
+MapObjType           1
+ProtoId              2947
+MapX                 139
+MapY                 112
+
+MapObjType           2
+ProtoId              2574
+MapX                 139
+MapY                 114
+
+MapObjType           2
+ProtoId              2102
+MapX                 139
+MapY                 115
+
+MapObjType           2
+ProtoId              2126
+MapX                 157
+MapY                 215
+
+MapObjType           2
+ProtoId              2103
+MapX                 157
+MapY                 217
+
+MapObjType           2
+ProtoId              2105
+MapX                 158
+MapY                 216
+
+MapObjType           2
+ProtoId              2103
+MapX                 160
+MapY                 218
+
+MapObjType           2
+ProtoId              2103
+MapX                 161
+MapY                 217
+
+MapObjType           2
+ProtoId              2105
+MapX                 163
+MapY                 216
+
+MapObjType           2
+ProtoId              2105
+MapX                 163
+MapY                 217
+
+MapObjType           2
+ProtoId              2105
+MapX                 163
+MapY                 219
+
+MapObjType           2
+ProtoId              2104
+MapX                 163
+MapY                 221
+
+MapObjType           2
+ProtoId              2103
+MapX                 164
+MapY                 217
+
+MapObjType           2
+ProtoId              2102
+MapX                 164
+MapY                 220
+
+MapObjType           1
+ProtoId              2946
+MapX                 164
+MapY                 221
+
+MapObjType           2
+ProtoId              2102
+MapX                 164
+MapY                 222
+
+MapObjType           2
+ProtoId              2574
+MapX                 164
+MapY                 222
+
+MapObjType           2
+ProtoId              2574
+MapX                 164
+MapY                 224
+
+MapObjType           2
+ProtoId              2111
+MapX                 165
+MapY                 221
+
+MapObjType           2
+ProtoId              2105
+MapX                 165
+MapY                 221
+
+MapObjType           2
+ProtoId              2104
+MapX                 165
+MapY                 223
+
+MapObjType           2
+ProtoId              2064
+MapX                 166
+MapY                 229
+
+MapObjType           2
+ProtoId              3732
+MapX                 166
+MapY                 230
+
+MapObjType           2
+ProtoId              2111
+MapX                 168
+MapY                 220
+
+MapObjType           2
+ProtoId              2105
+MapX                 168
+MapY                 220
+
+MapObjType           2
+ProtoId              2103
+MapX                 168
+MapY                 221
+
+MapObjType           2
+ProtoId              2111
+MapX                 168
+MapY                 222
+
+MapObjType           2
+ProtoId              2105
+MapX                 168
+MapY                 222
+
+MapObjType           2
+ProtoId              2103
+MapX                 168
+MapY                 223
+
+MapObjType           1
+ProtoId              2946
+MapX                 168
+MapY                 236
+
+MapObjType           1
+ProtoId              2318
+MapX                 169
+MapY                 223
+
+MapObjType           2
+ProtoId              2102
+MapX                 169
+MapY                 237
+
+MapObjType           2
+ProtoId              2102
+MapX                 170
+MapY                 224
+
+MapObjType           2
+ProtoId              2126
+MapX                 170
+MapY                 230
+
+MapObjType           2
+ProtoId              2105
+MapX                 171
+MapY                 214
+
+MapObjType           2
+ProtoId              2104
+MapX                 171
+MapY                 221
+
+MapObjType           1
+ProtoId              16567
+MapX                 171
+MapY                 222
+
+MapObjType           2
+ProtoId              2104
+MapX                 171
+MapY                 224
+
+MapObjType           2
+ProtoId              2102
+MapX                 171
+MapY                 230
+
+MapObjType           2
+ProtoId              16996
+MapX                 171
+MapY                 230
+
+MapObjType           2
+ProtoId              2105
+MapX                 171
+MapY                 230
+
+MapObjType           2
+ProtoId              2105
+MapX                 171
+MapY                 232
+
+MapObjType           2
+ProtoId              2104
+MapX                 171
+MapY                 233
+
+MapObjType           2
+ProtoId              2105
+MapX                 171
+MapY                 237
+
+MapObjType           2
+ProtoId              2102
+MapX                 172
+MapY                 220
+
+MapObjType           1
+ProtoId              2947
+MapX                 172
+MapY                 220
+
+MapObjType           2
+ProtoId              2574
+MapX                 172
+MapY                 222
+
+MapObjType           2
+ProtoId              2102
+MapX                 172
+MapY                 223
+
+MapObjType           2
+ProtoId              2574
+MapX                 172
+MapY                 225
 
 
