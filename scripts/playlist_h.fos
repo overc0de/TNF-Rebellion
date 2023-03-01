@@ -294,5 +294,21 @@ string[] JukeboxMusic = {
 	"HelpMeFaith.mp3",
 	"OhTheBliss.mp3",
 	"OurFather.mp3",
-	"WashAwaySins.mp3"
+	"WashAwaySins.mp3",
+	"Blood of the Lamb.mp3.ogg",
+	"Blue Suede Shoes.ogg",
+	"Can't Help Falling in Love.ogg",
+	"Haley - Creep.ogg",
+	"It's Now or Never.ogg",
+	"Jukebox - All About That Bass.ogg",
+	"Jukebox - Careless Whisper.mp3.ogg",
+	"Jukebox - Closer.mp3.ogg",
+	"Jukebox - Crazy .mp3.ogg",
+	"Jukebox - Feel It Still.ogg",
+	"Jukebox - Habits.ogg",
+	"Jukebox - My Heart Will Go On.ogg",
+	"Jukebox - Timber.mp3.ogg",
+	"Jukebox - Umbrella.ogg",
+	"Jukebox - Wannabe Spice Girls.ogg",
+	"Jukebox - We Can't Stop.ogg"
 };
