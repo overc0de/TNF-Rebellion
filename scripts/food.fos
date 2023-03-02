@@ -74,9 +74,16 @@ void CheckFoodFlags( Critter& target, Item& item )
 	target.StatBase[ ST_HUNGER ] += item.Proto.Food_Restore * SATURATION_SIMPLIFIER;
 	target.StatBase[ ST_THIRST ] += item.Proto.Food_Thrist * SATURATION_SIMPLIFIER;
 	
-	if( item.GetProtoId() == PID_CANNED_FISH || item.GetProtoId() == PID_IRP || item.GetProtoId() == PID_CANNED_MEAT )
+	uint[] canned_foods = { PID_CANNED_FISH, PID_IRP, PID_CANNED_MEAT };
+	if( canned_foods.find( item.GetProtoId() ) != -1 )
 	{
 		target.AddItem( PID_METAL_CAN, 1 );
+	}
+
+	uint[] plated_foods = { PID_BOXTY, PID_CHIPS, PID_MASHED_POTATO, PID_FRIES };
+	if( plated_foods.find( item.GetProtoId() ) != -1 )
+	{
+		target.AddItem( PID_itplate2, 1 );
 	}
 }
 

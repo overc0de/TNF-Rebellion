@@ -1456,6 +1456,13 @@
 #define PID_ROACH                                  	( 22239 )						// Таракан
 #define PID_GLOWING_MUSHROOM						( 22249 )						// 
 
+#define PID_BOXTY									( 23750 )						// Драники
+#define PID_CHIPS									( 23751 )						// Чипсы
+#define PID_MASHED_POTATO							( 23752 )						// Пюрешка
+#define PID_FRIES									( 23753 )						// Картошка фри
+#define PID_RAW_POTATO								( 23754 )						// Сырая картофелина
+#define PID_BAKED_POTATO							( 23755 )						// Печеная картошка
+
 // Special
 #define PID_HYPO_POISON                       		( 334 )							// Нейротоксин
 #define PID_MUTATED_TOE                       		( 473 )							// Мутировавший палец ноги
