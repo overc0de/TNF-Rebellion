@@ -15802,21 +15802,7 @@ LightDistance=1
 LightIntensity=20
 LightColor=255
 
-
-[Proto] # PID_JUKEBOX_DISK
-ProtoId=23716
-Type=5
-PicMap=art\items\cddisque.frm
-PicInv=art\inven\cddisque.frm
-Flags=134217758
-DisableEgg=1
-Stackable=1
-Weight=307
-Volume=1
-SoundId=48
-Material=5
-
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_BLUESUEDESHOES
 ProtoId=23717
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15829,7 +15815,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_FALLINGINLOVE
 ProtoId=23718
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15842,7 +15828,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_NOWORNEVER
 ProtoId=23719
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15855,7 +15841,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_CREEP
 ProtoId=23720
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15868,7 +15854,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_BLOODOFTHELAMB
 ProtoId=23721
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15881,7 +15867,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_ALLABOUTTHATBASS
 ProtoId=23722
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15894,7 +15880,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_CARELESSWHISPER
 ProtoId=23723
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15907,7 +15893,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_CRAZY
 ProtoId=23724
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15920,7 +15906,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_UMBRELLA
 ProtoId=23725
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15933,7 +15919,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_WANNABESPICEGIRLS
 ProtoId=23726
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15946,7 +15932,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_WECANTSTOP
 ProtoId=23727
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15959,7 +15945,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_FEELITSTILL
 ProtoId=23728
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15972,7 +15958,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_HABITS
 ProtoId=23729
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15985,7 +15971,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_MYHEARTWILLGOON
 ProtoId=23730
 Type=5
 PicMap=art\items\cddisque.frm
@@ -15998,7 +15984,7 @@ Volume=1
 SoundId=48
 Material=5
 
-[Proto] # PID_JUKEBOX_DISK
+[Proto] # PID_JUKEBOX_DISK_TIMBER
 ProtoId=23731
 Type=5
 PicMap=art\items\cddisque.frm
@@ -16011,3 +15997,15 @@ Volume=1
 SoundId=48
 Material=5
 
+[Proto] # PID_JUKEBOX_CLOSER
+ProtoId=23732
+Type=5
+PicMap=art\items\cddisque.frm
+PicInv=art\inven\cddisque.frm
+Flags=134217758
+DisableEgg=1
+Stackable=1
+Weight=307
+Volume=1
+SoundId=48
+Material=5
