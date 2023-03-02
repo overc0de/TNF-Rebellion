@@ -510,6 +510,30 @@ class JukeboxTuneCollection
 		}
 		return null;
 	}
+	
+	uint[] get_all_pids()
+	{
+		uint[] result;
+		
+		for( uint i = 0, len = this.jukeboxTunes.length(); i < len; i++ )
+		{
+			result.insertLast( this.jukeboxTunes[i].pid );
+		}
+	
+		return result;
+	}
+}
+
+//~run jukebox getAllTunes 0 0 0
+void getAllTunes( Critter& cr, int, int, int )
+{
+	uint[] pids = jukeboxTunes.get_all_pids();
+	for( uint i = 0, l = pids.length(); i < l; i++ )
+	{
+		cr.AddItem( pids[i], 1 );
+	}
+	
+	cr.Say( SAY_NETMSG, "Получено " + pids.length() + " пластинок." );
 }
 
 JukeboxTuneCollection@ jukeboxTunes = JukeboxTuneCollection()
@@ -610,7 +634,24 @@ JukeboxTuneCollection@ jukeboxTunes = JukeboxTuneCollection()
 	.tune( PID_JUKEBOX_DISK_HOLDON, "Holdon.ogg", 156 )
 	.tune( PID_JUKEBOX_DISK_HEAVENSDOOR, "Heavensdoor.ogg", 190 )
 	.tune( PID_JUKEBOX_DISK_GREENBAG, "Greenbag.ogg", 197 )
-	.tune( PID_JUKEBOX_DISK_MINNIE, "Minnie.ogg", 205 );
+	.tune( PID_JUKEBOX_DISK_MINNIE, "Minnie.ogg", 205 )
+	.tune( PID_JUKEBOX_DISK_BLUESUEDESHOES, "Blue Suede Shoes.ogg", 123 )
+	.tune( PID_JUKEBOX_DISK_FALLINGINLOVE, "Can't Help Falling in Love.ogg", 180 )
+	.tune( PID_JUKEBOX_DISK_NOWORNEVER, "It's Now or Never.ogg", 150 )
+	.tune( PID_JUKEBOX_DISK_CREEP, "Haley - Creep.ogg", 296 )
+	.tune( PID_JUKEBOX_DISK_BLOODOFTHELAMB, "Blood of the Lamb.mp3.ogg", 221 )
+	.tune( PID_JUKEBOX_DISK_ALLABOUTTHATBASS, "Jukebox - All About That Bass.ogg", 256 )
+	.tune( PID_JUKEBOX_DISK_CARELESSWHISPER, "Jukebox - Careless Whisper.mp3.ogg", 223 )
+	.tune( PID_JUKEBOX_DISK_CRAZY, "Jukebox - Crazy .mp3.ogg", 277 )
+	.tune( PID_JUKEBOX_DISK_UMBRELLA, "Jukebox - Umbrella.ogg", 259 )
+	.tune( PID_JUKEBOX_DISK_WANNABESPICEGIRLS, "Jukebox - Wannabe Spice Girls.ogg", 191 )
+	.tune( PID_JUKEBOX_DISK_WECANTSTOP, "Jukebox - We Can't Stop.ogg", 240 )
+	.tune( PID_JUKEBOX_DISK_FEELITSTILL, "Jukebox - Feel It Still.ogg", 226 )	
+	.tune( PID_JUKEBOX_DISK_HABITS, "Jukebox - Habits.ogg", 218 )
+	.tune( PID_JUKEBOX_DISK_MYHEARTWILLGOON, "Jukebox - My Heart Will Go On.ogg", 203 )
+	.tune( PID_JUKEBOX_DISK_TIMBER, "Jukebox - Timber.mp3.ogg", 213 )
+	.tune( PID_JUKEBOX_CLOSER, "Jukebox - Closer.mp3.ogg", 290 )
+	;
     
 JukeboxTune@ getJukeboxTune( Item@ item )
 {

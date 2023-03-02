@@ -1835,6 +1835,22 @@
 #define PID_JUKEBOX_DISK_HOLDON                     ( 1997 )                        // Sam and Dave - Hold on i'm coming
 #define PID_JUKEBOX_DISK_HEAVENSDOOR                ( 1998 )                        // Bob Dylan - Knocking on Heaven's Door
 
+#define PID_JUKEBOX_DISK_BLUESUEDESHOES             ( 23717 )                       // Elvis Presley - Blue Suede Shoes
+#define PID_JUKEBOX_DISK_FALLINGINLOVE              ( 23718 )                       // Elvis Presley - Can't Help Falling in Love
+#define PID_JUKEBOX_DISK_NOWORNEVER                 ( 23719 )                       // Elvis Presley - It's Now or Never
+#define PID_JUKEBOX_DISK_CREEP                      ( 23720 )                       // Haley & Postmodern Jukebox - Creep"
+#define PID_JUKEBOX_DISK_BLOODOFTHELAMB             ( 23721 )                       // Joshua James - Blood of the Lamb
+#define PID_JUKEBOX_DISK_ALLABOUTTHATBASS           ( 23722 )                       // Postmodern Jukebox - All About That Bass
+#define PID_JUKEBOX_DISK_CARELESSWHISPER            ( 23723 )                       // Postmodern Jukebox - Careless Whisper
+#define PID_JUKEBOX_DISK_CRAZY                      ( 23724 )                       // Postmodern Jukebox - Crazy
+#define PID_JUKEBOX_DISK_UMBRELLA                   ( 23725 )                       // Postmodern Jukebox - Umbrella
+#define PID_JUKEBOX_DISK_WANNABESPICEGIRLS          ( 23726 )                       // Postmodern Jukebox - Wannabe Spice Girls
+#define PID_JUKEBOX_DISK_WECANTSTOP                 ( 23727 )                       // Postmodern Jukebox - We Can't Stop
+#define PID_JUKEBOX_DISK_FEELITSTILL                ( 23728 )                       // Scott Bradlee & Postmodern Jukebox - Feel It Still
+#define PID_JUKEBOX_DISK_HABITS                     ( 23729 )                       // Scott Bradlee & Postmodern Jukebox - Habits
+#define PID_JUKEBOX_DISK_MYHEARTWILLGOON            ( 23730 )                       // Scott Bradlee & Postmodern Jukebox - My Heart Will Go On
+#define PID_JUKEBOX_DISK_TIMBER                     ( 23731 )                       // Scott Bradlee & Postmodern Jukebox - Timber
+#define PID_JUKEBOX_CLOSER                          ( 23732 )                       // Postmodern Jukebox - Closer
 /**************************************************************
 ***************				Keys				***************
 ***************************************************************/
