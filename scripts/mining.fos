@@ -109,6 +109,12 @@ bool PrepareMining( Critter& cr, Item@ tool, Item@ target )
 		}
 	}
 	
+	if( !isGM(cr) && cr.Param[CR_MINING_EXHAUSTION] >= CR_MINING_EXHAUSTION_MAX )
+	{
+		cr.Say( SAY_NETMSG, "Вы слишком устали, дайте себе отдохнуть от шахтёрства." );
+		return false;
+	}
+	
 	start_mining( cr, tool, target );
 	return true;
 }
@@ -265,8 +271,7 @@ bool Profit(  Critter& cr, Item@ tool, Item@ target )
 	
 	if( toolMod == PID_DRILL )
 	{
-		amount = ( ( amount + lootRoll ) * CLAMP( 3, 1, ( target.RESOURCE_CAPACITY / OBJECT_HP_BASE ) ) );
-		
+		amount = ( ( amount + lootRoll ) * CLAMP( 3, 1, ( target.RESOURCE_CAPACITY / OBJECT_HP_BASE ) ) );		
 	}
 	else
 	{
@@ -323,6 +328,12 @@ bool Profit(  Critter& cr, Item@ tool, Item@ target )
 		}
 		
 		cr.AddItem( lootPid, amount );
+		
+		if( target.ORE_TYPE != ORE_TYPE_STONE )
+		{
+			cr.ParamBase[CR_MINING_EXHAUSTION] += amount;
+		}
+		
 		ChangeCritterSpeed( cr );
 		
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_YOU_GATHERED, "$proto@msg item " + ( lootPid * 100 ) + "@$amount" + amount );
