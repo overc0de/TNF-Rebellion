@@ -135,18 +135,6 @@
 				return;
 			}
 			
-			int trait_nerf = cr.Trait[ TRAIT_SKILLED ] == 0 ? 1 : 2;
-			
-			if( cr.Param[ CR_EXP_LOCK ] == 0 )
-			{
-				exp /= trait_nerf;
-				testInfo( cr, "Gained exp: " + exp + " ( trait_nerf: " + trait_nerf + " )" );
-			}
-			else
-			{
-				cr.ParamBase[ CR_EXP_LOCK ] = 0;
-			}
-			
 			cr.StatBase[ ST_EXPERIENCE ] = oldValue + exp;
 
 			if( level >= __LevelCap )
@@ -163,8 +151,7 @@
 					
 					cr.StatBase[ ST_LEVEL ]++;
 
-					cr.StatBase[ ST_UNSPENT_SKILL_POINTS ] += 5 + cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ]; // Skill points
-//					cr.StatBase[ ST_UNSPENT_SKILL_POINTS ] += 5 + cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ] + ( cr.Trait[ TRAIT_SKILLED ] > 0 ? cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ] / 2 : 0 ); // Skill points calc with SKILLED
+					cr.StatBase[ ST_UNSPENT_SKILL_POINTS ] += 5 + cr.StatBase[ ST_LEVEL ] * cr.StatBase[ ST_INTELLECT ];
 				}
 				else
 				{
@@ -703,6 +690,12 @@
 			|| ( data[ TRAIT_HEAVY_HANDED ] != 0 && data[ TRAIT_JINXED ] != 0 ) )
 		{
 			Message( GetMsgStr( TEXTMSG_GAME, STR_WRONG_TRAIT_COMBO ) );
+			return false;
+		}
+		
+		if( data[ TRAIT_SKILLED ] != 0 )
+		{
+			Message( "Трейт Умелец отключен, возьмите какой-нибудь другой." );
 			return false;
 		}
 
