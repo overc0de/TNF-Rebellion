@@ -520,8 +520,8 @@
 {25401}{}{Some drivers fitted this regulator to cut fuel consumption in half, but most drivers didn't care how much fuel their cars were consuming. After all, power's cheap and plentiful so why worry.}
 {25500}{}{Day Pass}
 {25501}{}{This slightly crumpled piece of paper gives you access to all areas of Vault City except the Vault itself, but only during daylight hours.}
-{25600}{}{Fake Citizen ID}
-{25601}{}{This is a fake Citizen ID. It looks almost like the real thing, but you doubt it will pass a serious test.}
+{25600}{}{Citizen ID}
+{25601}{}{This is a Vault-City citizen ID. It looks like the important thing, few in the Wasteland can boast of such.}
 {25700}{}{Golden Watch}
 {25701}{}{This is an ancient time-piece known as a pocket watch. Surprisingly, they still work and show the exact time.}
 {25800}{}{Hydroelectric Part}
