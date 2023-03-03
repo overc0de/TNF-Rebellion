@@ -4219,7 +4219,7 @@ void ask_GM_PANNEL_CRITTER_PLAYER_STATS_SPECIAL( Critter& player, uint answerI, 
         if( parameter == ST_CURRENT_HP || parameter == ST_MAX_LIFE || parameter == ST_AGE || parameter == ST_GENDER 
 		|| parameter == ST_DYSPNEA || parameter == ST_THIRST || parameter == ST_HUNGER || parameter == ST_POISONING_LEVEL || parameter == ST_RADIATION_LEVEL || parameter == ST_DRUNK )
         {
-			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 7, "" );
+			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 8, "" );
 		}
 		
 		if( parameter == ST_BLEED || parameter == CR_DIRTINESS )
