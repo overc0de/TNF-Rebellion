@@ -271,11 +271,11 @@ bool Profit(  Critter& cr, Item@ tool, Item@ target )
 	
 	if( toolMod == PID_DRILL )
 	{
-		amount = ( ( amount + lootRoll ) * CLAMP( 3, 1, ( target.RESOURCE_CAPACITY / OBJECT_HP_BASE ) ) );		
+		amount = ( ( amount + lootRoll ) * 2 * CLAMP( 3, 1, ( target.RESOURCE_CAPACITY / OBJECT_HP_BASE ) ) );		
 	}
 	else
 	{
-		amount+= lootRoll;
+		amount += lootRoll;
 	}
 	
 	if( amount < 1 )
