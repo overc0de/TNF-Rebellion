@@ -332,8 +332,7 @@ bool SpillOut( Item@ &item, int parts = 1 )
 		return false;
 	}
 	
-	int index = index_glass_bottles( item, 1 );
-	
+	int index = index_glass_bottles( item, 1 );	
 	if( index != -1 && !ReplaceWith( item, glass_bottles[2][index], 1 ) )
 	{
 		return false;
@@ -346,6 +345,12 @@ bool SpillOut( Item@ &item, int parts = 1 )
 	
 	if( item.Val0 == 1 )
 	{
+		index = index_glass_bottles( item, 5 );	
+		if( index != -1 )
+		{
+			return ReplaceWith( item, PID_GLASS_EMPTY, 1 );
+		}
+
 		uint16 itemPid = item.GetProtoId();
 		if( item.Proto.Type != 25 )
 		{

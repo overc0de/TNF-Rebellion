@@ -71,8 +71,8 @@ void CheckFoodFlags( Critter& target, Item& item )
 		AffectRadiation( target, RADIATION_RANGE );
 	}
 
-	target.StatBase[ ST_HUNGER ] += item.Proto.Food_Restore * SATURATION_SIMPLIFIER;
-	target.StatBase[ ST_THIRST ] += item.Proto.Food_Thrist * SATURATION_SIMPLIFIER;
+	// target.StatBase[ ST_HUNGER ] += item.Proto.Food_Restore * SATURATION_SIMPLIFIER;
+	// target.StatBase[ ST_THIRST ] += item.Proto.Food_Thrist * SATURATION_SIMPLIFIER;
 	
 	uint[] canned_foods = { PID_CANNED_FISH, PID_IRP, PID_CANNED_MEAT };
 	if( canned_foods.find( item.GetProtoId() ) != -1 )
