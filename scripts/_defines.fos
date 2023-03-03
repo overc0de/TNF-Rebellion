@@ -1013,6 +1013,8 @@
 #define CR_YOU_DRAG								 	( 600 )		// Marker if you are dragging a cr
 #define CR_DRAGS_YOU 							 	( 601 )		// Marker if you are being dragged
 #define CR_HIDEFACE_ITM							 	( 602 )		// Marker if Item can hide name and avatar
+#define CR_MINING_EXHAUSTION_EVENT					( 603 )		// »вент-хранилище данных об усталости.
+#define CR_MINING_EXHAUSTION						( 604 )		//  оличество руд которые персонаж добыл.
 // 602..699
 #define QST_MEDIUM                               	( 700 )		// special modes for character behaviour
 #define QST_INVIS                                	( 701 )		// GM invisibility
@@ -1173,7 +1175,7 @@
 // FORP defines:
 #define SECONDARY_SKILLS_BONUS_CAP    			 	( 125 )		// max bonus from skill
 #define CRITTER_MAX_VOLUME			 			 	( 1000 )	// volume of items carried, hardcoded
-#define SATURATION_SIMPLIFIER					 	( 3 )		// Food satturation multiplier
+#define SATURATION_SIMPLIFIER					 	( 1 )		// Food satturation multiplier
 #define DELAY_FOR_HARVESTABLE_LOOT_RESPAWN 			( REAL_MINUTE( Random( 120, 360 ) ) )
 #define DELAY_FOR_ORE_RESPAWN 		 				( REAL_MINUTE( Random( 720, 1440 ) ) )
 #define DELAY_FOR_MOBS_RESPAWN 		 				( REAL_MINUTE( Random( 120, 360 ) ) )
@@ -1183,6 +1185,9 @@
 #define	MAX_LIMB_HEALING_TIME					 	( 600 )		// Max healing length (min)
 #define HEALING_ENDURANCE_DEPENDENCY			 	( 20 )
 #define DETORIORATION_MODIFIER						( 4 )
+
+#define CR_MINING_EXHAUSTION_MAX					( 60 )
+#define CR_MINING_EXHAUSTION_TICK					( ( 24 * 60 ) / CR_MINING_EXHAUSTION_MAX )
 
 // Planes types
 #define AI_PLANE_MISC                            	( 0 )

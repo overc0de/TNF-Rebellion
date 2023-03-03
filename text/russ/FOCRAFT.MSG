@@ -11,7 +11,12 @@
 {655}{}{PID_CORN_FLOUR@Потребуется некоторое время, чтобы перемолоть сушеные зерна кукурузы в муку.@@@PID_CORN 1@PID_MSTUPKA 1@PID_CORN_FLOUR 1@script fix_boy@fix_None}
 {656}{}{PID_CANNED_MEAT@Правильно тушим мясо, добавляем немного приправы, стерилизуем банку и надежно запечатываем крышкой с помощью лужения. Готово, если все сделали верно, то срок годности почти бесконечный.@@SK_COOKING 250|SK_OUTDOORSMAN 170|SK_SCIENCE 200@PID_METAL_CAN 1&PID_CRAFT_M_BARS 1&PID_XANDER_ROOT 1&PID_PLANT_OIL 1&PID_MEAT 1|PID_GECKO_MEAT 2|PID_RAT_MEAT 8@PID_FIREPLACE_TOKEN 1&PID_KNIFE 1|PID_COMBAT_KNIFE 1@PID_CANNED_MEAT 1&PID_BOTTLE_GLASS 1@script fix_boy@fix_FreeHands}
 {657}{}{PID_CANNED_FISH@Обрабатываем рыбу, приправляем, закрываем.@@SK_COOKING 250|SK_OUTDOORSMAN 170|SK_SCIENCE 200@PID_METAL_CAN 1&PID_CRAFT_M_BARS 1&PID_BROC_FLOWER 1&PID_PLANT_OIL 1&PID_COOKED_FISH 4@PID_FIREPLACE_TOKEN 1&PID_KNIFE 1|PID_COMBAT_KNIFE 1@PID_CANNED_FISH 1&PID_BOTTLE_GLASS 1@script fix_boy@fix_FreeHands}
-
+{658}{}{PID_BAKED_POTATO@Жарим картошку.@@@PID_RAW_POTATO 1@PID_FIREPLACE_TOKEN 1@PID_BAKED_POTATO 1@script fix_boy@fix_FreeHands}
+{659}{}{PID_BOXTY@Делаем драники.@@@PID_itplate3 1&PID_RAW_POTATO 2&PID_CORN_FLOUR 1&PID_PLANT_OIL 1@PID_FIREPLACE_TOKEN 1@PID_BOXTY 1@script fix_boy@fix_FreeHands}
+{660}{}{PID_FRIES@Жарим картошку фри.@@@PID_itplate3 1&PID_RAW_POTATO 1&PID_PLANT_OIL 1@PID_FIREPLACE_TOKEN 1@PID_FRIES 1@script fix_boy@fix_FreeHands}
+{661}{}{PID_CHIPS@Жарим чипсы.@@@PID_itplate3 1&PID_XANDER_ROOT 1&PID_RAW_POTATO 1&PID_PLANT_OIL 1@PID_FIREPLACE_TOKEN 1@PID_CHIPS 1@script fix_boy@fix_FreeHands}
+{662}{}{PID_MASHED_POTATO@Делаем пюрешку с котлеткой.@@@PID_itplate3 1&PID_RAW_POTATO 2&PID_XANDER_ROOT 1&PID_PLANT_OIL 1&PID_MEAT 1|PID_GECKO_MEAT 1@PID_FIREPLACE_TOKEN 1@PID_MASHED_POTATO 1@script fix_boy@fix_FreeHands}
+{663}{}{PID_PLANT_POTATO_SEED@Подготавливаем клубень к посадке.@@@PID_RAW_POTATO 1@@PID_PLANT_POTATO_SEED 1@script fix_boy@fix_None}
 {700}{}{PID_ZAPLATKA_CRAFT_BASIC@Разделитель раздела для создания простейших вещей.@@@PID_ZAPLATKA_CRAFT_BASIC 1@@PID_ZAPLATKA_CRAFT_BASIC 1@script fix_boy@fix_Tribal}
 {720}{}{PID_BOTTLE_GLASS@Берем несколько кусков стекла, орбратываем их и придаем форму стеклянных бутылок.@@SK_REPAIR 150&SK_SCIENCE 100@PID_GLASS 3&PID_FLINT 1&PID_WOOD_PLANK 1@PID_MULTI_TOOL 1|PID_SUPER_TOOL_KIT 1&PID_FIREPLACE_TOKEN 1@PID_BOTTLE_GLASS 3@script fix_boy@fix_Workbench}
 {730}{}{PID_ROPE@Свяжите из множества кусков веревки одну целую. Получится узловатая, грубая, но все же веревка.@@SK_OUTDOORSMAN 50@PID_PART_OF_ROPE 6@@PID_ROPE 1@script fix_boy@fix_None}

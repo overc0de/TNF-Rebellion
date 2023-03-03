@@ -106,7 +106,7 @@ bool TryPlantMine( Critter& cr, Item& trap, uint16 hexX, uint16 hexY )
 	int skill = cr.Skill[ SK_TRAPS ];
 	if( trapItm.trap_type == TRAP_MECHANICAL )
 	{
-		skill += cr.Skill[ SK_OUTDOORSMAN ] * 0.5f;
+		skill += int( cr.Skill[ SK_OUTDOORSMAN ] * 0.5f );
 	}
 	
 	if( Random( 0, 100 ) < skill )

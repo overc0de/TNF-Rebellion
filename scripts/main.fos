@@ -201,6 +201,7 @@ bool start()
 	SetSendParameter( TRAIT_GOOD_NATURED, true );
 	SetSendParameter( TRAIT_BLOODY_MESS, true );
 
+	SetSendParameter( CR_MINING_EXHAUSTION, true );
 	SetSendParameter( CR_IS_AGGRESSIVE, true );
 	SetSendParameter( CR_DIRTINESS, true );
 	SetSendParameter( CR_TYPING_TIME, true );

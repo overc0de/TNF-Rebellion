@@ -317,6 +317,10 @@
 #define PID_PLANT_CORN         						( 1621 )						// corn plant
 #define PID_PLANT_CORN_DEAD          				( 1622 )						// corn dead
 
+#define PID_PLANT_POTATO_SEED						( 23756 )						// Проращёный клубень картошки
+#define PID_PLANT_POTATO         					( 23757 )						// corn plant
+#define PID_PLANT_POTATO_DEAD						( 23758 )						// Сгнивший клубень картошки
+
 #define PID_MUSHBED_EMPTY							( 1628 )						// mushroom bed - empty
 #define PID_MUSHBED_PALE							( 1629 )						// mushroom bed - pale mushroom
 #define PID_MUSHBED_BLACK							( 1630 )						// mushroom bed - black mushroom
@@ -1456,6 +1460,13 @@
 #define PID_ROACH                                  	( 22239 )						// Таракан
 #define PID_GLOWING_MUSHROOM						( 22249 )						// 
 
+#define PID_BOXTY									( 23750 )						// Драники
+#define PID_CHIPS									( 23751 )						// Чипсы
+#define PID_MASHED_POTATO							( 23752 )						// Пюрешка
+#define PID_FRIES									( 23753 )						// Картошка фри
+#define PID_RAW_POTATO								( 23754 )						// Сырая картофелина
+#define PID_BAKED_POTATO							( 23755 )						// Печеная картошка
+
 // Special
 #define PID_HYPO_POISON                       		( 334 )							// Нейротоксин
 #define PID_MUTATED_TOE                       		( 473 )							// Мутировавший палец ноги
@@ -1835,6 +1846,22 @@
 #define PID_JUKEBOX_DISK_HOLDON                     ( 1997 )                        // Sam and Dave - Hold on i'm coming
 #define PID_JUKEBOX_DISK_HEAVENSDOOR                ( 1998 )                        // Bob Dylan - Knocking on Heaven's Door
 
+#define PID_JUKEBOX_DISK_BLUESUEDESHOES             ( 23717 )                       // Elvis Presley - Blue Suede Shoes
+#define PID_JUKEBOX_DISK_FALLINGINLOVE              ( 23718 )                       // Elvis Presley - Can't Help Falling in Love
+#define PID_JUKEBOX_DISK_NOWORNEVER                 ( 23719 )                       // Elvis Presley - It's Now or Never
+#define PID_JUKEBOX_DISK_CREEP                      ( 23720 )                       // Haley & Postmodern Jukebox - Creep"
+#define PID_JUKEBOX_DISK_BLOODOFTHELAMB             ( 23721 )                       // Joshua James - Blood of the Lamb
+#define PID_JUKEBOX_DISK_ALLABOUTTHATBASS           ( 23722 )                       // Postmodern Jukebox - All About That Bass
+#define PID_JUKEBOX_DISK_CARELESSWHISPER            ( 23723 )                       // Postmodern Jukebox - Careless Whisper
+#define PID_JUKEBOX_DISK_CRAZY                      ( 23724 )                       // Postmodern Jukebox - Crazy
+#define PID_JUKEBOX_DISK_UMBRELLA                   ( 23725 )                       // Postmodern Jukebox - Umbrella
+#define PID_JUKEBOX_DISK_WANNABESPICEGIRLS          ( 23726 )                       // Postmodern Jukebox - Wannabe Spice Girls
+#define PID_JUKEBOX_DISK_WECANTSTOP                 ( 23727 )                       // Postmodern Jukebox - We Can't Stop
+#define PID_JUKEBOX_DISK_FEELITSTILL                ( 23728 )                       // Scott Bradlee & Postmodern Jukebox - Feel It Still
+#define PID_JUKEBOX_DISK_HABITS                     ( 23729 )                       // Scott Bradlee & Postmodern Jukebox - Habits
+#define PID_JUKEBOX_DISK_MYHEARTWILLGOON            ( 23730 )                       // Scott Bradlee & Postmodern Jukebox - My Heart Will Go On
+#define PID_JUKEBOX_DISK_TIMBER                     ( 23731 )                       // Scott Bradlee & Postmodern Jukebox - Timber
+#define PID_JUKEBOX_CLOSER                          ( 23732 )                       // Postmodern Jukebox - Closer
 /**************************************************************
 ***************				Keys				***************
 ***************************************************************/

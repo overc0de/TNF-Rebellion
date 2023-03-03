@@ -196,6 +196,22 @@ class Gameplay : iManagerModule, iManager_loop,
 			cr.AddTimeEvent( "poison@cte_Poison", REAL_SECOND( 5 ), CTE_POISON );
 		}
 		
+		if( cr.Param[CR_MINING_EXHAUSTION] > 0 )
+		{
+			int id = cr.Param[CR_MINING_EXHAUSTION_EVENT];
+			uint duration = 0;
+			uint[] values;
+			if( GetTimeEvent( id, duration, values ) )
+			{
+				SetTimeEvent( id, duration, values );
+			}
+			else
+			{
+				uint[] _values = { cr.Id, 0 };
+				cr.ParamBase[CR_MINING_EXHAUSTION_EVENT] = CreateTimeEvent( __FullSecond, "gameplay@e_mining_exhaustion", _values, true );				
+			}
+		}
+		
         return true;
     }
 	
@@ -1512,6 +1528,27 @@ void DropCr( Critter@ cr, Critter@ target )
 	target.ParamBase[ CR_DRAGS_YOU ] = 0;
 	cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_STOPED_DRAGGING );
 	ChangeCritterSpeed( cr );
+}
+
+uint e_mining_exhaustion( uint[] @ values )
+{
+	values[1]++;
+
+    Critter@ cr = GetCritter( values[0] );
+    if( !valid( cr ) )
+    {
+		return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK );
+	}
+
+	cr.ParamBase[CR_MINING_EXHAUSTION] = MAX( cr.Param[CR_MINING_EXHAUSTION] - values[1], 0 );
+	values[1] = 0;
+	
+	if( cr.Param[CR_MINING_EXHAUSTION] <= 0 )
+	{
+		return 0;
+	}
+	
+    return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK );
 }
 
 #endif //GAMEPLAY

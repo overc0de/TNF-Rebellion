@@ -96,6 +96,8 @@ void DrawChosenTabs() // Export
     showTab( GetMsgStr( TEXTMSG_GAME, STR_RADIATED_TITLE ), chosen.Stat[ ST_RADIATION_LEVEL ], 1000, 1, isTester );
 
     showTab( GetMsgStr( TEXTMSG_GAME, STR_SUFFOCATED_TITLE ), 1000 - chosen.Stat[ ST_DYSPNEA ], 1000, 5, isTester );
+
+    showTabLimited( "Утомление", chosen.Param[ CR_MINING_EXHAUSTION ], 60, isTester );
 	
 	if( chosen.Stat[ ST_DYS ] > 0 )
 	{
@@ -217,6 +219,16 @@ void showTabGradient( string name, int value, int max, int min_to_show = 0, bool
 		color = COLOR_DRED;
 	}
 	DrawTab( name + " [" + CLAMP( value, 0, 1000 ) +  "%]", color );
+}
+
+void showTabLimited( string name, int value, int max, bool showAnyway = false, bool showGray = false )
+{
+	if( value <= 0 && !showAnyway ) 
+	{
+		return;
+	}
+	
+	DrawTab( name + " [" + value + "/" + max + "]", COLOR_LGRAY );
 }
 
 void showTabTimeout( string name, int value, int max, bool showAnyway = false, bool showGray = false )

@@ -1043,15 +1043,20 @@ void Cleaning( Critter& player, uint soap_pid, int water_source )
 
 void Cleaning( Critter& player, Critter& target, uint soap_pid, int water_source )
 {
-	Item@ flask = player.GetItem( 0, SLOT_HAND1 );
-	if( valid( flask ) )
+	Item@ hand = player.GetItem( 0, SLOT_HAND1 );
+	if( valid( hand ) )
 	{
-		switch( flask.GetProtoId() )
+		switch( hand.GetProtoId() )
 		{
 			case( PID_BOTTLE_GLASS ): {
-				uint count = flask.GetCount();
-				_SubItem( flask, count );
+				uint count = hand.GetCount();
+				_SubItem( hand, count );
 				player.AddItem( PID_GLASS_BOTTLE_DIRTY_FULL, count );
+			break; }
+			case( PID_itplate2 ): {
+				uint count = hand.GetCount();
+				_SubItem( hand, count );
+				player.AddItem( PID_itplate3, count );
 			break; }
 		}
 	}
