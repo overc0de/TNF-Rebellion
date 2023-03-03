@@ -4327,7 +4327,7 @@ void answer_GM_PANNEL_CRITTER_NPC( Critter& player, uint answerI, string& answer
     }
     if( answerI == 1 )
     {
-        player.ShowScreen( SCREEN_DIALOGBOX, 10, "answer_GM_PANNEL_CRITTER_PLAYER_STATS" );
+        player.ShowScreen( SCREEN_DIALOGBOX, 11, "answer_GM_PANNEL_CRITTER_PLAYER_STATS" );
 		
 		string[] SPECIAL_names = { "S", "P", "E", "C", "I", "A", "L" };
 		string description = "param, protoId - " + cr.GetProtoId() + ", dialog - " + cr.ParamBase[ ST_DIALOG_ID ] + "\n";
@@ -4340,14 +4340,15 @@ void answer_GM_PANNEL_CRITTER_NPC( Critter& player, uint answerI, string& answer
 		player.Say( SAY_DIALOGBOX_TEXT, description );
         player.Say( SAY_DIALOGBOX_BUTTON( 0 ), "SPECIAL" );
         player.Say( SAY_DIALOGBOX_BUTTON( 1 ), "SKILLS" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 2 ), "Traumas" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 3 ), "Modes" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 4 ), "Traits" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 5 ), "Skin/bodytype" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 6 ), "Faction" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 7 ), "Extra Param" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 8 ), "Lex" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 9 ), "Return" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 2 ), "Доп. Навыки" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 3 ), "Traumas" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 4 ), "Modes" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 5 ), "Traits" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 6 ), "Skin/bodytype" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 7 ), "Faction" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 8 ), "Extra Param" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 9 ), "Lex" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 10 ), "Return" );
     }
     if( answerI == 2 )
     {
