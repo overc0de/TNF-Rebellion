@@ -997,9 +997,9 @@
 
 #CARAVANS
 {17800}{}{Man}
-{17801}{}{A middle-aged man.}
+{17801}{}{}
 {17810}{}{Woman}
-{17811}{}{A middle-aged woman.}
+{17811}{}{}
 {17820}{}{Rookie caravan guard}
 {17821}{}{A rookie caravan guard. Clearly feeling insecure.}
 {17830}{}{Caravan guard rookie}
