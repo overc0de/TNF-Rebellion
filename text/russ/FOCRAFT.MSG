@@ -16,6 +16,7 @@
 {660}{}{PID_FRIES@Жарим картошку фри.@@@PID_itplate3 1&PID_RAW_POTATO 1&PID_PLANT_OIL 1@PID_FIREPLACE_TOKEN 1@PID_FRIES 1@script fix_boy@fix_FreeHands}
 {661}{}{PID_CHIPS@Жарим чипсы.@@@PID_itplate3 1&PID_XANDER_ROOT 1&PID_RAW_POTATO 1&PID_PLANT_OIL 1@PID_FIREPLACE_TOKEN 1@PID_CHIPS 1@script fix_boy@fix_FreeHands}
 {662}{}{PID_MASHED_POTATO@Делаем пюрешку с котлеткой.@@@PID_itplate3 1&PID_RAW_POTATO 2&PID_XANDER_ROOT 1&PID_PLANT_OIL 1&PID_MEAT 1|PID_GECKO_MEAT 1@PID_FIREPLACE_TOKEN 1@PID_MASHED_POTATO 1@script fix_boy@fix_FreeHands}
+{663}{}{PID_PLANT_POTATO_SEED@Подготавливаем клубень к посадке.@@@PID_RAW_POTATO 1@@PID_PLANT_POTATO_SEED 1@script fix_boy@fix_None}
 {700}{}{PID_ZAPLATKA_CRAFT_BASIC@Разделитель раздела для создания простейших вещей.@@@PID_ZAPLATKA_CRAFT_BASIC 1@@PID_ZAPLATKA_CRAFT_BASIC 1@script fix_boy@fix_Tribal}
 {720}{}{PID_BOTTLE_GLASS@Берем несколько кусков стекла, орбратываем их и придаем форму стеклянных бутылок.@@SK_REPAIR 150&SK_SCIENCE 100@PID_GLASS 3&PID_FLINT 1&PID_WOOD_PLANK 1@PID_MULTI_TOOL 1|PID_SUPER_TOOL_KIT 1&PID_FIREPLACE_TOKEN 1@PID_BOTTLE_GLASS 3@script fix_boy@fix_Workbench}
 {730}{}{PID_ROPE@Свяжите из множества кусков веревки одну целую. Получится узловатая, грубая, но все же веревка.@@SK_OUTDOORSMAN 50@PID_PART_OF_ROPE 6@@PID_ROPE 1@script fix_boy@fix_None}

@@ -116,6 +116,10 @@ PlantCollection@ plants = PlantCollection()
 		.seed( PID_PLANT_CORN_SEED )
 		.loot( PID_CORN )
 		.loot( PID_PLANT_CORN_DEAD )
+	.cplant( PID_PLANT_POTATO,					PLANT_TYPE_FARM, 		1,	 		2,			  3		)
+		.seed( PID_PLANT_POTATO_SEED )
+		.loot( PID_RAW_POTATO )
+		.loot( PID_PLANT_POTATO_DEAD )
 	.cplant( PID_PLANTBARREL_RAD,				PLANT_TYPE_BARREL, 		4,	 		5,			  6		)
 		.seed( PID_PLANT_RADCVET_SEED )
 		.loot( PID_RADCVET )
@@ -178,6 +182,7 @@ PlantCollection@ plants = PlantCollection()
 
 Plant@ GetPlantByPid( Item@ item )
 {
+	if( !valid( item ) ) return null;
     uint16 Pid = item.GetProtoId();
     return plants.get_by_pid( Pid );
 }
@@ -647,7 +652,7 @@ class MenuPlant: CenteredMenuHandler
 					else
 					{
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_THERE_IS_NOTHING_TO_GATHER );
-						return true;
+						return false;
 					}
 					break;
 				}
@@ -687,7 +692,7 @@ class MenuPlant: CenteredMenuHandler
 					else
 					{
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_THERE_IS_NOTHING_TO_GATHER );
-						return true;
+						return false;
 					}
 					
 					break;
@@ -728,7 +733,7 @@ class MenuPlant: CenteredMenuHandler
 					else
 					{
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_PLANTS_THERE_IS_NOTHING_TO_GATHER );
-						return true;
+						return false;
 					}
 					
 					break;
@@ -745,7 +750,8 @@ class MenuPlant: CenteredMenuHandler
 
 			CleanBed( plant );
 			ChangeCritterSpeed( cr );
-		}	
+			return false;
+		}
 		return true;
     }
 	
@@ -753,6 +759,10 @@ class MenuPlant: CenteredMenuHandler
 	{
 		Item@ plant = GetItem( plant_id );
 		Plant@ cplant = GetPlantByPid( plant );
+		if( !valid(cplant) )
+		{
+			return "";
+		}
 
 		string stage = "";
 		if( uint( plant.PLANT_GROW_STAGE ) == cplant.seedStage )
@@ -977,6 +987,11 @@ void IncreaseCrop( Item& plant, int amount )
 
 void CleanBed( Item& plant )
 {
+	if( plant.PLANT_BED_DNA == 0 )
+	{
+		return;
+	}
+
 	ChangeFrame( plant, 0 );
 	plant.ChangeProto( plant.PLANT_BED_DNA );
 
