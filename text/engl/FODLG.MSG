@@ -517,7 +517,7 @@
 {8161}{}{A business man in fireproof armor. There is a thoughtful look on his face, occasionally shifting to a neutral one.}
 {8170}{}{Reggie}
 {8171}{}{A calm man of Asian appearance. Some notches are visible on the jacket.}
-{8180}{}{Jean}
+{8180}{}{Sebastian}
 {8181}{}{A man in a business suit and with a thick long mustache. They appear looks pompous. He gives off foreign feeling.}
 {8190}{}{Oswald}
 {8191}{}{A strong man with a lot of bags and bags on his shoulders and legs. It seems that he is waiting for someone.}
@@ -564,7 +564,7 @@
 {9661}{}{A stocky guy in fairly clean clothes. His hands show that he had to work as a prospector at the mine.}
 {9670}{}{Lincoln, the caravan master}
 {9671}{}{A dusty raincoat, torn boots, a worn-out holster... you can immediately see that he is a seasoned traveler.}
-{9680}{}{Sarah, the miner's storekeeper}
+{9680}{}{Clara}
 {9681}{}{A girl of about thirty, of pleasant appearance. You can't tell from her tanned skin that she spent a lot of time in the mines.}
 {9690}{}{Strike}
 {9691}{}{A guy with a smug look and a toothpick in his mouth. He is so busy with his decks of cards that he does not notice anything around.}
