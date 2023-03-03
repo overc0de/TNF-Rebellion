@@ -1537,7 +1537,7 @@ uint e_mining_exhaustion( uint[] @ values )
     Critter@ cr = GetCritter( values[0] );
     if( !valid( cr ) )
     {
-		return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK );
+		return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(cr) );
 	}
 
 	cr.ParamBase[CR_MINING_EXHAUSTION] = MAX( cr.Param[CR_MINING_EXHAUSTION] - values[1], 0 );
@@ -1548,7 +1548,7 @@ uint e_mining_exhaustion( uint[] @ values )
 		return 0;
 	}
 	
-    return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK );
+    return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(cr) );
 }
 
 #endif //GAMEPLAY

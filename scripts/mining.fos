@@ -109,7 +109,7 @@ bool PrepareMining( Critter& cr, Item@ tool, Item@ target )
 		}
 	}
 	
-	if( !isGM(cr) && cr.Param[CR_MINING_EXHAUSTION] >= CR_MINING_EXHAUSTION_MAX )
+	if( !isGM(cr) && cr.Param[CR_MINING_EXHAUSTION] >= CR_MINING_EXHAUSTION_MAX(cr) )
 	{
 		cr.Say( SAY_NETMSG, "Вы слишком устали, дайте себе отдохнуть от шахтёрства." );
 		return false;
