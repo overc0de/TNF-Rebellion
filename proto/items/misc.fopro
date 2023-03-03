@@ -16009,3 +16009,32 @@ Weight=307
 Volume=1
 SoundId=48
 Material=5
+
+[Proto] # PID_GLASS_EMPTY
+ProtoId=23800
+Type=5
+PicMap=art\items\glass_ground.png
+PicInv=art\items\glass_empty.png
+Flags=150994974
+DisableEgg=1
+Stackable=1
+Weight=307
+Cost=10
+Volume=5
+SoundId=48
+Material=0
+
+[Proto] # PID_SHAKER
+ProtoId=23801
+Type=5
+PicMap=art\items\shaker_ground.png
+PicInv=art\items\shaker.png
+Flags=150994974
+DisableEgg=1
+Stackable=1
+Weight=307
+Cost=10
+Volume=5
+SoundId=48
+Material=0
+

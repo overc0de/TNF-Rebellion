@@ -8,6 +8,9 @@
 #define PID_REGION_BOUNDARY_CORNER    				( 6531 ) 						// Tech item for map generation
 #define PID_BULLETIN_BOARD							( 1670 )						// Bulletin board
 
+#define PID_GLASS_EMPTY							    ( 23800 )						// Пустой стакан
+#define PID_SHAKER							        ( 23801 )						// Шейкер
+
 /**************************************************************
 **************		INTERACTIVE MAP OBJECTS		***************
 ***************************************************************/
@@ -1375,6 +1378,11 @@
 #define PID_RAD_COLA_PRT							( 22285 )						// Облученная ядер-кола ОТПИТАЯ
 #define PID_SONORA_BOOZE_PRT                        ( 22286 )						// Соноровский напиток ОТПИТАЯ
 #define PID_ATOM_BEER_PRT                           ( 22287 )                   	// Домашнее пиво ОТПИТАЯ
+
+#define PID_GLASS_LIVERSHOT                         ( 23802 )                   	// Стакан коктейля "Удар в печень"
+#define PID_GLASS_RENOLIBRE                         ( 23803 )                   	// Стакан коктейля "Рено Либре"
+#define PID_GLASS_CARAVANLOVER                      ( 23804 )                   	// Стакан коктейля "Друг караванщика"
+#define PID_GLASS_COLABEER                          ( 23805 )                   	// Стакан коктейля "Отвёртка"
 
 /**************************************************************
 ***************				DRUGS	  			***************
