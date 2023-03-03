@@ -996,10 +996,10 @@
 {17591}{}{The head of the slavers. A handsome-looking man with the slaver mark on his forehead. This "Black Lord" has broken a lot of destinies.}
 
 #CARAVANS
-{17800}{}{Random traveler}
-{17801}{}{A random traveler. You do not let go of the feeling that this person should not be here at all.}
-{17810}{}{Random traveler}
-{17811}{}{A random traveler. You do not let go of the feeling that this person should not be here at all.}
+{17800}{}{Man}
+{17801}{}{A middle-aged man.}
+{17810}{}{Woman}
+{17811}{}{A middle-aged woman.}
 {17820}{}{Rookie caravan guard}
 {17821}{}{A rookie caravan guard. Clearly feeling insecure.}
 {17830}{}{Caravan guard rookie}
