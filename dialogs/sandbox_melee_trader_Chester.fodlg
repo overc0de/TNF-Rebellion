@@ -19,44 +19,8 @@ lang=engl russ
 0 4020 @
 6 5000 None 1 @
 9 6000 None 1 #
-10 6010 D _var p name_mem_npc_player = 0 R _var p name_mem_npc_player = 1 #
-12 6020 #
-65506 6030 #
-13 6040 D _var n loyality = 6 #
-0 6050 @
-10 7000 None 1 #
-11 7010 #
-9 7020 #
-0 7030 @
-11 8000 None 1 #
-9 8010 #
-0 8020 @
-12 9000 None 1 #
-13 9010 R _var n loyality = 6 #
-65506 9020 #
-0 9030 @
-13 10000 None 1 #
-14 10010 #
-13 10020 D _item p PID_SHARP_SPEAR > 0 D _item n PID_BOTTLE_CAPS > 34 D _item n PID_SHARP_SPEAR { 10 R _item p PID_SHARP_SPEAR - 1 R _item n PID_SHARP_SPEAR + 1 R _item p PID_BOTTLE_CAPS + 35 R _item n PID_BOTTLE_CAPS - 35 #
-13 10030 D _item p PID_THROWING_KNIFE > 0 D _item n PID_BOTTLE_CAPS > 13 D _item n PID_THROWING_KNIFE { 30 R _item p PID_THROWING_KNIFE - 1 R _item n PID_THROWING_KNIFE + 1 R _item n PID_BOTTLE_CAPS - 13 R _item p PID_BOTTLE_CAPS + 13 #
-13 10040 D _item p PID_SPIKED_KNUCKLES > 0 D _item n PID_BOTTLE_CAPS > 23 D _item n PID_SPIKED_KNUCKLES { 5 R _item p PID_SPIKED_KNUCKLES - 1 R _item n PID_SPIKED_KNUCKLES + 1 R _item n PID_BOTTLE_CAPS - 24 R _item p PID_BOTTLE_CAPS + 24 #
-13 10050 D _item p PID_COMBAT_KNIFE > 0 D _item n PID_BOTTLE_CAPS > 61 D _item n PID_COMBAT_KNIFE { 10 R _item p PID_COMBAT_KNIFE - 1 R _item n PID_COMBAT_KNIFE + 1 R _item n PID_BOTTLE_CAPS - 61 R _item p PID_BOTTLE_CAPS + 61 #
-13 10060 D _item p PID_CATTLE_PROD > 0 D _item n PID_BOTTLE_CAPS > 449 R _item p PID_CATTLE_PROD - 1 R _item n PID_CATTLE_PROD + 1 R _item p PID_BOTTLE_CAPS + 450 R _item n PID_BOTTLE_CAPS - 450 #
-13 10070 D _item p PID_REVKNIFE2 > 0 D _item n PID_BOTTLE_CAPS > 12 D _item n PID_REVKNIFE2 { 15 R _item p PID_REVKNIFE2 - 1 R _item n PID_REVKNIFE2 + 1 R _item n PID_BOTTLE_CAPS - 12 R _item p PID_BOTTLE_CAPS + 12 #
-0 10080 D _item n PID_BOTTLE_CAPS < 12 #
-13 10090 D _item n PID_BOTTLE_CAPS > 44 D _item p PID_spriron1 > 0 R _item p PID_spriron1 - 1 R _item n PID_spriron1 + 1 R _item p PID_BOTTLE_CAPS + 45 R _item n PID_BOTTLE_CAPS - 45 #
-13 10100 D _item n PID_BOTTLE_CAPS > 49 D _item p PID_sickle > 0 R _item n PID_sickle + 1 R _item p PID_sickle - 1 R _item p PID_BOTTLE_CAPS + 50 R _item n PID_BOTTLE_CAPS - 50 @
-14 11000 None 1 #
-13 11010 #
-14 11020 #
-14 11030 #
-14 11040 #
-14 11050 #
-14 11060 #
-14 11070 #
-14 11080 #
-14 11090 #
-0 11100 &
+65506 6010 #
+0 6020 &
 
 [engl]
 {100}{}{none}
@@ -73,44 +37,8 @@ lang=engl russ
 {4020}{}{[ Silently leave ]}
 {5000}{}{I don't deal with walking shit. Get off!@@Fuck off, freak!@@Who the fuck let freaks in the inner city?!@@Holy shit... Are you even a human?@@I don't make business with things that ugly... and stupid.@@Freak off, I don't give away money.}
 {6000}{}{[ A large man with even larger muscles, wielding a huge hammer in his hands, looks down at you. On his face you can see a smirk. ] Hey there, little guy. Welcome to "Chester's".}
-{6010}{}{Who are you?}
-{6020}{}{Do you have any work for me?}
-{6030}{}{Let me see your stock.}
-{6040}{}{I have some stuff to sell. Mind taking a look?}
-{6050}{}{I will be going now. See you later.}
-{7000}{}{[ Starts spinning a knife in his other hand ] Name's Chester. Chester Wild. A blacksmith, a fighter, a trader and just a guy who prefers smashing faces of fuckers with melee type of weapons.}
-{7010}{}{So what do you do around here?}
-{7020}{}{Very well, let's switch the topic.}
-{7030}{}{Good for you, I will be going now.}
-{8000}{}{[ Chester gets his hammer on his shoulder, smirking ] I am selling and buying melee weapons. Knives, hammers, spears... Whatever. You won't believe, but there are some people out there who very interested in buying such sort of things from me.}
-{8010}{}{Right... Let me ask you something else.}
-{8020}{}{Fine, I will keep it in mind. Bye.}
-{9000}{}{Of course there is a work for ya. Bring me melee weapons and I will gladly buy em.}
-{9010}{}{Fine, let's get into business then.}
-{9020}{}{Let me see what you have.}
-{9030}{}{Got it... Well, I will be going.}
-{10000}{}{[ Chester comes closer to you. ] Show me what you have, buddy.}
-{10010}{}{May I see the pricelist?}
-{10020}{}{Sharpened spear for 35 coins.}
-{10030}{}{Throwing knife for 13 coins.}
-{10040}{}{Spiked knuckles for 24 coins.}
-{10050}{}{Combat knife for 61 coins.}
-{10060}{}{Cattle prod for 450 coins.}
-{10070}{}{Primitive machete for 12 coins.}
-{10080}{}{[ Seems like the trader is all out of money. Maybe you need to visit him later. ]}
-{10090}{}{Forged spear for 45 coins.}
-{10100}{}{Sickle for 50 coins.}
-{11000}{}{[ Chester shows you the sign with prices ] Here you are, little guy.}
-{11010}{}{Right! Let's return to business.}
-{11020}{}{Sharpened spear for 35 coins.}
-{11030}{}{Throwing knife for 13 coins.}
-{11040}{}{Spiked knuckles for 24 coins.}
-{11050}{}{Combat knife for 61 coins.}
-{11060}{}{Cattle prod for 450 coins.}
-{11070}{}{Primitive machete for 12 coins.}
-{11080}{}{Forged spear for 45 coins.}
-{11090}{}{Sickle for 50 coins.}
-{11100}{}{Great, I will keep it in mind. Bye,}
+{6010}{}{Let me see your stock.}
+{6020}{}{I will be going now. See you later.}
 
 [russ]
 {100}{}{Честер}
@@ -133,52 +61,6 @@ lang=engl russ
 {6000}{}{[Чудовище столь огромных размеров, что рядом с ним даже небо покажется мелким и незначительным элементом пейзажа.]
 
 - Человек, зачем ты пришел?}
-{6010}{}{[Спросить кто он]}
-{6020}{}{[Спросить про работу]}
-{6030}{}{[Предложить бартер]}
-{6040}{}{Я по делу...}
-{6050}{}{[Молча уйти]}
-{7000}{}{[Не обращая на вас внимания, занимаясь работой.]
-
- - Меня зовут Честер, я кую оружие.}
-{7010}{}{[Слушать дальше]}
-{7020}{}{Я хочу еще спросить кое о чем.}
-{7030}{}{[Попрощаться и уйти]}
-{8000}{}{[Честер распрямляется, откладывая инструмент]
-
- - Я скупаю простое оружие и сломанный инструмент. Ножи и куски железяк тоже подойдут. Все в печь, в переплавку.}
-{8010}{}{Окей, тогда еще спрошу.}
-{8020}{}{[Конец диалога]}
-{9000}{}{[Смяв какую-то железяку в бесформенный комок, Честер посмотрел на вас.]
-
- - Работа есть. Приноси мне любое холодное оружие и я его куплю.}
-{9010}{}{[Перейти к делу]}
-{9020}{}{[Предложить бартер]}
-{9030}{}{[Попрощаться и уйти]}
-{10000}{}{[Мутант подходит ближе к вам, нависая как скала.]
-
- - Показывай.}
-{10010}{}{[Глянуть прайслист]}
-{10020}{}{Заточенное копье (1 шт.) за 81 монету.}
-{10030}{}{Метательный нож (1 шт.) за 13 монет.}
-{10040}{}{Шипованный кастет (1 шт.) за 36 монет.}
-{10050}{}{Боевой нож (1 шт.) за 61 монету.}
-{10060}{}{Электрокнут (1 шт.) за 770 монет.}
-{10070}{}{Примитивное мачете (1 шт.) за 12 монет.}
-{10080}{}{[Похоже у торговца закончились деньги. Стоит заглянуть в другой раз.]}
-{10090}{}{Кованное копьё (1 шт.) за 45 монет.}
-{10100}{}{Серп(1 шт.) за 50 монет.}
-{11000}{}{[Торговец демонстрирует вам доску с расчерченной таблицей товаров и цен.]
-
- - Ну смотри, выбирай.}
-{11010}{}{Ага, понятно, давай к делу!}
-{11020}{}{Заточенное копье (1 шт.) за 81 монету.}
-{11030}{}{Метательный нож (1 шт.) за 13 монет.}
-{11040}{}{Шипованный кастет (1 шт.) за 36 монет.}
-{11050}{}{Боевой нож (1 шт.) за 61 монету.}
-{11060}{}{Электрокнут (1 шт.) за 880 монет.}
-{11070}{}{Примитивное мачете (1 шт.) за 12 монет.}
-{11080}{}{Кованное копьё (1 шт.) за 45 монет.}
-{11090}{}{Серп(1 шт.) за 50 монет.}
-{11100}{}{Круто, буду держать в уме. Пока.}
+{6010}{}{[Предложить бартер]}
+{6020}{}{[Молча уйти]}
 
