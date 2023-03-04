@@ -3498,7 +3498,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES( Critter& player, uint answer
         else
             cr.ParamBase[ DAMAGE_EYE ] = 0;
 
-		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		return;
     }
     else if( answerI == 1 )
@@ -3508,7 +3508,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES( Critter& player, uint answer
         else
             cr.ParamBase[ DAMAGE_RIGHT_ARM ] = 0;
 
-		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		return;
     }
     else if( answerI == 2 )
@@ -3518,7 +3518,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES( Critter& player, uint answer
         else
             cr.ParamBase[ DAMAGE_LEFT_ARM ] = 0;
 
-		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		return;
     }
     else if( answerI == 3 )
@@ -3528,7 +3528,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES( Critter& player, uint answer
         else
             cr.ParamBase[ DAMAGE_RIGHT_LEG ] = 0;
 
-		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		return;
     }
     else if( answerI == 4 )
@@ -3538,20 +3538,20 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES( Critter& player, uint answer
         else
             cr.ParamBase[ DAMAGE_LEFT_LEG ] = 0;
 
-		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		return;
     }
 	
 	if( answerI == 5 )
 	{
 		ChangeStatus( cr, CR_STATUS_BULLET_OVER, 0, !FLAG( cr.StatBase[ ST_CRSTATUS ], CR_STATUS_BULLET_OVER ) );
-		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		return;
 	}
 	if( answerI == 6 )
 	{
 		ChangeStatus( cr, CR_STATUS_HEAVY_DMG, 0, !FLAG( cr.StatBase[ ST_CRSTATUS ], CR_STATUS_HEAVY_DMG ) );
-		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		return;
 	}
 	if( answerI == 7 )
@@ -3894,7 +3894,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_TRAITS( Critter& player, uint answerI
 	}
 	
 	cr.TraitBase[TRAIT_BEGIN + answerI] = cr.Trait[TRAIT_BEGIN + answerI] == 0 ? 1 : 0;
-	answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 4, "" );
+	answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 5, "" );
 }
 
 void answer_GM_PANNEL_CRITTER_PLAYER_STATS_MODES( Critter& player, uint answerI, string& answerS )
@@ -4211,20 +4211,25 @@ void ask_GM_PANNEL_CRITTER_PLAYER_STATS_SPECIAL( Critter& player, uint answerI, 
 			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 0, "" );
         }
 		
-        if( parameter >= 200 && parameter <= 217 )
+        if( parameter >= SK_SMALL_GUNS && parameter <= SK_OUTDOORSMAN )
 		{
 			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 1, "" );
 		}
 		
-        if( parameter == ST_CURRENT_HP || parameter == ST_MAX_LIFE || parameter == ST_AGE || parameter == ST_GENDER 
-		|| parameter == ST_DYSPNEA || parameter == ST_THIRST || parameter == ST_HUNGER || parameter == ST_POISONING_LEVEL || parameter == ST_RADIATION_LEVEL || parameter == ST_DRUNK )
+        if( parameter >= SK_MINING && parameter <= SK_SEX )
+		{
+			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+		}
+		
+        uint[] player_extra_params = { ST_CURRENT_HP, ST_MAX_LIFE, ST_AGE, ST_GENDER, ST_DYSPNEA, ST_THIRST, ST_HUNGER, ST_POISONING_LEVEL, ST_RADIATION_LEVEL, ST_DRUNK };
+		if( player_extra_params.find(parameter) != -1 )
         {
 			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 8, "" );
 		}
 		
 		if( parameter == ST_BLEED || parameter == CR_DIRTINESS )
 		{
-			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
+			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		}
 	}
 }
