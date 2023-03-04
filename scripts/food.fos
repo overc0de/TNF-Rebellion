@@ -19,6 +19,8 @@ void ProccessFood( Critter& cr, Critter& target, Item& item )
 	}
 		
     CheckFoodFlags( target, item );
+	CheckToxins( target, item );
+	ApplyFoodEffects( target, item );
 }
 
 void ProccessDrink( Critter& cr, Critter& target, Item& item )
@@ -36,7 +38,6 @@ void ProccessDrink( Critter& cr, Critter& target, Item& item )
 		return;
 	}
 	
-	CheckSpiritLevel( target, item );
     CheckFoodFlags( target, item );
 	CheckToxins( target, item );
 	ApplyFoodEffects( target, item );
