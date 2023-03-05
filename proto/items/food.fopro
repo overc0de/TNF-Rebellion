@@ -66,7 +66,7 @@ Volume=5
 SoundId=48
 Cost=10
 Material=15
-Food_Restore=20
+Food_Restore=40
 Food_Flags=0
 Item_Subtype=142
 
@@ -912,7 +912,7 @@ Volume=10
 SoundId=48
 Cost=10
 Material=15
-Food_Restore=15
+Food_Restore=30
 Food_Flags=0
 Item_Subtype=142
 
@@ -1526,7 +1526,7 @@ Material=0
 Food_Thrist=20
 Food_Restore=50
 Food_Flags=4
-Item_Subtype=121
+Item_Subtype=122
 Partial_Item=5
 StartValue_1=20535
 
