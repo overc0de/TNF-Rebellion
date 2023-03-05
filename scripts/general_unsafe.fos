@@ -21,6 +21,7 @@
 #include "gathering_h.fos"
 #include "trap_h.fos"
 #include "speed_h.fos"
+#include "waterworks_h.fos"
 
 import void Actions( Critter& cr, uint8 actionType, uint16 pickType ) from "context_callback";
 
@@ -629,9 +630,13 @@ void unsafe_hex_useItem( Critter& cr, int hexX, int hexY, int itm_pid, string@ c
 				return;
 			}
 
-			uint count = usedItem.GetCount();
-			_SubItem( usedItem, count );
-			cr.AddItem( PID_GLASS_BOTTLE_DIRTY_FULL, count );
+			//WIP
+
+			// uint count = usedItem.GetCount();
+			_SubItem( usedItem, 1 );
+			cr.AddItem( PID_GLASS_BOTTLE_DIRTY_FULL, 1 );
+
+			cr.Say( SAY_EMOTE_ON_HEAD, "Набирает воду" );
 		}		
 		
 	}
