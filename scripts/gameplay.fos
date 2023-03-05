@@ -203,11 +203,15 @@ class Gameplay : iManagerModule, iManager_loop,
 			uint[] values;
 			if( GetTimeEvent( id, duration, values ) )
 			{
-				SetTimeEvent( id, duration, values );
+				if( values.length() == 3 )
+				{
+					values[2] = cr.Param[SK_MINING] + cr.Param[SK_OUTDOORSMAN];
+					SetTimeEvent( id, duration, values );
+				}
 			}
 			else
 			{
-				uint[] _values = { cr.Id, 0 };
+				uint[] _values = { cr.Id, 0, cr.Param[SK_MINING] + cr.Param[SK_OUTDOORSMAN] };
 				cr.ParamBase[CR_MINING_EXHAUSTION_EVENT] = CreateTimeEvent( __FullSecond, "gameplay@e_mining_exhaustion", _values, true );				
 			}
 		}
@@ -1532,7 +1536,7 @@ void DropCr( Critter@ cr, Critter@ target )
 
 uint e_mining_exhaustion( uint[] @ values )
 {
-	if( values.length() != 2 )
+	if( values.length() != 3 )
 	{
 		return 0;
 	}
@@ -1542,7 +1546,7 @@ uint e_mining_exhaustion( uint[] @ values )
     Critter@ cr = GetCritter( values[0] );
     if( !valid( cr ) )
     {
-		return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(cr) );
+		return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(values[2]) );
 	}
 
 	cr.ParamBase[CR_MINING_EXHAUSTION] = MAX( cr.Param[CR_MINING_EXHAUSTION] - values[1], 0 );
@@ -1553,7 +1557,7 @@ uint e_mining_exhaustion( uint[] @ values )
 		return 0;
 	}
 	
-    return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(cr) );
+    return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(values[2]) );
 }
 
 #endif //GAMEPLAY

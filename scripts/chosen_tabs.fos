@@ -97,7 +97,7 @@ void DrawChosenTabs() // Export
 
     showTab( GetMsgStr( TEXTMSG_GAME, STR_SUFFOCATED_TITLE ), 1000 - chosen.Stat[ ST_DYSPNEA ], 1000, 5, isTester );
 
-    showTabLimited( "Утомление", chosen.Param[ CR_MINING_EXHAUSTION ], CR_MINING_EXHAUSTION_MAX(chosen), isTester );
+    showTabLimited( "Утомление", chosen.Param[ CR_MINING_EXHAUSTION ], CR_MINING_EXHAUSTION_MAX( chosen.Skill[SK_MINING] + chosen.Skill[SK_OUTDOORSMAN] ), isTester );
 	
 	if( chosen.Stat[ ST_DYS ] > 0 )
 	{
