@@ -656,7 +656,7 @@ void CrushIt( Item& crusher, Item& crushed, Map& map )
 			}
 			else if( product.IsStackable() )
 			{
-				uint[] values = { product.Id };
+				uint[] values = { product.Id, 0 };
 				CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "critter_item_movement@e_stack_items", values, true );
 			}
 
