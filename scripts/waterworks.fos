@@ -704,14 +704,24 @@ int CalcSequence( Critter& cr, Item@ waterPump )
 	{
 		return 0;
 	}
-	
-	if( !valid(waterPump) )
-	{
-		if( flask.Proto.ProtoId == PID_BOTTLE_GLASS )
-			return 5;
-		
-		return flask.Proto.Partial_Item - flask.REMAINING_USES;
-	}
+
+    if( !valid( waterPump ) )
+    {
+        uint16 pid = flask.GetProtoId();
+        if( pid == PID_BOTTLE_GLASS || pid == PID_GLASS_BOTTLE_DIRTY_FULL_PRT )
+        {
+            if(  pid == PID_GLASS_BOTTLE_DIRTY_FULL_PRT )
+            {
+                sequence += flask.Proto.Partial_Item - flask.REMAINING_USES;
+            }
+            
+            int bottlesCount = cr.CountItem( PID_BOTTLE_GLASS );
+            sequence += bottlesCount * 5;
+            return sequence;
+        }
+        
+        return flask.Proto.Partial_Item - flask.REMAINING_USES;
+    }
 	
 	if( isFlask( cr, waterPump ) )
 	{
