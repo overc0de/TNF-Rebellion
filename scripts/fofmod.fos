@@ -709,7 +709,7 @@ void __PlayJukeboxTune( int soundId, int hexX, int hexY, string@ path, int[]@ pa
 	float maxDist = param4[0];
 	float minDist = maxDist / 3; 
 	sound.Set3DPosition( ox, oy, 0.0f );
-	sound.Set3DLevel( 0.7f );
+	sound.Set3DLevel( 0.0f );
 	sound.Set3DMinMaxDistance( minDist, maxDist ); 
 	sound.SetPaused ( false );
 	PlayingSounds.set( ""+soundId, @sound );
