@@ -206,6 +206,17 @@ class Gameplay : iManagerModule, iManager_loop,
 				if( values.length() == 3 )
 				{
 					values[2] = cr.Param[SK_MINING] + cr.Param[SK_OUTDOORSMAN];
+					if( values[1] != 0 )
+					{
+						int result = MAX( cr.Param[CR_MINING_EXHAUSTION] - values[1], 0 );
+						cr.ParamBase[CR_MINING_EXHAUSTION] = result;
+						values[1] = 0;
+						
+						if( cr.Param[CR_MINING_EXHAUSTION] <= 0 )
+						{
+							EraseTimeEvent( id );					
+						}						
+					}
 					SetTimeEvent( id, duration, values );
 				}
 				else
