@@ -2799,7 +2799,7 @@ SoundId=48
 Cost=50
 Material=9
 
-[Proto] # 
+[Proto] # PID_KOKOWEEF_MINE_SCRIP
 ProtoId=494
 Type=5
 PicMap=art\items\kokoweef1.FRM
@@ -2808,10 +2808,10 @@ Flags=134217758
 DisableEgg=1
 Stackable=1
 Weight=20
-Volume=1
+Volume=0
 SoundId=48
-Cost=1
-Material=7
+Cost=5
+Material=16
 
 [Proto] # 
 ProtoId=495
