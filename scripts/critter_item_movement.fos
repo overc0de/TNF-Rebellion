@@ -100,11 +100,9 @@ bool critter_check_move_item( Critter& cr, Item& item, uint8 toSlot, Item@ itemS
 		}
 
 		LogItemMovement( cr, item, "puts on ground" );
-		if( item.IsStackable() )
-		{
-			uint[] values = { item.Id };
-			CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "critter_item_movement@e_stack_items", values, true );
-		}
+
+		uint[] values = { item.Id, cr.Id };
+		CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "critter_item_movement@e_stack_items", values, true );
 	}
 	else
 	{
@@ -734,6 +732,9 @@ uint ArmorSkin( Critter& cr, uint skin )
 //Autostack items upon drop to ground - maybe move to somwhere else
 uint e_stack_items( uint[]@ values ) 
 {
+	Critter@ cr = GetCritter( values[1] );
+	if( valid(cr) ) ChangeCritterSpeed( cr );
+
     uint itemId = values[0];
     Item@ item = GetItem( itemId );
 	if( !valid( item ) )
