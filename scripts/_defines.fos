@@ -846,7 +846,9 @@
 // 319..348
 #define PE_QUICK_POCKETS                         	( 349 )		// Hardcoded
 #define PE_SMOOTH_TALKER                         	( 350 )		// Hardcoded
-// 351..469
+#define PE_ROBO_ARMOR   	                      	( 351 )
+#define PE_MUTO_ARMOR	                         	( 352 )
+// 353..469
 
 // / Addictions
 #define ADDICTION_BEGIN                          	( __AddictionBegin )

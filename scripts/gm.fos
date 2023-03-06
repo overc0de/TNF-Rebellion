@@ -2894,8 +2894,10 @@ void answer_GM_PANNEL_CRITTER_PLAYER_GIFT( Critter& player, uint answerI, string
     }
     if( answerI == 2 )
     {
-        player.ShowScreen( SCREEN_DIALOGBOX, 0, "answer_GM_PANNEL_CRITTER_PLAYER_STATS_KARMA" );
-        player.Say( SAY_DIALOGBOX_TEXT, "WIP" );
+        player.ShowScreen( SCREEN_DIALOGBOX, 2, "answer_GM_PANNEL_CRITTER_PLAYER_STATS_KARMA" );
+		player.Say( SAY_DIALOGBOX_TEXT, "Выберите перки." );
+        player.Say( SAY_DIALOGBOX_BUTTON( 0 ), "" + cr.Perk[ PE_ROBO_ARMOR ] + " - PE_ROBO_ARMOR" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 1 ), "" + cr.Perk[ PE_MUTO_ARMOR ] + " - PE_MUTO_ARMOR" );		 	
     }	
 	
     if( answerI == 3 )
@@ -3006,7 +3008,8 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_KARMA( Critter& player, uint answerI,
         return;
 	}
 	
-	cr.KarmaBase[KARMA_BEGIN + answerI] = cr.Karma[KARMA_BEGIN + answerI] == 0 ? 1 : 0;
+	cr.PerkBase[PE_ROBO_ARMOR + answerI] = cr.Perk[PE_ROBO_ARMOR + answerI] == 0 ? 1 : 0;
+	
 	answer_GM_PANNEL_CRITTER_PLAYER_GIFT( player, 2, "" );
 }
 
