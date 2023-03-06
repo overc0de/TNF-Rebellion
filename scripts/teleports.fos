@@ -52,6 +52,8 @@ class MenuTeleports: CenteredMenuHandler
 				if( target.list() == 0 )
 				{
 					target.warp( cr );
+					stopMenu();
+					return false;
 				}
 				else
 				{
@@ -72,19 +74,23 @@ class MenuTeleports: CenteredMenuHandler
 		
 		if( menu.ButtonMsg( STR_CLOSE_MENU_BUTTON ) )
 		{
-			redrawing = false;
-			
-			MenuTeleports@ loopback = @parent;
-			while( valid( loopback ) )
-			{
-				loopback.redrawing = false;
-				@loopback = @loopback.parent;
-			}
-			
+			stopMenu();			
 			return false;
 		}
 
 		return true;
+	}
+	
+	void stopMenu()
+	{
+		redrawing = false;
+		
+		MenuTeleports@ loopback = @parent;
+		while( valid( loopback ) )
+		{
+			loopback.redrawing = false;
+			@loopback = @loopback.parent;
+		}
 	}
 
 	int getDescriptionFile()
@@ -127,7 +133,7 @@ void InitTeleports()
 		Teleport( "Teleports" )
 		//English Segment Locations:
 		.add( Teleport( "Перфекшен" )
-			.add( Teleport( "Перфекшен город" )
+			.add( Teleport( "Город" )
 				.add( "Поверхность",				8,	0, 170, 270 )
 				.add( "Подземный город",			8,	1, 170, 270 )
 				.add( "Дальняя шахта",				8,	2, 357, 492 )
@@ -135,7 +141,7 @@ void InitTeleports()
 				.add( "Подвал бара",		    	8,	4, 139, 140 )
 				.add( "Кузница мира",		    	8,	5, 450, 452 )
 				)
-			.add( Teleport( "Перфекшен окрестности" )
+			.add( Teleport( "Окрестности 1" )
 			    .add( "Болото",     				1,	0, 170, 270 )
 				.add( "Болотистый лес",				6,	0, 170, 270 )
 				.add( "Восточный лес",				11,	0, 170, 270 )
@@ -152,6 +158,8 @@ void InitTeleports()
 				.add( "Вершина",    				3,	0, 170, 270 )
 				.add( "Подстанция", 				13,	0, 170, 270 )
 				.add( "Подстанция подвал",			13,	1, 170, 270 )
+				)
+			.add( Teleport( "Окрестности 2" )
 				.add( "Холм",       				18,	0, 170, 270 )
 				.add( "Холм шахта",       			18,	2, 198, 171 )
 				.add( "Сток",           			23,	0, 170, 270 )
@@ -226,8 +234,8 @@ void InitTeleports()
 				)
 			)
 		//Russian Segment Locations:	
-		.add( Teleport( "RUS" )
-			.add( Teleport( "Ривердейла" )
+		.add( Teleport( "OLD" )
+			.add( Teleport( "Ривердейл" )
 				.add( "Руины Ривердейла",	52,		0, 498, 197 )
 				.add( "РДР подвал",			52,		1, 480, 370 )
 				.add( "РДР 2 этаж",			52,		2, 185, 160 )
@@ -533,14 +541,10 @@ class MenuPlayers: CenteredMenuHandler
 				while( !map.IsHexPassed( hexX, hexY ) );
 				
 				cr.TransitToMap( map.Id, hexX, hexY, 0 );
+				return false;
 			}
 		}		
 		
-		if( menu.ButtonMsg( STR_CLOSE_MENU_BUTTON ) )
-		{
-			return false;
-		}
-
 		return true;
 	}
 
