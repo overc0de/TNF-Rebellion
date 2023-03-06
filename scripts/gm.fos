@@ -448,47 +448,59 @@ void Say( Critter& player, int param0, int param1, int param2 )
 	ShowInputBoxScreen( player, "gm@unsafe_answer_GM_say#" + description[CLAMP( uint( param1 ), 0, description.length() - 1 )], 0, INPUTBOX_CLOSE_ON_ENTER );
 }
 
-void unsafe_answer_GM_say( Critter& player, int skill, int p1, int p2, string@ message, int[] @ p4 )
+void unsafe_answer_GM_inform( Critter& gm, int p0, int p1, int p2, string@ message, int[] @ p4 )
+{
+	if( !isGM(gm) ) return;
+	
+    gm.ParamBase[ ST_VAR1 ] = p0;
+    gm.ParamBase[ ST_VAR2 ] = SAY_NETMSG;
+	GM_say( gm, message );
+}
+
+void GM_say( Critter& player, string@ message )
 {
 	int saytype = player.ParamBase[ ST_VAR2 ];
 
-    if( message.length() != 0 )
-    {
-        Critter@ cr = GetCritter( player.ParamBase[ ST_VAR1 ] );
-		if( !valid( cr ) )
-		{
-			player.Say( SAY_NETMSG, "Target not found!" );
-			return;
-		}
-		
-        cr.Say( saytype, ( saytype == SAY_NETMSG ? "|0xFFFF00 " : "" ) + message );
-			
-		string name;
-		
-		if(cr.IsPlayer())
-		{
-			name = GetPlayerName(cr.Id);
-		}
-		else
-		{
-			int dialogId = cr.Param[ST_DIALOG_ID] != 0 ? cr.Param[ST_DIALOG_ID] : cr.GetProtoId();
-			name = "NPC " + getNpcNamesHolder().getNpcName(dialogId);
-		}
+    if( message.length() == 0 ) return;
 
-		if( saytype == SAY_NETMSG )
-		{
-			player.Say( SAY_NETMSG, "|0x979998 @" + name + ": " + message );
-			SayLog( cr, crInfo( player ) + " @ " + crInfo( cr ) + " < " + message + " >" );
-		}
-		else
-		{
-			SayLog( cr, saytype, message, "{ " + crInfo( player ) + " } " );
-		}
+	Critter@ cr = GetCritter( player.ParamBase[ ST_VAR1 ] );
+	if( !valid( cr ) )
+	{
+		player.Say( SAY_NETMSG, "Target not found!" );
+		return;
+	}
+	
+	cr.Say( saytype, ( saytype == SAY_NETMSG ? "|0xFFFF00 " : "" ) + message );
 		
-        unsafe_OutMessage( cr, saytype, 0, 0, message, null );
-		
-		Say( player, player.ParamBase[ ST_VAR1 ], saytype, 0 );
-    }
+	string name;
+	
+	if(cr.IsPlayer())
+	{
+		name = GetPlayerName(cr.Id);
+	}
+	else
+	{
+		int dialogId = cr.Param[ST_DIALOG_ID] != 0 ? cr.Param[ST_DIALOG_ID] : cr.GetProtoId();
+		name = "NPC " + getNpcNamesHolder().getNpcName(dialogId);
+	}
+
+	if( saytype == SAY_NETMSG )
+	{
+		player.Say( SAY_NETMSG, "|0x979998 @" + name + ": " + message );
+		SayLog( cr, crInfo( player ) + " @ " + crInfo( cr ) + " < " + message + " >" );
+	}
+	else
+	{
+		SayLog( cr, saytype, message, "{ " + crInfo( player ) + " } " );
+	}
+	
+	unsafe_OutMessage( cr, saytype, 0, 0, message, null );
+}
+
+void unsafe_answer_GM_say( Critter& player, int p0, int p1, int p2, string@ message, int[] @ p4 )
+{
+	GM_say( player, message );
+	Say( player, player.ParamBase[ ST_VAR1 ], player.ParamBase[ ST_VAR2 ], 0 );
 }
 
 void answer_gm_say( Critter& player, uint answerI, string& answerS )
