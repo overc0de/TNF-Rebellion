@@ -122,7 +122,7 @@
 
 # Area 8, Map 27
 {280}{}{sandbox2_3dn3}
-{285}{}{58Tales_of_the_Past.ogg}
+{285}{}{23_sigil.ogg }
 {286}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
 {288}{}{Подпол Перфекшена}
 
@@ -290,7 +290,7 @@
 
 # Area 27, Map 69
 {700}{}{sandbox_church}
-{705}{}{07desert.ogg}
+{705}{}{22_mortuary.ogg}
 {706}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {708}{}{Могильник}
 
@@ -314,7 +314,7 @@
 
 # Area 28, Map 73
 {740}{}{sandbox0_2}
-{745}{}{UnderRail Expedition Main Theme.ogg}
+{745}{}{28_curst.ogg}
 {746}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {748}{}{Лагерь в ущелье}
 
