@@ -256,11 +256,11 @@ bool checkPlantStage( Item@ wildplant, WildPlant@ plant )
 void _ForceWildplantsInit( Critter& player, int, int, int )
 {
     Map@[] maps;
-    Item@[] plants;
     for( int i = 0, iend = GetAllMaps( 0, maps ); i < iend; i++ )
 	{   
 		if( FindMapAmount( maps[i].GetProtoId() ) > 0 ) 
 		{
+			Item@[] plants;
 			for( uint j = 0; j < Wildplants.length(); j++ ) 
 			{
 				maps[i].GetItems( Wildplants[j], plants );
