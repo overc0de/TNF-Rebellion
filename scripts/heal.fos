@@ -1720,7 +1720,8 @@ HealingItemCollection@ healingItems = HealingItemCollection()
 	.healingItem( PID_TRAUMATIN,		100,			60,				60,				STR_EMOTE_INJECT_TRAUMATIN,	true,	 		 "Stimpack.ogg" 	)
 	.healingItem( PID_SUPER_STIMPAK,	60,				100,			60,				STR_EMOTE_INJECT_SS, 		true,	 		 "Stimpack.ogg" 	)
 	.healingItem( PID_STIMPAK,			30,				50,				30,				STR_EMOTE_INJECT_STIM, 		true,			 "Stimpack.ogg" 	)
-	.healingItem( PID_HEALING_POWDER,	20,				30,				40,				STR_EMOTE_APPLY_HP, 	   	false,	  		 "powder_use.ogg"	);
+	.healingItem( PID_HEALING_POWDER,	20,				30,				40,				STR_EMOTE_APPLY_HP, 	   	false,	  		 "powder_use.ogg"	)
+	.healingItem( PID_PAINKILLERS2,		 0,				200,			 0,				STR_EMOTE_APPLY_PAINKILLERS,false,	  		 "powder_use.ogg"	);
 	
 HealingItem@ GetHealingItem( Item@ item )
 {
@@ -1789,7 +1790,7 @@ void proccessHealItem( Critter& cr, HealingItem& usedItem )
 		int instantHeal = int( usedItem.instant_heal * traitMul / traitDiv );
 		int healedAmount = int( usedItem.value_heal * traitMul / traitDiv );
 		
-		if( !usedItem.ResurectItem )
+		if( usedItem.pid == PID_HEALING_POWDER )
 		{
 			float multiplier = ( cr.Skill[ SK_OUTDOORSMAN ] + cr.Skill[ SK_FIRST_AID ] + cr.Skill[ SK_DOCTOR ] ) / 600.0f;
 			
@@ -1808,7 +1809,14 @@ void proccessHealItem( Critter& cr, HealingItem& usedItem )
 		
 		cr.StatBase[ ST_CURRENT_HP ] += instantHeal;
 		
-		cr.AddTimeEvent( "cte_quickheal", 0, CTE_QUICKHEAL, healedAmount );
+		if( usedItem.pid == PID_PAINKILLERS2 )
+		{
+			cr.AddTimeEvent( "cte_slowheal", 0, CTE_QUICKHEAL, healedAmount );
+		}
+		else
+		{
+			cr.AddTimeEvent( "cte_quickheal", 0, CTE_QUICKHEAL, healedAmount );
+		}
 	}
 	
 	if( cr.Trait[TRAIT_FAST_METABOLISM] != 0 )
@@ -1843,6 +1851,30 @@ uint cte_quickheal( Critter& cr, int identifier, uint& rate )
 
 	cr.StatBase[ ST_CURRENT_HP ] += heal;
 	int16 aidTime = 5;
+	
+	rate -= heal;
+
+	ChangeCritterSpeed (cr);
+	
+	bool repeat = true;
+	if( rate <= 0 )
+	{
+		repeat = false;
+	}
+	return repeat ? aidTime : 0;
+}
+
+uint cte_slowheal( Critter& cr, int identifier, uint& rate ) 
+{
+	int heal = 1;
+	if( heal > int( rate ) )
+	{
+		heal = rate;
+	}
+	bool isHealed = true;
+
+	cr.StatBase[ ST_CURRENT_HP ] += heal;
+	int16 aidTime = REAL_SECOND(1);
 	
 	rate -= heal;
 
