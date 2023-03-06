@@ -208,6 +208,10 @@ class Gameplay : iManagerModule, iManager_loop,
 					values[2] = cr.Param[SK_MINING] + cr.Param[SK_OUTDOORSMAN];
 					SetTimeEvent( id, duration, values );
 				}
+				else
+				{
+					EraseTimeEvent( id );					
+				}
 			}
 			else
 			{
@@ -1546,10 +1550,11 @@ uint e_mining_exhaustion( uint[] @ values )
     Critter@ cr = GetCritter( values[0] );
     if( !valid( cr ) )
     {
-		return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(values[2]) );
+		return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK( values[2] ) );
 	}
 
-	cr.ParamBase[CR_MINING_EXHAUSTION] = MAX( cr.Param[CR_MINING_EXHAUSTION] - values[1], 0 );
+	int result = MAX( cr.Param[CR_MINING_EXHAUSTION] - values[1], 0 );
+	cr.ParamBase[CR_MINING_EXHAUSTION] = result;
 	values[1] = 0;
 	
 	if( cr.Param[CR_MINING_EXHAUSTION] <= 0 )
@@ -1557,7 +1562,7 @@ uint e_mining_exhaustion( uint[] @ values )
 		return 0;
 	}
 	
-    return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK(values[2]) );
+    return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK( values[2] ) );
 }
 
 #endif //GAMEPLAY
