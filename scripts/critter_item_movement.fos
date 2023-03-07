@@ -102,7 +102,7 @@ bool critter_check_move_item( Critter& cr, Item& item, uint8 toSlot, Item@ itemS
 		LogItemMovement( cr, item, "puts on ground" );
 
 		uint[] values = { item.Id, cr.Id };
-		CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "critter_item_movement@e_stack_items", values, true );
+		CreateTimeEvent( AFTER( REAL_MS( 1000 ) ), "critter_item_movement@e_stack_items", values, false );
 	}
 	else
 	{
