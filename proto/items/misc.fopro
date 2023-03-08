@@ -2810,7 +2810,7 @@ Stackable=1
 Weight=20
 Volume=0
 SoundId=48
-Cost=5
+Cost=13
 Material=16
 
 [Proto] # 
