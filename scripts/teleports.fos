@@ -481,12 +481,26 @@ class Teleport
 void ShowPlayers( Critter& cr )
 {
 	OpenMenu( cr, "SelectPlayer", MenuPlayers() );
+	cr.RunClientScript( "client_gui@SetPlayerMenuActive", 1, 0, 0, null, null );
+	cr.StatBase[ST_VAR0] = -1;
+}
+
+void unsafe_stopPlayerMenu( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ param4 )
+{
+	if( !isGM(player) ) return;
+	
+	player.StatBase[ST_VAR0] = 0;
 }
 
 class MenuPlayers: CenteredMenuHandler
 {
 	bool MenuUpdate( Critter& cr, iDialogBox& menu )
 	{
+		if( cr.Stat[ST_VAR0] == 0 )
+		{
+			return false;
+		}
+		
 		Critter@[] crs;
 		uint count = GetAllPlayers( crs );
 		for( uint n = 0; n < count; n++ )
