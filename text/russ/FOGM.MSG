@@ -292,7 +292,7 @@
 {700}{}{sandbox_church}
 {705}{}{22_mortuary.ogg}
 {706}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{708}{}{Могильник}
+{708}{}{Церковь}
 
 # Area 27, Map 70
 {710}{}{sandbox_church_dn1}
