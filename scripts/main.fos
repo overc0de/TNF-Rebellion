@@ -2919,7 +2919,7 @@ bool RecoverMaxHP( Critter& cr )
 		return true;
 	}
 
-	int regen = cr.Stat[ ST_HEALING_RATE ];
+	int regen = cr.Stat[ ST_HEALING_RATE ] * 2;
 	cr.StatBase[ ST_HP_RECOVERY ] += regen;
 	cr.StatBase[ ST_HUNGER ] -= 1;
 	cr.StatBase[ ST_THIRST ] -= 1;
