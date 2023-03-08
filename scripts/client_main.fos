@@ -1440,7 +1440,7 @@ bool out_speak( string& message, int& sayType )
 
 	int[] controlled_npcs = control();
 	//Gray text and ability to speak for targeted crit
-	if( sayType != SAY_RADIO && ( controlled_npcs.length() > 0 || sayType == SAY_NARATIVE ) )
+	if( sayType != SAY_RADIO && ( isGM(chosen) && controlled_npcs.length() > 0 || sayType == SAY_NARATIVE ) )
 	{
 		uint16 hexX = 0, hexY = 0;
 		GetMonitorHex( __MouseX, __MouseY, hexX, hexY );
