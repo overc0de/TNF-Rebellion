@@ -16019,5 +16019,60 @@ Weight=307
 Cost=10
 Volume=5
 SoundId=48
-Material=0
+Material=1
 
+[Proto] # PID_KETTLE
+ProtoId=23806
+Type=5
+PicMap=art\items\shaker.png
+PicInv=art\items\kettle.png
+Flags=150994974
+DisableEgg=1
+Stackable=1
+Weight=1000
+Cost=10
+Volume=5
+SoundId=48
+Material=1
+
+[Proto] # PID_CUP
+ProtoId=23807
+Type=5
+PicMap=art\items\JAR.FRM
+PicInv=art\items\cup.png
+Flags=150994974
+DisableEgg=1
+Stackable=1
+Weight=307
+Cost=10
+Volume=5
+SoundId=48
+Material=1
+
+[Proto] # PID_IRON
+ProtoId=23811
+Type=5
+PicMap=art\items\shaker.png
+PicInv=art\items\iron.png
+Flags=150994974
+DisableEgg=1
+Stackable=1
+Weight=307
+Cost=10
+Volume=5
+SoundId=48
+Material=1
+
+[Proto] # PID_TEA_LEAVES
+ProtoId=23812
+Type=5
+PicMap=art\items\bag.frm
+PicInv=art\inven\marijuana_bag_dry.png
+Flags=150994974
+DisableEgg=1
+Stackable=1
+Weight=3
+Volume=1
+SoundId=48
+Cost=100
+Material=15

@@ -10,6 +10,10 @@
 
 #define PID_GLASS_EMPTY							    ( 23800 )						// Пустой стакан
 #define PID_SHAKER							        ( 23801 )						// Шейкер
+#define PID_IRON							        ( 23811 )						// Утюг
+#define PID_KETTLE							        ( 23806 )						// Чайник
+#define PID_CUP							        	( 23807 )						// Кружка
+#define PID_TEA_LEAVES							    ( 23812 )						// Чайные листья
 
 #define PID_GARBAGE_BIN						        ( 23708 )						// Мусорка
 #define PID_FIREPLACE_UNLIMITED				        ( 2612 )						// Неугасающее кострище
@@ -1429,7 +1433,7 @@
 #define PID_COOKED_GECKO_MEAT                 		( 1555 )						// Жареное мясо гекко
 #define PID_COOKED_FISH                       		( 1556 )						// Жареная рыба
 #define PID_FLAPJACK                          		( 1557 )						// Кукурузная лепешка
-#define PID_FLOUR                             		( 1558 )						// Мука
+#define PID_PICTURE                            		( 1558 )						// Фотография
 #define PID_COOKED_MOLERAT_STOMATCH           		( 1559 )						// Приготовленный желудок кротокрыса
 #define PID_SALAD                             		( 1560 )						// Миска салата
 #define PID_RADCVET                           		( 1603 )						// RadCvet
@@ -1470,6 +1474,9 @@
 #define PID_CHIPS									( 22238 )						// 
 #define PID_ROACH                                  	( 22239 )						// Таракан
 #define PID_GLOWING_MUSHROOM						( 22249 )						// 
+#define PID_CUP_COFEE								( 23808 )						// Чашка кофе
+#define PID_CUP_TEA									( 23809 )						// Чашка чая
+ 
 
 #define PID_BOXTY									( 23750 )						// Драники
 #define PID_CHIPS									( 23751 )						// Чипсы
@@ -1477,6 +1484,7 @@
 #define PID_FRIES									( 23753 )						// Картошка фри
 #define PID_RAW_POTATO								( 23754 )						// Сырая картофелина
 #define PID_BAKED_POTATO							( 23755 )						// Печеная картошка
+#define PID_PANCAKES								( 23810 )						// Блинчики
 
 // Special
 #define PID_HYPO_POISON                       		( 334 )							// Нейротоксин
@@ -1752,7 +1760,6 @@
 #define PID_RPSTUFF2                          		( 1528 )						// Записка
 #define PID_RPSTUFF3                          		( 1529 )						// Книга
 #define PID_RPSTUFF4                          		( 1530 )						// Чертежи
-#define PID_PICTURE                          		( 1558 )						// Фотография
 #define PID_WEDRING_M								( 3980 )						// Обручальное кольцо
 #define PID_WEDRING_F								( 3981 )						// Обручальное кольцо с камнем
 
