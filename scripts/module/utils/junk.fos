@@ -39,6 +39,18 @@ shared string TRIM_DOTS( string@ text, uint amount = 0 )
 	return text;
 }
 
+int strToInt( string str )
+{
+	int value = 0;
+
+	if( !StrToInt( str, value ) )
+	{
+		return 0; //TODO: Rework for differend output EXPLICITLY out of possible UINT range (-1)
+	}
+	
+	return value;
+}	
+
 shared string indexValue( string[] @arr, int index )
 {
 	int len = valid( arr ) ? arr.length() : 0;
@@ -192,6 +204,7 @@ shared string two_digits( uint16 value )
 	return ( value > 9 ? ( "" + value ) : ( "0" + value ) );
 }
 #define D2	#(value, delimiter)	smart_two_digits(value, delimiter)
+#define _D2	#( value )			smart_two_digits( value, "", true )
 shared string smart_two_digits( uint16 value, string delimiter = ":", bool LONG = false )
 {
 	if( value == 0 )
@@ -345,17 +358,43 @@ shared string StyledText( string delimiter, string name, string data, int target
 shared string OneAll( int value, uint count )   { return value + " (" + value * count + ")"; }
 shared string OneAll( float value, uint count ) { return value + " (" + value * count + ")"; }
 
-shared string DeltaTime_HMS( uint delta )
+shared string DeltaTime_HM( int delta )
+{
+	// if( delta == 0 )
+		// return "now";
+	
+	string sign = "";
+	if( delta < 0 )
+	{
+		delta *= -1;
+		sign = "-";
+	}
+	
+	int m = ( delta ) % 60;
+	int h = ( delta / 60 ) % 24;
+	int day = delta / 60 / 24;
+	
+	return sign + ( day > 0 ? day + "d" : "" ) + smart_two_digits( h, ":", true ) + smart_two_digits( m, "", true );
+}
+
+shared string DeltaTime_HMS( int delta )
 {
 	if( delta == 0 )
 		return "now";
+	
+	string sign = "";
+	if( delta < 0 )
+	{
+		delta *= -1;
+		sign = "-";
+	}
 	
 	int s = delta % 60;
 	int m = ( delta / 60 ) % 60;
 	int h = ( delta / 60 / 60 ) % 24;
 	int day = delta / 60 / 60 / 24;
 	
-	return ( day > 0 ? day + "d" : "" ) + smart_two_digits( h, ":", true ) + smart_two_digits( m, ":", true ) + smart_two_digits(s, "", true );
+	return sign + ( day > 0 ? day + "d" : "" ) + smart_two_digits( h, ":", true ) + smart_two_digits( m, ":", true ) + smart_two_digits(s, "", true );
 }
 
 shared string MakeTime( uint val )

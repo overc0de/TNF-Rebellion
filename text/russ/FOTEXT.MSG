@@ -1834,8 +1834,8 @@ Balance: |0xFFFF00 @lex balance@|0x3CF800 $ @lex change@}
 {101053}{}{Глобальный год}
 {101054}{}{Формат: ГГГГ}
 {101055}{}{Обнулить глобальный год}
-{101056}{}{Реальный день: @lex state@}
-{101057}{}{Настройки времени:
+{101056}{}{Глобальный реальный день: @lex state@}
+{101057}{}{Время: @lex time@
 Серверное время: |0xFFFF00 @lex timeMul@x @lex yearNow@|0x3CF800 -|0xFFFF00 @lex month@|0x3CF800 -|0xFFFF00 @lex day@|0x3CF800 
 Текущий глоб. год: |0xFFFF00 @lex yearGlobal@|0x3CF800 
 Сдвиг по годам: |0xFFFF00 @lex yearShift@|0x3CF800 
@@ -1964,6 +1964,12 @@ Balance: |0xFFFF00 @lex balance@|0x3CF800 $ @lex change@}
 {101178}{}{Заспавнить НПЦ}
 {101179}{}{Выбор гуманоидного НПЦ}
 {101180}{}{Персонажи}
+{101181}{}{Время на карте}
+{101182}{}{Статичное время: @lex mode@}
+{101183}{}{Сбросить время}
+{101184}{}{|0xFFFF00 @lex global@ |0xAAAAAA @lex map@ |0x00FF00 @lex delta@}
+{101185}{}{статика}
+{101186}{}{Количество: @lex amount@}
 
 # GM menu NPC groups
 # Mobs

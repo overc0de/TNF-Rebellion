@@ -1,18 +1,14 @@
-void CopyMob( Critter& master, Critter& slave )
+Critter@ CopyMob( Critter& master, Critter& slave )
 {
 	Map@ map = master.GetMap();
-	if( !valid(map) ) return;
+	if( !valid(map) ) return null;
 	
 	Critter@ mob = map.AddNpc( slave.GetProtoId(), master.HexX, master.HexY, Random( 0, 5 ), null, null, null );
-	if( !valid( mob ) ) 
-	{
-		return;
-	}
-	
 	clearInv( mob );  //ignore bag id
 	master.RunClientScript( "client_gui@_SetControlCritters", mob.Id, 0, 0, null, null );
 	FullClone( mob, slave );
 	DublicateLoot( mob, slave );
+	return mob;
 }
 
 void clearInv( Critter& cr )
@@ -639,14 +635,12 @@ void RefreshClientsMap( Map& map )
 {
 	Critter@[] players;
 	map.GetCritters( 0, FIND_ALL | FIND_ONLY_PLAYERS, players );
-	uint len = players.length();
-	if( len > 0 )
+	for( uint i = 0, len = players.length(); i < len; i ++ )
 	{
-		for( uint i = 0; i < len; i ++ )
-		{
-			players[i].RunClientScript( "client_main@__ChosenRefreshMap", 0, 0, 0, null, null );
-		}
+		players[i].RunClientScript( "client_main@__ChosenRefreshMap", 0, 0, 0, null, null );
 	}
+	
+	players.resize(0);
 }
 
 bool DisarmCheck( Item& trap, Critter& cr )

@@ -1748,6 +1748,12 @@
 #define STR_GM_HEXMENU_SPAWN_NPC				( 101178 )
 #define STR_GM_SPAWNMENU_SELECT_HUMANOID_MOB	( 101179 )
 //#define STR_GM_MENU_PLAYERS						( 101180 ) //TODO: reorder propertly
+#define STR_GM_MENU_MAP_TIME_SET				( 101181 ) //TODO: reorder lines
+#define STR_GM_MENU_MAP_TIME_MODE				( 101182 ) //TODO: reorder lines
+#define STR_GM_MENU_MAP_TIME_RESET				( 101183 ) //TODO: reorder lines
+#define STR_GM_MENU_MAP_TIME_INFO				( 101184 ) //TODO: reorder lines
+#define STR_GM_MENU_MAP_TIME_STATIC				( 101185 ) //TODO: reorder lines
+#define STR_GM_HEXMENU_BUTTON_AMOUNT			( 101186 ) //TODO: reorder lines
 
 // GM menu npc groups
 #define STR_GM_MENU_NPC_GROUPS_BEGIN			( 101200 )
