@@ -340,7 +340,7 @@ void CombatAttack( Critter& cr, Critter@ target, ProtoItem& weapon, uint8 weapon
         AI_TrySayCombatText( cr, COMBAT_TEXT_ATTACK );
 	}
 	
-    if( valid( target ) )
+    if( valid( target ) && !( target.IsPlayer() && weapon.ProtoId == PID_HAND_GRAPPLE ) )
     {
 		DEBUG_SAY( target, "CombatAttack: " + crInfo( cr ) + " attacks " + crInfo( target ) );
         target.EventAttacked( cr );
