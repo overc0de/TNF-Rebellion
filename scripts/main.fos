@@ -1723,7 +1723,10 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 					return true;
 				}
 				// Open fire cooking
-				if( ( Pid == PID_FIREPLACE2 || Pid == PID_CHOPPED_FIREWOOD ) && targetItem.Val0 >= 1 )
+				bool fireplace = ( ( Pid == PID_FIREPLACE2 || Pid == PID_CHOPPED_FIREWOOD ) && targetItem.Val0 >= 1 )
+								|| Pid == PID_FIREPLACE_UNLIMITED
+								;
+				if( fireplace )
 				{	
 					AskCooking( cr );
 					return true; 
