@@ -394,9 +394,9 @@ void CombatAttack( Critter& cr, Critter@ target, ProtoItem& weapon, uint8 weapon
     attack.DmgMul = 1;
     @attack.Ammo = ammo;
 
-    if( isHthAttack )
+    if( cr.IsNpc() && !isHthAttack && cr.ParamBase[ CR_VAL8 ] < 0 )
 	{
-        attack.BonusDmg = cr.Stat[ ST_MELEE_DAMAGE ];
+        attack.BonusDmg += cr.Param[ CR_VAL8 ];
 	}
 	
 	uint8 weapon_Subtype = valid( realWeapon ) ? realWeapon.Proto.Item_Subtype : 0;

@@ -3414,7 +3414,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS( Critter& player, uint answerI, strin
     }
     if( answerI == 8 )
     {
-        player.ShowScreen( SCREEN_DIALOGBOX, 11, "answer_GM_PANNEL_CRITTER_PLAYER_STATS_PARAM" );
+        player.ShowScreen( SCREEN_DIALOGBOX, 12, "answer_GM_PANNEL_CRITTER_PLAYER_STATS_PARAM" );
         player.Say( SAY_DIALOGBOX_TEXT, "Extra parameters" );
         player.Say( SAY_DIALOGBOX_BUTTON( 0 ), "" + cr.ParamBase[ ST_CURRENT_HP ] + " ST_CURRENT_HP" );
         player.Say( SAY_DIALOGBOX_BUTTON( 1 ), "" + cr.ParamBase[ ST_MAX_LIFE ] + " ST_MAX_LIFE" );
@@ -3427,6 +3427,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS( Critter& player, uint answerI, strin
         player.Say( SAY_DIALOGBOX_BUTTON( 8 ), "" + cr.StatBase[ ST_RADIATION_LEVEL ] + " ST_RADIATION_LEVEL" );
 		player.Say( SAY_DIALOGBOX_BUTTON( 9 ), "" + ( cr.StatBase[ ST_DRUNK ] ) + " ST_DRUNK" );
 		player.Say( SAY_DIALOGBOX_BUTTON( 10 ), "" + ( cr.ParamBase[ CR_DEATH_STAGE ] ) + " CR_DEATH_STAGE" );
+		player.Say( SAY_DIALOGBOX_BUTTON( 11 ), "" + ( cr.ParamBase[ CR_VAL8 ] ) + " BONUS_DMG" );
     }
     if( answerI == 9 )
     {
@@ -3501,6 +3502,11 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_PARAM( Critter& player, uint answerI,
     {
         player.ParamBase[ ST_VAR1 ] = CR_DEATH_STAGE;
         player.Say( SAY_SAY_TITLE, "CR_DEATH_STAGE" );
+    }
+	if( answerI == 11 )
+    {
+        player.ParamBase[ ST_VAR1 ] = CR_VAL8;
+        player.Say( SAY_SAY_TITLE, "BONUS_DMG" );
     }
     player.ShowScreen( SCREEN_SAY, 0, "gm@ask_GM_PANNEL_CRITTER_PLAYER_STATS_SPECIAL" );
 }
@@ -4270,7 +4276,7 @@ void ask_GM_PANNEL_CRITTER_PLAYER_STATS_SPECIAL( Critter& player, uint answerI, 
 			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 2, "" );
 		}
 		
-        uint[] player_extra_params = { ST_CURRENT_HP, ST_MAX_LIFE, ST_AGE, ST_GENDER, ST_DYSPNEA, ST_THIRST, ST_HUNGER, ST_POISONING_LEVEL, ST_RADIATION_LEVEL, ST_DRUNK };
+        uint[] player_extra_params = { ST_CURRENT_HP, ST_MAX_LIFE, ST_AGE, ST_GENDER, ST_DYSPNEA, ST_THIRST, ST_HUNGER, ST_POISONING_LEVEL, ST_RADIATION_LEVEL, ST_DRUNK, CR_VAL8 };
 		if( player_extra_params.find(parameter) != -1 )
         {
 			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 8, "" );
@@ -5879,7 +5885,8 @@ void hex_spawn_NPC( Critter& gm, Map& map, uint16 hexX, uint16 hexY )
         cr.ParamBase[ ST_MAX_LIFE ] = cr.ParamBase[ ST_MAX_LIFE ] + bonus_hp;
 		cr.StatBase[ ST_CURRENT_HP ] = cr.Stat[ ST_MAX_LIFE ];
 		 
-        cr.ParamBase[ ST_MELEE_DAMAGE ] = cr.ParamBase[ ST_MELEE_DAMAGE ] + bonus_dmg;
+		cr.ParamBase[ CR_VAL8 ] = gm.ParamBase[ CR_VAL8 ];
+		cr.ParamBase[ ST_MELEE_DAMAGE ] = cr.ParamBase[ ST_MELEE_DAMAGE ] + bonus_dmg;
 		
         cr.ParamBase[ SK_SMALL_GUNS ] = CLAMP( cr.ParamBase[ SK_SMALL_GUNS ] + bonus_skill, 0, 300 );
         cr.ParamBase[ SK_BIG_GUNS ] = CLAMP( cr.ParamBase[ SK_BIG_GUNS ] + bonus_skill, 0, 300 );
