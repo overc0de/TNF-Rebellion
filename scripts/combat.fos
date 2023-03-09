@@ -1827,6 +1827,11 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 		int Modifier = 10 - ( AttackerMaxStat - DefenderMaxStat );
 		chance += SkillDiff / Modifier;
 
+		if( target.Trait[ TRAIT_JINXED ] > 0 )
+		{
+			chance = 30;
+		}
+
 		if( !target.IsDead() && target.Mode[ MODE_NO_PVP ] == 0 && attacker.Mode[ MODE_NO_PVP ] == 0 && chance >= 30 )
 		{
             HookMeleeAttack( attacker, target );
@@ -4263,7 +4268,7 @@ void _HookMelee( Item& Hook, Critter& cr, bool entered, uint8 dir )
 		( ( cr.Skill[ SK_UNARMED ] * 80 / 100 ) - ( Hooker.Skill[ SK_UNARMED ] * 80 / 100 ) ) / 2 + 
 		( ( cr.Stat[ ST_LUCK ] * 2 ) - ( Hooker.Stat[ ST_LUCK ] * 2 ) ) * 2;
 		
-	chance = Hooker.Trait[ TRAIT_JINXED ] > 0 ? 1 : CLAMP( chance, 1, 95 );
+	chance = Hooker.Trait[ TRAIT_JINXED ] > 0 ? 0 : CLAMP( chance, 1, 95 );
 
 	if( chance >= Random( 1, 100 ) )
 	{
