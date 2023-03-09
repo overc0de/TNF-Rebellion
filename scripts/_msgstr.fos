@@ -2003,7 +2003,7 @@
 #define STR_YOU_TURN_TITLE                   ( 449 )
 #define STR_TURN_BASED_TITLE                 ( 450 )
 #define STR_NO_RUN_TITLE           		     ( 451 )
-#define STR_SNEAK_TITLE                      ( 452 )
+#define STR_SNEAK_TITLE                      ( 441 )
 //454 - 454
 
 // Radio
