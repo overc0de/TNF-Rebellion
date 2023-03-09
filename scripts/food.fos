@@ -72,17 +72,39 @@ void CheckFoodFlags( Critter& target, Item& item )
 		AffectRadiation( target, RADIATION_RANGE );
 	}
 
-	 target.StatBase[ ST_HUNGER ] += item.Proto.Food_Restore * SATURATION_SIMPLIFIER;
-	 target.StatBase[ ST_THIRST ] += item.Proto.Food_Thrist * SATURATION_SIMPLIFIER;
+	// target.StatBase[ ST_HUNGER ] += item.Proto.Food_Restore * SATURATION_SIMPLIFIER;
+	// target.StatBase[ ST_THIRST ] += item.Proto.Food_Thrist * SATURATION_SIMPLIFIER;
+	
+	uint pid = item.GetProtoId();
 	
 	uint[] canned_foods = { PID_CANNED_FISH, PID_IRP, PID_CANNED_MEAT };
-	if( canned_foods.find( item.GetProtoId() ) != -1 )
+	if( canned_foods.find( pid ) != -1 )
 	{
 		target.AddItem( PID_METAL_CAN, 1 );
 	}
 
-	uint[] plated_foods = { PID_BOXTY, PID_CHIPS, PID_MASHED_POTATO, PID_FRIES };
-	if( plated_foods.find( item.GetProtoId() ) != -1 )
+	uint[] cup_bewerages = { PID_CUP_COFEE, PID_CUP_TEA };
+	if( cup_bewerages.find( pid ) != -1 )
+	{
+		int time = target.Timeout[ TO_TIREDNESS ];
+		if( time > 0 )
+		{
+			switch(pid)
+			{
+				case(PID_CUP_COFEE):
+					time = CLAMP( time - REAL_SECOND( 60 ), 0, time );
+					break;
+				case(PID_CUP_TEA):
+					time = CLAMP( time - REAL_SECOND( 40 ), 0, time );
+					break;
+			}			
+			target.TimeoutBase[ TO_TIREDNESS ] = __FullSecond + time;
+		}		
+		target.AddItem( PID_CUP, 1 );
+	}
+
+	uint[] plated_foods = { PID_BOXTY, PID_CHIPS, PID_MASHED_POTATO, PID_FRIES, PID_itplate2 };
+	if( plated_foods.find( pid ) != -1 )
 	{
 		target.AddItem( PID_itplate2, 1 );
 	}
@@ -102,8 +124,8 @@ void ApplyFoodEffects( Critter& target, Item& item )
 	CheckSpiritLevel( target, item );
 	uint8 hungerModifier = item.Proto.Food_Restore;
     uint8 ThirstModifier = item.Proto.Food_Thrist;
-	target.StatBase[ ST_HUNGER ] += hungerModifier; //* SATURATION_SIMPLIFIER;
-	target.StatBase[ ST_THIRST ] += ThirstModifier; //* SATURATION_SIMPLIFIER;
+	target.StatBase[ ST_HUNGER ] += hungerModifier * 10; //* SATURATION_SIMPLIFIER;
+	target.StatBase[ ST_THIRST ] += ThirstModifier * 10; //* SATURATION_SIMPLIFIER;
 	target.ParamBase[ ST_POISONING_LEVEL ] += item.POLUTION_LEVEL;
 	if( target.ParamBase[ ST_RADIATION_LEVEL ] > 0 )
 	{

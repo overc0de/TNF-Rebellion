@@ -16024,7 +16024,7 @@ Material=1
 [Proto] # PID_KETTLE
 ProtoId=23806
 Type=5
-PicMap=art\items\shaker.png
+PicMap=art\items\shaker_ground.png
 PicInv=art\items\kettle.png
 Flags=150994974
 DisableEgg=1
@@ -16052,7 +16052,7 @@ Material=1
 [Proto] # PID_IRON
 ProtoId=23811
 Type=5
-PicMap=art\items\shaker.png
+PicMap=art\items\shaker_ground.png
 PicInv=art\items\iron.png
 Flags=150994974
 DisableEgg=1
