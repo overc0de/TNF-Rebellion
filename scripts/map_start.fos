@@ -194,7 +194,7 @@ class MenuStart: CenteredMenuHandler
 			if( menu.ButtonMsg( STR_MAP_START_MENU_INFORMATION ) )
 			{
 				PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN1.mp3", 5 );
-				OpenLinkRemote( cr, "http://frp.su" );
+				OpenLinkRemote( cr, "https://forp-tnf.fandom.com/ru/wiki" );
 				return true;
 			}
 			
