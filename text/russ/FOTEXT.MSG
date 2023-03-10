@@ -1473,7 +1473,7 @@
 {100425}{}{Опустить @lex dropWaterworks@}
 {100426}{}{Поднять @lex raiseWaterworks@}
 {100427}{}{Проверить @lex checkWaterworks@}
-{100428}{}{Режим: @lex switchWaterworks@}
+{100428}{}{@lex switchWaterworks@ючить}
 {100429}{}{Набрать воды}
 {100430}{}{Пить}
 {100435}{}{ведро}
