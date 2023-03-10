@@ -399,6 +399,11 @@ void CombatAttack( Critter& cr, Critter@ target, ProtoItem& weapon, uint8 weapon
         attack.BonusDmg += cr.Param[ CR_VAL8 ];
 	}
 	
+	if( isHthAttack )
+	{
+		attack.BonusDmg = cr.Stat[ ST_MELEE_DAMAGE ];
+	}
+	
 	uint8 weapon_Subtype = valid( realWeapon ) ? realWeapon.Proto.Item_Subtype : 0;
 	if( weaponSubtype == WS_THROWING && ( weapon_Subtype == ITEM_SUBTYPE_WEAPON_GRENADE_PRIM || weapon_Subtype == ITEM_SUBTYPE_WEAPON_GRENADE_KIFE ) )
 	{
