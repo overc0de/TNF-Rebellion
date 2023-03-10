@@ -1174,7 +1174,7 @@
 
 # Area 300, Map 400
 {4010}{}{hell}
-{4015}{}{33DOOM.ogg}
+#{4015}{}{33DOOM.ogg}
 {4016}{}{gntlwin1:3, gntlwind:3, gustwin1:3, gustwind:3, ore:2, ore1:2, pebble:2, pebble1:2, seagull:5, seagull1:5, seawind:5, seawind1:5, waves:15, waves1:15, pebble:25, pebble1:15, ore:10, ore1:10}
 {4018}{}{юд}
 
