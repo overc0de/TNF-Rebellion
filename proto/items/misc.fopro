@@ -11902,7 +11902,7 @@ SoundId=48
 Cost=200
 Material=2
 Slot=5
-HeadItem_Perk=10
+HeadItem_Perk=11
 
 [Proto] # PID_ANCIENT_BOOK 
 ProtoId=15020
@@ -12032,7 +12032,7 @@ SoundId=48
 Cost=200
 Material=2
 Slot=5
-HeadItem_Perk=11
+HeadItem_Perk=10
 
 [Proto] #
 ProtoId=15029
