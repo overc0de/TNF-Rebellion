@@ -17,6 +17,7 @@
 		MAP_snd0_2, MAP_snd0_2dn, 			 									//mountain camp 0_2
 		MAP_snd_bos,															//BOS
 		MAP_snd_bos_dn1,                                   						//BOS_dn
+		MAP_snd5_2,	MAP_snd5_2dn,												//Perfection_Motel and basement
 		MAP_snd5_5,																//Ghoul camp
 		MAP_fort_rdr, MAP_fort_rdr_dn, MAP_fort_rdr_up1, MAP_fort_rdr_up2,		//Fort Riverdale
 		MAP_rdr1_2dn, MAP_rdr1_3dn, MAP_rdr2_2dn, MAP_rdr2_3dn, MAP_rdr3_1dn,	//Riverdale_dn maps
