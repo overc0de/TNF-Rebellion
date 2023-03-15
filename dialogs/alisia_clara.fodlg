@@ -31,7 +31,8 @@ lang=russ
 52 8050 #
 52 8060 #
 52 8070 #
-52 8080 @
+52 8080 #
+52 8090 @
 53 9000 None 1 #
 52 9010 D _item n PID_KOKOWEEF_MINE_SCRIP < 3 #
 52 9020 D _item n PID_KOKOWEEF_MINE_SCRIP > 2 #
@@ -42,9 +43,10 @@ lang=russ
 53 9070 D _item n PID_KOKOWEEF_MINE_SCRIP > 0 D _item p PID_LEAD_NUGGET > 2 R _item p PID_LEAD_NUGGET - 3 R _item n PID_LEAD_NUGGET + 3 R _param p ST_EXPERIENCE + 100 R _item p PID_KOKOWEEF_MINE_SCRIP + 1 R _item n PID_KOKOWEEF_MINE_SCRIP - 1 #
 53 9080 D _item n PID_KOKOWEEF_MINE_SCRIP > 0 D _item p PID_COPPER_NUGGET > 1 R _item p PID_COPPER_NUGGET - 2 R _item n PID_COPPER_NUGGET + 2 R _param p ST_EXPERIENCE + 100 R _item p PID_KOKOWEEF_MINE_SCRIP + 1 R _item n PID_KOKOWEEF_MINE_SCRIP - 1 #
 53 9090 D _item n PID_KOKOWEEF_MINE_SCRIP > 0 D _item p PID_COPPER_ORE > 1 R _item p PID_COPPER_ORE - 2 R _item n PID_COPPER_ORE + 2 R _param p ST_EXPERIENCE + 100 R _item p PID_KOKOWEEF_MINE_SCRIP + 1 R _item n PID_KOKOWEEF_MINE_SCRIP - 1 #
-53 9100 D _item n PID_KOKOWEEF_MINE_SCRIP > 0 D _item p PID_URANIUM_ORE > 0 R _item p PID_URANIUM_ORE - 1 R _item n PID_URANIUM_ORE + 1 R _param p ST_EXPERIENCE + 300 R _item p PID_KOKOWEEF_MINE_SCRIP + 3 R _item n PID_KOKOWEEF_MINE_SCRIP - 3 #
-53 9110 D _item n PID_KOKOWEEF_MINE_SCRIP > 1 D _item p PID_GOLD_NUGGET > 0 R _item p PID_GOLD_NUGGET - 1 R _item n PID_GOLD_NUGGET + 1 R _param p ST_EXPERIENCE + 100 R _item p PID_KOKOWEEF_MINE_SCRIP + 1 R _item n PID_KOKOWEEF_MINE_SCRIP - 1 #
-53 9120 D _item n PID_KOKOWEEF_MINE_SCRIP > 2 D _item p PID_GOLD_ORE > 0 R _item p PID_GOLD_ORE - 1 R _item n PID_GOLD_ORE + 1 R _param p ST_EXPERIENCE + 200 R _item p PID_KOKOWEEF_MINE_SCRIP + 2 R _item n PID_KOKOWEEF_MINE_SCRIP - 2 @
+53 9100 D _item n PID_KOKOWEEF_MINE_SCRIP > 1 D _item p PID_GOLD_NUGGET > 0 R _item p PID_GOLD_NUGGET - 1 R _item n PID_GOLD_NUGGET + 1 R _param p ST_EXPERIENCE + 100 R _item p PID_KOKOWEEF_MINE_SCRIP + 1 R _item n PID_KOKOWEEF_MINE_SCRIP - 1 #
+53 9110 D _item n PID_KOKOWEEF_MINE_SCRIP > 2 D _item p PID_GOLD_ORE > 0 R _item p PID_GOLD_ORE - 1 R _item n PID_GOLD_ORE + 1 R _param p ST_EXPERIENCE + 200 R _item p PID_KOKOWEEF_MINE_SCRIP + 2 R _item n PID_KOKOWEEF_MINE_SCRIP - 2 #
+53 9120 D _item p PID_URANIUM_ORE > 0 D _item n PID_KOKOWEEF_MINE_SCRIP > 2 R _item p PID_URANIUM_ORE - 1 R _item n PID_URANIUM_ORE + 1 R _param p ST_EXPERIENCE + 300 R _item p PID_KOKOWEEF_MINE_SCRIP + 3 R _item n PID_KOKOWEEF_MINE_SCRIP - 3 #
+53 9130 D _item n PID_KOKOWEEF_MINE_SCRIP > 8 D _item p PID_REFINED_ORE > 0 R _item p PID_REFINED_ORE - 1 R _item n PID_REFINED_ORE + 1 R _item n PID_KOKOWEEF_MINE_SCRIP - 9 R _item p PID_KOKOWEEF_MINE_SCRIP + 9 R _param p ST_EXPERIENCE + 500 @
 54 10000 None 1 #
 60 10010 #
 61 10020 #
@@ -79,9 +81,10 @@ lang=russ
 {8030}{}{Железная руда - 4 самородка за 1 облигацию.}
 {8040}{}{Свинцовая руда и Галенит - 3 самородка за 1 облигацию.}
 {8050}{}{Медная руда - 2  самородка за 1 облигацию.}
-{8060}{}{Урановая руда - 3 облигация за 1 самородок.}
-{8070}{}{Золотой самородок - 1 облигации за 1 штуку.}
-{8080}{}{Большой золотой самородок - 2 облигации за 1 штуку.}
+{8060}{}{Золотой самородок - 1 облигация за 1 штуку.}
+{8070}{}{Большой золотой самородок - 2 облигации за 1 штуку.}
+{8080}{}{Урановая руда - 3 облигации за 1 самородок.}
+{8090}{}{Обогащённая урановая руда - 9 облигаций за каждый кусок.}
 {9000}{}{Выгружай всё в этот ящик! Сейчас посчитаем!@@Показывай свои горы золота!@@Показывай что удалось добыть!}
 {9010}{}{[ У скупщика кончаются облигации! Ждите следующего завоза! ]}
 {9020}{}{Ну и расценки...@@Да, много не заработаешь...@@Лучше чем ничего.@@Посмотрел бы я, как вы сами работали бы в шахте за такие деньги!}
@@ -92,9 +95,10 @@ lang=russ
 {9070}{}{Галенит - 3 самородка за 1 облигацию.}
 {9080}{}{Медная руда - 2 самородка за 1 облигацию.}
 {9090}{}{Медный самородок - 2 шт. за 1 облигацию.}
-{9100}{}{Урановая руда - 3 облигация за 1 самородок.}
-{9110}{}{Золотой самородок - 1 облигации за 1 штуку.}
-{9120}{}{Большой золотой самородок - 2 облигации за 1 штуку.}
+{9100}{}{Золотой самородок - 1 облигация за 1 штуку.}
+{9110}{}{Большой золотой самородок - 2 облигации за 1 штуку.}
+{9120}{}{Урановая руда - 3 облигации за 1 самородок.}
+{9130}{}{Обогащённая урановая руда - 9 облигаций за каждый кусок.}
 {10000}{}{Ох, я действительно очень занята. Давай быстрее!@@У тебя ровно две минуты!@@Может в другой раз, а? Я так занята...}
 {10010}{}{Когда прибудет следующий караван?}
 {10020}{}{У тебя можно обменять облигации на наличку?@@А ты меняешь облигации на монеты?@@Можно у тебя обменять облигации на монеты или крышки?}
