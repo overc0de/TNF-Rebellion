@@ -3034,7 +3034,7 @@ Stackable=1
 Weight=4000
 Volume=50
 SoundId=48
-Cost=15
+Cost=1
 Material=5
 
 [Proto] # PID_MINERAL 
@@ -3048,7 +3048,7 @@ Stackable=1
 Weight=5000
 Volume=25
 SoundId=48
-Cost=10
+Cost=1
 Material=5
 
 [Proto] # PID_TUBE 
@@ -5491,7 +5491,7 @@ Stackable=1
 Weight=2500
 Volume=40
 SoundId=48
-Cost=200
+Cost=5
 Material=13
 
 [Proto] # PID_ARMOR_PLATE
@@ -12351,7 +12351,7 @@ Stackable=1
 Weight=5000
 Volume=40
 SoundId=48
-Cost=60
+Cost=7
 Material=5
 
 [Proto] # PID_LEAD_ORE 
@@ -12365,7 +12365,7 @@ Stackable=1
 Weight=5000
 Volume=50
 SoundId=48
-Cost=100
+Cost=5
 Material=5
 
 [Proto] # PID_GOLD_ORE 
@@ -12379,7 +12379,7 @@ Stackable=1
 Weight=315
 Volume=45
 SoundId=48
-Cost=405
+Cost=12
 Material=5
 
 [Proto] # 
@@ -12747,7 +12747,7 @@ DisableEgg=1
 Stackable=1
 Weight=6000
 Volume=20
-Cost=15
+Cost=1
 SoundId=48
 Material=5
 
