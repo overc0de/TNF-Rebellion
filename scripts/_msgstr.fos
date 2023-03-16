@@ -2856,6 +2856,7 @@
 #define STR_BLOODTOX_USELESS			 	 ( 800130 )
 #define STR_BLOODTOX_SUFFER			 		 ( 800140 )
 #define STR_BLOODTOX_INFECTED		 		 ( 800150 )
+#define STR_BLOODTOX_WEAKNESS		 		 ( 800160 )
 
 // ***************************************************************************************
 // ***  FOINTERNAL.MSG  ******************************************************************

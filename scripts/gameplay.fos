@@ -1601,11 +1601,15 @@ uint cte_metabolism( Critter& cr, int identifier, uint& rate )
 		string line;
 		switch(value)
 		{
-			case(10): line = "У вас появились симптомы болезни.."; break;
-			case(50): line = "Ваша болезнь прогрессирует!"; break;
-			case(80): line = "Вы чувствуете, что смертельно больны!"; break;
+			case(10): line = "|0xFFFF00 У вас появились симптомы болезни."; break;
+			case(50): line = "|0xFF6600 Ваша болезнь прогрессирует!"; break;
+			case(80): line = "|0xFF0000 Вы чувствуете, что смертельно больны!"; break;
 		}
-		if( line.length() > 0 ) cr.Say( SAY_NETMSG, line );
+		if( line.length() > 0 )
+		{	
+			cr.Say( SAY_NETMSG, line );
+			cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_BLOODTOX_WEAKNESS);
+		}
 	}
 	
 	return cr.Param[ QST_GAMEMODE ] == GAME_TEST ? REAL_SECOND( 2 ) : REAL_MINUTE( 30 );

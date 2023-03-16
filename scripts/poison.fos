@@ -260,6 +260,8 @@ void StartSepsis( Critter& cr, int chance )
 	
 	if( roll < chance )
 	{
+		int infect = ( cr.ParamBase[ CR_DIRTINESS ] / cr.Stat[ ST_ENDURANCE ] ) / 4;
+		cr.ParamBase[ CR_BLOOD_TOXIC ] += infect;
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_INFECTED ); //WIP
 	}
 }
