@@ -11,7 +11,7 @@ import uint CountMapPlayers( Map@ map ) from "manager";
 
 #define DISTANCE_GROUP_RADIUS		( 15 )
 #define DISTANCE_AGGRO				# (cr)	( ( cr.StatBase[ ST_PERCEPTION ] + 2 ) * 2 )
-#define DISTANCE_UNAGGRO			# (cr)	( ( cr.StatBase[ ST_PERCEPTION ] + 2 ) * 4 )
+#define DISTANCE_UNAGGRO			# (cr)	( ( cr.StatBase[ ST_PERCEPTION ] + 4 ) * 2 )
 
 #define VarWandering             StatBase[ ST_VAR5 ]
 
@@ -49,7 +49,7 @@ void _MobInit( Critter& npc, bool firstTime )
     npc.SetEvent( CRITTER_EVENT_SHOW_CRITTER_1, "_CritterInAggroRange" );
 
 	npc.ShowCritterDist2 = DISTANCE_UNAGGRO( npc );
-	//npc.SetEvent( CRITTER_EVENT_HIDE_CRITTER_2, "_CritterOutOfAggroRange" );
+	npc.SetEvent( CRITTER_EVENT_HIDE_CRITTER_2, "_CritterOutOfAggroRange" );
 }
 
 void _CritterBecameVisible( Critter& self, Critter& target )
@@ -69,7 +69,7 @@ void _CritterBecameVisible( Critter& self, Critter& target )
 		return;
 	}
 	
-	if( target.IsDead() )
+	if( target.IsDead() || target.IsNpc() )
 	{
 		return;
 	}
@@ -159,8 +159,8 @@ void _CritterOutOfAggroRange( Critter& self, Critter& target )
 		return;
 	}
 	
-	// self.EraseEnemyFromStack( target.Id );
-	// EraseAttackPlane( self, target );
+	self.EraseEnemyFromStack( target.Id );
+	EraseAttackPlane( self, target );
 }
 
 // CRITTER_EVENT_DEAD
@@ -292,7 +292,7 @@ void _HidePlayer( Critter& npc, Critter& player )
 		return;
 	}
 	
-    if( !player.IsPlayer() )
+    if( player.IsNpc() )
 	{
         return;
 	}
@@ -749,10 +749,11 @@ void AttackOrFind( Critter& self, Critter& target )
 		return;
 	}
 	
-	if( target.IsDead() )
+	if( target.IsDead() || target.IsNpc() )
 	{
 		self.EraseEnemyFromStack( target.Id );
 		EraseAttackPlane( self, target );
+		return;
 	}
 	
 	if( self.IsSee( target ) )
