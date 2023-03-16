@@ -4111,9 +4111,11 @@ Material=8
 Container_Volume=350
 Item_Subtype=202
 
-[Proto]
+[Proto] # PID_PORTABLE_REFRIGERATOR
 ProtoId=17007
 Type=8
+ScriptModule=furniture
+ScriptFunc=_InitFurniture
 PicMap=art\items\ICECHE_PORT.FRM
 PicInv=art\inven\ICECHE_PORT.FRM
 Flags=402657308
