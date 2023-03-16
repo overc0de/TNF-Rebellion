@@ -252,4 +252,16 @@ uint cte_vomit_warn( Critter& cr, int identifier, uint& rate )
 	return 0; 
 }
 
+void StartSepsis( Critter& cr, int chance )
+{
+	int roll = Random( 1, 100 );
+
+	testInfo( cr, roll + " vs " + chance );
+	
+	if( roll < chance )
+	{
+		cr.Say( SAY_NETMSG, "Вам поплохело.." ); //WIP
+	}
+}
+
 #endif //POISON

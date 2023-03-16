@@ -14,6 +14,7 @@
 			import void DropPoison( Critter& cr ) from "poison";
 			import void AffectPoison( Critter& cr, int value ) from "poison";
 			import void CheckPoisonEvent( Critter& cr ) from "poison";
+			import void StartSepsis( Critter& cr, int chance ) from "poison";
 		#endif //POISON
 
 #endif //POISON_H
