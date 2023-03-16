@@ -196,9 +196,9 @@ class Gameplay : iManagerModule, iManager_loop,
 			cr.AddTimeEvent( "poison@cte_Poison", REAL_SECOND( 5 ), CTE_POISON );
 		}
 		
-		if( cr.Stat[ ST_RADIATION_LEVEL ] > 0 && cr.GetTimeEvents( CTE_RADIATION_RESTORE, null, null, null ) < 1 )
+		if( cr.GetTimeEvents( CTE_METABOLISM, null, null, null ) < 1 )
 		{
-			cr.AddTimeEvent( "radiation@cte_RadiationRestore", REAL_SECOND( 1 ), CTE_RADIATION_RESTORE, 0 );
+			cr.AddTimeEvent( "gameplay@cte_metabolism", REAL_SECOND( 1 ), CTE_METABOLISM, 0 );
 		}
 		
 		if( cr.Param[CR_MINING_EXHAUSTION] > 0 )
@@ -1579,6 +1579,36 @@ uint e_mining_exhaustion( uint[] @ values )
 	}
 	
     return REAL_MINUTE( CR_MINING_EXHAUSTION_TICK( values[2] ) );
+}
+
+// CTE_METABOLISM
+uint cte_metabolism( Critter& cr, int identifier, uint& rate )
+{
+	if( cr.Stat[ ST_RADIATION_LEVEL ] <= 0 )
+	{
+		cr.StatBase[ ST_RADIATION_LEVEL ] = 0;
+	}
+	else
+	{
+		AffectRadiation( cr, -1 );
+	}
+	
+	if( cr.Param[CR_BLOOD_TOXIC] > 0 )
+	{
+		int value = cr.ParamBase[CR_BLOOD_TOXIC];
+		cr.ParamBase[CR_BLOOD_TOXIC] = CLAMP( value + 1, 0, 100 );
+		
+		string line;
+		switch(value)
+		{
+			case(10): line = "У вас появились симптомы болезни.."; break;
+			case(50): line = "Ваша болезнь прогрессирует!"; break;
+			case(80): line = "Вы чувствуете, что смертельно больны!"; break;
+		}
+		if( line.length() > 0 ) cr.Say( SAY_NETMSG, line );
+	}
+	
+	return cr.Param[ QST_GAMEMODE ] == GAME_TEST ? REAL_SECOND( 2 ) : REAL_MINUTE( 30 );
 }
 
 #endif //GAMEPLAY

@@ -2910,6 +2910,16 @@ void CritterRegen( Critter& cr )
 			{
 				return;
 			}
+			
+			int hp = cr.Stat[ ST_CURRENT_HP ];
+			
+			if( cr.ParamBase[CR_BLOOD_TOXIC] >= 100 )
+			{
+				int sepsis_damage = cr.Stat[ ST_ENDURANCE ] + cr.Stat[ ST_STRENGTH ];
+				if( cr.IsKnockout() ) sepsis_damage /= 2;
+				cr.Say( SAY_NETMSG, "Вы страдаете от заражения крови." ); 
+				cr.StatBase[ ST_CURRENT_HP ] -= sepsis_damage;
+			}			
 
 			if( RecoverMaxHP( cr ) )
 			{
@@ -2935,7 +2945,6 @@ void CritterRegen( Critter& cr )
 			
 			regen = CLAMP( regen * ( 10 - penalty ) / 10, 1, regen );
             cr.StatBase[ ST_CURRENT_HP ] += regen;
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_REGENERATED_HP, "$regen" + regen );
 
             if( cr.StatBase[ ST_CURRENT_HP ] > cr.Stat[ ST_MAX_LIFE ] )
 			{
@@ -2949,6 +2958,9 @@ void CritterRegen( Critter& cr )
 					cr.StatBase[ ST_THIRST ] -= regen;
 				}
 			}
+
+			hp = cr.StatBase[ ST_CURRENT_HP ] - hp;
+			if( hp > 0 ) cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_REGENERATED_HP, "$regen" + hp );
 		}
 	}
 }

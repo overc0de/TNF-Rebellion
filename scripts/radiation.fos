@@ -317,17 +317,4 @@ void RadiateHex( Critter& cr, int mapID, int hx, int hy, int rad_strength, int r
 	}
 }
 
-// CTE_RADIATION_RESTORE
-uint cte_RadiationRestore( Critter& cr, int identifier, uint& rate )
-{
-	if( cr.Stat[ ST_RADIATION_LEVEL ] <= 0 )
-	{
-		cr.StatBase[ ST_RADIATION_LEVEL ] = 0;
-		return 0;
-	}
-	
-	AffectRadiation( cr, -1 );	
-	
-	return RADIATION_RESTORE_TIMEOUT;
-}
 #endif //RADIATION

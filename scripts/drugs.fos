@@ -647,7 +647,7 @@ void init_TimeEvents()
 		.add( "RELAX"                     , CTE_RELAX )
 		.add( "DAZED"                     , CTE_DAZED )
 		.add( "STUNNED"                   , CTE_STUNNED )
-		.add( "RADIATION_RESTORE"         , CTE_RADIATION_RESTORE )
+		.add( "METABOLISM"                , CTE_METABOLISM )
 		;
 }
 

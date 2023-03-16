@@ -9,8 +9,6 @@
 	#define RADIATION_DEAD_DOSE        ( 1100 )
 	#define RADIATION_MAX_BACK_DOSE	   ( 1000 )
 	
-	#define RADIATION_RESTORE_TIMEOUT  ( REAL_MINUTE( 30 ) ) // Auto decreasing radiation level tmieout
-
 	const int[] RadiationEffects =
 	{
 							  1,  100,  200,  400,  600,  800, /*stages values*/

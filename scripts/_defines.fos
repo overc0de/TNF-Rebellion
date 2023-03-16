@@ -565,7 +565,7 @@
 #define CTE_RELAX									( 34 )		// Just a fancy animation
 #define CTE_DAZED									( 35 )		// CTE for critical injury for AC debuf
 #define CTE_STUNNED									( 36 )		// CTE for critical injury for AP regen debuf
-#define CTE_RADIATION_RESTORE                      	( 37 )		// Auto decreasing radiation level
+#define CTE_METABOLISM                      		( 37 )		// Auto decreasing radiation level + sepsis
 
 // Parameters
 // Stats
