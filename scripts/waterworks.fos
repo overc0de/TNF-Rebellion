@@ -1139,8 +1139,11 @@ void Cleaning( Critter& player, Critter& target, uint soap_pid, int water_source
 			return; }
 			default: {
 				if( isFlask( player, water_source ) )
+				{
 					start_gathering_water( player, water_source );
-			return; }
+					return; 
+				}
+			}
 		}
 	}
 	
