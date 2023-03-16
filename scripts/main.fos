@@ -210,8 +210,11 @@ bool start()
 	SetSendParameter( CR_CONTROLLED_GROUP, true );	
 	SetSendParameter( CR_REMEMBERING_NAME, true );		
 	SetSendParameter( CR_TALKING_TARGET_ID, true );		
+	
+	SetSendParameter( CR_TALKING_TARGET_ID, true );		
 
-	SetSendParameter( MERC_MASTER_ID, true );			
+	SetSendParameter( CR_SNEAKING, true );			
+	SetSendParameter( SK_SNEAK, true );			
 
     // Send item data masks
     // Look fields in fonline.h 'struct Item::ItemData'
