@@ -784,6 +784,24 @@ class FurnitureList
 		}
 		return false;
 	}
+	
+	void SpawnAll( Critter& gm )
+	{
+		Map@ map = gm.GetMap();
+		uint16 x = gm.HexX, y = gm.HexY;
+		for( uint i = 0; i < list.length(); i++ )
+		{
+			map.MoveHexByDir( x, y, gm.Dir, 1 );
+			map.AddItem( x, y, list[i].basePID, 1 );
+		}
+	}
+}
+
+//~run furniture SpawnAll 0 0 0
+void SpawnAll( Critter& cr, int, int, int )
+{
+	InitFurnitures();
+	furnitures.SpawnAll( cr );
 }
 
 Furniture@ CreateFurniture( string name, uint basePID )
