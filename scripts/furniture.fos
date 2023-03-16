@@ -69,6 +69,7 @@ void InitFurnitures()
 		.add( Furniture( "Barrel", PID_BARREL_GENERIC ).add( 8103 ) )
 		.add( Furniture( "Barrel Container", PID_BAREL_EMPTY ).add( 2551 ).add( 4727 ) )
 		.add( Furniture( "Mailbox", PID_MAILBOX ).add( 2257 ) )
+		.add( Furniture( "Freezer", PID_PORTABLE_REFRIGERATOR ).add( PID_ICE_CHEST_LEFT ) )
 		;
 }
 
