@@ -642,6 +642,34 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 	
 	SayLog( cr, action_info + "." );
 	
+	if( pid == PID_PILLS )
+	{
+		Critter@ target = useOnSelf ? @cr : @targetCr;
+		if( !valid( target ) )
+		{
+			return false;
+		}
+		
+		_SubItem( item, 1 );
+		target.Say( SAY_EMOTE, "Принимает антибиотики" );
+		
+		if( target.ParamBase[CR_BLOOD_TOXIC] > 0 )
+		{
+			int level = target.ParamBase[CR_BLOOD_TOXIC];
+			target.ParamBase[CR_BLOOD_TOXIC] = CLAMP( level - 50, 0, 100 );
+			
+			if( target.ParamBase[CR_BLOOD_TOXIC] == 0 )
+			{
+				target.Say( SAY_NETMSG, "Курс лечения окончен - вы вылечились." );
+			}
+		}
+		else
+		{
+			target.Say( SAY_NETMSG, "Вы ничем не болеете, и потратили таблетку впустую." );
+		}
+		return true;
+	}
+	
 	if( !valid( targetScen ) )
 	{
 		//Planting barrels
