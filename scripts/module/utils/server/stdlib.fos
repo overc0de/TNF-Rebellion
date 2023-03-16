@@ -4,6 +4,11 @@ Critter@ CopyMob( Critter& master, Critter& slave )
 	if( !valid(map) ) return null;
 	
 	Critter@ mob = map.AddNpc( slave.GetProtoId(), master.HexX, master.HexY, Random( 0, 5 ), null, null, null );
+	if( !valid( mob ) ) 
+	{
+		return null;
+	}
+	
 	clearInv( mob );  //ignore bag id
 	master.RunClientScript( "client_gui@_SetControlCritters", mob.Id, 0, 0, null, null );
 	FullClone( mob, slave );
@@ -328,7 +333,8 @@ bool SpillOut( Item@ &item, int parts = 1 )
 		return false;
 	}
 	
-	int index = index_glass_bottles( item, 1 );	
+	int index = index_glass_bottles( item, 1 );
+	
 	if( index != -1 && !ReplaceWith( item, glass_bottles[2][index], 1 ) )
 	{
 		return false;
@@ -516,6 +522,7 @@ bool PickItem( Critter& cr, Item& targetItem )
 			LogItemMovement( cr, targetItem, "can't pick up item (" + cr.HexX + ", " + cr.HexY + ") because it's too large." );
 		}
 	}
+	
 	return true;
 }
 
@@ -525,10 +532,16 @@ void PlayGenericSound( Map& map, uint16 hx, uint16 hy, string& sound, int distan
 	{
 		return;
 	}
+	
+	if( sound.length() < 3 )
+	{
+		return;
+	}
+	
 	Critter@[] players;
 	map.GetCrittersHex( hx, hy, distance, FIND_ALL | FIND_ONLY_PLAYERS, players );
 	int[] val = { distance };
-	for( uint i = 0; i < players.length(); i++ )
+	for( uint i = 0, len = players.length(); i < len; i++ )
 	{
 		Critter@ player = players[i];
 		if( valid( player ) )
@@ -536,6 +549,8 @@ void PlayGenericSound( Map& map, uint16 hx, uint16 hy, string& sound, int distan
 			player.RunClientScript( "fofmod@__PlaySound", map.Id, hx, hy, sound, val );
 		}
 	}
+	
+	players.resize(0);
 }
 
 void PlayDoorSound( Map& map, uint16 hx, uint16 hy, int pid, int lockerCondition, int distance )
@@ -547,7 +562,7 @@ void PlayDoorSound( Map& map, uint16 hx, uint16 hy, int pid, int lockerCondition
 	Critter@[] players;
 	map.GetCrittersHex( hx, hy, distance, FIND_ALL | FIND_ONLY_PLAYERS, players );
 	int[] val = { pid, lockerCondition, distance };
-	for( uint i = 0; i < players.length(); i++ )
+	for( uint i = 0, len = players.length(); i < len; i++ )
 	{
 		Critter@ player = players[i];
 		if( valid( player ) )
@@ -555,6 +570,8 @@ void PlayDoorSound( Map& map, uint16 hx, uint16 hy, int pid, int lockerCondition
 			player.RunClientScript( "fofmod@__PlayDoorSound", map.Id, hx, hy, "LAUGHTE1.mp3", val );
 		}
 	}
+	
+	players.resize(0);
 }
 
 void DropContainerItems( Map& map, Item& container )
@@ -609,21 +626,21 @@ bool CantResist( Critter@ targetCr )
 
 	@item = targetCr.GetItem( 0, SLOT_HAND1 );
 	pid = valid( item ) ? item.GetProtoId() : 0;
-	if( ( pid == PID_ROPE || pid == PID_HANDCUFFS ) && item.Val2 == 1 )
+	if( ( pid == PID_ROPE || pid == PID_HANDCUFFS ) && item.Val1 == 1 )
 	{
 		return true;
 	}
 	
 	@item = targetCr.GetItem( 0, SLOT_HEAD );
 	pid = valid( item ) ? item.GetProtoId() : 0;
-	if( pid == PID_SLAVE_COLLAR && item.Val2 == 1 )
+	if( pid == PID_SLAVE_COLLAR && item.Val1 == 1 )
 	{
 		return true;
 	}
 	
 	@item = targetCr.GetItem( 0, SLOT_MISC );
 	pid = valid( item ) ? item.GetProtoId() : 0;
-	if( pid == PID_SHACKLES && item.Val2 == 1 )
+	if( pid == PID_SHACKLES && item.Val1 == 1 )
 	{
 		return true;
 	}

@@ -380,36 +380,36 @@ void PlantMushroom( Critter& cr, Item& seed, Item& plant_bed )
 			plant_bed.PLANT_BED_DNA = plant_bed.GetProtoId();
 			plant_bed.ChangeProto( plant.pid );
 			
-			Map@ map = cr.GetMap();
-			uint16 hx = plant_bed.HexX, hy = plant_bed.HexY;
-			map.MoveHexByDir( hx, hy, 0, 1 );
-			Item@ blocker0 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
-			if( valid( blocker0 ) )
-			{
-				blocker0.PARENT_ITM_ID = plant_bed.Id;
-			}
+			// Map@ map = cr.GetMap();
+			// uint16 hx = plant_bed.HexX, hy = plant_bed.HexY;
+			// map.MoveHexByDir( hx, hy, 0, 1 );
+			// Item@ blocker0 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
+			// if( valid( blocker0 ) )
+			// {
+				// blocker0.PARENT_ITM_ID = plant_bed.Id;
+			// }
 			
-			map.MoveHexByDir( hx, hy, 2, 1 );
-			Item@ blocker1 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
-			if( valid( blocker1 ) )
-			{
-				blocker1.PARENT_ITM_ID = plant_bed.Id;
-			}
+			// map.MoveHexByDir( hx, hy, 2, 1 );
+			// Item@ blocker1 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
+			// if( valid( blocker1 ) )
+			// {
+				// blocker1.PARENT_ITM_ID = plant_bed.Id;
+			// }
 			
-			map.MoveHexByDir( hx, hy, 3, 1 );
-			map.MoveHexByDir( hx, hy, 4, 1 );
-			Item@ blocker2 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
-			if( valid( blocker2 ) )
-			{
-				blocker2.PARENT_ITM_ID = plant_bed.Id;
-			}
+			// map.MoveHexByDir( hx, hy, 3, 1 );
+			// map.MoveHexByDir( hx, hy, 4, 1 );
+			// Item@ blocker2 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
+			// if( valid( blocker2 ) )
+			// {
+				// blocker2.PARENT_ITM_ID = plant_bed.Id;
+			// }
 			
-			map.MoveHexByDir( hx, hy, 5, 1 );
-			Item@ blocker3 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
-			if( valid( blocker3 ) )
-			{
-				blocker3.PARENT_ITM_ID = plant_bed.Id;
-			}
+			// map.MoveHexByDir( hx, hy, 5, 1 );
+			// Item@ blocker3 = map.AddItem( hx, hy, PID_WOOD_BLOCKER, 1 );
+			// if( valid( blocker3 ) )
+			// {
+				// blocker3.PARENT_ITM_ID = plant_bed.Id;
+			// }
 			
 			uint[] values = { plant_bed.Id };
 			plant_bed.PLANT_EVENT = CreateTimeEvent( AFTER( REAL_SECOND( 1 ) ), "e_PlantGrowth", values, true );
