@@ -196,6 +196,11 @@ class Gameplay : iManagerModule, iManager_loop,
 			cr.AddTimeEvent( "poison@cte_Poison", REAL_SECOND( 5 ), CTE_POISON );
 		}
 		
+		if( cr.Stat[ ST_RADIATION_LEVEL ] > 0 && cr.GetTimeEvents( CTE_RADIATION_RESTORE, null, null, null ) < 1 )
+		{
+			cr.AddTimeEvent( "radiation@cte_RadiationRestore", REAL_SECOND( 1 ), CTE_RADIATION_RESTORE, 0 );
+		}
+		
 		if( cr.Param[CR_MINING_EXHAUSTION] > 0 )
 		{
 			int id = cr.Param[CR_MINING_EXHAUSTION_EVENT];
