@@ -651,7 +651,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		}
 		
 		_SubItem( item, 1 );
-		target.Say( SAY_EMOTE, "Принимает антибиотики" );
+		target.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_EMOTE_BLOODTOX_MED_USE );
 		
 		if( target.ParamBase[CR_BLOOD_TOXIC] > 0 )
 		{
@@ -660,12 +660,12 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			
 			if( target.ParamBase[CR_BLOOD_TOXIC] == 0 )
 			{
-				target.Say( SAY_NETMSG, "Курс лечения окончен - вы вылечились." );
+				target.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_HEALD );
 			}
 		}
 		else
 		{
-			target.Say( SAY_NETMSG, "Вы ничем не болеете, и потратили таблетку впустую." );
+			target.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_USELESS );
 		}
 		return true;
 	}
@@ -2445,13 +2445,13 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 					{
 						targetItem.Info = 0;
 						targetItem.Val9 = 0;
-						cr.Say( SAY_EMOTE_ON_HEAD, "Сворачивает газету" );
+						cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_NEWSPAPER_CLP );
 					}
 					else
 					{
 						targetItem.Info = 11;
 						targetItem.Val9 = PID_mgzn01;
-						cr.Say( SAY_EMOTE_ON_HEAD, "Разворачивает газету" );
+						cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_EMOTE_NEWSPAPER_UNFLD );
 					}
 					
 					uint new_pid = targetItem.Val9 == 0 ? PID_HOLODISK : targetItem.Val9;
@@ -2917,7 +2917,7 @@ void CritterRegen( Critter& cr )
 			{
 				int sepsis_damage = cr.Stat[ ST_ENDURANCE ] + cr.Stat[ ST_STRENGTH ];
 				if( cr.IsKnockout() ) sepsis_damage /= 2;
-				cr.Say( SAY_NETMSG, "Вы страдаете от заражения крови." ); 
+				cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_SUFFER ); 
 				cr.StatBase[ ST_CURRENT_HP ] -= sepsis_damage;
 			}			
 

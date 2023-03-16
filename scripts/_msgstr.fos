@@ -2715,6 +2715,9 @@
 #define STR_DEFIB_ALREADY_CHARGED			 ( 12928 )
 #define STR_HOLD_DEFIB						 ( 12929 )
 
+#define STR_EMOTE_NEWSPAPER_CLP				 ( 12950 )
+#define STR_EMOTE_NEWSPAPER_UNFLD			 ( 12951 )
+
 // Scores
 #define STR_SCORES_TITLE                     # (score)       ( 13000 + ( score ) * 10 )
 #define STR_SCORES_NAME                      # (score)        ( 13000 + ( score ) * 10 + 1 )
@@ -2846,6 +2849,12 @@
 #define STR_EMOTE_INJECT_TRAUMATIN			 ( 800040 )
 #define STR_HEALING_OVERDOSE				 ( 800050 )
 #define STR_EMOTE_APPLY_PAINKILLERS			 ( 800060 )
+
+//Blood infection
+#define STR_EMOTE_BLOODTOX_MED_USE			 ( 800110 )
+#define STR_BLOODTOX_HEALD			 		 ( 800120 )
+#define STR_BLOODTOX_USELESS			 	 ( 800130 )
+#define STR_BLOODTOX_SUFFER			 		 ( 800140 )
 
 // ***************************************************************************************
 // ***  FOINTERNAL.MSG  ******************************************************************

@@ -260,7 +260,7 @@ void StartSepsis( Critter& cr, int chance )
 	
 	if( roll < chance )
 	{
-		cr.Say( SAY_NETMSG, "Вам поплохело.." ); //WIP
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_INFECTED ); //WIP
 	}
 }
 
