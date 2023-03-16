@@ -138,6 +138,7 @@ void unsafe_radioHead( Critter& cr, int, int, int, string@ message, int[]@ )
 				if( FLAG( radio.Flags, ITEM_RADIO ) )
 				{
 					cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_USE_RADIO );
+					break;
 				}
 			}
 		}
