@@ -129,11 +129,11 @@ void ApplyFoodEffects( Critter& target, Item& item )
 	target.ParamBase[ ST_POISONING_LEVEL ] += item.POLUTION_LEVEL;
 	if( target.ParamBase[ ST_RADIATION_LEVEL ] > 0 )
 	{
-		AffectRadiation( target, int( -item.SPIRIT_LEVEL * 0.25f ) );
+		AffectRadiation( target, int( -item.SPIRIT_LEVEL ) );
 	}
 	if( target.ParamBase[ ST_DRUNK ] != 100 )
 	{
-		target.ParamBase[ ST_DRUNK ] += int( item.SPIRIT_LEVEL * 0.25f );
+		target.ParamBase[ ST_DRUNK ] += int( item.SPIRIT_LEVEL );
 		if( target.StatBase[ ST_DRUNK ] > 0 && target.GetTimeEvents( CTE_DRUNK, null, null, null ) < 1 )
 		{
 			target.AddTimeEvent( "gameplay@cte_Drunk", REAL_SECOND( target.Param[ CR_DRUNK_SPEED ] ), CTE_DRUNK, 0 );
@@ -141,7 +141,7 @@ void ApplyFoodEffects( Critter& target, Item& item )
 	}
 	else
 	{
-		AffectPoison( target, int( item.SPIRIT_LEVEL * 0.25f ) );
+		AffectPoison( target, int( item.SPIRIT_LEVEL ) );
 	}
 }
 
@@ -152,12 +152,12 @@ void Emote( Critter& target, Item& consumed )
 	
 	if( target.ParamBase[ ST_RADIATION_LEVEL ] > 0 && consumed.SPIRIT_LEVEL != 0 )
 	{
-		target.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_LOST_RAD, "$rad" + consumed.SPIRIT_LEVEL * 0.025 );
+		target.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_LOST_RAD, "$rad" + consumed.SPIRIT_LEVEL * 0.1 );
 	}
 	
 	if( consumed.POLUTION_LEVEL != 0 )
 	{
-		target.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DRUNK_POISON, "$poison" + consumed.POLUTION_LEVEL );
+		target.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DRUNK_POISON, "$poison" + consumed.POLUTION_LEVEL * 0.1 );
 	}
 }
 
