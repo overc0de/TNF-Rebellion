@@ -2891,6 +2891,7 @@ void FullHeal( Critter& cr ) //exported
 	cr.StatBase[ ST_POISONING_LEVEL ] = 0;
 	cr.StatBase[ ST_RADIATION_LEVEL ] = 0;
 	
+	cr.ParamBase[ CR_BLOOD_TOXIC ] = 0;
 	cr.ParamBase[ CR_DIRTINESS ] = 0;
 	cr.ParamBase[ CR_DEATH_STAGE ] = 0;
 	cr.ParamBase[ ST_BLEED ] = 0;
@@ -3344,7 +3345,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS( Critter& player, uint answerI, strin
     }
     if( answerI == 3 )
     {
-        player.ShowScreen( SCREEN_DIALOGBOX, 10, "answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES" );
+        player.ShowScreen( SCREEN_DIALOGBOX, 11, "answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES" );
         player.Say( SAY_DIALOGBOX_TEXT, "Traumas" );
         player.Say( SAY_DIALOGBOX_BUTTON( 0 ), "" + cr.DamageBase[ DAMAGE_EYE ] + " - Eyes" );
         player.Say( SAY_DIALOGBOX_BUTTON( 1 ), "" + cr.DamageBase[ DAMAGE_RIGHT_ARM ] + " - left arm" );
@@ -3353,9 +3354,10 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS( Critter& player, uint answerI, strin
         player.Say( SAY_DIALOGBOX_BUTTON( 4 ), "" + cr.DamageBase[ DAMAGE_LEFT_LEG ] + " - left leg" );
         player.Say( SAY_DIALOGBOX_BUTTON( 5 ), "" + FLAG( cr.StatBase[ ST_CRSTATUS ], CR_STATUS_BULLET_OVER ) + " - bullet wound" );
         player.Say( SAY_DIALOGBOX_BUTTON( 6 ), "" + FLAG( cr.StatBase[ ST_CRSTATUS ], CR_STATUS_HEAVY_DMG ) + " - heavy wound" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 7 ), "" + cr.StatBase[ ST_BLEED ] + " - bleeding" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 8 ), "" + cr.ParamBase[ CR_DIRTINESS ] + " - dirt" );
-        player.Say( SAY_DIALOGBOX_BUTTON( 9 ), "medical check" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 7 ), "" + cr.Stat[ ST_BLEED ] + " - bleeding" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 8 ), "" + cr.Param[ CR_DIRTINESS ] + " - dirt" );
+        player.Say( SAY_DIALOGBOX_BUTTON( 9 ), "" + cr.Param[ CR_BLOOD_TOXIC ] + " - toxins" );		
+        player.Say( SAY_DIALOGBOX_BUTTON( 10 ), "medical check" );
     }
     if( answerI == 4 )
     {
@@ -3622,6 +3624,12 @@ void answer_GM_PANNEL_CRITTER_PLAYER_STATS_DAMAGES( Critter& player, uint answer
         player.Say( SAY_SAY_TITLE, "CR_DIRTINESS:" );
 	}
 	if( answerI == 9 )
+	{
+        player.ParamBase[ ST_VAR1 ] = CR_BLOOD_TOXIC;
+        player.ShowScreen( SCREEN_SAY, 0, "gm@ask_GM_PANNEL_CRITTER_PLAYER_STATS_SPECIAL" );
+        player.Say( SAY_SAY_TITLE, "CR_BLOOD_TOXIC:" );
+	}
+	if( answerI == 10 )
 	{
 		ProccessDoctorSkill( player, cr, true );
 	}
@@ -4223,6 +4231,10 @@ void ask_GM_PANNEL_CRITTER_PLAYER_STATS_SPECIAL( Critter& player, uint answerI, 
 		{
 			target.ParamBase[ parameter ] = 1000 - number;
 		}
+		else if( parameter == CR_BLOOD_TOXIC )
+		{
+			target.ParamBase[ parameter ] = CLAMP( number, 0, 100 );
+		}
 		else
 		{
 			target.ParamBase[ parameter ] = number;
@@ -4282,7 +4294,7 @@ void ask_GM_PANNEL_CRITTER_PLAYER_STATS_SPECIAL( Critter& player, uint answerI, 
 			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 8, "" );
 		}
 		
-		if( parameter == ST_BLEED || parameter == CR_DIRTINESS )
+		if( parameter == ST_BLEED || parameter == CR_DIRTINESS || parameter == CR_BLOOD_TOXIC )
 		{
 			answer_GM_PANNEL_CRITTER_PLAYER_STATS( player, 3, "" );
 		}
