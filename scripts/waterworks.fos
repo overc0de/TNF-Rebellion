@@ -673,7 +673,7 @@ bool start_gathering_water( Critter& cr, uint scenery_pid )
 	
 	Map@ map = cr.GetMap();		
 	
-	if( scenSwampList.find( scenery_pid ) == -1 && water_sources.find( scenery_pid ) == -1 )
+	if( scenSwampList.find( scenery_pid ) == -1 )// && water_sources.find( scenery_pid ) == -1 )
 	{
 		return false;
 	}	
