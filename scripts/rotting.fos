@@ -241,6 +241,11 @@ void RottenFood( Map@ map )
 	Item@ target;
     map.GetItemsByType( ITEM_TYPE_FOOD, food );
 	
+	for( uint i = 0, l = food_pids_conversion.length(); i < l; i++ )
+	{
+		map.GetItems( food_pids_conversion[i][0], food );
+	}
+	
 	uint count;
 	for( uint i = 0; i < food.length(); i++ ) 
 	{
