@@ -1981,18 +1981,28 @@ class SendInformMessageToTargetCommand : Command
 
     private void process()
     {
+		string@[] arguments;
+		for( uint i = 1; i < argAmount(); ++i )
+		{
+			arguments.insertLast( getArg( i ).getStringData() );
+		}
+		string str = join( arguments, " " );
+		if( str.length() <= 0 ) return;
+
         CommandArgument critterIdArg = getArg( 0 );
         if( critterIdArg.getType() == INTEGER )
         {
-            string@[] arguments;
-            for( uint i = 1; i < argAmount(); ++i )
+			RunServerScriptUnsafe( "gm@unsafe_answer_GM_inform",  critterIdArg.getIntData(), 0, 0, str, null );
+        } else if( critterIdArg.getType() == STRING )
+        {
+            string@[]@ ids = split( critterIdArg.getStringData(), "," );
+            for( uint i = 0, l = ids.length(); i < l; i++ )
             {
-                arguments.insertLast( getArg( i ).getStringData() );
-            }
-            string str = join( arguments, " " );
-            if( str.length() > 0 )
-            {
-                RunServerScriptUnsafe( "gm@unsafe_answer_GM_inform",  critterIdArg.getIntData(), 0, 0, str, null );
+				int id = 0;
+				if( StrToInt( ids[i], id ) && id != 0 )
+				{
+					RunServerScriptUnsafe( "gm@unsafe_answer_GM_inform", id, 0, 0, str, null );
+				}
             }
         }
     }
