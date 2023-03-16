@@ -918,6 +918,7 @@
 #define PID_SUN2							  		( 1228 )						// Солнышко МК 2
 #define PID_SUN3							  		( 1229 )						// Солшышко МК 3
 #define PID_OLD_LASER                         		( 20055 )						// Тренировочное ружье
+#define PID_LASER_MUSKET                         	( 21044 )						// Лазерный мушкет
 
 //==================ITEM_SUBTYPE_WEAPON_LASER_SMG===============================//	( 17 )
 #define PID_LASER_SMG_LOW                    		( 1404 )						// Лучевая пушка "Ожог" 

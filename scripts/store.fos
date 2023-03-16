@@ -1211,6 +1211,7 @@ const uint[][] itemlist = {
 		PID_MENDOZA
 	},
 	{	//"Energy Weapons"
+		PID_LASER_MUSKET,
 		PID_LASER_PISTOL,
 		PID_SOLAR_SCORCHER,
 		PID_MAGNETO_LASER_PISTOL,
