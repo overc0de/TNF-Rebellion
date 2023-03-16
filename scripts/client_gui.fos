@@ -1583,7 +1583,7 @@ class GUIScreen : IGUIScreenOpt
 			}
 			
 			//knock.
-            if( key == DIK_H && GetCurrentCursor() == CURSOR_DEFAULT && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] )
+            if( key == DIK_H && GetCurrentCursor() == CURSOR_DEFAULT && !__ConsoleActive && !KeyPressed[ DIK_LCONTROL ] && !KeyPressed[ DIK_LMENU ] && !KeyPressed[ DIK_RMENU ] )
             {
                 CritterCl@ cr = GetMonitorCritter( __MouseX, __MouseY );
 				
@@ -1759,6 +1759,9 @@ class GUIScreen : IGUIScreenOpt
 						return true;
 					case( DIK_N ):
 						RunServerScriptUnsafe( "player_menu@unsafe_StartAnimMenu", 0, 0, 0, null, null );
+						return true;
+					case( DIK_H ): // "Стой-замной"
+						if( valid( target ) ) RunServerScriptUnsafe( "mobcontrol@unsafe_follow_or_hold", targetId, 0, 0, null, null );
 						return true;
 				}
 			}
