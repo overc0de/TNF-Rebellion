@@ -434,19 +434,17 @@ void _Idle( Critter& npc )
 				return;
 			}
 		
-			if( npc.VarWandering != 1 )
+			if( npc.VarWandering != 0 )
 			{
 				uint dist = GetDistantion( homeX, homeY, npc.HexX, npc.HexY );
 
-				if( int( dist ) > DISTANCE_AGGRO( npc ) )
+				if( int( dist ) > 5 )
 				{
 					npc.DropPlanes();
 					AddWalkPlane( npc, 0, homeX, homeY, dir, false, 0 );
 				}
-
-				npc.MoveRandom();
-				npc.VarWandering = 1;
-				//npc.ParamBase[ CR_VAL1 ] = 0;
+				
+				npc.VarWandering = 0;
 			}
 		}
 		return;
@@ -529,24 +527,18 @@ void _Idle( Critter& npc )
 			return;
 		}
 	
-		if( npc.VarWandering != 1 )
-		{
-			uint dist = GetDistantion( homeX, homeY, npc.HexX, npc.HexY );
+		uint dist = GetDistantion( homeX, homeY, npc.HexX, npc.HexY );
 
-			if( int( dist ) > DISTANCE_AGGRO( npc ) )
-			{
-				npc.DropPlanes();
-				AddWalkPlane( npc, 0, homeX, homeY, dir, false, 0 );
-			}
-
-			npc.MoveRandom();
-			npc.VarWandering = 1;
-		}
-		else
+		if( int( dist ) > DISTANCE_AGGRO( npc ) )
 		{
-			npc.MoveRandom();
-			npc.Wait( Random( 1000, 3000 ) );
+			npc.DropPlanes();
+			AddWalkPlane( npc, 0, homeX, homeY, dir, false, 0 );
+			return;
 		}
+
+		npc.MoveRandom();
+		npc.VarWandering = 1;
+		npc.Wait( Random( 1000, 3000 ) );
 	}
 }
 
