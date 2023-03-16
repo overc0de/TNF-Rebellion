@@ -1052,20 +1052,23 @@ bool useWater( Critter& cr )
 		{
 			continue;
 		}
-		@water = cr.GetItem( water_bottles[i][0], -1 );
+		@water = cr.GetItem( water_bottles[i][1], -1 );
+		if( !valid( water ) )
+		{
+			@water = cr.GetItem( water_bottles[i][0], -1 );
+		}
 
 		if( valid(water) ) 
 		{	
-			if( water_bottles[i][0] == PID_GLASS_BOTTLE_DIRTY_FULL )
+			if( water_bottles[i][0] == PID_GLASS_BOTTLE_DIRTY_FULL || water_bottles[i][0] == PID_GLASS_BOTTLE_DIRTY_FULL_PRT )
 			{
 				AffectRadiation( cr, 1 );
 			}
 			
-			cr.AddItem( water_bottles[i][1], 1 );
-
+			SpillOut( water );
+			
 			Map@ map = cr.GetMap();	
 			PlayGenericSound( map, cr.HexX, cr.HexY, "splash.ogg", 10 );
-			_SubItem( water, 1 );
 			return true;
 		}
 	}
@@ -1141,6 +1144,11 @@ void Cleaning( Critter& player, Critter& target, uint soap_pid, int water_source
 		}
 	}
 	
+	StartCleaning( player, target, soap_pid, water_source );
+}
+
+void StartCleaning( Critter& player, Critter& target, uint soap_pid, int water_source )
+{
 	if( PrepareCleaning( player, target, water_source ) )
 	{
 		SoapEffect( player, target, soap_pid, water_source );
@@ -1218,7 +1226,7 @@ void SoapEffect( Critter& player, Critter& target, uint soap_pid, int water_sour
 		{
 			uint msgStr = isHandsOnly ? STR_EMOTE_WASH_HANDS : STR_EMOTE_WASH_SELF;
 			target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, msgStr );
-			target.ParamBase[ CR_DIRTINESS ] -= 1 + Random( 0, int( target.ParamBase[ CR_DIRTINESS ] * 0.2 ) );
+			target.ParamBase[ CR_DIRTINESS ] -= 5 + Random( 0, int( target.ParamBase[ CR_DIRTINESS ] * 0.2 ) );
 			
 			if( water_source > 0 )
 			{
