@@ -107,6 +107,22 @@ class MenuDOC: CenteredMenuHandler
 			}
 		}
 		
+		state += "$toxins";
+		if( cr.Skill[ SK_DOCTOR ] >= 100 )
+		{
+			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_SIGNS_TOXINS);
+			state += "$percent";
+			if( cr.Param[CR_BLOOD_TOXIC] == 0 )
+			{
+				state += "  - отсутствуют";
+			} else if( cr.Skill[ SK_DOCTOR ] >= 200 )
+			{
+				state += "  ( " + cr.Param[CR_BLOOD_TOXIC] + "% )";
+			}
+			
+			hasDamages = true;
+		}
+		
 		state += "$poisoning";
 		if( cr.Stat[ST_POISONING_LEVEL] > 0 )
 		{
