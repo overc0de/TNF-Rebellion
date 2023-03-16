@@ -3007,6 +3007,32 @@ class MenuPaintArmor: CenteredMenuHandler
     }  
 }
 
+//~run repair checkColors 0 0 0
+void checkColors( Critter& cr, int, int, int )
+{
+	spawnBunch( cr, PaintableRobe );
+	spawnBunch( cr, PaintableJumpsuit );
+	spawnBunch( cr, PaintableLeather );
+	spawnBunch( cr, PaintableCA1 );
+	spawnBunch( cr, PaintableCA2 );
+	spawnBunch( cr, PaintableCA3 );
+}
+
+void spawnBunch( Critter& cr, uint16[] pids )
+{
+	for( uint i = 0, l = pids.length(); i < l; i++ )
+	{
+		Item@ item = cr.AddItem( pids[i], 1 );
+		colorizeName( item );
+	}
+}
+
+void colorizeName( Item& item )
+{
+	item.SetLexems( item.Proto.ProtoId + " " + checkNull( GetItemMsgStr( item.Proto.ProtoId * 100 + 2 ) ) );
+	item.Update();
+}
+
 void StartMenuPaintArmor( Critter& cr, Item& armor, Item& paint, uint8 PaintableArmorType )
 {
     Map@ map = cr.GetMap();
