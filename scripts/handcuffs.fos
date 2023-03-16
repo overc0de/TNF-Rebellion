@@ -1022,54 +1022,63 @@ bool TryBreakBonds( Critter& cr, Critter& targetCr )
 	return true;
 }
 
-bool TryLockpickBondage( Critter& cr, Critter& targetCr )
+bool TryLockpickBondage( Critter& cr, Critter& targetCr, Item@ item )
 {
-	Item@ hands = _CritGetItemHand( targetCr );
-	Item@ misc = _CritGetItemMisc( targetCr );
-	if( valid( hands ) )
+	if( !valid( item ) ) return false;
+
+	BondageItem@ bound = GetBondageItem( item );
+	if( !valid( bound ) || bound.blocker_type != BONDAGE_TYPE_LOCK || item.BONDAGE_STATE != BONDAGE_STATE_ON ) return false;
+	
+
+	if( cr.Timeout[ TO_SK_LOCKPICK ] > 0 && !isGM( cr ) )
 	{
-		BondageItem@ handBound = GetBondageItem( hands );
-		if( valid( handBound ) && handBound.blocker_type == BONDAGE_TYPE_LOCK && hands.BONDAGE_STATE == BONDAGE_STATE_ON )
-		{
-			hands.BONDAGE_STATE = BONDAGE_STATE_OFF;
-			targetCr.MoveItem( hands.Id, hands.GetCount(), SLOT_INV );
-			
-			if( targetCr.Id != cr.Id )
-			{
-				MoveItem( hands, 1, cr );
-			}
-			
-			Map@ map = targetCr.GetMap();
-			if( valid( map ) )
-			{
-				PlayGenericSound( map, targetCr.HexX, targetCr.HexY, handBound.sound_off, 10 );
-			}
-		}
-	}
-	else if( valid( misc ) )
-	{
-		BondageItem@ miscBound = GetBondageItem( misc );
-		if( valid( miscBound ) && miscBound.blocker_type == BONDAGE_TYPE_LOCK && misc.BONDAGE_STATE == BONDAGE_STATE_ON )
-		{
-			misc.BONDAGE_STATE = BONDAGE_STATE_OFF;
-			targetCr.MoveItem( misc.Id, misc.GetCount(), SLOT_INV );
-			
-			if( targetCr.Id != cr.Id )
-			{
-				MoveItem( misc, 1, cr );
-			}
-			
-			Map@ map = targetCr.GetMap();
-			if( valid( map ) )
-			{
-				PlayGenericSound( map, targetCr.HexX, targetCr.HexY, miscBound.sound_off, 10 );
-			}
-		}
-	}
-	else
-	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_SK_COOLDOWN );
+		LogItemMovement( cr, item, "can't lockpick because of tiredness" );
 		return false;
 	}
+	
+	cr.TimeoutBase[ TO_SK_LOCKPICK ] = __FullSecond + REAL_SECOND( 60 );
+	
+	int chance = 10;
+	int skill_diff = cr.Skill[ SK_LOCKPICK ] - item.LockerComplexity;
+	if( skill_diff < 0 )
+	{
+		chance -= CLAMP( -skill_diff / 30, 0, 9 );
+	} else if( skill_diff > 0 )
+	{
+		chance += CLAMP( skill_diff / 3, 0, 90 );
+	}
+	
+	testInfo( cr, "chance " + chance );
+	testInfo( cr, "skill_diff " + skill_diff );
+	
+	if( item.LockerComplexity == 500 || Random( 1, 100 ) > chance )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_SKILL_LOCKPICK_FAIL );
+		LogItemMovement( cr, item, "can't lockpick lock" );
+		return false;
+	}
+
+	item.BONDAGE_STATE = BONDAGE_STATE_OFF;
+	targetCr.MoveItem( item.Id, item.GetCount(), SLOT_INV );
+	
+	if( targetCr.Id != cr.Id )
+	{
+		MoveItem( item, 1, cr );
+	}
+	
+	Map@ map = targetCr.GetMap();
+	if( valid( map ) )
+	{
+		PlayGenericSound( map, targetCr.HexX, targetCr.HexY, bound.sound_off, 10 );
+	}
+	
 	return true;
+}
+
+bool TryLockpickBondage( Critter& cr, Critter& targetCr )
+{
+	return  TryLockpickBondage( cr, targetCr, _CritGetItemHand( targetCr ) ) ||
+			TryLockpickBondage( cr, targetCr, _CritGetItemMisc( targetCr ) );
 }
 #endif // HANDCUFFS_MODULE
