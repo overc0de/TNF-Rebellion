@@ -5,15 +5,15 @@
 	#define RADIATION_STATS            ( 8 )
 	#define RADIATION_DURATION         ( 7 * 24 * 60 * 60 )
 	#define RADIATION_DAMAGE_VALUE     ( 66 )
-	#define RADIATION_HIGH_DOSE        ( 66 )
-	#define RADIATION_DEAD_DOSE        ( 2000 )
+	#define RADIATION_HIGH_DOSE        ( 10 )
+	#define RADIATION_DEAD_DOSE        ( 1100 )
 	#define RADIATION_MAX_BACK_DOSE	   ( 1000 )
 	
 	#define RADIATION_RESTORE_TIMEOUT  ( REAL_MINUTE( 30 ) ) // Auto decreasing radiation level tmieout
 
 	const int[] RadiationEffects =
 	{
-							  1,  100,  200,  400,  600, 1000, /*stages values*/
+							  1,  100,  200,  400,  600,  800, /*stages values*/
 		ST_STRENGTH,    	  0,    0,    0,    2,    4,    6, /*stats amount*/
 		ST_PERCEPTION,    	  0,    0,    1,    0,    3,    5,
 		ST_ENDURANCE,         0,    0,    0,    1,    3,    5,
