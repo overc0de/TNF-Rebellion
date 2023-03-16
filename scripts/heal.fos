@@ -140,16 +140,19 @@ class MenuDOC: CenteredMenuHandler
 		}
 		
 		state += "$dirt";
-		if( target.Param[CR_DIRTINESS] > 0 && cr.Skill[ SK_DOCTOR ] >= 150 )
+		if( FLAG( target.StatBase[ ST_CRSTATUS ], CR_STATUS_BULLET_OVER ) || FLAG( target.StatBase[ ST_CRSTATUS ], CR_STATUS_HEAVY_DMG ) )
 		{
-			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_DIRTINESS);
-			state += "$dpercent" + "  ( " + target.Param[CR_DIRTINESS] + "% )";
-		}
+			if( target.Param[CR_DIRTINESS] > 0 && cr.Skill[ SK_DOCTOR ] >= 150 )
+			{
+				state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_DIRTINESS);
+				state += "$dpercent" + "  ( " + target.Param[CR_DIRTINESS] + "% )";
+			}
 
-		if( menu.ButtonMsg( STR_HEAL_MENU_CLEAR_WOUND ) )
-		{
-			StartCleaning( cr, target, 0, 0 );
-			return true;
+			if( menu.ButtonMsg( STR_HEAL_MENU_CLEAR_WOUND ) )
+			{
+				StartCleaning( cr, target, 0, 0 );
+				return true;
+			}
 		}
 		
 		bool knife = ( _CritCountItem( cr, PID_KNIFE ) > 0 || _CritCountItem( cr, PID_COMBAT_KNIFE ) > 0 );
