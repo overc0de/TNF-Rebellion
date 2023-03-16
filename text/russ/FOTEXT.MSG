@@ -1410,7 +1410,7 @@
 
 
 #heal 100330 - 100420
-{100331}{}{@lex pulse@@lex toxins@@lex poisoning@@lex radiation@@lex bleeding@.@lex typeTraumas@}
+{100331}{}{@lex pulse@@lex toxins@@lex poisoning@@lex radiation@@lex bleeding@@lex dirt@.@lex typeTraumas@}
 {100332}{}{Пульс нормальный}
 {100333}{}{Слабый пульс}
 {100334}{}{, признаки отравления}
@@ -1465,7 +1465,8 @@
 {100376}{}{левая нога}
 
 {100377}{}{, признаки заражения крови@lex percent@}
-
+{100378}{}{Промыть раны}
+{100379}{}{, загрязнённость раны@lex dpercent@}
 
 #waterworks 100420 - 100470
 {100421}{}{}

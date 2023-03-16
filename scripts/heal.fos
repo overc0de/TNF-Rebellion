@@ -112,35 +112,55 @@ class MenuDOC: CenteredMenuHandler
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_SIGNS_TOXINS);
 			state += "$percent";
-			if( cr.Param[CR_BLOOD_TOXIC] == 0 )
+			if( target.Param[CR_BLOOD_TOXIC] == 0 )
 			{
 				state += "  - отсутствуют";
 			} else if( cr.Skill[ SK_DOCTOR ] >= 200 )
 			{
-				state += "  ( " + cr.Param[CR_BLOOD_TOXIC] + "% )";
+				state += "  ( " + target.Param[CR_BLOOD_TOXIC] + "% )";
 			}
 			
 			hasDamages = true;
 		}
 		
 		state += "$poisoning";
-		if( cr.Stat[ST_POISONING_LEVEL] > 0 )
+		if( target.Stat[ST_POISONING_LEVEL] > 0 )
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_SIGNS_POISONING);
 			hasDamages = true;
 		}
 		
 		state += "$radiation";
-		if( cr.Stat[ST_RADIATION_LEVEL] > 0 )
+		if( target.Stat[ST_RADIATION_LEVEL] > 0 )
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_SIGNS_RADIATION);
 			hasDamages = true;
 		}
 		
 		state += "$bleeding";
-		if( cr.Stat[ST_BLEED] > 0 )
+		if( target.Stat[ST_BLEED] > 0 )
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_BLEEDING);
+			hasDamages = true;
+		}
+		
+		state += "$dirt";
+		if( target.Param[CR_DIRTINESS] > 0 )
+		{
+			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_DIRTINESS);
+			
+			state += "$dpercent";
+			if( cr.Skill[ SK_DOCTOR ] >= 150 )
+			{
+				state += "  ( " + target.Param[CR_DIRTINESS] + "% )";
+			}
+
+			if( menu.ButtonMsg( STR_HEAL_MENU_CLEAR_WOUND ) )
+			{
+				StartCleaning( cr, target, 0, 0 );
+				return true;
+			}
+
 			hasDamages = true;
 		}
 		
