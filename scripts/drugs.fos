@@ -256,7 +256,7 @@ uint ProcessDrug( Critter& cr, uint16 drugPid, uint& rate )
         return REAL_MINUTE( 5 );               // Stop drug processing
     }
 	
-	if( ( drugPid == PID_JET || drugPid == PID_TREB || drugPid == PID_VINT ) && stage >= 4 )
+	if( !isGM(cr) && ( drugPid == PID_JET || drugPid == PID_TREB || drugPid == PID_VINT ) && stage >= 4 )
 	{
         return REAL_HOUR( 5 );                 // Only after Jet Antidote was used
 	}
@@ -468,8 +468,17 @@ uint ProcessDrug( Critter& cr, uint16 drugPid, uint& rate )
     }
 
     stage++;
+	
+	testInfo( cr, "Next stage in " + DeltaTime_HMS( duration * 60 ) );
+
+	if( stage >= 5 )
+	{
+		return 0;
+	}
+	
     rate = FORM_RATE( stage, flags );
-    return REAL_SECOND( duration * ( cr.Param[ QST_GAMEMODE ] == GAME_TEST ? 1 : 60 ) );
+	
+    return REAL_SECOND( cr.Param[ QST_GAMEMODE ] == GAME_TEST ? 1 : duration * 60 );
 }
 
 //~run drugs setDrugState crId drugPID stage
