@@ -215,6 +215,7 @@ bool start()
 
 	SetSendParameter( CR_SNEAKING, true );			
 	SetSendParameter( SK_SNEAK, true );			
+	SetSendParameter( MERC_MASTER_ID, true );		
 
     // Send item data masks
     // Look fields in fonline.h 'struct Item::ItemData'
