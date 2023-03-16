@@ -273,7 +273,8 @@ void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 		switch( item.Proto.HeadItem_Perk )
         {
 			case( HEAD_PERK_COOL ):
-                cr.StatBase[ ST_CHARISMA_EXT ] += 1 * signH;
+				if( cr.StatBase[ ST_CHARISMA ] > 3 )
+					cr.StatBase[ ST_CHARISMA_EXT ] += 1 * signH;
                 break;
             case( HEAD_PERK_GLASSES ):
 			{
@@ -288,13 +289,15 @@ void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
                 break;
 			}
 			case( HEAD_PERK_VERY_COOL ):
-				cr.StatBase[ ST_CHARISMA_EXT ] += 2 * signH;
+				if( cr.StatBase[ ST_CHARISMA ] > 3 )
+					cr.StatBase[ ST_CHARISMA_EXT ] += 2 * signH;
 				break;
 			case( HEAD_PERK_LUCKY_CHARM ):
 				cr.StatBase[ ST_LUCK_EXT ] += 1 * signH;
 				break;
 			case( HEAD_PERK_COOL_LUCKY_CHARM ):
-				cr.StatBase[ ST_CHARISMA_EXT ] += 1 * signH;
+				if( cr.StatBase[ ST_CHARISMA ] > 3 )
+					cr.StatBase[ ST_CHARISMA_EXT ] += 1 * signH;
 				cr.StatBase[ ST_LUCK_EXT ] += 1 * signH;
 				break;
 			case( HEAD_PERK_COOL_GLASSES ):
@@ -307,7 +310,8 @@ void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 				{
 					cr.StatBase[ ST_PERCEPTION_EXT ] += 1 * signH;
 				}
-				cr.StatBase[ ST_CHARISMA_EXT ] += 1 * signH;
+				if( cr.StatBase[ ST_CHARISMA ] > 3 )
+					cr.StatBase[ ST_CHARISMA_EXT ] += 1 * signH;
 				break;
 			}
 			case( HEAD_PERK_ANTIRAD ):
@@ -522,7 +526,8 @@ void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 				cr.StatBase[ ST_CARRY_WEIGHT ] += item.Proto.Weight * sign;
 				break;
 			case( ARMOR_PERK_CHARISMA ):         // +1 charisma
-				cr.StatBase[ ST_CHARISMA_EXT ] += 1 * sign;
+				if( cr.StatBase[ ST_CHARISMA ] > 3 )
+					cr.StatBase[ ST_CHARISMA_EXT ] += 1 * sign;
 				break;
 			case( ARMOR_PERK_ECZO ):         // +2 strength, +10 radiation resist
 				cr.StatBase[ ST_STRENGTH_EXT ] += 2 * sign;
@@ -535,13 +540,15 @@ void critter_move_item( Critter& cr, Item& item, uint8 fromSlot )
 				cr.StatBase[ ST_CARRY_WEIGHT ] += item.Proto.Weight * sign;
 				break; 			
 			case( ARMOR_PERK_UGLY ):         // -1 charisma
-				cr.StatBase[ ST_CHARISMA_EXT ] -= 1 * sign;
+				if( cr.StatBase[ ST_CHARISMA ] > 3 )
+					cr.StatBase[ ST_CHARISMA_EXT ] -= 1 * sign;
 				break;
 			case( ARMOR_PERK_ANTIRAD ):         // +70 radiation resist
 				cr.StatBase[ ST_RADIATION_RESISTANCE_EXT ] += 70 * sign;
 				break;			
 			case( ARMOR_PERK_VERY_COOL ):         // +2 charisma
-				cr.StatBase[ ST_CHARISMA_EXT ] += 2 * sign;
+				if( cr.StatBase[ ST_CHARISMA ] > 3 )
+					cr.StatBase[ ST_CHARISMA_EXT ] += 2 * sign;
 				break;			
 			default:
 				break;
