@@ -2192,7 +2192,7 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 				{
 					ChangeStatus( target, CR_STATUS_HEAVY_DMG, 0, true );
 				}
-				FlushScreen( target, COLOR_RED, 0, 5000 );
+				//FlushScreen( target, COLOR_RED, 0, 5000 );
 			}
 			
 			//Heavy Wound
@@ -2200,7 +2200,7 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 			    && !FLAG( target.StatBase[ ST_CRSTATUS ], CR_STATUS_HEAVY_DMG ) )
 			{
 				ChangeStatus( target, CR_STATUS_HEAVY_DMG, 0, true );
-				FlushScreen( target, COLOR_RED, 0, 5000 );
+				//FlushScreen( target, COLOR_RED, 0, 5000 );
 			}
 			inform( attacker, target, "aftertotal= "+ totalDmg );
 		}
@@ -2317,35 +2317,35 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 	{
         target.DamageBase[ DAMAGE_LEFT_LEG ] = 1;
 		SayLog( target, crInfo( target ) + " breaks left leg." );
-		FlushScreen( target, COLOR_RED, 0, 5000 );
+		//FlushScreen( target, COLOR_RED, 0, 5000 );
 	}
     // Clipped RLeg
     if( FLAG( eff, HF_CRIPPLED_RIGHT_LEG ) )
 	{
         target.DamageBase[ DAMAGE_RIGHT_LEG ] = 1;
 		SayLog( target, crInfo( target ) + " breaks right leg." );
-		FlushScreen( target, COLOR_RED, 0, 5000 );
+		//FlushScreen( target, COLOR_RED, 0, 5000 );
 	}
     // Clipped LArm
     if( FLAG( eff, HF_CRIPPLED_LEFT_ARM ) )
 	{
         target.DamageBase[ DAMAGE_LEFT_ARM ] = 1;
 		SayLog( target, crInfo( target ) + " breaks left arm." );
-		FlushScreen( target, COLOR_RED, 0, 5000 );
+		//FlushScreen( target, COLOR_RED, 0, 5000 );
 	}
     // Clipped RArm
     if( FLAG( eff, HF_CRIPPLED_RIGHT_ARM ) )
 	{
         target.DamageBase[ DAMAGE_RIGHT_ARM ] = 1;
 		SayLog( target, crInfo( target ) + " breaks right arm." );
-		FlushScreen( target, COLOR_RED, 0, 5000 );
+		//FlushScreen( target, COLOR_RED, 0, 5000 );
 	}
     // Blinded
     if( FLAG( eff, HF_BLINDED ) )
 	{
         target.DamageBase[ DAMAGE_EYE ] = 1;
 		SayLog( target, crInfo( target ) + " blinded by attack." );
-		FlushScreen( target, COLOR_RED, 0, 5000 );
+		//FlushScreen( target, COLOR_RED, 0, 5000 );
 	}
     // all legs clipped, can't move
     uint8 noMove = target.DamageBase[ DAMAGE_LEFT_LEG ] > 0 && target.DamageBase[ DAMAGE_RIGHT_LEG ] > 0 ? 1 : 0;
@@ -2368,7 +2368,7 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 		{
             target.StatBase[ ST_CURRENT_HP ] = -666;
 			isDead = true;
-			FlushScreen( target, COLOR_RED, 0, 5000 );
+			//FlushScreen( target, COLOR_RED, 0, 5000 );
 		}
 	}
 	
