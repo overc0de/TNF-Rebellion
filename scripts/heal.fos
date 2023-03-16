@@ -119,49 +119,37 @@ class MenuDOC: CenteredMenuHandler
 			{
 				state += "  ( " + target.Param[CR_BLOOD_TOXIC] + "% )";
 			}
-			
-			hasDamages = true;
 		}
 		
 		state += "$poisoning";
 		if( target.Stat[ST_POISONING_LEVEL] > 0 )
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_SIGNS_POISONING);
-			hasDamages = true;
 		}
 		
 		state += "$radiation";
 		if( target.Stat[ST_RADIATION_LEVEL] > 0 )
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_SIGNS_RADIATION);
-			hasDamages = true;
 		}
 		
 		state += "$bleeding";
 		if( target.Stat[ST_BLEED] > 0 )
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_BLEEDING);
-			hasDamages = true;
 		}
 		
 		state += "$dirt";
-		if( target.Param[CR_DIRTINESS] > 0 )
+		if( target.Param[CR_DIRTINESS] > 0 && cr.Skill[ SK_DOCTOR ] >= 150 )
 		{
 			state += STR_INSERT_TEXT_LINE(STR_HEAL_MENU_DIRTINESS);
-			
-			state += "$dpercent";
-			if( cr.Skill[ SK_DOCTOR ] >= 150 )
-			{
-				state += "  ( " + target.Param[CR_DIRTINESS] + "% )";
-			}
+			state += "$dpercent" + "  ( " + target.Param[CR_DIRTINESS] + "% )";
+		}
 
-			if( menu.ButtonMsg( STR_HEAL_MENU_CLEAR_WOUND ) )
-			{
-				StartCleaning( cr, target, 0, 0 );
-				return true;
-			}
-
-			hasDamages = true;
+		if( menu.ButtonMsg( STR_HEAL_MENU_CLEAR_WOUND ) )
+		{
+			StartCleaning( cr, target, 0, 0 );
+			return true;
 		}
 		
 		bool knife = ( _CritCountItem( cr, PID_KNIFE ) > 0 || _CritCountItem( cr, PID_COMBAT_KNIFE ) > 0 );
