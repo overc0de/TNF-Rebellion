@@ -10,6 +10,7 @@
 #define STR_MAGIC_BALL_NO                    ( 511 )
 #define STR_COSMETIC_USE                     ( 520 )
 #define STR_CIGARETTES_SMOKE                 ( 530 )
+#define STR_CIGARETTES_SMOKN                 ( 531 )
 
 #define STR_TOOL_BROKEN						 ( 700 )
 

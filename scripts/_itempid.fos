@@ -1510,6 +1510,7 @@
 
 #define PID_KOSYAK                            		( 1490 )						// Косяк
 #define PID_CIGARETTE                         		( 22050 )   					// Сигарета
+#define PID_CIGARETTE_IGN                      		( 23813 )   					// Раскуренная сигарета
 
 #define PID_SMOKING_PIPE                          	( 22012 )   					// Курительная трубка
 #define PID_SAVAGE_SMOKING_PIPE                 	( 22046 )   					// Дикарская курительная трубка

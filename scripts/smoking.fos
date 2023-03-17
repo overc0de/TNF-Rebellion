@@ -77,8 +77,19 @@ void TrySmoking( Critter& cr, Item& item )
 	
 	Map @ map = cr.GetMap();
 	
-	PlayGenericSound( map, cr.HexX, cr.HexY, cr.Stat[ ST_GENDER ] == GENDER_MALE ? "smoking.ogg" : "Fem_Smoking.ogg", 6 );
-	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_CIGARETTES_SMOKE );
+	uint16 PidT = item.GetProtoId();
+	if( PidT == PID_CIGARETTE_IGN || PidT == PID_PREWAR_CIGAR1_PRT || PidT == PID_PREWAR_CIGAR2_PRT )
+	{
+	
+	PlayGenericSound( map, cr.HexX, cr.HexY, cr.Stat[ ST_GENDER ] == GENDER_MALE ? "smoking_01.ogg" : "Fem_Smoking_01.ogg", 6 );
+	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_CIGARETTES_SMOKN );
+	
+	}
+	else
+	{
+		PlayGenericSound( map, cr.HexX, cr.HexY, cr.Stat[ ST_GENDER ] == GENDER_MALE ? "smoking.ogg" : "Fem_Smoking.ogg", 6 );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_CIGARETTES_SMOKE );
+	}
 	
 	uint16 Pid = item.GetProtoId();
 	if( Pid == PID_KOSYAK )
@@ -86,17 +97,19 @@ void TrySmoking( Critter& cr, Item& item )
 		SayLog( cr, crInfo( cr ) + " is smoking a joint." );
 		SmokeJoint( cr, item );
 	}
-	else if( Pid == PID_CIGARETTE )
+	else if( Pid == PID_CIGARETTE || Pid == PID_CIGARETTE_IGN )
 	{
 		SayLog( cr, crInfo( cr ) + " is smoking a cigarette." );
-		_SubItem( item, 1 );
-		TobaccoEffect( cr );
+//		_SubItem( item, 1 );
+//		TobaccoEffect( cr );
+		SmokeCig( cr, item );
 	}
 	else if( SmokingPipes.find( Pid ) != -1 )
 	{
 		SayLog( cr, crInfo( cr ) + " is smoking a pipe." );
 		SmokePipe( cr, item );
 	}
+
 	else
 	{
 		SayLog( cr, crInfo( cr ) + " is smoking cigar." );
@@ -188,6 +201,32 @@ void SmokeCigar( Critter& cr, Item& cigar )
 		if( cigar.Val0 < 1 )
 		{
 			_SubItem( cigar, 1 );
+		}
+	}
+	TobaccoEffect( cr );
+}
+
+void SmokeCig( Critter& cr, Item& cigarette )
+{
+	uint16 Pid = cigarette.GetProtoId();
+	if( Pid == PID_CIGARETTE )
+	{
+		cr.MoveItem( cigarette.Id, cigarette.GetCount(), SLOT_INV );
+		_SubItem( cigarette, 1 );
+		Item@ sig_butt = cr.AddItem( ( Pid == PID_CIGARETTE ? PID_CIGARETTE_IGN : PID_CIGARETTE_IGN ), 1 );
+			
+		if( valid( sig_butt ) )
+		{
+			cr.MoveItem( sig_butt.Id, sig_butt.GetCount(), SLOT_HAND1 );
+		}
+	}
+	else
+	{
+		cigarette.REMAINING_USES--;
+		cigarette.Update();
+		if( cigarette.Val0 < 1 )
+		{
+			_SubItem( cigarette, 1 );
 		}
 	}
 	TobaccoEffect( cr );

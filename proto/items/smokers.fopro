@@ -152,6 +152,7 @@ Volume=1
 SoundId=48
 Cost=5
 Material=15
+Partial_Item=99
 Slot=5
 
 [Proto] # PID_CIGARETTES_PRT
@@ -202,4 +203,21 @@ Cost=15
 Material=15
 Partial_Item=9
 StartValue_0=9
+Slot=5
+
+[Proto] # PID_CIGARETTE_IGN
+ProtoId=23813
+Type=24
+PicMap=art\items\misc\cigaret2_itm.png
+PicInv=art\inven\Zigarette.png
+Flags=402653214
+DisableEgg=1
+Stackable=0
+Weight=7
+Volume=1
+SoundId=48
+Cost=5
+Material=15
+Partial_Item=99
+StartValue_0=4
 Slot=5
