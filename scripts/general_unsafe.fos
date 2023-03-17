@@ -1084,14 +1084,14 @@ void unsafe_itemthrow ( Critter& player, int hx, int hy, int param2, string@ par
 		{
 			MoveItem( itemInHand, 1, target );
 			ChangeCritterSpeed( target );
-			target.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_CATCHES );
+			target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CATCHES );
 		}
 		else
 		{
 			MoveItem( itemInHand, 1, currentMap, tx, ty);
 			if( !( target is player ) )
 			{ 
-				target.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_CATCH_FAIL );
+				target.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CATCH_FAIL );
 			}
 		}
 	}
