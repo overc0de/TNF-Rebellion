@@ -1315,7 +1315,7 @@
 #define STR_HEAL_MENU_NO						( 100357 )
 #define STR_HEAL_MENU_WITHOUT					( 100358 )
 #define STR_HEAL_MENU_DESC_MENU	 				( 100359 )
-#define STR_HEAL_MENU_DESC_TOOL	 				( 100350 )
+#define STR_HEAL_MENU_DESC_TOOL	 				( 100360 )
 #define STR_HEAL_MENU_DESC_DISENFECTION			( 100361 )
 #define STR_HEAL_MENU_DESC_ANESTHETIC			( 100362 )
 #define STR_HEAL_MENU_DESC_PATIENT_READY		( 100363 )
@@ -2858,6 +2858,10 @@
 #define STR_BLOODTOX_SUFFER			 		 ( 800140 )
 #define STR_BLOODTOX_INFECTED		 		 ( 800150 )
 #define STR_BLOODTOX_WEAKNESS		 		 ( 800160 )
+
+#define STR_BLOODTOX_LOW_PERCENT	 		 ( 800161 )
+#define STR_BLOODTOX_MID_PERCENT		 	 ( 800162 )
+#define STR_BLOODTOX_HI_PERCENT		 		 ( 800163 )
 
 // ***************************************************************************************
 // ***  FOINTERNAL.MSG  ******************************************************************

@@ -2084,7 +2084,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 				return true;
 			}
 
-			if( cr.IsPlayer() && cr.Timeout[ TO_SK_DOCTOR ] > 0 )
+			if( !isGM(cr) && cr.Timeout[ TO_SK_DOCTOR ] > 0 )
 			{
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_SK_COOLDOWN );
 				return true;
@@ -2915,7 +2915,7 @@ void CritterRegen( Critter& cr )
 			
 			if( cr.ParamBase[CR_BLOOD_TOXIC] >= 100 )
 			{
-				int sepsis_damage = cr.Stat[ ST_HEALING_RATE ] + ( cr.Stat[ ST_MAX_LIFE ] * 0.03 );
+				int sepsis_damage = cr.Stat[ ST_HEALING_RATE ] + int( cr.Stat[ ST_MAX_LIFE ] * 0.03f );
 				if( cr.IsKnockout() ) sepsis_damage = cr.Stat[ ST_HEALING_RATE ] + 1;
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_SUFFER );
 				cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_BLOODTOX_WEAKNESS);

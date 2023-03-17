@@ -352,7 +352,7 @@ class MenuDOC_Bullet: CenteredMenuHandler
 			{
 				if( menu.ButtonMsg( STR_HEAL_MENU_BEGIN ) )
 				{
-					if( cr.Timeout[ TO_SK_DOCTOR ] > 0 )
+					if( !isGM(cr) && cr.Timeout[ TO_SK_DOCTOR ] > 0 )
 					{
 						stage 		= MenuDOC_stage::tool;
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_TOO_TIRED );
@@ -832,7 +832,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 			{
 				if( menu.ButtonMsg( STR_HEAL_MENU_BEGIN ) )
 				{
-					if( cr.Timeout[ TO_SK_DOCTOR ] > 0 )
+					if( !isGM(cr) && cr.Timeout[ TO_SK_DOCTOR ] > 0 )
 					{
 						stage 		= MenuDOC_stage::tool;
 						

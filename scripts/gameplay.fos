@@ -1595,19 +1595,18 @@ uint cte_metabolism( Critter& cr, int identifier, uint& rate )
 	
 	if( cr.Param[CR_BLOOD_TOXIC] > 0 )
 	{
-		int value = cr.ParamBase[CR_BLOOD_TOXIC];
-		cr.ParamBase[CR_BLOOD_TOXIC] = CLAMP( value + 1, 0, 100 );
+		cr.ParamBase[CR_BLOOD_TOXIC] = CLAMP( cr.ParamBase[CR_BLOOD_TOXIC] + 1, 0, 100 );
 		
-		string line;
-		switch(value)
+		uint line = 0;
+		switch( cr.ParamBase[CR_BLOOD_TOXIC] )
 		{
-			case(10): line = "|0xFFFF00 У вас появились симптомы болезни."; break;
-			case(50): line = "|0xFF6600 Ваша болезнь прогрессирует!"; break;
-			case(80): line = "|0xFF0000 Вы чувствуете, что смертельно больны!"; break;
+			case(10): line = STR_BLOODTOX_LOW_PERCENT; break;
+			case(50): line = STR_BLOODTOX_MID_PERCENT; break;
+			case(80): line = STR_BLOODTOX_HI_PERCENT;  break;
 		}
-		if( line.length() > 0 )
+		if( line != 0)
 		{	
-			cr.Say( SAY_NETMSG, line );
+			cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, line );
 			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_BLOODTOX_WEAKNESS);
 		}
 	}
