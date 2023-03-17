@@ -142,6 +142,9 @@
 		import bool UseDrugOn( Critter& cr, Critter& onCr, Item& drug ) from "drugs";
 		import bool SetDrug( Critter& cr, uint16 drugPid ) from "drugs";
 		import void DropDrugEffects( Critter& cr ) from "drugs";
+		
+		import void enlistTimeEvents( Critter& cr, int crId, int p1, int p2 ) from "drugs";
+		import void killTimeEvent( Critter& cr, int crId, int index, int id ) from "drugs";
 	#endif //DRUGS
 
 

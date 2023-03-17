@@ -1758,6 +1758,8 @@
 #define STR_GM_MENU_MAP_TIME_INFO				( 101184 ) //TODO: reorder lines
 #define STR_GM_MENU_MAP_TIME_STATIC				( 101185 ) //TODO: reorder lines
 #define STR_GM_HEXMENU_BUTTON_AMOUNT			( 101186 ) //TODO: reorder lines
+#define STR_GMBTN_ENLIST_CTE	                ( 101187 ) //TODO: reorder lines
+#define STR_GMBTN_DELETE_CTE                    ( 101188 ) //TODO: reorder lines
 
 // GM menu npc groups
 #define STR_GM_MENU_NPC_GROUPS_BEGIN			( 101200 )

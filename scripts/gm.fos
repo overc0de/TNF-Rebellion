@@ -23,6 +23,7 @@
 #include "gasses_h.fos"
 #include "_npc_pids.fos"
 #include "teleports_h.fos"
+#include "drugs_h.fos"
 
 import  void GM_brokeItem( Critter& player, int param0, int param1, int param2, string@ param3, int[] @ param4 ) from "gm_commands";
 
@@ -2696,7 +2697,7 @@ void answer_GM_PANNEL_CRITTER_PLAYER( Critter& player, uint answerI, string& ans
     if( answerI == 5 )
     {
 		int t,h,m,s;
-        player.ShowScreen( SCREEN_DIALOGBOX, 7, "gm@answer_GM_PANNEL_CRITTER_PLAYER_EFFECTS" );
+        player.ShowScreen( SCREEN_DIALOGBOX, 9, "gm@answer_GM_PANNEL_CRITTER_PLAYER_EFFECTS" );
         player.Say( SAY_DIALOGBOX_TEXT, "Effects" );
         
 		player.SayMsg( SAY_DIALOGBOX_BUTTON( 0 ), TEXTMSG_TEXT, STR_GMBTN_BLACK_SCREEN_30S );
@@ -2706,6 +2707,8 @@ void answer_GM_PANNEL_CRITTER_PLAYER( Critter& player, uint answerI, string& ans
 		player.SayMsg( SAY_DIALOGBOX_BUTTON( 4 ), TEXTMSG_TEXT, STR_GMBTN_WHITE_SCREEN_25S );
 		player.SayMsg( SAY_DIALOGBOX_BUTTON( 5 ), TEXTMSG_TEXT, STR_GMBTN_RED_SCREEN_25S );
 		player.SayMsg( SAY_DIALOGBOX_BUTTON( 6 ), TEXTMSG_TEXT, STR_GMBTN_REFRESH_TIMOUTS );
+		player.SayMsg( SAY_DIALOGBOX_BUTTON( 7 ), TEXTMSG_TEXT, STR_GMBTN_ENLIST_CTE );
+		player.SayMsg( SAY_DIALOGBOX_BUTTON( 8 ), TEXTMSG_TEXT, STR_GMBTN_DELETE_CTE );
 	}
 	
 	if( answerI == 6 )
@@ -2846,7 +2849,42 @@ void answer_GM_PANNEL_CRITTER_PLAYER_EFFECTS( Critter& player, uint answerI, str
         for( uint i = TIMEOUT_BEGIN; i <= TIMEOUT_END; i++ )
 			cr.TimeoutBase[ i ] = __FullSecond;		
 	}
+	if( answerI == 7 )
+	{
+		enlistTimeEvents( player, cr.Id, 0, 0 );
+		answer_GM_PANNEL_CRITTER_PLAYER( player, 5, "" );
+	}
+	if( answerI == 8 )
+	{
+        player.ShowScreen( SCREEN_SAY, 0, "answer_kill_cte" );
+        player.Say( SAY_SAY_TITLE, "Номер CTE:" );
+	}	
 }	
+
+void answer_kill_cte( Critter& player, uint answerI, string& answerS )
+{
+    if( answerS.length() < 1 || answerS.length() > 64 )
+    {
+        player.Say( SAY_NETMSG, "Wrong text length." );
+        return;
+    }
+
+	int number = -1;
+	if( !StrToInt( answerS, number ) || number < 0 )
+	{
+		return;
+	}
+	
+	Critter@ cr = GetCritter( player.Stat[ ST_VAR0 ] );
+    if( !valid( cr ) )
+	{
+        return;
+	}
+
+	killTimeEvent( player, cr.Id, -1, number );
+	enlistTimeEvents( player, cr.Id, 0, 0 );
+	answer_GM_PANNEL_CRITTER_PLAYER( player, 5, "" );
+}  
 
 void ask_setTimingParam( Critter& player, uint answerI, string& answerS )
 {

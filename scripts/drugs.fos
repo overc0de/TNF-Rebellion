@@ -680,6 +680,7 @@ string DrugEvent( int id )
 }
 
 //~run drugs killTimeEvent crId index id
+//import void killTimeEvent( Critter& cr, int crId, int index, int id ) from "drugs";
 void killTimeEvent( Critter& cr, int crId, int index, int id )
 {
 	Critter@ target = getTarget( cr, crId );
@@ -690,14 +691,14 @@ void killTimeEvent( Critter& cr, int crId, int index, int id )
 		return;
 	}
 	
-	if( id != 0 )
+	if( id >= 0 )
 	{
 		target.EraseTimeEvent( id );
 		cr.Say( SAY_NETMSG, "And event: " + id + " was deleted." );
 		return;
 	}
 	
-	if( index != 0 )
+	if( index >= 0 )
 	{
 		uint count = target.GetTimeEvents( index, null, null, null );
 		target.EraseTimeEvents( index );
@@ -716,6 +717,7 @@ void unsafe_enlistTimeEvents(Critter& cr, int targetId, int, int, string@, int[]
 }
 
 //~run drugs enlistTimeEvents crId 0 0
+//import void enlistTimeEvents( Critter& cr, int crId, int p1, int p2 ) from "drugs";
 void enlistTimeEvents( Critter& cr, int crId, int p1, int p2 )
 {
 	Critter@ target = getTarget( cr, crId );
