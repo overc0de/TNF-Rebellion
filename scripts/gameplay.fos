@@ -1593,7 +1593,11 @@ uint cte_metabolism( Critter& cr, int identifier, uint& rate )
 		AffectRadiation( cr, -1 );
 	}
 	
-	if( cr.Param[CR_BLOOD_TOXIC] > 0 )
+	if( !IsHuman( cr ) || cr.IsNpc() )
+	{
+		cr.ParamBase[CR_BLOOD_TOXIC] = 0;
+	}
+	else if( cr.Param[CR_BLOOD_TOXIC] > 0 )
 	{
 		cr.ParamBase[CR_BLOOD_TOXIC] = CLAMP( cr.ParamBase[CR_BLOOD_TOXIC] + 1, 0, 100 );
 		
