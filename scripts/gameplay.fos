@@ -1608,7 +1608,7 @@ uint cte_metabolism( Critter& cr, int identifier, uint& rate )
 		if( line.length() > 0 )
 		{	
 			cr.Say( SAY_NETMSG, line );
-			cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_BLOODTOX_WEAKNESS);
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_GAME, STR_BLOODTOX_WEAKNESS);
 		}
 	}
 	

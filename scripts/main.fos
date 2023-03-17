@@ -2915,8 +2915,8 @@ void CritterRegen( Critter& cr )
 			
 			if( cr.ParamBase[CR_BLOOD_TOXIC] >= 100 )
 			{
-				int sepsis_damage = cr.Stat[ ST_ENDURANCE ] + cr.Stat[ ST_STRENGTH ];
-				if( cr.IsKnockout() ) sepsis_damage /= 2;
+				int sepsis_damage = cr.Stat[ ST_HEALING_RATE ] + ( cr.Stat[ ST_MAX_LIFE ] * 0.03 );
+				if( cr.IsKnockout() ) sepsis_damage = cr.Stat[ ST_HEALING_RATE ] + 1;
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_SUFFER );
 				cr.SayMsg( SAY_EMOTE, TEXTMSG_GAME, STR_BLOODTOX_WEAKNESS);
 				cr.StatBase[ ST_CURRENT_HP ] -= sepsis_damage;

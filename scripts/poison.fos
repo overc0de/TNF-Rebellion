@@ -260,9 +260,17 @@ void StartSepsis( Critter& cr, int chance )
 	
 	if( roll < chance )
 	{
-		int infect = ( cr.ParamBase[ CR_DIRTINESS ] / cr.Stat[ ST_ENDURANCE ] ) / 4;
-		cr.ParamBase[ CR_BLOOD_TOXIC ] += infect;
-		cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_INFECTED ); //WIP
+		if ( cr.ParamBase[ CR_BLOOD_TOXIC ] == 0 ) 
+		{	
+			cr.ParamBase[ CR_BLOOD_TOXIC ] += 1;
+			testInfo( cr, roll + " sepsis started " );
+		}
+		
+		else if ( cr.ParamBase[ CR_BLOOD_TOXIC ] > 0 )
+		{
+			testInfo( cr, " already infected " );
+		}
+//		cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_INFECTED ); //WIP
 	}
 }
 
