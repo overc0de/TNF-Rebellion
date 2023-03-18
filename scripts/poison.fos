@@ -270,7 +270,6 @@ void StartSepsis( Critter& cr, int chance )
 		{
 			testInfo( cr, " already infected " );
 		}
-//		cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_INFECTED ); //WIP
 	}
 }
 

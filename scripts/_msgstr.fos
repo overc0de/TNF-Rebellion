@@ -697,6 +697,8 @@
 #define STR_SKILLS_TO_INSTALL_RADIO			 ( 9674 )
 #define STR_NEED_TOOLS_AND_HOLD_TOOL		 ( 9675 )
 
+#define STR_EMOTE_REMOVE_SHITPILE			 ( 9676 )
+
 // Flasks and bottles
 #define STR_WRONG_ANATOMY					 ( 9768 )
 #define STR_NOTHING_TO_OPEN_BOTTLE			 ( 9769 )
