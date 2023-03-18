@@ -625,9 +625,14 @@ shared string ItemState( Item& item, bool fullInfo = false )
 	return info + ".";	
 }
 
-shared int ContainmentVolume( Item@ item )
+shared bool enoughVolume( Item@ container )
 {
-	if( !valid( item ) )
+	return ContainmentVolume( container ) < container.Proto.Container_Volume;
+}
+
+shared uint ContainmentVolume( Item@ item )
+{
+	if( !valid( item ) || item.GetType() != ITEM_TYPE_CONTAINER )
 	{
 		return 0;
 	}
