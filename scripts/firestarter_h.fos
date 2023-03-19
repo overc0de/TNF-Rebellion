@@ -121,6 +121,9 @@
 
 	const uint16[] Ashes 	= { PID_ASHES_1, PID_ASHES_2, PID_ASHES_3 };
 
+	const uint16[] shit_containers = { PID_BAG };
+	const uint16[] Shitpiles = { PID_SHIT_HUGE, PID_SHIT_BIG, PID_SHIT_SMALL };
+
 	#ifndef FIRESTARTER
 		#ifdef __SERVER
 			import void GenerateFire( Map@ map, int x, int y, int radius, uint8 strength, int attackerId )  from "firestarter";

@@ -858,8 +858,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			return true;
 		case( PID_SHOVEL ): 
 		case( PID_SPADE ):
-			CheckRemainsRemoval( cr, targetItem );
-			return true;
+			return CheckRemainsRemoval( cr, targetItem ) || CheckShitRemoval( cr, targetItem );
 		case( PID_SLAVE_COLLAR_SWITCH ):
 			StartMenuSCollar( cr, item );
 			return true;
@@ -1524,6 +1523,14 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 	if( valid( targetItem ) )
 	{
 		CheckItemMovement( cr, targetItem, skill );
+	}
+	
+	if( valid(targetItem) && Shitpiles.find(targetItem.GetProtoId()) != -1 && skill == SKILL_PICK_ON_GROUND )
+	{
+		if( !hasItem( cr, PID_RUBBER_GLOVES ) )
+		{
+			cr.ParamBase[CR_DIRTINESS] += 10;
+		}
 	}
 
  	if( valid(targetItem) && targetItem.GetProtoId() == PID_BULLETIN_BOARD )

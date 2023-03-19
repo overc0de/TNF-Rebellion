@@ -155,6 +155,36 @@ uint process_digging( Critter@ cr, int& param0, int& param1, int& param2 )
 	return 0;
 }
 
+bool CheckShitRemoval( Critter& cr, Item@ targetItem )
+{
+	if( !valid( targetItem ) ) return false;
+
+	uint16 pid = targetItem.GetProtoId();
+	if( Shitpiles.find(pid) == -1 ) return false;
+
+	if( !hasItem( cr, PID_RUBBER_GLOVES ) )
+	{
+		cr.ParamBase[CR_DIRTINESS]++;
+	}
+
+	Item@ offhand = cr.GetItem( 0, SLOT_HAND2 );
+	if( valid( offhand ) && ( shit_containers.find( offhand.GetProtoId() ) != -1 ) && enoughVolume( offhand ) )
+	{
+		MoveItem( targetItem, 1, offhand, 0 );
+	}
+	else
+	{
+		cr.ParamBase[CR_DIRTINESS]++;
+		MoveItem( targetItem, 1, cr );
+	}
+	
+	Map@ map = cr.GetMap();
+	PlayGenericSound( map, cr.HexX, cr.HexY, _GetOneRandom( PickaxeSounds ), 30 );
+	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_REMOVE_SHITPILE );
+
+	return true;
+}
+
 bool CheckRemainsRemoval( Critter& cr, Item@ targetItem )
 {
 	Map@ map = cr.GetMap();
@@ -167,10 +197,10 @@ bool CheckRemainsRemoval( Critter& cr, Item@ targetItem )
 		{
 			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_REMOVE_ASH );
 			DeleteItem( targetItem );
+			return true;
 		}
 		else if( pid >= PID_BLOOD_BONES_1 && targetItem.GetProtoId() <= PID_BLOOD_BONES_3 )
 		{
-			
 			cr.Animate( 0, ANIM2_PICKUP, null, false, true );
 			targetItem.Val0 += Random( 1, 3 );
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_REMOVE_SOME_REMAINS );
@@ -180,6 +210,8 @@ bool CheckRemainsRemoval( Critter& cr, Item@ targetItem )
 				cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_REMOVE_REMAINS );
 				DeleteItem( targetItem );
 			}
+
+			return true;
 		}
 		else if( pid == PID_VAULT_DWELLER_BONES )
 		{
@@ -206,13 +238,9 @@ bool CheckRemainsRemoval( Critter& cr, Item@ targetItem )
 				DeleteItem( targetItem );
 				cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_COLLECT_REMAINS );
 			}
+			
+			return true;
 		}
-		else
-		{
-			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DID_NOTHING );
-			return false;
-		}
-		return true;
 	}
 	return false;
 }
