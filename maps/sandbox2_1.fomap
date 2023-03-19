@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             0
-WorkHexY             0
+WorkHexX             176
+WorkHexY             189
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -5907,7 +5907,6 @@ tile       168  184            art\tiles\shore08.frm
 tile       170  184            art\tiles\shor14.frm
 tile       172  184            art\tiles\shor14.frm
 roof       172  184            art\tiles\jrt1000.frm
-roof       172  184            art\tiles\jrt1000.frm
 tile       174  184            art\tiles\shor14.frm
 roof       174  184            art\tiles\jrt1001.frm
 tile       176  184            art\tiles\shor14.frm
@@ -5919,7 +5918,6 @@ roof       180  184            art\tiles\jrt1002.frm
 tile       182  184            art\tiles\shor14.frm
 roof       182  184            art\tiles\jrt1000.frm
 tile       184  184            art\tiles\shor14.frm
-roof       184  184            art\tiles\jrt1000.frm
 roof       184  184            art\tiles\jrt1000.frm
 tile       186  184            art\tiles\shor14.frm
 roof       186  184            art\tiles\jrt1001.frm
@@ -46788,11 +46786,6 @@ MapX                 179
 MapY                 190
 
 MapObjType           2
-ProtoId              2100
-MapX                 178
-MapY                 198
-
-MapObjType           2
 ProtoId              5097
 MapX                 181
 MapY                 197
@@ -46801,16 +46794,6 @@ MapObjType           2
 ProtoId              5096
 MapX                 174
 MapY                 197
-
-MapObjType           2
-ProtoId              2099
-MapX                 187
-MapY                 194
-
-MapObjType           2
-ProtoId              2098
-MapX                 186
-MapY                 188
 
 MapObjType           2
 ProtoId              2106
@@ -46878,12 +46861,6 @@ MapObjType           2
 ProtoId              5097
 MapX                 173
 MapY                 197
-
-MapObjType           2
-ProtoId              4600
-MapX                 173
-MapY                 198
-OffsetY              -2
 
 MapObjType           2
 ProtoId              3278
@@ -47136,12 +47113,6 @@ MapY                 187
 OffsetX              -6
 OffsetY              -30
 
-MapObjType           2
-ProtoId              22416
-MapX                 176
-MapY                 190
-OffsetY              8
-
 MapObjType           1
 ProtoId              61
 MapX                 174
@@ -47158,11 +47129,6 @@ MapX                 173
 MapY                 193
 OffsetX              -13
 OffsetY              -8
-
-MapObjType           2
-ProtoId              22623
-MapX                 189
-MapY                 199
 
 MapObjType           2
 ProtoId              23100
@@ -47185,11 +47151,6 @@ MapX                 173
 MapY                 191
 OffsetX              1
 OffsetY              -6
-
-MapObjType           2
-ProtoId              23537
-MapX                 185
-MapY                 198
 
 MapObjType           2
 ProtoId              2922
@@ -47274,39 +47235,14 @@ MapX                 199
 MapY                 217
 
 MapObjType           2
-ProtoId              22766
-MapX                 199
-MapY                 212
-
-MapObjType           2
-ProtoId              22772
-MapX                 199
-MapY                 209
-
-MapObjType           2
 ProtoId              22770
 MapX                 199
 MapY                 199
 
 MapObjType           2
-ProtoId              22767
-MapX                 199
-MapY                 203
-
-MapObjType           2
 ProtoId              22764
 MapX                 199
 MapY                 197
-
-MapObjType           2
-ProtoId              22772
-MapX                 199
-MapY                 194
-
-MapObjType           2
-ProtoId              22765
-MapX                 187
-MapY                 218
 
 MapObjType           1
 ProtoId              2077
@@ -47325,33 +47261,8 @@ MapY                 218
 
 MapObjType           2
 ProtoId              22766
-MapX                 191
-MapY                 218
-
-MapObjType           2
-ProtoId              22767
-MapX                 199
-MapY                 215
-
-MapObjType           2
-ProtoId              22766
 MapX                 199
 MapY                 200
-
-MapObjType           2
-ProtoId              22766
-MapX                 181
-MapY                 218
-
-MapObjType           2
-ProtoId              22768
-MapX                 173
-MapY                 218
-
-MapObjType           2
-ProtoId              22765
-MapX                 169
-MapY                 218
 
 MapObjType           2
 ProtoId              22770
@@ -47377,16 +47288,6 @@ MapObjType           2
 ProtoId              22770
 MapX                 169
 MapY                 211
-
-MapObjType           2
-ProtoId              22767
-MapX                 169
-MapY                 209
-
-MapObjType           2
-ProtoId              22772
-MapX                 169
-MapY                 206
 
 MapObjType           2
 ProtoId              2222
@@ -52128,74 +52029,6 @@ MapObjType           2
 ProtoId              8114
 MapX                 144
 MapY                 249
-
-MapObjType           2
-ProtoId              2067
-MapX                 175
-MapY                 211
-
-MapObjType           2
-ProtoId              2067
-MapX                 175
-MapY                 212
-
-MapObjType           2
-ProtoId              2067
-MapX                 175
-MapY                 213
-
-MapObjType           2
-ProtoId              2067
-MapX                 175
-MapY                 214
-
-MapObjType           2
-ProtoId              2067
-MapX                 175
-MapY                 215
-
-MapObjType           2
-ProtoId              2067
-MapX                 176
-MapY                 211
-
-MapObjType           2
-ProtoId              2067
-MapX                 176
-MapY                 212
-
-MapObjType           2
-ProtoId              2067
-MapX                 176
-MapY                 213
-
-MapObjType           2
-ProtoId              2067
-MapX                 176
-MapY                 214
-
-MapObjType           2
-ProtoId              2067
-MapX                 177
-MapY                 211
-
-MapObjType           2
-ProtoId              2067
-MapX                 177
-MapY                 212
-
-MapObjType           2
-ProtoId              2067
-MapX                 177
-MapY                 213
-
-MapObjType           2
-ProtoId              16863
-MapX                 177
-MapY                 210
-OffsetX              62
-OffsetY              67
-Scenery_SpriteCut    2
 
 MapObjType           2
 ProtoId              2102
@@ -73841,11 +73674,6 @@ Item_LockerComplexity 500
 
 MapObjType           2
 ProtoId              1623
-MapX                 189
-MapY                 200
-
-MapObjType           2
-ProtoId              1623
 MapX                 190
 MapY                 186
 
@@ -73893,91 +73721,6 @@ MapObjType           2
 ProtoId              1623
 MapX                 192
 MapY                 205
-
-MapObjType           2
-ProtoId              1624
-MapX                 174
-MapY                 215
-
-MapObjType           2
-ProtoId              1624
-MapX                 174
-MapY                 214
-
-MapObjType           2
-ProtoId              1624
-MapX                 174
-MapY                 213
-
-MapObjType           2
-ProtoId              1624
-MapX                 174
-MapY                 211
-
-MapObjType           2
-ProtoId              1624
-MapX                 174
-MapY                 212
-
-MapObjType           2
-ProtoId              1624
-MapX                 174
-MapY                 210
-
-MapObjType           2
-ProtoId              1624
-MapX                 178
-MapY                 213
-
-MapObjType           2
-ProtoId              1624
-MapX                 178
-MapY                 212
-
-MapObjType           2
-ProtoId              1624
-MapX                 178
-MapY                 211
-
-MapObjType           2
-ProtoId              1624
-MapX                 178
-MapY                 210
-
-MapObjType           2
-ProtoId              1624
-MapX                 177
-MapY                 215
-
-MapObjType           2
-ProtoId              1624
-MapX                 176
-MapY                 215
-
-MapObjType           2
-ProtoId              1624
-MapX                 175
-MapY                 216
-
-MapObjType           2
-ProtoId              1624
-MapX                 177
-MapY                 214
-
-MapObjType           2
-ProtoId              1624
-MapX                 177
-MapY                 210
-
-MapObjType           2
-ProtoId              1624
-MapX                 176
-MapY                 210
-
-MapObjType           2
-ProtoId              1624
-MapX                 175
-MapY                 210
 
 MapObjType           2
 ProtoId              1625
@@ -74283,7 +74026,7 @@ Scenery_ToEntire     217
 
 MapObjType           2
 ProtoId              3853
-MapX                 198
+MapX                 206
 MapY                 195
 Scenery_ToEntire     217
 
@@ -74328,5 +74071,225 @@ ProtoId              3853
 MapX                 119
 MapY                 191
 Scenery_ToEntire     202
+
+MapObjType           2
+ProtoId              22764
+MapX                 199
+MapY                 194
+
+MapObjType           2
+ProtoId              22770
+MapX                 199
+MapY                 196
+
+MapObjType           2
+ProtoId              22764
+MapX                 199
+MapY                 203
+
+MapObjType           2
+ProtoId              22770
+MapX                 199
+MapY                 202
+
+MapObjType           2
+ProtoId              22770
+MapX                 199
+MapY                 205
+
+MapObjType           2
+ProtoId              22764
+MapX                 199
+MapY                 206
+
+MapObjType           2
+ProtoId              22764
+MapX                 199
+MapY                 209
+
+MapObjType           2
+ProtoId              22764
+MapX                 199
+MapY                 212
+
+MapObjType           2
+ProtoId              22770
+MapX                 199
+MapY                 208
+
+MapObjType           2
+ProtoId              22770
+MapX                 199
+MapY                 211
+
+MapObjType           2
+ProtoId              22764
+MapX                 199
+MapY                 215
+
+MapObjType           2
+ProtoId              22770
+MapX                 199
+MapY                 214
+
+MapObjType           2
+ProtoId              22764
+MapX                 191
+MapY                 218
+
+MapObjType           2
+ProtoId              22764
+MapX                 187
+MapY                 218
+
+MapObjType           2
+ProtoId              22769
+MapX                 188
+MapY                 218
+
+MapObjType           2
+ProtoId              22764
+MapX                 181
+MapY                 218
+
+MapObjType           2
+ProtoId              22769
+MapX                 178
+MapY                 218
+
+MapObjType           2
+ProtoId              22764
+MapX                 177
+MapY                 218
+
+MapObjType           2
+ProtoId              22764
+MapX                 173
+MapY                 218
+
+MapObjType           2
+ProtoId              22769
+MapX                 174
+MapY                 218
+
+MapObjType           2
+ProtoId              22769
+MapX                 170
+MapY                 218
+
+MapObjType           2
+ProtoId              22764
+MapX                 169
+MapY                 218
+
+MapObjType           2
+ProtoId              22764
+MapX                 169
+MapY                 209
+
+MapObjType           2
+ProtoId              22764
+MapX                 169
+MapY                 206
+
+MapObjType           2
+ProtoId              22770
+MapX                 169
+MapY                 208
+
+MapObjType           2
+ProtoId              22770
+MapX                 169
+MapY                 205
+
+MapObjType           2
+ProtoId              22764
+MapX                 169
+MapY                 203
+
+MapObjType           2
+ProtoId              2067
+MapX                 169
+MapY                 204
+
+MapObjType           2
+ProtoId              2067
+MapX                 169
+MapY                 207
+
+MapObjType           2
+ProtoId              2067
+MapX                 190
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 189
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 180
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 179
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 176
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 175
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 172
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 171
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 170
+MapY                 218
+
+MapObjType           2
+ProtoId              2067
+MapX                 199
+MapY                 213
+
+MapObjType           2
+ProtoId              2067
+MapX                 199
+MapY                 210
+
+MapObjType           2
+ProtoId              2067
+MapX                 199
+MapY                 207
+
+MapObjType           2
+ProtoId              2067
+MapX                 199
+MapY                 204
+
+MapObjType           2
+ProtoId              2067
+MapX                 199
+MapY                 201
+
+MapObjType           2
+ProtoId              2067
+MapX                 199
+MapY                 195
 
 
