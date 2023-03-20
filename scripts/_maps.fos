@@ -137,6 +137,9 @@
 //New Reno maps
 #define MAP_new_reno				( 210 )
 
+//VaultCity
+#define MAP_vault_city				( 211 )
+
 //SF maps
 #define MAP_frisco1_2				( 221 )
 #define MAP_frisco2_2				( 224 )

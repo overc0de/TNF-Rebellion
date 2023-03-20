@@ -45,7 +45,7 @@
 		MAP_slake_rad_twr, MAP_slake_rad_twr_dn, MAP_slake_ranch,				//Silverlake_dn maps
 		MAP_slake_ranch_dn, MAP_slake_space, MAP_slake_shuttle,					//Silverlake_dn maps
 		MAP_slake_lab1, MAP_slake_lab2,											//Silverlake_dn maps
-		MAP_vbbox_town, MAP_vbbox_outpost,                                      //Elk Falls
+		MAP_vbbox_town, MAP_vbbox_outpost, MAP_vault_city,                      //Elk Falls
 		MAP_HIDEOUT, MAP_HIDEOUT,												//Hidden bases
 		MAP_v66_lvl1, MAP_v66_lvl2, MAP_v66_lvl3, MAP_v66_lvl4,					//vault66 - internal
 		MAP_v66_crawler_in, MAP_v66_crawler_out									//vault66 - external maps
