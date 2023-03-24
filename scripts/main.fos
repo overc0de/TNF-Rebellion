@@ -747,7 +747,7 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		if( FireCheck( cr, item, targetItem ) )
 		{
 			return true;
-		}
+		}		
 		//Sandbag placing check
 		if( SandbagCheck( cr, item, targetItem ) )
 		{
@@ -938,9 +938,9 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		return true;
 	}
 	//Blood wrapping
-	if( ( pid == PID_CRAFT_L_RAGS || pid == PID_BANDAGE || pid == PID_TOWEL || pid == PID_OLD_TOWEL ) && valid( targetItem ) && targetItem.GetProtoId() >= PID_BLOOD_SMALL_1 && targetItem.GetProtoId() <= PID_BLOOD_BIG_3 )
+	if( ( pid == PID_CRAFT_L_RAGS || pid == PID_BANDAGE || pid == PID_TOWEL || pid == PID_OLD_TOWEL || pid == PID_SWAB ) && valid( targetItem ) && targetItem.GetProtoId() >= PID_BLOOD_SMALL_1 && targetItem.GetProtoId() <= PID_BLOOD_BIG_3 )
 	{
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_WIPE_BLOOD );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_WIPE_BLOOD );
 		cr.Animate( 0, ANIM2_PICKUP, null, false, true );
 		targetItem.Val0 -= Random( 1, 3 );
 		if( pid == PID_TOWEL )
@@ -954,6 +954,31 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			DeleteItem( targetItem );
 		}
 		return true;
+	}
+	//Shit cleaning 
+	if( ( pid == PID_CRAFT_L_RAGS || pid == PID_TOWEL || pid == PID_OLD_TOWEL || pid == PID_SWAB ) && valid( targetItem ) && targetItem.GetProtoId() >= PID_SHIT_HUGE && targetItem.GetProtoId() <= PID_SHIT_SMALL )
+	{		
+		if( pid == PID_TOWEL || pid == PID_OLD_TOWEL )
+		{
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CLEAN_SHIT_T );
+			cr.Animate( 0, ANIM2_PICKUP, null, false, true );
+			item.ChangeProto( PID_OLD_TOWEL );
+			item.Update();
+			_SubItem( targetItem, Random( 1, 3 ) );
+		}
+		if( pid == PID_CRAFT_L_RAGS )
+		{
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CLEAN_SHIT_T );
+			cr.Animate( 0, ANIM2_PICKUP, null, false, true );
+			_SubItem( item, 1 );
+			_SubItem( targetItem, 1 );
+		}
+		if( pid == PID_SWAB )
+		{
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CLEAN_SHIT_M );
+			cr.Animate( 0, ANIM2_SWEEP, null, false, true );
+			_SubItem( targetItem, Random( 1, 5 ) );
+		}		
 	}
 	//Doors
 	if( valid( targetItem ) && targetItem.GetType() == ITEM_TYPE_DOOR )

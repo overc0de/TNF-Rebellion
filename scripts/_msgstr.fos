@@ -2723,6 +2723,9 @@
 #define STR_EMOTE_NEWSPAPER_CLP				 ( 12950 )
 #define STR_EMOTE_NEWSPAPER_UNFLD			 ( 12951 )
 
+#define STR_EMOTE_CLEAN_SHIT_T				 ( 101701 )
+#define STR_EMOTE_CLEAN_SHIT_M				 ( 101702 )
+
 // Scores
 #define STR_SCORES_TITLE                     # (score)       ( 13000 + ( score ) * 10 )
 #define STR_SCORES_NAME                      # (score)        ( 13000 + ( score ) * 10 + 1 )
