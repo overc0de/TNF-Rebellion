@@ -2019,7 +2019,7 @@ bool critter_use_skill( Critter& cr, int skill, Critter@ targetCr, Item@ targetI
 			{			
 				return false;
 			}
-			cr.SayMsg( SAY_EMOTE, TEXTMSG_TEXT, STR_EMOTE_INSPECTS );
+			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_INSPECTS );
 			cr.Action( ACTION_PICK_CRITTER, 0, null );
 			
 			ShowContainer( cr, targetCr, TRANSFER_CRIT_LOOT );

@@ -1790,7 +1790,7 @@ void UseHealingItem( Critter& cr, Critter& targetCr, Item& item )
 		}
 		uint lineNumber = cr.Id == targetCr.Id ? usedItem.msg : usedItem.msg + 1;
 		
-		cr.SayMsg( SAY_EMOTE, TEXTMSG_COMBAT, lineNumber );
+		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_COMBAT, lineNumber );
 		
 		Map@ map = cr.GetMap();
 		if( valid( map ) )
