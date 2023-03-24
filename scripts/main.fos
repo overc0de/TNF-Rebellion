@@ -948,6 +948,11 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			item.ChangeProto( PID_OLD_TOWEL );
 			item.Update();
 		}
+		
+		if( pid == PID_CRAFT_L_RAGS || pid == PID_BANDAGE )
+		{
+			_SubItem( item, 1 );
+		}
 			
 		if( targetItem.Val0 < 1 )
 		{
