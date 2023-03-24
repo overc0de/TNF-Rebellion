@@ -139,7 +139,7 @@ bool SayChatMessage( Critter& cr, int sayType, int x, int y, string@ message )
 		{
 			return false;
 		}
-		map.SetText( x, y, isGM( cr ) ? COLOR_GRAY : COLOR_LGRAY, message );
+		map.SetText( x, y, isGM( cr ) ? COLOR_GRAY : COLOR_LGRAY, ":: " + message + " ::" );
 		SayLog( map, crInfo( cr, !isGM( cr ) ) + " :" + message + ":", x, y );
 	}
 	else

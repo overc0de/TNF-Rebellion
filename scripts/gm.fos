@@ -3572,7 +3572,7 @@ void unsafe_Set_NPC_AFK( Critter& player, int p0, int p1, int p2, string@ messag
 	if( message.length() > 1 )
 	{
 		player.Say( SAY_NETMSG, "|0xFFFF00 NPC AFK enabled!" );
-		string@ lexem = cr.GetLexems() + "_" + message;
+		string@ lexem = cr.GetLexems() + "_" + "|0xb3b3b3 " + message + "|0x636363 ";
 		cr.SetLexems( lexem );
 		cr.ParamBase[ CR_AFK_MODE ] = 1;
 	}
