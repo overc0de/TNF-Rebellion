@@ -91,6 +91,7 @@
 {1038}{}{PID_FLASHLIGHT_OFF@Собираем корпус, добавляем простую плату с кнопкой и соединяем с мощными светодиодами.@@SK_REPAIR 200&SK_SCIENCE 150@PID_IRON_DETALS 1&PID_CRAFT_E_PART 1&PID_GLASS 1&PID_MPARTS 2@PID_MULTI_TOOL 1|PID_SUPER_TOOL_KIT 1&PID_SCREWDRIVER 1&PID_SOLDERER 1&PID_WORKBENCH_TOKEN 1@PID_FLASHLIGHT_OFF 1@script fix_boy@fix_Workbench}
 {1039}{}{PID_FLARE@Немного химикатов, трубка и запал - все что нужно, чтобы не бояться темноты... хотя бы час...@@SK_REPAIR 100&SK_SCIENCE 100@PID_CHEMICALS 1&PID_SHORT_TUBE 2&PID_PART_OF_ROPE 2@PID_MULTI_TOOL 1|PID_SUPER_TOOL_KIT 1@PID_FLARE 2&PID_PHIAL 1@script fix_boy@fix_FreeHands}
 {1040}{}{PID_SMOKING_PIPE@Простой инструмент для простых удовольствий.@@SK_REPAIR 100|SK_OUTDOORSMAN 120@PID_WOOD_PART 1&PID_PLANT_OIL 1@PID_KNIFE 1|PID_REVFIST1 1|PID_COMBAT_KNIFE 1&PID_SHIV 1@PID_SMOKING_PIPE 1@script fix_boy@fix_None}
+{1041}{}{PID_SWAB@Чистота - залог здоровья. Привязать несколько тряпок и готово.@@SK_OUTDOORSMAN 50@PID_SHARPENED_POLE 1&PID_CRAFT_L_RAGS 15@PID_MULTI_TOOL 1|PID_SUPER_TOOL_KIT 1@PID_SWAB 1@script fix_boy@fix_None}
 
 {1100}{}{PID_ZAPLATKA_CRAFT_BAGS@Сумки, рюкзаки и другие личные вещи@@@PID_ZAPLATKA_CRAFT_BAGS 1@@PID_ZAPLATKA_CRAFT_BAGS 1@script fix_boy@fix_Tribal}
 {1101}{}{PID_BAG@Берем мешок, связываем одну из сторон веревкой.@@SK_REPAIR 50@PID_SANDBAG_EMPTY 1&PID_ROPE 1@@PID_BAG 1@script fix_boy@fix_FreeHands}
