@@ -72424,22 +72424,6 @@ MapY                 156
 ContainerUID         1
 
 MapObjType           2
-ProtoId              3852
-MapX                 320
-MapY                 307
-ScriptName           vcity_gate_guard
-FuncName             t_pre_enter
-Scenery_TriggerNum   14
-
-MapObjType           2
-ProtoId              3852
-MapX                 318
-MapY                 307
-ScriptName           vcity_gate_guard
-FuncName             t_pre_enter
-Scenery_TriggerNum   14
-
-MapObjType           2
 ProtoId              3386
 MapX                 323
 MapY                 192
@@ -94090,11 +94074,6 @@ MapObjType           2
 ProtoId              2067
 MapX                 307
 MapY                 434
-
-MapObjType           2
-ProtoId              13082
-MapX                 312
-MapY                 356
 
 MapObjType           2
 ProtoId              3724
