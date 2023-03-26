@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             176
-WorkHexY             189
+WorkHexX             183
+WorkHexY             200
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -5907,6 +5907,7 @@ tile       168  184            art\tiles\shore08.frm
 tile       170  184            art\tiles\shor14.frm
 tile       172  184            art\tiles\shor14.frm
 roof       172  184            art\tiles\jrt1000.frm
+roof       172  184            art\tiles\jrt1000.frm
 tile       174  184            art\tiles\shor14.frm
 roof       174  184            art\tiles\jrt1001.frm
 tile       176  184            art\tiles\shor14.frm
@@ -5918,6 +5919,7 @@ roof       180  184            art\tiles\jrt1002.frm
 tile       182  184            art\tiles\shor14.frm
 roof       182  184            art\tiles\jrt1000.frm
 tile       184  184            art\tiles\shor14.frm
+roof       184  184            art\tiles\jrt1000.frm
 roof       184  184            art\tiles\jrt1000.frm
 tile       186  184            art\tiles\shor14.frm
 roof       186  184            art\tiles\jrt1001.frm
@@ -47113,23 +47115,6 @@ MapY                 187
 OffsetX              -6
 OffsetY              -30
 
-MapObjType           1
-ProtoId              61
-MapX                 174
-MapY                 190
-
-MapObjType           1
-ProtoId              66
-MapX                 182
-MapY                 190
-
-MapObjType           1
-ProtoId              69
-MapX                 173
-MapY                 193
-OffsetX              -13
-OffsetY              -8
-
 MapObjType           2
 ProtoId              23100
 MapX                 177
@@ -59641,46 +59626,6 @@ MapObjType           2
 ProtoId              5622
 MapX                 170
 MapY                 212
-
-MapObjType           2
-ProtoId              2067
-MapX                 173
-MapY                 194
-
-MapObjType           2
-ProtoId              2067
-MapX                 173
-MapY                 193
-
-MapObjType           2
-ProtoId              2067
-MapX                 173
-MapY                 192
-
-MapObjType           2
-ProtoId              2067
-MapX                 175
-MapY                 190
-
-MapObjType           2
-ProtoId              2067
-MapX                 174
-MapY                 190
-
-MapObjType           2
-ProtoId              2067
-MapX                 182
-MapY                 190
-
-MapObjType           2
-ProtoId              2067
-MapX                 183
-MapY                 190
-
-MapObjType           2
-ProtoId              2067
-MapX                 184
-MapY                 190
 
 MapObjType           2
 ProtoId              2344
