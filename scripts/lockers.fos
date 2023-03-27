@@ -455,7 +455,7 @@ void answer_LOCKPICK( Critter& player, uint answerI, string& answerS )
 
     if( answerI == 0 )
     {
-        map.SetTextMsg( lockItm.HexX, lockItm.HexY, COLOR_GRAY, TEXTMSG_TEXT, STR_MAPMSG_KNOCK );
+        map.SetTextMsg( lockItm.HexX, lockItm.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_MAPMSG_KNOCK );
         player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_STR_YOU_KNOCK );
 		LogItemMovement( player, lockItm, "knocks on the" ); 
     }
