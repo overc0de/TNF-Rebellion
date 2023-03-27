@@ -113,6 +113,9 @@ uint __GetColor(uint8& a, uint8& r, uint8& g, uint8& b, uint color){
 #define COLOR_CYAN		        ( COLOR_RGB( 0xB5, 0xB5, 0xFF ) )
 #define COLOR_LIME		        ( COLOR_RGB( 0xA6, 0xFF, 0xAD ) )
 
+// Ralph paints
+#define COLOR_ENV		        ( COLOR_RGB( 0xD9, 0xD9, 0xD9 ) )
+
 // Other
 #define COLOR_GAME_RGB          # ( r, g, b )( __GetColor( r + __Light, g + __Light, b + __Light ) )
 

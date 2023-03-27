@@ -11,6 +11,10 @@
 #define STR_COSMETIC_USE                     ( 520 )
 #define STR_CIGARETTES_SMOKE                 ( 530 )
 #define STR_CIGARETTES_SMOKN                 ( 531 )
+#define STR_CIG_SMOKE                 		 ( 532 )
+#define STR_FURNACE_FIRE               		 ( 533 )
+#define STR_FURNACE_HEAT               		 ( 534 )
+#define STR_FURNACE_SMOKE              		 ( 535 )
 
 #define STR_TOOL_BROKEN						 ( 700 )
 
