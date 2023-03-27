@@ -84,13 +84,14 @@ void TrySmoking( Critter& cr, Item& item )
 	PlayGenericSound( map, cr.HexX, cr.HexY, cr.Stat[ ST_GENDER ] == GENDER_MALE ? "smoking_01.ogg" : "Fem_Smoking_01.ogg", 6 );
 	cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_CIGARETTES_SMOKN );
 	cr.Animate ( 0, 20, null, true, false );
-	
+	map.SetTextMsg( cr.HexX, cr.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_CIG_SMOKE );	
 	}
 	else
 	{
 		PlayGenericSound( map, cr.HexX, cr.HexY, cr.Stat[ ST_GENDER ] == GENDER_MALE ? "smoking.ogg" : "Fem_Smoking.ogg", 6 );
 		cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_CIGARETTES_SMOKE );
 		cr.Animate ( 0, 20, null, true, false );
+		map.SetTextMsg( cr.HexX, cr.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_CIG_SMOKE );
 	}
 	
 	uint16 Pid = item.GetProtoId();
