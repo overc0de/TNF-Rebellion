@@ -23,6 +23,7 @@
 #include "speed_h.fos"
 #include "waterworks_h.fos"
 
+
 import void Actions( Critter& cr, uint8 actionType, uint16 pickType ) from "context_callback";
 
 import bool e_UseAutoCloseDoor( Item& door, Critter& cr, int skill ) from "item";
@@ -1168,9 +1169,17 @@ void unsafe_setAFK( Critter& player, int param0, int param1, int param2, string@
 	{
 		string@ lexem = player.GetLexems();
 		uint index = findFirstOf( lexem, "_", 0 );
-		string oldLex = substring( lexem, 0, index );
-		player.SetLexems( oldLex + "_" + "|0xffff99 " + text + "|0x636363 " );
-		
+		string oldLex = substring( lexem, 0, index );		
+		if ( ( oldLex.length() + text.length() ) >=105 )
+				{
+					int over = ( oldLex.length() + text.length() ) - 104;
+					player.Say((11),"|0x999900 Длина лексемы и афк-статуса Вашего персонажа превышают ограничение на |0xcc3300 " + over + "|0x999900  символов.");
+					return;
+				}
+		else
+		{
+			player.SetLexems( oldLex + "_" + "|0xffff99 " + text + "|0x636363 " );
+		}		
 		player.ParamBase[ CR_AFK_MODE ] = 1;
 		player.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_CHANGE_LEX_AFK );
 	}
