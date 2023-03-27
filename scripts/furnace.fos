@@ -239,16 +239,23 @@ void FurnaceStage( Item& furnace )
 		furnace.EVENT = 0;
 		return;
 	}
-
+//	Map@ map = furnace.GetMap();
+//	if( !valid( map ) )
+//	{
+//		return;
+//	}
 	if( furnace.STATE == STATE_EXTINGUISHED && furnace.FIRE_STRENGTH > 0 )
 	{
 		uint[] values = { furnace.Id };
 		CreateTimeEvent( AFTER( REAL_SECOND( 1 ) ), "e_CoolDown", values, true );
+		map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_HEAT );
 	}
 
 	if( furnace.STATE == 1 && furnace.FIRE_STRENGTH < 1800 )
 	{
-		furnace.FIRE_STRENGTH += FUEL_BURN_AMOUNT / 2;
+		furnace.FIRE_STRENGTH += FUEL_BURN_AMOUNT / 2;	
+		int env = Random(1, 5);
+		if ( env > 2 ) map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_HEAT );
 	}
 
 	Item@[] resources;
@@ -263,6 +270,7 @@ void FurnaceStage( Item& furnace )
 		{
 			furnace.FURN_IRON = burn_check;
 			furnace.AddItem( PID_IRON_BAR, 1, 0 );
+			map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_SMOKE );
 		}
 	}
 
@@ -275,6 +283,7 @@ void FurnaceStage( Item& furnace )
 		{
 			furnace.FURN_GOLD = burn_check;
 			furnace.AddItem( PID_GOLDEN_BAR, 1, 0 );
+			map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_SMOKE );
 		}
 	}
 
@@ -287,6 +296,7 @@ void FurnaceStage( Item& furnace )
 		{
 			furnace.FURN_COPPER = burn_check;
 			furnace.AddItem( PID_COPPER_BAR, 1, 0 );
+			map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_SMOKE );
 		}
 	}
 
@@ -299,6 +309,7 @@ void FurnaceStage( Item& furnace )
 		{
 			furnace.FURN_LEAD = burn_check;
 			furnace.AddItem( PID_LEAD_INGOT, 1, 0 );
+			map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_SMOKE );
 		}
 	}
 
@@ -311,6 +322,7 @@ void FurnaceStage( Item& furnace )
 		{
 			furnace.FURN_GLASS = burn_check;
 			furnace.AddItem( PID_GLASS_BAR, 1, 0 );
+			map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_SMOKE );
 		}
 	}
 	
@@ -401,7 +413,7 @@ void BurnItem( Item& furnace, Item& resource, uint16 type )
 	}
 
 	map.RunEffect( PID_EFFECT_SMOKE, furnace.HexX, furnace.HexY, 0 );
-
+	map.SetTextMsg( furnace.HexX, furnace.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_FURNACE_FIRE );			
 	float burn_k = 0.0f;
 
     switch( type )
