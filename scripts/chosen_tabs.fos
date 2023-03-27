@@ -102,6 +102,7 @@ void DrawChosenTabs() // Export
 	if( chosen.Stat[ ST_DYS ] > 0 )
 	{
 		showTabVal( GetMsgStr( TEXTMSG_GAME, STR_OXYGEN_TITLE ), CLAMP( 100 - chosen.Stat[ ST_DYS ] * 3, 0, 100 ), 0, COLOR_DRED );
+		showTab( GetMsgStr( TEXTMSG_GAME, STR_OXYGEN_ASPHIXIA ), ( chosen.Stat[ ST_DYS ] ), 30, 5, isTester );
 	}
 	
     showTab( GetMsgStr( TEXTMSG_GAME, STR_HUNGER_TITLE ), 1000 - chosen.Stat[ ST_HUNGER ], 1000, 15, isTester );
