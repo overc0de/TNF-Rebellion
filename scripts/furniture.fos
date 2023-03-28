@@ -544,7 +544,7 @@ void e_DragMoving( Item& item, Critter& cr, bool entered, uint8 dir )
 	
 	if( !map.IsHexPassed( x, y ) )
 	{
-		map.SetTextMsg( item.HexX, item.HexY, COLOR_LGRAY, TEXTMSG_TEXT, STR_MAPMSG_BANG );
+		map.SetTextMsg( item.HexX, item.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_MAPMSG_BANG );
 		StopDragging( cr, item );
 		return;
 	}
@@ -587,7 +587,7 @@ uint cte_DraggingFurniture( Critter& cr, int identifier, uint& rate )
 		if( !map.IsHexPassed( x, y ) )
 		{
 			Item@ rateFurniture = GetItem( rate );
-			map.SetTextMsg( rateFurniture.HexX, rateFurniture.HexY, COLOR_LGRAY, TEXTMSG_TEXT, STR_MAPMSG_BANG );
+			map.SetTextMsg( rateFurniture.HexX, rateFurniture.HexY, COLOR_ENV, TEXTMSG_TEXT, STR_MAPMSG_BANG );
 		}
 		StopDragging( cr, furniture );
 		return 0;

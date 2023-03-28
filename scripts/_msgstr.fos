@@ -403,6 +403,9 @@
 #define STR_FOOD_ROTTED						 ( 7023 )
 #define STR_EMOTE_BAD_SMELL					 ( 7024 )
 
+//Evironment
+#define STR_EMOTE_RUSTLING					 ( 7050 )
+
 // Player Menu
 #define STR_VOICE_VOLUME					 ( 8000 )
 
