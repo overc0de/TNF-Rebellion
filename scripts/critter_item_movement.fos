@@ -727,6 +727,10 @@ uint ArmorSkin( Critter& cr, uint skin )
 		{
 			skin = B_HideName( cr ) ? CRTYPE_PA : CRTYPE_PA_HEADLESS;
 		}
+		if( cr.Stat[ ST_BODY_TYPE ] == 0 )
+		{
+			skin = CRTYPE_PA;
+		}
 	}
 	else if( skin == CRTYPE_PA_HARDY || skin == CRTYPE_PA_HARDY_HEADLESS )
 	{
