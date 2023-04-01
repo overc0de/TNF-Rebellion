@@ -116,7 +116,7 @@ bool CheckGasMask( Critter& cr, uint rate )
         det = GetDeteriorationProcent( respirator );
         if( det < 99 && Respirators.find( respirator.GetProtoId() ) != -1 )
         {
-            if( Random( 1, 100 ) <= rate )
+            if( Random( 1, 100 ) <= int(rate) )
             {
 				SetDeterioration( respirator, det + 1 );
             }
