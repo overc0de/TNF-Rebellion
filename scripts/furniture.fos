@@ -427,7 +427,7 @@ bool canPickup( Critter& cr, Item& furniture )
 	bool DoorOrContainer = ( isContainer( furniture ) || furniture.GetType() == ITEM_TYPE_DOOR );
 	bool isPickingUp = true;
 
-	if( !isGM(cr) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) || furniture.Durability > 0 ) )
+	if( !( isGM(cr) && isTester(cr) ) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) || furniture.Durability > 0 ) )
 	{
 		if( DoorOrContainer )
 		{
@@ -444,7 +444,7 @@ bool canPickup( Critter& cr, Item& furniture )
 
 bool canSwitchLootability( Critter& cr, Item& furniture )
 {
-	if( !isGM( cr ) && furniture.Durability > 0 )
+	if( !( isGM(cr) && isTester(cr) ) && furniture.Durability > 0 )
 	{
 		return false;
 	}
@@ -453,7 +453,7 @@ bool canSwitchLootability( Critter& cr, Item& furniture )
 
 bool SwitchLootability( Critter& cr, Item& furniture )
 {
-	if( !isGM( cr ) && FLAG( furniture.LockerCondition, LOCKER_LOCKED ) )
+	if( !( isGM(cr) && isTester(cr) ) && FLAG( furniture.LockerCondition, LOCKER_LOCKED ) )
 	{
 		LogCrimeMovement( cr, furniture, "can't move furniture that is locked" );
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_OPEN_LOCK_FIRST );	
@@ -724,14 +724,14 @@ class FurnitureList
 			return false;
 		}
 		
-		if( !isGM(cr) && furniture.LockerId != 0 )
+		if( !( isGM(cr) && isTester(cr) ) && furniture.LockerId != 0 )
 		{
 			LogCrimeMovement( cr, furniture, "can't move locked furniture" );
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_UNLOCK_FURNITURE );	
 			return true;
 		}
 		
-		if( !isGM(cr) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) || furniture.Durability > 0 ) )
+		if( !( isGM(cr) && isTester(cr) ) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) || furniture.Durability > 0 ) )
 		{
 			LogCrimeMovement( cr, furniture, "cant move fixed furniture" ); 
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DISMANTLING_REQUIRED );
@@ -755,7 +755,7 @@ class FurnitureList
 		int freeWeight = int( cr.Stat[ ST_CARRY_WEIGHT ] * ContainerBonusWeight( furniture ) ),
 			contWeight = ItemsWeight( furniture );
 			
-		if( !isGM(cr) && freeWeight < contWeight )
+		if( !( isGM(cr) && isTester(cr) ) && freeWeight < contWeight )
 		{
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_OBJECT_TOO_HEAVY );
 			LogItemMovement( cr, furniture, "can't move heavy furniture" );

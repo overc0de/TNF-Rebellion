@@ -52,6 +52,11 @@ bool isPocketGM( int id )
 	return( pocket_GMs.find(id) != -1 );
 }
 
+bool isTester( Critter& cr )
+{
+	return cr.Param[ QST_GAMEMODE ] == GAME_TEST;
+}
+
 bool isGM( Critter& player ) //exported
 {
 	return isGM( player, true );
