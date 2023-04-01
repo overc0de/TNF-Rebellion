@@ -209,10 +209,8 @@ bool start()
     SetSendParameter( CR_SINF_MODE, true );
 	SetSendParameter( CR_CONTROLLED_GROUP, true );	
 	SetSendParameter( CR_REMEMBERING_NAME, true );		
-	SetSendParameter( CR_TALKING_TARGET_ID, true );		
-	
-	SetSendParameter( CR_TALKING_TARGET_ID, true );		
-
+	SetSendParameter( CR_TALKING_TARGET_ID, true );			
+	SetSendParameter( CR_HOLD_POSITION, true );		
 	SetSendParameter( CR_SNEAKING, true );			
 	SetSendParameter( SK_SNEAK, true );			
 	SetSendParameter( MERC_MASTER_ID, true );		
@@ -969,7 +967,9 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 			cr.Animate( 0, ANIM2_PICKUP, null, false, true );
 			item.ChangeProto( PID_OLD_TOWEL );
 			item.Update();
-			_SubItem( targetItem, Random( 1, 3 ) );
+			
+			uint amount = Random( 1, 3 );
+			_SubItem( targetItem, amount );
 		}
 		if( pid == PID_CRAFT_L_RAGS )
 		{
@@ -982,7 +982,9 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		{
 			cr.SayMsg( SAY_EMOTE_ON_HEAD, TEXTMSG_TEXT, STR_EMOTE_CLEAN_SHIT_M );
 			cr.Animate( 0, ANIM2_SWEEP, null, false, true );
-			_SubItem( targetItem, Random( 1, 5 ) );
+
+			uint amount = Random( 1, 5 );
+			_SubItem( targetItem, amount );
 		}		
 	}
 	//Doors

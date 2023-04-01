@@ -619,7 +619,7 @@ bool replaceNick( CritterCl& cr )
 	
 	if( isGM( chosen ) )
 	{
-		string hold_position = ( ( cr.Param[ ST_WALK_TIME ] == 0 && cr.Param[ ST_RUN_TIME ] == 0 ) ? "|0xFF0000 " + " X" + "|0xFFFFFF " : "" ) + "\n";
+		string hold_position = ( cr.Param[ CR_HOLD_POSITION ] != 0 ? "|0xFF0000 " + " X" + "|0xFFFFFF " : "" ) + "\n";
 		string groupsList = getGroups( cr );
 		if( ( isControlled( cr ) && isSelected( cr.Id ) ) )
 		{
