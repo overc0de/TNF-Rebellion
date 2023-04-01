@@ -1278,3 +1278,22 @@ Cost=300
 Container_Volume=5000
 Container_Changeble=1
 Item_Subtype=200
+
+[Proto] # PID_FOOD_TUB
+ProtoId=23814
+Type=8
+ScriptModule=furniture
+ScriptFunc=_InitFurniture
+PicMap=art\scenery\TUB2.FRM
+PicInv=art\scenery\TUB2.FRM
+Flags=304091672
+DisableEgg=1
+SoundId=81
+Material=1
+Volume=200
+Weight=20000
+Cost=300
+Container_Volume=5000
+StartValue_1=50
+StartValue_8=22202
+Item_Subtype=200

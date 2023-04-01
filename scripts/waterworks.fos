@@ -501,7 +501,7 @@ class MenuWaterPump: CenteredMenuHandler
 							return true;
 						}
 
-						start_gathering_water( cr, waterPump );
+						start_gathering_waterpump( cr, waterPump );
 						return false;
 						
 					}
@@ -622,7 +622,7 @@ void ltp_gathWater_init()
 	ltp_gathWater_inited = true;
 }
 
-bool start_gathering_water( Critter& cr, Item& waterPump )
+bool start_gathering_waterpump( Critter& cr, Item& waterPump )
 {
 	if( !ltp_gathWater_inited )
 	{ 
@@ -662,6 +662,40 @@ bool start_gathering_water( Critter& cr, Item& waterPump )
 	}
 	
 	return false;
+}
+
+bool start_gathering_watersource( Critter& cr, Item& waterSource )
+{
+	if( !ltp_gathWater_inited )
+	{ 
+		ltp_gathWater_init();
+	}
+	
+	Map@ map = cr.GetMap();		
+	
+	if( !valid( waterSource ) ) return false;
+
+	if( waterSource.REMAINING_CHARGE < 1 )
+	{
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_NO_WATER_LEFT );
+		return false;
+	}
+	
+	Item@ hand = _CritGetItemHand( cr );
+	if( !FindFlask( hand ) && !hasItem( cr, PID_BOTTLE_GLASS, SLOT_HAND1 ) && !hasItem( cr, waterSource.WATERSOURCE_DNA, SLOT_HAND1 ) && !isFlask( cr, waterSource ) )
+	{ 
+		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_HOLD_TARE );
+		return false;
+	}
+
+	uint hit_pause = ACTION_PAUSE_BASE - ( cr.Stat[ST_AGILITY] * ACTION_PAUSE_BONUS_RATE );
+	cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ] = CLAMP( hit_pause, ACTION_PAUSE_MIN, ACTION_PAUSE_MAX );
+	cr.ParamBase[ ST_LTP_SEQUENCE ] = CalcSequence( cr, waterSource );
+	cr.SetAnims( COND_LIFE, 0, ANIM2_CROUCH );
+	StartProcess( cr, LTP_GATHER_WATER, 0, 0, waterSource.Id, cr.ParamBase[ ST_LTP_SEQUENCE_WAIT ] );
+	PlayGenericSound( map, cr.HexX, cr.HexY, "homebrew_pouring.ogg", 10 );
+
+	return true;
 }
 
 bool start_gathering_water( Critter& cr, uint scenery_pid )

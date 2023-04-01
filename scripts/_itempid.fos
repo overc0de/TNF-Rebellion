@@ -343,6 +343,7 @@
 #define PID_SHIT_BATH1_X_FULL						( 1647 )						// shit bath X - full
 #define PID_SHIT_BATH2_Y_EMPTY						( 1648 )						// shit bath Y - empty
 #define PID_SHIT_BATH2_Y_FULL						( 1649 )						// shit bath Y - full
+#define PID_FOOD_TUB								( 23814 )						// Корыто для животноводства
 
 /**************************************************************
 ***************				Wild Plants  		***************

@@ -358,6 +358,20 @@ bool SpillOut( Item@ &item, int parts = 1 )
 		{
 			return ReplaceWith( item, PID_BOTTLE_GLASS, 1 );
 		}
+		
+		if( item.Proto.Partial_Item != 0 )
+		{
+			item.Val0 = 0;
+			item.Val1 = 0;
+			item.Val2 = 0;
+			item.Val3 = 0;
+			item.Val4 = 0;
+			item.Val5 = 0;
+			item.Val6 = 0;
+			item.Val7 = 0;
+			item.Val8 = 0;
+			item.Val9 = 0;		
+		}
 	}
 	
 	item.Val0 -= parts;

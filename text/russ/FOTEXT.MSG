@@ -1148,9 +1148,11 @@
 
 
 #Мебель 99700 - 99800
+{99700}{}{|0xF8F993 Воды: |0xFFFF00 @lex current@ |0x3CF800 из |0xFFFF00 @lex max@ |0x3CF800 л.}
 {99701}{}{|0xF8F993 Вес: |0x00FF00 @lex weight@
 @lex testInfo@
-|0xF8F993 Объем: |0x00FF00 @lex volume@}
+|0xF8F993 Объем: |0x00FF00 @lex volume@
+@lex additional@}
 {99702}{}{Осмотреть}
 {99703}{}{Открыть хранилище}
 {99704}{}{Отсоединить}

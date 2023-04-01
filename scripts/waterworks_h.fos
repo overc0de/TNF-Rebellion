@@ -41,6 +41,7 @@
 		import void StartCleaning( Critter& player, Critter& target, uint soap_pid, int water_source ) from "waterworks";
 		import void Cleaning( Critter& player, Critter& target, uint soap_pid, int water_source ) from "waterworks";
 		import bool start_gathering_water( Critter& cr, uint scenery_pid ) from "waterworks";
+		import bool start_gathering_watersource( Critter& cr, Item& waterSource ) from "waterworks";
 	#endif WATERWORKS
 
 #endif //WATERWORKS_H

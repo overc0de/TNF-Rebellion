@@ -8,6 +8,9 @@
 #include "item_h.fos"
 #include "furnace_h.fos"
 #include "smithing_h.fos"
+#include "homebrew_h.fos"
+#include "flask_h.fos"
+#include "waterworks_h.fos"
 
 import bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetItem, Scenery@ targetScen, uint param ) from "main";
 
@@ -59,6 +62,7 @@ void InitFurnitures()
 		.add( Furniture( "Large armchair", PID_CR_ARM_CHAIR ).add( 2231 ) )
 		.add( Furniture( "Compost barrel", PID_SHIT_BAREL_FULL ).add( 9877 ).add( 9878 ).add( 9879 ).add( 16588 ).add( 16589 ).add( PID_GARBAGE_BIN ) )
 		.add( Furniture( "Compost bath", PID_SHIT_BATH_X_EMPTY ).add( PID_SHIT_BATH2_Y_EMPTY ).add( PID_SHIT_BATH1_X_FULL ).add( PID_SHIT_BATH2_Y_FULL ) )
+		.add( Furniture( "Food bath", PID_FOOD_TUB ).add( PID_SHIT_BATH2_Y_EMPTY ) )
 		.add( Furniture( "Chest", PID_CR_CHEST ).add( 367 ).add( 369 ) )
 		.add( Furniture( "Container", PID_IBOX_O ).add( PID_IBOX_OT ) )
 		.add( Furniture( "Container2", PID_IBOX_N ).add( PID_IBOX_NT ) )
@@ -187,6 +191,19 @@ class MenuFuriture: CenteredMenuHandler
 			furniture.SetScript( "gm@_DeleteScript" );
 			StartMenuFurnace( cr, furniture );
 			return false;
+		}
+		
+		if( pid == PID_FOOD_TUB )
+		{
+			if( menu.Button( "Залить воду" ) )//WIP
+			{
+				fillWater( cr, furniture );
+			}
+
+			if( menu.Button( "Слить воду" ) )//WIP
+			{
+				pourWater( cr, furniture );
+			}
 		}
 		
 		if( furniture.GetProtoId() == PID_CRUSHER_2000 && menu.ButtonMsg( STR_FURNITURE_CRUSHER_INTERFACE ) )
@@ -349,6 +366,16 @@ class MenuFuriture: CenteredMenuHandler
 		if( isContainer( furniture ) )
 		{		
 			info += ContainmentVolume( furniture ) + " / " + furniture.Proto.Container_Volume;
+		}
+		
+		info += "$additional";
+		if( furniture.GetProtoId() == PID_FOOD_TUB )
+		{
+			float CURRENT_CAPACITY = furniture.CURRENT_CAPACITY / 10.0f;
+			float CAPACITY = furniture.CAPACITY / 10.0f;
+
+			info += STR_INSERT_TEXT_LINE( STR_FURNITURE_MENU_ADDITIONAL )
+				 + "$current" + CURRENT_CAPACITY +  "$max" + CAPACITY;
 		}
 		
 		return info;
@@ -1309,4 +1336,53 @@ void _DeleteBlockers( Item& item, bool deleted )
 		}
 	}
 }
+
+void fillWater( Critter& cr, Item& item )
+{
+	uint[] proper_water_sources = { PID_GLASS_BOTTLE_FULL_PRT, PID_DISTIL_WATER_PRT, PID_GLASS_BOTTLE_DIRTY_FULL_PRT };
+
+	Item@ hand = cr.GetItem( 0, SLOT_HAND1 );
+	
+	if( !valid( hand ) )
+	{
+		cr.Say( SAY_NETMSG, "Возьмите открытую емкость с водой в руку." );
+		return;
+	}
+	
+	bool notWaterBottle = proper_water_sources.find( hand.Proto.ProtoId ) == -1;
+
+	if( hand.Proto.Type != ITEM_TYPE_FLASK && notWaterBottle )
+	{
+		cr.Say( SAY_NETMSG, "Возьмите открытую емкость с водой в руку." );
+		return;
+	}		
+	
+	if( proper_water_sources.find( hand.DRINK_DNA ) == -1 && notWaterBottle )
+	{
+		cr.Say( SAY_NETMSG, "Животные пьют только чистую, дистиллированную или грязную воду." );
+		return;
+	}
+
+	int free_space = item.CAPACITY - item.CURRENT_CAPACITY;
+	
+	if( free_space <= 0 )
+	{
+		cr.Say( SAY_NETMSG, "В поилке достаточно воды." );
+		return;
+	}
+	
+	int volume = MIN( free_space, hand.REMAINING_USES );	
+	item.CURRENT_CAPACITY += volume;
+	hand.REMAINING_USES = hand.REMAINING_USES - volume + 1;
+	SpillOut( hand );
+	
+	cr.Say( SAY_EMOTE_ON_HEAD, "наливает воду в поилку" );
+}
+
+void pourWater( Critter& cr, Item& item )
+{
+	cr.Say( SAY_EMOTE_ON_HEAD, "сливает воду из поилки" );
+	start_gathering_watersource( cr, item );
+}
+
 #endif //FURNITURE
