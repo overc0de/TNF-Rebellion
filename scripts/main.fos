@@ -1041,6 +1041,35 @@ bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetI
 		UseSkillOnLocker( cr, item, SKILL_PICK_ON_GROUND );
         return true;
     }
+	
+	//Bag
+	if( pid == PID_BAG && valid( targetItem ) ) 
+	{
+		uint16 targetPID = targetItem.GetProtoId();
+		if( targetPID == PID_SHIT_BATH_X_EMPTY || targetPID == PID_SHIT_BAREL_FULL )
+		{
+			Item@[] list;
+			item.GetItems( 0, list );
+
+			for( uint i = 0, l = list.length(); i < l; i++ )
+			{
+				for( uint j = 0, n = list[i].GetCount(); j < n; j++ )
+				{
+					if( ContainmentVolume( targetItem ) + list[i].Proto.Volume <= targetItem.Proto.Container_Volume )
+					{
+						MoveItem( list[i], 1, targetItem, 0 );
+					}
+					else
+					{
+						spillOut( map, targetItem, list[i] );
+					}
+				}
+			}
+			cr.Say( SAY_EMOTE, "Вытряхивает содержимое мешка" );
+			return true;
+		}
+	}
+	
 	//Keybunch
     if( ( pid == PID_KEY_BUNCH || pid == PID_FNKEYBT ) && valid( targetItem ) && ( targetItem.GetType() == ITEM_TYPE_DOOR || targetItem.GetType() == ITEM_TYPE_CONTAINER ) )
 	{
@@ -4308,6 +4337,22 @@ uint cte_sneaking( Critter& cr, int identifier, uint& rate )
 	}
 	
 	return REAL_MS( 500 );
+}
+
+void spillOut( Map& map, Item& container, Item& item )
+{
+	uint16 sHx = container.HexX, sHy = container.HexY;
+	uint16 hx = 0, hy = 0;
+	hx = sHx; hy = sHy;
+	map.MoveHexByDir( hx, hy, Random( 0, 5 ), 1 );
+	if( map.IsHexPassed( hx, hy ) )
+	{
+		MoveItem( item, 1, map, hx, hy );
+	}
+	else
+	{	
+		MoveItem( item, 1, map, sHx, sHy );
+	}
 }
 
 #endif //__MAIN_MODULE__
