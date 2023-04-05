@@ -60,6 +60,7 @@
 # Area 5, Map 18
 {190}{}{sandbox1_5}
 {195}{}{36E3_Among_the_Friends.ogg}
+{195}{}{39SHK_Heoi.ogg}
 {196}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {198}{}{Ферма}
 
