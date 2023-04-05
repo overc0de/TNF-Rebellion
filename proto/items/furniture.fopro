@@ -1294,6 +1294,6 @@ Volume=200
 Weight=20000
 Cost=300
 Container_Volume=5000
-StartValue_1=50
+StartValue_1=500
 StartValue_8=22202
 Item_Subtype=200
