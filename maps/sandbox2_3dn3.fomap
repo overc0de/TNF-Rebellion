@@ -4,9 +4,9 @@ MaxHexX              480
 MaxHexY              480
 WorkHexX             203
 WorkHexY             66
-ScriptModule         dungeon
-ScriptFunc           init_cave
-NoLogOut             1
+ScriptModule         -
+ScriptFunc           -
+NoLogOut             0
 Time                 15
 DayTime              300  600  1140 1380
 DayColor0            18  18  53 
