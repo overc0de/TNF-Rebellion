@@ -1,0 +1,315 @@
+#ifndef ANIMAL_BREEDING
+#define ANIMAL_BREEDING
+
+#include "_utils.fos"
+#include "homebrew_h.fos"
+#include "flask_h.fos"
+#include "waterworks_h.fos"
+#include "_npc_pids.fos"
+#include "npc_planes_h.fos"
+#include "animal_breeding_h.fos"
+
+const uint[] breeding_mob_pids = { NPC_PID_DOMESTICATED_BRAHMIN };
+const uint[] breeding_food_pids = { PID_CORN, PID_CABBAGE };
+
+void fillWater( Critter& cr, Item& food_tub )
+{
+	Item@ hand = cr.GetItem( 0, SLOT_HAND1 );
+	if( !valid( hand ) )
+	{
+		cr.Say( SAY_NETMSG, "Возьмите открытую емкость с водой в руку." );
+		return;
+	}
+	
+
+	uint[] proper_water_sources = { PID_GLASS_BOTTLE_FULL_PRT, PID_DISTIL_WATER_PRT, PID_GLASS_BOTTLE_DIRTY_FULL_PRT };
+	bool notWaterBottle = proper_water_sources.find( hand.Proto.ProtoId ) == -1;
+	if( hand.Proto.Type != ITEM_TYPE_FLASK && notWaterBottle )
+	{
+		cr.Say( SAY_NETMSG, "Возьмите открытую емкость с водой в руку." );
+		return;
+	}		
+	if( proper_water_sources.find( hand.DRINK_DNA ) == -1 && notWaterBottle )
+	{
+		cr.Say( SAY_NETMSG, "Животные пьют только чистую, дистиллированную или грязную воду." );
+		return;
+	}
+
+
+	int free_space = food_tub.CAPACITY - food_tub.CURRENT_CAPACITY;	
+	if( free_space <= 0 )
+	{
+		cr.Say( SAY_NETMSG, "В поилке достаточно воды." );
+		return;
+	}
+	
+
+	int volume = MIN( free_space, hand.REMAINING_USES );	
+	food_tub.CURRENT_CAPACITY += volume;
+	hand.REMAINING_USES = hand.REMAINING_USES - volume + 1;
+	SpillOut( hand );
+	
+
+	cr.Say( SAY_EMOTE_ON_HEAD, "наливает воду в поилку" );
+}
+
+void pourWater( Critter& cr, Item& food_tub )
+{
+	cr.Say( SAY_EMOTE_ON_HEAD, "сливает воду из поилки" );
+	start_gathering_watersource( cr, food_tub );
+}
+
+bool isDomesticated( Critter& mob )
+{
+	return breeding_mob_pids.find( mob.GetProtoId() ) != -1;
+}
+
+uint e_loop( uint[]@ values )
+{
+	if( !valid( values ) || values.length() != 1 )
+	{
+		return 0;
+	}	
+	
+	Item@ food_tub = GetItem( values[0] );
+	if( !valid( food_tub ) )
+	{
+		return 0;
+	}	
+	
+	Map@ map = GetMap( food_tub.MapId );
+	if( !valid( map ) )
+	{
+		return 0;
+	}	
+	
+	Critter@[] animals, domesticated;
+	uint l = map.GetCrittersHex( food_tub.HexX, food_tub.HexY, FOOD_TUB_DIST, FIND_LIFE | FIND_ONLY_NPC, animals );
+	for( uint i = 0; i < l; i++ )
+	{
+		if( isDomesticated( animals[i] ) )
+		{
+			uint distance = map.GetPathLength( animals[i], food_tub.HexX, food_tub.HexY, 1 );
+			if( distance > 0 && distance < FOOD_TUB_DIST )
+			{
+				domesticated.insertLast( animals[i] );
+			}
+		}
+	}
+	
+	Critter@[] horny;	
+	l = domesticated.length();
+	for( uint i = 0; i < l; i++ )
+	{
+		Critter@ mob = @domesticated[i];
+		
+		if( mob.StatBase[ ST_CURRENT_HP ] < 0 || mob.IsDead() || mob.IsKnockout() )
+		{
+			continue;
+		}
+		
+		mob.DropPlanes();
+		if( Random( 1, 100 ) <= 10 ) mob.Say( SAY_EMOTE_ON_HEAD, "Мычит" );
+		
+		if( mob.StatBase[ ST_BASE_CRTYPE ] == CRTYPE_BRAHMIN_SMALL && mob.Stat[ ST_MAX_LIFE ] >= 100 )
+		{
+			mob.Say( SAY_EMOTE_ON_HEAD, "Вырастает" ); 
+			mob.ParamBase[ ST_BASE_CRTYPE ] = CRTYPE_BRAHMIN;
+			mob.ChangeCrType( CRTYPE_BRAHMIN );
+		}
+		
+		if( mob.StatBase[ ST_BASE_CRTYPE ] == CRTYPE_BRAHMIN && mob.Stat[ ST_MAX_LIFE ] < 100 )
+		{
+			mob.Say( SAY_EMOTE_ON_HEAD, "Тощает" ); 
+			mob.ParamBase[ ST_BASE_CRTYPE ] = CRTYPE_BRAHMIN_SMALL;
+			mob.ChangeCrType( CRTYPE_BRAHMIN_SMALL );
+		}
+		
+		if( mob.Stat[ ST_MAX_LIFE ] >= HP_TO_FORNICATE )
+		{
+			mob.Say( SAY_EMOTE_ON_HEAD, "Возбуждённо мычит" ); 
+			horny.insertLast( mob );
+		} 
+		else 
+		{
+			digestion( mob, food_tub );
+		}
+		
+		if( Random( 1, 100 ) <= 15 ) 
+		{
+			wander_around( mob, food_tub, map );
+		}
+		else
+		{
+			if( Random( 1, 100 ) <= 50 )
+			{
+				mob.Wait( 200 );
+				mob.Action( ACTION_FIDGET, 0, null );
+				mob.ParamBase[ ST_CURRENT_AP ] -= 20 * 100;
+			}
+		}
+	}
+	
+	brahmin_sex( horny, map );
+
+	return REAL_SECOND(60);
+}
+
+void wander_around( Critter& mob, Item& food_tub, Map& map )
+{
+	AddWalkPlane( mob, AI_PLANE_WALK_PRIORITY, food_tub.HexX, food_tub.HexY, Random( 0, 5 ), false, 1 );
+	
+	uint mapId = 0;
+	uint16 homeX = 0;
+	uint16 homeY = 0;
+	uint8 dir = 0;
+	mob.GetHomePos( mapId, homeX, homeY, dir );
+
+	homeX = food_tub.HexX + Random( -FOOD_TUB_DIST, FOOD_TUB_DIST );
+	homeY = food_tub.HexY + Random( -FOOD_TUB_DIST, FOOD_TUB_DIST );
+	uint distance = map.GetPathLength( mob, homeX, homeY, 1 );
+	if( distance > 0 && distance < FOOD_TUB_DIST )
+	{
+		mob.SetHomePos( homeX, homeY, dir );
+		mob.ModeBase[ MODE_NO_HOME ] = 0;
+		//map.SetText( homeX, homeY, COLOR_SAND, ": " + mob.Id + " :" );
+	}
+	else
+	{
+		mob.GetHomePos( mapId, homeX, homeY, dir );
+	}
+
+	AddWalkPlane( mob, AI_PLANE_WALK_PRIORITY - 1, homeX, homeY, Random( 0, 5 ), false, 1 );
+}
+
+void digestion( Critter& mob, Item& food_tub )
+{
+	Item@ digested;
+	Item@[] belly;
+	
+	uint belly_size = mob.GetItems( -1, belly );
+	
+	for( uint k = 0; k < belly_size; k++ )
+	{
+		if( breeding_food_pids.find( belly[k].GetProtoId() ) != -1 )
+		{
+			@digested = @belly[k];
+			if( digested.Val0 == 0 )
+			{
+				digested.Val0 = food_tub.Id;
+			}
+			if( digested.Val0 != int( food_tub.Id ) )
+			{
+				continue;
+			}
+			
+			digested.Val1++;
+			SETFLAG( digested.Flags, ITEM_NO_STEAL );
+			//SETFLAG( digested.Flags, ITEM_NO_LOOT );			
+			//mob.Say( SAY_EMOTE_ON_HEAD, "Переваривает [" + digested.Val1 + "/" + DIGESTION_CYCLES + "]" ); 
+			
+			if( digested.Val1 >= DIGESTION_CYCLES )
+			{
+				digested.Val1 = 0;
+				mob.Say( SAY_EMOTE_ON_HEAD, "Растёт" );
+				_SubItem( digested, 1 );
+				
+				mob.StatBase[ ST_MAX_LIFE ] = CLAMP( mob.StatBase[ ST_MAX_LIFE ] + HP_PER_FOOD, -30 - 2 * REPOPULATION_CYCLES * HP_PER_FOOD, -30 );
+				mob.StatBase[ ST_CURRENT_HP ] += HP_PER_FOOD;
+			}
+			
+			break;
+		}
+	}
+
+	if( !valid( digested ) )
+	{
+		feeding( mob, food_tub );
+	}
+}
+
+void feeding( Critter& mob, Item& food_tub )
+{
+	if( food_tub.CURRENT_CAPACITY > 0 )
+	{
+		Item@[] items, food;
+		uint count = food_tub.GetItems( uint(-1), items );
+		for( uint j = 0; j < count; j++ )
+		{
+			if( breeding_food_pids.find( items[j].GetProtoId() ) != -1 )
+			{
+				food.insertLast( items[j] );
+				break;
+			}
+		}
+	
+		uint food_count = food.length();
+		if( food_count > 0 )
+		{
+			mob.Say( SAY_EMOTE_ON_HEAD, "Кормится" );
+			MoveItem( food[0], 1, mob );
+			food_tub.CURRENT_CAPACITY--;
+		}				
+		else
+		{
+			if( Random( 1, 100 ) <= 10 ) mob.Say( SAY_EMOTE_ON_HEAD, "Страдает от голода" );
+		}
+	} 
+	else
+	{
+		if( Random( 1, 100 ) <= 10 ) mob.Say( SAY_EMOTE_ON_HEAD, "Страдает от жажды" );
+	}	
+}
+
+void brahmin_sex( Critter@[] horny, Map& map )
+{
+	for( uint i = 0, l = horny.length(); i < l; i++ )
+	{
+		Critter@ mob = horny[i];
+		for( uint j = 0; j < l; j++ )
+		{
+			if( i == j ) continue;
+			
+			Critter@ pair = horny[j];
+			
+			if( mob.Stat[ ST_MAX_LIFE ] < HP_TO_FORNICATE || pair.Stat[ ST_MAX_LIFE ] < HP_TO_FORNICATE ) continue;
+			
+			if( mob.Stat[ST_GENDER] == GENDER_FEMALE && mob.Stat[ST_GENDER] != pair.Stat[ST_GENDER] )
+			{
+				calf_birth( mob, map );
+				fornication_hp_loss( mob );
+				fornication_hp_loss( pair );
+			}
+		}
+	}		
+}
+
+void calf_birth( Critter& mother, Map& map )
+{
+	uint16 x = mother.HexX; 
+	uint16 y = mother.HexY;
+	map.MoveHexByDir( x, y, ( mother.Dir + 3 ) % 6, 1 );
+	
+	int[] params = { ST_TEAM_ID, mother.Stat[ST_TEAM_ID], ST_FACTION, mother.ParamBase[ ST_FACTION ], ST_GENDER, Random( 0, 1 ) };
+	Critter@ calf = map.AddNpc( NPC_PID_DOMESTICATED_BRAHMIN, x, y, Random( 0, 5 ), params, null, null );
+	
+	calf.ChangeCrType( CRTYPE_BRAHMIN_SMALL );
+	
+	calf.StatBase[ ST_MAX_LIFE ] -= HP_PER_FOOD * REPOPULATION_CYCLES;
+	calf.StatBase[ ST_CURRENT_HP ] -= HP_PER_FOOD * REPOPULATION_CYCLES;
+}
+
+void fornication_hp_loss( Critter& mob )
+{
+	int delta = 0;
+	switch( mob.Stat[ST_GENDER] )
+	{
+		case(0): delta = HP_PER_FOOD; break;
+		case(1): delta = HP_PER_FOOD * REPOPULATION_CYCLES; break;
+	}
+
+	mob.StatBase[ ST_MAX_LIFE ] -= delta;
+	mob.StatBase[ ST_CURRENT_HP ] -= delta;
+}
+
+#endif // ANIMAL_BREEDING

@@ -1,0 +1,18 @@
+#ifndef ANIMAL_BREEDING_H
+#define ANIMAL_BREEDING_H
+
+	#define FOOD_TUB_DIST		( 50 )	
+
+	#define DIGESTION_CYCLES	( 288 ) //  Сколько минут переваривается каждый кусочек еды.
+	#define REPOPULATION_CYCLES	( 10 )	//	Как много еды нужно переварить каждому брамину для вырастания.
+	#define HP_PER_FOOD			( 6 )
+
+	#define HP_TO_FORNICATE		( 160 )
+
+	#ifndef ANIMAL_BREEDING
+		import void fillWater( Critter& cr, Item& food_tub ) from "animal_breeding";
+		import void pourWater( Critter& cr, Item& food_tub ) from "animal_breeding";
+		import bool isDomesticated( Critter& mob ) from "animal_breeding";
+	#endif // ANIMAL_BREEDING
+
+#endif //ANIMAL_BREEDING_H

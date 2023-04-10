@@ -3,6 +3,7 @@
 
 #include "_utils.fos"
 #include "furniture_h.fos"
+#include "gathering_h.fos"
 #include "lockers_h.fos"
 #include "plants_h.fos"
 #include "item_h.fos"
@@ -11,8 +12,12 @@
 #include "homebrew_h.fos"
 #include "flask_h.fos"
 #include "waterworks_h.fos"
+#include "_npc_pids.fos"
+#include "npc_planes_h.fos"
 
 import bool critter_use_item( Critter& cr, Item& item, Critter@ targetCr, Item@ targetItem, Scenery@ targetScen, uint param ) from "main";
+import void fillWater( Critter& cr, Item& food_tub ) from "animal_breeding";
+import void pourWater( Critter& cr, Item& food_tub ) from "animal_breeding";
 
 FurnitureList@ furnitures;
 void InitFurnitures()
@@ -198,11 +203,37 @@ class MenuFuriture: CenteredMenuHandler
 			if( menu.Button( "Залить воду" ) )//WIP
 			{
 				fillWater( cr, furniture );
+				return false;
 			}
 
 			if( menu.Button( "Слить воду" ) )//WIP
 			{
 				pourWater( cr, furniture );
+				return false;
+			}
+			
+			if( furniture.EVENT == 0 )
+			{
+				if( menu.Button( "Начать кормежку" ) )
+				{
+					cr.TimeoutBase[ TO_TIREDNESS ] = __FullSecond + cr.Timeout[ TO_TIREDNESS ] + REAL_SECOND( 60 );
+					if( !IsTired( cr ) )
+					{
+						uint[] values = { furniture.Id };
+						furniture.EVENT = CreateTimeEvent( __FullSecond + REAL_SECOND( 1 ), "animal_breeding@e_loop", values, true );
+					}
+					
+					return false;
+				}
+			}
+			else
+			{
+				if( menu.Button( "Остановить кормежку" ) )
+				{
+					EraseTimeEvent( furniture.EVENT );
+					furniture.EVENT = 0;
+					return false;
+				}
 			}
 		}
 		
@@ -454,7 +485,7 @@ bool canPickup( Critter& cr, Item& furniture )
 	bool DoorOrContainer = ( isContainer( furniture ) || furniture.GetType() == ITEM_TYPE_DOOR );
 	bool isPickingUp = true;
 
-	if( !( isGM(cr) && isTester(cr) ) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) || furniture.Durability > 0 ) )
+	if( !( isGM(cr) && isTester(cr) ) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) ) )
 	{
 		if( DoorOrContainer )
 		{
@@ -471,10 +502,6 @@ bool canPickup( Critter& cr, Item& furniture )
 
 bool canSwitchLootability( Critter& cr, Item& furniture )
 {
-	if( !( isGM(cr) && isTester(cr) ) && furniture.Durability > 0 )
-	{
-		return false;
-	}
 	return true;
 }
 
@@ -758,7 +785,7 @@ class FurnitureList
 			return true;
 		}
 		
-		if( !( isGM(cr) && isTester(cr) ) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) || furniture.Durability > 0 ) )
+		if( !( isGM(cr) && isTester(cr) ) && ( !FLAG( furniture.Flags, ITEM_CAN_PICKUP ) ) )
 		{
 			LogCrimeMovement( cr, furniture, "cant move fixed furniture" ); 
 			cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DISMANTLING_REQUIRED );
@@ -1335,54 +1362,6 @@ void _DeleteBlockers( Item& item, bool deleted )
 			DeleteItems( delete );
 		}
 	}
-}
-
-void fillWater( Critter& cr, Item& item )
-{
-	uint[] proper_water_sources = { PID_GLASS_BOTTLE_FULL_PRT, PID_DISTIL_WATER_PRT, PID_GLASS_BOTTLE_DIRTY_FULL_PRT };
-
-	Item@ hand = cr.GetItem( 0, SLOT_HAND1 );
-	
-	if( !valid( hand ) )
-	{
-		cr.Say( SAY_NETMSG, "Возьмите открытую емкость с водой в руку." );
-		return;
-	}
-	
-	bool notWaterBottle = proper_water_sources.find( hand.Proto.ProtoId ) == -1;
-
-	if( hand.Proto.Type != ITEM_TYPE_FLASK && notWaterBottle )
-	{
-		cr.Say( SAY_NETMSG, "Возьмите открытую емкость с водой в руку." );
-		return;
-	}		
-	
-	if( proper_water_sources.find( hand.DRINK_DNA ) == -1 && notWaterBottle )
-	{
-		cr.Say( SAY_NETMSG, "Животные пьют только чистую, дистиллированную или грязную воду." );
-		return;
-	}
-
-	int free_space = item.CAPACITY - item.CURRENT_CAPACITY;
-	
-	if( free_space <= 0 )
-	{
-		cr.Say( SAY_NETMSG, "В поилке достаточно воды." );
-		return;
-	}
-	
-	int volume = MIN( free_space, hand.REMAINING_USES );	
-	item.CURRENT_CAPACITY += volume;
-	hand.REMAINING_USES = hand.REMAINING_USES - volume + 1;
-	SpillOut( hand );
-	
-	cr.Say( SAY_EMOTE_ON_HEAD, "наливает воду в поилку" );
-}
-
-void pourWater( Critter& cr, Item& item )
-{
-	cr.Say( SAY_EMOTE_ON_HEAD, "сливает воду из поилки" );
-	start_gathering_watersource( cr, item );
 }
 
 #endif //FURNITURE

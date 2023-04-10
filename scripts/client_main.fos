@@ -3401,7 +3401,7 @@ string critter_description_maker( int lookType, int target_id, int age, int gend
 string critter_description_health( CritterCl& cr )
 {
 	int gender = cr.Stat[ ST_GENDER ];
-	if( cr.Stat[ ST_BODY_TYPE ] > BT_GHOUL )
+	if( cr.Stat[ ST_BODY_TYPE ] > BT_BRAHMIN )
 	{
 		gender = GENDER_IT;
 	}
