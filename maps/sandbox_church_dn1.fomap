@@ -4,9 +4,9 @@ MaxHexX              400
 MaxHexY              400
 WorkHexX             248
 WorkHexY             282
-ScriptModule         map_slavery_vault
-ScriptFunc           map_init
-NoLogOut             1
+ScriptModule         -
+ScriptFunc           -
+NoLogOut             0
 Time                 300
 DayTime              300  600  1140 1380
 DayColor0            18  18  53 
