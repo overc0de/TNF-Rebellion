@@ -92,7 +92,7 @@
 {250}{}{sandbox2_3}
 {255}{}{28Rangers-journey.ogg}
 {256}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{258}{}{КПП}
+{258}{}{Перфекшен}
 
 # Area 8, Map 25
 {260}{}{sandbox2_3dn}
