@@ -213,6 +213,7 @@ void digestion( Critter& mob, Item& food_tub )
 				digested.Val1 = 0;
 				mob.Say( SAY_EMOTE_ON_HEAD, "Растёт" );
 				_SubItem( digested, 1 );
+				poop(mob);
 				
 				mob.StatBase[ ST_MAX_LIFE ] = CLAMP( mob.StatBase[ ST_MAX_LIFE ] + HP_PER_FOOD, -30 - 2 * REPOPULATION_CYCLES * HP_PER_FOOD, -30 );
 				mob.StatBase[ ST_CURRENT_HP ] += HP_PER_FOOD;
@@ -226,6 +227,14 @@ void digestion( Critter& mob, Item& food_tub )
 	{
 		feeding( mob, food_tub );
 	}
+}
+
+void poop( Critter& mob )
+{
+	Map@ map = mob.GetMap();
+	uint16 hx = mob.HexX, hy = mob.HexY;
+	map.MoveHexByDir( hx, hy, ( mob.Dir + 3 ) % 6, 1 );
+	map.AddItem( hx, hy, PID_SHIT_BIG, 1 );	
 }
 
 void feeding( Critter& mob, Item& food_tub )
