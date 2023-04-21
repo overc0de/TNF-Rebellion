@@ -39,7 +39,7 @@
 	const int[] DrugEffects =
 	{
 	// PID_RADAWAY
-		ADDICTION_RADAWAY,     		10,     60,     60,   	14160, 10080,
+		ADDICTION_RADAWAY,     		10,     60,     60,   	14160,  4680,
 		ST_RADIATION_LEVEL,       -100,   -200,   -200,       	0,     0,
 		ST_RADIATION_RESISTANCE,     0,      0,      0,    	  -20,    20,
 		-1,         				 0,      0,      0,       	0,     0,
@@ -51,19 +51,19 @@
 		CR_ANTIDOTED,        		 1,      0,     -1,     	0,     0,
 		-1,        			 		 0,      0,      0,     	0,     0,
 	// PID_MENTATS
-		ADDICTION_MENTATS,     		60,    120,    380,      4320, 10080,
+		ADDICTION_MENTATS,     		60,    120,    380,      4320,  4680,
 		ST_INTELLECT,            	 2,     -4,      2,        -1,     1,
 		ST_PERCEPTION,           	 2,     -4,      2,         0,     0,
 		-1,        			 		 0,      0,      0,     	0,     0,
 		-1,        			 		 0,      0,      0,     	0,     0,
 	// PID_MENTATS_FRUIT
-		-1,     					60,    120,    250,      4320, 10080,
+		-1,     					60,    120,    250,      4320,  4680,
 		ST_INTELLECT,            	 2,     -4,      2,         0,     0,
 		-1,        			 		 0,      0,      0,     	0,     0,
 		-1,        			 		 0,      0,      0,     	0,     0,
 		-1,        			 		 0,      0,      0,     	0,     0,
 	// PID_BUFFOUT
-		ADDICTION_BUFFOUT,     		60,    120,    380,      4320, 10080,
+		ADDICTION_BUFFOUT,     		60,    120,    380,      4320,  4680,
 		ST_STRENGTH,            	 2,     -4,      2,        -2,     2,
 		ST_ENDURANCE,           	 3,     -4,      1,        -2,     2,
 		-1,        			    	 0,      0,      0,         0,     0,
@@ -75,7 +75,7 @@
 		-1,        					 0,      0,      0,        	0,     0,
 		-1,        					 0,      0,      0,        	0,     0,
 	// PID_PSYCHO
-		ADDICTION_PSYCHO,    		30,     60,    240,      9600, 10080,
+		ADDICTION_PSYCHO,    		30,     60,    240,      9600,  4680,
 		ST_NORMAL_RESIST,       	10,     -20,    10,         0,     0,
 		ST_EXPLODE_RESIST,       	10,     -20,    10,         0,     0,
 		ST_FIRE_RESIST,    		 	10,     -20,    10,         0,     0,
