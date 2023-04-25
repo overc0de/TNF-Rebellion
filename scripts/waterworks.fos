@@ -483,7 +483,7 @@ class MenuWaterPump: CenteredMenuHandler
 		{
 			if( waterPump.STATE > STATE_OFF )
 			{
-				if( menu.ButtonMsg( STR_WATERWORKS_MENU_SWITCH, "$switchWaterworks" + STR_INSERT_TEXT_LINE( STR_OFF ) ) )
+				if( isGM( cr ) && menu.ButtonMsg( STR_WATERWORKS_MENU_SWITCH, "$switchWaterworks" + STR_INSERT_TEXT_LINE( STR_OFF ) ) )
 				{
 					PlayGenericSound( map, cr.HexX, cr.HexY, "BUTIN1.mp3", 5 );
 					waterPump.STATE = STATE_OFF;
