@@ -264,8 +264,7 @@ void StartSepsis( Critter& cr, int chance )
 		{	
 			cr.ParamBase[ CR_BLOOD_TOXIC ] += 1;
 			testInfo( cr, roll + " sepsis started " );
-		}
-		
+		}		
 		else if ( cr.ParamBase[ CR_BLOOD_TOXIC ] > 0 )
 		{
 			testInfo( cr, " already infected " );

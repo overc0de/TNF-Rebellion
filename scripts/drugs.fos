@@ -290,6 +290,8 @@ uint ProcessDrug( Critter& cr, uint16 drugPid, uint& rate )
 			string stat_before = "|0xFFFF00";
 			string stat_after = "|0xFFFF00";
 			
+			int value_before = 0;
+			
 			int stat = DrugEffects[ index + TABLE_STAT( i ) ];
             int amount = DrugEffects[ index + TABLE_AMOUNT( i, stage ) ];
             if( i == 1 && DrugEffects[ index + TABLE_STAT( 0 ) ] == -2 )
@@ -340,6 +342,14 @@ uint ProcessDrug( Critter& cr, uint16 drugPid, uint& rate )
 					
 					stat_after = cr.StatBase[ ST_RADIATION_LEVEL ];
 				}
+				else if( stat == ST_DRUNK )
+				{
+					stat_before = cr.StatBase[ ST_DRUNK ];
+					
+               		cr.StatBase[ ST_DRUNK ] += amount;
+					
+					stat_after = cr.StatBase[ ST_DRUNK ];
+				}
 				else
 				{
 					Log( "Attempt to change stat #" + stat + " with drug PID #" + drugPid + " for cr.Id " + cr.Id + " with rate " + rate + "." );
@@ -359,11 +369,22 @@ uint ProcessDrug( Critter& cr, uint16 drugPid, uint& rate )
 			else
 			{ //Instant Parameter change hotfix
 				stat_before = cr.Param[ stat ] + "/" + cr.ParamBase[ stat ];
+				
+				value_before = cr.ParamBase[ stat ];
 			
-            	cr.ParamBase [stat] += DrugEffects [index + TABLE_AMOUNT (i, 0)];
+            	cr.ParamBase[stat] += DrugEffects [index + TABLE_AMOUNT (i, 0)];
 				
 				stat_after = cr.Param[ stat ] + "/" + cr.ParamBase[ stat ];			
             }
+
+			if( stat == CR_BLOOD_TOXIC )
+			{
+				if( cr.ParamBase[CR_BLOOD_TOXIC] <= 0 && value_before > 0 )
+				{
+					cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_BLOODTOX_HEALD );
+					cr.ParamBase[CR_BLOOD_TOXIC] = 0;
+				}
+			}
 
 			string@ paramName_str = GetGameMsgStr( STR_PARAM_NAME( stat ) );
 			string paramName = valid( paramName_str ) ? paramName_str : ( "param #" + stat );
