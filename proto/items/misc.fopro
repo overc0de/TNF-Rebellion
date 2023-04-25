@@ -14661,7 +14661,7 @@ Stackable=1
 Weight=1
 Volume=0
 SoundId=48
-Cost=100
+Cost=1
 Material=16
 
 # PID_PREWAR_DOLLAR_1

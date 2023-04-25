@@ -225,7 +225,7 @@ shared uint CalculateItemCost( ItemMutual& item, CritterMutual& cr, CritterMutua
     uint16 pid = item.GetProtoId();
     uint cost = item.Proto.Cost;
 
-    if( pid == PID_BOTTLE_CAPS || pid == PID_REAL_BOTTLE_CAPS || pid == PID_PREWAR_DOLLAR_1 )
+    if( pid == PID_BOTTLE_CAPS || pid == PID_REAL_BOTTLE_CAPS || pid == PID_PREWAR_DOLLAR_1 || pid == PID_PREWAR_DOLLAR_100 )
 	{
         return 1;
 	}
@@ -235,7 +235,7 @@ shared uint CalculateItemCost( ItemMutual& item, CritterMutual& cr, CritterMutua
 		return 10;
 	}
 	
-	if( pid == PID_DOLLAR_100 || pid == PID_PREWAR_DOLLAR_100 )
+	if( pid == PID_DOLLAR_100 )
 	{
 		return 100;
 	}
