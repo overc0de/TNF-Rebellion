@@ -1,0 +1,861 @@
+#-----------------------------------------------------
+
+#NPC_PID_PROCURATOR
+[Critter proto]
+Pid=2417
+
+ST_AGE =					35
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				8
+ST_PERCEPTION =				10
+ST_ENDURANCE =				10
+ST_CHARISMA =				8
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			198
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_Yao_Gai_Jack
+[Critter proto]
+Pid=2418
+
+ST_AGE =					31
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				7
+ST_PERCEPTION =				10
+ST_ENDURANCE =				7
+ST_CHARISMA =				3
+ST_INTELLECT =				5
+ST_AGILITY =				7
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			184
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_Mesie_De_Kato
+[Critter proto]
+Pid=2419
+
+ST_AGE =					27
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				8
+ST_PERCEPTION =				8
+ST_ENDURANCE =				7
+ST_CHARISMA =				7
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			184
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_Johnny_Madrid
+[Critter proto]
+Pid=2420
+
+ST_AGE =					27
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =				9
+ST_PERCEPTION =				8
+ST_ENDURANCE =				7
+ST_CHARISMA =				3
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			183
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_Michael_Del_Kuevosa
+[Critter proto]
+Pid=2421
+
+ST_AGE =					27
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    7
+ST_PERCEPTION =				10
+ST_ENDURANCE =				7
+ST_CHARISMA =				9
+ST_INTELLECT =				10
+ST_AGILITY =				10
+ST_LUCK =					7
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			441
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_Ugly_Murphy
+[Critter proto]
+Pid=2422
+
+ST_AGE =					22
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    10
+ST_PERCEPTION =				10
+ST_ENDURANCE =				10
+ST_CHARISMA =				1
+ST_INTELLECT =				10
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			462
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_REGULAR_BANDIT_OF_JACK_BAND
+[Critter proto]
+Pid=2423
+
+ST_AGE =					22
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    7
+ST_PERCEPTION =			    7
+ST_ENDURANCE =			    7
+ST_CHARISMA =				4
+ST_INTELLECT =				7
+ST_AGILITY =				7
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			209
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_JAMES_DUREN
+[Critter proto]
+Pid=2424
+
+ST_AGE =					26
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    7
+ST_PERCEPTION =			    7
+ST_ENDURANCE =			    7
+ST_CHARISMA =				8
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			441
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_CARL_PANZRAM
+[Critter proto]
+Pid=2425
+
+ST_AGE =					26
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    8
+ST_PERCEPTION =			    7
+ST_ENDURANCE =			    8
+ST_CHARISMA =				4
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			441
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_YAN_GURZA_LOGGERHEAD
+[Critter proto]
+Pid=2426
+
+ST_AGE =					26
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    10
+ST_PERCEPTION =			    10
+ST_ENDURANCE =			    10
+ST_CHARISMA =				2
+ST_INTELLECT =				5
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			182
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_REGULAR_BOUNTY_HUNTER
+[Critter proto]
+Pid=2427
+
+ST_AGE =					26
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    7
+ST_PERCEPTION =			    7
+ST_ENDURANCE =			    7
+ST_CHARISMA =				4
+ST_INTELLECT =				5
+ST_AGILITY =				7
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			441
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_ELISE_BITCH_MONFER-RAT
+[Critter proto]
+Pid=2428
+
+ST_AGE =					26
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    7
+ST_PERCEPTION =			    5
+ST_ENDURANCE =			    5
+ST_CHARISMA =				7
+ST_INTELLECT =				3
+ST_AGILITY =				10
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			456
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					1
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_TURJAN
+[Critter proto]
+Pid=2429
+
+ST_AGE =					32
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    8
+ST_PERCEPTION =			    8
+ST_ENDURANCE =			    8
+ST_CHARISMA =				4
+ST_INTELLECT =				4
+ST_AGILITY =				10
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			9
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_LAOBIN_THE_MAGNIFICENT
+[Critter proto]
+Pid=2430
+
+ST_AGE =					32
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    5
+ST_PERCEPTION =			    5
+ST_ENDURANCE =			    5
+ST_CHARISMA =				10
+ST_INTELLECT =				5
+ST_AGILITY =				5
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			373
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#-----------------------------------------------------
+
+#NPC_PID_IRINA_BESSEMER
+[Critter proto]
+Pid=2431
+
+ST_AGE =					32
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    5
+ST_PERCEPTION =			    5
+ST_ENDURANCE =			    5
+ST_CHARISMA =				10
+ST_INTELLECT =				10
+ST_AGILITY =				5
+ST_LUCK =					10
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			331
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					1
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
+
+#NPC_PID_SIMON_FOX
+[Critter proto]
+Pid=2432
+
+ST_AGE =					32
+ST_LEVEL =					12
+ST_KILL_EXPERIENCE =		0
+	
+ST_STRENGTH =			    8
+ST_PERCEPTION =			    8
+ST_ENDURANCE =			    8
+ST_CHARISMA =				4
+ST_INTELLECT =				4
+ST_AGILITY =				10
+ST_LUCK =					5
+	
+SK_SMALL_GUNS=              300
+SK_BIG_GUNS=                300
+SK_ENERGY_WEAPONS=          300
+SK_UNARMED=                 300
+SK_MELEE_WEAPONS=           300
+SK_THROWING=                300
+	
+ST_AI_ID =					202
+ST_BASE_CRTYPE =			118
+ST_BODY_TYPE =				0
+ST_LOCOMOTION_TYPE =		0
+ST_BAG_ID =					0
+	
+ST_GENDER =					0
+
+ST_DIALOG_ID =				0
+	
+ST_DAMAGE_TYPE =			1
+
+ST_EMP_RESIST =				500
+	
+ST_TOXIC =					0
+ST_RADIOACTIVE =			0
+	
+MODE_HIDE =					0
+MODE_NO_STEAL =				0
+MODE_NO_BARTER =			1
+MODE_UNLIMITED_AMMO =		1
+MODE_NO_DROP =				0
+MODE_NO_LOOSE_LIMBS =		0
+MODE_SPECIAL_DEAD =			0
+MODE_RANGE_HTH =			0
+MODE_NO_DROP =   			0
+MODE_NO_LOOT =				0
+MODE_NO_TALK =				1
