@@ -109,7 +109,7 @@ void checkActiveState( Critter& cr, int target_id, int, int )
 	}
 	
 	bool status = isActive( cr );
-	cr.Say( SAY_NETMSG, "Персонаж #" + target_id + boolValue( status, " находится ", "внутри", "вне" ) + " игровой области." );
+	cr.Say( SAY_NETMSG, crInfo( cr ) + boolValue( status, " находится ", "внутри", "вне" ) + " игровой области." );
 }
 
 //~run test showLetters number 0 0
