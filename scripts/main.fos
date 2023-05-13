@@ -3246,6 +3246,9 @@ uint item_cost( Item& item, Critter& cr, Critter& npc, bool sell )
 // Return false to cancel transaction.
 bool items_barter( Item@[]& saleItems, uint[]& saleItemsCount, Item@[]& buyItems, uint[]& buyItemsCount, Critter& player, Critter& npc )
 {
+	uint trade_points = 0;
+	
+	
     if( npc.Mode[ MODE_BARTER_ONLY_CASH ] > 0 )
     {
 		uint[][] money_tiers = 
@@ -3263,6 +3266,9 @@ bool items_barter( Item@[]& saleItems, uint[]& saleItemsCount, Item@[]& buyItems
 			{
 				continue;
 			}
+			
+			trade_points += CalculateItemCost( item, player, npc, true ) * saleItemsCount[i];
+			
 			for( uint k = money_tiers.length() - 1; k > 0; k-- )
 			{
 				if( money_tiers[k].find( pid ) != -1 )
@@ -3295,6 +3301,7 @@ bool items_barter( Item@[]& saleItems, uint[]& saleItemsCount, Item@[]& buyItems
     ChangeCritterSpeed( player );
     ChangeCritterSpeed( npc );
 
+	AddScore( player, SCORE_TRADER, trade_points );
     return true;
 }
 
