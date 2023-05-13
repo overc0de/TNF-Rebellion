@@ -1949,6 +1949,7 @@ void TryResurect( Critter& cr, Critter& targetCr )
 			}
 		}
 		targetCr.ToLife();
+		AddScore( targetCr, SCORE_ZOMBY, 1 );
 		targetCr.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( true ), 1000, targetCr.HexX, targetCr.HexY );
 		targetCr.StatBase[ ST_CURRENT_HP ] = __DeadHitPoints + 1;
 		if( map.GetProtoId() != MAP_TLJ_ARENA1 && map.GetProtoId() != MAP_TLJ_ARENA2 )

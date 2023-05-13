@@ -817,6 +817,7 @@ bool _RespawnCritter( Critter& cr )
 	}
 
 	cr.ToLife();
+	AddScore( cr, SCORE_ZOMBY, 1 );
 	cr.StatBase[ ST_CURRENT_HP ] = cr.Stat[ ST_MAX_LIFE ];
 
 	return true;

@@ -121,6 +121,7 @@ uint process_defib( Critter@ cr, int& param0, int& param1, int& param2 )
 		}
 				
 		targetCr.ToLife();
+		AddScore( targetCr, SCORE_ZOMBY, 1 );
 		targetCr.ToKnockout( KNOCKOUT_ANIM2_DEFAULT( true ), 1000, targetCr.HexX, targetCr.HexY );
 
 		targetCr.StatBase[ ST_MAX_LIFE ] -= 10;

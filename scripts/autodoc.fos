@@ -494,6 +494,7 @@ uint e_AutodocProcedure( uint[]@ values )
 			break;
 		case( AUTODOC_PROCEDURE_REANIMATE ):
 			patient.ToLife();
+			AddScore( patient, SCORE_ZOMBY, 1 );
 			break;
 		case( AUTODOC_PROCEDURE_MODD_STR_UP ):
 		{
