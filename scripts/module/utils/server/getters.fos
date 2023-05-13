@@ -1,3 +1,19 @@
+bool isActive( Critter& cr )
+{
+	Map@ critter_map = cr.GetMap();
+	if( !valid( critter_map ) ) return false;
+	
+	Location@ critter_location = critter_map.GetLocation();
+	if( !valid( critter_location ) ) return false;
+	
+	uint critter_location_pid = critter_location.GetProtoId();
+	if( ARRAY_CONTAINS_ELEMENT( tech_location_pids, critter_location_pid ) ) return false;
+	
+	if( isGM( cr ) && !isTester( cr ) ) return false;
+	
+	return true;
+}
+
 shared bool isDoorOrContainer( Item@ item )
 {
 	if( !valid( item ) )
