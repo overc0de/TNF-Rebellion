@@ -188,4 +188,6 @@
 
 #define bState						 # ( value )			( value ? "+" : "-" )
 
+#define ARRAY_CONTAINS_ELEMENT	# ( array, element )   ( array.find( element ) != -1 ) 
+
 #endif // __MACROS__
