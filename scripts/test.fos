@@ -112,6 +112,13 @@ void checkActiveState( Critter& cr, int target_id, int, int )
 	cr.Say( SAY_NETMSG, crInfo( cr ) + boolValue( status, " находится ", "внутри", "вне" ) + " игровой области." );
 }
 
+//~run test getMSGSTR file_type line localization
+void getMSGSTR( Critter& cr, int file_type, int line, int localization )
+{
+	string@ text = GetMsgStr( localization, file_type, line );
+	cr.Say( SAY_NORM, checkNull( text ) );
+}
+
 //~run test showLetters number 0 0
 //~run test showLetters start end 0
 void showLetters( Critter& cr, int start, int end, int )
