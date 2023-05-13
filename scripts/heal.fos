@@ -368,6 +368,7 @@ class MenuDOC_Bullet: CenteredMenuHandler
 						cr.StatBase[ ST_EXPERIENCE ] += 200;
 						ChangeStatus( target, CR_STATUS_BULLET_OVER, 0, false );
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DOCTOR_BULLET_SUCCESS );
+						if( target.Id != cr.Id ) AddScore( cr, SCORE_DOCTOR, 1 );
 					}
 					else
 					{
@@ -850,6 +851,7 @@ class MenuDOC_Heavy: CenteredMenuHandler
 						cr.StatBase[ ST_EXPERIENCE ] += 100;
 						ChangeStatus( target, CR_STATUS_HEAVY_DMG, 0, false );
 						cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_DOCTOR_STICHED_WOUND );
+						if( target.Id != cr.Id ) AddScore( cr, SCORE_DOCTOR, 1 );
 					}
 					else 
 					{
@@ -1295,6 +1297,7 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							
 							_SubItem( bandage, 1 );
 							cr.StatBase[ ST_EXPERIENCE ] += 150;
+							if( target.Id != cr.Id ) AddScore( cr, SCORE_DOCTOR, 1 );
 
 							int docTime = MAX_LIMB_HEALING_TIME - doctorSkill(cr) * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
@@ -1380,6 +1383,7 @@ class MenuDOC_Cripple: CenteredMenuHandler
 							
 							_SubItem( splint, 1 );
 							cr.StatBase[ ST_EXPERIENCE ] += 300;
+							if( target.Id != cr.Id ) AddScore( cr, SCORE_DOCTOR, 1 );
 
 							int docTime = MAX_LIMB_HEALING_TIME - doctorSkill(cr) * 2 - target.Stat[ ST_ENDURANCE ] * HEALING_ENDURANCE_DEPENDENCY;
 							target.AddTimeEvent( "cte_Doc", REAL_MINUTE( CLAMP( docTime, 5, MAX_LIMB_HEALING_TIME ) ), CTE_DOC, limb );
@@ -1661,6 +1665,8 @@ void BandageResult( Critter& cr, Critter& targetCr, Item& bandage )
 		return;
 	}
 	
+	if( bandageItem.pid != PID_CRAFT_L_RAGS && targetCr.Id != cr.Id ) AddScore( cr, SCORE_DOCTOR, 1 );
+	
 	int heal_amount = bandageItem.value_heal + ( cr.Skill[ SK_FIRST_AID ] / bandageItem.sk_mod );
 	int max_heal = targetCr.Stat[ ST_CURRENT_HP ] >= 0 ? targetCr.Stat[ ST_MAX_LIFE ] - targetCr.Stat[ ST_CURRENT_HP ] : targetCr.Stat[ ST_MAX_LIFE ];
 	//Log( "cr.Skill[ SK_FIRST_AID ]: " + cr.Skill[ SK_FIRST_AID ] + " bandageItem.sk_mod: " + bandageItem.sk_mod + " heal_amount: " + heal_amount + " max_heal: " + max_heal );
@@ -1787,6 +1793,7 @@ void UseHealingItem( Critter& cr, Critter& targetCr, Item& item )
 		if( usedItem.pid != PID_HEALING_POWDER )
 		{
 			cr.AddItem( PID_HYPODERMIC_NEEDLE, 1 );
+			if( targetCr.Id != cr.Id ) AddScore( cr, SCORE_DOCTOR, 1 );
 		}
 		uint lineNumber = cr.Id == targetCr.Id ? usedItem.msg : usedItem.msg + 1;
 		
