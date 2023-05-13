@@ -2400,6 +2400,34 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
         }
     }
 
+	if( validAttacker )
+	{
+		if( isCritical ) AddScore( attacker, SCORE_SNIPER, 1 );
+		
+		uint weapon_subtype = attack.WeaponSubtype;
+		
+		if( weapon_subtype == WS_THROWING ) 
+		{
+			if( attack.DmgType == DAMAGE_NORMAL )
+				weapon_subtype = WS_MELEE;	// Холодное-метательное
+			else
+				weapon_subtype = WS_GUN;	// Взрывчатка-стрелковое
+		}
+		
+		switch( weapon_subtype )
+		{
+			case( WS_UNARMED ):
+								AddScore( attacker, SCORE_UNARMED, 1 ); 
+								AddScore( attacker, SCORE_UNARMED_DAMAGE, int( totalDmg ) ); 
+							break;
+			case( WS_MELEE ): 	AddScore( attacker, SCORE_MELEE, 1 ); 
+							break;			
+			case( 0 ):
+			case( WS_GUN ): 	AddScore( attacker, SCORE_SHOOTER, int( totalDmg ) );
+							break;
+		}
+	}
+	
     bool attackFront = true;
     uint dir = GetDirection( attack.Hx, attack.Hy, target.HexX, target.HexY );
     if( dir == target.Dir || ( ( dir + 1 ) % 6 ) == target.Dir || ( ( dir + 5 ) % 6 ) == target.Dir )
@@ -2589,6 +2617,7 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 		{
 			target.StatBase[ ST_KILLER_PERSON ] = attacker.Id;
 			CrimeLog( target, crInfo( target ) + " was killed by " + crInfo( attacker, true ) + "." );
+			AddScore( attacker, SCORE_KILLER, 1 );  
 			
 			if( target.IsPlayer() )
 			{
