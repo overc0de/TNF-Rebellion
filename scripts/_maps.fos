@@ -14,6 +14,9 @@
 #define LOCATION_Deadloc			( 95 )
 #define LOCATION_TLJ_ARENA			( 96 )
 #define LOCATION_Hell				( 300 )
+#define LOCATION_JAIL				( 421 )
+#define LOCATION_HOSPITAL			( 422 )
+#define LOCATION_UNDERLAB			( 423 )
 
 //Gameplay Locations
 #define LOCATION_Riverdale			( 52 )
@@ -423,5 +426,19 @@
 
 //Event Maps
 #define MAP_event2_slavers_in		( 102 )
+
+const uint[] tech_location_pids = {
+	LOCATION_Bridge,	
+	LOCATION_Cell,	
+	LOCATION_StartMap,
+	LOCATION_Dream,	
+	LOCATION_Arcade,	
+	LOCATION_Deadloc,
+	LOCATION_TLJ_ARENA,
+	LOCATION_Hell,
+	LOCATION_JAIL,		
+	LOCATION_HOSPITAL,	
+	LOCATION_UNDERLAB	
+};
 
 #endif // __MAPS__
