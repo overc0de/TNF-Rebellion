@@ -700,7 +700,7 @@ bool locked_in_place( Item& item )
 
 bool AddScore( Critter& cr, int type, int points ) 
 {
-	if( isActive( cr ) ) 
+	if( isActive( cr ) && cr.IsPlayer() ) 
 	{
 		cr.AddScore( type , points );
 		SayLog( cr, crInfo( cr ) + " получил (" + points + ") очов в таблице рекордов #" + type + "." );
