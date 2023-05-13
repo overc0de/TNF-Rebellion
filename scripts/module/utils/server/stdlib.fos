@@ -697,3 +697,16 @@ bool locked_in_place( Item& item )
 	
 	return false;
 }
+
+bool AddScore( Critter& cr, int type, int points ) 
+{
+	if( isActive( cr ) ) 
+	{
+		cr.AddScore( type , points );
+		SayLog( cr, crInfo( cr ) + " получил (" + points + ") очов в таблице рекордов #" + type + "." );
+
+		return true;
+	}
+	
+	return false;
+}
