@@ -2592,6 +2592,7 @@ void ApplyDamage( AttackStruct& attack, Critter& target, uint rounds, bool isCri
 			
 			if( target.IsPlayer() )
 			{
+				AddScore( attacker, SCORE_MANIAC, 1 );  
 				Log_Killings( attacker, target.Id, 0, 0, null, null );
 			}
 			
