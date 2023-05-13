@@ -48,12 +48,12 @@ void _InitMoney( Item& item, bool firstTime )
 	{
 		if( cr.Stat[ST_VAR6] != 0 )
 		{
-			info = "РџСЂРѕРїСѓС‰РµРЅ РїРµСЂСЃРѕРЅР°Р¶ ";
+			info = "Пропущен персонаж ";
 			change = false;
 		}
 		else
 		{
-			cr.Say( SAY_EMOTE, "Р·РІРѕРЅ РјРѕРЅРµС‚" );
+			cr.Say( SAY_EMOTE, "звон монет" );
 		}
 		
 		info += crInfo( cr ) + " ";
@@ -63,7 +63,7 @@ void _InitMoney( Item& item, bool firstTime )
 	Item@ container = getItem( item.ContainerId );
 	if( valid( container ) )
 	{
-		info = "Р”РѕР»Р»Р°СЂС‹ Р·Р°РјРµРЅРµРЅС‹ РЅР° РєСЂС‹С€РєРё (" + item.GetCount()	+ ") ";
+		info = "Доллары заменены на крышки (" + item.GetCount()	+ ") ";
 		item.ChangeProto( PID_REAL_BOTTLE_CAPS );
 		change = false;
 		
@@ -73,7 +73,7 @@ void _InitMoney( Item& item, bool firstTime )
 
 	if( change )
 	{
-		info = "Р”РѕР»Р»Р°СЂС‹ Р·Р°РјРµРЅРµРЅС‹ РЅР° РєСЂС‹С€РєРё (" + item.GetCount()	+ ") " + item.GetProtoId() + "#" + item.Id;
+		info = "Доллары заменены на крышки (" + item.GetCount()	+ ") " + item.GetProtoId() + "#" + item.Id;
 		item.ChangeProto( PID_REAL_BOTTLE_CAPS );
 	}
 	
@@ -86,7 +86,7 @@ void _InitMoney( Item& item, bool firstTime )
 	else
 	{
 		Log( SayLog( map, info, item.HexX, item.HexY ) ); 
-		map.SetText( item.HexX, item.HexY, COLOR_SAND, "|0xFF828a96 :Р·РІСЏРє:" );
+		map.SetText( item.HexX, item.HexY, COLOR_SAND, "|0xFF828a96 :звяк:" );
 	}
 }
 
@@ -97,6 +97,20 @@ import uint8 checkSand( Map& map, uint16 tx, uint16 ty ) from "qmap_sand";
 
 #define MAP_EDGE_ENTIRE				( 255 )
 #define MAP_SIZE               		( 150 ) 
+
+//~run test checkActiveState id 0 0
+void checkActiveState( Critter& cr, int target_id, int, int )
+{
+	if( target_id == 0 ) target_id = cr.Id;
+	Critter@ target = GetCritter( target_id );
+	if( !valid( target) ) {
+		cr.Say( SAY_NETMSG, "Персонаж #" + target_id + " не найден." );
+		return;
+	}
+	
+	bool status = isActive( cr );
+	cr.Say( SAY_NETMSG, "Персонаж #" + target_id + boolValue( status, " находится ", "внутри", "вне" ) + " игровой области." );
+}
 
 //~run test showLetters number 0 0
 //~run test showLetters start end 0
@@ -171,7 +185,7 @@ void getset( Critter& cr, int action, int wait, int ID )
 				uint[] values;
 				if( GetTimeEvent( id, duration, values ) )
 				{
-					InformError( cr, "Existing time event в„–" + id + " was deleted, next tick: " + DeltaTime_HMS(duration/__TimeMultiplier) + ", parameters: " + enlistUINT( values ) );
+					InformError( cr, "Existing time event №" + id + " was deleted, next tick: " + DeltaTime_HMS(duration/__TimeMultiplier) + ", parameters: " + enlistUINT( values ) );
 					EraseTimeEvent( id );
 				}
 
@@ -195,7 +209,7 @@ void getset( Critter& cr, int action, int wait, int ID )
 				uint[] values;
 				if( GetTimeEvent( id, duration, values ) )
 				{
-					InformWarning( cr, "Existing TE в„–" + id + ", next tick within: " + DeltaTime_HMS(duration/__TimeMultiplier) + ", parameters: " + enlistUINT( values ) );
+					InformWarning( cr, "Existing TE №" + id + ", next tick within: " + DeltaTime_HMS(duration/__TimeMultiplier) + ", parameters: " + enlistUINT( values ) );
 					if( wait == 0 && SetTimeEvent( id, duration, values ) )
 					{
 						InformError( cr, "It continues." );
@@ -207,7 +221,7 @@ void getset( Critter& cr, int action, int wait, int ID )
 				}
 				else
 				{
-					InformWarning( cr, "There is no в„–" + id + " TE." );
+					InformWarning( cr, "There is no №" + id + " TE." );
 				}
 			}
 			else
@@ -241,7 +255,7 @@ void getset( Critter& cr, int action, int wait, int ID )
 				}
 				else
 				{
-					InformWarning( cr, "There is no TE в„–" + id + "." );
+					InformWarning( cr, "There is no TE №" + id + "." );
 				}
 			}
 			else
@@ -259,13 +273,13 @@ void getset( Critter& cr, int action, int wait, int ID )
 				uint[] values;
 				if( GetTimeEvent( id, duration, values ) )
 				{
-					InformWarning( cr, "Existing TE в„–" + id + " was deleted, next tick would have been in: " + DeltaTime_HMS(duration/__TimeMultiplier) + ", params: " + enlistUINT( values ) );
+					InformWarning( cr, "Existing TE №" + id + " was deleted, next tick would have been in: " + DeltaTime_HMS(duration/__TimeMultiplier) + ", params: " + enlistUINT( values ) );
 					
 					EraseTimeEvent( id );
 				}
 				else
 				{
-					InformWarning( cr, "TE в„–" + id + " does not exist." );
+					InformWarning( cr, "TE №" + id + " does not exist." );
 					cr.ParamBase[CR_VAL0] = 0;
 				}				
 			}
@@ -648,7 +662,7 @@ bool SetItemPic( Critter& cr, int itemID, int pid )
 		return true;
 	}
 	
-	cr.Say( SAY_NETMSG, "Р¦РµР»РµРІРѕР№ РїРёРґ #" + pid + " РЅРµ РЅР°Р№РґРµРЅ." );
+	cr.Say( SAY_NETMSG, "Целевой пид #" + pid + " не найден." );
 	return true;
 }
 
@@ -1154,13 +1168,13 @@ void FindItem( Critter& player, int action, int id, int )
 {
 	if( id == 0 )
 	{
-		player.Say( SAY_NETMSG, "Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° РїСЂРµРґРјРµС‚Р°.\nРЎРёРЅС‚Р°РєСЃРёСЃ РІС‹Р·РѕРІР°: id С†РµР»РµРІРѕРіРѕ РѕР±СЉРµРєС‚Р°, action, 0.\nРўРёРїС‹ action: 0 (РІС‹РІРµСЃС‚Рё РёРЅС„Сѓ), 1 (РїРµСЂРµРјРµСЃС‚РёС‚СЊСЃСЏ Рє РѕР±СЉРµРєС‚Сѓ), 2 (РІР·СЏС‚СЊ РѕР±СЉРµРєС‚), 3 (РѕС‚Р“РњРёС‚СЊ РѕР±СЉРµРєС‚)." );
+		player.Say( SAY_NETMSG, "Функция поиска предмета.\nСинтаксис вызова: id целевого объекта, action, 0.\nТипы action: 0 (вывести инфу), 1 (переместиться к объекту), 2 (взять объект), 3 (отГМить объект)." );
 		return;
 	}
 	Item@ target = GetItem( id );
 	if( !valid(target) )
 	{
-		player.Say( SAY_NETMSG, "РћР±СЉРµРєС‚ РЅРµ РЅР°Р№РґРµРЅ!" );
+		player.Say( SAY_NETMSG, "Объект не найден!" );
 		return;
 	}
 	switch( action )
@@ -1305,14 +1319,14 @@ void ShowFlags( Critter& player, int id, int p1, int p2 )
 
 	if( id == 0 || p1 != 0 || p2 != 0 )
 	{
-		player.Say( SAY_NETMSG, "РџРµСЂРІС‹Р№ Р°СЂРіСѓРјРµРЅС‚ С„-Рё - Р°Р№РґРё РѕР±СЉРµРєС‚Р°. РћСЃС‚Р°Р»СЊРЅС‹Рµ РґРѕР»Р¶РЅС‹ Р±С‹С‚СЊ РЅСѓР»РµРІС‹РјРё." );
+		player.Say( SAY_NETMSG, "Первый аргумент ф-и - айди объекта. Остальные должны быть нулевыми." );
 		return;
 	}
 	
 	Item@ item = GetItem( id );
 	if( !valid(item) )
 	{
-		player.Say( SAY_NETMSG, "РџСЂРµРґРјРµС‚ РЅРµ РЅР°Р№РґРµРЅ." );
+		player.Say( SAY_NETMSG, "Предмет не найден." );
 		return;
 	}
 	
@@ -1370,7 +1384,7 @@ void unsafe_MakeFurniture( Critter& cr, int id, int, int, string@ , int[]@ data 
 		{
 			frm.Val9 = source.GetProtoId();
 			
-			//uint РїСЂРѕСЃС‚Рѕ С‡РёС‚Р°Р±РµР»СЊРЅРµР№ С‡РµРј false-true СЃРїРёСЃРѕРє, Р° РјР°СЃСЃРёРІ СѓРґРѕР±РЅРµР№ С‡РµРј СЂР°Р±РѕС‚Р° СЃ С‡РёСЃР»РѕРІРѕР№ Р·Р°РїРёСЃСЊСЋ С„Р»Р°РіРѕРІ.
+			//uint просто читабельней чем false-true список, а массив удобней чем работа с числовой записью флагов.
 			uint[] furnuture_default_flags = { 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0 };
 			for( uint i = 0; i < furnuture_default_flags.length(); i++ )
 			{
@@ -1425,11 +1439,11 @@ void unsafe_getCost( Critter& player, int itemId, int x, int y, string@ , int[]@
 
 		if( player.Timeout[ TO_SK_STEAL ] > 0 )
 		{
-			player.Say( SAY_NETMSG, "Р’С‹ СЃР»РёС€РєРѕРј СѓСЃС‚Р°Р»Рё, РїРѕРїСЂРѕР±СѓР№С‚Рµ РїРѕР·Р¶Рµ." );
+			player.Say( SAY_NETMSG, "Вы слишком устали, попробуйте позже." );
 			return;
 		}
 
-		player.Say( SAY_NETMSG, "Р”Р°РЅРЅС‹Р№ С„СѓРЅРєС†РёРѕРЅР°Р» РІСЂРµРјРµРЅРЅРѕ РЅРµРґРѕСЃС‚СѓРїРµРЅ РѕР±С‹С‡РЅС‹Рј РёРіСЂРѕРєР°Рј." );
+		player.Say( SAY_NETMSG, "Данный функционал временно недоступен обычным игрокам." );
 		return;
 	}
 	
@@ -1445,7 +1459,7 @@ void unsafe_getCost( Critter& player, int itemId, int x, int y, string@ , int[]@
 	if( y != 0 )
 		hy = y;
 
-	map.SetText( hx, hy, COLOR_SAND, "|0xFF828a96 :С€СѓРј:" );
+	map.SetText( hx, hy, COLOR_SAND, "|0xFF828a96 :шум:" );
 	player.TimeoutBase[ TO_SK_STEAL ] = __FullSecond + REAL_SECOND( 2 );
 	player.Animate( 0, ANIM2_PICKUP, null, true, true );
 	player.Wait( 1000 );
@@ -1455,26 +1469,26 @@ void unsafe_getCost( Critter& player, int itemId, int x, int y, string@ , int[]@
 	Critter@ target = map.GetCritter( hx, hy );
 	if( !valid( target ) && count == 0 )
 	{
-		player.Say( SAY_NETMSG, "РџСѓСЃС‚Рѕ. Р’СЃС‚Р°РЅСЊС‚Рµ Рє С†РµР»Рё Р»РёС†РѕРј, РЅР° СЂР°СЃСЃС‚РѕСЏРЅРёРё 1 РіРµРєСЃР°." );
+		player.Say( SAY_NETMSG, "Пусто. Встаньте к цели лицом, на расстоянии 1 гекса." );
 		return;
 	}
 	
 	uint summ = 0;
 	if( valid( target ) )
 	{
-		summ += getSlotItemCost( player, target, SLOT_INV,   "РРЅРІРµРЅС‚Р°СЂСЊ:" );
-		summ += getSlotItemCost( player, target, SLOT_HAND1, "Р›РµРІР°СЏ СЂСѓРєР°:" );
-		summ += getSlotItemCost( player, target, SLOT_HAND2, "РџСЂР°РІР°СЏ СЂСѓРєР°:" );
-		summ += getSlotItemCost( player, target, SLOT_ARMOR, "Р‘СЂРѕРЅСЏ:" );
-		summ += getSlotItemCost( player, target, SLOT_MISC, "РЈС‚РёР»РёС‚Р°СЂРЅС‹Р№:" );
-		summ += getSlotItemCost( player, target, SLOT_HEAD, "Р“РѕР»РѕРІР°:" );
-		summ += getSlotItemCost( player, target, SLOT_BACK, "РЎРїРёРЅР°:" );
+		summ += getSlotItemCost( player, target, SLOT_INV,   "Инвентарь:" );
+		summ += getSlotItemCost( player, target, SLOT_HAND1, "Левая рука:" );
+		summ += getSlotItemCost( player, target, SLOT_HAND2, "Правая рука:" );
+		summ += getSlotItemCost( player, target, SLOT_ARMOR, "Броня:" );
+		summ += getSlotItemCost( player, target, SLOT_MISC, "Утилитарный:" );
+		summ += getSlotItemCost( player, target, SLOT_HEAD, "Голова:" );
+		summ += getSlotItemCost( player, target, SLOT_BACK, "Спина:" );
 	}
 
 	for( uint i = 0; i < count; i++ )
 		summ += ShowItemsCost( player, loot[i], "" );
 	
-	player.Say( SAY_NETMSG, "Р’СЃРµРіРѕ РёРјРµРµРј: " + summ + "$" );
+	player.Say( SAY_NETMSG, "Всего имеем: " + summ + "$" );
 }
 
 uint ShowItemsCost( Critter& player, Item@ item, string prefix )
@@ -1498,12 +1512,12 @@ uint ShowItemsCost( Critter& player, Item@ item, string prefix )
 	uint summ = 0;
 	if( count > 0 )
 	{
-		player.Say( SAY_NETMSG, prefix + "Р’РЅСѓС‚СЂРё " + itemName( item ) + " РЅР°С…РѕРґРёС‚СЃСЏ:" );
+		player.Say( SAY_NETMSG, prefix + "Внутри " + itemName( item ) + " находится:" );
 		for( uint i = 0, len = loot.length(); i < len; i++ )
 		{
 			summ += ShowItemsCost( player, loot[i], prefix + " " + i + ") " );
 		}
-		player.Say( SAY_NETMSG, prefix + "РС‚РѕРіРѕ РІ РєРѕРЅС‚РµР№РЅРµСЂРµ: " + summ + "$" );
+		player.Say( SAY_NETMSG, prefix + "Итого в контейнере: " + summ + "$" );
 	}
 	else
 	{
@@ -1539,7 +1553,7 @@ string desc( uint pid, uint number = 0 )
 //~run test TestTalk 0 0 0
 void TestTalk( Critter& cr, int, int, int )
 {
-	Talk( cr, SAY_NETMSG, "Р’С‹ РІРёРґРёС‚Рµ РїРµСЂРµРґ СЃРѕР±РѕР№ " + name( PID_ROCK ) + ". РџСЂРёРіР»СЏРґРµРІС€РёСЃСЊ РІРЅРёРјР°С‚РµР»СЊРЅРµР№, РІС‹ СѓР±РµР¶РґР°РµС‚РµСЃСЊ:\n" + desc( PID_ROCK ) );
+	Talk( cr, SAY_NETMSG, "Вы видите перед собой " + name( PID_ROCK ) + ". Приглядевшись внимательней, вы убеждаетесь:\n" + desc( PID_ROCK ) );
 }
 
 void Talk( Critter& cr, int say_type, string@ text )
@@ -1557,7 +1571,7 @@ void clearCashe( Critter& cr, int npc_id, int player_id, int param2 )
 {
 	if( npc_id == 0 && player_id == 0 && param2 == 0 )
 	{
-		cr.Say( SAY_NETMSG, "РђСЂРіСѓРјРµРЅС‚С‹: РР” РќРџР¦, РР” РёРіСЂРѕРєР°, 0" );
+		cr.Say( SAY_NETMSG, "Аргументы: ИД НПЦ, ИД игрока, 0" );
 		return;
 	}
 	
@@ -1565,7 +1579,7 @@ void clearCashe( Critter& cr, int npc_id, int player_id, int param2 )
 	Critter@ player = GetCritter( player_id );
 	if(!valid(npc)&&!valid(player))
 	{
-		cr.Say( SAY_NETMSG, "РќРµ РІС‹С€Р»Рѕ.");
+		cr.Say( SAY_NETMSG, "Не вышло.");
 		return;
 	}
 	
@@ -1576,11 +1590,11 @@ void clearCashe( Critter& cr, int npc_id, int player_id, int param2 )
 		{
 			EraseAttackPlane(npc,player);
 		}
-		cr.Say( SAY_NETMSG, "РЈСЃРїРµС….");
+		cr.Say( SAY_NETMSG, "Успех.");
 		return;
 	}
 
-	cr.Say( SAY_NETMSG, "РџСЂРѕРІР°Р».");
+	cr.Say( SAY_NETMSG, "Провал.");
 }
 
 void test( Critter& cr, int p0, int p1, int p2 )
@@ -1596,7 +1610,7 @@ void test( Critter& cr, int p0, int p1, int p2 )
 
 void test1( Critter& cr, int p0, int p1, int p2 )
 {
-    cr.Say( SAY_NORM, "СЂСѓСЃСЃРєРёРµ Р±СѓРєРІС‹ РђР‘Р’РіР”РµРµРµР№С‘С‘С‘С‘!" );
+    cr.Say( SAY_NORM, "русские буквы АБВгДееейёёёё!" );
 }
 
 class Example
