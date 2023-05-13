@@ -703,7 +703,7 @@ bool AddScore( Critter& cr, int type, int points )
 	if( isActive( cr ) && cr.IsPlayer() ) 
 	{
 		cr.AddScore( type , points );
-		SayLog( cr, crInfo( cr ) + " получил (" + points + ") очков в таблице рекордов '" + GetGameMsgStr( STR_SCORES_NAME(type) ) + "'." );
+		SayLog( cr, crInfo( cr ) + " получает (" + points + ") очков в таблице рекордов '" + GetGameMsgStr( STR_SCORES_NAME(type) ) + "'." );
 
 		return true;
 	}

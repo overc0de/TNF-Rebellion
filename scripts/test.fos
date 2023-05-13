@@ -118,7 +118,7 @@ void AddScore( Critter& cr, int target_id, int type, int points )
 	}
 	
 	bool result = AddScore( cr, type, points );
-	cr.Say( SAY_NETMSG, crInfo( cr ) + ( result ? "" : " |0xFF0000 не|0x00FF00 " ) + " получил (" + points + ") очков в таблице рекордов '" + GetGameMsgStr( STR_SCORES_NAME(type) ) + "'." );
+	cr.Say( SAY_NETMSG, crInfo( cr ) + ( result ? "" : " |0xFF0000 не|0x00FF00 " ) + " получает (" + points + ") очков в таблице рекордов '" + GetGameMsgStr( STR_SCORES_NAME(type) ) + "'." );
 }
 
 //~run test checkActiveState id 0 0
