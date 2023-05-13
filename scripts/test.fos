@@ -98,6 +98,29 @@ import uint8 checkSand( Map& map, uint16 tx, uint16 ty ) from "qmap_sand";
 #define MAP_EDGE_ENTIRE				( 255 )
 #define MAP_SIZE               		( 150 ) 
 
+//~run test AddScore id type points
+void AddScore( Critter& cr, int target_id, int type, int points )
+{
+	if( type == 0 || points == 0 ) {
+		cr.Say( SAY_NETMSG, "Аргументы вызова ф-ии:"
+			"\n" + "target_id - id цели, 0 если себя;"
+			"\n" + "type - тип, значение от 0 до 50"
+			"\n" + "points - количество очков, может быть отрицательным"
+			);
+		return;
+	}
+	
+	if( target_id == 0 ) target_id = cr.Id;
+	Critter@ target = GetCritter( target_id );
+	if( !valid( target) ) {
+		cr.Say( SAY_NETMSG, "Персонаж #" + target_id + " не найден." );
+		return;
+	}
+	
+	bool result = AddScore( cr, type, points );
+	cr.Say( SAY_NETMSG, crInfo( cr ) + ( result ? "" : " |0xFF0000 не|0x00FF00 " ) + " получил (" + points + ") очов в таблице рекордов #" + type + "." );
+}
+
 //~run test checkActiveState id 0 0
 void checkActiveState( Critter& cr, int target_id, int, int )
 {
