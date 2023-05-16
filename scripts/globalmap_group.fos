@@ -2986,6 +2986,7 @@ int GetMapLevelByPid( uint pid )
 			level = -1;
 			break;
 		case( MAP_slake_lab2 ):
+		case( MAP_v15_3_4dn2 ):
 			level = -2;
 			break;		
 		case( MAP_slake_town_up ):
@@ -3019,9 +3020,8 @@ int GetMapLevelByPid( uint pid )
 		case( MAP_vbbox_river_e_dn ):
 		case( MAP_vbbox_mine_main ):
 		case( MAP_vbmine_ne ):
-		case( MAP_vbmine_nw ):
-		case( MAP_vbmine_sw ):
-		case( MAP_vbbox_outpost_dn ):
+		case( MAP_v15_1_2dn ):
+		case( MAP_v15_3_4dn1 ):
 			level = -1;
 			break;
 		default:
