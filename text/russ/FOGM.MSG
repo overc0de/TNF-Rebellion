@@ -1563,13 +1563,13 @@
 
 # Area 424, Map 665
 {6660}{}{v15session_1_1}
-{6665}{}{}
+{6665}{}{43NNM_high_wind.ogg}
 {6666}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6668}{}{"Заброшенный рудник"}
 
 # Area 425, Map 666
 {6670}{}{v15session_1_2}
-{6675}{}{}
+{6675}{}{48NNM_new_vegas.ogg}
 {6676}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6678}{}{"Придорожный бар"}
 
@@ -1581,97 +1581,97 @@
 
 # Area 426, Map 668
 {6690}{}{v15session_1_3}
-{6695}{}{}
+{6695}{}{53NNM_village.ogg}
 {6696}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6698}{}{Пустошь}
 
 # Area 427, Map 669
 {6700}{}{v15session_1_4}
-{6705}{}{}
+{6705}{}{57SHK_sinless_From_Seattle.ogg}
 {6706}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6708}{}{Лагерь на холме}
 
 # Area 428, Map 670
 {6710}{}{v15session_1_5}
-{6715}{}{}
+{6715}{}{under_1.ogg}
 {6716}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6718}{}{Заброшенный рудник}
 
 # Area 429, Map 671
 {6720}{}{v15session_2_1}
-{6725}{}{}
+{6725}{}{47NNM_nevada_theme.ogg}
 {6726}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
-{6728}{}{"Мусорный утёс"}
+{6728}{}{"Мусорный утес"}
 
 # Area 430, Map 672
 {6730}{}{v15session_2_2}
-{6735}{}{}
+{6735}{}{50NNM_radioluminescence.ogg}
 {6736}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6738}{}{"Руинный затор"}
 
 # Area 431, Map 673
 {6740}{}{v15session_2_3}
-{6745}{}{}
+{6745}{}{NNM_FS_16_One_Way.ogg}
 {6746}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6748}{}{"Сухой каньон"}
 
 # Area 432, Map 674
 {6750}{}{v15session_2_4}
-{6755}{}{}
+{6755}{}{under_1.ogg}
 {6756}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6758}{}{"Костлявый утес"}
 
 # Area 433, Map 675
 {6760}{}{v15session_2_5}
-{6765}{}{}
+{6765}{}{30 - Clockwork.ogg}
 {6766}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6768}{}{"Призрачная радиовышка"}
 
 # Area 434, Map 676
 {6770}{}{v15session_3_1}
-{6775}{}{}
+{6775}{}{NNM_FS_08_La_Ciudad_del_Sol.ogg}
 {6776}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6778}{}{"Лесная община"}
 
 # Area 435, Map 677
 {6780}{}{v15session_3_2}
-{6785}{}{}
+{6785}{}{42NNM_ghost_town.ogg}
 {6786}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6788}{}{"Деловой центр"}
 
 # Area 438, Map 678
 {6790}{}{v15session_3_3}
-{6795}{}{}
+{6795}{}{10 - Dystopian Dreams.ogg}
 {6796}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6798}{}{"Подъем"}
 
 # Area 439, Map 679
 {6800}{}{v15session_3_4}
-{6805}{}{}
+{6805}{}{NNM_Stalker_Ghost_City.ogg}
 {6806}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6808}{}{"Лысеющая гора"}
 
 # Area 439, Map 680
 {6810}{}{v15session_3_4dn1}
-{6815}{}{}
+{6815}{}{49NNM_radiationless.ogg}
 {6816}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6818}{}{Подвал}
 
 # Area 439, Map 681
 {6820}{}{v15session_3_4dn2}
-{6825}{}{}
+{6825}{}{NNM_FS_06_Out_of_The_World.ogg}
 {6826}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6828}{}{Убежище 15}
 
 # Area 440, Map 682
 {6830}{}{v15session_3_5}
-{6835}{}{}
+{6835}{}{NNM_FS_05_Collapse.ogg}
 {6836}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6838}{}{"Узкий каньон"}
 
 # Area 441, Map 683
 {6840}{}{v15session_4_1}
-{6845}{}{}
+{6845}{}{S_14_Motel.ogg}
 {6846}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6848}{}{"Лесной поворот"}
 
@@ -1683,19 +1683,19 @@
 
 # Area 443, Map 685
 {6860}{}{v15session_4_3}
-{6865}{}{}
+{6865}{}{55NNM_wind_of_war.ogg}
 {6866}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6868}{}{"Начало ВПП"}
 
 # Area 444, Map 686
 {6870}{}{v15session_4_4}
-{6875}{}{}
+{6875}{}{55NNM_wind_of_war.ogg}
 {6876}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6878}{}{"Аэродром"}
 
 # Area 445, Map 687
 {6880}{}{v15session_4_5}
-{6885}{}{}
+{6885}{}{Out_of_Business.ogg}
 {6886}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6888}{}{"Восточный восход"}
 
@@ -1707,25 +1707,25 @@
 
 # Area 447, Map 689
 {6900}{}{v15session_5_2}
-{6905}{}{}
+{6905}{}{NNM_Stalker_Theme_Of_Garbage.ogg}
 {6906}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6908}{}{"Захолустье"}
 
 # Area 448, Map 690
 {6910}{}{v15session_5_3}
-{6915}{}{}
+{6915}{}{NNM_FS_12_Casa_Grande.ogg}
 {6916}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6918}{}{Ферма}
 
 # Area 449, Map 691
 {6920}{}{v15session_5_4}
-{6925}{}{}
+{6925}{}{NNM_FS_10_Jackals.ogg}
 {6926}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6928}{}{"Мертвое озеро"}
 
 # Area 450, Map 692
 {6930}{}{v15session_5_5}
-{6935}{}{}
+{6935}{}{NNM_FS_09_Ghosts.ogg}
 {6936}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6938}{}{Горнодобывающее предприятие}
 
