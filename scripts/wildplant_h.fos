@@ -1,4 +1,4 @@
-// Author: Anuri
+s// Author: Anuri
 #ifndef WILDPLANT_H
 #define WILDPLANT_H
 
@@ -20,39 +20,28 @@
 	const uint16[] Wildplants = 	{ PID_PLANT_BROC, PID_PLANT_XANDER, PID_PLANT_MUSH_LOW, PID_PLANT_TONGUE_GECKO, PID_PLANT_MURAVNIKTAR, PID_PLANT_BLACK_MUSHROOMS, PID_PLANT_PALE_MUSHROOM, PID_PLANT_MUTMUSH, PID_PLANT_PEYOTE };
 	const uint16[][] Plant_Maps =
 	{ 	// 		MAP_PID		   AMOUNT
-    //Perfection
-        { MAP_snd1_1,    			20 		}, // Болото
-        { MAP_snd1_2,    			7  		}, // Западный склон
-        { MAP_snd1_2dn,  			2  		}, // Кузница мира
-        { MAP_snd1_3,    			7  		}, // Вершина
-        { MAP_snd1_4,    			7  		}, // Восточный склон
-        { MAP_snd1_5,    			5  		}, // Ферма
-        { MAP_snd2_1,    			15 		}, // Болотистый лес
-        { MAP_snd2_2,    			7  		}, // Юго-западный склон
-        { MAP_snd2_2dn,  			2  		}, // Зарядная станция
-        { MAP_snd2_3,    			3  		}, // Вход Перфекшена (КПП)
-        { MAP_snd2_3dn,  			5 		}, // Перфекшен (шахты)
-        { MAP_snd2_3dn2,  			20 		}, //
-        { MAP_snd2_3dn3,  			20 		}, //
-        { MAP_snd2_4,    			7  		}, // Юго-восточный склон
-        { MAP_snd2_5,    			7  		}, // Холмы
-        { MAP_snd3_1,    			15 		}, // Восточный лес
-        { MAP_snd3_2,    			7  		}, // Поворот
-        { MAP_snd3_3,    			4  		}, // Подстанция
-        { MAP_snd3_4,    			4  		}, // Магазины
-        { MAP_snd3_5,    			4  		}, // Окраина
-        { MAP_snd4_1,    			15 		}, // Юго-западный лес
-        { MAP_snd4_2,    			7  		}, // Перекресток
-        { MAP_snd4_3,    			4  		}, // Холм
-        { MAP_snd4_3dn2, 			7  		}, // Старая шахта
-        { MAP_snd5_1,    			15 		}, // Южный лес
-        { MAP_snd5_2,    			7  		}, // Мотель
-        { MAP_snd5_3,    			10 		}, // Сток
-        { MAP_snd0_5,    			7  		}, // ???
-        { MAP_snd1_6,    			15 		}, // ???
-        { MAP_snd0_6,    			7  		}, // ???
-        { MAP_snd1_7,    			15 		}, // ???
-        { MAP_snd0_7,    			10 		}  // ???
+	    { MAP_vbbox_road,		10		},
+		{ MAP_vbbox_gasstation,	10		},
+		{ MAP_vbbox_stok,   	15		},
+		{ MAP_vbbox_river_w,	20		},
+		{ MAP_vbbox_ruin6,  	7		},
+		{ MAP_vbbox_swamp1, 	10		},
+		{ MAP_vbbox_swamp2, 	20		},
+		{ MAP_vbbox_ruin1,  	7		},
+		{ MAP_vbbox_ruin2,  	7		},
+		{ MAP_vbbox_ruin3,  	7		},
+		{ MAP_vbbox_ruin4,  	7		},
+		{ MAP_vbbox_ruin5,  	15		},
+		{ MAP_vbbox_camp,   	20		},
+		{ MAP_vbbox_forestroad,	20		},
+		{ MAP_vbbox_forest1,	20		},
+		{ MAP_vbbox_forest2,	20		},
+		{ MAP_vbbox_river_e,	20		},
+		{ MAP_vbbox_mine,   	5		},
+		{ MAP_vbbox_mine_main,	30		},
+		{ MAP_vbmine_ne,    	25		},
+		{ MAP_vbmine_nw,    	25		},
+		{ MAP_vbmine_sw,    	25		}
 	};
 
 	#ifndef WILDPLANT

@@ -2748,6 +2748,12 @@ int GetMapLevelByPid( uint pid )
     int level = 0;
     switch( pid )
     {
+		case( MAP_vbbox_mine_main ):
+		case( MAP_vbmine_ne ):		
+		case( MAP_vbmine_nw ):		
+		case( MAP_vbmine_sw ):
+			level = -1;
+			break;
 		case( MAP_snd1_1dn ):
 		case( MAP_snd1_2dn ):
 		case( MAP_snd1_3dn ):
@@ -3018,8 +3024,6 @@ int GetMapLevelByPid( uint pid )
 		case( MAP_vbbox_forest1_dn ):
 		case( MAP_vbbox_forest2_dn ):
 		case( MAP_vbbox_river_e_dn ):
-		case( MAP_vbbox_mine_main ):
-		case( MAP_vbmine_ne ):
 		case( MAP_v15_1_2dn ):
 		case( MAP_v15_3_4dn1 ):
 			level = -1;
