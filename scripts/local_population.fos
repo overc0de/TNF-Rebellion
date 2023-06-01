@@ -141,7 +141,7 @@ void AddCritter( Map& map )
 			uint8 entireId = MAP_MOB_SPAWNER + i;
 			
 			int entires = map.CountEntire( entireId );
-			int range = 2;
+			int range = 6;
 			
 			if( entires == 0 )
 			{ 
@@ -160,13 +160,17 @@ void AddCritter( Map& map )
 					
 					tempX = hexX;
 					tempY = hexY;
+					
+					int attempts_left = 100;
 
-					while( !map.IsHexPassed( tempX, tempY ) )
+					while( !map.IsHexPassed( tempX, tempY ) && attempts_left > 0 )
 					{
 						tempX = hexX + Random( -range, range );
 						tempY = hexY + Random( -range, range );
+						attempts_left--;
 					}
 					
+					if( !map.IsHexPassed( tempX, tempY ) ) continue;
 					uint16 pid = mob_array[ Random ( 0, mob_array.length() - 1 ) ];
 					uint[] values = { map.Id, pid, tempX, tempY, teamId, 0 };
 					CreateTimeEvent( AFTER( REAL_SECOND( Random( 1, 60 ) ) ), "e_delayed_spawn", values, true );
@@ -186,6 +190,11 @@ uint e_delayed_spawn( uint[]@ values )
 		return REAL_SECOND( Random( 3, 6 ) );
 	}
 	
+	if( !map.IsHexPassed( values[2], values[3] ) && values[5] < 60 ) 
+	{
+		values[5]++;
+		return REAL_SECOND( 1 );
+	}
 	Critter@ npc = map.AddNpc( values[1], values[2], values[3], Random( 0, 5 ), null, null, "mob@_MobInit" );
 	if( !valid( npc ) )
 	{
