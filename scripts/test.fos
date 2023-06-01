@@ -12,6 +12,14 @@
 #include "gm_h.fos"
 #include "entire_h.fos"
 
+//~run test TransitToMap 0 0 0
+void TransitToMap( Critter& cr, int mapPid, int entranceNum, int skip )
+{
+    Map@ map = GetMapByPid( mapPid, skip );
+    if( !valid( map ) ) return;
+    cr.TransitToMap( map.Id, entranceNum );
+}
+
 Map@ getMap( uint id )
 {
 	if( id == 0 )

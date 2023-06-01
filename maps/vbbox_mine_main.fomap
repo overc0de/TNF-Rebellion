@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             329
-WorkHexY             200
+WorkHexX             366
+WorkHexY             205
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -154021,12 +154021,6 @@ Scenery_ToEntire     25
 
 MapObjType           2
 ProtoId              3853
-MapX                 209
-MapY                 34
-Scenery_ToEntire     20
-
-MapObjType           2
-ProtoId              3853
 MapX                 210
 MapY                 34
 Scenery_ToEntire     20
@@ -154038,363 +154032,6 @@ MapY                 34
 Scenery_ToEntire     20
 
 MapObjType           2
-ProtoId              4023
-MapX                 359
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              4023
-MapX                 359
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              4023
-MapX                 361
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              4023
-MapX                 361
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              4023
-MapX                 363
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              4023
-MapX                 363
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              4023
-MapX                 365
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 210
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 208
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 207
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 206
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 360
-MapY                 206
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 360
-MapY                 207
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 360
-MapY                 208
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 360
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 360
-MapY                 210
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 211
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 360
-MapY                 211
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 360
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 359
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 211
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 210
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 208
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 207
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 361
-MapY                 206
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 362
-MapY                 206
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 362
-MapY                 207
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 363
-MapY                 208
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 364
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 363
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 362
-MapY                 208
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 362
-MapY                 209
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 365
-MapY                 211
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 364
-MapY                 210
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 363
-MapY                 210
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 362
-MapY                 210
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 362
-MapY                 211
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 363
-MapY                 211
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 364
-MapY                 211
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 365
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 365
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 366
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 364
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 363
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 362
-MapY                 212
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
-ProtoId              2049
-MapX                 363
-MapY                 213
-Scenery_ToMapPid     640
-Scenery_ToEntire     10
-
-MapObjType           2
 ProtoId              3853
 MapX                 353
 MapY                 207
@@ -154402,14 +154039,14 @@ Scenery_ToEntire     25
 
 MapObjType           2
 ProtoId              3853
-MapX                 355
-MapY                 212
+MapX                 354
+MapY                 211
 Scenery_ToEntire     25
 
 MapObjType           2
 ProtoId              3853
-MapX                 353
-MapY                 212
+MapX                 351
+MapY                 209
 Scenery_ToEntire     25
 
 MapObjType           2
@@ -155220,5 +154857,546 @@ MapObjType           1
 ProtoId              189
 MapX                 326
 MapY                 209
+
+MapObjType           2
+ProtoId              5622
+MapX                 329
+MapY                 198
+
+MapObjType           2
+ProtoId              3852
+MapX                 359
+MapY                 206
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 359
+MapY                 207
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 359
+MapY                 208
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 359
+MapY                 209
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 359
+MapY                 210
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 359
+MapY                 211
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 359
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              4022
+MapX                 359
+MapY                 206
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              4022
+MapX                 359
+MapY                 210
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              4022
+MapX                 361
+MapY                 210
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              4022
+MapX                 361
+MapY                 206
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              4022
+MapX                 363
+MapY                 206
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              4022
+MapX                 363
+MapY                 210
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              4022
+MapX                 365
+MapY                 210
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              4022
+MapX                 365
+MapY                 206
+Scenery_ToMapPid     600
+Scenery_ToEntire     25
+
+MapObjType           2
+ProtoId              3852
+MapX                 360
+MapY                 206
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 360
+MapY                 207
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 360
+MapY                 208
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 360
+MapY                 209
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 360
+MapY                 210
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 360
+MapY                 211
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 360
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 361
+MapY                 206
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 361
+MapY                 207
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 361
+MapY                 208
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 361
+MapY                 209
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 361
+MapY                 210
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 361
+MapY                 211
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 361
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 362
+MapY                 206
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 362
+MapY                 207
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 362
+MapY                 208
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 362
+MapY                 209
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 362
+MapY                 210
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 362
+MapY                 211
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 362
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 363
+MapY                 208
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 363
+MapY                 209
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 363
+MapY                 210
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 363
+MapY                 211
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 363
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 364
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 364
+MapY                 211
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 364
+MapY                 210
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 364
+MapY                 209
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 365
+MapY                 211
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 365
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
+
+MapObjType           2
+ProtoId              3852
+MapX                 366
+MapY                 212
+ScriptName           t_teleport
+FuncName             t_EnterTeleport
+Scenery_TriggerNum   5
+Scenery_ParamsCount  3
+Scenery_Param0       600
+Scenery_Param1       25
+Scenery_Param2       3
 
 
