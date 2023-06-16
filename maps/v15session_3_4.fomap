@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             165
-WorkHexY             183
+WorkHexX             0
+WorkHexY             0
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -5818,7 +5818,7 @@ tile       146  182            art\tiles\edg5000.frm
 tile       148  182            art\tiles\edg5004.frm
 tile       150  182            art\tiles\cmt6000.frm
 roof       150  182            art\tiles\ruf1000.frm
-tile       152  182            art\tiles\fongroundb008.frm
+tile       152  182            art\tiles\cmt6000.frm
 roof       152  182            art\tiles\ruf1000.frm
 tile       154  182            art\tiles\cmt3000.frm
 roof       154  182            art\tiles\ruf1000.frm
@@ -29031,7 +29031,7 @@ MapX                 153
 MapY                 183
 OffsetX              -7
 OffsetY              1
-Scenery_ToMapPid     681
+Scenery_ToMapPid     682
 Scenery_ToEntire     10
 Scenery_ToDir        3
 
@@ -68279,5 +68279,17 @@ MapX                 153
 MapY                 185
 Scenery_ToEntire     10
 Scenery_ToDir        3
+
+MapObjType           2
+ProtoId              3853
+MapX                 157
+MapY                 133
+Scenery_ToEntire     203
+
+MapObjType           2
+ProtoId              3853
+MapX                 126
+MapY                 140
+Scenery_ToEntire     202
 
 
