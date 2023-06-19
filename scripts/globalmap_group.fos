@@ -3028,6 +3028,7 @@ int GetMapLevelByPid( uint pid )
 		case( MAP_v15_1_2dn ):
 		case( MAP_v15_3_4dn1 ):
 		case( MAP_v15_4_2dn ):		
+		case( MAP_v15_RobCo_mine ):
 			level = -1;
 			break;			
 		case( MAP_v15_3_4dn2 ):		

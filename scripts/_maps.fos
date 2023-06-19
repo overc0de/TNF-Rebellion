@@ -455,6 +455,7 @@
 #define MAP_v15_5_3    		 	    ( 693 )
 #define MAP_v15_5_4    		 	    ( 694 )
 #define MAP_v15_5_5    		 	    ( 695 )
+#define MAP_v15_RobCo_mine 			( 696 )
 
 //Event Maps
 #define MAP_event2_slavers_in		( 102 )
