@@ -1741,6 +1741,12 @@
 {6966}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6968}{}{"Горнодобывающее предприятие"}
 
+# Area 448, Map 696
+{6970}{}{v15session_5_5dn}
+{6975}{}{NNM_FS_09_Ghosts.ogg}
+{6976}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
+{6978}{}{"Шахта Робко"}
+
 #
 # Global map
 #
