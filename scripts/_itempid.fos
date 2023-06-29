@@ -493,6 +493,12 @@
 #define PID_TECH_ARMOR							  	( 20574 )						// Броня техномана из Гекко
 #define PID_LEATHER_ARMOR_GREY                      ( 20582 )                       // Кожаная броня мод. III серая
 #define PID_ROAD_ARMOR								( 20594 )						// Дорожная броня
+#define PID_LEATHER_ARMOR_NEW					    ( 20612 )						// Армированная кожанная броня зелёная
+#define PID_LEATHER_ARMOR_NEW_RED					( 20613 )						// Армированная кожанная броня красная
+#define PID_LEATHER_ARMOR_NEW_GREY					( 20614 )						// Армированная кожанная броня серая
+#define PID_LEATHER_ARMOR_NEW_CAMO					( 20615 )						// Армированная кожанная броня камуфляжная
+#define PID_LEATHER_ARMOR_NEW_SWAMP				    ( 20616 )						// Армированная кожанная броня болотная
+#define PID_LEATHER_ARMOR_NEW_GOLD				    ( 20617 )						// Армированная кожанная броня золотая
 
 //	SUBTYPE_ARMOR_AC25				- 			Class 2,5			-			Bullet-proof
 #define PID_METAL_ARMOR_MK_II                 		( 380 )							// Металлическая броня мод. II
