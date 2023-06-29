@@ -26,7 +26,7 @@ bool TryRepairItem( Critter& cr, Item& item )
         return true;
     }
 
-    if( FLAG( item.BrokenFlags, BI_ETERNAL ) || FLAG( item.BrokenFlags, BI_NOTRESC ) || GetDeteriorationProcent( item ) >= 100 )
+    if( FLAG( item.BrokenFlags, BI_ETERNAL ) || FLAG( item.BrokenFlags, BI_NOTRESC ) )
     {
         cr.SayMsg( SAY_NETMSG, TEXTMSG_GAME, STR_DETERIORATION_NO_RESC );
         return true;
@@ -2899,9 +2899,13 @@ bool TryPaintArmor( Critter& cr, Item& paint, Item& armor )
 		PaintableArmorType = 5;
 	}
 	else if( PaintableCA3.find( armorPid ) != -1 )
-	{	
+	{
 		PaintableArmorType = 6;
 	}
+	else if ( PaintableArmoredLeather.find( armorPid ) != -1 )
+    {
+        PaintableArmorType = 7; 
+    }
 	else
 	{
 		cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_ARMOUR_CANT_REPAINT ); 
@@ -2975,6 +2979,9 @@ class MenuPaintArmor: CenteredMenuHandler
 				break;
 			case( 6 ):
 				armorType = PaintableCA3;
+				break;
+			case( 7 ):
+				armorType = PaintableArmoredLeather;
 				break;
 		}
 		uint len = armorType.length();
