@@ -138,14 +138,14 @@ void TeleportToGameZone( Critter& cr, int val )
     cr.SetEvent( CRITTER_EVENT_ATTACK, null );
     cr.SetEvent( CRITTER_EVENT_DEAD, null );	
 	
-	uint x = 380 + Random( -10, 10 );
-	uint y = 470 + Random( -10, 10 );
+	uint x = 174 + Random( 0, 9 );
+	uint y = 111 + Random( 0, 10 );
 	if( !cr.TransitToMap( map.Id, x, y, 0 ) )
 	{
-		cr.ParamBase[ QST_GAMEMODE ] = GAME_START;
 		return;
 	}
 	
+	cr.ParamBase[ QST_GAMEMODE ] = GAME_SURVIVAL;
 	cr.SayMsg( SAY_NETMSG, TEXTMSG_TEXT, STR_START_GREETING );
 	return;
 }
@@ -262,8 +262,7 @@ class MenuStart: CenteredMenuHandler
 			cr.GetItems( -1, items );
 			DeleteItems( items );
 			
-			cr.ParamBase[ QST_GAMEMODE ] = GAME_SURVIVAL;
-			TeleportToGameZone( cr, LOCATION_Elk_Falls );
+			TeleportToGameZone( cr, 425 ); //v15session_1_2
 			return false;
 			
 		}
