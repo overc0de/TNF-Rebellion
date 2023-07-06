@@ -20,28 +20,37 @@
 	const uint16[] Wildplants = 	{ PID_PLANT_BROC, PID_PLANT_XANDER, PID_PLANT_MUSH_LOW, PID_PLANT_TONGUE_GECKO, PID_PLANT_MURAVNIKTAR, PID_PLANT_BLACK_MUSHROOMS, PID_PLANT_PALE_MUSHROOM, PID_PLANT_MUTMUSH, PID_PLANT_PEYOTE };
 	const uint16[][] Plant_Maps =
 	{ 	// 		MAP_PID		   AMOUNT
-	    { MAP_vbbox_road,		10		},
-		{ MAP_vbbox_gasstation,	10		},
-		{ MAP_vbbox_stok,   	15		},
-		{ MAP_vbbox_river_w,	20		},
-		{ MAP_vbbox_ruin6,  	7		},
-		{ MAP_vbbox_swamp1, 	10		},
-		{ MAP_vbbox_swamp2, 	20		},
-		{ MAP_vbbox_ruin1,  	7		},
-		{ MAP_vbbox_ruin2,  	7		},
-		{ MAP_vbbox_ruin3,  	7		},
-		{ MAP_vbbox_ruin4,  	7		},
-		{ MAP_vbbox_ruin5,  	15		},
-		{ MAP_vbbox_camp,   	20		},
-		{ MAP_vbbox_forestroad,	20		},
-		{ MAP_vbbox_forest1,	20		},
-		{ MAP_vbbox_forest2,	20		},
-		{ MAP_vbbox_river_e,	20		},
-		{ MAP_vbbox_mine,   	5		},
-		{ MAP_vbbox_mine_main,	30		},
-		{ MAP_vbmine_ne,    	25		},
-		{ MAP_vbmine_nw,    	25		},
-		{ MAP_vbmine_sw,    	25		}
+	    { MAP_v15_1_1,		6		},
+	    { MAP_v15_1_2,		6		},
+	    { MAP_v15_1_3,		6		},
+	    { MAP_v15_1_4,		6		},
+	    { MAP_v15_1_5,		6		},
+
+	    { MAP_v15_2_1,		6		},
+	    { MAP_v15_2_2,		6		},
+	    { MAP_v15_2_3,		6		},
+	    { MAP_v15_2_4,		6		},
+	    { MAP_v15_2_5,		6		},
+
+	    { MAP_v15_3_1,		6		},
+	    { MAP_v15_3_2,		6		},
+	    { MAP_v15_3_3,		6		},
+	    { MAP_v15_3_4,		6		},
+	    { MAP_v15_3_5,		6		},
+
+	    { MAP_v15_4_1,		6		},
+	    { MAP_v15_4_2,		6		},
+	    { MAP_v15_4_3,		6		},
+	    { MAP_v15_4_4,		6		},
+	    { MAP_v15_4_5,		6		},
+
+	    { MAP_v15_5_1,		6		},
+	    { MAP_v15_5_2,		6		},
+	    { MAP_v15_5_3,		6		},
+	    { MAP_v15_5_4,		6		},
+	    { MAP_v15_5_5,		6		},
+
+		{ MAP_v15_RobCo_mine,	10	}
 	};
 
 	#ifndef WILDPLANT
