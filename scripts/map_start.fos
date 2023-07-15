@@ -253,6 +253,9 @@ class MenuStart: CenteredMenuHandler
 		
 		if( terminal.START_TERMINAL_MODE == MODE_ENTRY_TERMINAL )
 		{    
+			cr.Say( SAY_NETMSG, "Функционал безквентовой активации временно отключён." );
+			return false;
+			
 			if( cr.ParamBase[ QST_GAMEMODE ] != GAME_START )
 			{
 				return false;
