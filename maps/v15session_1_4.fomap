@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             129
-WorkHexY             178
+WorkHexX             125
+WorkHexY             184
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -5795,10 +5795,10 @@ tile       118  182            art\tiles\edg5002.frm
 tile       120  182            art\tiles\edg5004.frm
 tile       122  182            art\tiles\edg5005.frm
 tile       124  182            art\tiles\edg5002.frm
-tile       126  182            art\tiles\edg5000.frm
-tile       128  182            art\tiles\edg5002.frm
-tile       130  182            art\tiles\edg5000.frm
-tile       132  182            art\tiles\edg5002.frm
+tile       126  182            art\tiles\gar2000.frm
+tile       128  182            art\tiles\gar2000.frm
+tile       130  182            art\tiles\gar2000.frm
+tile       132  182            art\tiles\gar2000.frm
 tile       134  182            art\tiles\edg5001.frm
 tile       136  182            art\tiles\edg5000.frm
 tile       138  182            art\tiles\edg5003.frm
@@ -5935,10 +5935,10 @@ tile       118  184            art\tiles\edg5002.frm
 tile       120  184            art\tiles\edg5004.frm
 tile       122  184            art\tiles\edg5005.frm
 tile       124  184            art\tiles\edg5002.frm
-tile       126  184            art\tiles\edg5004.frm
-tile       128  184            art\tiles\edg5005.frm
-tile       130  184            art\tiles\edg5004.frm
-tile       132  184            art\tiles\edg5005.frm
+tile       126  184            art\tiles\gar2002.frm
+tile       128  184            art\tiles\gar2002.frm
+tile       130  184            art\tiles\gar2002.frm
+tile       132  184            art\tiles\gar2002.frm
 tile       134  184            art\tiles\edg5003.frm
 tile       136  184            art\tiles\edg5000.frm
 tile       138  184            art\tiles\edg5002.frm
@@ -6080,10 +6080,10 @@ tile       118  186            art\tiles\edg5003.frm
 tile       120  186            art\tiles\edg5000.frm
 tile       122  186            art\tiles\edg5002.frm
 tile       124  186            art\tiles\edg5000.frm
-tile       126  186            art\tiles\edg5004.frm
-tile       128  186            art\tiles\edg5000.frm
-tile       130  186            art\tiles\edg5004.frm
-tile       132  186            art\tiles\edg5000.frm
+tile       126  186            art\tiles\gar2001.frm
+tile       128  186            art\tiles\gar2001.frm
+tile       130  186            art\tiles\gar2001.frm
+tile       132  186            art\tiles\gar2001.frm
 tile       134  186            art\tiles\edg5002.frm
 tile       136  186            art\tiles\edg5004.frm
 tile       138  186            art\tiles\edg5005.frm
@@ -6226,10 +6226,10 @@ tile       118  188            art\tiles\edg5002.frm
 tile       120  188            art\tiles\edg5004.frm
 tile       122  188            art\tiles\edg5005.frm
 tile       124  188            art\tiles\edg5002.frm
-tile       126  188            art\tiles\edg5000.frm
-tile       128  188            art\tiles\edg5003.frm
-tile       130  188            art\tiles\edg5000.frm
-tile       132  188            art\tiles\edg5003.frm
+tile       126  188            art\tiles\gar2003.frm
+tile       128  188            art\tiles\gar2003.frm
+tile       130  188            art\tiles\gar2003.frm
+tile       132  188            art\tiles\gar2003.frm
 tile       134  188            art\tiles\edg5000.frm
 tile       136  188            art\tiles\edg5004.frm
 tile       138  188            art\tiles\edg5000.frm
@@ -6366,10 +6366,10 @@ tile       118  190            art\tiles\edg5000.frm
 tile       120  190            art\tiles\edg5003.frm
 tile       122  190            art\tiles\edg5000.frm
 tile       124  190            art\tiles\edg5004.frm
-tile       126  190            art\tiles\edg5000.frm
-tile       128  190            art\tiles\edg5002.frm
-tile       130  190            art\tiles\edg5000.frm
-tile       132  190            art\tiles\edg5002.frm
+tile       126  190            art\tiles\gar2004.frm
+tile       128  190            art\tiles\gar2004.frm
+tile       130  190            art\tiles\gar2004.frm
+tile       132  190            art\tiles\gar2004.frm
 tile       134  190            art\tiles\edg5001.frm
 tile       136  190            art\tiles\edg5000.frm
 tile       138  190            art\tiles\edg5003.frm
