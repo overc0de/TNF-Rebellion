@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             173
-WorkHexY             179
+WorkHexX             137
+WorkHexY             165
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -15,72 +15,9 @@ DayColor2            128 104 86
 DayColor3            6   6   29 
 
 [Tiles]
-roof       128  30             art\tiles\tp028.frm
-roof       130  30             art\tiles\tp023.frm
-roof       132  30             art\tiles\tp023.frm
-roof       134  30             art\tiles\tp019.frm
-roof       136  30             art\tiles\tp069.frm
-roof       128  32             art\tiles\tp084.frm
-roof       130  32             art\tiles\tp083.frm
-roof       132  32             art\tiles\tp079.frm
-roof       134  32             art\tiles\tp078.frm
-roof       136  32             art\tiles\tp077.frm
-roof       128  34             art\tiles\tp084.frm
-roof       130  34             art\tiles\tp088.frm
-roof       132  34             art\tiles\tp096.frm
-roof       134  34             art\tiles\tp095.frm
-roof       136  34             art\tiles\tp085.frm
-roof       128  36             art\tiles\tp084.frm
-roof       130  36             art\tiles\tp094.frm
-roof       132  36             art\tiles\tp097.frm
-roof       134  36             art\tiles\tp095.frm
-roof       136  36             art\tiles\tp190.frm
-roof       128  38             art\tiles\tp084.frm
-roof       130  38             art\tiles\tp096.frm
-roof       132  38             art\tiles\tp094.frm
-roof       134  38             art\tiles\tp096.frm
-roof       136  38             art\tiles\tp190.frm
-roof       128  40             art\tiles\tp084.frm
-roof       130  40             art\tiles\tp097.frm
-roof       132  40             art\tiles\tp097.frm
-roof       134  40             art\tiles\tp095.frm
-roof       136  40             art\tiles\tp190.frm
-roof       128  42             art\tiles\tp084.frm
-roof       130  42             art\tiles\tp096.frm
-roof       132  42             art\tiles\tp094.frm
-roof       134  42             art\tiles\tp096.frm
-roof       136  42             art\tiles\tp190.frm
-roof       128  44             art\tiles\tp084.frm
-roof       130  44             art\tiles\tp097.frm
-roof       132  44             art\tiles\tp097.frm
-roof       134  44             art\tiles\tp095.frm
-roof       136  44             art\tiles\tp190.frm
-roof       128  46             art\tiles\tp084.frm
-roof       130  46             art\tiles\tp098.frm
-roof       132  46             art\tiles\tp094.frm
-roof       134  46             art\tiles\tp096.frm
-roof       136  46             art\tiles\tp190.frm
-roof       128  48             art\tiles\tp084.frm
-roof       130  48             art\tiles\tp099.frm
-roof       132  48             art\tiles\tp095.frm
-roof       134  48             art\tiles\tp097.frm
-roof       136  48             art\tiles\tp085.frm
 tile       214  48             art\tiles\bld2043.frm
 tile       216  48             art\tiles\bld2043.frm
 tile       218  48             art\tiles\bld2043.frm
-roof       76   50             art\tiles\tp028.frm
-roof       78   50             art\tiles\tp023.frm
-roof       80   50             art\tiles\tp019.frm
-roof       82   50             art\tiles\tp024.frm
-roof       84   50             art\tiles\tp023.frm
-roof       86   50             art\tiles\tp020.frm
-roof       88   50             art\tiles\tp019.frm
-roof       90   50             art\tiles\tp024.frm
-roof       128  50             art\tiles\tp092.frm
-roof       130  50             art\tiles\tp099.frm
-roof       132  50             art\tiles\tp096.frm
-roof       134  50             art\tiles\tp098.frm
-roof       136  50             art\tiles\tp188.frm
 tile       208  50             art\tiles\bld2043.frm
 tile       210  50             art\tiles\bld2043.frm
 tile       212  50             art\tiles\bld2043.frm
@@ -88,19 +25,6 @@ tile       214  50             art\tiles\bld2043.frm
 tile       216  50             art\tiles\bld2043.frm
 tile       218  50             art\tiles\bld2043.frm
 tile       220  50             art\tiles\bld2043.frm
-roof       76   52             art\tiles\tp084.frm
-roof       78   52             art\tiles\tp083.frm
-roof       80   52             art\tiles\tp082.frm
-roof       82   52             art\tiles\tp081.frm
-roof       84   52             art\tiles\tp080.frm
-roof       86   52             art\tiles\tp082.frm
-roof       88   52             art\tiles\tp081.frm
-roof       90   52             art\tiles\tp080.frm
-roof       128  52             art\tiles\tp100.frm
-roof       130  52             art\tiles\tp107.frm
-roof       132  52             art\tiles\tp097.frm
-roof       134  52             art\tiles\tp099.frm
-roof       136  52             art\tiles\tp189.frm
 tile       204  52             art\tiles\bld2043.frm
 tile       206  52             art\tiles\bld2043.frm
 tile       208  52             art\tiles\bld2043.frm
@@ -110,19 +34,6 @@ tile       214  52             art\tiles\bld2043.frm
 tile       216  52             art\tiles\bld2043.frm
 tile       218  52             art\tiles\bld2043.frm
 tile       220  52             art\tiles\bld2043.frm
-roof       76   54             art\tiles\tp084.frm
-roof       78   54             art\tiles\tp088.frm
-roof       80   54             art\tiles\tp097.frm
-roof       82   54             art\tiles\tp089.frm
-roof       84   54             art\tiles\tp090.frm
-roof       86   54             art\tiles\tp099.frm
-roof       88   54             art\tiles\tp098.frm
-roof       90   54             art\tiles\tp097.frm
-roof       128  54             art\tiles\tp084.frm
-roof       130  54             art\tiles\tp110.frm
-roof       132  54             art\tiles\tp114.frm
-roof       134  54             art\tiles\tp115.frm
-roof       136  54             art\tiles\tp109.frm
 tile       200  54             art\tiles\bld2043.frm
 tile       202  54             art\tiles\bld2043.frm
 tile       204  54             art\tiles\bld2043.frm
@@ -135,14 +46,6 @@ tile       216  54             art\tiles\bld2043.frm
 tile       218  54             art\tiles\bld2043.frm
 tile       220  54             art\tiles\bld2043.frm
 tile       222  54             art\tiles\bld2043.frm
-roof       76   56             art\tiles\tp116.frm
-roof       78   56             art\tiles\tp115.frm
-roof       80   56             art\tiles\tp114.frm
-roof       82   56             art\tiles\tp114.frm
-roof       84   56             art\tiles\tp187.frm
-roof       86   56             art\tiles\tp094.frm
-roof       88   56             art\tiles\tp095.frm
-roof       90   56             art\tiles\tp096.frm
 tile       196  56             art\tiles\bld2043.frm
 tile       198  56             art\tiles\bld2043.frm
 tile       200  56             art\tiles\bld2043.frm
@@ -157,11 +60,6 @@ tile       216  56             art\tiles\bld2043.frm
 tile       218  56             art\tiles\bld2043.frm
 tile       220  56             art\tiles\bld2043.frm
 tile       222  56             art\tiles\bld2043.frm
-roof       82   58             art\tiles\tp100.frm
-roof       84   58             art\tiles\tp099.frm
-roof       86   58             art\tiles\tp094.frm
-roof       88   58             art\tiles\tp098.frm
-roof       90   58             art\tiles\tp097.frm
 tile       192  58             art\tiles\bld2043.frm
 tile       194  58             art\tiles\bld2043.frm
 tile       196  58             art\tiles\bld2043.frm
@@ -179,11 +77,6 @@ tile       218  58             art\tiles\bld2043.frm
 tile       220  58             art\tiles\bld2043.frm
 tile       222  58             art\tiles\bld2043.frm
 tile       224  58             art\tiles\bld2043.frm
-roof       82   60             art\tiles\tp084.frm
-roof       84   60             art\tiles\tp107.frm
-roof       86   60             art\tiles\tp094.frm
-roof       88   60             art\tiles\tp095.frm
-roof       90   60             art\tiles\tp096.frm
 tile       188  60             art\tiles\bld2043.frm
 tile       190  60             art\tiles\bld2043.frm
 tile       192  60             art\tiles\bld2043.frm
@@ -204,11 +97,6 @@ tile       220  60             art\tiles\bld2043.frm
 tile       222  60             art\tiles\bld2043.frm
 tile       224  60             art\tiles\bld2043.frm
 tile       226  60             art\tiles\bld2043.frm
-roof       82   62             art\tiles\tp029.frm
-roof       84   62             art\tiles\tp099.frm
-roof       86   62             art\tiles\tp094.frm
-roof       88   62             art\tiles\tp098.frm
-roof       90   62             art\tiles\tp097.frm
 tile       184  62             art\tiles\bld2043.frm
 tile       186  62             art\tiles\bld2043.frm
 tile       188  62             art\tiles\bld2043.frm
@@ -232,11 +120,6 @@ tile       222  62             art\tiles\bld2043.frm
 tile       224  62             art\tiles\bld2043.frm
 tile       226  62             art\tiles\bld2043.frm
 tile       228  62             art\tiles\bld2043.frm
-roof       82   64             art\tiles\tp030.frm
-roof       84   64             art\tiles\tp091.frm
-roof       86   64             art\tiles\tp095.frm
-roof       88   64             art\tiles\tp099.frm
-roof       90   64             art\tiles\tp098.frm
 tile       180  64             art\tiles\bld2043.frm
 tile       182  64             art\tiles\bld2043.frm
 tile       184  64             art\tiles\bld2043.frm
@@ -262,11 +145,6 @@ tile       222  64             art\tiles\bld2043.frm
 tile       224  64             art\tiles\bld2043.frm
 tile       226  64             art\tiles\bld2043.frm
 tile       228  64             art\tiles\bld2043.frm
-roof       82   66             art\tiles\tp029.frm
-roof       84   66             art\tiles\tp091.frm
-roof       86   66             art\tiles\tp096.frm
-roof       88   66             art\tiles\tp098.frm
-roof       90   66             art\tiles\tp099.frm
 tile       176  66             art\tiles\bld2043.frm
 tile       178  66             art\tiles\bld2043.frm
 tile       180  66             art\tiles\bld2043.frm
@@ -295,11 +173,6 @@ tile       224  66             art\tiles\bld2043.frm
 tile       226  66             art\tiles\bld2043.frm
 tile       228  66             art\tiles\bld2043.frm
 tile       230  66             art\tiles\bld2043.frm
-roof       82   68             art\tiles\tp084.frm
-roof       84   68             art\tiles\tp091.frm
-roof       86   68             art\tiles\tp090.frm
-roof       88   68             art\tiles\tp097.frm
-roof       90   68             art\tiles\tp095.frm
 tile       172  68             art\tiles\bld2043.frm
 tile       174  68             art\tiles\bld2043.frm
 tile       176  68             art\tiles\bld2043.frm
@@ -331,11 +204,6 @@ tile       226  68             art\tiles\bld2043.frm
 tile       228  68             art\tiles\bld2043.frm
 tile       230  68             art\tiles\bld2043.frm
 tile       232  68             art\tiles\bld2043.frm
-roof       82   70             art\tiles\tp092.frm
-roof       84   70             art\tiles\tp099.frm
-roof       86   70             art\tiles\tp098.frm
-roof       88   70             art\tiles\tp097.frm
-roof       90   70             art\tiles\tp096.frm
 tile       168  70             art\tiles\bld2043.frm
 tile       170  70             art\tiles\bld2043.frm
 tile       172  70             art\tiles\bld2043.frm
@@ -369,11 +237,6 @@ tile       226  70             art\tiles\bld2043.frm
 tile       228  70             art\tiles\bld2043.frm
 tile       230  70             art\tiles\bld2043.frm
 tile       232  70             art\tiles\bld2043.frm
-roof       82   72             art\tiles\tp100.frm
-roof       84   72             art\tiles\tp107.frm
-roof       86   72             art\tiles\tp106.frm
-roof       88   72             art\tiles\tp096.frm
-roof       90   72             art\tiles\tp107.frm
 tile       164  72             art\tiles\bld2043.frm
 tile       166  72             art\tiles\bld2043.frm
 tile       168  72             art\tiles\bld2043.frm
@@ -410,11 +273,6 @@ tile       228  72             art\tiles\bld2043.frm
 tile       230  72             art\tiles\bld2043.frm
 tile       232  72             art\tiles\bld2043.frm
 tile       234  72             art\tiles\bld2043.frm
-roof       82   74             art\tiles\tp116.frm
-roof       84   74             art\tiles\tp110.frm
-roof       86   74             art\tiles\tp111.frm
-roof       88   74             art\tiles\tp111.frm
-roof       90   74             art\tiles\tp112.frm
 tile       160  74             art\tiles\bld2043.frm
 tile       162  74             art\tiles\bld2043.frm
 tile       164  74             art\tiles\bld2043.frm
@@ -2189,10 +2047,10 @@ tile       262  122            art\tiles\bld2043.frm
 tile       264  122            art\tiles\bld2043.frm
 tile       266  122            art\tiles\bld2043.frm
 tile       268  122            art\tiles\bld2043.frm
-roof       122  123            art\tiles\ruf1000.frm
-roof       124  123            art\tiles\ruf1000.frm
-roof       126  123            art\tiles\ruf1000.frm
-roof       128  123            art\tiles\ruf1000.frm
+roof_o     122  123  0   4     art\tiles\ruf1000.frm
+roof_o     124  123  0   4     art\tiles\ruf1000.frm
+roof_o     126  123  0   4     art\tiles\ruf1000.frm
+roof_o     128  123  0   4     art\tiles\ruf1000.frm
 tile       60   124            art\tiles\bld2043.frm
 tile       62   124            art\tiles\bld2043.frm
 tile       64   124            art\tiles\bld2043.frm
@@ -2298,10 +2156,10 @@ tile       262  124            art\tiles\bld2043.frm
 tile       264  124            art\tiles\bld2043.frm
 tile       266  124            art\tiles\bld2043.frm
 tile       268  124            art\tiles\bld2043.frm
-roof       122  125            art\tiles\ruf1000.frm
-roof       124  125            art\tiles\ruf1000.frm
-roof       126  125            art\tiles\ruf1000.frm
-roof       128  125            art\tiles\ruf1000.frm
+roof_o     122  125  -12 -6    art\tiles\ruf1000.frm
+roof_o     124  125  -12 -6    art\tiles\ruf1000.frm
+roof_o     126  125  -12 -6    art\tiles\ruf1000.frm
+roof_o     128  125  -12 -6    art\tiles\ruf1000.frm
 tile       56   126            art\tiles\bld2043.frm
 tile       58   126            art\tiles\bld2043.frm
 tile       60   126            art\tiles\bld2043.frm
@@ -2410,12 +2268,12 @@ tile       264  126            art\tiles\bld2043.frm
 tile       266  126            art\tiles\bld2043.frm
 tile       268  126            art\tiles\bld2043.frm
 tile       270  126            art\tiles\bld2043.frm
-roof       122  127            art\tiles\ruf1000.frm
-roof       124  127            art\tiles\ruf1000.frm
-roof       126  127            art\tiles\ruf1000.frm
-roof       128  127            art\tiles\ruf1000.frm
-roof       130  127            art\tiles\ruf1000.frm
-roof       132  127            art\tiles\ruf1000.frm
+roof_o     122  127  -12 -6    art\tiles\ruf1000.frm
+roof_o     124  127  -12 -6    art\tiles\ruf1000.frm
+roof_o     126  127  -12 -6    art\tiles\ruf1000.frm
+roof_o     128  127  -12 -6    art\tiles\ruf1000.frm
+roof_o     130  127  3   4     art\tiles\ruf1000.frm
+roof_o     132  127  3   4     art\tiles\ruf1000.frm
 tile       52   128            art\tiles\bld2043.frm
 tile       54   128            art\tiles\bld2043.frm
 tile       56   128            art\tiles\bld2043.frm
@@ -2527,12 +2385,12 @@ tile       266  128            art\tiles\bld2043.frm
 tile       268  128            art\tiles\bld2043.frm
 tile       270  128            art\tiles\bld2043.frm
 tile       272  128            art\tiles\bld2043.frm
-roof       122  129            art\tiles\ruf1000.frm
-roof       124  129            art\tiles\ruf1000.frm
-roof       126  129            art\tiles\ruf1000.frm
-roof       128  129            art\tiles\ruf1000.frm
-roof       130  129            art\tiles\ruf1000.frm
-roof       132  129            art\tiles\ruf1000.frm
+roof_o     122  129  -12 -6    art\tiles\ruf1000.frm
+roof_o     124  129  -12 -6    art\tiles\ruf1000.frm
+roof_o     126  129  -12 -6    art\tiles\ruf1000.frm
+roof_o     128  129  -12 -6    art\tiles\ruf1000.frm
+roof_o     130  129  -12 -6    art\tiles\ruf1000.frm
+roof_o     132  129  -12 -6    art\tiles\ruf1000.frm
 tile       48   130            art\tiles\bld2043.frm
 tile       50   130            art\tiles\bld2043.frm
 tile       52   130            art\tiles\bld2043.frm
@@ -2648,12 +2506,12 @@ tile       266  130            art\tiles\bld2043.frm
 tile       268  130            art\tiles\bld2043.frm
 tile       270  130            art\tiles\bld2043.frm
 tile       272  130            art\tiles\bld2043.frm
-roof       122  131            art\tiles\ruf1000.frm
-roof       124  131            art\tiles\ruf1000.frm
-roof       126  131            art\tiles\ruf1000.frm
-roof       128  131            art\tiles\ruf1000.frm
-roof       130  131            art\tiles\ruf1000.frm
-roof       132  131            art\tiles\ruf1000.frm
+roof_o     122  131  -12 -6    art\tiles\ruf1000.frm
+roof_o     124  131  -12 -6    art\tiles\ruf1000.frm
+roof_o     126  131  -12 -6    art\tiles\ruf1000.frm
+roof_o     128  131  -12 -6    art\tiles\ruf1000.frm
+roof_o     130  131  -12 -6    art\tiles\ruf1000.frm
+roof_o     132  131  -12 -6    art\tiles\ruf1000.frm
 tile       44   132            art\tiles\bld2043.frm
 tile       46   132            art\tiles\bld2043.frm
 tile       48   132            art\tiles\bld2043.frm
@@ -4943,8 +4801,8 @@ tile       110  164            art\tiles\curb22.frm
 tile       112  164            art\tiles\curb29.frm
 tile       114  164            art\tiles\curb28.frm
 tile       116  164            art\tiles\curb33.frm
-tile       118  164            art\tiles\curb34.frm
-tile       120  164            art\tiles\edg4000.frm
+tile       117  164            art\tiles\curb34.frm
+tile       120  164            art\tiles\wood_pol2.png
 tile       122  164            art\tiles\curb42.frm
 tile       124  164            art\tiles\curb47.frm
 tile       126  164            art\tiles\curb13.frm
@@ -5033,6 +4891,7 @@ tile       290  164            art\tiles\bld2043.frm
 tile       292  164            art\tiles\bld2043.frm
 tile       294  164            art\tiles\bld2043.frm
 tile       296  164            art\tiles\bld2043.frm
+tile       119  165            art\tiles\wood_pol2.png
 tile       36   166            art\tiles\bld2043.frm
 tile       38   166            art\tiles\bld2043.frm
 tile       40   166            art\tiles\bld2043.frm
@@ -5074,8 +4933,9 @@ tile       110  166            art\tiles\curb05.frm
 tile       112  166            art\tiles\curb04.frm
 tile       114  166            art\tiles\curb02.frm
 tile       116  166            art\tiles\curb38.frm
-tile       118  166            art\tiles\edg4002.frm
-tile       120  166            art\tiles\edg4002.frm
+tile       117  166            art\tiles\edg4002.frm
+tile       119  166            art\tiles\wood_pol2.png
+tile       120  166            art\tiles\wood_pol1.png
 tile       122  166            art\tiles\curb36.frm
 tile       124  166            art\tiles\curb07.frm
 tile       126  166            art\tiles\curb04.frm
@@ -5204,9 +5064,9 @@ tile       108  168            art\tiles\edg5000.frm
 tile       110  168            art\tiles\road25.frm
 tile       112  168            art\tiles\road22.frm
 tile       114  168            art\tiles\road25.frm
-tile       116  168            art\tiles\road23.frm
-tile       118  168            art\tiles\edg7002.frm
-tile       120  168            art\tiles\edg6011.frm
+tile       117  168            art\tiles\edg7002.frm
+tile       119  168            art\tiles\wood_pol2.png
+tile       120  168            art\tiles\wood_pol2.png
 tile       122  168            art\tiles\edg5003.frm
 tile       124  168            art\tiles\edg5000.frm
 tile       126  168            art\tiles\edg5002.frm
@@ -5296,6 +5156,7 @@ tile       292  168            art\tiles\bld2043.frm
 tile       294  168            art\tiles\bld2043.frm
 tile       296  168            art\tiles\bld2043.frm
 tile       298  168            art\tiles\bld2043.frm
+tile       116  169            art\tiles\road23.frm
 tile       38   170            art\tiles\bld2043.frm
 tile       40   170            art\tiles\bld2043.frm
 tile       42   170            art\tiles\bld2043.frm
@@ -5334,10 +5195,9 @@ tile       106  170            art\tiles\edg5003.frm
 tile       108  170            art\tiles\edg5002.frm
 tile       110  170            art\tiles\road26.frm
 tile       112  170            art\tiles\road14.frm
-tile       114  170            art\tiles\road20.frm
-tile       116  170            art\tiles\road16.frm
-tile       118  170            art\tiles\road22.frm
-tile       120  170            art\tiles\edg5006.frm
+tile       117  170            art\tiles\road22.frm
+tile       119  170            art\tiles\wood_pol2.png
+tile       120  170            art\tiles\wood_pol1.png
 tile       122  170            art\tiles\edg5002.frm
 tile       124  170            art\tiles\edg5004.frm
 tile       126  170            art\tiles\edg5005.frm
@@ -5428,6 +5288,8 @@ tile       294  170            art\tiles\bld2043.frm
 tile       296  170            art\tiles\bld2043.frm
 tile       298  170            art\tiles\bld2043.frm
 tile       300  170            art\tiles\bld2043.frm
+tile_o     114  171  -16 -12   art\tiles\road20.frm
+tile_o     115  171  -2  2     art\tiles\road16.frm
 tile       40   172            art\tiles\bld2043.frm
 tile       42   172            art\tiles\bld2043.frm
 tile       44   172            art\tiles\bld2043.frm
@@ -5466,9 +5328,9 @@ tile       108  172            art\tiles\edg5003.frm
 tile       110  172            art\tiles\road27.frm
 tile       112  172            art\tiles\road16.frm
 tile       114  172            art\tiles\road19.frm
-tile       116  172            art\tiles\road38.frm
-tile       118  172            art\tiles\road33.frm
-tile       120  172            art\tiles\edg5007.frm
+tile       117  172            art\tiles\road33.frm
+tile       119  172            art\tiles\wood_pol2.png
+tile       120  172            art\tiles\wood_pol2.png
 tile       122  172            art\tiles\edg5000.frm
 tile       124  172            art\tiles\edg5003.frm
 tile       126  172            art\tiles\edg5000.frm
@@ -5559,6 +5421,7 @@ tile       294  172            art\tiles\bld2043.frm
 tile       296  172            art\tiles\bld2043.frm
 tile       298  172            art\tiles\bld2043.frm
 tile       300  172            art\tiles\bld2043.frm
+tile_o     115  173  -9  -6    art\tiles\road38.frm
 tile       40   174            art\tiles\bld2043.frm
 tile       42   174            art\tiles\bld2043.frm
 tile       44   174            art\tiles\bld2043.frm
@@ -5597,9 +5460,9 @@ tile       108  174            art\tiles\edg5000.frm
 tile       110  174            art\tiles\road28.frm
 tile       112  174            art\tiles\road29.frm
 tile       114  174            art\tiles\road10.frm
-tile       116  174            art\tiles\road39.frm
-tile       118  174            art\tiles\road32.frm
-tile       120  174            art\tiles\edg5000.frm
+tile       117  174            art\tiles\road32.frm
+tile       119  174            art\tiles\wood_pol2.png
+tile       120  174            art\tiles\wood_pol1.png
 tile       122  174            art\tiles\edg5003.frm
 tile       124  174            art\tiles\edg5000.frm
 tile       126  174            art\tiles\edg5002.frm
@@ -5691,6 +5554,7 @@ tile       296  174            art\tiles\bld2043.frm
 tile       298  174            art\tiles\bld2043.frm
 tile       300  174            art\tiles\bld2043.frm
 tile       302  174            art\tiles\bld2043.frm
+tile_o     115  175  -11 -5    art\tiles\road39.frm
 tile       42   176            art\tiles\bld2043.frm
 tile       44   176            art\tiles\bld2043.frm
 tile       46   176            art\tiles\bld2043.frm
@@ -5729,8 +5593,9 @@ tile       110  176            art\tiles\edg5005.frm
 tile       112  176            art\tiles\edg5000.frm
 tile       114  176            art\tiles\road28.frm
 tile       116  176            art\tiles\road12.frm
-tile       118  176            art\tiles\road31.frm
-tile       120  176            art\tiles\edg5006.frm
+tile       117  176            art\tiles\road31.frm
+tile       119  176            art\tiles\wood_pol2.png
+tile       120  176            art\tiles\wood_pol2.png
 tile       122  176            art\tiles\edg5002.frm
 tile       124  176            art\tiles\edg5004.frm
 tile       126  176            art\tiles\edg5005.frm
@@ -5860,8 +5725,9 @@ tile       110  178            art\tiles\edg5000.frm
 tile       112  178            art\tiles\edg3000.frm
 tile       114  178            art\tiles\edg2003.frm
 tile       116  178            art\tiles\edg4001.frm
-tile       118  178            art\tiles\edg3000.frm
-tile       120  178            art\tiles\edg5007.frm
+tile       117  178            art\tiles\edg3000.frm
+tile       119  178            art\tiles\wood_pol2.png
+tile       120  178            art\tiles\wood_pol1.png
 tile       122  178            art\tiles\edg5000.frm
 tile       124  178            art\tiles\edg5003.frm
 tile       126  178            art\tiles\edg5000.frm
@@ -5954,6 +5820,7 @@ tile       298  178            art\tiles\bld2043.frm
 tile       300  178            art\tiles\bld2043.frm
 tile       302  178            art\tiles\bld2043.frm
 tile       304  178            art\tiles\bld2043.frm
+tile       130  179            art\tiles\edg4002.frm
 tile       44   180            art\tiles\bld2043.frm
 tile       46   180            art\tiles\bld2043.frm
 tile       48   180            art\tiles\bld2043.frm
@@ -5991,18 +5858,19 @@ tile       110  180            art\tiles\edg4002.frm
 tile       112  180            art\tiles\edg2003.frm
 tile       114  180            art\tiles\edg4002.frm
 tile       116  180            art\tiles\edg4002.frm
-tile       118  180            art\tiles\edg2003.frm
-tile       120  180            art\tiles\edg4002.frm
+tile       117  180            art\tiles\edg2003.frm
+tile       119  180            art\tiles\wood_pol2.png
+tile       120  180            art\tiles\wood_pol2.png
 tile       122  180            art\tiles\edg2002.frm
 tile       124  180            art\tiles\edg2002.frm
 tile       126  180            art\tiles\edg2001.frm
 tile       128  180            art\tiles\edg2002.frm
-tile       130  180            art\tiles\edg4002.frm
-tile       132  180            art\tiles\road28.frm
-tile       134  180            art\tiles\road12.frm
-tile       136  180            art\tiles\road12.frm
-tile       138  180            art\tiles\road12.frm
-tile       140  180            art\tiles\road12.frm
+tile       132  180            art\tiles\wood_pol1.png
+tile       134  180            art\tiles\wood_pol1.png
+tile       135  180            art\tiles\road12.frm
+tile       137  180            art\tiles\road12.frm
+tile       139  180            art\tiles\road12.frm
+tile       141  180            art\tiles\road12.frm
 tile       142  180            art\tiles\road12.frm
 tile       144  180            art\tiles\road12.frm
 tile       146  180            art\tiles\road31.frm
@@ -6086,6 +5954,7 @@ tile       300  180            art\tiles\bld2043.frm
 tile       302  180            art\tiles\bld2043.frm
 tile       304  180            art\tiles\bld2043.frm
 tile       306  180            art\tiles\bld2043.frm
+tile       130  181            art\tiles\wood_pol2.png
 tile       46   182            art\tiles\bld2043.frm
 tile       48   182            art\tiles\bld2043.frm
 tile       50   182            art\tiles\bld2043.frm
@@ -6121,20 +5990,43 @@ tile       108  182            art\tiles\edg4002.frm
 tile       110  182            art\tiles\edg4002.frm
 tile       112  182            art\tiles\edg2003.frm
 tile       114  182            art\tiles\edg4002.frm
-tile       116  182            art\tiles\edg4002.frm
-tile       118  182            art\tiles\edg2003.frm
-tile       120  182            art\tiles\edg4002.frm
-tile       122  182            art\tiles\edg4002.frm
-tile       124  182            art\tiles\edg2003.frm
-tile       126  182            art\tiles\edg4002.frm
-tile       128  182            art\tiles\edg3001.frm
-tile       130  182            art\tiles\edg1002.frm
-tile       132  182            art\tiles\edg2003.frm
-tile       134  182            art\tiles\edg4000.frm
-tile       136  182            art\tiles\edg3000.frm
-tile       138  182            art\tiles\edg2003.frm
-tile       140  182            art\tiles\edg4002.frm
-tile       142  182            art\tiles\edg7002.frm
+tile       115  182            art\tiles\edg4002.frm
+tile       117  182            art\tiles\wood_pol2.png
+roof_o     117  182  2   -4    art\tiles\wood_pol2.png
+tile       118  182            art\tiles\wood_pol1.png
+tile       119  182            art\tiles\wood_pol2.png
+roof_o     119  182  2   -4    art\tiles\wood_pol2.png
+tile       120  182            art\tiles\wood_pol1.png
+tile       121  182            art\tiles\wood_pol1.png
+roof_o     121  182  2   -4    art\tiles\wood_pol2.png
+tile       122  182            art\tiles\wood_pol2.png
+tile       123  182            art\tiles\wood_pol2.png
+roof_o     123  182  2   -4    art\tiles\wood_pol2.png
+tile       124  182            art\tiles\wood_pol1.png
+tile       125  182            art\tiles\wood_pol1.png
+roof_o     125  182  2   -4    art\tiles\wood_pol2.png
+tile       126  182            art\tiles\wood_pol2.png
+tile       127  182            art\tiles\wood_pol2.png
+roof_o     127  182  2   -4    art\tiles\wood_pol2.png
+tile       129  182            art\tiles\wood_pol1.png
+roof_o     129  182  2   -4    art\tiles\wood_pol2.png
+tile       130  182            art\tiles\wood_pol2.png
+roof       131  182            art\tiles\wood_pol2.png
+tile       132  182            art\tiles\wood_pol1.png
+roof       133  182            art\tiles\wood_pol2.png
+tile       134  182            art\tiles\wood_pol2.png
+tile       135  182            art\tiles\wood_pol1.png
+roof       135  182            art\tiles\wood_pol2.png
+tile       136  182            art\tiles\wood_pol2.png
+tile       137  182            art\tiles\wood_pol2.png
+roof       137  182            art\tiles\wood_pol2.png
+tile       138  182            art\tiles\wood_pol1.png
+tile       139  182            art\tiles\wood_pol1.png
+roof       139  182            art\tiles\wood_pol2.png
+tile       140  182            art\tiles\wood_pol2.png
+tile       141  182            art\tiles\wood_pol1.png
+roof       141  182            art\tiles\wood_pol2.png
+tile       143  182            art\tiles\edg7002.frm
 tile       144  182            art\tiles\edg5003.frm
 tile       146  182            art\tiles\edg1001.frm
 tile       148  182            art\tiles\edg6009.frm
@@ -6218,6 +6110,8 @@ tile       302  182            art\tiles\bld2043.frm
 tile       304  182            art\tiles\bld2043.frm
 tile       306  182            art\tiles\bld2043.frm
 tile       308  182            art\tiles\bld2043.frm
+tile       117  183            art\tiles\wood_pol1.png
+tile       128  183            art\tiles\wood_pol2.png
 tile       48   184            art\tiles\bld2043.frm
 tile       50   184            art\tiles\bld2043.frm
 tile       52   184            art\tiles\bld2043.frm
@@ -6252,20 +6146,33 @@ tile       108  184            art\tiles\edg3000.frm
 tile       110  184            art\tiles\edg2003.frm
 tile       112  184            art\tiles\edg4001.frm
 tile       114  184            art\tiles\edg3000.frm
-tile       116  184            art\tiles\edg2003.frm
-tile       118  184            art\tiles\edg4001.frm
-tile       120  184            art\tiles\edg3000.frm
-tile       122  184            art\tiles\edg2003.frm
-tile       124  184            art\tiles\edg4001.frm
-tile       126  184            art\tiles\edg3000.frm
-tile       128  184            art\tiles\edg7003.frm
-tile       130  184            art\tiles\edg2003.frm
-tile       132  184            art\tiles\edgs002.frm
-tile       134  184            art\tiles\edg4004.frm
-tile       136  184            art\tiles\edg2003.frm
-tile       138  184            art\tiles\edg4001.frm
-tile       140  184            art\tiles\edg4000.frm
-tile       142  184            art\tiles\edgs000.frm
+tile       115  184            art\tiles\edg2003.frm
+roof_o     117  184  2   -4    art\tiles\wood_pol1.png
+tile       118  184            art\tiles\wood_pol1.png
+roof_o     119  184  2   -4    art\tiles\wood_pol1.png
+tile       120  184            art\tiles\wood_pol2.png
+roof_o     121  184  2   -4    art\tiles\wood_pol1.png
+tile       122  184            art\tiles\wood_pol1.png
+roof_o     123  184  2   -4    art\tiles\wood_pol1.png
+tile       124  184            art\tiles\wood_pol2.png
+roof_o     125  184  2   -4    art\tiles\wood_pol1.png
+tile       126  184            art\tiles\wood_pol1.png
+roof_o     127  184  2   -4    art\tiles\wood_pol1.png
+roof_o     129  184  2   -4    art\tiles\wood_pol1.png
+tile       130  184            art\tiles\wood_pol1.png
+roof       131  184            art\tiles\wood_pol1.png
+tile       132  184            art\tiles\wood_pol2.png
+roof       133  184            art\tiles\wood_pol1.png
+tile       134  184            art\tiles\wood_pol1.png
+roof       135  184            art\tiles\wood_pol1.png
+tile       136  184            art\tiles\wood_pol1.png
+roof       137  184            art\tiles\wood_pol1.png
+tile       138  184            art\tiles\wood_pol2.png
+roof       139  184            art\tiles\wood_pol1.png
+tile       140  184            art\tiles\wood_pol1.png
+tile       141  184            art\tiles\wood_pol2.png
+roof       141  184            art\tiles\wood_pol1.png
+tile       143  184            art\tiles\edgs000.frm
 tile       144  184            art\tiles\edg5007.frm
 tile       146  184            art\tiles\edg5000.frm
 tile       148  184            art\tiles\edg5001.frm
@@ -6349,6 +6256,8 @@ tile       302  184            art\tiles\bld2043.frm
 tile       304  184            art\tiles\bld2043.frm
 tile       306  184            art\tiles\bld2043.frm
 tile       308  184            art\tiles\bld2043.frm
+tile       117  185            art\tiles\wood_pol2.png
+tile       128  185            art\tiles\wood_pol1.png
 tile       48   186            art\tiles\bld2043.frm
 tile       50   186            art\tiles\bld2043.frm
 tile       52   186            art\tiles\bld2043.frm
@@ -6383,20 +6292,33 @@ tile       108  186            art\tiles\edg4002.frm
 tile       110  186            art\tiles\edg4000.frm
 tile       112  186            art\tiles\edg2003.frm
 tile       114  186            art\tiles\edg4002.frm
-tile       116  186            art\tiles\edg4000.frm
-tile       118  186            art\tiles\edg2003.frm
-tile       120  186            art\tiles\edg4002.frm
-tile       122  186            art\tiles\edg4000.frm
-tile       124  186            art\tiles\edg2003.frm
-tile       126  186            art\tiles\edg4002.frm
-tile       128  186            art\tiles\edg4002.frm
-tile       130  186            art\tiles\edg4001.frm
-tile       132  186            art\tiles\edg3000.frm
-tile       134  186            art\tiles\edg3000.frm
-tile       136  186            art\tiles\edg4003.frm
-tile       138  186            art\tiles\edg2003.frm
-tile       140  186            art\tiles\edg3000.frm
-tile       142  186            art\tiles\edgs001.frm
+tile       115  186            art\tiles\edg4000.frm
+roof_o     117  186  2   -4    art\tiles\wood_pol2.png
+tile       118  186            art\tiles\wood_pol2.png
+roof_o     119  186  2   -4    art\tiles\wood_pol2.png
+tile       120  186            art\tiles\wood_pol1.png
+roof_o     121  186  2   -4    art\tiles\wood_pol2.png
+tile       122  186            art\tiles\wood_pol2.png
+roof_o     123  186  2   -4    art\tiles\wood_pol2.png
+tile       124  186            art\tiles\wood_pol1.png
+roof_o     125  186  2   -4    art\tiles\wood_pol2.png
+tile       126  186            art\tiles\wood_pol2.png
+roof_o     127  186  2   -4    art\tiles\wood_pol2.png
+roof_o     129  186  2   -4    art\tiles\wood_pol2.png
+tile       130  186            art\tiles\wood_pol1.png
+roof       131  186            art\tiles\wood_pol2.png
+tile       132  186            art\tiles\wood_pol2.png
+roof       133  186            art\tiles\wood_pol2.png
+tile       134  186            art\tiles\wood_pol1.png
+roof       135  186            art\tiles\wood_pol2.png
+tile       136  186            art\tiles\wood_pol2.png
+roof       137  186            art\tiles\wood_pol2.png
+tile       138  186            art\tiles\wood_pol1.png
+roof       139  186            art\tiles\wood_pol2.png
+tile       140  186            art\tiles\wood_pol2.png
+tile       141  186            art\tiles\wood_pol1.png
+roof       141  186            art\tiles\wood_pol2.png
+tile       143  186            art\tiles\edgs001.frm
 tile       144  186            art\tiles\edg5000.frm
 tile       146  186            art\tiles\edg5004.frm
 tile       148  186            art\tiles\edg5000.frm
@@ -6481,6 +6403,9 @@ tile       304  186            art\tiles\bld2043.frm
 tile       306  186            art\tiles\bld2043.frm
 tile       308  186            art\tiles\bld2043.frm
 tile       310  186            art\tiles\bld2043.frm
+tile       117  187            art\tiles\wood_pol1.png
+tile       128  187            art\tiles\wood_pol2.png
+tile       141  187            art\tiles\wood_pol2.png
 tile       50   188            art\tiles\bld2043.frm
 tile       52   188            art\tiles\bld2043.frm
 tile       54   188            art\tiles\bld2043.frm
@@ -6514,20 +6439,32 @@ tile       108  188            art\tiles\edg4002.frm
 tile       110  188            art\tiles\edg4002.frm
 tile       112  188            art\tiles\edg2003.frm
 tile       114  188            art\tiles\edg4002.frm
-tile       116  188            art\tiles\edg4002.frm
-tile       118  188            art\tiles\edg2003.frm
-tile       120  188            art\tiles\edg4002.frm
-tile       122  188            art\tiles\edg4002.frm
-tile       124  188            art\tiles\edg2003.frm
-tile       126  188            art\tiles\edg4002.frm
-tile       128  188            art\tiles\edg3000.frm
-tile       130  188            art\tiles\edg2003.frm
-tile       132  188            art\tiles\edg4000.frm
-tile       134  188            art\tiles\edg2003.frm
-tile       136  188            art\tiles\edg3000.frm
-tile       138  188            art\tiles\edgs001.frm
-tile       140  188            art\tiles\edgs002.frm
-tile       142  188            art\tiles\edg5005.frm
+tile       115  188            art\tiles\edg4002.frm
+roof_o     117  188  2   -4    art\tiles\wood_pol1.png
+tile       118  188            art\tiles\wood_pol1.png
+roof_o     119  188  2   -4    art\tiles\wood_pol1.png
+tile       120  188            art\tiles\wood_pol2.png
+roof_o     121  188  2   -4    art\tiles\wood_pol1.png
+tile       122  188            art\tiles\wood_pol1.png
+roof_o     123  188  2   -4    art\tiles\wood_pol1.png
+tile       124  188            art\tiles\wood_pol2.png
+roof_o     125  188  2   -4    art\tiles\wood_pol1.png
+tile       126  188            art\tiles\wood_pol1.png
+roof_o     127  188  2   -4    art\tiles\wood_pol1.png
+roof_o     129  188  2   -4    art\tiles\wood_pol1.png
+tile       130  188            art\tiles\wood_pol2.png
+roof       131  188            art\tiles\wood_pol1.png
+tile       132  188            art\tiles\wood_pol1.png
+roof       133  188            art\tiles\wood_pol1.png
+tile       134  188            art\tiles\wood_pol2.png
+roof       135  188            art\tiles\wood_pol1.png
+tile       136  188            art\tiles\wood_pol1.png
+roof       137  188            art\tiles\wood_pol1.png
+tile       138  188            art\tiles\wood_pol2.png
+roof       139  188            art\tiles\wood_pol1.png
+tile       140  188            art\tiles\wood_pol1.png
+roof       141  188            art\tiles\wood_pol1.png
+tile       143  188            art\tiles\edg5005.frm
 tile       144  188            art\tiles\edg5002.frm
 tile       146  188            art\tiles\edg5007.frm
 tile       148  188            art\tiles\edg5003.frm
@@ -6613,6 +6550,9 @@ tile       306  188            art\tiles\bld2043.frm
 tile       308  188            art\tiles\bld2043.frm
 tile       310  188            art\tiles\bld2043.frm
 tile       312  188            art\tiles\bld2043.frm
+tile       117  189            art\tiles\wood_pol2.png
+tile       128  189            art\tiles\wood_pol1.png
+tile       141  189            art\tiles\wood_pol1.png
 tile       52   190            art\tiles\bld2043.frm
 tile       54   190            art\tiles\bld2043.frm
 tile       56   190            art\tiles\bld2043.frm
@@ -6645,20 +6585,32 @@ tile       108  190            art\tiles\edg3000.frm
 tile       110  190            art\tiles\edg2003.frm
 tile       112  190            art\tiles\edg4001.frm
 tile       114  190            art\tiles\edg3000.frm
-tile       116  190            art\tiles\edg2003.frm
-tile       118  190            art\tiles\edg4001.frm
-tile       120  190            art\tiles\edg3000.frm
-tile       122  190            art\tiles\edg2003.frm
-tile       124  190            art\tiles\edg4001.frm
-tile       126  190            art\tiles\edg3000.frm
-tile       128  190            art\tiles\edg4000.frm
-tile       130  190            art\tiles\edg4002.frm
-tile       132  190            art\tiles\edg2003.frm
-tile       134  190            art\tiles\edg4002.frm
-tile       136  190            art\tiles\edg4001.frm
-tile       138  190            art\tiles\edgs003.frm
-tile       140  190            art\tiles\edg5003.frm
-tile       142  190            art\tiles\edg5000.frm
+tile       115  190            art\tiles\edg2003.frm
+roof_o     117  190  2   -4    art\tiles\wood_pol2.png
+tile       118  190            art\tiles\wood_pol2.png
+roof_o     119  190  2   -4    art\tiles\wood_pol2.png
+tile       120  190            art\tiles\wood_pol1.png
+roof_o     121  190  2   -4    art\tiles\wood_pol2.png
+tile       122  190            art\tiles\wood_pol2.png
+roof_o     123  190  2   -4    art\tiles\wood_pol2.png
+tile       124  190            art\tiles\wood_pol1.png
+roof_o     125  190  2   -4    art\tiles\wood_pol2.png
+tile       126  190            art\tiles\wood_pol2.png
+roof_o     127  190  2   -4    art\tiles\wood_pol2.png
+roof_o     129  190  2   -4    art\tiles\wood_pol2.png
+tile       130  190            art\tiles\wood_pol1.png
+roof       131  190            art\tiles\wood_pol2.png
+tile       132  190            art\tiles\wood_pol2.png
+roof       133  190            art\tiles\wood_pol2.png
+tile       134  190            art\tiles\wood_pol1.png
+roof       135  190            art\tiles\wood_pol2.png
+tile       136  190            art\tiles\wood_pol2.png
+roof       137  190            art\tiles\wood_pol2.png
+tile       138  190            art\tiles\wood_pol1.png
+roof       139  190            art\tiles\wood_pol2.png
+tile       140  190            art\tiles\wood_pol2.png
+roof       141  190            art\tiles\wood_pol2.png
+tile       143  190            art\tiles\edg5000.frm
 tile       144  190            art\tiles\edg5004.frm
 tile       146  190            art\tiles\edg5000.frm
 tile       148  190            art\tiles\edg5004.frm
@@ -6744,6 +6696,9 @@ tile       306  190            art\tiles\bld2043.frm
 tile       308  190            art\tiles\bld2043.frm
 tile       310  190            art\tiles\bld2043.frm
 tile       312  190            art\tiles\bld2043.frm
+tile       117  191            art\tiles\wood_pol1.png
+tile       128  191            art\tiles\wood_pol2.png
+tile       141  191            art\tiles\wood_pol2.png
 tile       52   192            art\tiles\bld2043.frm
 tile       54   192            art\tiles\bld2043.frm
 tile       56   192            art\tiles\bld2043.frm
@@ -6776,20 +6731,33 @@ tile       108  192            art\tiles\edg4002.frm
 tile       110  192            art\tiles\edg4000.frm
 tile       112  192            art\tiles\edg2003.frm
 tile       114  192            art\tiles\edg4002.frm
-tile       116  192            art\tiles\edg4000.frm
-tile       118  192            art\tiles\edg2003.frm
-tile       120  192            art\tiles\edg4002.frm
-tile       122  192            art\tiles\edg4000.frm
-tile       124  192            art\tiles\edg2003.frm
-tile       126  192            art\tiles\edg4002.frm
-tile       128  192            art\tiles\edg2003.frm
-tile       130  192            art\tiles\edg2003.frm
-tile       132  192            art\tiles\edg4001.frm
-tile       134  192            art\tiles\edg3000.frm
-tile       136  192            art\tiles\edg2003.frm
-tile       138  192            art\tiles\edg7000.frm
-tile       140  192            art\tiles\edg5002.frm
-tile       142  192            art\tiles\edg5006.frm
+tile       115  192            art\tiles\edg4000.frm
+roof_o     117  192  2   -4    art\tiles\wood_pol1.png
+tile       118  192            art\tiles\wood_pol1.png
+roof_o     119  192  2   -4    art\tiles\wood_pol1.png
+tile       120  192            art\tiles\wood_pol2.png
+roof_o     121  192  2   -4    art\tiles\wood_pol1.png
+tile       122  192            art\tiles\wood_pol1.png
+roof_o     123  192  2   -4    art\tiles\wood_pol1.png
+tile       124  192            art\tiles\wood_pol2.png
+roof_o     125  192  2   -4    art\tiles\wood_pol1.png
+tile       126  192            art\tiles\wood_pol1.png
+roof_o     127  192  2   -4    art\tiles\wood_pol1.png
+roof_o     129  192  2   -4    art\tiles\wood_pol1.png
+tile       130  192            art\tiles\wood_pol2.png
+roof       131  192            art\tiles\wood_pol1.png
+tile       132  192            art\tiles\wood_pol1.png
+roof       133  192            art\tiles\wood_pol1.png
+tile       134  192            art\tiles\wood_pol2.png
+roof       135  192            art\tiles\wood_pol1.png
+tile       136  192            art\tiles\wood_pol1.png
+roof       137  192            art\tiles\wood_pol1.png
+tile       138  192            art\tiles\wood_pol2.png
+roof       139  192            art\tiles\wood_pol1.png
+tile       140  192            art\tiles\wood_pol1.png
+tile       141  192            art\tiles\wood_pol1.png
+roof       141  192            art\tiles\wood_pol1.png
+tile       143  192            art\tiles\edg5006.frm
 tile       144  192            art\tiles\edg5001.frm
 tile       146  192            art\tiles\edg5005.frm
 tile       148  192            art\tiles\edg5002.frm
@@ -6876,6 +6844,14 @@ tile       308  192            art\tiles\bld2043.frm
 tile       310  192            art\tiles\bld2043.frm
 tile       312  192            art\tiles\bld2043.frm
 tile       314  192            art\tiles\bld2043.frm
+tile       117  193            art\tiles\wood_pol2.png
+tile       128  193            art\tiles\wood_pol1.png
+tile       130  193            art\tiles\wood_pol1.png
+tile       132  193            art\tiles\wood_pol2.png
+tile       134  193            art\tiles\wood_pol1.png
+tile       136  193            art\tiles\wood_pol2.png
+tile       138  193            art\tiles\wood_pol1.png
+tile       140  193            art\tiles\wood_pol2.png
 tile       54   194            art\tiles\bld2043.frm
 tile       56   194            art\tiles\bld2043.frm
 tile       58   194            art\tiles\bld2043.frm
@@ -6907,20 +6883,32 @@ tile       108  194            art\tiles\edg1003.frm
 tile       110  194            art\tiles\edg4000.frm
 tile       112  194            art\tiles\edg2003.frm
 tile       114  194            art\tiles\edg4002.frm
-tile       116  194            art\tiles\edg3000.frm
-tile       118  194            art\tiles\edg2003.frm
-tile       120  194            art\tiles\edg4001.frm
-tile       122  194            art\tiles\edg3000.frm
-tile       124  194            art\tiles\edg4000.frm
-tile       126  194            art\tiles\edg2003.frm
-tile       128  194            art\tiles\edg3000.frm
-tile       130  194            art\tiles\edg4000.frm
-tile       132  194            art\tiles\edg2003.frm
-tile       134  194            art\tiles\edg4002.frm
-tile       136  194            art\tiles\edg3000.frm
-tile       138  194            art\tiles\edgs000.frm
-tile       140  194            art\tiles\edg5000.frm
-tile       142  194            art\tiles\edg5001.frm
+tile       115  194            art\tiles\edg3000.frm
+roof_o     117  194  2   -4    art\tiles\wood_pol2.png
+tile       118  194            art\tiles\wood_pol2.png
+roof_o     119  194  2   -4    art\tiles\wood_pol2.png
+tile       120  194            art\tiles\wood_pol1.png
+roof_o     121  194  2   -4    art\tiles\wood_pol2.png
+tile       122  194            art\tiles\wood_pol2.png
+roof_o     123  194  2   -4    art\tiles\wood_pol2.png
+tile       124  194            art\tiles\wood_pol1.png
+roof_o     125  194  2   -4    art\tiles\wood_pol2.png
+tile       126  194            art\tiles\wood_pol2.png
+roof_o     127  194  2   -4    art\tiles\wood_pol2.png
+roof_o     129  194  2   -4    art\tiles\wood_pol2.png
+tile       131  194            art\tiles\wood_pol1.png
+roof       131  194            art\tiles\wood_pol2.png
+tile       133  194            art\tiles\wood_pol2.png
+roof       133  194            art\tiles\wood_pol2.png
+tile       135  194            art\tiles\wood_pol1.png
+roof       135  194            art\tiles\wood_pol2.png
+tile       137  194            art\tiles\wood_pol2.png
+roof       137  194            art\tiles\wood_pol2.png
+tile       139  194            art\tiles\wood_pol1.png
+roof       139  194            art\tiles\wood_pol2.png
+tile       141  194            art\tiles\wood_pol1.png
+roof       141  194            art\tiles\wood_pol2.png
+tile       143  194            art\tiles\edg5001.frm
 tile       144  194            art\tiles\edg5000.frm
 tile       146  194            art\tiles\edg5003.frm
 tile       148  194            art\tiles\edg5000.frm
@@ -7008,6 +6996,10 @@ tile       310  194            art\tiles\bld2043.frm
 tile       312  194            art\tiles\bld2043.frm
 tile       314  194            art\tiles\bld2043.frm
 tile       316  194            art\tiles\bld2043.frm
+tile       117  195            art\tiles\wood_pol1.png
+tile       128  195            art\tiles\wood_pol1.png
+tile       129  195            art\tiles\wood_pol2.png
+tile       143  195            art\tiles\edg5001.frm
 tile       56   196            art\tiles\bld2043.frm
 tile       58   196            art\tiles\bld2043.frm
 tile       60   196            art\tiles\bld2043.frm
@@ -7038,19 +7030,30 @@ tile       108  196            art\tiles\edg1002.frm
 tile       110  196            art\tiles\edg2003.frm
 tile       112  196            art\tiles\edg3000.frm
 tile       114  196            art\tiles\edg4001.frm
-tile       116  196            art\tiles\edg2003.frm
-tile       118  196            art\tiles\edg4000.frm
-tile       120  196            art\tiles\edg3000.frm
-tile       122  196            art\tiles\edg2003.frm
-tile       124  196            art\tiles\edg4000.frm
-tile       126  196            art\tiles\edg3000.frm
-tile       128  196            art\tiles\edg2003.frm
-tile       130  196            art\tiles\edg2003.frm
-tile       132  196            art\tiles\edg3000.frm
-tile       134  196            art\tiles\edg4001.frm
-tile       136  196            art\tiles\edg2003.frm
-tile       138  196            art\tiles\edg7002.frm
-tile       140  196            art\tiles\edg5002.frm
+tile       115  196            art\tiles\edg2003.frm
+roof_o     117  196  2   -4    art\tiles\wood_pol2.png
+tile       118  196            art\tiles\wood_pol1.png
+roof_o     119  196  2   -4    art\tiles\wood_pol2.png
+tile       120  196            art\tiles\wood_pol2.png
+roof_o     121  196  2   -4    art\tiles\wood_pol2.png
+tile       122  196            art\tiles\wood_pol1.png
+roof_o     123  196  2   -4    art\tiles\wood_pol2.png
+tile       124  196            art\tiles\wood_pol2.png
+roof_o     125  196  2   -4    art\tiles\wood_pol2.png
+tile       126  196            art\tiles\wood_pol1.png
+roof_o     127  196  2   -4    art\tiles\wood_pol2.png
+roof_o     129  196  2   -4    art\tiles\wood_pol2.png
+tile       131  196            art\tiles\wood_pol1.png
+roof       131  196            art\tiles\wood_pol1.png
+tile       133  196            art\tiles\wood_pol2.png
+roof       133  196            art\tiles\wood_pol2.png
+tile       135  196            art\tiles\wood_pol1.png
+roof       135  196            art\tiles\wood_pol1.png
+tile       137  196            art\tiles\wood_pol2.png
+roof       137  196            art\tiles\wood_pol2.png
+tile       139  196            art\tiles\wood_pol1.png
+roof       139  196            art\tiles\wood_pol1.png
+tile       141  196            art\tiles\edg5000.frm
 tile       142  196            art\tiles\edg5000.frm
 tile       144  196            art\tiles\edg5003.frm
 tile       146  196            art\tiles\edg5001.frm
@@ -7139,6 +7142,12 @@ tile       310  196            art\tiles\bld2043.frm
 tile       312  196            art\tiles\bld2043.frm
 tile       314  196            art\tiles\bld2043.frm
 tile       316  196            art\tiles\bld2043.frm
+tile       117  197            art\tiles\wood_pol2.png
+tile       128  197            art\tiles\wood_pol1.png
+tile       129  197            art\tiles\wood_pol1.png
+roof       131  197            art\tiles\wood_pol2.png
+roof       133  197            art\tiles\wood_pol1.png
+tile       141  197            art\tiles\edg5002.frm
 tile       56   198            art\tiles\bld2043.frm
 tile       58   198            art\tiles\bld2043.frm
 tile       60   198            art\tiles\bld2043.frm
@@ -7169,19 +7178,27 @@ tile       108  198            art\tiles\edg5005.frm
 tile       110  198            art\tiles\edg1001.frm
 tile       112  198            art\tiles\edg1000.frm
 tile       114  198            art\tiles\edg4002.frm
-tile       116  198            art\tiles\edg3000.frm
-tile       118  198            art\tiles\edg2003.frm
-tile       120  198            art\tiles\edg4003.frm
-tile       122  198            art\tiles\edg4001.frm
-tile       124  198            art\tiles\edg2003.frm
-tile       126  198            art\tiles\edg7002.frm
-tile       128  198            art\tiles\edgs001.frm
-tile       130  198            art\tiles\edgs000.frm
-tile       132  198            art\tiles\edg6007.frm
-tile       134  198            art\tiles\edg4002.frm
-tile       136  198            art\tiles\edg3000.frm
-tile       138  198            art\tiles\edg2003.frm
-tile       140  198            art\tiles\edgs004.frm
+tile       115  198            art\tiles\edg3000.frm
+roof_o     117  198  2   -4    art\tiles\wood_pol1.png
+tile       118  198            art\tiles\wood_pol2.png
+roof_o     119  198  2   -4    art\tiles\wood_pol1.png
+tile       120  198            art\tiles\wood_pol1.png
+roof_o     121  198  2   -4    art\tiles\wood_pol1.png
+tile       122  198            art\tiles\wood_pol2.png
+roof_o     123  198  2   -4    art\tiles\wood_pol1.png
+tile       124  198            art\tiles\wood_pol1.png
+roof_o     125  198  2   -4    art\tiles\wood_pol1.png
+tile       126  198            art\tiles\wood_pol2.png
+roof_o     127  198  2   -4    art\tiles\wood_pol1.png
+roof_o     129  198  2   -4    art\tiles\wood_pol1.png
+tile       131  198            art\tiles\wood_pol2.png
+tile       133  198            art\tiles\wood_pol1.png
+tile       135  198            art\tiles\wood_pol2.png
+roof       135  198            art\tiles\wood_pol2.png
+tile       137  198            art\tiles\wood_pol1.png
+roof       137  198            art\tiles\wood_pol1.png
+tile       139  198            art\tiles\wood_pol2.png
+roof       139  198            art\tiles\wood_pol2.png
 tile       142  198            art\tiles\edg5003.frm
 tile       144  198            art\tiles\edg5000.frm
 tile       146  198            art\tiles\edg6006.frm
@@ -7271,6 +7288,20 @@ tile       312  198            art\tiles\bld2043.frm
 tile       314  198            art\tiles\bld2043.frm
 tile       316  198            art\tiles\bld2043.frm
 tile       318  198            art\tiles\bld2043.frm
+tile       115  199            art\tiles\edg3000.frm
+tile       117  199            art\tiles\wood_pol1.png
+tile       119  199            art\tiles\wood_pol2.png
+tile       121  199            art\tiles\wood_pol1.png
+tile       123  199            art\tiles\wood_pol2.png
+tile       125  199            art\tiles\wood_pol1.png
+tile       127  199            art\tiles\wood_pol2.png
+tile       129  199            art\tiles\wood_pol2.png
+roof       131  199            art\tiles\wood_pol1.png
+roof       133  199            art\tiles\wood_pol2.png
+roof       135  199            art\tiles\wood_pol1.png
+roof       137  199            art\tiles\wood_pol2.png
+roof       139  199            art\tiles\wood_pol1.png
+tile       141  199            art\tiles\edgs004.frm
 tile       58   200            art\tiles\bld2043.frm
 tile       60   200            art\tiles\bld2043.frm
 tile       62   200            art\tiles\bld2043.frm
@@ -7300,19 +7331,18 @@ tile       108  200            art\tiles\edg5006.frm
 tile       110  200            art\tiles\edg5006.frm
 tile       112  200            art\tiles\edg2001.frm
 tile       114  200            art\tiles\edg2003.frm
-tile       116  200            art\tiles\edg4001.frm
-tile       118  200            art\tiles\edg4000.frm
-tile       120  200            art\tiles\edg2003.frm
-tile       122  200            art\tiles\edg3000.frm
-tile       124  200            art\tiles\edg4000.frm
-tile       126  200            art\tiles\edg2000.frm
-tile       128  200            art\tiles\edg5006.frm
-tile       130  200            art\tiles\edg5006.frm
-tile       132  200            art\tiles\edg6011.frm
-tile       134  200            art\tiles\edg2003.frm
-tile       136  200            art\tiles\edg4001.frm
-tile       138  200            art\tiles\edg4000.frm
-tile       140  200            art\tiles\edg2000.frm
+roof_o     117  200  -12 -15   art\tiles\wood_pol2.png
+roof_o     119  200  -12 -15   art\tiles\wood_pol2.png
+roof_o     121  200  -12 -15   art\tiles\wood_pol2.png
+roof_o     123  200  -12 -15   art\tiles\wood_pol2.png
+roof_o     125  200  -12 -15   art\tiles\wood_pol2.png
+roof_o     127  200  -12 -15   art\tiles\wood_pol2.png
+roof_o     129  200  -12 -15   art\tiles\wood_pol2.png
+tile       131  200            art\tiles\wood_pol1.png
+tile       133  200            art\tiles\wood_pol2.png
+tile       135  200            art\tiles\wood_pol1.png
+tile       137  200            art\tiles\wood_pol2.png
+tile       139  200            art\tiles\wood_pol1.png
 tile       142  200            art\tiles\edg5002.frm
 tile       144  200            art\tiles\edg5001.frm
 tile       146  200            art\tiles\edg7001.frm
@@ -7403,6 +7433,25 @@ tile       314  200            art\tiles\bld2043.frm
 tile       316  200            art\tiles\bld2043.frm
 tile       318  200            art\tiles\bld2043.frm
 tile       320  200            art\tiles\bld2043.frm
+tile       115  201            art\tiles\edg4001.frm
+tile       117  201            art\tiles\edg4000.frm
+tile       119  201            art\tiles\edg2003.frm
+tile       121  201            art\tiles\edg3000.frm
+tile       123  201            art\tiles\edg4000.frm
+tile       125  201            art\tiles\edg2000.frm
+tile       127  201            art\tiles\edg5004.frm
+tile       129  201            art\tiles\edg5000.frm
+tile       131  201            art\tiles\wood_pol2.png
+roof       131  201            art\tiles\wood_pol2.png
+tile       133  201            art\tiles\wood_pol1.png
+roof       133  201            art\tiles\wood_pol1.png
+tile       135  201            art\tiles\wood_pol2.png
+roof       135  201            art\tiles\wood_pol2.png
+tile       137  201            art\tiles\wood_pol1.png
+roof       137  201            art\tiles\wood_pol1.png
+tile       139  201            art\tiles\wood_pol2.png
+roof       139  201            art\tiles\wood_pol2.png
+tile       141  201            art\tiles\edg2000.frm
 tile       58   202            art\tiles\bld2043.frm
 tile       60   202            art\tiles\bld2043.frm
 tile       62   202            art\tiles\bld2043.frm
@@ -7439,12 +7488,6 @@ tile       122  202            art\tiles\edg6011.frm
 tile       124  202            art\tiles\edg6011.frm
 tile       126  202            art\tiles\edg5000.frm
 tile       128  202            art\tiles\edg5004.frm
-tile       130  202            art\tiles\edg5000.frm
-tile       132  202            art\tiles\edg5002.frm
-tile       134  202            art\tiles\edg6011.frm
-tile       136  202            art\tiles\edg3000.frm
-tile       138  202            art\tiles\edg6009.frm
-tile       140  202            art\tiles\edg7002.frm
 tile       142  202            art\tiles\edg5000.frm
 tile       144  202            art\tiles\edg5003.frm
 tile       146  202            art\tiles\edg6011.frm
@@ -7535,6 +7578,13 @@ tile       314  202            art\tiles\bld2043.frm
 tile       316  202            art\tiles\bld2043.frm
 tile       318  202            art\tiles\bld2043.frm
 tile       320  202            art\tiles\bld2043.frm
+tile       129  203            art\tiles\edg5000.frm
+tile       131  203            art\tiles\edg5002.frm
+tile       133  203            art\tiles\edg6011.frm
+tile       135  203            art\tiles\edg3000.frm
+tile       137  203            art\tiles\edg6009.frm
+tile       139  203            art\tiles\edg7002.frm
+tile       141  203            art\tiles\edg7002.frm
 tile       60   204            art\tiles\bld2043.frm
 tile       62   204            art\tiles\bld2043.frm
 tile       64   204            art\tiles\bld2043.frm
@@ -29074,16 +29124,6 @@ ProtoId              2103
 MapX                 153
 MapY                 130
 
-MapObjType           1
-ProtoId              2945
-MapX                 143
-MapY                 143
-
-MapObjType           1
-ProtoId              2945
-MapX                 143
-MapY                 147
-
 MapObjType           2
 ProtoId              5593
 MapX                 144
@@ -29154,11 +29194,6 @@ ProtoId              6172
 MapX                 144
 MapY                 163
 
-MapObjType           1
-ProtoId              2946
-MapX                 145
-MapY                 140
-
 MapObjType           2
 ProtoId              5588
 MapX                 145
@@ -29188,11 +29223,6 @@ MapObjType           2
 ProtoId              5503
 MapX                 146
 MapY                 163
-
-MapObjType           1
-ProtoId              2945
-MapX                 147
-MapY                 139
 
 MapObjType           2
 ProtoId              2127
@@ -29888,11 +29918,6 @@ MapX                 149
 MapY                 135
 
 MapObjType           2
-ProtoId              2006
-MapX                 149
-MapY                 136
-
-MapObjType           2
 ProtoId              5367
 MapX                 150
 MapY                 131
@@ -29943,11 +29968,6 @@ MapX                 165
 MapY                 169
 
 MapObjType           2
-ProtoId              16863
-MapX                 144
-MapY                 187
-
-MapObjType           2
 ProtoId              22672
 MapX                 170
 MapY                 145
@@ -29961,11 +29981,6 @@ MapObjType           2
 ProtoId              22676
 MapX                 136
 MapY                 147
-
-MapObjType           2
-ProtoId              22701
-MapX                 125
-MapY                 177
 
 MapObjType           2
 ProtoId              23683
@@ -29984,11 +29999,6 @@ MapY                 168
 OffsetY              -3
 
 MapObjType           1
-ProtoId              2321
-MapX                 109
-MapY                 184
-
-MapObjType           1
 ProtoId              2947
 MapX                 118
 MapY                 212
@@ -29996,16 +30006,6 @@ MapY                 212
 MapObjType           2
 ProtoId              2103
 MapX                 110
-MapY                 184
-
-MapObjType           1
-ProtoId              2321
-MapX                 134
-MapY                 199
-
-MapObjType           2
-ProtoId              3806
-MapX                 131
 MapY                 184
 
 MapObjType           2
@@ -30021,16 +30021,6 @@ MapX                 117
 MapY                 214
 OffsetX              -6
 OffsetY              -11
-
-MapObjType           1
-ProtoId              2947
-MapX                 109
-MapY                 186
-
-MapObjType           2
-ProtoId              2103
-MapX                 135
-MapY                 200
 
 MapObjType           2
 ProtoId              2104
@@ -30046,20 +30036,6 @@ MapObjType           1
 ProtoId              2320
 MapX                 128
 MapY                 224
-
-MapObjType           2
-ProtoId              2110
-MapX                 136
-MapY                 200
-OffsetX              -6
-OffsetY              -11
-
-MapObjType           2
-ProtoId              2104
-MapX                 136
-MapY                 200
-OffsetX              8
-OffsetY              8
 
 MapObjType           2
 ProtoId              2103
@@ -30088,27 +30064,10 @@ MapY                 215
 OffsetX              -21
 OffsetY              -6
 
-MapObjType           2
-ProtoId              2280
-MapX                 137
-MapY                 201
-
-MapObjType           1
-ProtoId              2946
-MapX                 133
-MapY                 186
-
 MapObjType           1
 ProtoId              2320
 MapX                 119
 MapY                 216
-
-MapObjType           2
-ProtoId              2104
-MapX                 138
-MapY                 201
-OffsetX              -21
-OffsetY              -6
 
 MapObjType           1
 ProtoId              16570
@@ -30130,26 +30089,6 @@ OffsetX              -2
 OffsetY              -6
 
 MapObjType           1
-ProtoId              2320
-MapX                 138
-MapY                 202
-
-MapObjType           2
-ProtoId              3806
-MapX                 136
-MapY                 186
-
-MapObjType           2
-ProtoId              2104
-MapX                 134
-MapY                 187
-
-MapObjType           2
-ProtoId              2105
-MapX                 133
-MapY                 188
-
-MapObjType           1
 ProtoId              2945
 MapX                 133
 MapY                 237
@@ -30163,33 +30102,6 @@ MapObjType           2
 ProtoId              2103
 MapX                 128
 MapY                 226
-
-MapObjType           2
-ProtoId              2127
-MapX                 139
-MapY                 203
-OffsetX              -2
-OffsetY              -6
-
-MapObjType           2
-ProtoId              2103
-MapX                 135
-MapY                 188
-
-MapObjType           2
-ProtoId              2102
-MapX                 134
-MapY                 188
-
-MapObjType           1
-ProtoId              2945
-MapX                 137
-MapY                 190
-
-MapObjType           2
-ProtoId              2126
-MapX                 123
-MapY                 194
 
 MapObjType           2
 ProtoId              23276
@@ -30212,44 +30124,9 @@ MapX                 134
 MapY                 211
 
 MapObjType           2
-ProtoId              2280
-MapX                 116
-MapY                 195
-
-MapObjType           2
-ProtoId              2278
-MapX                 117
-MapY                 196
-
-MapObjType           2
-ProtoId              2105
-MapX                 117
-MapY                 197
-
-MapObjType           2
 ProtoId              2105
 MapX                 113
 MapY                 202
-
-MapObjType           2
-ProtoId              2105
-MapX                 129
-MapY                 189
-
-MapObjType           2
-ProtoId              2103
-MapX                 128
-MapY                 188
-
-MapObjType           1
-ProtoId              2945
-MapX                 122
-MapY                 191
-
-MapObjType           1
-ProtoId              2319
-MapX                 117
-MapY                 199
 
 MapObjType           2
 ProtoId              2105
@@ -30260,43 +30137,6 @@ MapObjType           2
 ProtoId              2126
 MapX                 114
 MapY                 202
-
-MapObjType           1
-ProtoId              2947
-MapX                 130
-MapY                 189
-
-MapObjType           1
-ProtoId              2321
-MapX                 119
-MapY                 198
-
-MapObjType           2
-ProtoId              2105
-MapX                 127
-MapY                 192
-OffsetX              -3
-OffsetY              5
-
-MapObjType           2
-ProtoId              3806
-MapX                 123
-MapY                 193
-
-MapObjType           2
-ProtoId              4576
-MapX                 123
-MapY                 193
-
-MapObjType           2
-ProtoId              2104
-MapX                 119
-MapY                 199
-
-MapObjType           2
-ProtoId              2104
-MapX                 118
-MapY                 200
 
 MapObjType           2
 ProtoId              2280
@@ -30323,28 +30163,6 @@ ProtoId              3806
 MapX                 114
 MapY                 205
 
-MapObjType           1
-ProtoId              2946
-MapX                 128
-MapY                 193
-OffsetX              -3
-OffsetY              5
-
-MapObjType           2
-ProtoId              2104
-MapX                 124
-MapY                 197
-
-MapObjType           2
-ProtoId              2103
-MapX                 123
-MapY                 198
-
-MapObjType           2
-ProtoId              2102
-MapX                 122
-MapY                 198
-
 MapObjType           2
 ProtoId              2103
 MapX                 117
@@ -30354,31 +30172,6 @@ MapObjType           2
 ProtoId              2092
 MapX                 115
 MapY                 206
-
-MapObjType           2
-ProtoId              2105
-MapX                 124
-MapY                 198
-
-MapObjType           1
-ProtoId              2945
-MapX                 124
-MapY                 199
-
-MapObjType           2
-ProtoId              2104
-MapX                 125
-MapY                 200
-
-MapObjType           2
-ProtoId              3806
-MapX                 125
-MapY                 200
-
-MapObjType           2
-ProtoId              2125
-MapX                 128
-MapY                 191
 
 MapObjType           2
 ProtoId              2125
@@ -30439,11 +30232,6 @@ MapObjType           2
 ProtoId              2575
 MapX                 156
 MapY                 205
-
-MapObjType           2
-ProtoId              3806
-MapX                 115
-MapY                 182
 
 MapObjType           1
 ProtoId              2947
@@ -30609,16 +30397,6 @@ MapX                 162
 MapY                 202
 
 MapObjType           2
-ProtoId              2105
-MapX                 137
-MapY                 195
-
-MapObjType           1
-ProtoId              2945
-MapX                 137
-MapY                 195
-
-MapObjType           2
 ProtoId              2104
 MapX                 136
 MapY                 250
@@ -30632,26 +30410,6 @@ MapObjType           1
 ProtoId              16570
 MapX                 117
 MapY                 228
-
-MapObjType           2
-ProtoId              2105
-MapX                 138
-MapY                 195
-
-MapObjType           2
-ProtoId              4533
-MapX                 116
-MapY                 181
-
-MapObjType           2
-ProtoId              2103
-MapX                 115
-MapY                 182
-
-MapObjType           1
-ProtoId              2946
-MapX                 115
-MapY                 182
 
 MapObjType           2
 ProtoId              23261
@@ -30668,11 +30426,6 @@ MapObjType           2
 ProtoId              2063
 MapX                 119
 MapY                 228
-
-MapObjType           1
-ProtoId              16573
-MapX                 116
-MapY                 182
 
 MapObjType           2
 ProtoId              2103
@@ -30707,11 +30460,6 @@ MapX                 117
 MapY                 230
 
 MapObjType           2
-ProtoId              2104
-MapX                 116
-MapY                 183
-
-MapObjType           2
 ProtoId              2103
 MapX                 135
 MapY                 257
@@ -30730,26 +30478,6 @@ MapObjType           2
 ProtoId              2104
 MapX                 106
 MapY                 149
-
-MapObjType           1
-ProtoId              2321
-MapX                 114
-MapY                 135
-
-MapObjType           2
-ProtoId              2103
-MapX                 115
-MapY                 136
-
-MapObjType           1
-ProtoId              2947
-MapX                 114
-MapY                 137
-
-MapObjType           1
-ProtoId              2320
-MapX                 115
-MapY                 128
 
 MapObjType           1
 ProtoId              2320
@@ -31073,56 +30801,6 @@ MapY                 117
 MapObjType           2
 ProtoId              2103
 MapX                 137
-MapY                 191
-
-MapObjType           2
-ProtoId              2103
-MapX                 130
-MapY                 190
-
-MapObjType           2
-ProtoId              2103
-MapX                 124
-MapY                 192
-
-MapObjType           2
-ProtoId              2103
-MapX                 128
-MapY                 194
-
-MapObjType           2
-ProtoId              2103
-MapX                 133
-MapY                 199
-
-MapObjType           2
-ProtoId              2103
-MapX                 136
-MapY                 194
-
-MapObjType           2
-ProtoId              2103
-MapX                 137
-MapY                 196
-
-MapObjType           2
-ProtoId              2103
-MapX                 120
-MapY                 200
-
-MapObjType           2
-ProtoId              2103
-MapX                 127
-MapY                 200
-
-MapObjType           2
-ProtoId              2103
-MapX                 120
-MapY                 197
-
-MapObjType           2
-ProtoId              2103
-MapX                 137
 MapY                 230
 
 MapObjType           2
@@ -31226,32 +30904,6 @@ MapX                 135
 MapY                 127
 
 MapObjType           2
-ProtoId              2103
-MapX                 145
-MapY                 135
-
-MapObjType           2
-ProtoId              2103
-MapX                 147
-MapY                 137
-OffsetX              8
-OffsetY              -7
-
-MapObjType           2
-ProtoId              2103
-MapX                 145
-MapY                 136
-OffsetX              8
-OffsetY              -7
-
-MapObjType           2
-ProtoId              2103
-MapX                 144
-MapY                 137
-OffsetX              8
-OffsetY              -7
-
-MapObjType           2
 ProtoId              2127
 MapX                 160
 MapY                 227
@@ -31315,16 +30967,6 @@ MapObjType           2
 ProtoId              2105
 MapX                 156
 MapY                 200
-
-MapObjType           2
-ProtoId              2105
-MapX                 129
-MapY                 193
-
-MapObjType           2
-ProtoId              2105
-MapX                 127
-MapY                 193
 
 MapObjType           2
 ProtoId              2105
@@ -31465,16 +31107,6 @@ MapObjType           2
 ProtoId              2103
 MapX                 158
 MapY                 198
-
-MapObjType           2
-ProtoId              2102
-MapX                 121
-MapY                 181
-
-MapObjType           2
-ProtoId              2103
-MapX                 122
-MapY                 182
 
 MapObjType           2
 ProtoId              2105
@@ -55890,306 +55522,6 @@ MapX                 167
 MapY                 195
 
 MapObjType           2
-ProtoId              1625
-MapX                 142
-MapY                 187
-
-MapObjType           2
-ProtoId              1625
-MapX                 141
-MapY                 187
-
-MapObjType           2
-ProtoId              1625
-MapX                 141
-MapY                 188
-
-MapObjType           2
-ProtoId              1625
-MapX                 140
-MapY                 187
-
-MapObjType           2
-ProtoId              1625
-MapX                 140
-MapY                 186
-
-MapObjType           2
-ProtoId              1625
-MapX                 140
-MapY                 185
-
-MapObjType           2
-ProtoId              1625
-MapX                 140
-MapY                 184
-
-MapObjType           2
-ProtoId              1625
-MapX                 140
-MapY                 183
-
-MapObjType           2
-ProtoId              1625
-MapX                 140
-MapY                 182
-
-MapObjType           2
-ProtoId              1625
-MapX                 141
-MapY                 182
-
-MapObjType           2
-ProtoId              1625
-MapX                 142
-MapY                 181
-
-MapObjType           2
-ProtoId              1625
-MapX                 143
-MapY                 182
-
-MapObjType           2
-ProtoId              1625
-MapX                 144
-MapY                 182
-
-MapObjType           2
-ProtoId              1625
-MapX                 144
-MapY                 183
-
-MapObjType           2
-ProtoId              1625
-MapX                 144
-MapY                 184
-
-MapObjType           2
-ProtoId              1625
-MapX                 144
-MapY                 185
-
-MapObjType           2
-ProtoId              1625
-MapX                 144
-MapY                 186
-
-MapObjType           2
-ProtoId              1625
-MapX                 143
-MapY                 187
-
-MapObjType           2
-ProtoId              1625
-MapX                 141
-MapY                 186
-
-MapObjType           2
-ProtoId              1625
-MapX                 141
-MapY                 185
-
-MapObjType           2
-ProtoId              1625
-MapX                 141
-MapY                 184
-
-MapObjType           2
-ProtoId              1625
-MapX                 141
-MapY                 183
-
-MapObjType           2
-ProtoId              1625
-MapX                 142
-MapY                 182
-
-MapObjType           2
-ProtoId              1625
-MapX                 143
-MapY                 183
-
-MapObjType           2
-ProtoId              1625
-MapX                 143
-MapY                 184
-
-MapObjType           2
-ProtoId              1625
-MapX                 143
-MapY                 185
-
-MapObjType           2
-ProtoId              1625
-MapX                 143
-MapY                 186
-
-MapObjType           2
-ProtoId              1625
-MapX                 142
-MapY                 186
-
-MapObjType           2
-ProtoId              1625
-MapX                 142
-MapY                 185
-
-MapObjType           2
-ProtoId              1625
-MapX                 142
-MapY                 184
-
-MapObjType           2
-ProtoId              1625
-MapX                 142
-MapY                 183
-
-MapObjType           2
-ProtoId              1625
-MapX                 122
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 123
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 124
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 125
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 126
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 127
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 128
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 129
-MapY                 180
-
-MapObjType           2
-ProtoId              1625
-MapX                 130
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 130
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 130
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 129
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 128
-MapY                 176
-
-MapObjType           2
-ProtoId              1625
-MapX                 127
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 126
-MapY                 176
-
-MapObjType           2
-ProtoId              1625
-MapX                 125
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 124
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 123
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 122
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 123
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 124
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 125
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 126
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 126
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 127
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 128
-MapY                 177
-
-MapObjType           2
-ProtoId              1625
-MapX                 129
-MapY                 178
-
-MapObjType           2
-ProtoId              1625
-MapX                 129
-MapY                 179
-
-MapObjType           2
-ProtoId              1625
-MapX                 128
-MapY                 178
-
-MapObjType           2
 ProtoId              1624
 MapX                 149
 MapY                 136
@@ -57372,11 +56704,6 @@ MapX                 124
 MapY                 164
 
 MapObjType           2
-ProtoId              5803
-MapX                 122
-MapY                 164
-
-MapObjType           2
 ProtoId              5802
 MapX                 123
 MapY                 164
@@ -57392,28 +56719,8 @@ MapX                 127
 MapY                 164
 
 MapObjType           2
-ProtoId              5802
-MapX                 121
-MapY                 164
-
-MapObjType           2
-ProtoId              5802
-MapX                 119
-MapY                 164
-
-MapObjType           2
 ProtoId              5812
 MapX                 117
-MapY                 164
-
-MapObjType           2
-ProtoId              5803
-MapX                 118
-MapY                 164
-
-MapObjType           2
-ProtoId              5803
-MapX                 120
 MapY                 164
 
 MapObjType           2
@@ -57540,22 +56847,7 @@ MapY                 165
 
 MapObjType           2
 ProtoId              2067
-MapX                 122
-MapY                 164
-
-MapObjType           2
-ProtoId              2067
 MapX                 121
-MapY                 165
-
-MapObjType           2
-ProtoId              2067
-MapX                 120
-MapY                 164
-
-MapObjType           2
-ProtoId              2067
-MapX                 119
 MapY                 165
 
 MapObjType           2
@@ -57575,8 +56867,8 @@ MapY                 164
 
 MapObjType           2
 ProtoId              2106
-MapX                 114
-MapY                 165
+MapX                 106
+MapY                 166
 OffsetX              -24
 OffsetY              -1
 
@@ -58347,5 +57639,1762 @@ MapObjType           2
 ProtoId              5621
 MapX                 143
 MapY                 164
+
+MapObjType           2
+ProtoId              2067
+MapX                 164
+MapY                 125
+
+MapObjType           2
+ProtoId              2067
+MapX                 163
+MapY                 124
+
+MapObjType           2
+ProtoId              5621
+MapX                 164
+MapY                 124
+
+MapObjType           2
+ProtoId              2067
+MapX                 138
+MapY                 164
+
+MapObjType           2
+ProtoId              2067
+MapX                 134
+MapY                 164
+
+MapObjType           2
+ProtoId              5813
+MapX                 122
+MapY                 164
+
+MapObjType           2
+ProtoId              5823
+MapX                 119
+MapY                 167
+OffsetY              -8
+
+MapObjType           2
+ProtoId              5621
+MapX                 122
+MapY                 164
+
+MapObjType           2
+ProtoId              5621
+MapX                 119
+MapY                 165
+
+MapObjType           2
+ProtoId              5815
+MapX                 119
+MapY                 167
+
+MapObjType           2
+ProtoId              5815
+MapX                 119
+MapY                 169
+
+MapObjType           2
+ProtoId              5815
+MapX                 119
+MapY                 175
+
+MapObjType           2
+ProtoId              5815
+MapX                 122
+MapY                 166
+
+MapObjType           2
+ProtoId              5815
+MapX                 122
+MapY                 168
+
+MapObjType           2
+ProtoId              5815
+MapX                 122
+MapY                 174
+
+MapObjType           2
+ProtoId              5816
+MapX                 122
+MapY                 167
+
+MapObjType           2
+ProtoId              5816
+MapX                 122
+MapY                 169
+
+MapObjType           2
+ProtoId              5816
+MapX                 122
+MapY                 173
+
+MapObjType           2
+ProtoId              5816
+MapX                 122
+MapY                 175
+
+MapObjType           2
+ProtoId              5816
+MapX                 119
+MapY                 180
+
+MapObjType           2
+ProtoId              5816
+MapX                 119
+MapY                 174
+
+MapObjType           2
+ProtoId              5816
+MapX                 119
+MapY                 170
+
+MapObjType           2
+ProtoId              5816
+MapX                 119
+MapY                 168
+
+MapObjType           1
+ProtoId              3467
+MapX                 122
+MapY                 171
+
+MapObjType           1
+ProtoId              3467
+MapX                 119
+MapY                 172
+
+MapObjType           2
+ProtoId              5818
+MapX                 122
+MapY                 170
+
+MapObjType           2
+ProtoId              5814
+MapX                 122
+MapY                 172
+
+MapObjType           2
+ProtoId              5814
+MapX                 119
+MapY                 173
+
+MapObjType           2
+ProtoId              5818
+MapX                 119
+MapY                 171
+
+MapObjType           2
+ProtoId              5801
+MapX                 119
+MapY                 164
+
+MapObjType           1
+ProtoId              3466
+MapX                 120
+MapY                 164
+
+MapObjType           2
+ProtoId              5812
+MapX                 121
+MapY                 164
+
+MapObjType           2
+ProtoId              5805
+MapX                 122
+MapY                 163
+OffsetX              19
+OffsetY              8
+
+MapObjType           2
+ProtoId              5129
+MapX                 132
+MapY                 180
+OffsetY              -1
+
+MapObjType           2
+ProtoId              5815
+MapX                 119
+MapY                 176
+
+MapObjType           2
+ProtoId              5815
+MapX                 119
+MapY                 178
+
+MapObjType           2
+ProtoId              5815
+MapX                 122
+MapY                 177
+
+MapObjType           2
+ProtoId              5815
+MapX                 122
+MapY                 179
+
+MapObjType           2
+ProtoId              5816
+MapX                 122
+MapY                 176
+
+MapObjType           2
+ProtoId              5816
+MapX                 122
+MapY                 178
+
+MapObjType           2
+ProtoId              5816
+MapX                 119
+MapY                 177
+
+MapObjType           2
+ProtoId              5816
+MapX                 119
+MapY                 179
+
+MapObjType           2
+ProtoId              5818
+MapX                 119
+MapY                 180
+OffsetX              14
+OffsetY              9
+
+MapObjType           2
+ProtoId              5818
+MapX                 122
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 119
+MapY                 181
+
+MapObjType           2
+ProtoId              5129
+MapX                 136
+MapY                 180
+
+MapObjType           2
+ProtoId              5130
+MapX                 137
+MapY                 181
+
+MapObjType           2
+ProtoId              5130
+MapX                 139
+MapY                 181
+
+MapObjType           2
+ProtoId              5129
+MapX                 140
+MapY                 180
+
+MapObjType           2
+ProtoId              5130
+MapX                 141
+MapY                 181
+
+MapObjType           2
+ProtoId              5131
+MapX                 135
+MapY                 181
+
+MapObjType           2
+ProtoId              5132
+MapX                 133
+MapY                 181
+
+MapObjType           2
+ProtoId              5367
+MapX                 143
+MapY                 181
+
+MapObjType           2
+ProtoId              5129
+MapX                 142
+MapY                 180
+
+MapObjType           2
+ProtoId              5420
+MapX                 143
+MapY                 183
+
+MapObjType           2
+ProtoId              5421
+MapX                 143
+MapY                 184
+
+MapObjType           2
+ProtoId              5420
+MapX                 143
+MapY                 185
+
+MapObjType           2
+ProtoId              5421
+MapX                 143
+MapY                 186
+
+MapObjType           2
+ProtoId              5421
+MapX                 143
+MapY                 187
+
+MapObjType           2
+ProtoId              5420
+MapX                 143
+MapY                 188
+
+MapObjType           2
+ProtoId              5421
+MapX                 143
+MapY                 189
+
+MapObjType           2
+ProtoId              5421
+MapX                 143
+MapY                 190
+
+MapObjType           2
+ProtoId              5734
+MapX                 143
+MapY                 195
+
+MapObjType           2
+ProtoId              5746
+MapX                 131
+MapY                 183
+
+MapObjType           2
+ProtoId              5250
+MapX                 131
+MapY                 183
+
+MapObjType           2
+ProtoId              5746
+MapX                 131
+MapY                 188
+
+MapObjType           2
+ProtoId              5250
+MapX                 131
+MapY                 188
+
+MapObjType           2
+ProtoId              5746
+MapX                 131
+MapY                 190
+
+MapObjType           2
+ProtoId              5746
+MapX                 131
+MapY                 191
+
+MapObjType           2
+ProtoId              5250
+MapX                 131
+MapY                 191
+
+MapObjType           2
+ProtoId              5746
+MapX                 131
+MapY                 193
+
+MapObjType           2
+ProtoId              5250
+MapX                 131
+MapY                 193
+
+MapObjType           2
+ProtoId              5129
+MapX                 138
+MapY                 180
+
+MapObjType           2
+ProtoId              5747
+MapX                 131
+MapY                 187
+
+MapObjType           2
+ProtoId              5746
+MapX                 131
+MapY                 185
+
+MapObjType           2
+ProtoId              2067
+MapX                 139
+MapY                 195
+
+MapObjType           2
+ProtoId              2067
+MapX                 138
+MapY                 195
+
+MapObjType           2
+ProtoId              2067
+MapX                 137
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 140
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 142
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 195
+
+MapObjType           2
+ProtoId              5114
+MapX                 143
+MapY                 191
+
+MapObjType           2
+ProtoId              5114
+MapX                 143
+MapY                 193
+
+MapObjType           2
+ProtoId              5115
+MapX                 143
+MapY                 192
+
+MapObjType           2
+ProtoId              5115
+MapX                 143
+MapY                 194
+
+MapObjType           2
+ProtoId              5129
+MapX                 140
+MapY                 180
+
+MapObjType           2
+ProtoId              5129
+MapX                 140
+MapY                 180
+
+MapObjType           2
+ProtoId              8689
+MapX                 117
+MapY                 200
+
+MapObjType           2
+ProtoId              8693
+MapX                 131
+MapY                 200
+
+MapObjType           2
+ProtoId              8694
+MapX                 130
+MapY                 199
+
+MapObjType           2
+ProtoId              8694
+MapX                 128
+MapY                 199
+
+MapObjType           2
+ProtoId              8695
+MapX                 125
+MapY                 200
+
+MapObjType           2
+ProtoId              8694
+MapX                 126
+MapY                 199
+
+MapObjType           2
+ProtoId              8694
+MapX                 124
+MapY                 199
+
+MapObjType           2
+ProtoId              8694
+MapX                 122
+MapY                 199
+
+MapObjType           2
+ProtoId              8695
+MapX                 121
+MapY                 200
+
+MapObjType           2
+ProtoId              8694
+MapX                 120
+MapY                 199
+
+MapObjType           2
+ProtoId              8694
+MapX                 118
+MapY                 199
+
+MapObjType           2
+ProtoId              8691
+MapX                 131
+MapY                 199
+
+MapObjType           2
+ProtoId              8692
+MapX                 131
+MapY                 198
+
+MapObjType           2
+ProtoId              8691
+MapX                 131
+MapY                 197
+
+MapObjType           2
+ProtoId              8692
+MapX                 131
+MapY                 196
+
+MapObjType           2
+ProtoId              8692
+MapX                 130
+MapY                 189
+OffsetY              23
+
+MapObjType           2
+ProtoId              8692
+MapX                 130
+MapY                 192
+OffsetY              23
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 188
+OffsetY              23
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 191
+OffsetY              23
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 193
+OffsetY              23
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 199
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 197
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 195
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 193
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 191
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 189
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 187
+
+MapObjType           2
+ProtoId              8705
+MapX                 117
+MapY                 185
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 184
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 186
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 188
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 190
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 192
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 194
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 196
+
+MapObjType           2
+ProtoId              8704
+MapX                 117
+MapY                 198
+
+MapObjType           2
+ProtoId              8703
+MapX                 117
+MapY                 183
+
+MapObjType           2
+ProtoId              8680
+MapX                 117
+MapY                 181
+OffsetX              -1
+OffsetY              -1
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 190
+OffsetY              23
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 182
+OffsetY              23
+
+MapObjType           2
+ProtoId              5250
+MapX                 131
+MapY                 181
+
+MapObjType           2
+ProtoId              8695
+MapX                 123
+MapY                 181
+
+MapObjType           2
+ProtoId              8695
+MapX                 125
+MapY                 181
+
+MapObjType           2
+ProtoId              8695
+MapX                 127
+MapY                 181
+
+MapObjType           2
+ProtoId              8695
+MapX                 129
+MapY                 181
+
+MapObjType           2
+ProtoId              8690
+MapX                 131
+MapY                 182
+
+MapObjType           2
+ProtoId              8694
+MapX                 130
+MapY                 180
+
+MapObjType           2
+ProtoId              8694
+MapX                 128
+MapY                 180
+
+MapObjType           2
+ProtoId              8694
+MapX                 126
+MapY                 180
+
+MapObjType           2
+ProtoId              8694
+MapX                 124
+MapY                 180
+
+MapObjType           2
+ProtoId              8692
+MapX                 130
+MapY                 181
+OffsetY              23
+
+MapObjType           2
+ProtoId              5138
+MapX                 132
+MapY                 182
+OffsetY              -24
+
+MapObjType           2
+ProtoId              8685
+MapX                 130
+MapY                 183
+OffsetY              23
+
+MapObjType           2
+ProtoId              8684
+MapX                 130
+MapY                 185
+OffsetX              3
+OffsetY              24
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 186
+OffsetY              23
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 187
+OffsetY              23
+
+MapObjType           2
+ProtoId              8691
+MapX                 130
+MapY                 183
+OffsetX              3
+OffsetY              25
+
+MapObjType           2
+ProtoId              8687
+MapX                 121
+MapY                 181
+OffsetX              -20
+OffsetY              -4
+
+MapObjType           2
+ProtoId              8686
+MapX                 119
+MapY                 181
+OffsetX              -20
+OffsetY              -4
+
+MapObjType           2
+ProtoId              8695
+MapX                 118
+MapY                 180
+OffsetX              -1
+OffsetY              7
+
+MapObjType           2
+ProtoId              8694
+MapX                 122
+MapY                 180
+
+MapObjType           2
+ProtoId              8694
+MapX                 122
+MapY                 180
+OffsetX              6
+OffsetY              -2
+
+MapObjType           2
+ProtoId              5621
+MapX                 122
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 123
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 124
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 125
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 126
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 127
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 118
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 182
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 183
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 184
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 185
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 186
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 187
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 188
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 189
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 190
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 191
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 192
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 193
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 194
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 196
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 197
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 198
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 117
+MapY                 199
+
+MapObjType           2
+ProtoId              5621
+MapX                 118
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 119
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 120
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 121
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 122
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 123
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 124
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 125
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 126
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 127
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 128
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 129
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 130
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 199
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 198
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 197
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 196
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 132
+MapY                 194
+
+MapObjType           2
+ProtoId              5621
+MapX                 133
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 134
+MapY                 194
+
+MapObjType           2
+ProtoId              5621
+MapX                 135
+MapY                 195
+
+MapObjType           2
+ProtoId              5621
+MapX                 136
+MapY                 194
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 194
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 193
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 192
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 191
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 190
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 189
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 188
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 187
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 186
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 185
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 184
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 183
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 182
+
+MapObjType           2
+ProtoId              5621
+MapX                 143
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 142
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 140
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 139
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 138
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 137
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 136
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 135
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 133
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 132
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 183
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 182
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 184
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 185
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 187
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 188
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 189
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 190
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 192
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 191
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 193
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 194
+
+MapObjType           2
+ProtoId              5621
+MapX                 128
+MapY                 180
+
+MapObjType           2
+ProtoId              5621
+MapX                 129
+MapY                 181
+
+MapObjType           2
+ProtoId              5621
+MapX                 130
+MapY                 180
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 173
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 174
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 175
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 176
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 177
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 178
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 179
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 173
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 174
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 175
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 176
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 177
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 178
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 179
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 180
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 169
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 172
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 170
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 168
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 167
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 166
+
+MapObjType           2
+ProtoId              2067
+MapX                 122
+MapY                 165
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 166
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 167
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 168
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 169
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 170
+
+MapObjType           2
+ProtoId              2067
+MapX                 119
+MapY                 171
+
+MapObjType           2
+ProtoId              8697
+MapX                 119
+MapY                 200
+
+MapObjType           2
+ProtoId              8695
+MapX                 129
+MapY                 200
+
+MapObjType           2
+ProtoId              8697
+MapX                 123
+MapY                 200
+
+MapObjType           2
+ProtoId              8697
+MapX                 127
+MapY                 200
+
+MapObjType           1
+ProtoId              158
+MapX                 118
+MapY                 182
+
+MapObjType           1
+ProtoId              2958
+MapX                 121
+MapY                 181
+
+MapObjType           1
+ProtoId              2848
+MapX                 134
+MapY                 180
+
+MapObjType           1
+ProtoId              2959
+MapX                 131
+MapY                 186
+OffsetX              -1
+
+MapObjType           1
+ProtoId              15452
+MapX                 132
+MapY                 189
+OffsetX              2
+OffsetY              -14
+
+MapObjType           1
+ProtoId              1670
+MapX                 118
+MapY                 146
+
+MapObjType           1
+ProtoId              7900
+MapX                 134
+MapY                 133
+LightDistance        10
+LightIntensity       50
+
+MapObjType           1
+ProtoId              1848
+MapX                 119
+MapY                 182
+
+MapObjType           2
+ProtoId              5131
+MapX                 139
+MapY                 195
+
+MapObjType           2
+ProtoId              5132
+MapX                 137
+MapY                 195
+
+MapObjType           2
+ProtoId              5129
+MapX                 140
+MapY                 194
+
+MapObjType           2
+ProtoId              5130
+MapX                 135
+MapY                 195
+
+MapObjType           2
+ProtoId              5130
+MapX                 133
+MapY                 195
+
+MapObjType           2
+ProtoId              5130
+MapX                 131
+MapY                 195
+
+MapObjType           2
+ProtoId              5129
+MapX                 132
+MapY                 194
+
+MapObjType           2
+ProtoId              5129
+MapX                 134
+MapY                 194
+
+MapObjType           2
+ProtoId              5129
+MapX                 136
+MapY                 194
+
+MapObjType           2
+ProtoId              5746
+MapX                 131
+MapY                 194
+OffsetX              11
+OffsetY              7
+
+MapObjType           2
+ProtoId              5114
+MapX                 141
+MapY                 197
+
+MapObjType           2
+ProtoId              5114
+MapX                 141
+MapY                 199
+
+MapObjType           2
+ProtoId              5115
+MapX                 141
+MapY                 198
+
+MapObjType           2
+ProtoId              5115
+MapX                 141
+MapY                 196
+
+MapObjType           2
+ProtoId              5115
+MapX                 141
+MapY                 202
+
+MapObjType           2
+ProtoId              5114
+MapX                 141
+MapY                 201
+
+MapObjType           2
+ProtoId              5115
+MapX                 141
+MapY                 200
+
+MapObjType           2
+ProtoId              5097
+MapX                 142
+MapY                 194
+
+MapObjType           2
+ProtoId              5097
+MapX                 142
+MapY                 195
+OffsetY              -15
+
+MapObjType           2
+ProtoId              5130
+MapX                 141
+MapY                 195
+
+MapObjType           2
+ProtoId              5154
+MapX                 141
+MapY                 202
+
+MapObjType           2
+ProtoId              5139
+MapX                 131
+MapY                 202
+
+MapObjType           2
+ProtoId              5096
+MapX                 135
+MapY                 202
+
+MapObjType           2
+ProtoId              5096
+MapX                 133
+MapY                 202
+
+MapObjType           2
+ProtoId              5097
+MapX                 140
+MapY                 201
+OffsetX              3
+
+MapObjType           2
+ProtoId              5097
+MapX                 134
+MapY                 201
+
+MapObjType           2
+ProtoId              5097
+MapX                 132
+MapY                 201
+
+MapObjType           2
+ProtoId              6913
+MapX                 139
+MapY                 202
+
+MapObjType           2
+ProtoId              6914
+MapX                 138
+MapY                 201
+
+MapObjType           2
+ProtoId              6915
+MapX                 137
+MapY                 202
+
+MapObjType           2
+ProtoId              5097
+MapX                 136
+MapY                 201
+
+MapObjType           2
+ProtoId              2067
+MapX                 139
+MapY                 202
+
+MapObjType           2
+ProtoId              2067
+MapX                 138
+MapY                 202
+
+MapObjType           2
+ProtoId              2067
+MapX                 137
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 140
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 201
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 200
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 199
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 198
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 197
+
+MapObjType           2
+ProtoId              5621
+MapX                 141
+MapY                 196
+
+MapObjType           2
+ProtoId              5621
+MapX                 136
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 135
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 134
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 133
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 132
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 202
+
+MapObjType           2
+ProtoId              5621
+MapX                 131
+MapY                 201
+
+MapObjType           1
+ProtoId              1645
+MapX                 149
+MapY                 136
+
+MapObjType           1
+ProtoId              893
+MapX                 138
+MapY                 199
+
+MapObjType           2
+ProtoId              2067
+MapX                 138
+MapY                 199
+
+MapObjType           2
+ProtoId              2067
+MapX                 137
+MapY                 199
+
+MapObjType           2
+ProtoId              2067
+MapX                 139
+MapY                 200
+
+MapObjType           2
+ProtoId              2067
+MapX                 139
+MapY                 199
+
+MapObjType           2
+ProtoId              2067
+MapX                 137
+MapY                 198
+
+MapObjType           2
+ProtoId              2676
+MapX                 119
+MapY                 184
+
+MapObjType           2
+ProtoId              2676
+MapX                 139
+MapY                 201
+
+MapObjType           2
+ProtoId              2666
+MapX                 139
+MapY                 182
+
+MapObjType           2
+ProtoId              2685
+MapX                 131
+MapY                 198
+
+MapObjType           2
+ProtoId              5097
+MapX                 140
+MapY                 201
+
+MapObjType           2
+ProtoId              5097
+MapX                 140
+MapY                 201
+OffsetX              1
 
 
