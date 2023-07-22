@@ -2,8 +2,8 @@
 Version              4
 MaxHexX              400
 MaxHexY              400
-WorkHexX             137
-WorkHexY             165
+WorkHexX             120
+WorkHexY             182
 ScriptModule         -
 ScriptFunc           -
 NoLogOut             0
@@ -4801,8 +4801,10 @@ tile       110  164            art\tiles\curb22.frm
 tile       112  164            art\tiles\curb29.frm
 tile       114  164            art\tiles\curb28.frm
 tile       116  164            art\tiles\curb33.frm
-tile       117  164            art\tiles\curb34.frm
-tile       120  164            art\tiles\wood_pol2.png
+tile       118  164            art\tiles\curb34.frm
+tile       118  164            art\tiles\curb34.frm
+tile       118  164            art\tiles\curb34.frm
+tile       120  164            art\tiles\curb34.frm
 tile       122  164            art\tiles\curb42.frm
 tile       124  164            art\tiles\curb47.frm
 tile       126  164            art\tiles\curb13.frm
@@ -4891,7 +4893,6 @@ tile       290  164            art\tiles\bld2043.frm
 tile       292  164            art\tiles\bld2043.frm
 tile       294  164            art\tiles\bld2043.frm
 tile       296  164            art\tiles\bld2043.frm
-tile       119  165            art\tiles\wood_pol2.png
 tile       36   166            art\tiles\bld2043.frm
 tile       38   166            art\tiles\bld2043.frm
 tile       40   166            art\tiles\bld2043.frm
@@ -4933,9 +4934,10 @@ tile       110  166            art\tiles\curb05.frm
 tile       112  166            art\tiles\curb04.frm
 tile       114  166            art\tiles\curb02.frm
 tile       116  166            art\tiles\curb38.frm
-tile       117  166            art\tiles\edg4002.frm
-tile       119  166            art\tiles\wood_pol2.png
-tile       120  166            art\tiles\wood_pol1.png
+tile       118  166            art\tiles\edg4002.frm
+tile       118  166            art\tiles\edg4002.frm
+tile       118  166            art\tiles\edg4002.frm
+tile       120  166            art\tiles\edg4002.frm
 tile       122  166            art\tiles\curb36.frm
 tile       124  166            art\tiles\curb07.frm
 tile       126  166            art\tiles\curb04.frm
@@ -5064,9 +5066,9 @@ tile       108  168            art\tiles\edg5000.frm
 tile       110  168            art\tiles\road25.frm
 tile       112  168            art\tiles\road22.frm
 tile       114  168            art\tiles\road25.frm
-tile       117  168            art\tiles\edg7002.frm
-tile       119  168            art\tiles\wood_pol2.png
-tile       120  168            art\tiles\wood_pol2.png
+tile       116  168            art\tiles\road23.frm
+tile       118  168            art\tiles\edg7002.frm
+tile       120  168            art\tiles\edg5003.frm
 tile       122  168            art\tiles\edg5003.frm
 tile       124  168            art\tiles\edg5000.frm
 tile       126  168            art\tiles\edg5002.frm
@@ -5156,7 +5158,6 @@ tile       292  168            art\tiles\bld2043.frm
 tile       294  168            art\tiles\bld2043.frm
 tile       296  168            art\tiles\bld2043.frm
 tile       298  168            art\tiles\bld2043.frm
-tile       116  169            art\tiles\road23.frm
 tile       38   170            art\tiles\bld2043.frm
 tile       40   170            art\tiles\bld2043.frm
 tile       42   170            art\tiles\bld2043.frm
@@ -5195,9 +5196,9 @@ tile       106  170            art\tiles\edg5003.frm
 tile       108  170            art\tiles\edg5002.frm
 tile       110  170            art\tiles\road26.frm
 tile       112  170            art\tiles\road14.frm
-tile       117  170            art\tiles\road22.frm
-tile       119  170            art\tiles\wood_pol2.png
-tile       120  170            art\tiles\wood_pol1.png
+tile_o     116  170  -2  0     art\tiles\road16.frm
+tile       118  170            art\tiles\road22.frm
+tile       120  170            art\tiles\edg5002.frm
 tile       122  170            art\tiles\edg5002.frm
 tile       124  170            art\tiles\edg5004.frm
 tile       126  170            art\tiles\edg5005.frm
@@ -5288,8 +5289,7 @@ tile       294  170            art\tiles\bld2043.frm
 tile       296  170            art\tiles\bld2043.frm
 tile       298  170            art\tiles\bld2043.frm
 tile       300  170            art\tiles\bld2043.frm
-tile_o     114  171  -16 -12   art\tiles\road20.frm
-tile_o     115  171  -2  2     art\tiles\road16.frm
+tile_o     114  171  -18 -11   art\tiles\road20.frm
 tile       40   172            art\tiles\bld2043.frm
 tile       42   172            art\tiles\bld2043.frm
 tile       44   172            art\tiles\bld2043.frm
@@ -5328,9 +5328,9 @@ tile       108  172            art\tiles\edg5003.frm
 tile       110  172            art\tiles\road27.frm
 tile       112  172            art\tiles\road16.frm
 tile       114  172            art\tiles\road19.frm
-tile       117  172            art\tiles\road33.frm
-tile       119  172            art\tiles\wood_pol2.png
-tile       120  172            art\tiles\wood_pol2.png
+tile_o     116  172  -1  -1    art\tiles\road16.frm
+tile       118  172            art\tiles\road33.frm
+tile       120  172            art\tiles\edg5000.frm
 tile       122  172            art\tiles\edg5000.frm
 tile       124  172            art\tiles\edg5003.frm
 tile       126  172            art\tiles\edg5000.frm
@@ -5421,7 +5421,7 @@ tile       294  172            art\tiles\bld2043.frm
 tile       296  172            art\tiles\bld2043.frm
 tile       298  172            art\tiles\bld2043.frm
 tile       300  172            art\tiles\bld2043.frm
-tile_o     115  173  -9  -6    art\tiles\road38.frm
+tile_o     116  173  -8  -6    art\tiles\road38.frm
 tile       40   174            art\tiles\bld2043.frm
 tile       42   174            art\tiles\bld2043.frm
 tile       44   174            art\tiles\bld2043.frm
@@ -5459,10 +5459,9 @@ tile       106  174            art\tiles\edg5002.frm
 tile       108  174            art\tiles\edg5000.frm
 tile       110  174            art\tiles\road28.frm
 tile       112  174            art\tiles\road29.frm
-tile       114  174            art\tiles\road10.frm
-tile       117  174            art\tiles\road32.frm
-tile       119  174            art\tiles\wood_pol2.png
-tile       120  174            art\tiles\wood_pol1.png
+tile_o     114  174  -1  -1    art\tiles\road10.frm
+tile       118  174            art\tiles\road32.frm
+tile       120  174            art\tiles\edg5003.frm
 tile       122  174            art\tiles\edg5003.frm
 tile       124  174            art\tiles\edg5000.frm
 tile       126  174            art\tiles\edg5002.frm
@@ -5554,7 +5553,7 @@ tile       296  174            art\tiles\bld2043.frm
 tile       298  174            art\tiles\bld2043.frm
 tile       300  174            art\tiles\bld2043.frm
 tile       302  174            art\tiles\bld2043.frm
-tile_o     115  175  -11 -5    art\tiles\road39.frm
+tile_o     116  175  -15 -12   art\tiles\road39.frm
 tile       42   176            art\tiles\bld2043.frm
 tile       44   176            art\tiles\bld2043.frm
 tile       46   176            art\tiles\bld2043.frm
@@ -5593,9 +5592,8 @@ tile       110  176            art\tiles\edg5005.frm
 tile       112  176            art\tiles\edg5000.frm
 tile       114  176            art\tiles\road28.frm
 tile       116  176            art\tiles\road12.frm
-tile       117  176            art\tiles\road31.frm
-tile       119  176            art\tiles\wood_pol2.png
-tile       120  176            art\tiles\wood_pol2.png
+tile       118  176            art\tiles\road31.frm
+tile       120  176            art\tiles\edg5002.frm
 tile       122  176            art\tiles\edg5002.frm
 tile       124  176            art\tiles\edg5004.frm
 tile       126  176            art\tiles\edg5005.frm
@@ -5725,9 +5723,8 @@ tile       110  178            art\tiles\edg5000.frm
 tile       112  178            art\tiles\edg3000.frm
 tile       114  178            art\tiles\edg2003.frm
 tile       116  178            art\tiles\edg4001.frm
-tile       117  178            art\tiles\edg3000.frm
-tile       119  178            art\tiles\wood_pol2.png
-tile       120  178            art\tiles\wood_pol1.png
+tile       118  178            art\tiles\edg3000.frm
+tile       120  178            art\tiles\edg5000.frm
 tile       122  178            art\tiles\edg5000.frm
 tile       124  178            art\tiles\edg5003.frm
 tile       126  178            art\tiles\edg5000.frm
@@ -5820,7 +5817,13 @@ tile       298  178            art\tiles\bld2043.frm
 tile       300  178            art\tiles\bld2043.frm
 tile       302  178            art\tiles\bld2043.frm
 tile       304  178            art\tiles\bld2043.frm
-tile       130  179            art\tiles\edg4002.frm
+tile       116  179            art\tiles\edg4002.frm
+tile       118  179            art\tiles\edg2003.frm
+tile       120  179            art\tiles\edg2002.frm
+tile       122  179            art\tiles\edg2002.frm
+tile       124  179            art\tiles\edg2002.frm
+tile       126  179            art\tiles\edg2001.frm
+tile       128  179            art\tiles\edg2002.frm
 tile       44   180            art\tiles\bld2043.frm
 tile       46   180            art\tiles\bld2043.frm
 tile       48   180            art\tiles\bld2043.frm
@@ -5857,16 +5860,9 @@ tile       108  180            art\tiles\edg2002.frm
 tile       110  180            art\tiles\edg4002.frm
 tile       112  180            art\tiles\edg2003.frm
 tile       114  180            art\tiles\edg4002.frm
-tile       116  180            art\tiles\edg4002.frm
-tile       117  180            art\tiles\edg2003.frm
-tile       119  180            art\tiles\wood_pol2.png
-tile       120  180            art\tiles\wood_pol2.png
-tile       122  180            art\tiles\edg2002.frm
-tile       124  180            art\tiles\edg2002.frm
-tile       126  180            art\tiles\edg2001.frm
-tile       128  180            art\tiles\edg2002.frm
-tile       132  180            art\tiles\wood_pol1.png
-tile       134  180            art\tiles\wood_pol1.png
+tile       130  180            art\tiles\edg4002.frm
+tile       131  180            art\tiles\road28.frm
+tile       133  180            art\tiles\road12.frm
 tile       135  180            art\tiles\road12.frm
 tile       137  180            art\tiles\road12.frm
 tile       139  180            art\tiles\road12.frm
@@ -5954,7 +5950,14 @@ tile       300  180            art\tiles\bld2043.frm
 tile       302  180            art\tiles\bld2043.frm
 tile       304  180            art\tiles\bld2043.frm
 tile       306  180            art\tiles\bld2043.frm
-tile       130  181            art\tiles\wood_pol2.png
+tile       116  181            art\tiles\cmt1000.frm
+tile       118  181            art\tiles\cmt7000.frm
+tile       120  181            art\tiles\cmt6000.frm
+tile       122  181            art\tiles\cmt5000.frm
+tile       124  181            art\tiles\cmt4000.frm
+tile       126  181            art\tiles\cmt3000.frm
+tile       128  181            art\tiles\cmt2000.frm
+tile       132  181            art\tiles\wood_pol2.png
 tile       46   182            art\tiles\bld2043.frm
 tile       48   182            art\tiles\bld2043.frm
 tile       50   182            art\tiles\bld2043.frm
@@ -5990,42 +5993,44 @@ tile       108  182            art\tiles\edg4002.frm
 tile       110  182            art\tiles\edg4002.frm
 tile       112  182            art\tiles\edg2003.frm
 tile       114  182            art\tiles\edg4002.frm
-tile       115  182            art\tiles\edg4002.frm
-tile       117  182            art\tiles\wood_pol2.png
-roof_o     117  182  2   -4    art\tiles\wood_pol2.png
-tile       118  182            art\tiles\wood_pol1.png
-tile       119  182            art\tiles\wood_pol2.png
-roof_o     119  182  2   -4    art\tiles\wood_pol2.png
-tile       120  182            art\tiles\wood_pol1.png
-tile       121  182            art\tiles\wood_pol1.png
-roof_o     121  182  2   -4    art\tiles\wood_pol2.png
-tile       122  182            art\tiles\wood_pol2.png
-tile       123  182            art\tiles\wood_pol2.png
-roof_o     123  182  2   -4    art\tiles\wood_pol2.png
-tile       124  182            art\tiles\wood_pol1.png
-tile       125  182            art\tiles\wood_pol1.png
-roof_o     125  182  2   -4    art\tiles\wood_pol2.png
-tile       126  182            art\tiles\wood_pol2.png
-tile       127  182            art\tiles\wood_pol2.png
-roof_o     127  182  2   -4    art\tiles\wood_pol2.png
-tile       129  182            art\tiles\wood_pol1.png
-roof_o     129  182  2   -4    art\tiles\wood_pol2.png
-tile       130  182            art\tiles\wood_pol2.png
-roof       131  182            art\tiles\wood_pol2.png
-tile       132  182            art\tiles\wood_pol1.png
-roof       133  182            art\tiles\wood_pol2.png
-tile       134  182            art\tiles\wood_pol2.png
+tile       116  182            art\tiles\cmt1000.frm
+tile       116  182            art\tiles\cmt1000.frm
+roof       117  182            art\tiles\ruf1000.frm
+tile       118  182            art\tiles\cmt7000.frm
+tile       118  182            art\tiles\cmt7000.frm
+roof       119  182            art\tiles\ruf1001.frm
+tile       120  182            art\tiles\cmt6000.frm
+tile       120  182            art\tiles\cmt6000.frm
+roof       121  182            art\tiles\ruf1000.frm
+tile       122  182            art\tiles\cmt5000.frm
+tile       122  182            art\tiles\cmt5000.frm
+roof       123  182            art\tiles\ruf1001.frm
+tile       124  182            art\tiles\cmt4000.frm
+tile       124  182            art\tiles\cmt4000.frm
+roof       125  182            art\tiles\ruf1000.frm
+tile       126  182            art\tiles\cmt3000.frm
+tile       126  182            art\tiles\cmt3000.frm
+roof       127  182            art\tiles\ruf1001.frm
+tile       128  182            art\tiles\cmt2000.frm
+tile       128  182            art\tiles\cmt2000.frm
+tile_o     129  182  -1  -1    art\tiles\cmt1000.frm
+roof       129  182            art\tiles\ruf1000.frm
+tile       131  182            art\tiles\wood_pol2.png
+roof       131  182            art\tiles\ruf1001.frm
+tile       132  182            art\tiles\wood_pol2.png
+tile       133  182            art\tiles\wood_pol2.png
+roof       133  182            art\tiles\ruf1000.frm
 tile       135  182            art\tiles\wood_pol1.png
-roof       135  182            art\tiles\wood_pol2.png
+roof       135  182            art\tiles\ruf1001.frm
 tile       136  182            art\tiles\wood_pol2.png
 tile       137  182            art\tiles\wood_pol2.png
-roof       137  182            art\tiles\wood_pol2.png
+roof       137  182            art\tiles\ruf1000.frm
 tile       138  182            art\tiles\wood_pol1.png
 tile       139  182            art\tiles\wood_pol1.png
-roof       139  182            art\tiles\wood_pol2.png
+roof       139  182            art\tiles\ruf1001.frm
 tile       140  182            art\tiles\wood_pol2.png
 tile       141  182            art\tiles\wood_pol1.png
-roof       141  182            art\tiles\wood_pol2.png
+roof       141  182            art\tiles\ruf1000.frm
 tile       143  182            art\tiles\edg7002.frm
 tile       144  182            art\tiles\edg5003.frm
 tile       146  182            art\tiles\edg1001.frm
@@ -6110,8 +6115,8 @@ tile       302  182            art\tiles\bld2043.frm
 tile       304  182            art\tiles\bld2043.frm
 tile       306  182            art\tiles\bld2043.frm
 tile       308  182            art\tiles\bld2043.frm
-tile       117  183            art\tiles\wood_pol1.png
-tile       128  183            art\tiles\wood_pol2.png
+tile       132  183            art\tiles\wood_pol2.png
+tile       134  183            art\tiles\wood_pol1.png
 tile       48   184            art\tiles\bld2043.frm
 tile       50   184            art\tiles\bld2043.frm
 tile       52   184            art\tiles\bld2043.frm
@@ -6146,32 +6151,34 @@ tile       108  184            art\tiles\edg3000.frm
 tile       110  184            art\tiles\edg2003.frm
 tile       112  184            art\tiles\edg4001.frm
 tile       114  184            art\tiles\edg3000.frm
-tile       115  184            art\tiles\edg2003.frm
-roof_o     117  184  2   -4    art\tiles\wood_pol1.png
-tile       118  184            art\tiles\wood_pol1.png
-roof_o     119  184  2   -4    art\tiles\wood_pol1.png
-tile       120  184            art\tiles\wood_pol2.png
-roof_o     121  184  2   -4    art\tiles\wood_pol1.png
-tile       122  184            art\tiles\wood_pol1.png
-roof_o     123  184  2   -4    art\tiles\wood_pol1.png
-tile       124  184            art\tiles\wood_pol2.png
-roof_o     125  184  2   -4    art\tiles\wood_pol1.png
-tile       126  184            art\tiles\wood_pol1.png
-roof_o     127  184  2   -4    art\tiles\wood_pol1.png
-roof_o     129  184  2   -4    art\tiles\wood_pol1.png
-tile       130  184            art\tiles\wood_pol1.png
-roof       131  184            art\tiles\wood_pol1.png
+tile       116  184            art\tiles\cmt1000.frm
+roof       117  184            art\tiles\ruf1001.frm
+tile       118  184            art\tiles\cmt3000.frm
+roof       119  184            art\tiles\ruf1000.frm
+tile       120  184            art\tiles\cmt2000.frm
+roof       121  184            art\tiles\ruf1001.frm
+tile       122  184            art\tiles\cmt1000.frm
+roof       123  184            art\tiles\ruf1000.frm
+tile       124  184            art\tiles\cmt1000.frm
+roof       125  184            art\tiles\ruf1001.frm
+tile       126  184            art\tiles\cmt2000.frm
+roof       127  184            art\tiles\ruf1000.frm
+tile       128  184            art\tiles\cmt5000.frm
+tile_o     129  184  0   -1    art\tiles\cmt2000.frm
+roof       129  184            art\tiles\ruf1001.frm
+tile       131  184            art\tiles\wood_pol2.png
+roof       131  184            art\tiles\ruf1000.frm
 tile       132  184            art\tiles\wood_pol2.png
-roof       133  184            art\tiles\wood_pol1.png
+roof       133  184            art\tiles\ruf1001.frm
 tile       134  184            art\tiles\wood_pol1.png
-roof       135  184            art\tiles\wood_pol1.png
+roof       135  184            art\tiles\ruf1000.frm
 tile       136  184            art\tiles\wood_pol1.png
-roof       137  184            art\tiles\wood_pol1.png
+roof       137  184            art\tiles\ruf1001.frm
 tile       138  184            art\tiles\wood_pol2.png
-roof       139  184            art\tiles\wood_pol1.png
+roof       139  184            art\tiles\ruf1000.frm
 tile       140  184            art\tiles\wood_pol1.png
 tile       141  184            art\tiles\wood_pol2.png
-roof       141  184            art\tiles\wood_pol1.png
+roof       141  184            art\tiles\ruf1001.frm
 tile       143  184            art\tiles\edgs000.frm
 tile       144  184            art\tiles\edg5007.frm
 tile       146  184            art\tiles\edg5000.frm
@@ -6256,8 +6263,7 @@ tile       302  184            art\tiles\bld2043.frm
 tile       304  184            art\tiles\bld2043.frm
 tile       306  184            art\tiles\bld2043.frm
 tile       308  184            art\tiles\bld2043.frm
-tile       117  185            art\tiles\wood_pol2.png
-tile       128  185            art\tiles\wood_pol1.png
+tile       131  185            art\tiles\wood_pol2.png
 tile       48   186            art\tiles\bld2043.frm
 tile       50   186            art\tiles\bld2043.frm
 tile       52   186            art\tiles\bld2043.frm
@@ -6292,32 +6298,33 @@ tile       108  186            art\tiles\edg4002.frm
 tile       110  186            art\tiles\edg4000.frm
 tile       112  186            art\tiles\edg2003.frm
 tile       114  186            art\tiles\edg4002.frm
-tile       115  186            art\tiles\edg4000.frm
-roof_o     117  186  2   -4    art\tiles\wood_pol2.png
-tile       118  186            art\tiles\wood_pol2.png
-roof_o     119  186  2   -4    art\tiles\wood_pol2.png
-tile       120  186            art\tiles\wood_pol1.png
-roof_o     121  186  2   -4    art\tiles\wood_pol2.png
-tile       122  186            art\tiles\wood_pol2.png
-roof_o     123  186  2   -4    art\tiles\wood_pol2.png
-tile       124  186            art\tiles\wood_pol1.png
-roof_o     125  186  2   -4    art\tiles\wood_pol2.png
-tile       126  186            art\tiles\wood_pol2.png
-roof_o     127  186  2   -4    art\tiles\wood_pol2.png
-roof_o     129  186  2   -4    art\tiles\wood_pol2.png
-tile       130  186            art\tiles\wood_pol1.png
-roof       131  186            art\tiles\wood_pol2.png
+tile       116  186            art\tiles\cmt1000.frm
+roof       117  186            art\tiles\ruf1001.frm
+tile       118  186            art\tiles\cmt2000.frm
+roof       119  186            art\tiles\ruf1000.frm
+tile       120  186            art\tiles\cmt1000.frm
+roof       121  186            art\tiles\ruf1001.frm
+tile       122  186            art\tiles\cmt2000.frm
+roof       123  186            art\tiles\ruf1000.frm
+tile       124  186            art\tiles\cmt2000.frm
+roof       125  186            art\tiles\ruf1001.frm
+tile       126  186            art\tiles\cmt7000.frm
+roof       127  186            art\tiles\ruf1000.frm
+tile       128  186            art\tiles\cmt2000.frm
+tile_o     129  186  0   -1    art\tiles\cmt2000.frm
+roof       129  186            art\tiles\ruf1001.frm
+roof       131  186            art\tiles\ruf1000.frm
 tile       132  186            art\tiles\wood_pol2.png
-roof       133  186            art\tiles\wood_pol2.png
+roof       133  186            art\tiles\ruf1001.frm
 tile       134  186            art\tiles\wood_pol1.png
-roof       135  186            art\tiles\wood_pol2.png
+roof       135  186            art\tiles\ruf1000.frm
 tile       136  186            art\tiles\wood_pol2.png
-roof       137  186            art\tiles\wood_pol2.png
+roof       137  186            art\tiles\ruf1001.frm
 tile       138  186            art\tiles\wood_pol1.png
-roof       139  186            art\tiles\wood_pol2.png
-tile       140  186            art\tiles\wood_pol2.png
+tile       139  186            art\tiles\wood_pol2.png
+roof       139  186            art\tiles\ruf1000.frm
 tile       141  186            art\tiles\wood_pol1.png
-roof       141  186            art\tiles\wood_pol2.png
+roof       141  186            art\tiles\ruf1001.frm
 tile       143  186            art\tiles\edgs001.frm
 tile       144  186            art\tiles\edg5000.frm
 tile       146  186            art\tiles\edg5004.frm
@@ -6403,9 +6410,7 @@ tile       304  186            art\tiles\bld2043.frm
 tile       306  186            art\tiles\bld2043.frm
 tile       308  186            art\tiles\bld2043.frm
 tile       310  186            art\tiles\bld2043.frm
-tile       117  187            art\tiles\wood_pol1.png
-tile       128  187            art\tiles\wood_pol2.png
-tile       141  187            art\tiles\wood_pol2.png
+tile       131  187            art\tiles\wood_pol2.png
 tile       50   188            art\tiles\bld2043.frm
 tile       52   188            art\tiles\bld2043.frm
 tile       54   188            art\tiles\bld2043.frm
@@ -6439,31 +6444,33 @@ tile       108  188            art\tiles\edg4002.frm
 tile       110  188            art\tiles\edg4002.frm
 tile       112  188            art\tiles\edg2003.frm
 tile       114  188            art\tiles\edg4002.frm
-tile       115  188            art\tiles\edg4002.frm
-roof_o     117  188  2   -4    art\tiles\wood_pol1.png
-tile       118  188            art\tiles\wood_pol1.png
-roof_o     119  188  2   -4    art\tiles\wood_pol1.png
-tile       120  188            art\tiles\wood_pol2.png
-roof_o     121  188  2   -4    art\tiles\wood_pol1.png
-tile       122  188            art\tiles\wood_pol1.png
-roof_o     123  188  2   -4    art\tiles\wood_pol1.png
-tile       124  188            art\tiles\wood_pol2.png
-roof_o     125  188  2   -4    art\tiles\wood_pol1.png
-tile       126  188            art\tiles\wood_pol1.png
-roof_o     127  188  2   -4    art\tiles\wood_pol1.png
-roof_o     129  188  2   -4    art\tiles\wood_pol1.png
-tile       130  188            art\tiles\wood_pol2.png
-roof       131  188            art\tiles\wood_pol1.png
+tile       116  188            art\tiles\cmt1000.frm
+roof       117  188            art\tiles\ruf1001.frm
+tile       118  188            art\tiles\cmt5000.frm
+roof       119  188            art\tiles\ruf1000.frm
+tile       120  188            art\tiles\cmt2000.frm
+roof       121  188            art\tiles\ruf1001.frm
+tile       122  188            art\tiles\cmt1000.frm
+roof       123  188            art\tiles\ruf1000.frm
+tile       124  188            art\tiles\cmt2000.frm
+roof       125  188            art\tiles\ruf1001.frm
+tile       126  188            art\tiles\cmt5000.frm
+roof       127  188            art\tiles\ruf1000.frm
+tile       128  188            art\tiles\cmt2000.frm
+tile_o     129  188  0   -1    art\tiles\cmt2000.frm
+roof       129  188            art\tiles\ruf1001.frm
+roof       131  188            art\tiles\ruf1000.frm
 tile       132  188            art\tiles\wood_pol1.png
-roof       133  188            art\tiles\wood_pol1.png
+roof       133  188            art\tiles\ruf1001.frm
 tile       134  188            art\tiles\wood_pol2.png
-roof       135  188            art\tiles\wood_pol1.png
+roof       135  188            art\tiles\ruf1000.frm
 tile       136  188            art\tiles\wood_pol1.png
-roof       137  188            art\tiles\wood_pol1.png
+roof       137  188            art\tiles\ruf1001.frm
 tile       138  188            art\tiles\wood_pol2.png
-roof       139  188            art\tiles\wood_pol1.png
-tile       140  188            art\tiles\wood_pol1.png
-roof       141  188            art\tiles\wood_pol1.png
+tile       139  188            art\tiles\wood_pol1.png
+roof       139  188            art\tiles\ruf1000.frm
+tile       141  188            art\tiles\wood_pol2.png
+roof       141  188            art\tiles\ruf1000.frm
 tile       143  188            art\tiles\edg5005.frm
 tile       144  188            art\tiles\edg5002.frm
 tile       146  188            art\tiles\edg5007.frm
@@ -6550,8 +6557,8 @@ tile       306  188            art\tiles\bld2043.frm
 tile       308  188            art\tiles\bld2043.frm
 tile       310  188            art\tiles\bld2043.frm
 tile       312  188            art\tiles\bld2043.frm
-tile       117  189            art\tiles\wood_pol2.png
-tile       128  189            art\tiles\wood_pol1.png
+tile       131  189            art\tiles\wood_pol1.png
+tile       140  189            art\tiles\wood_pol1.png
 tile       141  189            art\tiles\wood_pol1.png
 tile       52   190            art\tiles\bld2043.frm
 tile       54   190            art\tiles\bld2043.frm
@@ -6585,31 +6592,32 @@ tile       108  190            art\tiles\edg3000.frm
 tile       110  190            art\tiles\edg2003.frm
 tile       112  190            art\tiles\edg4001.frm
 tile       114  190            art\tiles\edg3000.frm
-tile       115  190            art\tiles\edg2003.frm
-roof_o     117  190  2   -4    art\tiles\wood_pol2.png
-tile       118  190            art\tiles\wood_pol2.png
-roof_o     119  190  2   -4    art\tiles\wood_pol2.png
-tile       120  190            art\tiles\wood_pol1.png
-roof_o     121  190  2   -4    art\tiles\wood_pol2.png
-tile       122  190            art\tiles\wood_pol2.png
-roof_o     123  190  2   -4    art\tiles\wood_pol2.png
-tile       124  190            art\tiles\wood_pol1.png
-roof_o     125  190  2   -4    art\tiles\wood_pol2.png
-tile       126  190            art\tiles\wood_pol2.png
-roof_o     127  190  2   -4    art\tiles\wood_pol2.png
-roof_o     129  190  2   -4    art\tiles\wood_pol2.png
-tile       130  190            art\tiles\wood_pol1.png
-roof       131  190            art\tiles\wood_pol2.png
+tile       116  190            art\tiles\cmt1000.frm
+roof       117  190            art\tiles\ruf1000.frm
+tile       118  190            art\tiles\cmt6000.frm
+roof       119  190            art\tiles\ruf1001.frm
+tile       120  190            art\tiles\cmt2000.frm
+roof       121  190            art\tiles\ruf1000.frm
+tile       122  190            art\tiles\cmt2000.frm
+roof       123  190            art\tiles\ruf1001.frm
+tile       124  190            art\tiles\cmt7000.frm
+roof       125  190            art\tiles\ruf1000.frm
+tile       126  190            art\tiles\cmt2000.frm
+roof       127  190            art\tiles\ruf1001.frm
+tile       128  190            art\tiles\cmt2000.frm
+tile_o     129  190  0   -1    art\tiles\cmt3000.frm
+roof       129  190            art\tiles\ruf1000.frm
+roof       131  190            art\tiles\ruf1001.frm
 tile       132  190            art\tiles\wood_pol2.png
-roof       133  190            art\tiles\wood_pol2.png
+roof       133  190            art\tiles\ruf1000.frm
 tile       134  190            art\tiles\wood_pol1.png
-roof       135  190            art\tiles\wood_pol2.png
+roof       135  190            art\tiles\ruf1001.frm
 tile       136  190            art\tiles\wood_pol2.png
-roof       137  190            art\tiles\wood_pol2.png
+roof       137  190            art\tiles\ruf1000.frm
 tile       138  190            art\tiles\wood_pol1.png
-roof       139  190            art\tiles\wood_pol2.png
+roof       139  190            art\tiles\ruf1001.frm
 tile       140  190            art\tiles\wood_pol2.png
-roof       141  190            art\tiles\wood_pol2.png
+roof       141  190            art\tiles\ruf1001.frm
 tile       143  190            art\tiles\edg5000.frm
 tile       144  190            art\tiles\edg5004.frm
 tile       146  190            art\tiles\edg5000.frm
@@ -6696,8 +6704,7 @@ tile       306  190            art\tiles\bld2043.frm
 tile       308  190            art\tiles\bld2043.frm
 tile       310  190            art\tiles\bld2043.frm
 tile       312  190            art\tiles\bld2043.frm
-tile       117  191            art\tiles\wood_pol1.png
-tile       128  191            art\tiles\wood_pol2.png
+tile       131  191            art\tiles\wood_pol2.png
 tile       141  191            art\tiles\wood_pol2.png
 tile       52   192            art\tiles\bld2043.frm
 tile       54   192            art\tiles\bld2043.frm
@@ -6731,32 +6738,33 @@ tile       108  192            art\tiles\edg4002.frm
 tile       110  192            art\tiles\edg4000.frm
 tile       112  192            art\tiles\edg2003.frm
 tile       114  192            art\tiles\edg4002.frm
-tile       115  192            art\tiles\edg4000.frm
-roof_o     117  192  2   -4    art\tiles\wood_pol1.png
-tile       118  192            art\tiles\wood_pol1.png
-roof_o     119  192  2   -4    art\tiles\wood_pol1.png
-tile       120  192            art\tiles\wood_pol2.png
-roof_o     121  192  2   -4    art\tiles\wood_pol1.png
-tile       122  192            art\tiles\wood_pol1.png
-roof_o     123  192  2   -4    art\tiles\wood_pol1.png
-tile       124  192            art\tiles\wood_pol2.png
-roof_o     125  192  2   -4    art\tiles\wood_pol1.png
-tile       126  192            art\tiles\wood_pol1.png
-roof_o     127  192  2   -4    art\tiles\wood_pol1.png
-roof_o     129  192  2   -4    art\tiles\wood_pol1.png
-tile       130  192            art\tiles\wood_pol2.png
-roof       131  192            art\tiles\wood_pol1.png
+tile       116  192            art\tiles\cmt2000.frm
+roof       117  192            art\tiles\ruf1000.frm
+tile       118  192            art\tiles\cmt1000.frm
+roof       119  192            art\tiles\ruf1001.frm
+tile       120  192            art\tiles\cmt1000.frm
+roof       121  192            art\tiles\ruf1000.frm
+tile       122  192            art\tiles\cmt1000.frm
+roof       123  192            art\tiles\ruf1001.frm
+tile       124  192            art\tiles\cmt5000.frm
+roof       125  192            art\tiles\ruf1000.frm
+tile       126  192            art\tiles\cmt2000.frm
+roof       127  192            art\tiles\ruf1001.frm
+tile       128  192            art\tiles\cmt1000.frm
+tile_o     129  192  0   -1    art\tiles\cmt2000.frm
+roof       129  192            art\tiles\ruf1000.frm
+roof       131  192            art\tiles\ruf1001.frm
 tile       132  192            art\tiles\wood_pol1.png
-roof       133  192            art\tiles\wood_pol1.png
+roof       133  192            art\tiles\ruf1000.frm
 tile       134  192            art\tiles\wood_pol2.png
-roof       135  192            art\tiles\wood_pol1.png
+roof       135  192            art\tiles\ruf1001.frm
 tile       136  192            art\tiles\wood_pol1.png
-roof       137  192            art\tiles\wood_pol1.png
+roof       137  192            art\tiles\ruf1000.frm
 tile       138  192            art\tiles\wood_pol2.png
-roof       139  192            art\tiles\wood_pol1.png
+roof       139  192            art\tiles\ruf1001.frm
 tile       140  192            art\tiles\wood_pol1.png
 tile       141  192            art\tiles\wood_pol1.png
-roof       141  192            art\tiles\wood_pol1.png
+roof       141  192            art\tiles\ruf1000.frm
 tile       143  192            art\tiles\edg5006.frm
 tile       144  192            art\tiles\edg5001.frm
 tile       146  192            art\tiles\edg5005.frm
@@ -6844,14 +6852,10 @@ tile       308  192            art\tiles\bld2043.frm
 tile       310  192            art\tiles\bld2043.frm
 tile       312  192            art\tiles\bld2043.frm
 tile       314  192            art\tiles\bld2043.frm
-tile       117  193            art\tiles\wood_pol2.png
-tile       128  193            art\tiles\wood_pol1.png
-tile       130  193            art\tiles\wood_pol1.png
-tile       132  193            art\tiles\wood_pol2.png
+tile       131  193            art\tiles\wood_pol1.png
 tile       134  193            art\tiles\wood_pol1.png
 tile       136  193            art\tiles\wood_pol2.png
 tile       138  193            art\tiles\wood_pol1.png
-tile       140  193            art\tiles\wood_pol2.png
 tile       54   194            art\tiles\bld2043.frm
 tile       56   194            art\tiles\bld2043.frm
 tile       58   194            art\tiles\bld2043.frm
@@ -6883,31 +6887,34 @@ tile       108  194            art\tiles\edg1003.frm
 tile       110  194            art\tiles\edg4000.frm
 tile       112  194            art\tiles\edg2003.frm
 tile       114  194            art\tiles\edg4002.frm
-tile       115  194            art\tiles\edg3000.frm
-roof_o     117  194  2   -4    art\tiles\wood_pol2.png
-tile       118  194            art\tiles\wood_pol2.png
-roof_o     119  194  2   -4    art\tiles\wood_pol2.png
-tile       120  194            art\tiles\wood_pol1.png
-roof_o     121  194  2   -4    art\tiles\wood_pol2.png
-tile       122  194            art\tiles\wood_pol2.png
-roof_o     123  194  2   -4    art\tiles\wood_pol2.png
-tile       124  194            art\tiles\wood_pol1.png
-roof_o     125  194  2   -4    art\tiles\wood_pol2.png
-tile       126  194            art\tiles\wood_pol2.png
-roof_o     127  194  2   -4    art\tiles\wood_pol2.png
-roof_o     129  194  2   -4    art\tiles\wood_pol2.png
-tile       131  194            art\tiles\wood_pol1.png
-roof       131  194            art\tiles\wood_pol2.png
+tile       116  194            art\tiles\cmt2000.frm
+roof       117  194            art\tiles\ruf1001.frm
+tile       118  194            art\tiles\cmt6000.frm
+roof       119  194            art\tiles\ruf1000.frm
+tile       120  194            art\tiles\cmt2000.frm
+roof       121  194            art\tiles\ruf1001.frm
+tile       122  194            art\tiles\cmt2000.frm
+roof       123  194            art\tiles\ruf1000.frm
+tile       124  194            art\tiles\cmt6000.frm
+roof       125  194            art\tiles\ruf1001.frm
+tile       126  194            art\tiles\cmt2000.frm
+roof       127  194            art\tiles\ruf1000.frm
+tile       128  194            art\tiles\cmt2000.frm
+tile_o     129  194  0   -1    art\tiles\cmt2000.frm
+roof       129  194            art\tiles\ruf1001.frm
+roof       131  194            art\tiles\ruf1000.frm
+tile       132  194            art\tiles\wood_pol2.png
+tile       132  194            art\tiles\wood_pol2.png
 tile       133  194            art\tiles\wood_pol2.png
-roof       133  194            art\tiles\wood_pol2.png
+roof       133  194            art\tiles\ruf1001.frm
 tile       135  194            art\tiles\wood_pol1.png
-roof       135  194            art\tiles\wood_pol2.png
+roof       135  194            art\tiles\ruf1000.frm
 tile       137  194            art\tiles\wood_pol2.png
-roof       137  194            art\tiles\wood_pol2.png
+roof       137  194            art\tiles\ruf1001.frm
 tile       139  194            art\tiles\wood_pol1.png
-roof       139  194            art\tiles\wood_pol2.png
-tile       141  194            art\tiles\wood_pol1.png
-roof       141  194            art\tiles\wood_pol2.png
+roof       139  194            art\tiles\ruf1000.frm
+tile       141  194            art\tiles\wood_pol2.png
+roof       141  194            art\tiles\ruf1001.frm
 tile       143  194            art\tiles\edg5001.frm
 tile       144  194            art\tiles\edg5000.frm
 tile       146  194            art\tiles\edg5003.frm
@@ -6996,9 +7003,7 @@ tile       310  194            art\tiles\bld2043.frm
 tile       312  194            art\tiles\bld2043.frm
 tile       314  194            art\tiles\bld2043.frm
 tile       316  194            art\tiles\bld2043.frm
-tile       117  195            art\tiles\wood_pol1.png
-tile       128  195            art\tiles\wood_pol1.png
-tile       129  195            art\tiles\wood_pol2.png
+tile       131  195            art\tiles\wood_pol2.png
 tile       143  195            art\tiles\edg5001.frm
 tile       56   196            art\tiles\bld2043.frm
 tile       58   196            art\tiles\bld2043.frm
@@ -7030,29 +7035,32 @@ tile       108  196            art\tiles\edg1002.frm
 tile       110  196            art\tiles\edg2003.frm
 tile       112  196            art\tiles\edg3000.frm
 tile       114  196            art\tiles\edg4001.frm
-tile       115  196            art\tiles\edg2003.frm
-roof_o     117  196  2   -4    art\tiles\wood_pol2.png
-tile       118  196            art\tiles\wood_pol1.png
-roof_o     119  196  2   -4    art\tiles\wood_pol2.png
-tile       120  196            art\tiles\wood_pol2.png
-roof_o     121  196  2   -4    art\tiles\wood_pol2.png
-tile       122  196            art\tiles\wood_pol1.png
-roof_o     123  196  2   -4    art\tiles\wood_pol2.png
-tile       124  196            art\tiles\wood_pol2.png
-roof_o     125  196  2   -4    art\tiles\wood_pol2.png
-tile       126  196            art\tiles\wood_pol1.png
-roof_o     127  196  2   -4    art\tiles\wood_pol2.png
-roof_o     129  196  2   -4    art\tiles\wood_pol2.png
+tile       116  196            art\tiles\cmt4000.frm
+roof       117  196            art\tiles\ruf1000.frm
+tile       118  196            art\tiles\cmt1000.frm
+roof       119  196            art\tiles\ruf1001.frm
+tile       120  196            art\tiles\cmt3000.frm
+roof       121  196            art\tiles\ruf1000.frm
+tile       122  196            art\tiles\cmt1000.frm
+roof       123  196            art\tiles\ruf1001.frm
+tile       124  196            art\tiles\cmt1000.frm
+roof       125  196            art\tiles\ruf1000.frm
+tile       126  196            art\tiles\cmt2000.frm
+roof       127  196            art\tiles\ruf1001.frm
+tile       128  196            art\tiles\cmt2000.frm
+tile       129  196            art\tiles\cmt2000.frm
+roof       129  196            art\tiles\ruf1000.frm
+tile       130  196            art\tiles\cmt2000.frm
 tile       131  196            art\tiles\wood_pol1.png
-roof       131  196            art\tiles\wood_pol1.png
+roof       131  196            art\tiles\ruf1001.frm
 tile       133  196            art\tiles\wood_pol2.png
-roof       133  196            art\tiles\wood_pol2.png
+roof       133  196            art\tiles\ruf1000.frm
 tile       135  196            art\tiles\wood_pol1.png
-roof       135  196            art\tiles\wood_pol1.png
+roof       135  196            art\tiles\ruf1001.frm
 tile       137  196            art\tiles\wood_pol2.png
-roof       137  196            art\tiles\wood_pol2.png
+roof       137  196            art\tiles\ruf1000.frm
 tile       139  196            art\tiles\wood_pol1.png
-roof       139  196            art\tiles\wood_pol1.png
+roof       139  196            art\tiles\ruf1001.frm
 tile       141  196            art\tiles\edg5000.frm
 tile       142  196            art\tiles\edg5000.frm
 tile       144  196            art\tiles\edg5003.frm
@@ -7142,11 +7150,8 @@ tile       310  196            art\tiles\bld2043.frm
 tile       312  196            art\tiles\bld2043.frm
 tile       314  196            art\tiles\bld2043.frm
 tile       316  196            art\tiles\bld2043.frm
-tile       117  197            art\tiles\wood_pol2.png
-tile       128  197            art\tiles\wood_pol1.png
-tile       129  197            art\tiles\wood_pol1.png
-roof       131  197            art\tiles\wood_pol2.png
-roof       133  197            art\tiles\wood_pol1.png
+tile_o     130  197  17  13    art\tiles\cmt2000.frm
+tile       131  197            art\tiles\wood_pol1.png
 tile       141  197            art\tiles\edg5002.frm
 tile       56   198            art\tiles\bld2043.frm
 tile       58   198            art\tiles\bld2043.frm
@@ -7178,27 +7183,30 @@ tile       108  198            art\tiles\edg5005.frm
 tile       110  198            art\tiles\edg1001.frm
 tile       112  198            art\tiles\edg1000.frm
 tile       114  198            art\tiles\edg4002.frm
-tile       115  198            art\tiles\edg3000.frm
-roof_o     117  198  2   -4    art\tiles\wood_pol1.png
-tile       118  198            art\tiles\wood_pol2.png
-roof_o     119  198  2   -4    art\tiles\wood_pol1.png
-tile       120  198            art\tiles\wood_pol1.png
-roof_o     121  198  2   -4    art\tiles\wood_pol1.png
-tile       122  198            art\tiles\wood_pol2.png
-roof_o     123  198  2   -4    art\tiles\wood_pol1.png
-tile       124  198            art\tiles\wood_pol1.png
-roof_o     125  198  2   -4    art\tiles\wood_pol1.png
-tile       126  198            art\tiles\wood_pol2.png
-roof_o     127  198  2   -4    art\tiles\wood_pol1.png
-roof_o     129  198  2   -4    art\tiles\wood_pol1.png
-tile       131  198            art\tiles\wood_pol2.png
+tile_o     116  198  8   6     art\tiles\cmt2000.frm
+tile       116  198            art\tiles\cmt2000.frm
+roof       117  198            art\tiles\ruf1000.frm
+tile       118  198            art\tiles\cmt1000.frm
+roof       119  198            art\tiles\ruf1001.frm
+tile       120  198            art\tiles\cmt2000.frm
+roof       121  198            art\tiles\ruf1000.frm
+tile       122  198            art\tiles\cmt4000.frm
+roof       123  198            art\tiles\ruf1001.frm
+tile       124  198            art\tiles\cmt2000.frm
+roof       125  198            art\tiles\ruf1000.frm
+tile       126  198            art\tiles\cmt5000.frm
+roof       127  198            art\tiles\ruf1001.frm
+tile       128  198            art\tiles\cmt2000.frm
+roof       129  198            art\tiles\ruf1000.frm
+roof       131  198            art\tiles\ruf1001.frm
 tile       133  198            art\tiles\wood_pol1.png
+roof       133  198            art\tiles\ruf1000.frm
 tile       135  198            art\tiles\wood_pol2.png
-roof       135  198            art\tiles\wood_pol2.png
+roof       135  198            art\tiles\ruf1001.frm
 tile       137  198            art\tiles\wood_pol1.png
-roof       137  198            art\tiles\wood_pol1.png
+roof       137  198            art\tiles\ruf1000.frm
 tile       139  198            art\tiles\wood_pol2.png
-roof       139  198            art\tiles\wood_pol2.png
+roof       139  198            art\tiles\ruf1001.frm
 tile       142  198            art\tiles\edg5003.frm
 tile       144  198            art\tiles\edg5000.frm
 tile       146  198            art\tiles\edg6006.frm
@@ -7288,19 +7296,14 @@ tile       312  198            art\tiles\bld2043.frm
 tile       314  198            art\tiles\bld2043.frm
 tile       316  198            art\tiles\bld2043.frm
 tile       318  198            art\tiles\bld2043.frm
-tile       115  199            art\tiles\edg3000.frm
-tile       117  199            art\tiles\wood_pol1.png
-tile       119  199            art\tiles\wood_pol2.png
-tile       121  199            art\tiles\wood_pol1.png
-tile       123  199            art\tiles\wood_pol2.png
-tile       125  199            art\tiles\wood_pol1.png
-tile       127  199            art\tiles\wood_pol2.png
-tile       129  199            art\tiles\wood_pol2.png
-roof       131  199            art\tiles\wood_pol1.png
-roof       133  199            art\tiles\wood_pol2.png
-roof       135  199            art\tiles\wood_pol1.png
-roof       137  199            art\tiles\wood_pol2.png
-roof       139  199            art\tiles\wood_pol1.png
+tile       117  199            art\tiles\cmt2000.frm
+tile       119  199            art\tiles\cmt4000.frm
+tile       121  199            art\tiles\cmt2000.frm
+tile       123  199            art\tiles\cmt4000.frm
+tile       125  199            art\tiles\cmt2000.frm
+tile       127  199            art\tiles\cmt5000.frm
+tile       129  199            art\tiles\cmt4000.frm
+tile       131  199            art\tiles\wood_pol2.png
 tile       141  199            art\tiles\edgs004.frm
 tile       58   200            art\tiles\bld2043.frm
 tile       60   200            art\tiles\bld2043.frm
@@ -7331,18 +7334,23 @@ tile       108  200            art\tiles\edg5006.frm
 tile       110  200            art\tiles\edg5006.frm
 tile       112  200            art\tiles\edg2001.frm
 tile       114  200            art\tiles\edg2003.frm
-roof_o     117  200  -12 -15   art\tiles\wood_pol2.png
-roof_o     119  200  -12 -15   art\tiles\wood_pol2.png
-roof_o     121  200  -12 -15   art\tiles\wood_pol2.png
-roof_o     123  200  -12 -15   art\tiles\wood_pol2.png
-roof_o     125  200  -12 -15   art\tiles\wood_pol2.png
-roof_o     127  200  -12 -15   art\tiles\wood_pol2.png
-roof_o     129  200  -12 -15   art\tiles\wood_pol2.png
-tile       131  200            art\tiles\wood_pol1.png
+roof_o     117  200  -15 -12   art\tiles\ruf1001.frm
+roof_o     119  200  -15 -12   art\tiles\ruf1000.frm
+roof_o     121  200  -15 -12   art\tiles\ruf1001.frm
+roof_o     123  200  -15 -12   art\tiles\ruf1000.frm
+roof_o     125  200  -15 -12   art\tiles\ruf1001.frm
+roof_o     127  200  -15 -12   art\tiles\ruf1000.frm
+roof_o     129  200  -15 -12   art\tiles\ruf1001.frm
+roof       131  200            art\tiles\ruf1000.frm
+tile       132  200            art\tiles\wood_pol1.png
 tile       133  200            art\tiles\wood_pol2.png
+roof       133  200            art\tiles\ruf1001.frm
 tile       135  200            art\tiles\wood_pol1.png
+roof       135  200            art\tiles\ruf1000.frm
 tile       137  200            art\tiles\wood_pol2.png
+roof       137  200            art\tiles\ruf1001.frm
 tile       139  200            art\tiles\wood_pol1.png
+roof       139  200            art\tiles\ruf1000.frm
 tile       142  200            art\tiles\edg5002.frm
 tile       144  200            art\tiles\edg5001.frm
 tile       146  200            art\tiles\edg7001.frm
@@ -7442,15 +7450,15 @@ tile       125  201            art\tiles\edg2000.frm
 tile       127  201            art\tiles\edg5004.frm
 tile       129  201            art\tiles\edg5000.frm
 tile       131  201            art\tiles\wood_pol2.png
-roof       131  201            art\tiles\wood_pol2.png
+roof       131  201            art\tiles\ruf1000.frm
 tile       133  201            art\tiles\wood_pol1.png
-roof       133  201            art\tiles\wood_pol1.png
+roof       133  201            art\tiles\ruf1001.frm
 tile       135  201            art\tiles\wood_pol2.png
-roof       135  201            art\tiles\wood_pol2.png
+roof       135  201            art\tiles\ruf1000.frm
 tile       137  201            art\tiles\wood_pol1.png
-roof       137  201            art\tiles\wood_pol1.png
+roof       137  201            art\tiles\ruf1001.frm
 tile       139  201            art\tiles\wood_pol2.png
-roof       139  201            art\tiles\wood_pol2.png
+roof       139  201            art\tiles\ruf1000.frm
 tile       141  201            art\tiles\edg2000.frm
 tile       58   202            art\tiles\bld2043.frm
 tile       60   202            art\tiles\bld2043.frm
@@ -30747,11 +30755,6 @@ MapObjType           2
 ProtoId              3806
 MapX                 124
 MapY                 211
-
-MapObjType           2
-ProtoId              3806
-MapX                 144
-MapY                 204
 
 MapObjType           2
 ProtoId              2103
@@ -56847,11 +56850,6 @@ MapY                 165
 
 MapObjType           2
 ProtoId              2067
-MapX                 121
-MapY                 165
-
-MapObjType           2
-ProtoId              2067
 MapX                 118
 MapY                 164
 
@@ -58028,27 +58026,12 @@ MapY                 195
 
 MapObjType           2
 ProtoId              2067
-MapX                 138
-MapY                 195
-
-MapObjType           2
-ProtoId              2067
 MapX                 137
 MapY                 195
 
 MapObjType           2
 ProtoId              5621
-MapX                 140
-MapY                 195
-
-MapObjType           2
-ProtoId              5621
 MapX                 141
-MapY                 195
-
-MapObjType           2
-ProtoId              5621
-MapX                 142
 MapY                 195
 
 MapObjType           2
@@ -58366,9 +58349,9 @@ OffsetY              23
 MapObjType           2
 ProtoId              8684
 MapX                 130
-MapY                 185
-OffsetX              3
-OffsetY              24
+MapY                 186
+OffsetX              -13
+OffsetY              12
 
 MapObjType           2
 ProtoId              8691
@@ -58391,9 +58374,9 @@ OffsetY              25
 
 MapObjType           2
 ProtoId              8687
-MapX                 121
-MapY                 181
-OffsetX              -20
+MapX                 122
+MapY                 180
+OffsetX              14
 OffsetY              -4
 
 MapObjType           2
@@ -58412,8 +58395,10 @@ OffsetY              7
 
 MapObjType           2
 ProtoId              8694
-MapX                 122
-MapY                 180
+MapX                 123
+MapY                 181
+OffsetX              13
+OffsetY              -12
 
 MapObjType           2
 ProtoId              8694
@@ -58550,26 +58535,11 @@ MapY                 198
 MapObjType           2
 ProtoId              5621
 MapX                 117
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
-MapX                 117
 MapY                 199
 
 MapObjType           2
 ProtoId              5621
-MapX                 118
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
 MapX                 119
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
-MapX                 120
 MapY                 200
 
 MapObjType           2
@@ -58579,17 +58549,7 @@ MapY                 200
 
 MapObjType           2
 ProtoId              5621
-MapX                 122
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
 MapX                 123
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
-MapX                 124
 MapY                 200
 
 MapObjType           2
@@ -58599,27 +58559,12 @@ MapY                 200
 
 MapObjType           2
 ProtoId              5621
-MapX                 126
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
 MapX                 127
 MapY                 200
 
 MapObjType           2
 ProtoId              5621
-MapX                 128
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
 MapX                 129
-MapY                 200
-
-MapObjType           2
-ProtoId              5621
-MapX                 130
 MapY                 200
 
 MapObjType           2
@@ -58965,11 +58910,6 @@ MapY                 172
 MapObjType           2
 ProtoId              2067
 MapX                 122
-MapY                 170
-
-MapObjType           2
-ProtoId              2067
-MapX                 122
 MapY                 168
 
 MapObjType           2
@@ -59013,11 +58953,6 @@ MapX                 119
 MapY                 170
 
 MapObjType           2
-ProtoId              2067
-MapX                 119
-MapY                 171
-
-MapObjType           2
 ProtoId              8697
 MapX                 119
 MapY                 200
@@ -59043,20 +58978,9 @@ MapX                 118
 MapY                 182
 
 MapObjType           1
-ProtoId              2958
-MapX                 121
-MapY                 181
-
-MapObjType           1
 ProtoId              2848
 MapX                 134
 MapY                 180
-
-MapObjType           1
-ProtoId              2959
-MapX                 131
-MapY                 186
-OffsetX              -1
 
 MapObjType           1
 ProtoId              15452
@@ -59243,22 +59167,12 @@ MapY                 201
 
 MapObjType           2
 ProtoId              2067
-MapX                 139
-MapY                 202
-
-MapObjType           2
-ProtoId              2067
 MapX                 138
 MapY                 202
 
 MapObjType           2
 ProtoId              2067
 MapX                 137
-MapY                 202
-
-MapObjType           2
-ProtoId              5621
-MapX                 140
 MapY                 202
 
 MapObjType           2
@@ -59298,27 +59212,12 @@ MapY                 196
 
 MapObjType           2
 ProtoId              5621
-MapX                 136
-MapY                 202
-
-MapObjType           2
-ProtoId              5621
 MapX                 135
 MapY                 202
 
 MapObjType           2
 ProtoId              5621
-MapX                 134
-MapY                 202
-
-MapObjType           2
-ProtoId              5621
 MapX                 133
-MapY                 202
-
-MapObjType           2
-ProtoId              5621
-MapX                 132
 MapY                 202
 
 MapObjType           2
@@ -59396,5 +59295,25 @@ ProtoId              5097
 MapX                 140
 MapY                 201
 OffsetX              1
+
+MapObjType           1
+ProtoId              2333
+MapX                 131
+MapY                 186
+
+MapObjType           1
+ProtoId              2332
+MapX                 121
+MapY                 181
+
+MapObjType           1
+ProtoId              2848
+MapX                 138
+MapY                 194
+
+MapObjType           1
+ProtoId              4768
+MapX                 128
+MapY                 132
 
 
