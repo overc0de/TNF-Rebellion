@@ -1747,6 +1747,152 @@
 {6976}{}{animal1:20, animal:20, dogbark2:5, gntlwin1:5, gntlwind:5, pebble:5, pebble1:10, vulture:5, vulture1:5}
 {6978}{}{"Шахта Робко"}
 
+#=============CLINTON===================
+
+# Area 449, Map 697
+{6980}{}{clinton_center}
+{6985}{}{Save_room2.ogg}
+{6986}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{6988}{}{Центральный район}
+
+# Area 449, Map 698
+{6990}{}{clinton_center_dn1}
+{6995}{}{last_hideout.ogg}
+{6996}{}{bangpip1:5, bangpipe:5, clang:5, clang1:5, clank:5, clank1:5, coolant:5, fixstill:5, jupiter:5, mechpum1:5, mechpum:5, neptune:5, steam:5, steam1:5, water:5, water1:5, pebble:5, pebble1:5}
+{6998}{}{Убежище Центрального}
+
+# Area 449, Map 699
+{7000}{}{clinton_center_dn2}
+{7005}{}{NNM_FS_16_One_Way.ogg}
+{7006}{}{bangpip1:5, bangpipe:5, clang:5, clang1:5, clank:5, clank1:5, coolant:5, fixstill:5, jupiter:5, mechpum1:5, mechpum:5, neptune:5, steam:5, steam1:5, water:5, water1:5, pebble:5, pebble1:5}
+{7008}{}{Станция}
+
+# Area 449, Map 700
+{7010}{}{clinton_center_up}
+{7015}{}{48NNM_new_vegas.ogg}
+{7016}{}{dice:5, dice1:5, potspan1:5, potspsns:5, laughte1:10, laughter:10, saloon:5, saloon1:5, shuffle:5, steam:5, steam1:5, water:5, water1:5, winner:5}
+{7018}{}{Вторые этажи}
+
+# Area 450, Map 701
+{7020}{}{clinton1_1}
+{7025}{}{black_dawn_1.ogg}
+{7026}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7028}{}{Склады}
+
+# Area 451, Map 703
+{7040}{}{clinton1_2}
+{7045}{}{52NNM_root_information.ogg}
+{7046}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7048}{}{Подстанция}
+
+# Area 452, Map 705
+{7060}{}{clinton1_3}
+{7065}{}{06 - Cluster Decay.ogg}
+{7066}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7068}{}{Магазины}
+
+# Area 453, Map 707
+{7080}{}{clinton1_4}
+{7085}{}{NNM_FS_12_Casa_Grande.ogg}
+{7086}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7088}{}{Доки}
+
+# Area 454, Map 709
+{7100}{}{clinton2_1}
+{7105}{}{46NNM_line_of_policy.ogg}
+{7106}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7108}{}{Старый КПП}
+
+# Area 455, Map 711
+{7120}{}{clinton2_2}
+{7125}{}{red_life_1.ogg}
+{7126}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7128}{}{Руины заправки}
+
+# Area 455, Map 712
+{7130}{}{clinton2_2_dn}
+{7135}{}{NNM_FS_03_ Fogbound.ogg}
+{7136}{}{bangpip1:5, bangpipe:5, clang:5, clang1:5, clank:5, clank1:5, coolant:5, fixstill:5, jupiter:5, mechpum1:5, mechpum:5, neptune:5, steam:5, steam1:5, water:5, water1:5}
+{7138}{}{Низ заправки}
+
+# Area 456, Map 713
+{7140}{}{clinton2_3}
+{7145}{}{NNM_FS_15_Out-of-Service.ogg}
+{7146}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7148}{}{Разрушенная мэрия}
+
+# Area 456, Map 714
+{7150}{}{clinton2_3_dn}
+{7155}{}{Sleepless Ruins.ogg}
+{7156}{}{clang:5, clang1:5, clank:5, clank1:5, coolant:5, fixstill:5, jupiter:5, mechpum1:5, mechpum:5, neptune:5}
+{7158}{}{Низ мэрии}
+
+# Area 457, Map 715
+{7160}{}{clinton2_4}
+{7165}{}{Save_room1.ogg}
+{7166}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7168}{}{Библиотека}
+
+# Area 458, Map 717
+{7180}{}{clinton3_1}
+{7185}{}{NNM_FS_05_Collapse.ogg}
+{7186}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7188}{}{Церквушка}
+
+# Area 459, Map 719
+{7200}{}{clinton3_4}
+{7205}{}{Deeper_and_Darker.ogg}
+{7206}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7208}{}{Восточная сторона}
+
+# Area 460, Map 721
+{7220}{}{clinton4_1}
+{7225}{}{31old_earth.ogg}
+{7226}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7228}{}{Склады}
+
+# Area 461, Map 723
+{7240}{}{clinton4_4}
+{7245}{}{58Tales_of_the_Past.ogg}
+{7246}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7248}{}{Перекресток}
+
+# Area 461, Map 724
+{7250}{}{clinton4_4_dn}
+{7255}{}{under_1.ogg}
+{7256}{}{water:10, water1:10, pebble:25, pebble1:15, ore:10, ore1:10}
+{7258}{}{Шахты клинтона}
+
+# Area 462, Map 725
+{7260}{}{clinton5_1}
+{7265}{}{secrets_from_river.ogg}
+{7266}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7268}{}{ЖД перекресток}
+
+# Area 463, Map 727
+{7280}{}{clinton5_2}
+{7285}{}{26A_Candle_in_the_Darkness.ogg}
+{7286}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7288}{}{Даунтаун}
+
+# Area 464, Map 729
+{7300}{}{clinton5_3}
+{7305}{}{26A_Candle_in_the_Darkness.ogg}
+{7306}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7308}{}{Парк}
+
+# Area 465, Map 731
+{7320}{}{clinton5_4}
+{7325}{}{42NNM_ghost_town.ogg}
+{7326}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7328}{}{Отдаленный бар}
+
+# Area 466, Map 733
+{7340}{}{clinton5_4}
+{7345}{}{Crimson_soil.ogg}
+{7346}{}{animal:20, gntlwind:30, gntlwin1:20, brdchir1:10, brdchirp:20}
+{7348}{}{Шоссе}
+
 #
 # Global map
 #
