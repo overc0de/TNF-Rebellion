@@ -3037,6 +3037,36 @@ int GetMapLevelByPid( uint pid )
 		case( MAP_v15_3_2up ):		
 			level = 1;
 			break;
+		case( MAP_clinton_center_up ):
+			level = 2;
+			break;			
+		case( MAP_clinton_center_dn1 ):
+		case( MAP_clinton1_1_dn ):
+		case( MAP_clinton1_2_dn ):
+		case( MAP_clinton1_3_dn ):
+		case( MAP_clinton1_4_dn ):
+		case( MAP_clinton2_1_dn ):
+		case( MAP_clinton2_2_dn ):
+		case( MAP_clinton2_3_dn ):
+		case( MAP_clinton2_4_dn ):
+		case( MAP_clinton3_1_dn ):
+		case( MAP_clinton3_4_dn ):
+		case( MAP_clinton4_1_dn ):
+		case( MAP_clinton4_4_dn ):
+		case( MAP_clinton5_1_dn ):
+		case( MAP_clinton5_2_dn ):
+		case( MAP_clinton5_3_dn ):
+		case( MAP_clinton5_4_dn ):
+		case( MAP_clinton_highway_dn ):
+		case( MAP_clinton_highway_lab1 ):
+			level = -1;
+			break;
+		case( MAP_clinton_center_dn2 ):
+		case( MAP_clinton_highway_lab2 ):
+		case( MAP_clinton_highway_station ):
+		case( MAP_clinton_highway_tunnel1 ):
+			level = -2;
+			break;
 		default:
 			level = 0;
 			break;
